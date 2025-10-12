@@ -1,4 +1,4 @@
-from transformers import DataCollatorWithPadding, TrainingArguments, Trainer
+from transformers import DataCollatorWithPadding
 import numpy as np
 from typing import Dict, List, Union
 from seqeval.metrics import f1_score, precision_score, recall_score
@@ -6,18 +6,23 @@ from seqeval.scheme import IOB2
 
 import torch
 
+
 class NERCollatorSoftmax:
     def __init__(self, tokenizer, label_pad_id=-100, pad_to_multiple_of=32):
-        self.inner = DataCollatorWithPadding(tokenizer, pad_to_multiple_of=pad_to_multiple_of)
+        self.inner = DataCollatorWithPadding(
+            tokenizer, pad_to_multiple_of=pad_to_multiple_of
+        )
         self.label_pad_id = label_pad_id
+
     def __call__(self, features):
         labels = [f["labels"] for f in features]
-        inputs = [{k:v for k,v in f.items() if k!="labels"} for f in features]
+        inputs = [{k: v for k, v in f.items() if k != "labels"} for f in features]
         batch = self.inner(inputs)
         max_len = batch["input_ids"].shape[1]
-        padded = [y + [self.label_pad_id]*(max_len-len(y)) for y in labels]
+        padded = [y + [self.label_pad_id] * (max_len - len(y)) for y in labels]
         batch["labels"] = torch.tensor(padded, dtype=torch.long)
         return batch
+
 
 # def compute_metrics_softmax(eval_pred, id2label=None):
 #     if id2label is None:
@@ -35,10 +40,8 @@ class NERCollatorSoftmax:
 #     # opzionale: print(classification_report(y_true, y_pred, scheme=IOB2, mode="strict"))
 #     return {"f1": float(f1)}
 
-def compute_metrics_softmax(
-    eval_pred,
-    id2label: Union[Dict[int, str], List[str]]
-):
+
+def compute_metrics_softmax(eval_pred, id2label: Union[Dict[int, str], List[str]]):
     """
     eval_pred: (pred_logits, label_ids) come passato dal Trainer
       - pred_logits: [B, T, K] (np.ndarray o torch.Tensor) oppure tuple(..., )
@@ -52,6 +55,7 @@ def compute_metrics_softmax(
         pred_logits = pred_logits[0]
     try:
         import torch
+
         if isinstance(pred_logits, torch.Tensor):
             pred_ids = pred_logits.detach().cpu().argmax(-1).numpy()
         else:
@@ -74,7 +78,7 @@ def compute_metrics_softmax(
     y_pred: List[List[str]] = []
 
     # token-accuracy (sul subset non ignorato)
-    mask_valid = (label_ids != -100)
+    mask_valid = label_ids != -100
     total_tokens = int(mask_valid.sum())
     correct_tokens = int(((pred_ids == label_ids) & mask_valid).sum())
 
@@ -87,14 +91,16 @@ def compute_metrics_softmax(
 
     # 3) Metriche a livello ENTITÀ (seqeval, strict IOB2)
     prec = precision_score(y_true, y_pred, scheme=IOB2, mode="strict")
-    rec  = recall_score(y_true, y_pred, scheme=IOB2, mode="strict")
-    f1   = f1_score(y_true, y_pred, scheme=IOB2, mode="strict")
+    rec = recall_score(y_true, y_pred, scheme=IOB2, mode="strict")
+    f1 = f1_score(y_true, y_pred, scheme=IOB2, mode="strict")
 
     # 4) Ritorna float “puri” (evita warning di gather su tensori scalari)
     out = {
         "precision": float(prec),
         "recall": float(rec),
         "f1": float(f1),
-        "token_accuracy": float(correct_tokens / total_tokens) if total_tokens > 0 else 0.0,
+        "token_accuracy": float(correct_tokens / total_tokens)
+        if total_tokens > 0
+        else 0.0,
     }
     return out
