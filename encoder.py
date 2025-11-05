@@ -6,7 +6,7 @@ import pprint as pp
 
 def upload_encoder_model(
     model_name="microsoft/mdeberta-v3-base",
-    ds_path: Path="data/synthetic_pii_finance_multilingual_split",
+    ds_path: Path = "data/synthetic_pii_finance_multilingual_split",
 ):
     ds = upload_dataset(ds_path)
     label2id, id2label = assign_labels(ds)
@@ -20,5 +20,5 @@ def upload_encoder_model(
 
 
 if __name__ == "__main__":
-   model, label2id, id2label = upload_encoder_model()
-   pp.pprint(model)
+    model, label2id, id2label = upload_encoder_model()
+    pp.pprint(model)
