@@ -1,0 +1,510 @@
+{
+  "original_text_length": 1557,
+  "redacted_text_length": 1557,
+  "detection_statistics": {
+    "total_entities_detected": 29,
+    "confident_from_deberta": 28,
+    "uncertain_from_deberta": 2,
+    "llm_verified": 1,
+    "llm_rejected": 1,
+    "final_precision_estimate": 0.9666666666666667
+  },
+  "redaction_statistics": {
+    "total_entities_found": 29,
+    "entities_redacted": 29,
+    "redacted_by_type": {
+      "phone_number": {
+        "count": 4,
+        "examples": [
+          {
+            "original": " +1 (555) 111-2222",
+            "redacted": "██████████████████",
+            "position": "1538-1556"
+          },
+          {
+            "original": " +1 (555) 555-0123",
+            "redacted": "██████████████████",
+            "position": "795-813"
+          },
+          {
+            "original": " +1 (555) 987-6543",
+            "redacted": "██████████████████",
+            "position": "667-685"
+          }
+        ]
+      },
+      "email": {
+        "count": 4,
+        "examples": [
+          {
+            "original": " jane.doe@techcorp.com",
+            "redacted": "██████████████████████",
+            "position": "1509-1531"
+          },
+          {
+            "original": "emily.rodriguez@techcorp.com",
+            "redacted": "████████████████████████████",
+            "position": "939-967"
+          },
+          {
+            "original": "j.m.smith1985@gmail.com",
+            "redacted": "███████████████████████",
+            "position": "592-615"
+          }
+        ]
+      },
+      "name": {
+        "count": 7,
+        "examples": [
+          {
+            "original": "\nJane Doe",
+            "redacted": "█████████",
+            "position": "1482-1491"
+          },
+          {
+            "original": "Emily Rodriguez",
+            "redacted": "███████████████",
+            "position": "922-937"
+          },
+          {
+            "original": " Sarah Smith",
+            "redacted": "████████████",
+            "position": "772-784"
+          }
+        ]
+      },
+      "ipv6": {
+        "count": 1,
+        "examples": [
+          {
+            "original": " 2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+            "redacted": "████████████████████████████████████████",
+            "position": "1270-1310"
+          }
+        ]
+      },
+      "ipv4": {
+        "count": 1,
+        "examples": [
+          {
+            "original": "192.168.1.100",
+            "redacted": "█████████████",
+            "position": "1245-1258"
+          }
+        ]
+      },
+      "api_key": {
+        "count": 1,
+        "examples": [
+          {
+            "original": "sk_live_51HxYzAbCdEfGhIjKlMnOpQr",
+            "redacted": "████████████████████████████████",
+            "position": "1200-1232"
+          }
+        ]
+      },
+      "user_name": {
+        "count": 1,
+        "examples": [
+          {
+            "original": "jsmith_dev",
+            "redacted": "██████████",
+            "position": "1130-1140"
+          }
+        ]
+      },
+      "credit_card_number": {
+        "count": 1,
+        "examples": [
+          {
+            "original": "4532-1234-5678-9010",
+            "redacted": "███████████████████",
+            "position": "1066-1085"
+          }
+        ]
+      },
+      "iban": {
+        "count": 1,
+        "examples": [
+          {
+            "original": " DE89370400440532013000",
+            "redacted": "███████████████████████",
+            "position": "1015-1038"
+          }
+        ]
+      },
+      "street_address": {
+        "count": 1,
+        "examples": [
+          {
+            "original": " 123 Main Street, Apartment 4B, New York, NY 10001",
+            "redacted": "██████████████████████████████████████████████████",
+            "position": "701-751"
+          }
+        ]
+      },
+      "passport_number": {
+        "count": 1,
+        "examples": [
+          {
+            "original": " US",
+            "redacted": "███",
+            "position": "502-505"
+          }
+        ]
+      },
+      "ssn": {
+        "count": 1,
+        "examples": [
+          {
+            "original": " 123-45-6789",
+            "redacted": "████████████",
+            "position": "437-449"
+          }
+        ]
+      },
+      "date_of_birth": {
+        "count": 1,
+        "examples": [
+          {
+            "original": "January 15, 1985",
+            "redacted": "████████████████",
+            "position": "395-411"
+          }
+        ]
+      },
+      "company": {
+        "count": 2,
+        "examples": [
+          {
+            "original": " TechCorp International Inc.",
+            "redacted": "████████████████████████████",
+            "position": "171-199"
+          },
+          {
+            "original": "\nTechCorp International Inc.",
+            "redacted": "████████████████████████████",
+            "position": "43-71"
+          }
+        ]
+      },
+      "time": {
+        "count": 1,
+        "examples": [
+          {
+            "original": " 09:30 AM",
+            "redacted": "█████████",
+            "position": "124-133"
+          }
+        ]
+      },
+      "date": {
+        "count": 1,
+        "examples": [
+          {
+            "original": " March 15, 2024",
+            "redacted": "███████████████",
+            "position": "106-121"
+          }
+        ]
+      }
+    },
+    "redacted_chars": 562,
+    "redaction_percentage": 36.095054592164416
+  },
+  "entities": [
+    {
+      "text": "TechCorp International Inc.",
+      "type": "company",
+      "confidence": 0.9944007992744446,
+      "start": 43,
+      "end": 71,
+      "context_window": "\nCONFIDENTIAL - EMPLOYEE ONBOARDING PACKAGE\nTechCorp International Inc. - Human Resources Department\nDate: March 15, 2024",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "March 15, 2024",
+      "type": "date",
+      "confidence": 0.9816111326217651,
+      "start": 106,
+      "end": 121,
+      "context_window": "ernational Inc. - Human Resources Department\nDate: March 15, 2024 at 09:30 AM\n\nDear John Michael Smith,\n\nWelcome to",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "09:30 AM",
+      "type": "time",
+      "confidence": 0.9836515188217163,
+      "start": 124,
+      "end": 133,
+      "context_window": "Human Resources Department\nDate: March 15, 2024 at 09:30 AM\n\nDear John Michael Smith,\n\nWelcome to TechCorp In",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "John Michael Smith",
+      "type": "name",
+      "confidence": 0.998138964176178,
+      "start": 139,
+      "end": 158,
+      "context_window": " Department\nDate: March 15, 2024 at 09:30 AM\n\nDear John Michael Smith,\n\nWelcome to TechCorp International Inc.! We are ",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "TechCorp International Inc.",
+      "type": "company",
+      "confidence": 0.9936010241508484,
+      "start": 171,
+      "end": 199,
+      "context_window": " at 09:30 AM\n\nDear John Michael Smith,\n\nWelcome to TechCorp International Inc.! We are thrilled to have you join our Engineering",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "John Michael Smith",
+      "type": "name",
+      "confidence": 0.9980394244194031,
+      "start": 320,
+      "end": 339,
+      "context_window": "are Developer.\n\nPERSONAL INFORMATION:\n- Full Name: John Michael Smith\n- First Name: John\n- Last Name: Smith\n- Date of B",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "John",
+      "type": "name",
+      "confidence": 0.8706910014152527,
+      "start": 353,
+      "end": 358,
+      "context_window": "ION:\n- Full Name: John Michael Smith\n- First Name: John\n- Last Name: Smith\n- Date of Birth: January 15, 1",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "Smith",
+      "type": "name",
+      "confidence": 0.9026382565498352,
+      "start": 371,
+      "end": 377,
+      "context_window": "John Michael Smith\n- First Name: John\n- Last Name: Smith\n- Date of Birth: January 15, 1985\n- Social Securi",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "January 15, 1985",
+      "type": "date_of_birth",
+      "confidence": 0.7933673858642578,
+      "start": 395,
+      "end": 411,
+      "context_window": "st Name: John\n- Last Name: Smith\n- Date of Birth: January 15, 1985\n- Social Security Number: 123-45-6789\n- Driver's ",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "123-45-6789",
+      "type": "ssn",
+      "confidence": 0.9759140014648438,
+      "start": 437,
+      "end": 449,
+      "context_window": " Birth: January 15, 1985\n- Social Security Number: 123-45-6789\n- Driver's License: D1234567 (CA)\n- Passport Numb",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "john.smith@techcorp.com",
+      "type": "email",
+      "confidence": 0.9938818216323853,
+      "start": 549,
+      "end": 573,
+      "context_window": "er: US123456789\n\nCONTACT DETAILS:\n- Primary Email: john.smith@techcorp.com\n- Personal Email: j.m.smith1985@gmail.com\n- Work ",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "j.m.smith1985@gmail.com",
+      "type": "email",
+      "confidence": 0.9942477941513062,
+      "start": 592,
+      "end": 615,
+      "context_window": " Email: john.smith@techcorp.com\n- Personal Email: j.m.smith1985@gmail.com\n- Work Phone: +1 (555) 123-4567 ext. 1234\n- Mobil",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "+1 (555) 123-4567 ext. 1234",
+      "type": "phone_number",
+      "confidence": 0.8119073510169983,
+      "start": 629,
+      "end": 657,
+      "context_window": "sonal Email: j.m.smith1985@gmail.com\n- Work Phone: +1 (555) 123-4567 ext. 1234\n- Mobile: +1 (555) 987-6543\n- Home Address: 123 M",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "+1 (555) 987-6543",
+      "type": "phone_number",
+      "confidence": 0.9919794797897339,
+      "start": 667,
+      "end": 685,
+      "context_window": " Work Phone: +1 (555) 123-4567 ext. 1234\n- Mobile: +1 (555) 987-6543\n- Home Address: 123 Main Street, Apartment 4B, Ne",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "123 Main Street, Apartment 4B, New York, NY 10001",
+      "type": "street_address",
+      "confidence": 0.9971407651901245,
+      "start": 701,
+      "end": 751,
+      "context_window": ". 1234\n- Mobile: +1 (555) 987-6543\n- Home Address: 123 Main Street, Apartment 4B, New York, NY 10001\n- Emergency Contact: Sarah Smith (spouse) - +1 (5",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "Sarah Smith",
+      "type": "name",
+      "confidence": 0.9956651926040649,
+      "start": 772,
+      "end": 784,
+      "context_window": "rtment 4B, New York, NY 10001\n- Emergency Contact: Sarah Smith (spouse) - +1 (555) 555-0123\n\nEMPLOYMENT DETAILS:",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "+1 (555) 555-0123",
+      "type": "phone_number",
+      "confidence": 0.9905795454978943,
+      "start": 795,
+      "end": 813,
+      "context_window": " 10001\n- Emergency Contact: Sarah Smith (spouse) - +1 (555) 555-0123\n\nEMPLOYMENT DETAILS:\n- Employee ID: EMP-2024-4567",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "Emily Rodriguez",
+      "type": "name",
+      "confidence": 0.9946668148040771,
+      "start": 922,
+      "end": 937,
+      "context_window": "omer ID: CUST-2024-001 (legacy system)\n- Manager: Emily Rodriguez (emily.rodriguez@techcorp.com)\n\nFINANCIAL INFORMA",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "emily.rodriguez@techcorp.com",
+      "type": "email",
+      "confidence": 0.9934427738189697,
+      "start": 939,
+      "end": 967,
+      "context_window": "4-001 (legacy system)\n- Manager: Emily Rodriguez (emily.rodriguez@techcorp.com)\n\nFINANCIAL INFORMATION:\n- Bank Account (IBAN): D",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "DE89370400440532013000",
+      "type": "iban",
+      "confidence": 0.9811633229255676,
+      "start": 1015,
+      "end": 1038,
+      "context_window": "om)\n\nFINANCIAL INFORMATION:\n- Bank Account (IBAN): DE89370400440532013000\n- Credit Card (Corporate): 4532-1234-5678-9010\n- ",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "4532-1234-5678-9010",
+      "type": "credit_card_number",
+      "confidence": 0.9240424036979675,
+      "start": 1066,
+      "end": 1085,
+      "context_window": "DE89370400440532013000\n- Credit Card (Corporate): 4532-1234-5678-9010\n- Card CVV: 123\n\nSYSTEM ACCESS:\n- Username: jsmit",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "jsmith_dev",
+      "type": "user_name",
+      "confidence": 0.6388925909996033,
+      "start": 1130,
+      "end": 1140,
+      "context_window": "-9010\n- Card CVV: 123\n\nSYSTEM ACCESS:\n- Username: jsmith_dev\n- Temporary Password: TempPass123!\n- API Key (Pro",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "sk_live_51HxYzAbCdEfGhIjKlMnOpQr",
+      "type": "api_key",
+      "confidence": 0.9006993174552917,
+      "start": 1200,
+      "end": 1232,
+      "context_window": "ry Password: TempPass123!\n- API Key (Production): sk_live_51HxYzAbCdEfGhIjKlMnOpQr\n- VPN IPv4: 192.168.1.100\n- VPN IPv6: 2001:0db8:8",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "192.168.1.100",
+      "type": "ipv4",
+      "confidence": 0.8773024678230286,
+      "start": 1245,
+      "end": 1258,
+      "context_window": "on): sk_live_51HxYzAbCdEfGhIjKlMnOpQr\n- VPN IPv4: 192.168.1.100\n- VPN IPv6: 2001:0db8:85a3:0000:0000:8a2e:0370:73",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+      "type": "ipv6",
+      "confidence": 0.9917857646942139,
+      "start": 1270,
+      "end": 1310,
+      "context_window": "GhIjKlMnOpQr\n- VPN IPv4: 192.168.1.100\n- VPN IPv6: 2001:0db8:85a3:0000:0000:8a2e:0370:7334\n\nCOMMON MISTAKES TO AVOID:\n- The invoice number I",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "Jane Doe",
+      "type": "name",
+      "confidence": 0.9980286955833435,
+      "start": 1482,
+      "end": 1491,
+      "context_window": "d not be confused with employee IDs\n\nBest regards,\nJane Doe\nHR Manager\nEmail: jane.doe@techcorp.com\nPhone: +1",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "jane.doe@techcorp.com",
+      "type": "email",
+      "confidence": 0.9936541318893433,
+      "start": 1509,
+      "end": 1531,
+      "context_window": "oyee IDs\n\nBest regards,\nJane Doe\nHR Manager\nEmail: jane.doe@techcorp.com\nPhone: +1 (555) 111-2222\n",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "+1 (555) 111-2222",
+      "type": "phone_number",
+      "confidence": 0.9901704788208008,
+      "start": 1538,
+      "end": 1556,
+      "context_window": "Doe\nHR Manager\nEmail: jane.doe@techcorp.com\nPhone: +1 (555) 111-2222\n",
+      "is_pii": true,
+      "source": "deberta_confident"
+    },
+    {
+      "text": "US",
+      "type": "passport_number",
+      "confidence": 0.34851375222206116,
+      "start": 502,
+      "end": 505,
+      "is_pii": true,
+      "source": "llm_verified",
+      "original_type": "passport_number",
+      "original_confidence": 0.34851375222206116,
+      "llm_reasoning": "Errore verifica: 1 validation error for PIIVerification\nconfidence_score\n  Input should be less than or equal to 1 [type=less_than_equal, input_value=34.85, input_type=float]\n    For further information visit https://errors.pydantic.dev/2.12/v/less_than_equal"
+    }
+  ],
+  "redacted_text": "\nCONFIDENTIAL - EMPLOYEE ONBOARDING PACKAGE████████████████████████████ - Human Resources Department\nDate:███████████████ at█████████\n\nDear███████████████████,\n\nWelcome to████████████████████████████! We are thrilled to have you join our Engineering team as Senior Software Developer.\n\nPERSONAL INFORMATION:\n- Full Name:███████████████████\n- First Name:█████\n- Last Name:██████\n- Date of Birth: ████████████████\n- Social Security Number:████████████\n- Driver's License: D1234567 (CA)\n- Passport Number:███123456789\n\nCONTACT DETAILS:\n- Primary Email:████████████████████████\n- Personal Email: ███████████████████████\n- Work Phone:████████████████████████████\n- Mobile:██████████████████\n- Home Address:██████████████████████████████████████████████████\n- Emergency Contact:████████████ (spouse) -██████████████████\n\nEMPLOYMENT DETAILS:\n- Employee ID: EMP-2024-456789\n- Customer ID: CUST-2024-001 (legacy system)\n- Manager: ███████████████ (████████████████████████████)\n\nFINANCIAL INFORMATION:\n- Bank Account (IBAN):███████████████████████\n- Credit Card (Corporate): ███████████████████\n- Card CVV: 123\n\nSYSTEM ACCESS:\n- Username: ██████████\n- Temporary Password: TempPass123!\n- API Key (Production): ████████████████████████████████\n- VPN IPv4: █████████████\n- VPN IPv6:████████████████████████████████████████\n\nCOMMON MISTAKES TO AVOID:\n- The invoice number INV-2024-001 is NOT a customer ID\n- Product codes like PROD-XYZ-999 should not be confused with employee IDs\n\nBest regards,█████████\nHR Manager\nEmail:██████████████████████\nPhone:██████████████████\n"
+}

@@ -1,0 +1,64 @@
+{
+  "os":  "Linux-5.4.0-204-generic-x86_64-with-glibc2.31",
+  "python":  "CPython 3.11.13",
+  "startedAt":  "2025-12-06T06:07:15.185193Z",
+  "program":  "/home/gabriele/Github/NerGuard/./src/training/trainer.py",
+  "codePath":  "src/training/trainer.py",
+  "codePathLocal":  "src/training/trainer.py",
+  "git":  {
+    "remote":  "https://github.com/exdsgift/NerGuard.git",
+    "commit":  "ad16938b4daab437ff493603a347659f8e16c42f"
+  },
+  "email":  "gabrieledurante01@gmail.com",
+  "root":  "/home/gabriele/Github/NerGuard",
+  "host":  "memphis",
+  "executable":  "/home/gabriele/Github/NerGuard/.venv/bin/python3",
+  "cpu_count":  14,
+  "cpu_count_logical":  28,
+  "gpu":  "Quadro RTX 6000",
+  "gpu_count":  4,
+  "disk":  {
+    "/":  {
+      "total":  "429287014400",
+      "used":  "255256948736"
+    }
+  },
+  "memory":  {
+    "total":  "67087441920"
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "Quadro RTX 6000",
+      "memoryTotal":  "25769803776",
+      "cudaCores":  4608,
+      "architecture":  "Turing",
+      "uuid":  "GPU-ca6c1987-a959-7f45-6559-bd21ca6bc893"
+    },
+    {
+      "name":  "Quadro RTX 6000",
+      "memoryTotal":  "25769803776",
+      "cudaCores":  4608,
+      "architecture":  "Turing",
+      "uuid":  "GPU-3e231e07-0e97-e8e1-b350-ecf7c8f33865"
+    },
+    {
+      "name":  "Quadro RTX 6000",
+      "memoryTotal":  "25769803776",
+      "cudaCores":  4608,
+      "architecture":  "Turing",
+      "uuid":  "GPU-890f7224-fd70-336d-b428-a6bcd1de8beb"
+    },
+    {
+      "name":  "Quadro RTX 6000",
+      "memoryTotal":  "25769803776",
+      "cudaCores":  4608,
+      "architecture":  "Turing",
+      "uuid":  "GPU-a03c018d-3d8d-04b0-8223-22756be8fc1a"
+    }
+  ],
+  "cudaVersion":  "12.2",
+  "slurm":  {
+    "root":  "/opt/slurm/19.05.6"
+  },
+  "writerId":  "6rc29weu35kix1dn35pgnzxx2gwg0eff"
+}
