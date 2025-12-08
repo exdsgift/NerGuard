@@ -113,7 +113,7 @@ def main():
         output_dir=OUTPUT_DIR,
         learning_rate=LEARNING_RATE,
         per_device_train_batch_size=BATCH_SIZE,
-        per_device_eval_batch_size=BATCH_SIZE,
+        per_device_eval_batch_size=BATCH_SIZE*2,# if crush try to remove *2 
         gradient_accumulation_steps=GRADIENT_ACCUMULATION,
         
         fp16=True,
@@ -129,9 +129,9 @@ def main():
         num_train_epochs=NUM_EPOCHS,
         
         # Strategy
-        eval_strategy="steps", 
+        eval_strategy="epoch", # i did the training with steps
         eval_steps=2000,
-        save_strategy="steps",
+        save_strategy="epoch", # also here
         save_steps=2000,
 
         load_best_model_at_end=True,

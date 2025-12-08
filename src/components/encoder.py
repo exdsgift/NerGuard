@@ -1,12 +1,10 @@
-import torch
 import torch.nn as nn
 from transformers import (
     AutoConfig,
     AutoModelForTokenClassification,
-    AutoTokenizer,
-    DebertaV2TokenizerFast
+    AutoTokenizer
 )
-from typing import Dict, Optional
+from typing import Dict
 
 class PIIEncoder:
 
