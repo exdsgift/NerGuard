@@ -4,6 +4,7 @@ import json
 import torch
 import numpy as np
 import evaluate
+import warnings
 from datasets import load_from_disk
 from transformers import (
     TrainingArguments,
@@ -13,11 +14,11 @@ from transformers import (
 )
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
-try:
-    from src.components.encoder import PIIEncoder
-except ImportError:
-    print("Error importing PIIEncoder. Check path.")
-    sys.exit(1)
+
+from src.components.encoder import PIIEncoder
+
+warnings.filterwarnings("ignore")
+
 
 def compute_metrics_func(p, id2label, metric):
     predictions, labels = p
@@ -41,38 +42,37 @@ def compute_metrics_func(p, id2label, metric):
     }
 
 def main():
+
     os.environ["WANDB_PROJECT"] = "ner-guard-pii"
-    os.environ["WANDB_LOG_MODEL"] = "false" # Set true if you want to upload model checkpoints to cloud (slow)
+    os.environ["WANDB_LOG_MODEL"] = "false"
     os.environ["WANDB_WATCH"] = "false"
+    os.environ["TOKENIZERS_PARALLELISM"] = "false" 
 
     local_rank = int(os.environ.get("LOCAL_RANK", -1))
-    
-    if local_rank != -1:
-        torch.cuda.set_device(local_rank)
-        device = torch.device("cuda", local_rank)
-        print(f"[Process {local_rank}] Assegnato a GPU Logica {local_rank}")
-    else:
-        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        print(f"[Single Process] Assegnato a {device}")
-
     is_main_process = (local_rank == -1 or local_rank == 0)
 
+    # Config
     MODEL_NAME = "microsoft/mdeberta-v3-base"
     DATA_PATH = "./data/processed/tokenized_data"
     OUTPUT_DIR = "./models/mdeberta-pii-safe"
     LOG_DIR = "./logs"
     
-    BATCH_SIZE = 16
-    GRADIENT_ACCUMULATION = 2
+    # Config for 2x RTX 6000
+    BATCH_SIZE = 32 
+    GRADIENT_ACCUMULATION = 1
     LEARNING_RATE = 2e-5
-    NUM_EPOCHS = 2
+    NUM_EPOCHS = 3
     
     if is_main_process:
-        print(f"Loading dataset (Epochs: {NUM_EPOCHS})...")
+        print(f"--> [Main Process] Loading dataset from {DATA_PATH}...")
     
-    dataset = load_from_disk(DATA_PATH, keep_in_memory=False)
-    train_dataset = dataset["train"]
-    eval_dataset = dataset["validation"]
+    try:
+        dataset = load_from_disk(DATA_PATH, keep_in_memory=False)
+        train_dataset = dataset["train"]
+        eval_dataset = dataset["validation"]
+    except Exception as e:
+        print(f"Critico: Impossibile caricare il dataset. {e}")
+        return
 
     try:
         with open("./data/processed/label2id.json", "r") as f:
@@ -81,11 +81,11 @@ def main():
             id2label = {int(k): v for k, v in json.load(f).items()}
     except Exception as e:
         if is_main_process:
-            print(f"Error loading json: {e}")
+            print(f"Error loading json mappings: {e}")
         return
 
     if is_main_process:
-        print("Initializing Model...")
+        print("--> Initializing Model...")
     
     encoder = PIIEncoder(MODEL_NAME)
     tokenizer = encoder.get_tokenizer()
@@ -95,8 +95,6 @@ def main():
         label2id=label2id,
         dropout_rate=0.1
     )
-    
-    model = model.to(device)
 
     data_collator = DataCollatorForTokenClassification(
         tokenizer=tokenizer,
@@ -104,47 +102,51 @@ def main():
     )
 
     metric = evaluate.load("seqeval")
+    
     def compute_metrics_wrapper(p):
         return compute_metrics_func(p, id2label, metric)
 
-    run_name = f"mdeberta-rtx6000-fp16-bs{BATCH_SIZE}"
+    run_name = f"mdeberta-2xRTX6000-fp16-bs{BATCH_SIZE}-ddp"
 
     training_args = TrainingArguments(
         output_dir=OUTPUT_DIR,
         learning_rate=LEARNING_RATE,
-        per_device_train_batch_size=BATCH_SIZE,
-        per_device_eval_batch_size=BATCH_SIZE*2,# if crush try to remove *2 
-        gradient_accumulation_steps=GRADIENT_ACCUMULATION,
         
+        # Batching
+        per_device_train_batch_size=BATCH_SIZE,
+        per_device_eval_batch_size=24,
+        gradient_accumulation_steps=GRADIENT_ACCUMULATION,
+        dataloader_num_workers=4,
+        dataloader_pin_memory=True,
+        eval_accumulation_steps=1,
+        
+        # Precision
         fp16=True,
         bf16=False,
-
-        gradient_checkpointing=False,
-        gradient_checkpointing_kwargs={"use_reentrant": False},
         
+        # DDP & Checkpointing
         ddp_find_unused_parameters=False,
-        local_rank=local_rank,
-        dataloader_num_workers=4,
-        
+        gradient_checkpointing=True,
+        gradient_checkpointing_kwargs={"use_reentrant": False},
         num_train_epochs=NUM_EPOCHS,
+        group_by_length=True,
         
-        # Strategy
-        eval_strategy="epoch", # i did the training with steps
-        eval_steps=2000,
-        save_strategy="epoch", # also here
-        save_steps=2000,
-
+        # Strat
+        eval_strategy="steps",
+        eval_steps=5000,
+        save_strategy="steps",
+        save_steps=5000,
         load_best_model_at_end=True,
         metric_for_best_model="f1",
         greater_is_better=True,
-
+        
+        # Log
         logging_dir=LOG_DIR,
-        logging_steps=50,
+        logging_steps=100,
         report_to="wandb",
         run_name=run_name,
-
-        eval_accumulation_steps=1,
         
+        # Cleaning
         save_total_limit=2,
     )
 
@@ -157,18 +159,23 @@ def main():
         data_collator=data_collator,
         compute_metrics=compute_metrics_wrapper,
         callbacks=[EarlyStoppingCallback(
-            early_stopping_patience=4,
+            early_stopping_patience=4, 
             early_stopping_threshold=0.001
-            )
-        ]
+        )]
     )
 
-    if is_main_process: print(f"--> Start training loop (Run: {run_name})")
+    if is_main_process:
+        print(f"--> Start training loop on {torch.cuda.device_count()} GPUs. (Run: {run_name})")
+        
     trainer.train()
     
     if is_main_process:
-        print("--> Saving model")
+        print("--> Saving final model...")
         trainer.save_model(os.path.join(OUTPUT_DIR, "final"))
+        tokenizer.save_pretrained(os.path.join(OUTPUT_DIR, "final"))
 
 if __name__ == "__main__":
     main()
+
+
+# CUDA_VISIBLE_DEVICES=2,3 uv run env PYTHONPATH=. python -m torch.distributed.run --nproc_per_node=2 src/training/trainer.py
