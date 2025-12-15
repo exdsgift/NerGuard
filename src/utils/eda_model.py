@@ -14,7 +14,6 @@ DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 class PIITester:
    def __init__(self, model_path, label_path):
       self.device = DEVICE
-      print(f"🌍 Inizializzazione Sistema Multilingua su {self.device}...")
       self.id2label = self._load_labels(label_path)
       self.tokenizer = AutoTokenizer.from_pretrained(model_path)
       self.model = AutoModelForTokenClassification.from_pretrained(model_path).to(self.device)
@@ -65,9 +64,9 @@ class PIITester:
                print(f"   {clean_token:<25}\t{label:<20}\t{conf.item():.2f}\t\t{ent.item():.3f}\t\t{flag}")
       
       if max_ent > THRESHOLD:
-         print(f"\n   --> ROUTING ATTIVATO (Max Ent: {max_ent:.4f}) -> LLM richiamato per contesto {lang_code}.\n\n")
+         print(f"\n\t\t - Routing activated (Max Ent: {max_ent:.4f}) -> Lang: {lang_code}.\n\n")
       else:
-         print(f"\n   --> GESTIONE LOCALE (Max Ent: {max_ent:.4f}) -> Encoder sicuro.\n\n")
+         print(f"\n\t\t - Local handling (Max Ent: {max_ent:.4f})")
 
 if __name__ == "__main__":
    tester = PIITester(MODEL_PATH, LABEL_PATH)
@@ -97,8 +96,6 @@ if __name__ == "__main__":
       # Dutch (21k samples - Low Resource)
       ("nl", "Ik ben Sven van der Berg en mijn e-mailadres is sven.berg@example.nl.")
    ]
-   
-   print(f"\n🚀 AVVIO TEST MULTILINGUA ({len(multilingual_cases)} lingue)\n")
-   
+      
    for lang, text in multilingual_cases:
       tester.analyze_sentence(lang, text)
