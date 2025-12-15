@@ -20,23 +20,20 @@ from src.pipeline.prompt import PROMPT, VALID_LABELS_STR  # noqa: E402
 
 load_dotenv()
 
-# --- CONFIGURAZIONE ---
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_MODEL = "gpt-4o-mini"
+
 MODEL_PATH = "./models/mdeberta-pii-safe/final"
 LABEL_PATH = "./data/processed/id2label.json" 
 THRESHOLD = 0.3
 THRESHOLD_CONF = 0.85
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-# --- CONFIGURAZIONE LLM (SWITCH) ---
-# Scegli qui: "ollama" oppure "openai"
-LLM_SOURCE = "openai" 
 
-# Configurazione Ollama
+LLM_SOURCE = "openai" # "ollama"
+
+# Ollama config
 OLLAMA_MODEL = "qwen2.5:3b"
-
-# Configurazione OpenAI
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") # Oppure metti la stringa diretta "sk-..."
-OPENAI_MODEL = "gpt-4o-mini" # Consigliato per velocità/costo. Usa "gpt-4o" per massima precisione.
 
 # Sliding Window Settings
 MAX_LEN = 512
@@ -61,12 +58,12 @@ class LLMRouter:
          full_text: str,
          char_start: int,
          char_end: int,
-         current_pred: str, # Lo teniamo per compatibilità ma non lo usiamo nel prompt
-         prev_label: str,   # Lo teniamo per compatibilità ma non lo usiamo nel prompt
+         current_pred: str,
+         prev_label: str,
          lang: str) -> Dict[str, Any]:
 
-      # 1. Context Window
-      ctx_start = max(0, char_start - 150) # Aumentato un po' il contesto
+      # Context Window
+      ctx_start = max(0, char_start - 150)
       ctx_end = min(len(full_text), char_end + 150)
       
       prefix = full_text[ctx_start:char_start]
@@ -75,11 +72,8 @@ class LLMRouter:
       
       # Highlighting
       highlighted_context = f"...{prefix}>>>{target_snippet}<<<{suffix}..."
-      
-      # Pulizia Token
       clean_token = target_snippet.strip()
 
-      # 2. Prompt Format (Usa le variabili globali importate)
       prompt_content = PROMPT.format(
          context=highlighted_context,
          target_token=clean_token,
@@ -87,20 +81,14 @@ class LLMRouter:
          valid_labels_str=VALID_LABELS_STR
       )
 
-      # 3. Call
       try:
          if self.source == "openai":
             result = self._call_openai(prompt_content)
          else:
             result = self._call_ollama(prompt_content)
-            
-         # Debug: Stampa il reasoning per vedere cosa pensa il modello (commenta in produzione)
-         # print(f"   [LLM THOUGHT]: {result.get('reasoning', 'No reasoning')}")
-         
+
          final_tag = result.get("corrected_label", "O")
          
-         # Extra Safety Check: Se il modello dice "O" ma è un LLM potente, ci fidiamo.
-         # Ma se restituisce un tag invalido, forziamo O.
          return {
             "is_pii": final_tag != "O", 
             "corrected_label": final_tag
@@ -153,18 +141,16 @@ class PIITester:
    def _visualize_censoring(self, token_results):
          reconstructed = ""
          last_label = "O"
-         
-         missing_count = sum(1 for x in token_results if x is None)
-         if missing_count > 0:
-            print(f"\n⚠️ WARNING: {missing_count} tokens were not processed! Checking logic...\n")
 
          for res in token_results:
-            if res is None: continue 
+            if res is None:
+               continue 
             
             token = res['token']
             label = res['final_label']
             
-            if token in ['[CLS]', '[SEP]', '[PAD]']: continue
+            if token in ['[CLS]', '[SEP]', '[PAD]']:
+               continue
                
             is_new_word = token.startswith(" ") or token.startswith("▁")
             clean_token = token.replace(" ", "").replace("▁", "")
@@ -292,7 +278,7 @@ class PIITester:
                prev_label = prev_item['final_label']
 
          if entropy > THRESHOLD and confidence < THRESHOLD_CONF:
-            source = f"LLM ({self.router.source})" # Mostra quale LLM sta usando
+            source = f"LLM ({self.router.source})"
             
             llm_result = self.router.disambiguate(
                target_token=token,
@@ -317,7 +303,6 @@ class PIITester:
 
 if __name__ == "__main__":
    tester = PIITester(MODEL_PATH, LABEL_PATH)
-   # ... (Il tuo testo long_sample) ...
    
    long_sample = """REPORT HEADER
    Date: November 14, 2024
