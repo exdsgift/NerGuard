@@ -34,7 +34,6 @@ def ensure_dir(path):
    if not os.path.exists(path):
       os.makedirs(path)
 
-
 def plot_confusion_matrix(y_true, y_pred, id2label, title, filename):
    unique_labels = sorted(list(set(y_true) | set(y_pred)))
    label_names = [id2label[i] for i in unique_labels]
