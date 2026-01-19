@@ -54,24 +54,46 @@ class LLMRouter:
          prev_label: str,
          lang: str) -> Dict[str, Any]:
 
-      # Context Window
-      ctx_start = max(0, char_start - 150)
-      ctx_end = min(len(full_text), char_end + 150)
+      # CONFIGURAZIONE FINESTRA
+      WINDOW_SIZE = 200
       
-      prefix = full_text[ctx_start:char_start]
-      target_snippet = full_text[char_start:char_end]
-      suffix = full_text[char_end:ctx_end]
+      # 1. Calcolo Inizio (Left Context)
+      # Parte da -200 caratteri, ma cerca lo spazio precedente per non tagliare parole a metà
+      ctx_start = max(0, char_start - WINDOW_SIZE)
+      if ctx_start > 0:
+         while ctx_start > 0 and full_text[ctx_start] not in [" ", "\n", "."]:
+            ctx_start -= 1
+         ctx_start += 1 # Salta il delimitatore
+
+      # 2. Calcolo Fine (Right Context)
+      # Arriva a +200 caratteri, ma si estende fino alla fine della parola corrente
+      ctx_end = min(len(full_text), char_end + WINDOW_SIZE)
+      if ctx_end < len(full_text):
+         while ctx_end < len(full_text) and full_text[ctx_end] not in [" ", "\n", "."]:
+            ctx_end += 1
+
+      # 3. Estrazione e Pulizia
+      # Sostituiamo i newline con spazi per mantenere il prompt su una riga logica per l'LLM
+      prefix = full_text[ctx_start:char_start].replace("\n", " ")
+      target_snippet = full_text[char_start:char_end] # Non puliamo il target, lo teniamo originale
+      suffix = full_text[char_end:ctx_end].replace("\n", " ")
       
-      # Highlighting
-      highlighted_context = f"...{prefix}>>>{target_snippet}<<<{suffix}..."
+      # 4. Creazione Prompt Visivo
+      # L'LLM vede: "...testo prima >>> TARGET <<< testo dopo..."
+      highlighted_context = f"...{prefix}>>> {target_snippet} <<<{suffix}..."
       clean_token = target_snippet.strip()
 
-      prompt_content = PROMPT.format(
-         context=highlighted_context,
-         target_token=clean_token,
-         prev_label=prev_label,
-         valid_labels_str=VALID_LABELS_STR
-      )
+      try:
+         prompt_content = PROMPT.format(
+            context=highlighted_context,
+            target_token=clean_token,
+            prev_label=prev_label,
+            current_pred=current_pred,  # <--- IMPORTANTE: Questo mancava prima
+            valid_labels_str=VALID_LABELS_STR
+         )
+      except KeyError as e:
+         print(f"   [PROMPT ERROR] Missing key: {e}")
+         return {"is_pii": False, "corrected_label": current_pred, "reasoning": "Error"}
 
       try:
          if self.source == "openai":
@@ -79,16 +101,30 @@ class LLMRouter:
          else:
             result = self._call_ollama(prompt_content)
 
-         final_tag = result.get("corrected_label", "O")
+         # ESTRAZIONE ROBUSTA
+         # 1. Prendiamo il reasoning (utile per debug/log)
+         reasoning = result.get("reasoning", "No reasoning provided")
+         
+         # 2. Pulizia della label (strip whitespace è vitale)
+         final_tag = result.get("corrected_label", "O").strip()
+         
+         # 3. Fallback di sicurezza: se l'LLM restituisce una label non valida, torna all'originale
+         # (Opzionale, ma consigliato in produzione se hai una lista statica di label validi)
          
          return {
             "is_pii": final_tag != "O", 
-            "corrected_label": final_tag
+            "corrected_label": final_tag,
+            "reasoning": reasoning  # <--- NUOVO: Restituiscilo per il report!
          }
 
       except Exception as e:
          print(f"   [LLM ERROR]: {e}")
-         return {"is_pii": False, "corrected_label": current_pred}
+         # In caso di errore, fidati del modello base (conservative fallback)
+         return {
+            "is_pii": False, 
+            "corrected_label": current_pred, 
+            "reasoning": "Error in LLM call"
+         }
 
    def _call_ollama(self, prompt: str) -> Dict[str, Any]:
       """Gestisce la chiamata locale a Ollama"""
@@ -96,7 +132,7 @@ class LLMRouter:
             model=OLLAMA_MODEL,
             messages=[{'role': 'user', 'content': prompt}],
             format='json',
-            options={'temperature': 0.0}
+            options={'temperature': 0.0} # Deterministic
       )
       return json.loads(response['message']['content'])
 
@@ -105,17 +141,18 @@ class LLMRouter:
       response = self.client.chat.completions.create(
             model=OPENAI_MODEL,
             messages=[
-               {"role": "system", "content": "You are a helpful JSON assistant for PII detection."},
+               # System prompt allineato al ruolo "Linguistic Expert"
+               {"role": "system", "content": "You are a strict PII annotation expert. Output valid JSON only. Do not add conversational text."},
                {"role": "user", "content": prompt}
             ],
-            temperature=0.0,
-            response_format={"type": "json_object"} # Forza output JSON valido
+            temperature=0.0, # Sempre 0 per tasks di classificazione
+            response_format={"type": "json_object"}
       )
       content = response.choices[0].message.content
       return json.loads(content)
 
 class PIITester:
-   def __init__(self, model_path, label_path):
+   def __init__(self, model_path, label_path, llm_routing=True):
       self.device = DEVICE
       self.id2label = self._load_labels(label_path)
       self.tokenizer = AutoTokenizer.from_pretrained(model_path)
@@ -123,6 +160,7 @@ class PIITester:
       self.model.eval()
       # Passiamo la configurazione al Router
       self.router = LLMRouter(source=LLM_SOURCE)
+      self.llm_routing = llm_routing
 
    def _load_labels(self, path):
       if not os.path.exists(path):
@@ -268,19 +306,19 @@ class PIITester:
             prev_item = buffer[global_idx - 1]
             if prev_item is not None:
                prev_label = prev_item['final_label']
-
-         if entropy > THRESHOLD and confidence < THRESHOLD_CONF:
-            source = f"LLM ({self.router.source})"
-            
-            llm_result = self.router.disambiguate(
-               target_token=token,
-               full_text=text,
-               char_start=char_start,
-               char_end=char_end,
-               current_pred=model_label,
-               prev_label=prev_label,
-               lang=lang_code
-            )
+         if self.llm_routing:
+            if entropy > THRESHOLD and confidence < THRESHOLD_CONF:
+               source = f"LLM ({self.router.source})"
+               
+               llm_result = self.router.disambiguate(
+                  target_token=token,
+                  full_text=text,
+                  char_start=char_start,
+                  char_end=char_end,
+                  current_pred=model_label,
+                  prev_label=prev_label,
+                  lang=lang_code
+               )
             if llm_result.get("is_pii"):
                final_label = llm_result.get("corrected_label", model_label)
             else:
@@ -298,11 +336,11 @@ OPENAI_MODEL = "gpt-4o-mini"
 
 MODEL_PATH = "./models/mdeberta-pii-safe/final"
 LABEL_PATH = "./data/processed/id2label.json" 
-THRESHOLD = 0.3
+THRESHOLD = 0.60
 THRESHOLD_CONF = 0.85
 
 if __name__ == "__main__":
-   tester = PIITester(MODEL_PATH, LABEL_PATH)
+   tester = PIITester(MODEL_PATH, LABEL_PATH, llm_routing=False)
    
    long_sample = SAMPLE1
       
