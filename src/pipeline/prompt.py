@@ -159,73 +159,114 @@ OUTPUT JSON:
 "corrected_label": "TAG"
 }}"""
 
-# * new prompt version to reduce over-correction
+PROMPT_V4 = """TASK: PII Classification & Correction. 
+Analyze the Target Token in context. The Baseline Model may be wrong.
 
-PROMPT_IMPROVED = """You are a PII (Personally Identifiable Information) detection expert.
+CONTEXT: {context}
+TARGET: >>> {target_token} <<<
+PREVIOUS TAG: {prev_label}
+CURRENT PREDICTION: {current_pred}
 
-**TASK**: Determine if the specific target token represents sensitive personal information.
+CRITICAL RULES (Based on Error Analysis):
+1. RECALL MODE (If Prediction is O): 
+   - Actively check for missed numeric PII: Credit Cards (13-19 digits), Phone Numbers, IDs.
+   - Check for missed Names (capitalized words in header/signature blocks).
+   - If pattern matches PII strongly, OVERRIDE 'O'.
 
-**CONTEXT**: 
-{context}
+2. PRECISION MODE (Streets & Locations):
+   - B-STREET/I-STREET: Only predict if explicit address markers exist (e.g., "Via", "St.", "Road", "Square"). 
+   - Do not incorrectly classify City names or generic locations as Streets.
 
---- INPUT DATA ANALYSIS ---
-1. **TARGET TOKEN**: {target_token}  <-- Analyze this
-2. **MODEL PREDICTION**: {current_pred}  <-- Verify this
-3. **PREVIOUS TOKEN LABEL**: {prev_label}  <-- Use ONLY for BIO consistency
+3. BIO CONSISTENCY:
+   - "John" [B-GIVENNAME] + "Smith" → B-SURNAME (New entity part)
+   - "New" [B-CITY] + "York" → I-CITY (Continuation)
 
-**DECISION RULES**:
+VALID LABELS:
+{valid_labels_str}
 
-1. **IS IT ACTUALLY PII?**
-   - PERSON: Names (First, Last).
-   - LOCATION: Cities, addresses, zip codes, specific buildings.
-   - CONTACT: Phone numbers, emails.
-   - GOV_ID: SSN, Passport, Driver License, Tax ID.
-   - OTHER: Ages, Genders, Job Titles (only if identifying).
-
-2. **NOT PII (Common False Positives)**:
-   - Common nouns/verbs (even if capitalized at start of sentence).
-   - Generic place names (e.g., "the hospital", "town hall").
-   - Company/Org names (unless they look exactly like a person's name).
-
-3. **BIO LOGIC CHECK**:
-   - IF Previous Label was 'B-TAG' or 'I-TAG' AND Current is the continuation of that entity → Force 'I-TAG'.
-   - IF Previous Label was 'O' → Current MUST be 'B-TAG' (if PII) or 'O'.
-   - NEVER use 'I-TAG' if Previous Label was 'O'.
-
-**INSTRUCTIONS**:
-- Trust the "MODEL PREDICTION" unless there is a clear semantic error (e.g. labeled City but is a Person).
-- If the token is ambiguous (e.g. "Mark" as a name vs "mark" as a verb), use the CONTEXT.
-
-**OUTPUT** (JSON only):
+OUTPUT JSON:
 {{
-   "reasoning": "Explain why it matches/mismatches PII definition and BIO logic",
-   "corrected_label": "TAG"
+"reasoning": "Concise proof (e.g., 'Matches Luhn algo', 'No street marker')",
+"corrected_label": "TAG"
+}}"""
+
+PROMPT_V5 = """You are a PII classification expert. Your ONLY job is to verify or correct the model's prediction for a single token.
+
+=== INPUT DATA ===
+CONTEXT: {context}
+TARGET TOKEN: >>> {target_token} <<<
+MODEL PREDICTION: {current_pred}
+PREVIOUS TOKEN LABEL: {prev_label}
+
+=== YOUR TASK ===
+1. Examine the TARGET TOKEN in the CONTEXT
+2. Decide if MODEL PREDICTION is correct OR needs correction
+3. IMPORTANT: Trust the model UNLESS you have strong evidence it's wrong
+
+=== DECISION RULES (in priority order) ===
+
+**RULE 1: BIO CONSISTENCY (Highest Priority)**
+- If PREVIOUS LABEL was "B-X" or "I-X" AND target token continues that entity → MUST use "I-X"
+- If PREVIOUS LABEL was "O" → Can ONLY use "B-X" or "O" (NEVER "I-X")
+- Examples:
+  * "John" [B-GIVENNAME] + "athan" → MUST be I-GIVENNAME
+  * "555" [B-TELEPHONENUM] + "-" → MUST be I-TELEPHONENUM
+  * "New" [B-CITY] + "York" → MUST be I-CITY
+
+**RULE 2: NUMERIC PII PATTERNS (High Confidence)**
+When MODEL PREDICTION suggests numeric PII, verify pattern:
+- CREDIT CARDS: 13-19 consecutive digits, possibly with spaces/dashes
+- PHONE NUMBERS: 7-15 digits with optional country code, spaces, dashes, parentheses
+- SSN/SOCIAL: 9-11 digits, often with dashes
+- TAX ID: 8-15 digits
+- ZIPCODE: 5 or 9 digits
+→ If pattern matches strongly, CONFIRM the prediction even if context is ambiguous
+
+**RULE 3: NAMES (Be Conservative)**
+For GIVENNAME/SURNAME predictions:
+- CONFIRM if: Capitalized word in greeting/signature/form fields ("Dear John", "Sincerely, Mary")
+- REJECT if: Common word that happens to be capitalized at sentence start
+- REJECT if: Job title, organization name, or generic noun
+- Remember that multiple languages/cultures may have different name conventions
+
+**RULE 4: LOCATIONS (Context Required)**
+- B-STREET/I-STREET: ONLY if explicit address markers exist ("Via", "Street", "Road", "Avenue", "Boulevard", number + street name)
+- B-CITY/I-CITY: Proper city names, but NOT generic "the city"
+- B-ZIPCODE: Only valid postal codes
+
+**RULE 5: DEFAULT (Trust Model)**
+- If none of the above rules give clear evidence → Keep MODEL PREDICTION unchanged
+- Don't overcorrect based on weak signals
+
+=== VALID LABELS ===
+{valid_labels_str}
+
+=== OUTPUT FORMAT (JSON ONLY) ===
+{{
+  "reasoning": "Brief explanation: which rule applied and why (max 25 words)",
+  "corrected_label": "TAG"
 }}
 
-**VALID LABELS**: {valid_labels_str}
+=== EXAMPLES ===
+Example 1 (BIO Consistency):
+Context: "Call me at 555-1234"
+Target: "-" | Prediction: B-TELEPHONENUM | Previous: B-TELEPHONENUM
+→ {{"reasoning": "Rule 1: Dash continues phone number entity", "corrected_label": "I-TELEPHONENUM"}}
+
+Example 2 (Trust Model for Names):
+Context: "Dear Smith, thank you"
+Target: "Smith" | Prediction: B-SURNAME | Previous: O
+→ {{"reasoning": "Rule 3: Capitalized name in greeting, confirms model", "corrected_label": "B-SURNAME"}}
+
+Example 3 (Numeric Pattern):
+Context: "Card number 4532015112830366"
+Target: "4532015112830366" | Prediction: B-CREDITCARDNUMBER | Previous: O
+→ {{"reasoning": "Rule 2: 16-digit pattern matches credit card", "corrected_label": "B-CREDITCARDNUMBER"}}
+
+Example 4 (Conservative on Ambiguous Names):
+Context: "The company Director spoke"
+Target: "Director" | Prediction: O | Previous: O
+→ {{"reasoning": "Rule 3: Job title, not a name, confirm O", "corrected_label": "O"}}
 """
 
-PROMPT_MINIMAL = """Role: PII Expert (BIO Scheme).
-Context: {context}
-
-Target Token: >>> {target_token} <<<
-
---- DATA TIMELINE ---
-Step 1 (History): Previous Label       = {prev_label}
-Step 2 (Target):  Current Model Guess  = {current_pred}
-
-Task: Verify 'Current Model Guess'.
-Rules:
-1. Use 'Previous Label' ONLY to check BIO consistency (e.g. B-PER -> I-PER).
-2. Fix the guess only if context proves it wrong.
-3. Valid Labels: {valid_labels_str}
-
-Response (JSON):
-{{
-   "reasoning": "brief explanation",
-   "corrected_label": "TAG"
-}}
-"""
-
-
-PROMPT = PROMPT_V3
+PROMPT = PROMPT_V5

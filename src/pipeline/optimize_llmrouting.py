@@ -6,7 +6,7 @@ import ollama
 from openai import OpenAI
 import os
 
-from src.pipeline.prompt import VALID_LABELS_DICT, VALID_LABELS_STR, PROMPT_V3
+from src.pipeline.prompt import VALID_LABELS_STR, PROMPT_V3
 
 
 class LLMCache:
@@ -53,26 +53,24 @@ class LLMCache:
          "size": len(self.cache)
       }
 
-
-# ============================================================================
-# LLM ROUTER OTTIMIZZATO
-# ============================================================================
 class OptimizedLLMRouter:
    """Router LLM con caching, validazione robusta e gestione errori"""
    
-   def __init__(self, 
-               source: str = "openai",
-               api_key: Optional[str] = None,
-               model: str = "gpt-4o-mini",
-               ollama_model: str = "qwen2.5:3b",
-               enable_cache: bool = True,
-               cache_size: int = 1000,
-               valid_labels: Optional[set] = None):
+   def __init__(
+         self, 
+         source: str = "openai",
+         api_key: Optional[str] = None,
+         model: str = "gpt-4o-mini",
+         ollama_model: str = "qwen2.5:3b",
+         enable_cache: bool = True,
+         cache_size: int = 1000,
+         valid_labels: Optional[set] = None
+               ):
       
       self.source = source.lower()
       self.model = model if source == "openai" else ollama_model
       self.cache = LLMCache(max_size=cache_size) if enable_cache else None
-      self.valid_labels = valid_labels or self._default_valid_labels()
+      self.valid_labels = valid_labels
       
       # Inizializza client
       if self.source == "openai":
@@ -86,32 +84,7 @@ class OptimizedLLMRouter:
          print(f"   [LLM] Backend: Ollama ({self.model})")
       else:
          raise ValueError(f"Invalid LLM source: {source}. Use 'openai' or 'ollama'")
-   
-   def _default_valid_labels(self) -> set:
-      """Set di tutti i tag validi (da VALID_LABELS_DICT)"""
-      return {
-         "O",
-         "B-GIVENNAME", "I-GIVENNAME", 
-         "B-SURNAME", "I-SURNAME", 
-         "B-TITLE", "I-TITLE",
-         "B-CITY", "I-CITY", 
-         "B-STREET", "I-STREET", 
-         "B-BUILDINGNUM", "I-BUILDINGNUM",
-         "B-ZIPCODE", "I-ZIPCODE", 
-         "B-IDCARDNUM", "I-IDCARDNUM", 
-         "B-PASSPORTNUM", "I-PASSPORTNUM",
-         "B-DRIVERLICENSENUM", "I-DRIVERLICENSENUM", 
-         "B-SOCIALNUM", "I-SOCIALNUM",
-         "B-TAXNUM", "I-TAXNUM",
-         "B-CREDITCARDNUMBER", "I-CREDITCARDNUMBER",
-         "B-EMAIL", "I-EMAIL",
-         "B-TELEPHONENUM", "I-TELEPHONENUM",
-         "B-DATE", "I-DATE", 
-         "B-TIME", "I-TIME", 
-         "B-AGE", "I-AGE", 
-         "B-SEX", "I-SEX", 
-         "B-GENDER", "I-GENDER"
-      }
+
    
    def disambiguate(self,
                   target_token: str,
@@ -206,7 +179,7 @@ class OptimizedLLMRouter:
          ],
          temperature=0.0,
          response_format={"type": "json_object"},
-         max_tokens=150  # Limitiamo i token per risposte concise
+         max_tokens=150
       )
       return json.loads(response.choices[0].message.content)
    
@@ -249,42 +222,3 @@ class OptimizedLLMRouter:
    def get_cache_stats(self) -> Optional[Dict[str, Any]]:
       """Ritorna statistiche cache"""
       return self.cache.get_stats() if self.cache else None
-
-
-# ============================================================================
-# ESEMPIO DI UTILIZZO
-# ============================================================================
-if __name__ == "__main__":
-   import os
-   from dotenv import load_dotenv
-   
-   load_dotenv()
-   
-   # Inizializza router
-   router = OptimizedLLMRouter(
-      source="openai",
-      api_key=os.getenv("OPENAI_API_KEY"),
-      model="gpt-4o-mini",
-      enable_cache=True,
-      cache_size=500
-   )
-   
-   # Test
-   text = "My name is John Smith and I live in New York"
-   result = router.disambiguate(
-      target_token="John",
-      full_text=text,
-      char_start=11,
-      char_end=15,
-      current_pred="B-GIVENNAME",
-      prev_label="O",
-      lang="en"
-   )
-   
-   print("\n=== RESULT ===")
-   print(json.dumps(result, indent=2))
-   
-   # Statistiche cache
-   if stats := router.get_cache_stats():
-      print("\n=== CACHE STATS ===")
-      print(json.dumps(stats, indent=2))

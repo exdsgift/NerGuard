@@ -1,0 +1,55 @@
+--- Classification Report ---
+                    precision    recall  f1-score   support
+
+             B-AGE     0.3967    0.9775    0.5644       222
+     B-BUILDINGNUM     0.0000    0.0000    0.0000         0
+            B-CITY     0.4353    0.8741    0.5812       882
+B-CREDITCARDNUMBER     0.0822    0.0137    0.0235       438
+            B-DATE     0.8253    0.7665    0.7948      4227
+B-DRIVERLICENSENUM     0.0000    0.0000    0.0000         0
+           B-EMAIL     0.8717    0.9528    0.9104      2032
+          B-GENDER     0.2727    0.0087    0.0168       346
+       B-GIVENNAME     0.8649    0.5834    0.6968      3742
+       B-IDCARDNUM     0.0000    0.0000    0.0000         0
+     B-PASSPORTNUM     0.0000    0.0000    0.0000         0
+             B-SEX     0.0000    0.0000    0.0000         0
+       B-SOCIALNUM     0.1395    0.9497    0.2433       318
+          B-STREET     0.0537    0.0523    0.0530       994
+         B-SURNAME     0.9237    0.5962    0.7247      2375
+          B-TAXNUM     0.0542    0.3585    0.0942       106
+    B-TELEPHONENUM     0.5942    0.5146    0.5516      1642
+            B-TIME     0.8153    0.6712    0.7363      1098
+           B-TITLE     0.0000    0.0000    0.0000         0
+         B-ZIPCODE     0.3311    0.9323    0.4886       473
+             I-AGE     0.0000    0.0000    0.0000         2
+     I-BUILDINGNUM     0.0000    0.0000    0.0000         0
+            I-CITY     0.3393    0.9050    0.4936       895
+I-CREDITCARDNUMBER     0.1731    0.0135    0.0250      2669
+            I-DATE     0.6714    0.7828    0.7229      6967
+I-DRIVERLICENSENUM     0.0000    0.0000    0.0000         0
+           I-EMAIL     0.8629    0.9675    0.9122     15166
+          I-GENDER     0.4000    0.0377    0.0690        53
+       I-GIVENNAME     0.6669    0.3917    0.4935      3005
+       I-IDCARDNUM     0.0000    0.0000    0.0000         0
+     I-PASSPORTNUM     0.0000    0.0000    0.0000         0
+       I-SOCIALNUM     0.0685    0.9637    0.1279       936
+          I-STREET     0.9800    0.6803    0.8031      3678
+         I-SURNAME     0.8709    0.6900    0.7700      1955
+          I-TAXNUM     0.0542    0.3481    0.0938       293
+    I-TELEPHONENUM     0.5921    0.6311    0.6110      5733
+            I-TIME     0.8014    0.5378    0.6436      1456
+         I-ZIPCODE     0.2527    0.9616    0.4002       469
+
+         micro avg     0.4027    0.7085    0.5135     62172
+         macro avg     0.3525    0.4253    0.3328     62172
+      weighted avg     0.7085    0.7085    0.6816     62172
+
+
+--- Global Metrics ---
+global_accuracy: 0.9342
+macro_precision: 0.3688
+macro_recall: 0.4387
+macro_f1: 0.3491
+weighted_precision: 0.9755
+weighted_recall: 0.9342
+weighted_f1: 0.9529
