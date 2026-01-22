@@ -1,61 +1,48 @@
 import json
 
-# VALID_LABELS_DICT = {
-# "PEOPLE": [
-#       "B-GIVENNAME", "I-GIVENNAME", 
-#       "B-SURNAME", "I-SURNAME", 
-#       "B-TITLE", "I-TITLE"
-# ],
-# "LOCATION": [
-#       "B-CITY", "I-CITY", 
-#       "B-STREET", "I-STREET", 
-#       "B-BUILDINGNUM", "I-BUILDINGNUM", 
-#       "B-ZIPCODE", "I-ZIPCODE"
-# ],
-# "IDS": [
-#       "B-IDCARDNUM", "I-IDCARDNUM", 
-#       "B-PASSPORTNUM", "I-PASSPORTNUM", 
-#       "B-DRIVERLICENSENUM", "I-DRIVERLICENSENUM", 
-#       "B-SOCIALNUM", "I-SOCIALNUM", 
-#       "B-TAXNUM", "I-TAXNUM",
-#       "B-CREDITCARDNUMBER", "I-CREDITCARDNUMBER"
-# ],
-# "CONTACT": [
-#       "B-EMAIL", "I-EMAIL", 
-#       "B-TELEPHONENUM", "I-TELEPHONENUM"
-# ],
-# "OTHER_PII": [
-#       "B-DATE", "I-DATE", 
-#       "B-TIME", "I-TIME", 
-#       "B-AGE", "I-AGE", 
-#       "B-SEX", "I-SEX",
-#       "B-GENDER", "I-GENDER"
-# ]
-# }
-
 VALID_LABELS_DICT = [
-         "O",
-         "B-GIVENNAME", "I-GIVENNAME", 
-         "B-SURNAME", "I-SURNAME", 
-         "B-TITLE", "I-TITLE",
-         "B-CITY", "I-CITY", 
-         "B-STREET", "I-STREET", 
-         "B-BUILDINGNUM", "I-BUILDINGNUM",
-         "B-ZIPCODE", "I-ZIPCODE", 
-         "B-IDCARDNUM", "I-IDCARDNUM", 
-         "B-PASSPORTNUM", "I-PASSPORTNUM",
-         "B-DRIVERLICENSENUM", "I-DRIVERLICENSENUM", 
-         "B-SOCIALNUM", "I-SOCIALNUM",
-         "B-TAXNUM", "I-TAXNUM",
-         "B-CREDITCARDNUMBER", "I-CREDITCARDNUMBER",
-         "B-EMAIL", "I-EMAIL",
-         "B-TELEPHONENUM", "I-TELEPHONENUM",
-         "B-DATE", "I-DATE", 
-         "B-TIME", "I-TIME", 
-         "B-AGE", "I-AGE", 
-         "B-SEX", "I-SEX", 
-         "B-GENDER", "I-GENDER"
-   ]
+    "O",
+    "B-GIVENNAME",
+    "I-GIVENNAME",
+    "B-SURNAME",
+    "I-SURNAME",
+    "B-TITLE",
+    "I-TITLE",
+    "B-CITY",
+    "I-CITY",
+    "B-STREET",
+    "I-STREET",
+    "B-BUILDINGNUM",
+    "I-BUILDINGNUM",
+    "B-ZIPCODE",
+    "I-ZIPCODE",
+    "B-IDCARDNUM",
+    "I-IDCARDNUM",
+    "B-PASSPORTNUM",
+    "I-PASSPORTNUM",
+    "B-DRIVERLICENSENUM",
+    "I-DRIVERLICENSENUM",
+    "B-SOCIALNUM",
+    "I-SOCIALNUM",
+    "B-TAXNUM",
+    "I-TAXNUM",
+    "B-CREDITCARDNUMBER",
+    "I-CREDITCARDNUMBER",
+    "B-EMAIL",
+    "I-EMAIL",
+    "B-TELEPHONENUM",
+    "I-TELEPHONENUM",
+    "B-DATE",
+    "I-DATE",
+    "B-TIME",
+    "I-TIME",
+    "B-AGE",
+    "I-AGE",
+    "B-SEX",
+    "I-SEX",
+    "B-GENDER",
+    "I-GENDER",
+]
 
 VALID_LABELS_STR = json.dumps(VALID_LABELS_DICT, indent=2)
 

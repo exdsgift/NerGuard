@@ -10,10 +10,10 @@ from transformers import (
     TrainingArguments,
     Trainer,
     DataCollatorForTokenClassification,
-    EarlyStoppingCallback
+    EarlyStoppingCallback,
 )
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
 from src.components.encoder import PIIEncoder
 
@@ -41,31 +41,31 @@ def compute_metrics_func(p, id2label, metric):
         "accuracy": float(results["overall_accuracy"]),
     }
 
-def main():
 
+def main():
     os.environ["WANDB_PROJECT"] = "ner-guard-pii"
     os.environ["WANDB_LOG_MODEL"] = "false"
     os.environ["WANDB_WATCH"] = "false"
-    os.environ["TOKENIZERS_PARALLELISM"] = "false" 
+    os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
     local_rank = int(os.environ.get("LOCAL_RANK", -1))
-    is_main_process = (local_rank == -1 or local_rank == 0)
+    is_main_process = local_rank == -1 or local_rank == 0
 
     # Config
     MODEL_NAME = "microsoft/mdeberta-v3-base"
     DATA_PATH = "./data/processed/tokenized_data"
     OUTPUT_DIR = "./models/mdeberta-pii-safe"
     LOG_DIR = "./logs"
-    
+
     # Config for 2x RTX 6000
-    BATCH_SIZE = 32 
+    BATCH_SIZE = 32
     GRADIENT_ACCUMULATION = 1
     LEARNING_RATE = 2e-5
     NUM_EPOCHS = 3
-    
+
     if is_main_process:
         print(f"--> [Main Process] Loading dataset from {DATA_PATH}...")
-    
+
     try:
         dataset = load_from_disk(DATA_PATH, keep_in_memory=False)
         train_dataset = dataset["train"]
@@ -86,23 +86,19 @@ def main():
 
     if is_main_process:
         print("--> Initializing Model...")
-    
+
     encoder = PIIEncoder(MODEL_NAME)
     tokenizer = encoder.get_tokenizer()
     model = encoder.get_model(
-        num_labels=len(label2id),
-        id2label=id2label,
-        label2id=label2id,
-        dropout_rate=0.1
+        num_labels=len(label2id), id2label=id2label, label2id=label2id, dropout_rate=0.1
     )
 
     data_collator = DataCollatorForTokenClassification(
-        tokenizer=tokenizer,
-        pad_to_multiple_of=8
+        tokenizer=tokenizer, pad_to_multiple_of=8
     )
 
     metric = evaluate.load("seqeval")
-    
+
     def compute_metrics_wrapper(p):
         return compute_metrics_func(p, id2label, metric)
 
@@ -111,7 +107,6 @@ def main():
     training_args = TrainingArguments(
         output_dir=OUTPUT_DIR,
         learning_rate=LEARNING_RATE,
-        
         # Batching
         per_device_train_batch_size=BATCH_SIZE,
         per_device_eval_batch_size=24,
@@ -119,18 +114,15 @@ def main():
         dataloader_num_workers=4,
         dataloader_pin_memory=True,
         eval_accumulation_steps=1,
-        
         # Precision
         fp16=True,
         bf16=False,
-        
         # DDP & Checkpointing
         ddp_find_unused_parameters=False,
         gradient_checkpointing=True,
         gradient_checkpointing_kwargs={"use_reentrant": False},
         num_train_epochs=NUM_EPOCHS,
         group_by_length=True,
-        
         # Strat
         eval_strategy="steps",
         eval_steps=5000,
@@ -139,13 +131,11 @@ def main():
         load_best_model_at_end=True,
         metric_for_best_model="f1",
         greater_is_better=True,
-        
         # Log
         logging_dir=LOG_DIR,
         logging_steps=100,
         report_to="wandb",
         run_name=run_name,
-        
         # Cleaning
         save_total_limit=2,
     )
@@ -158,21 +148,25 @@ def main():
         processing_class=tokenizer,
         data_collator=data_collator,
         compute_metrics=compute_metrics_wrapper,
-        callbacks=[EarlyStoppingCallback(
-            early_stopping_patience=4, 
-            early_stopping_threshold=0.001
-        )]
+        callbacks=[
+            EarlyStoppingCallback(
+                early_stopping_patience=4, early_stopping_threshold=0.001
+            )
+        ],
     )
 
     if is_main_process:
-        print(f"--> Start training loop on {torch.cuda.device_count()} GPUs. (Run: {run_name})")
-        
+        print(
+            f"--> Start training loop on {torch.cuda.device_count()} GPUs. (Run: {run_name})"
+        )
+
     trainer.train()
-    
+
     if is_main_process:
         print("--> Saving final model...")
         trainer.save_model(os.path.join(OUTPUT_DIR, "final"))
         tokenizer.save_pretrained(os.path.join(OUTPUT_DIR, "final"))
+
 
 if __name__ == "__main__":
     main()

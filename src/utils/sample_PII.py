@@ -38,4 +38,5 @@ SAMPLE1 = """REPORT HEADER
    "I spoke to Mr. Sterling at 3:15 PM. He seemed agitated. He claimed he was 42 years old and had been a customer since 2015. He showed me his Passport P44992211 again, but the photo looked different. I asked him to verify his billing Zip Code, and he said 02108, which matches the Boston area, not his Springfield residence."
 
    CONCLUSION
-   Pending further review of Social Security Number 555-01-4433 and cross-reference with Driver's License S9988-7766-5544."""
+   Pending further review of Social Security Number 555-01-4433 and cross-reference with Driver's License S9988-7766-5544.
+"""
