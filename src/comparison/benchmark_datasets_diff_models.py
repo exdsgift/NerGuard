@@ -30,15 +30,11 @@ except ImportError:
     sys.path.append(os.path.dirname(os.path.abspath(__file__)))
     from src.pipeline.optimize_llmrouting import OptimizedLLMRouter
 
-from src.utils.visual import PlottingMixin
+from comparison.visual import PlottingMixin
 
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.StreamHandler(sys.stdout),
-        logging.FileHandler("evaluation_comparison.log", mode="w"),
-    ],
 )
 logger = logging.getLogger("HybridEval")
 

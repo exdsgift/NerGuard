@@ -11,6 +11,8 @@ import json
 from dataclasses import dataclass, asdict
 from typing import Tuple
 
+
+
 RANDOM_SEED = 42
 np.random.seed(RANDOM_SEED)
 torch.manual_seed(RANDOM_SEED)
@@ -24,13 +26,9 @@ SAMPLE_LIMIT = None
 LLM_COST_PER_TOKEN = 0.00002  # GPT-4 Turbo pricing $0.02/1K tokens
 ERROR_COST_PER_TOKEN = 0.001  # Cost violantion per token GDPR (example value)
 
-# F-beta: precision-recall tradeoff
 BETA_SCORE = 0.5
-
-# Grid search
 GRID_RESOLUTION = 30
 
-# Bootstrap parameters
 N_BOOTSTRAP = 1000
 CONFIDENCE_LEVEL = 0.95
 
@@ -49,10 +47,8 @@ class OptimizationResult:
     recall_ci: Tuple[float, float] = None
     f_score_ci: Tuple[float, float] = None
 
-
 def ensure_dir(path):
     os.makedirs(path, exist_ok=True)
-
 
 def set_style():
     sns.set_theme(style="whitegrid", context="paper")
@@ -70,7 +66,6 @@ def set_style():
             "figure.titlesize": 16,
         }
     )
-
 
 def collect_inference_stats_batched(model, dataset, device):
     all_entropies = []
@@ -119,7 +114,6 @@ def collect_inference_stats_batched(model, dataset, device):
 
     return np.array(all_entropies), np.array(all_confidences), np.array(all_is_error)
 
-
 def bootstrap_metric(trigger_mask, is_errors, metric_fn, n_bootstrap=N_BOOTSTRAP):
     metrics = []
     n_samples = len(is_errors)
@@ -140,7 +134,6 @@ def bootstrap_metric(trigger_mask, is_errors, metric_fn, n_bootstrap=N_BOOTSTRAP
 
     return ci_low, ci_high
 
-
 def calculate_expected_cost(intervention_rate, recall, n_errors, n_total):
     n_llm_calls = intervention_rate * n_total
     n_missed_errors = (1 - recall) * n_errors
@@ -149,7 +142,6 @@ def calculate_expected_cost(intervention_rate, recall, n_errors, n_total):
     error_cost = n_missed_errors * ERROR_COST_PER_TOKEN
 
     return llm_cost + error_cost
-
 
 def vectorized_grid_search(entropies, confidences, is_errors):
     """Grid search with vectorization for speed."""
@@ -225,7 +217,6 @@ def vectorized_grid_search(entropies, confidences, is_errors):
     results["baseline_cost"] = baseline_cost
     return ent_grid, conf_grid, results
 
-
 def plot_heatmap(ent_grid, conf_grid, matrix, best_idx, metric_name, filename):
     """Heatmap publication-quality."""
     plt.figure(figsize=(10, 8))
@@ -263,7 +254,6 @@ def plot_heatmap(ent_grid, conf_grid, matrix, best_idx, metric_name, filename):
     plt.savefig(filename, bbox_inches="tight", dpi=300)
     plt.close()
     print(f"   [PLOT] Saved: {filename}")
-
 
 def plot_pareto_frontier(results, ent_grid, conf_grid, output_path):
     plt.figure(figsize=(10, 7))
@@ -320,7 +310,6 @@ def plot_pareto_frontier(results, ent_grid, conf_grid, output_path):
     plt.savefig(output_path, bbox_inches="tight", dpi=300)
     plt.close()
     print(f"   [PLOT] Saved: {output_path}")
-
 
 def optimize():
     print(f"=" * 70)

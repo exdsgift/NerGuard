@@ -146,7 +146,6 @@ class LLMRouter:
         content = response.choices[0].message.content
         return json.loads(content)
 
-
 class PIITester:
     def __init__(self, model_path, label_path, llm_routing=True):
         self.device = DEVICE

@@ -12,6 +12,7 @@ from transformers import (
     DataCollatorForTokenClassification,
     EarlyStoppingCallback,
 )
+import logging
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../")))
 
@@ -19,6 +20,11 @@ from src.components.encoder import PIIEncoder
 
 warnings.filterwarnings("ignore")
 
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+)
+logger = logging.getLogger("ModelTraining")
 
 def compute_metrics_func(p, id2label, metric):
     predictions, labels = p
@@ -57,21 +63,21 @@ def main():
     OUTPUT_DIR = "./models/mdeberta-pii-safe"
     LOG_DIR = "./logs"
 
-    # Config for 2x RTX 6000
+    # Config 2x RTX 6000
     BATCH_SIZE = 32
     GRADIENT_ACCUMULATION = 1
     LEARNING_RATE = 2e-5
     NUM_EPOCHS = 3
 
     if is_main_process:
-        print(f"--> [Main Process] Loading dataset from {DATA_PATH}...")
+        logging.info(f"Loading dataset from {DATA_PATH}...")
 
     try:
         dataset = load_from_disk(DATA_PATH, keep_in_memory=False)
         train_dataset = dataset["train"]
         eval_dataset = dataset["validation"]
     except Exception as e:
-        print(f"Critico: Impossibile caricare il dataset. {e}")
+        logging.warning(f"Warning: not able to upload the full dataset {e}")
         return
 
     try:
@@ -81,11 +87,11 @@ def main():
             id2label = {int(k): v for k, v in json.load(f).items()}
     except Exception as e:
         if is_main_process:
-            print(f"Error loading json mappings: {e}")
+            logging.warning(f"Error loading json mappings: {e}")
         return
 
     if is_main_process:
-        print("--> Initializing Model...")
+        logging.info("--> Initializing Model...")
 
     encoder = PIIEncoder(MODEL_NAME)
     tokenizer = encoder.get_tokenizer()
@@ -103,6 +109,7 @@ def main():
         return compute_metrics_func(p, id2label, metric)
 
     run_name = f"mdeberta-2xRTX6000-fp16-bs{BATCH_SIZE}-ddp"
+    logging.info(f"Initialize WandB run with run_name: {run_name}")
 
     training_args = TrainingArguments(
         output_dir=OUTPUT_DIR,
@@ -156,14 +163,14 @@ def main():
     )
 
     if is_main_process:
-        print(
+        logging.info(
             f"--> Start training loop on {torch.cuda.device_count()} GPUs. (Run: {run_name})"
         )
 
     trainer.train()
 
     if is_main_process:
-        print("--> Saving final model...")
+        logging.info("--> Saving final model...")
         trainer.save_model(os.path.join(OUTPUT_DIR, "final"))
         tokenizer.save_pretrained(os.path.join(OUTPUT_DIR, "final"))
 

@@ -50,8 +50,7 @@ logging.basicConfig(
         logging.FileHandler("evaluation_comparison.log", mode="w"),
     ],
 )
-logger = logging.getLogger("HybridEval")
-
+logger = logging.getLogger("Visual")
 
 class PlottingMixin:
     """

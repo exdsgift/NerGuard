@@ -3,8 +3,14 @@ from transformers import AutoTokenizer, AutoModelForTokenClassification
 from datasets import load_from_disk
 from sklearn.metrics import classification_report
 from tqdm import tqdm
+import logging
 
-# --- CONFIGURAZIONE ---
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+)
+logger = logging.getLogger("ModelDiagnose")
+
 MODEL_PATH = "./models/mdeberta-pii-safe/final"
 DATA_PATH = "./data/processed/tokenized_data"
 BATCH_SIZE = 32
@@ -21,7 +27,7 @@ class Colors:
 
 
 def load_resources():
-    print(f"Uploading model from:  {MODEL_PATH}...")
+    logger.info(f"Uploading model from:  {MODEL_PATH}...")
     try:
         tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
         model = AutoModelForTokenClassification.from_pretrained(MODEL_PATH)
@@ -29,9 +35,8 @@ def load_resources():
         model.eval()
         return tokenizer, model
     except Exception as e:
-        print(f"{Colors.FAIL}Error while loading model: {e}{Colors.ENDC}")
+        logger.warning(f"{Colors.FAIL}Error while loading model: {e}{Colors.ENDC}")
         exit(1)
-
 
 def analyze_sentence(text, tokenizer, model):
     inputs = tokenizer(text, return_tensors="pt").to(DEVICE)
@@ -44,9 +49,9 @@ def analyze_sentence(text, tokenizer, model):
     preds = torch.argmax(probs, dim=-1)
     id2label = model.config.id2label
 
-    print(f"\n{Colors.HEADER}--- Sentence: '{text}' ---{Colors.ENDC}")
-    print(f"{'TOKEN':<15} | {'PRED':<20} | {'CONF %':<8} | {'2nd CHOICE (MARGIN)'}")
-    print("-" * 85)
+    logger.info(f"\n{Colors.HEADER}--- Sentence: '{text}' ---{Colors.ENDC}")
+    logger.info(f"{'TOKEN':<15} | {'PRED':<20} | {'CONF %':<8} | {'2nd CHOICE (MARGIN)'}")
+    logger.info("-" * 85)
 
     for i, token in enumerate(tokens):
         if token in tokenizer.all_special_tokens:
@@ -70,19 +75,18 @@ def analyze_sentence(text, tokenizer, model):
             color = Colors.WARNING
 
         display_token = token.replace(" ", " ")
-        print(
+        logger.info(
             f"{color}{display_token:<15} | {pred_label:<20} | {confidence:.1%}   | {alt_info}{Colors.ENDC}"
         )
 
-
 def generate_full_report(tokenizer, model):
-    print(f"\n{Colors.HEADER}--> Stats Validation Set{Colors.ENDC}")
+    logger.info(f"\n{Colors.HEADER}--> Stats Validation Set{Colors.ENDC}")
 
     try:
         dataset = load_from_disk(DATA_PATH)
         eval_data = dataset["validation"]
     except:
-        print("Dataset not found or could not be loaded.")
+        logger.warning("Dataset not found or could not be loaded.")
         return
 
     id2label = model.config.id2label
@@ -119,9 +123,9 @@ def generate_full_report(tokenizer, model):
                     true_labels.append(id2label[l])
                     pred_labels.append(id2label[p])
 
-    print("\n" + "=" * 60)
-    print(f"{Colors.BOLD} Class Stats {Colors.ENDC}")
-    print("=" * 60)
+    logger.info("\n" + "=" * 60)
+    logger.info(f"{Colors.BOLD} Class Stats {Colors.ENDC}")
+    logger.info("=" * 60)
 
     unique_labels = sorted(list(set(true_labels) | set(pred_labels)))
     print(
@@ -130,11 +134,10 @@ def generate_full_report(tokenizer, model):
         )
     )
 
-
 def main():
     tokenizer, model = load_resources()
 
-    print(f"\n{Colors.OKGREEN}- Sanity Check -{Colors.ENDC}")
+    logger.info(f"\n{Colors.OKGREEN}- Sanity Check -{Colors.ENDC}")
     generate_full_report(tokenizer, model)
 
 

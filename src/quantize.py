@@ -19,9 +19,8 @@ warnings.filterwarnings("ignore")
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("ModelQuant")
 
-# --- CONFIG ---
 DATA_PATH = "./data/processed/tokenized_data"
 INPUT_MODEL = "./models/mdeberta-pii-safe/final"
 OUTPUT_DIR = "./quantized_model"
@@ -41,6 +40,7 @@ def get_dir_size(path):
                     total_size += os.path.getsize(fp)
     return total_size / (1024 * 1024)
 
+# Plots
 
 def set_publication_style():
     """Sets modern, publication-ready plotting style."""
@@ -68,83 +68,6 @@ def set_publication_style():
             "axes.linewidth": 1.2,
         }
     )
-
-
-def evaluate_model_performance(
-    model, tokenizer, dataset, device="cpu", desc="Evaluating"
-):
-    """Computes Latency, F1-Score, Precision, and Recall."""
-    model.to(device) if hasattr(model, "to") else None
-    latencies = []
-    all_preds = []
-    all_labels = []
-
-    is_ort = isinstance(model, ORTModelForTokenClassification)
-
-    # Warmup
-    dummy_text = "Warmup routine for stable latency measurement."
-    if is_ort:
-        dummy_inputs = tokenizer(
-            dummy_text, return_tensors="np", padding=True, truncation=True
-        )
-        dummy_inputs = {k: v.astype(np.int64) for k, v in dummy_inputs.items()}
-        for _ in range(10):
-            _ = model(**dummy_inputs)
-    else:
-        dummy_inputs = tokenizer(
-            dummy_text, return_tensors="pt", padding=True, truncation=True
-        ).to(device)
-        for _ in range(10):
-            with torch.no_grad():
-                _ = model(**dummy_inputs)
-
-    logger.info(f"--- {desc} ---")
-
-    for sample in tqdm(dataset, desc=desc):
-        labels = sample["labels"]
-
-        if is_ort:
-            inputs = {
-                "input_ids": np.array([sample["input_ids"]], dtype=np.int64),
-                "attention_mask": np.array([sample["attention_mask"]], dtype=np.int64),
-            }
-            start_time = time.perf_counter()
-            outputs = model(**inputs)
-            end_time = time.perf_counter()
-            predictions = np.argmax(outputs.logits, axis=-1)[0]
-        else:
-            input_ids = torch.tensor([sample["input_ids"]], device=device)
-            attention_mask = torch.tensor([sample["attention_mask"]], device=device)
-            start_time = time.perf_counter()
-            with torch.no_grad():
-                outputs = model(input_ids, attention_mask=attention_mask)
-            end_time = time.perf_counter()
-            predictions = torch.argmax(outputs.logits, dim=-1)[0].cpu().numpy()
-
-        latencies.append((end_time - start_time) * 1000)
-
-        active_labels = [l for l in labels if l != -100]
-        active_preds = [p for p, l in zip(predictions, labels) if l != -100]
-
-        all_labels.extend(active_labels)
-        all_preds.extend(active_preds)
-
-    avg_latency = np.mean(latencies)
-    std_latency = np.std(latencies)
-    f1 = f1_score(all_labels, all_preds, average="weighted", zero_division=0)
-    precision = precision_score(
-        all_labels, all_preds, average="weighted", zero_division=0
-    )
-    recall = recall_score(all_labels, all_preds, average="weighted", zero_division=0)
-
-    return {
-        "latency": avg_latency,
-        "latency_std": std_latency,
-        "f1": f1,
-        "precision": precision,
-        "recall": recall,
-    }
-
 
 def plot_unified_metrics(metrics, output_dir):
     """Generates unified bar chart with all metrics in one figure."""
@@ -378,7 +301,6 @@ def plot_unified_metrics(metrics, output_dir):
     logger.info(f"  Unified metrics plot saved to {save_path}")
     plt.close()
 
-
 def plot_radar_comparison(metrics, output_dir):
     """Generates radar chart for overall comparison."""
     set_publication_style()
@@ -470,7 +392,6 @@ def plot_radar_comparison(metrics, output_dir):
     logger.info(f"  Overall comparison plot saved to {save_path}")
     plt.close()
 
-
 def save_detailed_report(metrics, output_dir):
     """Saves a simple statistical report with calculated metrics."""
     report_path = os.path.join(output_dir, "report.txt")
@@ -509,6 +430,82 @@ def save_detailed_report(metrics, output_dir):
     logger.info(f"  Report saved to {report_path}")
     return report_path
 
+# Main functions
+
+def evaluate_model_performance(
+    model, tokenizer, dataset, device="cpu", desc="Evaluating"
+):
+    """Computes Latency, F1-Score, Precision, and Recall."""
+    model.to(device) if hasattr(model, "to") else None
+    latencies = []
+    all_preds = []
+    all_labels = []
+
+    is_ort = isinstance(model, ORTModelForTokenClassification)
+
+    # Warmup
+    dummy_text = "Warmup routine for stable latency measurement."
+    if is_ort:
+        dummy_inputs = tokenizer(
+            dummy_text, return_tensors="np", padding=True, truncation=True
+        )
+        dummy_inputs = {k: v.astype(np.int64) for k, v in dummy_inputs.items()}
+        for _ in range(10):
+            _ = model(**dummy_inputs)
+    else:
+        dummy_inputs = tokenizer(
+            dummy_text, return_tensors="pt", padding=True, truncation=True
+        ).to(device)
+        for _ in range(10):
+            with torch.no_grad():
+                _ = model(**dummy_inputs)
+
+    logger.info(f"--- {desc} ---")
+
+    for sample in tqdm(dataset, desc=desc):
+        labels = sample["labels"]
+
+        if is_ort:
+            inputs = {
+                "input_ids": np.array([sample["input_ids"]], dtype=np.int64),
+                "attention_mask": np.array([sample["attention_mask"]], dtype=np.int64),
+            }
+            start_time = time.perf_counter()
+            outputs = model(**inputs)
+            end_time = time.perf_counter()
+            predictions = np.argmax(outputs.logits, axis=-1)[0]
+        else:
+            input_ids = torch.tensor([sample["input_ids"]], device=device)
+            attention_mask = torch.tensor([sample["attention_mask"]], device=device)
+            start_time = time.perf_counter()
+            with torch.no_grad():
+                outputs = model(input_ids, attention_mask=attention_mask)
+            end_time = time.perf_counter()
+            predictions = torch.argmax(outputs.logits, dim=-1)[0].cpu().numpy()
+
+        latencies.append((end_time - start_time) * 1000)
+
+        active_labels = [l for l in labels if l != -100]
+        active_preds = [p for p, l in zip(predictions, labels) if l != -100]
+
+        all_labels.extend(active_labels)
+        all_preds.extend(active_preds)
+
+    avg_latency = np.mean(latencies)
+    std_latency = np.std(latencies)
+    f1 = f1_score(all_labels, all_preds, average="weighted", zero_division=0)
+    precision = precision_score(
+        all_labels, all_preds, average="weighted", zero_division=0
+    )
+    recall = recall_score(all_labels, all_preds, average="weighted", zero_division=0)
+
+    return {
+        "latency": avg_latency,
+        "latency_std": std_latency,
+        "f1": f1,
+        "precision": precision,
+        "recall": recall,
+    }
 
 def quantize_and_evaluate(model_path, data_path, output_dir):
     """Pipeline: Export -> Optimize -> Quantize -> Evaluate"""
