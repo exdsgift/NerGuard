@@ -9,7 +9,7 @@ import os
 import time
 import numpy as np
 import matplotlib.pyplot as plt
-from typing import Dict, List, Tuple, Optional
+from typing import Dict, Tuple
 
 from src.visualization.style import set_publication_style
 

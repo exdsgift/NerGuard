@@ -10,7 +10,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import classification_report, confusion_matrix
-from typing import Dict, List, Optional
+from typing import Dict, List
 
 from src.visualization.style import set_publication_style, get_color_palette
 

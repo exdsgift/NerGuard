@@ -5,7 +5,7 @@ This module provides tools for debugging token-label alignment and model predict
 """
 
 import logging
-from typing import Dict, List, Optional, Tuple, Any
+from typing import Dict, List, Optional, Any
 
 import torch
 from transformers import PreTrainedTokenizer, PreTrainedModel

@@ -8,7 +8,7 @@ logging.basicConfig(
 logger = logging.getLogger("uploadHF")
 
 login(add_to_git_credential=True)
-repo_id = "exdsgift/NerGuard"
+repo_id = "exdsgift/NerGuard-0.3B-onnx-int8"
 try:
     create_repo(repo_id=repo_id, repo_type="model", exist_ok=True)
     logger.info(f"uploaded files in: {repo_id} ")
@@ -21,7 +21,9 @@ upload_folder(
     folder_path="models/quantized_model",
     repo_id=repo_id,
     repo_type="model",
-    commit_message="Upload mdeberta-pii-safe model"
+    commit_message="Upload NerGuard quantized ONNX int8 model",
+    ignore_patterns=["model.onnx", "report.txt"],
+    delete_patterns=["*"],
 )
 
 logger.info("- Model uploaded succesfully!")

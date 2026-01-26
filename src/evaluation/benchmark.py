@@ -14,14 +14,6 @@ import os
 import logging
 from dotenv import load_dotenv
 
-load_dotenv()
-logging.getLogger("transformers").setLevel(logging.ERROR)
-
-current_file = os.path.abspath(__file__)
-project_root = os.path.dirname(os.path.dirname(os.path.dirname(current_file)))
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from src.core.constants import (
     DEFAULT_MODEL_PATH,
     DEFAULT_DATA_PATH,
@@ -40,6 +32,14 @@ from src.visualization.benchmark_plots import (
 GLINER_AVAILABLE = False
 PRESIDIO_AVAILABLE = False
 SPACY_AVAILABLE = False
+
+load_dotenv()
+logging.getLogger("transformers").setLevel(logging.ERROR)
+
+current_file = os.path.abspath(__file__)
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(current_file)))
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
 
 try:
     from gliner import GLiNER

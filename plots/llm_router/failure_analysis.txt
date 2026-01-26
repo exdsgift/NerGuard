@@ -1,0 +1,79 @@
+================================================================================
+FAILURE ANALYSIS
+================================================================================
+
+Total harmful corrections analyzed: 100
+
+Failure Patterns:
+  Over-classification (O→PII): 28 (28.0%)
+  Under-classification (PII→O): 27 (27.0%)
+  Wrong entity type: 45
+
+Most Affected Classes:
+  O: 28
+  I-TELEPHONENUM: 27
+  I-EMAIL: 14
+  B-TELEPHONENUM: 12
+  I-GIVENNAME: 8
+
+Sample Harmful Cases:
+
+  Token: ' 707'
+  Ground Truth: B-TELEPHONENUM
+  Model Pred: B-TELEPHONENUM (correct: True)
+  LLM Correction: I-TELEPHONENUM
+  Reasoning: Token is part of a phone number, indicating a telephone number...
+
+  Token: 'e'
+  Ground Truth: I-SURNAME
+  Model Pred: I-SURNAME (correct: True)
+  LLM Correction: I-GIVENNAME
+  Reasoning: Part of the name 'Kyle Kyl' indicates a given name...
+
+  Token: '-2'
+  Ground Truth: O
+  Model Pred: O (correct: True)
+  LLM Correction: I-IDCARDNUM
+  Reasoning: Identifier format suggests it is an ID card number...
+
+  Token: '-'
+  Ground Truth: O
+  Model Pred: O (correct: True)
+  LLM Correction: I-DRIVERLICENSENUM
+  Reasoning: Identifier format suggests it is a driver license number...
+
+  Token: ' 501'
+  Ground Truth: B-TELEPHONENUM
+  Model Pred: B-TELEPHONENUM (correct: True)
+  LLM Correction: I-TELEPHONENUM
+  Reasoning: Part of a phone number, indicating a telephone number...
+
+  Token: '-'
+  Ground Truth: I-TELEPHONENUM
+  Model Pred: I-TELEPHONENUM (correct: True)
+  LLM Correction: I-SOCIALNUM
+  Reasoning: Continues phone number from previous I-SOCIALNUM...
+
+  Token: '-'
+  Ground Truth: I-TELEPHONENUM
+  Model Pred: I-TELEPHONENUM (correct: True)
+  LLM Correction: B-TELEPHONENUM
+  Reasoning: Phone number format indicates it is a telephone number...
+
+  Token: ' El'
+  Ground Truth: O
+  Model Pred: O (correct: True)
+  LLM Correction: B-CITY
+  Reasoning: Capitalized word represents a city name, indicating a location...
+
+  Token: 'doria'
+  Ground Truth: O
+  Model Pred: O (correct: True)
+  LLM Correction: B-CITY
+  Reasoning: Capitalized word represents a fictional city name...
+
+  Token: '-'
+  Ground Truth: I-TELEPHONENUM
+  Model Pred: I-TELEPHONENUM (correct: True)
+  LLM Correction: B-TELEPHONENUM
+  Reasoning: Phone number format indicates it is a telephone number...

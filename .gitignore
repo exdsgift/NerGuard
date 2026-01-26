@@ -213,3 +213,6 @@ models/
 
 # Large model files
 *.onnx
+
+.data/
+.notebooks/

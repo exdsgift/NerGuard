@@ -6,7 +6,7 @@ This module provides unified style settings for matplotlib and seaborn plots.
 
 import matplotlib.pyplot as plt
 import seaborn as sns
-from typing import Dict, List, Optional
+from typing import List
 
 
 # COLOR PALETTES

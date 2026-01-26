@@ -5,9 +5,6 @@ This script evaluates the model comparing baseline (DeBERTa only) vs hybrid
 (DeBERTa + LLM routing) performance.
 """
 
-from dotenv import load_dotenv
-load_dotenv()  # Load .env file for API keys
-
 import os
 from dataclasses import dataclass
 from typing import Dict, List, Tuple, Optional
@@ -36,6 +33,8 @@ from src.visualization.plots import (
     plot_entropy_separation,
     plot_model_comparison,
 )
+from dotenv import load_dotenv
+load_dotenv()
 
 logger = setup_logging("ModelValidation")
 

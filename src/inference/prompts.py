@@ -273,5 +273,42 @@ OUTPUT JSON:
 }}"""
 
 
+PROMPT_EXPERIMENTAL = """The model is UNCERTAIN about >>> <<< and likely made an error. Your job is to CORRECT it.
+
+CONTEXT: {context}
+PREVIOUS: {prev_label}
+
+The model triggered high uncertainty (entropy > 0.58, confidence < 0.79). This means:
+- The model couldn't decide between multiple labels
+- You should analyze the token carefully and make a definitive decision
+
+QUICK CHECK:
+1. Does it look like a name? → GIVENNAME/SURNAME/TITLE
+2. Numbers/IDs pattern? → CREDITCARDNUMBER/TELEPHONENUM/SOCIALNUM/etc.
+3. Address/location words? → STREET/CITY/BUILDINGNUM/ZIPCODE
+4. Date/time patterns? → DATE/TIME/AGE
+5. Previous is B-X/I-X and this continues? → I-X
+6. Clearly a common word (the, and, of)? → O
+
+{valid_labels_str}
+
+{{"label": "TAG"}}"""
+
+
 # Default prompt (V11: chain-of-thought reasoning for optimal performance)
 PROMPT = PROMPT_V11
+
+
+# Prompt registry for experiments
+PROMPTS = {
+    "V11": PROMPT_V11,
+    "V10": PROMPT_V10,
+    "V9": PROMPT_V9,
+    "V8": PROMPT_V8,
+    "V7": PROMPT_V7,
+    "V6": PROMPT_V6,
+    "V5": PROMPT_V5,
+    "V4": PROMPT_V4,
+    "V3": PROMPT_V3,
+    "V_EXP": PROMPT_EXPERIMENTAL,
+}
