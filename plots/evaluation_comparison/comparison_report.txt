@@ -41,44 +41,44 @@ I-CREDITCARDNUMBER       0.24      0.01      0.03       540
 HYBRID MODEL (DeBERTa + LLM Router)
 Logic: (Conf < 0.787) OR (Entropy > 0.583)
 LLM Calls: 835
-Helpful Corrections: 175
-Harmful Corrections: 58
-Net Improvement: 117
+Helpful Corrections: 143
+Harmful Corrections: 157
+Net Improvement: -14
 ================================================================================
                     precision    recall  f1-score   support
 
-             B-AGE       0.42      0.98      0.59        47
-            B-CITY       0.43      0.85      0.57       187
-B-CREDITCARDNUMBER       0.55      0.20      0.30        89
-            B-DATE       0.82      0.79      0.80       834
-           B-EMAIL       0.88      0.97      0.92       364
+             B-AGE       0.43      0.98      0.59        47
+            B-CITY       0.42      0.84      0.56       187
+B-CREDITCARDNUMBER       0.26      0.26      0.26        89
+            B-DATE       0.82      0.78      0.80       834
+           B-EMAIL       0.85      0.97      0.91       364
           B-GENDER       0.50      0.02      0.04        48
-       B-GIVENNAME       0.84      0.59      0.69       778
+       B-GIVENNAME       0.83      0.56      0.66       778
        B-SOCIALNUM       0.16      1.00      0.28        67
           B-STREET       0.04      0.04      0.04       198
-         B-SURNAME       0.93      0.54      0.69       523
-          B-TAXNUM       0.05      0.27      0.08        22
-    B-TELEPHONENUM       0.64      0.46      0.53       356
+         B-SURNAME       0.92      0.49      0.64       523
+          B-TAXNUM       0.04      0.23      0.07        22
+    B-TELEPHONENUM       0.63      0.49      0.55       356
             B-TIME       0.82      0.61      0.70       240
          B-ZIPCODE       0.31      0.90      0.46        99
              I-AGE       0.00      0.00      0.00         1
-            I-CITY       0.32      0.89      0.47       169
-I-CREDITCARDNUMBER       0.68      0.11      0.19       540
-            I-DATE       0.65      0.81      0.72      1339
+            I-CITY       0.31      0.87      0.46       169
+I-CREDITCARDNUMBER       0.58      0.06      0.11       540
+            I-DATE       0.65      0.80      0.72      1339
            I-EMAIL       0.86      0.98      0.92      2727
-          I-GENDER       0.67      0.50      0.57         4
-       I-GIVENNAME       0.63      0.42      0.50       564
-       I-SOCIALNUM       0.08      1.00      0.14       199
-          I-STREET       0.99      0.69      0.81       734
-         I-SURNAME       0.81      0.64      0.71       424
-          I-TAXNUM       0.05      0.28      0.08        60
-    I-TELEPHONENUM       0.65      0.64      0.65      1247
-            I-TIME       0.83      0.63      0.71       260
-         I-ZIPCODE       0.22      0.93      0.36        96
+          I-GENDER       1.00      0.50      0.67         4
+       I-GIVENNAME       0.62      0.39      0.48       564
+       I-SOCIALNUM       0.08      1.00      0.15       199
+          I-STREET       0.99      0.67      0.80       734
+         I-SURNAME       0.79      0.59      0.68       424
+          I-TAXNUM       0.04      0.25      0.07        60
+    I-TELEPHONENUM       0.66      0.66      0.66      1247
+            I-TIME       0.83      0.62      0.71       260
+         I-ZIPCODE       0.22      0.93      0.35        96
 
-         micro avg       0.57      0.71      0.63     12216
-         macro avg       0.53      0.60      0.48     12216
-      weighted avg       0.73      0.71      0.69     12216
+         micro avg       0.56      0.70      0.63     12216
+         macro avg       0.52      0.59      0.48     12216
+      weighted avg       0.72      0.70      0.68     12216
 
 
 ================================================================================
@@ -96,26 +96,26 @@ B-AGE:
 B-CITY:
   Total instances: 187
   Baseline accuracy: 85.0%
-  Hybrid accuracy: 85.0%
-  Improvement: +0.0%
+  Hybrid accuracy: 84.5%
+  Improvement: -0.5%
   LLM interventions: 4
-  Helped: 0, Hurt: 0
+  Helped: 0, Hurt: 1
 
 B-CREDITCARDNUMBER:
   Total instances: 89
   Baseline accuracy: 2.2%
-  Hybrid accuracy: 20.2%
-  Improvement: +18.0%
+  Hybrid accuracy: 25.8%
+  Improvement: +23.6%
   LLM interventions: 24
-  Helped: 18, Hurt: 2
+  Helped: 21, Hurt: 0
 
 B-DATE:
   Total instances: 834
   Baseline accuracy: 77.6%
-  Hybrid accuracy: 78.8%
-  Improvement: +1.2%
+  Hybrid accuracy: 77.7%
+  Improvement: +0.1%
   LLM interventions: 39
-  Helped: 14, Hurt: 4
+  Helped: 1, Hurt: 0
 
 B-EMAIL:
   Total instances: 364
@@ -131,15 +131,15 @@ B-GENDER:
   Hybrid accuracy: 2.1%
   Improvement: +0.0%
   LLM interventions: 5
-  Helped: 1, Hurt: 1
+  Helped: 0, Hurt: 0
 
 B-GIVENNAME:
   Total instances: 778
   Baseline accuracy: 58.2%
-  Hybrid accuracy: 58.7%
-  Improvement: +0.5%
+  Hybrid accuracy: 55.5%
+  Improvement: -2.7%
   LLM interventions: 53
-  Helped: 5, Hurt: 1
+  Helped: 2, Hurt: 23
 
 B-SOCIALNUM:
   Total instances: 67
@@ -160,26 +160,26 @@ B-STREET:
 B-SURNAME:
   Total instances: 523
   Baseline accuracy: 54.7%
-  Hybrid accuracy: 54.5%
-  Improvement: -0.2%
+  Hybrid accuracy: 48.9%
+  Improvement: -5.7%
   LLM interventions: 77
-  Helped: 12, Hurt: 13
+  Helped: 5, Hurt: 35
 
 B-TAXNUM:
   Total instances: 22
   Baseline accuracy: 27.3%
-  Hybrid accuracy: 27.3%
-  Improvement: +0.0%
+  Hybrid accuracy: 22.7%
+  Improvement: -4.5%
   LLM interventions: 2
-  Helped: 0, Hurt: 0
+  Helped: 0, Hurt: 1
 
 B-TELEPHONENUM:
   Total instances: 356
   Baseline accuracy: 45.2%
-  Hybrid accuracy: 45.8%
-  Improvement: +0.6%
+  Hybrid accuracy: 48.9%
+  Improvement: +3.7%
   LLM interventions: 69
-  Helped: 15, Hurt: 13
+  Helped: 22, Hurt: 9
 
 B-TIME:
   Total instances: 240
@@ -208,34 +208,34 @@ I-AGE:
 I-CITY:
   Total instances: 169
   Baseline accuracy: 88.8%
-  Hybrid accuracy: 88.8%
-  Improvement: +0.0%
+  Hybrid accuracy: 87.0%
+  Improvement: -1.8%
   LLM interventions: 4
-  Helped: 0, Hurt: 0
+  Helped: 0, Hurt: 3
 
 I-CREDITCARDNUMBER:
   Total instances: 540
   Baseline accuracy: 1.5%
-  Hybrid accuracy: 10.7%
-  Improvement: +9.3%
+  Hybrid accuracy: 6.3%
+  Improvement: +4.8%
   LLM interventions: 97
-  Helped: 50, Hurt: 0
+  Helped: 29, Hurt: 3
 
 I-DATE:
   Total instances: 1339
   Baseline accuracy: 80.4%
-  Hybrid accuracy: 80.7%
-  Improvement: +0.2%
+  Hybrid accuracy: 80.0%
+  Improvement: -0.4%
   LLM interventions: 52
-  Helped: 5, Hurt: 2
+  Helped: 0, Hurt: 6
 
 I-EMAIL:
   Total instances: 2727
   Baseline accuracy: 98.5%
-  Hybrid accuracy: 98.4%
-  Improvement: -0.0%
+  Hybrid accuracy: 98.1%
+  Improvement: -0.4%
   LLM interventions: 15
-  Helped: 0, Hurt: 1
+  Helped: 0, Hurt: 11
 
 I-GENDER:
   Total instances: 4
@@ -248,10 +248,10 @@ I-GENDER:
 I-GIVENNAME:
   Total instances: 564
   Baseline accuracy: 41.1%
-  Hybrid accuracy: 41.7%
-  Improvement: +0.5%
+  Hybrid accuracy: 38.8%
+  Improvement: -2.3%
   LLM interventions: 66
-  Helped: 7, Hurt: 4
+  Helped: 1, Hurt: 14
 
 I-SOCIALNUM:
   Total instances: 199
@@ -264,42 +264,42 @@ I-SOCIALNUM:
 I-STREET:
   Total instances: 734
   Baseline accuracy: 68.1%
-  Hybrid accuracy: 69.2%
-  Improvement: +1.1%
+  Hybrid accuracy: 67.3%
+  Improvement: -0.8%
   LLM interventions: 32
-  Helped: 10, Hurt: 2
+  Helped: 2, Hurt: 8
 
 I-SURNAME:
   Total instances: 424
   Baseline accuracy: 64.6%
-  Hybrid accuracy: 63.7%
-  Improvement: -0.9%
+  Hybrid accuracy: 59.0%
+  Improvement: -5.7%
   LLM interventions: 53
-  Helped: 3, Hurt: 7
+  Helped: 0, Hurt: 24
 
 I-TAXNUM:
   Total instances: 60
   Baseline accuracy: 28.3%
-  Hybrid accuracy: 28.3%
-  Improvement: +0.0%
+  Hybrid accuracy: 25.0%
+  Improvement: -3.3%
   LLM interventions: 2
-  Helped: 0, Hurt: 0
+  Helped: 0, Hurt: 2
 
 I-TELEPHONENUM:
   Total instances: 1247
   Baseline accuracy: 61.7%
-  Hybrid accuracy: 64.4%
-  Improvement: +2.6%
+  Hybrid accuracy: 65.8%
+  Improvement: +4.0%
   LLM interventions: 214
-  Helped: 34, Hurt: 1
+  Helped: 59, Hurt: 9
 
 I-TIME:
   Total instances: 260
   Baseline accuracy: 62.7%
-  Hybrid accuracy: 62.7%
-  Improvement: +0.0%
+  Hybrid accuracy: 62.3%
+  Improvement: -0.4%
   LLM interventions: 8
-  Helped: 1, Hurt: 1
+  Helped: 1, Hurt: 2
 
 I-ZIPCODE:
   Total instances: 96

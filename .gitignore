@@ -209,3 +209,10 @@ __marimo__/
 data/
 *.venv/
 models/
+.claude/
+
+# Large model files
+*.onnx
+
+.data/
+.notebooks/

@@ -1,0 +1,5 @@
+warning: `VIRTUAL_ENV=/home/gabriele/Intella-dev/intella_test/.venv` does not match the project environment path `.venv` and will be ignored; use `--active` to target the active environment instead
+Traceback (most recent call last):
+  File "/home/gabriele/Github/NerGuard/src/evaluation/hybrid_evaluator.py", line 19, in <module>
+    from src.inference.llm_router import LLMRouter
+ModuleNotFoundError: No module named 'src'
