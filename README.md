@@ -1,13 +1,11 @@
-<h1 align="center">NerGuard</h1>
-
-<p align="center">
-  <strong>Hybrid PII Detection with Entropy-Based LLM Routing</strong>
-</p>
-
-<p align="center">
-  <em>Master's Thesis in Data Science</em><br/>
-  University of Verona, Department of Computer Science
-</p>
+<div align="center">
+  <h1>NerGuard</h1>
+  <p>
+    <strong>Hybrid PII Detection with Entropy-Based LLM Routing</strong><br>
+    <em>Master's Thesis in Data Science</em><br>
+    University of Verona, Department of Computer Science
+  </p>
+</div>
 
 <p align="center">
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=flat&logo=python&logoColor=white" alt="Python"></a>
@@ -17,11 +15,10 @@
   <a href="https://openai.com/"><img src="https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white" alt="OpenAI"></a>
 </p>
 
----
-
-## Overview
-
 **NerGuard** is a PII (Personally Identifiable Information) detection system combining transformer-based NER with selective LLM routing. The system uses entropy-based uncertainty quantification to identify when local predictions are unreliable, routing only those cases to an LLM for disambiguation.
+
+- Download the main model from HF: [exdsgift/NerGuard-0.3B](https://huggingface.co/exdsgift/NerGuard-0.3B)
+- Download the quantized model from HF: [exdsgift/NerGuard-0.3B-onnx-int8](https://huggingface.co/exdsgift/NerGuard-0.3B-onnx-int8)
 
 ### Key Contributions
 
@@ -30,7 +27,6 @@
 - **Production-Ready**: Sliding window processing, caching, and comprehensive validation
 - **Benchmarking Suite**: Comparison against Presidio, GLiNER, and SpaCy
 
----
 
 ## Quick Start
 
@@ -91,9 +87,9 @@ print(redacted)
 ## Architecture
 
 ```
-Input Text
-    │
-    ▼
+    Input Text
+         │
+         ▼
 ┌─────────────────┐
 │   Tokenizer     │  mDeBERTa-v3 tokenizer
 └────────┬────────┘
@@ -317,10 +313,10 @@ python -m src.evaluation.hybrid_evaluator
 ## Citation
 
 ```bibtex
-@mastersthesis{nerguard2025,
+@mastersthesis{nerguard2026,
   title     = {NerGuard: Hybrid PII Detection with Entropy-Based LLM Routing},
-  author    = {[Author Name]},
-  year      = {2025},
+  author    = {[Gabriele Durante]},
+  year      = {2026},
   school    = {University of Verona},
   type      = {Master's Thesis},
   department = {Department of Computer Science}
