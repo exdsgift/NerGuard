@@ -209,6 +209,10 @@ __marimo__/
 data/
 *.venv/
 models/
-plots/quantization_plots/model_quantized.onnx
-plots/quantization_plots/model.onnx
+.claude/
+
+# Large model files
+*.onnx
+
+.data/
 notebooks/
