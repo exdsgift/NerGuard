@@ -1,0 +1,89 @@
+================================================================================
+LLM ROUTER EXPERIMENT REPORT
+================================================================================
+
+Samples tested: 100
+Entropy threshold: 0.583
+Confidence threshold: 0.787
+
+================================================================================
+PHASE 1: MODEL COMPARISON (V11 Prompt)
+================================================================================
+
+gpt-4o:
+  LLM Calls: 341
+  Helpful: 80
+  Harmful: 13
+  Net Improvement: 67
+  Correction Accuracy: 86.02%
+  Harm Rate: 3.81%
+  Avg Latency: 1163.8ms
+  Est. Cost: $0.6394
+
+gpt-4-turbo:
+  LLM Calls: 341
+  Helpful: 44
+  Harmful: 8
+  Net Improvement: 36
+  Correction Accuracy: 84.62%
+  Harm Rate: 2.35%
+  Avg Latency: 1606.1ms
+  Est. Cost: $1.2788
+
+gpt-4o-mini:
+  LLM Calls: 341
+  Helpful: 35
+  Harmful: 9
+  Net Improvement: 26
+  Correction Accuracy: 79.55%
+  Harm Rate: 2.64%
+  Avg Latency: 1204.2ms
+  Est. Cost: $0.0256
+
+gpt-3.5-turbo:
+  LLM Calls: 341
+  Helpful: 23
+  Harmful: 28
+  Net Improvement: -5
+  Correction Accuracy: 45.10%
+  Harm Rate: 8.21%
+  Avg Latency: 816.0ms
+  Est. Cost: $0.0853
+
+>>> BEST MODEL: gpt-4o
+
+================================================================================
+PHASE 2: PROMPT COMPARISON (gpt-4o)
+================================================================================
+
+V9:
+  LLM Calls: 341
+  Helpful: 82
+  Harmful: 12
+  Net Improvement: 70
+  Correction Accuracy: 87.23%
+  Harm Rate: 3.52%
+
+V11:
+  LLM Calls: 341
+  Helpful: 80
+  Harmful: 13
+  Net Improvement: 67
+  Correction Accuracy: 86.02%
+  Harm Rate: 3.81%
+
+V_EXP:
+  LLM Calls: 341
+  Helpful: 80
+  Harmful: 13
+  Net Improvement: 67
+  Correction Accuracy: 86.02%
+  Harm Rate: 3.81%
+
+>>> BEST PROMPT: V9
+
+================================================================================
+RECOMMENDATIONS
+================================================================================
+
+Optimal Configuration: gpt-4o + V9

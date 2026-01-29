@@ -24,7 +24,7 @@ MODEL_PATH = DEFAULT_MODEL_PATH
 DATA_PATH = DEFAULT_DATA_PATH
 OUTPUT_DIR = "./plots/optimization_plots"
 BATCH_SIZE = 32
-SAMPLE_LIMIT = 1000
+SAMPLE_LIMIT = None  # Use all samples for accurate thresholds
 
 LLM_COST_PER_TOKEN = 0.00002  # GPT-4 Turbo pricing $0.02/1K tokens
 ERROR_COST_PER_TOKEN = 0.001  # Cost violantion per token GDPR (example value)

@@ -1,0 +1,44 @@
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontSize': '12px', 'fontFamily': 'Arial'}}}%%
+sequenceDiagram
+    participant Token as Token (t, ŷ)
+    participant Ent as Entropy Check
+    participant Conf as Confidence Check
+    participant Type as Entity Filter
+    participant LLM as LLM Query
+    participant Cache as Cache
+    participant Out as Output
+
+    Token->>Ent: H(t)
+
+    alt H ≤ 0.583
+        Ent-->>Out: keep ŷ_model
+    else H > 0.583
+        Ent->>Conf: check confidence
+
+        alt c ≥ 0.787
+            Conf-->>Out: keep ŷ_model
+        else c < 0.787
+            Conf->>Type: check entity type
+
+            Note over Type: ROUTABLE:<br/>CREDITCARD, TELEPHONE<br/>SOCIALNUM, EMAIL, DATE
+
+            Note over Type: BLOCKED:<br/>GIVENNAME, SURNAME<br/>TITLE, CITY, STREET
+
+            alt I- continuation token
+                Type-->>Out: keep ŷ_model
+            else BLOCKED entity
+                Type-->>Out: keep ŷ_model
+            else ROUTABLE entity
+                Type->>Cache: lookup context
+                Cache-->>LLM: context window
+
+                LLM->>LLM: generate ŷ_llm
+
+                alt BIO sequence valid
+                    LLM->>Out: use ŷ_llm
+                else BIO invalid
+                    LLM-->>Out: keep ŷ_model
+                end
+            end
+        end
+    end

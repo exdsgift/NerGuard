@@ -1,0 +1,25 @@
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontSize': '11px'}}}%%
+flowchart TB
+    subgraph Logits["Model Output"]
+        A["logits z ∈ ℝ^41"]
+    end
+
+    subgraph Softmax["Probability"]
+        B["p = softmax(z)"]
+    end
+
+    subgraph Uncertainty["Uncertainty Measures"]
+        C["H = -Σ p log p"]
+        D["c = max(p)"]
+    end
+
+    subgraph Thresholds["Optimal Thresholds"]
+        E["θ_H = 0.583"]
+        F["θ_c = 0.787"]
+    end
+
+    A --> B
+    B --> C
+    B --> D
+    C --> E
+    D --> F

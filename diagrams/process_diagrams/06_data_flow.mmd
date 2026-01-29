@@ -1,0 +1,153 @@
+---
+title: NerGuard Data Flow Pipeline (End-to-End)
+---
+flowchart TB
+    subgraph RawInput["Raw Input"]
+        RawText["<b>Raw Text Input</b><br/>─────────────────<br/>'Dear John Smith,<br/>please call 555-123-4567<br/>regarding your account<br/>4111-1111-1111-1111<br/>Thank you!'"]
+    end
+
+    subgraph Tokenization["Stage 1: Tokenization"]
+        direction TB
+
+        Tokenizer["<b>AutoTokenizer (mDeBERTa)</b><br/>─────────────────<br/>tokenize(text,<br/>  return_offsets_mapping=True,<br/>  add_special_tokens=False)"]
+
+        TokenOutput["<b>Tokenization Output</b><br/>─────────────────<br/>input_ids: [7954, 1287, 3319, ...]<br/>tokens: ['Dear', 'John', 'Smith', ',', ...]<br/>offsets: [(0,4), (5,9), (10,15), (15,16), ...]<br/>─────────────────<br/>Total: N tokens"]
+    end
+
+    subgraph WindowCheck["Stage 2: Document Length Check"]
+        LengthCheck{"len(tokens) ><br/>MAX_CONTEXT_LENGTH - 2?<br/>(512 - 2 = 510)"}
+
+        SingleChunkPath["<b>Single Chunk Path</b><br/>─────────────────<br/>Process all tokens<br/>in one forward pass"]
+
+        MultiChunkPath["<b>Sliding Window Path</b><br/>─────────────────<br/>STRIDE = 382 tokens<br/>OVERLAP = 128 tokens<br/>─────────────────<br/>Chunk 0: tokens[0:510]<br/>Chunk 1: tokens[382:892]<br/>Chunk 2: tokens[764:1274]<br/>..."]
+
+        OverlapHandling["<b>Overlap Deduplication</b><br/>─────────────────<br/>For overlapping regions:<br/>Keep prediction with<br/>highest confidence"]
+    end
+
+    subgraph ModelInference["Stage 3: Model Inference"]
+        direction TB
+
+        AddSpecialTokens["<b>Add Special Tokens</b><br/>─────────────────<br/>[CLS] + input_ids + [SEP]<br/>Length: N + 2"]
+
+        CreateTensor["<b>Create Tensors</b><br/>─────────────────<br/>input_ids: torch.tensor<br/>attention_mask: torch.ones<br/>device: cuda / cpu"]
+
+        ForwardPass["<b>DeBERTa Forward Pass</b><br/>─────────────────<br/>model(input_ids, attention_mask)<br/>─────────────────<br/>Output: logits<br/>Shape: (1, seq_len, 43)"]
+
+        RemoveSpecial["<b>Remove Special Token Predictions</b><br/>─────────────────<br/>logits = logits[:, 1:-1, :]<br/>Shape: (1, N, 43)"]
+    end
+
+    subgraph UncertaintyCalc["Stage 4: Uncertainty Computation"]
+        direction TB
+
+        SoftmaxCalc["<b>Softmax Probabilities</b><br/>─────────────────<br/>probs = F.softmax(logits, dim=-1)<br/>Shape: (N, 43)<br/>Sum across classes = 1.0"]
+
+        EntropyCalc["<b>Shannon Entropy</b><br/>─────────────────<br/>H = -Σ(p × log(p))<br/>─────────────────<br/>High H: Multiple classes likely<br/>Low H: Single class dominant<br/>─────────────────<br/>Range: [0, log(43)] ≈ [0, 3.76]"]
+
+        ConfidenceCalc["<b>Confidence Score</b><br/>─────────────────<br/>confidence = max(probs, dim=-1)<br/>─────────────────<br/>High: Model is certain<br/>Low: Model is uncertain<br/>─────────────────<br/>Range: [1/43, 1.0] ≈ [0.023, 1.0]"]
+
+        PredictionCalc["<b>Argmax Predictions</b><br/>─────────────────<br/>pred_ids = argmax(probs, dim=-1)<br/>─────────────────<br/>Output: [12, 14, 0, 28, 0, ...]<br/>Maps to labels via id2label"]
+    end
+
+    subgraph PerTokenLoop["Stage 5: Per-Token Processing"]
+        direction TB
+
+        GetModelPred["<b>Get Model Prediction</b><br/>─────────────────<br/>pred_label = id2label[pred_id]<br/>e.g., 12 → 'B-GIVENNAME'"]
+
+        RouteDecision{"<b>Should Route to LLM?</b><br/>─────────────────<br/>entropy > 0.583?<br/>confidence < 0.787?<br/>Entity in ROUTABLE?<br/>NOT I- token?"}
+
+        KeepModelPred["<b>Keep Model Prediction</b><br/>─────────────────<br/>final_label = pred_label<br/>source = 'Model'"]
+
+        LLMDisambig["<b>LLM Disambiguation</b><br/>─────────────────<br/>1. Extract context (±400 chars)<br/>2. Check cache (MD5 key)<br/>3. Call LLM if cache miss<br/>4. Validate BIO rules<br/>5. Cache valid result"]
+
+        UseLLMResult["<b>Use LLM Correction</b><br/>─────────────────<br/>final_label = corrected_label<br/>source = 'LLM (openai)'"]
+
+        StoreResult["<b>Store Token Result</b><br/>─────────────────<br/>{<br/>  token: 'John',<br/>  label: 'B-GIVENNAME',<br/>  confidence: 0.92,<br/>  entropy: 0.34,<br/>  source: 'Model',<br/>  char_start: 5,<br/>  char_end: 9<br/>}"]
+
+        UpdatePrevLabel["<b>Update Previous Label</b><br/>─────────────────<br/>prev_label = final_label<br/>(for BIO consistency)"]
+    end
+
+    subgraph Aggregation["Stage 6: Result Aggregation"]
+        direction TB
+
+        TokenResults["<b>Token Results List</b><br/>─────────────────<br/>results: List[TokenResult]<br/>─────────────────<br/>[<br/>  {token: 'Dear', label: 'O', ...},<br/>  {token: 'John', label: 'B-GIVENNAME', ...},<br/>  {token: 'Smith', label: 'I-GIVENNAME', ...},<br/>  ...<br/>]"]
+    end
+
+    subgraph BIODecoding["Stage 7: BIO Entity Extraction"]
+        direction TB
+
+        DecodeLogic["<b>BIO Decoding Logic</b><br/>─────────────────<br/>B-X: Start new entity of type X<br/>I-X: Continue current entity<br/>O: End current entity (if any)<br/>─────────────────<br/>Consecutive B-X, I-X, I-X<br/>→ Single entity span"]
+
+        EntitySpans["<b>Entity Spans</b><br/>─────────────────<br/>[<br/>  {text: 'John Smith',<br/>   label: 'GIVENNAME',<br/>   start: 5, end: 15,<br/>   confidence: 0.89},<br/>  {text: '555-123-4567',<br/>   label: 'TELEPHONENUM',<br/>   start: 29, end: 41,<br/>   confidence: 0.76},<br/>  {text: '4111-1111-1111-1111',<br/>   label: 'CREDITCARDNUMBER',<br/>   start: 63, end: 82,<br/>   confidence: 0.94}<br/>]"]
+    end
+
+    subgraph FinalOutput["Stage 8: Output Methods"]
+        direction LR
+
+        AnalyzeText["<b>analyze_text()</b><br/>─────────────────<br/>Returns: List[TokenResult]<br/>Per-token predictions<br/>with uncertainty scores"]
+
+        GetEntities["<b>get_entities()</b><br/>─────────────────<br/>Returns: List[Entity]<br/>Aggregated entity spans<br/>with character offsets"]
+
+        RedactText["<b>redact_text()</b><br/>─────────────────<br/>Returns: str<br/>─────────────────<br/>'Dear ████████████,<br/>please call ████████████<br/>regarding your account<br/>███████████████████<br/>Thank you!'"]
+    end
+
+    %% Flow connections
+    RawText --> Tokenizer
+    Tokenizer --> TokenOutput
+    TokenOutput --> LengthCheck
+
+    LengthCheck -->|"≤510 tokens"| SingleChunkPath
+    LengthCheck -->|">510 tokens"| MultiChunkPath
+    MultiChunkPath --> OverlapHandling
+
+    SingleChunkPath --> AddSpecialTokens
+    OverlapHandling --> AddSpecialTokens
+
+    AddSpecialTokens --> CreateTensor
+    CreateTensor --> ForwardPass
+    ForwardPass --> RemoveSpecial
+
+    RemoveSpecial --> SoftmaxCalc
+    SoftmaxCalc --> EntropyCalc
+    SoftmaxCalc --> ConfidenceCalc
+    SoftmaxCalc --> PredictionCalc
+
+    PredictionCalc --> GetModelPred
+    EntropyCalc --> RouteDecision
+    ConfidenceCalc --> RouteDecision
+    GetModelPred --> RouteDecision
+
+    RouteDecision -->|"No"| KeepModelPred
+    RouteDecision -->|"Yes"| LLMDisambig
+    LLMDisambig --> UseLLMResult
+
+    KeepModelPred --> StoreResult
+    UseLLMResult --> StoreResult
+    StoreResult --> UpdatePrevLabel
+    UpdatePrevLabel -->|"Next token"| GetModelPred
+
+    StoreResult --> TokenResults
+    TokenResults --> DecodeLogic
+    DecodeLogic --> EntitySpans
+
+    TokenResults --> AnalyzeText
+    EntitySpans --> GetEntities
+    EntitySpans --> RedactText
+
+    %% Styling
+    classDef inputClass fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
+    classDef tokenClass fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef windowClass fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef inferenceClass fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef uncertaintyClass fill:#fff8e1,stroke:#f57f17,stroke-width:2px
+    classDef routingClass fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+    classDef outputClass fill:#e0f2f1,stroke:#00695c,stroke-width:2px
+    classDef decisionClass fill:#fafafa,stroke:#424242,stroke-width:2px
+
+    class RawText inputClass
+    class Tokenizer,TokenOutput tokenClass
+    class LengthCheck,SingleChunkPath,MultiChunkPath,OverlapHandling windowClass
+    class AddSpecialTokens,CreateTensor,ForwardPass,RemoveSpecial inferenceClass
+    class SoftmaxCalc,EntropyCalc,ConfidenceCalc,PredictionCalc uncertaintyClass
+    class GetModelPred,KeepModelPred,LLMDisambig,UseLLMResult,StoreResult,UpdatePrevLabel routingClass
+    class TokenResults,DecodeLogic,EntitySpans,AnalyzeText,GetEntities,RedactText outputClass
+    class RouteDecision decisionClass

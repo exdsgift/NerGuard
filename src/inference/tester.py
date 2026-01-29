@@ -231,8 +231,18 @@ class PIITester:
                 prev_label = results[global_idx - 1]["label"]
 
             # LLM routing if enabled and uncertain
+            # Uses selective entity routing: only route entities where LLM helps
             if self.llm_routing and self.router:
-                if ent > self.entropy_threshold and conf < self.confidence_threshold:
+                should_route = LLMRouter.should_route(
+                    current_pred=model_label,
+                    entropy=ent,
+                    confidence=conf,
+                    entropy_threshold=self.entropy_threshold,
+                    confidence_threshold=self.confidence_threshold,
+                    use_selective_routing=True,
+                )
+
+                if should_route:
                     source = f"LLM ({self.router.source})"
 
                     llm_result = self.router.disambiguate(

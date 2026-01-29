@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import confusion_matrix
 
-from src.visualization.style import COLORS, style_axis
+from src.visualization.style import COLORS, style_axis, set_publication_style
 
 logger = logging.getLogger(__name__)
 
@@ -71,6 +71,7 @@ def plot_confusion_matrix(
         plot_h = min(max(10, n_labels * 0.5), 25)
         figsize = (plot_w, plot_h)
 
+    set_publication_style()
     fig, ax = plt.subplots(figsize=figsize)
 
     # Create heatmap
@@ -125,6 +126,7 @@ def plot_entropy_separation(
     correct_entropies = np.array(correct_entropies)
     incorrect_entropies = np.array(incorrect_entropies)
 
+    set_publication_style()
     fig, ax = plt.subplots(figsize=figsize)
 
     # KDE plots
@@ -202,6 +204,7 @@ def plot_model_comparison(
     if figsize is None:
         figsize = (max(12, len(labels) * 0.4), 6)
 
+    set_publication_style()
     fig, ax = plt.subplots(figsize=figsize)
 
     x = np.arange(len(labels))
@@ -264,6 +267,7 @@ def plot_metrics_radar(
     angles = np.linspace(0, 2 * np.pi, n_metrics, endpoint=False).tolist()
     angles += angles[:1]  # Complete the loop
 
+    set_publication_style()
     fig, ax = plt.subplots(figsize=figsize, subplot_kw=dict(polar=True))
 
     colors = [COLORS["baseline"], COLORS["hybrid"], COLORS["accent_1"], COLORS["accent_2"]]
@@ -308,6 +312,7 @@ def plot_improvement_bars(
     Returns:
         Matplotlib figure object
     """
+    set_publication_style()
     fig, ax = plt.subplots(figsize=figsize)
 
     x = np.arange(len(labels))

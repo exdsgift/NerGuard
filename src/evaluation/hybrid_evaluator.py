@@ -17,6 +17,7 @@ from collections import defaultdict
 
 
 from src.inference.llm_router import LLMRouter
+from src.inference.entity_router import EntitySpecificRouter
 from src.visualization.plotting_mixin import PlottingMixin
 from src.visualization.style import set_publication_style
 from src.core.constants import (
@@ -44,6 +45,8 @@ class EvalConfig:
     context_length: int = 512
     THRESHOLD_ENTROPY: float = DEFAULT_ENTROPY_THRESHOLD
     THRESHOLD_CONF: float = DEFAULT_CONFIDENCE_THRESHOLD
+    use_selective_routing: bool = True  # Enable entity-specific routing
+    block_continuation_tokens: bool = True  # Block I- tokens (LLM harms them)
 
 
 @dataclass
@@ -78,6 +81,16 @@ class HybridEvaluator(PlottingMixin):
         self.config = config
         self.llm_router = llm_router
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+        # Initialize entity-specific router
+        self.entity_router = EntitySpecificRouter(
+            entropy_threshold=config.THRESHOLD_ENTROPY,
+            confidence_threshold=config.THRESHOLD_CONF,
+            enable_selective=config.use_selective_routing,
+            block_continuation_tokens=config.block_continuation_tokens,
+        )
+        logger.info(f"Entity router: {self.entity_router}")
+
         self._init_resources()
         self._setup_plotting()
         os.makedirs(config.output_dir, exist_ok=True)
@@ -219,11 +232,14 @@ class HybridEvaluator(PlottingMixin):
                     res.confidence_scores.append(float(conf))
                     res.entropy_scores.append(float(ent))
 
-                    is_uncertain = (conf < self.config.THRESHOLD_CONF) and (
-                        ent > self.config.THRESHOLD_ENTROPY
+                    # Use entity-specific routing decision
+                    should_route = self.entity_router.should_route(
+                        predicted_label=pred_label,
+                        entropy=float(ent),
+                        confidence=float(conf),
                     )
 
-                    if is_uncertain and pred_label != "O" and true_label != "O":
+                    if should_route and pred_label != "O" and true_label != "O":
                         start_char, end_char = offsets[idx]
                         if start_char == end_char:
                             continue
@@ -321,9 +337,21 @@ class HybridEvaluator(PlottingMixin):
         report_lines.append("\n" + "=" * 80)
         report_lines.append(f"HYBRID MODEL (DeBERTa + LLM Router)")
         report_lines.append(
-            f"Logic: (Conf < {self.config.THRESHOLD_CONF}) OR (Entropy > {self.config.THRESHOLD_ENTROPY})"
+            f"Thresholds: Conf < {self.config.THRESHOLD_CONF}, Entropy > {self.config.THRESHOLD_ENTROPY}"
         )
-        report_lines.append(f"LLM Calls: {res.llm_calls}")
+        report_lines.append(f"Selective Routing: {self.config.use_selective_routing}")
+
+        # Entity router stats
+        router_stats = self.entity_router.get_stats()
+        report_lines.append(f"Tokens Checked: {router_stats['total_checked']}")
+        report_lines.append(f"Routed to LLM: {router_stats['routed']} ({router_stats['routing_rate']})")
+        report_lines.append(f"Blocked by Entity Type: {router_stats['blocked_by_entity']}")
+        report_lines.append(f"Blocked by I- Continuation: {router_stats.get('blocked_by_continuation', 0)}")
+        report_lines.append(f"Blocked by Threshold: {router_stats['blocked_by_threshold']}")
+        if router_stats['routed_by_entity']:
+            report_lines.append(f"Routed by Entity: {router_stats['routed_by_entity']}")
+
+        report_lines.append(f"\nLLM Calls: {res.llm_calls}")
         report_lines.append(f"Helpful Corrections: {res.llm_corrections}")
         report_lines.append(f"Harmful Corrections: {res.llm_wrong_corrections}")
         report_lines.append(
@@ -378,18 +406,57 @@ class HybridEvaluator(PlottingMixin):
 
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Hybrid NerGuard Evaluation")
+    parser.add_argument(
+        "--selective-routing",
+        action="store_true",
+        default=True,
+        help="Enable entity-specific selective routing (default: True)",
+    )
+    parser.add_argument(
+        "--no-selective-routing",
+        action="store_true",
+        help="Disable selective routing (route all uncertain predictions)",
+    )
+    parser.add_argument(
+        "--allow-continuation-tokens",
+        action="store_true",
+        help="Allow I- continuation tokens to be routed (default: blocked due to LLM harm)",
+    )
+    parser.add_argument(
+        "--max-samples",
+        type=int,
+        default=1000,
+        help="Maximum samples to evaluate",
+    )
+    parser.add_argument(
+        "--output-dir",
+        default="./plots/evaluation_comparison",
+        help="Output directory",
+    )
+    args = parser.parse_args()
+
     logging.basicConfig(level=logging.INFO)
     logging.getLogger("httpx").setLevel(logging.WARNING)
 
     from dotenv import load_dotenv
-
     load_dotenv()
+
+    use_selective = not args.no_selective_routing
+    block_continuation = not args.allow_continuation_tokens
 
     config = EvalConfig(
         model_path="./models/mdeberta-pii-safe/final",
-        output_dir="./evaluation_comparison",
-        max_samples=1000,
+        output_dir=args.output_dir,
+        max_samples=args.max_samples,
+        use_selective_routing=use_selective,
+        block_continuation_tokens=block_continuation,
     )
+
+    logger.info(f"Selective routing: {use_selective}")
+    logger.info(f"Block I- tokens: {block_continuation}")
 
     router = None
     if os.getenv("OPENAI_API_KEY"):

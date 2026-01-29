@@ -26,6 +26,7 @@ from torch.utils.data import DataLoader
 
 from src.core.constants import DEFAULT_MODEL_PATH, NVIDIA_TO_MODEL_MAP
 from src.core.label_mapper import LabelMapper
+from src.visualization.style import set_publication_style, COLORS, BENCHMARK_PALETTE
 
 logging.basicConfig(
     level=logging.INFO,
@@ -77,8 +78,7 @@ class NvidiaEvaluator:
         os.makedirs(config.output_dir, exist_ok=True)
 
     def _setup_env(self):
-        sns.set_theme(style="whitegrid")
-        plt.rcParams["figure.figsize"] = (12, 8)
+        set_publication_style()
         # Suppress extensive huggingface logging
         logging.getLogger("transformers").setLevel(logging.ERROR)
 
@@ -259,6 +259,12 @@ class NvidiaEvaluator:
 
         self._plot_cm(y_true, y_pred)
 
+        # Generate efficiency frontier
+        cls_report_dict = classification_report(
+            y_true, y_pred, labels=labels_no_o, output_dict=True, zero_division=0
+        )
+        self._plot_efficiency_frontier(y_true, y_pred, cls_report_dict)
+
     def _save_results(self, cls_report: str, metrics: Dict[str, float]):
         report_path = os.path.join(self.config.output_dir, "evaluation_report.txt")
         json_path = os.path.join(self.config.output_dir, "metrics.json")
@@ -297,7 +303,8 @@ class NvidiaEvaluator:
             cm_norm = cm.astype("float") / cm.sum(axis=1)[:, np.newaxis]
             cm_norm = np.nan_to_num(cm_norm)
 
-        plt.figure(figsize=(16, 14))
+        set_publication_style()
+        fig, ax = plt.subplots(figsize=(16, 14))
         sns.heatmap(
             cm_norm,
             annot=True,
@@ -305,15 +312,117 @@ class NvidiaEvaluator:
             xticklabels=relevant_labels,
             yticklabels=relevant_labels,
             cmap="Blues",
+            ax=ax,
         )
-        plt.title("Confusion Matrix (Normalized)")
-        plt.ylabel("True Label")
-        plt.xlabel("Predicted Label")
+        ax.set_title("Confusion Matrix (Normalized)", fontsize=14, fontweight="bold")
+        ax.set_ylabel("True Label", fontsize=12)
+        ax.set_xlabel("Predicted Label", fontsize=12)
         plt.tight_layout()
 
         save_path = os.path.join(self.config.output_dir, "confusion_matrix.png")
-        plt.savefig(save_path)
+        plt.savefig(save_path, dpi=300, bbox_inches="tight", facecolor="white")
+        plt.close()
         logger.info(f"Confusion matrix saved to {save_path}")
+
+    def _plot_efficiency_frontier(
+        self,
+        y_true: List[str],
+        y_pred: List[str],
+        per_class_metrics: Dict[str, Dict[str, float]],
+    ):
+        """
+        Plot precision-recall efficiency frontier for each entity class.
+
+        Args:
+            y_true: True labels
+            y_pred: Predicted labels
+            per_class_metrics: Dict of class -> {precision, recall, f1}
+        """
+        from collections import Counter
+
+        set_publication_style()
+        fig, ax = plt.subplots(figsize=(12, 10))
+
+        # Get per-class metrics
+        classes = []
+        precisions = []
+        recalls = []
+        supports = []
+
+        counts = Counter(y_true)
+
+        for label, metrics in per_class_metrics.items():
+            if label in ["accuracy", "macro avg", "weighted avg", "O"]:
+                continue
+            if counts.get(label, 0) < 10:
+                continue
+
+            classes.append(label)
+            precisions.append(metrics.get("precision", 0))
+            recalls.append(metrics.get("recall", 0))
+            supports.append(counts.get(label, 0))
+
+        if not classes:
+            logger.warning("Not enough data for efficiency frontier plot.")
+            return
+
+        # Normalize support for marker size
+        supports = np.array(supports)
+        sizes = 100 + 500 * (supports - supports.min()) / (supports.max() - supports.min() + 1)
+
+        # Assign colors from palette
+        colors = [BENCHMARK_PALETTE[i % len(BENCHMARK_PALETTE)] for i in range(len(classes))]
+
+        # Scatter plot
+        scatter = ax.scatter(
+            recalls, precisions,
+            s=sizes,
+            c=colors,
+            alpha=0.7,
+            edgecolors="white",
+            linewidth=1.5,
+        )
+
+        # Add labels
+        for i, label in enumerate(classes):
+            ax.annotate(
+                label.replace("B-", "").replace("I-", ""),
+                (recalls[i], precisions[i]),
+                fontsize=8,
+                ha="left",
+                va="bottom",
+                xytext=(5, 5),
+                textcoords="offset points",
+            )
+
+        # Plot F1 iso-curves
+        for f1 in [0.3, 0.5, 0.7, 0.9]:
+            x = np.linspace(0.01, 1, 100)
+            y = (f1 * x) / (2 * x - f1)
+            y = np.clip(y, 0, 1)
+            ax.plot(x, y, "--", color="#cccccc", linewidth=0.8, alpha=0.7)
+            # Label F1 curves
+            idx = np.argmin(np.abs(y - 0.95))
+            if idx < len(x) - 1:
+                ax.annotate(f"F1={f1}", (x[idx], 0.95), fontsize=7, color="#999999")
+
+        ax.set_xlim(0, 1.05)
+        ax.set_ylim(0, 1.05)
+        ax.set_xlabel("Recall", fontsize=12)
+        ax.set_ylabel("Precision", fontsize=12)
+        ax.set_title("Precision-Recall Efficiency Frontier by Entity Class", fontsize=14, fontweight="bold")
+
+        # Remove top/right spines
+        ax.spines["top"].set_visible(False)
+        ax.spines["right"].set_visible(False)
+
+        ax.grid(True, alpha=0.3, linestyle="-")
+
+        plt.tight_layout()
+        save_path = os.path.join(self.config.output_dir, "efficiency_frontier.png")
+        plt.savefig(save_path, dpi=300, bbox_inches="tight", facecolor="white")
+        plt.close()
+        logger.info(f"Efficiency frontier saved to {save_path}")
 
 
 if __name__ == "__main__":

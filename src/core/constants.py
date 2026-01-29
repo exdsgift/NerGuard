@@ -20,9 +20,43 @@ STRIDE = MAX_CONTEXT_LENGTH - 2 - OVERLAP  # 382
 
 # LLM CONFIGURATION
 DEFAULT_LLM_SOURCE = "openai"
-DEFAULT_OPENAI_MODEL = "gpt-4o-mini"
+DEFAULT_OPENAI_MODEL = "gpt-4o"
 DEFAULT_OLLAMA_MODEL = "qwen2.5:3b"
 DEFAULT_CACHE_SIZE = 1000
+
+# SELECTIVE ENTITY ROUTING
+# Entities where LLM routing has proven beneficial (numeric patterns)
+ROUTABLE_ENTITIES = {
+    "CREDITCARDNUMBER",
+    "TELEPHONENUM",
+    "SOCIALNUM",
+    "DATE",
+    "EMAIL",
+    "TAXNUM",
+    "PASSPORTNUM",
+    "DRIVERLICENSENUM",
+    "IDCARDNUM",
+}
+
+# Entities where LLM routing causes harm (name confusion, BIO errors)
+BLOCKED_ENTITIES = {
+    "GIVENNAME",
+    "SURNAME",
+    "TITLE",
+    "CITY",
+    "STREET",
+}
+
+# Entity-specific thresholds (more aggressive for numeric, conservative for names)
+ENTITY_THRESHOLDS = {
+    # Entities where LLM helps -> more aggressive routing
+    "CREDITCARDNUMBER": {"entropy": 0.4, "confidence": 0.9},
+    "TELEPHONENUM": {"entropy": 0.5, "confidence": 0.85},
+    "SOCIALNUM": {"entropy": 0.4, "confidence": 0.9},
+    "EMAIL": {"entropy": 0.5, "confidence": 0.85},
+    # Default thresholds
+    "DEFAULT": {"entropy": DEFAULT_ENTROPY_THRESHOLD, "confidence": DEFAULT_CONFIDENCE_THRESHOLD},
+}
 
 # VALID PII LABELS (BIO scheme)
 VALID_LABELS = [

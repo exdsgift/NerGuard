@@ -11,7 +11,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from typing import Dict, Tuple
 
-from src.visualization.style import set_publication_style
+from src.visualization.style import set_publication_style, COLORS, style_axis
 
 
 def plot_optimization_heatmap(
@@ -37,34 +37,41 @@ def plot_optimization_heatmap(
     """
     set_publication_style()
 
-    plt.figure(figsize=(10, 8))
+    fig, ax = plt.subplots(figsize=(10, 8))
 
     X, Y = np.meshgrid(conf_grid, ent_grid)
-    c = plt.pcolormesh(X, Y, matrix, shading="auto", cmap="viridis")
-    plt.colorbar(c, label=metric_name)
+    mesh = ax.pcolormesh(X, Y, matrix, shading="auto", cmap="viridis")
+    cbar = fig.colorbar(mesh, ax=ax, label=metric_name)
+    cbar.ax.tick_params(labelsize=9)
 
     best_i, best_j = best_idx
     best_ent = ent_grid[best_i]
     best_conf = conf_grid[best_j]
-    plt.scatter(
+    ax.scatter(
         best_conf, best_ent,
-        color="red", s=150, edgecolors="white", linewidths=2,
+        color=COLORS["negative"], s=200, edgecolors="white", linewidths=2,
         label="Optimal Point", marker="*", zorder=5,
     )
 
-    plt.title(
-        f"Optimization Surface: {metric_name}\n(beta={beta_score} F-Score Optimization)",
-        pad=15, fontweight="bold",
+    ax.set_title(
+        f"Optimization Surface: {metric_name}\n(β={beta_score} F-Score Optimization)",
+        fontsize=14, fontweight="bold", pad=15,
     )
-    plt.xlabel("Confidence Threshold (trigger if < x)", fontsize=12)
-    plt.ylabel("Entropy Threshold (trigger if > y)", fontsize=12)
-    plt.legend(loc="upper right", framealpha=0.9)
-    plt.grid(True, alpha=0.3)
-    plt.tight_layout()
+    ax.set_xlabel("Confidence Threshold (trigger if < x)", fontsize=12)
+    ax.set_ylabel("Entropy Threshold (trigger if > y)", fontsize=12)
 
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+    ax.spines["left"].set_color("#333333")
+    ax.spines["bottom"].set_color("#333333")
+
+    ax.legend(loc="upper right", frameon=True, framealpha=0.95, edgecolor="#333333")
+    ax.grid(True, alpha=0.3, linewidth=0.5)
+
+    plt.tight_layout()
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    plt.savefig(output_path, bbox_inches="tight", dpi=300)
-    plt.close()
+    fig.savefig(output_path, bbox_inches="tight", dpi=300, facecolor="white")
+    plt.close(fig)
 
 
 def plot_pareto_frontier(
@@ -84,7 +91,7 @@ def plot_pareto_frontier(
     """
     set_publication_style()
 
-    plt.figure(figsize=(10, 7))
+    fig, ax = plt.subplots(figsize=(10, 7))
 
     precision_flat = results["precision"].flatten()
     recall_flat = results["recall"].flatten()
@@ -93,43 +100,62 @@ def plot_pareto_frontier(
     precision_flat = precision_flat[valid]
     recall_flat = recall_flat[valid]
 
-    plt.scatter(
+    ax.scatter(
         recall_flat, precision_flat,
-        alpha=0.3, s=20, c="blue", label="All configurations",
+        alpha=0.4, s=25, c=COLORS["baseline"],
+        edgecolors="white", linewidth=0.3,
+        label="All configurations", zorder=3,
     )
 
-    # Compute Pareto frontier
-    sorted_indices = np.argsort(recall_flat)
-    pareto_recall = []
-    pareto_precision = []
-    max_precision = 0
+    # Compute Pareto frontier correctly:
+    # Sort by recall DESCENDING, track max precision seen
+    # A point is Pareto-optimal if its precision > max seen so far
+    sorted_indices = np.argsort(recall_flat)[::-1]
+    pareto_indices = []
+    max_precision = -np.inf
 
     for idx in sorted_indices:
-        if precision_flat[idx] >= max_precision:
-            pareto_recall.append(recall_flat[idx])
-            pareto_precision.append(precision_flat[idx])
+        if precision_flat[idx] > max_precision:
+            pareto_indices.append(idx)
             max_precision = precision_flat[idx]
 
-    plt.plot(
-        pareto_recall, pareto_precision,
-        "r-", linewidth=2, label="Pareto Frontier", zorder=5,
-    )
+    if pareto_indices:
+        pareto_recall = recall_flat[pareto_indices]
+        pareto_precision = precision_flat[pareto_indices]
+        # Sort by recall ascending for proper line plotting
+        sort_order = np.argsort(pareto_recall)
+        pareto_recall = pareto_recall[sort_order]
+        pareto_precision = pareto_precision[sort_order]
 
-    plt.xlabel("Recall (Error Detection Rate)", fontsize=12)
-    plt.ylabel("Precision (Trigger Accuracy)", fontsize=12)
-    plt.title(
+        ax.plot(
+            pareto_recall, pareto_precision,
+            color=COLORS["negative"], linewidth=2.5, linestyle="-",
+            marker="o", markersize=6, markerfacecolor=COLORS["negative"],
+            markeredgecolor="white", markeredgewidth=1.5,
+            label="Pareto Frontier", zorder=10,
+        )
+
+    ax.set_xlabel("Recall (Error Detection Rate)", fontsize=12)
+    ax.set_ylabel("Precision (Trigger Accuracy)", fontsize=12)
+    ax.set_title(
         "Precision-Recall Tradeoff\n(Pareto-Optimal Configurations)",
-        fontsize=14, fontweight="bold",
+        fontsize=14, fontweight="bold", pad=15,
     )
-    plt.legend(loc="lower left")
-    plt.grid(True, alpha=0.3)
-    plt.xlim(0, 1.05)
-    plt.ylim(0, 1.05)
-    plt.tight_layout()
 
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+    ax.spines["left"].set_color("#333333")
+    ax.spines["bottom"].set_color("#333333")
+
+    ax.legend(loc="lower left", frameon=True, framealpha=0.95, edgecolor="#333333")
+    ax.grid(True, alpha=0.3, linewidth=0.5)
+    ax.set_xlim(0, 1.05)
+    ax.set_ylim(0, 1.05)
+
+    plt.tight_layout()
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    plt.savefig(output_path, bbox_inches="tight", dpi=300)
-    plt.close()
+    fig.savefig(output_path, bbox_inches="tight", dpi=300, facecolor="white")
+    plt.close(fig)
 
 
 def plot_quantization_metrics(

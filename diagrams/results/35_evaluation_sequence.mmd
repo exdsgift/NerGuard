@@ -1,0 +1,30 @@
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontSize': '11px'}}}%%
+sequenceDiagram
+    participant D as Dataset
+    participant M as mDeBERTa
+    participant U as Uncertainty
+    participant R as Router
+    participant L as LLM
+    participant O as Output
+
+    D->>M: 220K tokens
+    M->>U: logits z
+
+    Note over U: H = entropy(p)<br/>c = max(p)
+
+    U->>O: 93% confident
+    U->>R: 7% uncertain
+
+    Note over R: Entity Filter<br/>ROUTABLE vs BLOCKED
+
+    R->>O: 60% blocked
+    R->>L: 40% routable
+
+    L->>L: GPT-4o query
+
+    Note over L: Accuracy: 88.9%<br/>Cost: $0.64
+
+    L->>O: 74% valid
+    L-->>O: 26% invalid
+
+    Note over O: F1: 0.65 (+1.5%)<br/>Net: +64 tokens

@@ -1,0 +1,21 @@
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontSize': '11px'}}}%%
+flowchart LR
+    subgraph ROUTABLE["ROUTABLE (+F1)"]
+        direction TB
+        R1["CREDITCARD +20.9%"]
+        R2["TELEPHONE +10.9%"]
+        R3["GENDER +5.3%"]
+        R4["EMAIL +2.0%"]
+        R5["DATE +2.0%"]
+    end
+
+    subgraph BLOCKED["BLOCKED (-F1)"]
+        direction TB
+        B1["TIME -4.0%"]
+        B2["SURNAME -3.5%"]
+        B3["CITY -2.1%"]
+        B4["GIVENNAME -3.0%"]
+    end
+
+    LLM((LLM)) --> ROUTABLE
+    LLM -.->|blocked| BLOCKED

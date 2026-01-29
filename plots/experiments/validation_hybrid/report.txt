@@ -1,0 +1,103 @@
+BASELINE PERFORMANCE
+                    precision    recall  f1-score   support
+
+                 O     0.9998    0.9991    0.9994      5302
+             B-AGE     0.9167    1.0000    0.9565        22
+     B-BUILDINGNUM     1.0000    0.8462    0.9167        13
+            B-CITY     0.9796    1.0000    0.9897        48
+B-CREDITCARDNUMBER     1.0000    0.8571    0.9231         7
+            B-DATE     1.0000    1.0000    1.0000        36
+B-DRIVERLICENSENUM     0.8333    1.0000    0.9091         5
+           B-EMAIL     1.0000    1.0000    1.0000        37
+          B-GENDER     0.6000    0.7500    0.6667         4
+       B-GIVENNAME     0.9840    1.0000    0.9919       184
+       B-IDCARDNUM     0.9615    0.8929    0.9259        28
+     B-PASSPORTNUM     0.8889    1.0000    0.9412        16
+             B-SEX     0.8333    0.7143    0.7692         7
+       B-SOCIALNUM     1.0000    0.8333    0.9091         6
+          B-STREET     1.0000    0.9375    0.9677        16
+         B-SURNAME     0.9146    0.8523    0.8824        88
+          B-TAXNUM     0.8000    1.0000    0.8889         4
+    B-TELEPHONENUM     1.0000    1.0000    1.0000        25
+            B-TIME     1.0000    1.0000    1.0000        20
+           B-TITLE     1.0000    1.0000    1.0000        15
+         B-ZIPCODE     1.0000    1.0000    1.0000        10
+     I-BUILDINGNUM     1.0000    1.0000    1.0000         1
+            I-CITY     0.9815    0.9907    0.9860       107
+I-CREDITCARDNUMBER     1.0000    0.8621    0.9259        29
+            I-DATE     1.0000    1.0000    1.0000        92
+I-DRIVERLICENSENUM     0.9355    1.0000    0.9667        29
+           I-EMAIL     1.0000    1.0000    1.0000       198
+          I-GENDER     1.0000    0.8000    0.8889         5
+       I-GIVENNAME     0.9466    0.9867    0.9662       377
+       I-IDCARDNUM     0.9579    0.9381    0.9479        97
+     I-PASSPORTNUM     0.9130    1.0000    0.9545        42
+             I-SEX     0.6667    1.0000    0.8000         2
+       I-SOCIALNUM     1.0000    0.9130    0.9545        23
+          I-STREET     0.9649    1.0000    0.9821        55
+         I-SURNAME     0.9700    0.9224    0.9456       245
+          I-TAXNUM     0.8824    1.0000    0.9375        15
+    I-TELEPHONENUM     1.0000    1.0000    1.0000       109
+            I-TIME     1.0000    1.0000    1.0000        21
+           I-TITLE     1.0000    1.0000    1.0000        10
+         I-ZIPCODE     1.0000    1.0000    1.0000        15
+
+          accuracy                         0.9909      7365
+         macro avg     0.9483    0.9524    0.9473      7365
+      weighted avg     0.9912    0.9909    0.9909      7365
+
+
+HYBRID PERFORMANCE
+                    precision    recall  f1-score   support
+
+                 O     1.0000    0.9991    0.9995      5302
+             B-AGE     0.9167    1.0000    0.9565        22
+     B-BUILDINGNUM     1.0000    0.8462    0.9167        13
+            B-CITY     0.9600    1.0000    0.9796        48
+B-CREDITCARDNUMBER     1.0000    0.8571    0.9231         7
+            B-DATE     1.0000    1.0000    1.0000        36
+B-DRIVERLICENSENUM     0.8333    1.0000    0.9091         5
+           B-EMAIL     1.0000    1.0000    1.0000        37
+          B-GENDER     0.6000    0.7500    0.6667         4
+       B-GIVENNAME     0.9840    1.0000    0.9919       184
+       B-IDCARDNUM     0.9615    0.8929    0.9259        28
+     B-PASSPORTNUM     0.8889    1.0000    0.9412        16
+             B-SEX     0.8333    0.7143    0.7692         7
+       B-SOCIALNUM     1.0000    0.8333    0.9091         6
+          B-STREET     1.0000    0.9375    0.9677        16
+         B-SURNAME     0.9024    0.8409    0.8706        88
+          B-TAXNUM     0.8000    1.0000    0.8889         4
+    B-TELEPHONENUM     1.0000    1.0000    1.0000        25
+            B-TIME     1.0000    1.0000    1.0000        20
+           B-TITLE     1.0000    1.0000    1.0000        15
+         B-ZIPCODE     1.0000    1.0000    1.0000        10
+     I-BUILDINGNUM     1.0000    1.0000    1.0000         1
+            I-CITY     0.9815    0.9907    0.9860       107
+I-CREDITCARDNUMBER     1.0000    0.8621    0.9259        29
+            I-DATE     1.0000    1.0000    1.0000        92
+I-DRIVERLICENSENUM     0.9355    1.0000    0.9667        29
+           I-EMAIL     1.0000    1.0000    1.0000       198
+          I-GENDER     0.8000    0.8000    0.8000         5
+       I-GIVENNAME     0.9444    0.9920    0.9677       377
+       I-IDCARDNUM     0.9579    0.9381    0.9479        97
+     I-PASSPORTNUM     0.9130    1.0000    0.9545        42
+             I-SEX     0.5000    0.5000    0.5000         2
+       I-SOCIALNUM     1.0000    0.9130    0.9545        23
+          I-STREET     0.9818    0.9818    0.9818        55
+         I-SURNAME     0.9784    0.9224    0.9496       245
+          I-TAXNUM     0.8824    1.0000    0.9375        15
+    I-TELEPHONENUM     1.0000    1.0000    1.0000       109
+            I-TIME     1.0000    1.0000    1.0000        21
+           I-TITLE     0.9091    1.0000    0.9524        10
+         I-ZIPCODE     1.0000    1.0000    1.0000        15
+
+          accuracy                         0.9908      7365
+         macro avg     0.9366    0.9393    0.9360      7365
+      weighted avg     0.9910    0.9908    0.9907      7365
+
+
+STATS
+Total Tokens: 7365
+LLM Triggers: 80
+LLM Corrections: 11
+Intervention Rate: 1.09%

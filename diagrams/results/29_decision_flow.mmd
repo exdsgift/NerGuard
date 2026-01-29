@@ -1,0 +1,20 @@
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontSize': '10px'}}}%%
+flowchart TB
+    A([Token + ŷ]) --> B{H > 0.583}
+
+    B -->|No 92.9%| Z([Keep ŷ])
+    B -->|Yes 7.1%| C{c < 0.787}
+
+    C -->|No| Z
+    C -->|Yes| D{I- token?}
+
+    D -->|Yes| Z
+    D -->|No| E{Entity Type}
+
+    E -->|BLOCKED| Z
+    E -->|ROUTABLE| F[LLM Query]
+
+    F --> G{BIO Valid?}
+
+    G -->|No| Z
+    G -->|Yes| Y([Use ŷ_llm])

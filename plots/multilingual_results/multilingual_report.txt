@@ -1,0 +1,46 @@
+================================================================================
+MULTILINGUAL EVALUATION REPORT
+Model: NerGuard
+Dataset: Babelscape/wikineural
+Languages: 8
+================================================================================
+
+PERFORMANCE BY LANGUAGE
+--------------------------------------------------------------------------------
+Lang   Name         Family     Samples  F1 Macro   Precision  Recall    
+--------------------------------------------------------------------------------
+pl     Polish       Slavic     1000     0.744      0.837      0.671
+nl     Dutch        Germanic   1000     0.615      0.809      0.496
+it     Italian      Romance    1000     0.604      0.860      0.466
+de     German       Germanic   1000     0.600      0.679      0.550
+en     English      Germanic   1000     0.600      0.704      0.522
+fr     French       Romance    1000     0.561      0.782      0.440
+pt     Portuguese   Romance    1000     0.538      0.847      0.398
+es     Spanish      Romance    1000     0.515      0.747      0.393
+
+CROSS-LINGUAL ANALYSIS
+----------------------------------------
+Germanic: Avg F1 = 0.605 (3 languages)
+Romance: Avg F1 = 0.555 (4 languages)
+Slavic: Avg F1 = 0.744 (1 languages)
+
+TRANSFER DEGRADATION (vs English baseline)
+----------------------------------------
+Italian     : -0.005 (-0.8%)
+Spanish     : +0.085 (+14.1%)
+German      : -0.000 (-0.1%)
+French      : +0.039 (+6.5%)
+Portuguese  : +0.061 (+10.2%)
+Dutch       : -0.015 (-2.5%)
+Polish      : -0.145 (-24.1%)
+
+PER-CLASS F1 BY LANGUAGE
+----------------------------------------
+en: LOCATION=0.48, PERSON=0.72
+it: LOCATION=0.55, PERSON=0.66
+es: LOCATION=0.39, PERSON=0.64
+de: LOCATION=0.49, PERSON=0.71
+fr: LOCATION=0.40, PERSON=0.72
+pt: LOCATION=0.44, PERSON=0.64
+nl: LOCATION=0.52, PERSON=0.71
+pl: LOCATION=0.73, PERSON=0.76

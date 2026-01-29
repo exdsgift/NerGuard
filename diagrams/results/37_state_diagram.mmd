@@ -1,0 +1,26 @@
+%%{init: {'theme': 'neutral'}}%%
+stateDiagram-v2
+    [*] --> TokenInput
+
+    TokenInput --> ConfidentPrediction: H ≤ 0.583 OR c ≥ 0.787
+
+    TokenInput --> UncertainPrediction: H > 0.583 AND c < 0.787
+
+    UncertainPrediction --> EntityFilter
+
+    EntityFilter --> BlockedEntity: GIVENNAME, SURNAME, CITY...
+    EntityFilter --> RoutableEntity: CREDITCARD, PHONE, EMAIL...
+
+    BlockedEntity --> ConfidentPrediction
+
+    RoutableEntity --> LLMQuery
+
+    LLMQuery --> ValidBIO: BIO constraints satisfied
+    LLMQuery --> InvalidBIO: BIO constraints violated
+
+    InvalidBIO --> ConfidentPrediction
+
+    ValidBIO --> LLMCorrectedOutput
+
+    ConfidentPrediction --> [*]
+    LLMCorrectedOutput --> [*]

@@ -1,0 +1,68 @@
+================================================================================
+ABLATION STUDY REPORT
+NerGuard Hybrid System Analysis
+================================================================================
+
+Model: ./models/mdeberta-pii-safe/final
+Samples: 500
+
+
+============================================================
+Study: UNCERTAINTY MEASURES
+============================================================
+
+Config                          Net Imp   Help   Harm   Route%   F1-W
+----------------------------------------------------------------------
+Entropy Only                        +75    139     64   0.57%  0.690
+Confidence Only                     +75    139     64   0.57%  0.690
+Combined (E+C)                      +76    140     64   0.57%  0.690
+
+Best config: Combined (E+C)
+  Net improvement: 76
+  Efficiency (help/harm ratio): 140/64
+
+
+============================================================
+Study: THRESHOLD SENSITIVITY
+============================================================
+
+Config                          Net Imp   Help   Harm   Route%   F1-W
+----------------------------------------------------------------------
+Low (E=0.3, C=0.6)                  +76    140     64   0.57%  0.690
+Medium (E=0.5, C=0.7)               +76    140     64   0.57%  0.690
+Default (E=0.583, C=0.787)          +76    140     64   0.57%  0.690
+High (E=0.7, C=0.85)                +76    140     64   0.57%  0.690
+Very High (E=0.9, C=0.95)           +76    140     64   0.57%  0.690
+
+Best config: Low (E=0.3, C=0.6)
+  Net improvement: 76
+  Efficiency (help/harm ratio): 140/64
+
+
+============================================================
+Study: ROUTING STRATEGIES
+============================================================
+
+Config                          Net Imp   Help   Harm   Route%   F1-W
+----------------------------------------------------------------------
+No Selective                       +543    794    251   2.40%  0.679
+Selective Only                     +447    595    148   1.78%  0.682
+Selective + I-Block                 +76    142     66   0.57%  0.690
+
+Best config: No Selective
+  Net improvement: 543
+  Efficiency (help/harm ratio): 794/251
+
+
+============================================================
+RECOMMENDATIONS
+============================================================
+
+Best overall configuration:
+  Name: No Selective
+  Entropy threshold: 0.583
+  Confidence threshold: 0.787
+  Selective routing: False
+  Block I- tokens: False
+  Net improvement: 543
+  Routing rate: 2.40%

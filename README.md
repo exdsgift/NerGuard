@@ -24,6 +24,8 @@
 
 - **Hybrid Architecture**: Combines fast local inference with selective LLM routing
 - **Entropy-Based Routing**: Uses Shannon entropy to detect model uncertainty
+- **Entity-Specific Routing**: Intelligent routing based on entity type (+90 net improvement)
+- **Multilingual Support**: Cross-lingual transfer to 8 European languages (F1 up to 0.744)
 - **Production-Ready**: Sliding window processing, caching, and comprehensive validation
 - **Benchmarking Suite**: Comparison against Presidio, GLiNER, and SpaCy
 
@@ -156,6 +158,7 @@ NerGuard/
 │   ├── inference/               # Inference pipeline
 │   │   ├── tester.py            # PIITester class
 │   │   ├── llm_router.py        # LLM routing with cache
+│   │   ├── entity_router.py     # Entity-specific routing
 │   │   └── prompts.py           # LLM prompt templates
 │   │
 │   ├── training/                # Model training
@@ -166,7 +169,9 @@ NerGuard/
 │   ├── evaluation/              # Evaluation scripts
 │   │   ├── benchmark.py         # Multi-model benchmark
 │   │   ├── nvidia_evaluator.py  # NVIDIA dataset evaluation
-│   │   └── hybrid_evaluator.py  # Hybrid system evaluation
+│   │   ├── hybrid_evaluator.py  # Hybrid system evaluation
+│   │   ├── multilingual.py      # Cross-lingual evaluation
+│   │   └── ablation_study.py    # Ablation studies
 │   │
 │   ├── optimization/            # Optimization tools
 │   │   ├── threshold_optimizer.py  # Grid search
@@ -228,13 +233,27 @@ NerGuard detects **21 PII entity types** using BIO tagging:
 The hybrid system combines base model inference with selective LLM routing:
 
 - **LLM routing criteria**: entropy > 0.583 AND confidence < 0.787
-- **Routing rate**: ~31% of tokens in uncertain predictions
+- **Entity-specific routing**: Only routes beneficial entity types (CREDITCARD, TELEPHONE, etc.)
+- **I-continuation blocking**: Prevents BIO sequence errors
 - **Context window**: 400 characters for disambiguation
 
-The LLM uses chain-of-thought reasoning to verify uncertain predictions:
-1. Analyzes token context
-2. Checks BIO consistency with previous label
-3. Classifies PII type with reasoning
+| Configuration | Net Improvement | F1-W | Routing Rate |
+|---------------|-----------------|------|--------------|
+| No Selective | +543 | 0.679 | 2.40% |
+| Selective Only | +447 | 0.682 | 1.78% |
+| **Selective + I-Block** | +76 to +90 | **0.690** | 0.57% |
+
+### Multilingual Evaluation
+
+Cross-lingual transfer on WikiNeural dataset (8 European languages):
+
+| Language | F1 Macro | Family |
+|----------|----------|--------|
+| Polish | **0.744** | Slavic |
+| Dutch | 0.615 | Germanic |
+| Italian | 0.604 | Romance |
+| German | 0.600 | Germanic |
+| English | 0.600 | Germanic |
 
 ### Benchmark Comparison (3,000 samples)
 
@@ -306,6 +325,12 @@ python -m src.evaluation.nvidia_evaluator
 
 # Hybrid system evaluation
 python -m src.evaluation.hybrid_evaluator
+
+# Multilingual evaluation (8 languages)
+python -m src.evaluation.multilingual --max-samples 1000
+
+# Ablation study (routing strategies)
+python -m src.evaluation.ablation_study --max-samples 500
 ```
 
 ---

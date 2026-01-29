@@ -1,0 +1,30 @@
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontSize': '12px', 'fontFamily': 'Arial'}}}%%
+sequenceDiagram
+    participant Text as Input Text
+    participant Tok as Tokenizer
+    participant Emb as Embeddings
+    participant Enc as Encoder
+    participant Head as Classifier
+    participant Out as Output
+
+    Text->>Tok: raw text
+
+    Note over Tok: SentencePiece<br/>vocab = 251K tokens
+
+    Tok->>Emb: input_ids (≤512)
+
+    Note over Emb: Token embeddings<br/>768 dimensions
+
+    Note over Emb: Relative position<br/>256 buckets
+
+    Emb->>Enc: embeddings
+
+    Note over Enc: 12× Transformer blocks<br/>───────────────<br/>Disentangled Attention<br/>12 heads, 768 dim<br/>───────────────<br/>FFN: 768 → 3072 → 768<br/>GELU activation<br/>───────────────<br/>LayerNorm + Dropout
+
+    Enc->>Head: hidden states h ∈ ℝ^(n×768)
+
+    Note over Head: Linear projection<br/>768 → 41 classes
+
+    Head->>Out: logits z ∈ ℝ^(n×41)
+
+    Note over Out: p = softmax(z)<br/>ŷ = argmax(p)<br/>───────────────<br/>41 BIO labels:<br/>20 entities × (B-, I-) + O

@@ -1,0 +1,134 @@
+---
+title: Threshold Optimization System
+---
+flowchart TB
+    subgraph Config["Configuration Parameters"]
+        direction LR
+        OptParams["<b>Optimization Parameters</b><br/>─────────────────<br/>RANDOM_SEED: 42<br/>GRID_RESOLUTION: 30<br/>BATCH_SIZE: 32<br/>BETA_SCORE: 0.5<br/>N_BOOTSTRAP: 1000<br/>CONFIDENCE_LEVEL: 0.95"]
+
+        CostModel["<b>Economic Cost Model</b><br/>─────────────────<br/>LLM_COST_PER_TOKEN: $0.00002<br/>(GPT-4 Turbo pricing)<br/>─────────────────<br/>ERROR_COST_PER_TOKEN: $0.001<br/>(GDPR violation penalty)"]
+
+        GridDef["<b>Grid Definition</b><br/>─────────────────<br/>entropy_range: linspace(0.1, 1.5, 30)<br/>confidence_range: linspace(0.5, 0.99, 30)<br/>─────────────────<br/>Total: 30 × 30 = 900 combinations"]
+    end
+
+    subgraph DataCollection["Phase 1: Data Collection"]
+        direction TB
+
+        LoadModel["<b>Load Model</b><br/>─────────────────<br/>AutoModelForTokenClassification<br/>from models/mdeberta-pii-safe/final<br/>─────────────────<br/>device: cuda / cpu"]
+
+        LoadDataset["<b>Load Dataset</b><br/>─────────────────<br/>load_from_disk()<br/>Validation split<br/>─────────────────<br/>Shuffle with seed=42"]
+
+        BatchInference["<b>collect_inference_stats_batched()</b><br/>─────────────────<br/>For each batch (size=32):<br/>1. Pad sequences to max_len<br/>2. Create attention_mask<br/>3. Forward pass → logits<br/>4. Compute softmax probabilities<br/>5. Calculate entropy: -Σ(p × log(p))<br/>6. Extract confidence: max(probs)<br/>7. Compare pred_id vs true_label"]
+
+        CollectedStats["<b>Collected Statistics</b><br/>─────────────────<br/>entropies: float[] (N samples)<br/>confidences: float[] (N samples)<br/>is_errors: bool[] (N samples)<br/>─────────────────<br/>N = total_tokens across dataset"]
+    end
+
+    subgraph GridSearch["Phase 2: Vectorized Grid Search"]
+        direction TB
+
+        ForEachCell["<b>For each (ent_th, conf_th) in Grid</b><br/>─────────────────<br/>trigger_mask = (entropies > ent_th) &<br/>               (confidences < conf_th)<br/>─────────────────<br/>Identifies tokens that would<br/>be routed to LLM"]
+
+        ConfusionMatrix["<b>Compute Confusion Matrix</b><br/>─────────────────<br/>TP = Σ(trigger & is_error)<br/>FP = Σ(trigger & ~is_error)<br/>FN = Σ(~trigger & is_error)<br/>TN = Σ(~trigger & ~is_error)"]
+
+        MetricCalc["<b>Calculate Metrics</b><br/>─────────────────<br/>precision = TP / (TP + FP)<br/>recall = TP / (TP + FN)<br/>specificity = TN / (TN + FP)<br/>intervention_rate = Σ(trigger) / N"]
+
+        FBetaCalc["<b>F-beta Score (β=0.5)</b><br/>─────────────────<br/>Precision-weighted F-score:<br/>F₀.₅ = (1 + β²) × (P × R) / (β² × P + R)<br/>─────────────────<br/>β=0.5 → 2× weight on precision<br/>Minimizes false positives"]
+
+        CostCalc["<b>Expected Cost Calculation</b><br/>─────────────────<br/>n_llm_calls = rate × N<br/>n_missed_errors = (1 - recall) × n_errors<br/>─────────────────<br/>llm_cost = n_llm_calls × $0.00002<br/>error_cost = n_missed_errors × $0.001<br/>─────────────────<br/>total_cost = llm_cost + error_cost"]
+    end
+
+    subgraph ResultMatrices["Result Matrices (30 × 30)"]
+        direction LR
+
+        FScoreMatrix["<b>f_score[i,j]</b><br/>F₀.₅ surface"]
+        PrecisionMatrix["<b>precision[i,j]</b><br/>Precision surface"]
+        RecallMatrix["<b>recall[i,j]</b><br/>Recall surface"]
+        CostMatrix["<b>expected_cost[i,j]</b><br/>Cost surface"]
+        SpecificityMatrix["<b>specificity[i,j]</b><br/>Specificity surface"]
+    end
+
+    subgraph FindOptimal["Phase 3: Find Optimal Thresholds"]
+        direction TB
+
+        ArgMax["<b>Find Maximum F-score</b><br/>─────────────────<br/>best_idx = argmax(f_score)<br/>best_i, best_j = unravel_index(best_idx)<br/>─────────────────<br/>Optimal thresholds:<br/>entropy = 0.583<br/>confidence = 0.787"]
+
+        BootstrapCI["<b>Bootstrap Confidence Intervals</b><br/>─────────────────<br/>bootstrap_metric(trigger_mask, is_errors, metric_fn)<br/>─────────────────<br/>For n=1000 resamples:<br/>  1. Sample indices with replacement<br/>  2. Compute metric on sample<br/>  3. Collect distribution<br/>─────────────────<br/>CI = [percentile(2.5), percentile(97.5)]"]
+
+        CIResults["<b>95% Confidence Intervals</b><br/>─────────────────<br/>precision: X.XXX [CI_low, CI_high]<br/>recall: X.XXX [CI_low, CI_high]<br/>f_score: X.XXX [CI_low, CI_high]"]
+    end
+
+    subgraph ParetoAnalysis["Phase 4: Pareto Frontier Analysis"]
+        direction TB
+
+        ExtractPareto["<b>Extract Pareto-Optimal Points</b><br/>─────────────────<br/>Algorithm:<br/>1. Sort all points by recall DESC<br/>2. Track max_precision seen<br/>3. Point is Pareto-optimal if:<br/>   precision > max_precision_so_far<br/>─────────────────<br/>No point dominates another on<br/>both precision AND recall"]
+
+        ParetoFrontier["<b>Pareto Frontier</b><br/>─────────────────<br/>Trade-off curve showing:<br/>• High precision, low recall options<br/>• Balanced options<br/>• High recall, low precision options<br/>─────────────────<br/>User selects based on use case"]
+    end
+
+    subgraph Outputs["Phase 5: Output Generation"]
+        direction TB
+
+        OptResult["<b>OptimizationResult (dataclass)</b><br/>─────────────────<br/>ent_threshold: 0.583<br/>conf_threshold: 0.787<br/>precision: X.XXX<br/>recall: X.XXX<br/>f_score: X.XXX<br/>precision_ci: (low, high)<br/>recall_ci: (low, high)<br/>f_score_ci: (low, high)<br/>intervention_rate: X.XX%<br/>expected_cost: $X.XX<br/>cost_savings: $X.XX<br/>tp, fp, fn, tn: int"]
+
+        HeatmapPlots["<b>Heatmap Visualizations</b><br/>─────────────────<br/>plot_optimization_heatmap():<br/>• opt_fscore_heatmap.png<br/>• opt_precision_heatmap.png<br/>• opt_cost_heatmap.png<br/>─────────────────<br/>Red star marks optimal point"]
+
+        ParetoPlot["<b>Pareto Frontier Plot</b><br/>─────────────────<br/>pareto_frontier.png<br/>• Scatter of all configurations<br/>• Pareto-optimal curve highlighted<br/>• F-score iso-lines"]
+
+        TextOutput["<b>Text & JSON Output</b><br/>─────────────────<br/>optimal_params.txt:<br/>Human-readable summary<br/>─────────────────<br/>results.json:<br/>Machine-readable for downstream"]
+
+        UpdateConstants["<b>Update Constants</b><br/>─────────────────<br/>src/core/constants.py:<br/>DEFAULT_ENTROPY_THRESHOLD = 0.583<br/>DEFAULT_CONFIDENCE_THRESHOLD = 0.787"]
+    end
+
+    %% Phase 1 connections
+    Config --> DataCollection
+    LoadModel --> BatchInference
+    LoadDataset --> BatchInference
+    BatchInference --> CollectedStats
+
+    %% Phase 2 connections
+    CollectedStats --> ForEachCell
+    GridDef --> ForEachCell
+    ForEachCell --> ConfusionMatrix
+    ConfusionMatrix --> MetricCalc
+    MetricCalc --> FBetaCalc
+    MetricCalc --> CostCalc
+    CostModel --> CostCalc
+
+    %% Result matrices
+    FBetaCalc --> FScoreMatrix
+    MetricCalc --> PrecisionMatrix
+    MetricCalc --> RecallMatrix
+    CostCalc --> CostMatrix
+    MetricCalc --> SpecificityMatrix
+
+    %% Phase 3 connections
+    FScoreMatrix --> ArgMax
+    ArgMax --> BootstrapCI
+    BootstrapCI --> CIResults
+
+    %% Phase 4 connections
+    PrecisionMatrix --> ExtractPareto
+    RecallMatrix --> ExtractPareto
+    ExtractPareto --> ParetoFrontier
+
+    %% Phase 5 connections
+    CIResults --> OptResult
+    ResultMatrices --> HeatmapPlots
+    ParetoFrontier --> ParetoPlot
+    OptResult --> TextOutput
+    OptResult --> UpdateConstants
+
+    %% Styling
+    classDef configClass fill:#e8eaf6,stroke:#3949ab,stroke-width:2px
+    classDef dataClass fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
+    classDef computeClass fill:#fff8e1,stroke:#f57f17,stroke-width:2px
+    classDef resultClass fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    classDef paretoClass fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef outputClass fill:#fce4ec,stroke:#c2185b,stroke-width:2px
+
+    class OptParams,CostModel,GridDef configClass
+    class LoadModel,LoadDataset,BatchInference,CollectedStats dataClass
+    class ForEachCell,ConfusionMatrix,MetricCalc,FBetaCalc,CostCalc computeClass
+    class FScoreMatrix,PrecisionMatrix,RecallMatrix,CostMatrix,SpecificityMatrix,ArgMax,BootstrapCI,CIResults resultClass
+    class ExtractPareto,ParetoFrontier paretoClass
+    class OptResult,HeatmapPlots,ParetoPlot,TextOutput,UpdateConstants outputClass

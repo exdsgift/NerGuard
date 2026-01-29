@@ -17,6 +17,8 @@ from src.core.constants import (
     DEFAULT_OLLAMA_MODEL,
     DEFAULT_CACHE_SIZE,
     VALID_LABELS_SET,
+    ROUTABLE_ENTITIES,
+    BLOCKED_ENTITIES,
 )
 from src.inference.prompts import PROMPT, VALID_LABELS_STR
 
@@ -257,7 +259,7 @@ class LLMRouter:
         # Call LLM
         try:
             raw_result = self._call_llm(prompt)
-            validated_result = self._validate_response(raw_result, current_pred)
+            validated_result = self._validate_response(raw_result, current_pred, prev_label)
 
             # Cache result
             if self.cache:
@@ -331,10 +333,39 @@ class LLMRouter:
         )
         return json.loads(response["message"]["content"])
 
+    def _validate_bio_consistency(
+        self,
+        prev_label: str,
+        corrected_label: str,
+    ) -> bool:
+        """
+        Validate BIO consistency of LLM correction.
+
+        Returns False if the correction violates BIO rules, indicating
+        we should reject it and keep the model's original prediction.
+        """
+        # Rule 1: I- cannot follow O
+        if corrected_label.startswith("I-") and prev_label == "O":
+            logger.debug(f"BIO violation: I- tag '{corrected_label}' cannot follow O")
+            return False
+
+        # Rule 2: I- must match previous entity type
+        if corrected_label.startswith("I-"):
+            prev_type = prev_label.replace("B-", "").replace("I-", "")
+            curr_type = corrected_label.replace("I-", "")
+            if prev_type != curr_type:
+                logger.debug(
+                    f"BIO violation: I-{curr_type} cannot follow {prev_label} (type mismatch)"
+                )
+                return False
+
+        return True
+
     def _validate_response(
         self,
         raw: Dict[str, Any],
         fallback_label: str,
+        prev_label: str = "O",
     ) -> Dict[str, Any]:
         """Validate and normalize LLM response."""
         # Support both V6 format ("label") and older formats ("corrected_label")
@@ -342,10 +373,16 @@ class LLMRouter:
         label = label.strip().upper()
         reasoning = raw.get("reasoning", "")[:200]
 
-        # Validate label
+        # Validate label is in valid set
         if label not in self.valid_labels:
             logger.warning(f"[WARNING] Invalid label '{label}' → fallback to '{fallback_label}'")
             label = fallback_label
+
+        # Validate BIO consistency - reject corrections that violate BIO rules
+        if not self._validate_bio_consistency(prev_label, label):
+            logger.info(f"[BIO REJECT] LLM correction '{label}' violates BIO rules → keeping '{fallback_label}'")
+            label = fallback_label
+            reasoning = f"BIO violation rejected: {reasoning}"
 
         return {
             "is_pii": label != "O",
@@ -370,3 +407,53 @@ class LLMRouter:
         """Clear the response cache."""
         if self.cache:
             self.cache.clear()
+
+    @staticmethod
+    def should_route(
+        current_pred: str,
+        entropy: float,
+        confidence: float,
+        entropy_threshold: float,
+        confidence_threshold: float,
+        use_selective_routing: bool = True,
+    ) -> bool:
+        """
+        Determine if a token should be routed to LLM based on entity type and uncertainty.
+
+        This implements selective entity routing: only route entities where LLM
+        has proven beneficial (numeric patterns), block entities where LLM causes harm.
+
+        Args:
+            current_pred: Model's current prediction (e.g., "B-SURNAME")
+            entropy: Model's entropy for this prediction
+            confidence: Model's confidence for this prediction
+            entropy_threshold: Entropy threshold for uncertainty
+            confidence_threshold: Confidence threshold for uncertainty
+            use_selective_routing: Whether to apply entity-type filtering
+
+        Returns:
+            True if the token should be routed to LLM, False otherwise
+        """
+        # Basic uncertainty check
+        is_uncertain = entropy > entropy_threshold and confidence < confidence_threshold
+
+        if not is_uncertain:
+            return False
+
+        if not use_selective_routing:
+            return True
+
+        # Extract entity type (remove B-/I- prefix)
+        entity_type = current_pred.replace("B-", "").replace("I-", "")
+
+        # Block routing for entities where LLM causes harm
+        if entity_type in BLOCKED_ENTITIES:
+            logger.debug(f"Routing blocked for entity type: {entity_type}")
+            return False
+
+        # Allow routing for "O" predictions (potential false negatives) and routable entities
+        if entity_type == "O" or entity_type in ROUTABLE_ENTITIES:
+            return True
+
+        # Default: don't route unknown entity types
+        return False

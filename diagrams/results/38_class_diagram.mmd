@@ -1,0 +1,34 @@
+%%{init: {'theme': 'neutral'}}%%
+classDiagram
+    class PIITester {
+        +model: mDeBERTa
+        +tokenizer: Tokenizer
+        +llm_router: LLMRouter
+        +predict(text) Entities
+        +compute_uncertainty() H, c
+    }
+
+    class LLMRouter {
+        +cache: LLMCache
+        +entity_router: EntityRouter
+        +threshold_H: 0.583
+        +threshold_c: 0.787
+        +route(token, context) Label
+    }
+
+    class EntityRouter {
+        +routable: Set
+        +blocked: Set
+        +should_route(entity) bool
+    }
+
+    class LLMCache {
+        +cache: Dict
+        +max_size: 10000
+        +lookup(key) Response
+        +store(key, value)
+    }
+
+    PIITester --> LLMRouter
+    LLMRouter --> EntityRouter
+    LLMRouter --> LLMCache

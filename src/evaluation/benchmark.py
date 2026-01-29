@@ -21,6 +21,7 @@ from src.core.constants import (
     DEFAULT_CONFIDENCE_THRESHOLD,
     LABEL_TO_UNIFIED,
 )
+from src.inference.entity_router import EntitySpecificRouter
 from src.visualization.style import set_publication_style
 from src.visualization.benchmark_plots import (
     plot_main_metrics,
@@ -150,8 +151,9 @@ class ModelWrapper:
 
 
 class NerGuard(ModelWrapper):
-    def __init__(self, model_path, enable_llm=True):
+    def __init__(self, model_path, enable_llm=True, use_selective_routing=True):
         self.enable_llm = enable_llm and LLM_AVAILABLE
+        self.use_selective_routing = use_selective_routing
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
         self.model = AutoModelForTokenClassification.from_pretrained(model_path).to(
@@ -165,6 +167,13 @@ class NerGuard(ModelWrapper):
         self.thresh_ent = DEFAULT_ENTROPY_THRESHOLD
         self.thresh_conf = DEFAULT_CONFIDENCE_THRESHOLD
 
+        # Entity-specific router for selective routing
+        self.entity_router = EntitySpecificRouter(
+            entropy_threshold=self.thresh_ent,
+            confidence_threshold=self.thresh_conf,
+            enable_selective=use_selective_routing,
+        )
+
         self.llm_calls = 0
         self.llm_changed_to_entity = 0
         self.llm_changed_to_o = 0
@@ -175,9 +184,15 @@ class NerGuard(ModelWrapper):
             print(
                 f"    LLM enabled with thresholds: entropy > {self.thresh_ent}, conf < {self.thresh_conf}"
             )
+            print(f"    Selective routing: {use_selective_routing}")
 
     def name(self):
-        return "NerGuard (Hybrid)" if self.enable_llm else "NerGuard (Base)"
+        if not self.enable_llm:
+            return "NerGuard (Base)"
+        elif self.use_selective_routing:
+            return "NerGuard (Hybrid+Selective)"
+        else:
+            return "NerGuard (Hybrid)"
 
     def predict(self, sample, tokenizer, id2label):
         input_ids = sample["input_ids"]
@@ -226,11 +241,17 @@ class NerGuard(ModelWrapper):
             pred_id = pred_ids[i].item()
             raw_pred = self.id2label[pred_id]
 
-            if (
+            # Use entity-specific routing
+            should_route = (
                 self.enable_llm
-                and entropy[i] > self.thresh_ent
-                and conf[i] < self.thresh_conf
-            ):
+                and self.entity_router.should_route(
+                    predicted_label=raw_pred,
+                    entropy=entropy[i].item(),
+                    confidence=conf[i].item(),
+                )
+            )
+
+            if should_route:
                 self.high_entropy_tokens += 1
 
                 try:
@@ -433,7 +454,10 @@ def run_benchmark():
     models.append(NerGuard(MODEL_PATH, enable_llm=False))
 
     if LLM_AVAILABLE:
-        models.append(NerGuard(MODEL_PATH, enable_llm=True))
+        # Hybrid with selective routing (entity-specific)
+        models.append(NerGuard(MODEL_PATH, enable_llm=True, use_selective_routing=True))
+        # Optionally also test without selective routing for comparison
+        # models.append(NerGuard(MODEL_PATH, enable_llm=True, use_selective_routing=False))
     else:
         print("   - Skipping NerGuard Hybrid (LLMRouter not available)\n")
 

@@ -16,7 +16,7 @@ import seaborn as sns
 from sklearn.metrics import confusion_matrix
 from collections import Counter
 
-from src.visualization.style import COLORS, style_axis
+from src.visualization.style import COLORS, style_axis, set_publication_style
 
 logger = logging.getLogger(__name__)
 
@@ -83,7 +83,7 @@ class PlottingMixin:
         df = pd.DataFrame(data)
 
         fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(14, 10))
-        fig.patch.set_facecolor("white")
+        set_publication_style()
 
         # 1. Accuracy Comparison
         x = np.arange(len(df))
@@ -129,7 +129,7 @@ class PlottingMixin:
         logger.info("Generating confidence and entropy analysis...")
 
         fig, axes = plt.subplots(2, 2, figsize=(16, 12))
-        fig.patch.set_facecolor("white")
+        set_publication_style()
 
         # 1. Confidence Distribution
         axes[0, 0].hist(
@@ -209,7 +209,7 @@ class PlottingMixin:
         logger.info("Generating LLM impact analysis...")
 
         fig, axes = plt.subplots(2, 2, figsize=(18, 12))
-        fig.patch.set_facecolor("white")
+        set_publication_style()
 
         # 1. Donut Chart: Call Distribution
         call_labels = ["LLM Called", "No LLM"]
@@ -307,7 +307,7 @@ class PlottingMixin:
                 hybrid_errors.append(t)
 
         fig, axes = plt.subplots(2, 2, figsize=(16, 12))
-        fig.patch.set_facecolor("white")
+        set_publication_style()
 
         # 1. Error Counts
         base_counts = Counter(baseline_errors)
@@ -404,7 +404,7 @@ class PlottingMixin:
 
         logger.info("Generating confusion matrices...")
         fig, ax = plt.subplots(1, 2, figsize=(24, 10))
-        fig.patch.set_facecolor("white")
+        set_publication_style()
 
         def plot_ax(y_t, y_p, axis, title, cmap):
             cm = confusion_matrix(y_t, y_p, labels=labels)

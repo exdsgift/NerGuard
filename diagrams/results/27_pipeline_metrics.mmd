@@ -1,0 +1,30 @@
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontSize': '11px'}}}%%
+flowchart LR
+    subgraph Input
+        A([220K tokens])
+    end
+
+    subgraph Uncertainty
+        B{H > 0.583?}
+        C{c < 0.787?}
+    end
+
+    subgraph Routing
+        D[Entity Filter]
+        E[LLM Query]
+    end
+
+    subgraph Output
+        F([Model: 215K])
+        G([LLM: 5K])
+    end
+
+    A --> B
+    B -->|92.9%| F
+    B -->|7.1%| C
+    C -->|No| F
+    C -->|Yes| D
+    D -->|BLOCKED 60%| F
+    D -->|ROUTABLE 40%| E
+    E -->|Valid 74%| G
+    E -->|Invalid 26%| F

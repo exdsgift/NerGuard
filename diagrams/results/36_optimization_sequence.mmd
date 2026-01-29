@@ -1,0 +1,25 @@
+%%{init: {'theme': 'neutral', 'themeVariables': { 'fontSize': '11px'}}}%%
+sequenceDiagram
+    participant V as Validation Set
+    participant G as Grid Search
+    participant M as Metrics
+    participant B as Bootstrap
+    participant P as Pareto
+
+    V->>G: 3.8M tokens
+
+    Note over G: θ_H ∈ [0.1, 1.5]<br/>θ_c ∈ [0.5, 0.99]<br/>900 combinations
+
+    loop Each (θ_H, θ_c)
+        G->>M: Simulate triggers
+        M->>M: Compute TP, FP, FN, TN
+        M->>B: F0.5 score
+    end
+
+    Note over B: n = 1000 iterations<br/>95% CI
+
+    B->>P: Scores + CI
+
+    Note over P: Trade-off analysis<br/>F-score vs Cost
+
+    P-->>V: θ*_H = 0.583<br/>θ*_c = 0.787

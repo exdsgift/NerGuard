@@ -1,0 +1,23 @@
+================================================================================
+MULTILINGUAL EVALUATION REPORT
+Model: NerGuard
+Dataset: Babelscape/wikineural
+Languages: 1
+================================================================================
+
+PERFORMANCE BY LANGUAGE
+--------------------------------------------------------------------------------
+Lang   Name         Family     Samples  F1 Macro   Precision  Recall    
+--------------------------------------------------------------------------------
+en     English      Germanic   50       0.556      0.652      0.504
+
+CROSS-LINGUAL ANALYSIS
+----------------------------------------
+Germanic: Avg F1 = 0.556 (1 languages)
+
+TRANSFER DEGRADATION (vs English baseline)
+----------------------------------------
+
+PER-CLASS F1 BY LANGUAGE
+----------------------------------------
+en: PERSON=0.67, LOCATION=0.44
