@@ -129,25 +129,25 @@ The LLM Router significantly improves detection of structured PII where the base
 | Date | 82.3% | 84.3% | +2.0% |
 
 <div align="center">
-  <table style="width: 100%; max-width: 900px; table-layout: fixed;">
+  <table style="width: 100%; table-layout: fixed; border-collapse: collapse;">
     <tr>
-      <td align="center" style="padding: 10px;">
-        <img src="diagrams/svg_output/results/12_validation_metrics.svg" alt="Validation Metrics" style="width: 100%; height: auto;">
-        <br><sub><b>Figure A:</b> Validation Metrics</sub>
+      <td align="center" style="width: 50%; padding: 5px;">
+        <img src="diagrams/svg_output/results/12_validation_metrics.svg" width="100%">
+        <br><b>Validation Metrics</b>
       </td>
-      <td align="center" style="padding: 10px;">
-        <img src="diagrams/svg_output/results/23_intervention_rate.svg" alt="Intervention Rate" style="width: 100%; height: auto;">
-        <br><sub><b>Figure B:</b> Intervention Rate</sub>
+      <td align="center" style="width: 50%; padding: 5px;">
+        <img src="diagrams/svg_output/results/23_intervention_rate.svg" width="100%">
+        <br><b>Intervention Rate</b>
       </td>
     </tr>
     <tr>
-      <td align="center" style="padding: 10px;">
-        <img src="diagrams/svg_output/results/09_quantization_impact.svg" alt="Quantization Impact" style="width: 100%; height: auto;">
-        <br><sub><b>Figure C:</b> Quantization Impact</sub>
+      <td align="center" style="width: 50%; padding: 5px;">
+        <img src="diagrams/svg_output/results/09_quantization_impact.svg" width="100%">
+        <br><b>Quantization Impact</b>
       </td>
-      <td align="center" style="padding: 10px;">
-        <img src="diagrams/svg_output/results/20_selective_routing_comparison.svg" alt="Selective Routing" style="width: 100%; height: auto;">
-        <br><sub><b>Figure D:</b> Selective Routing</sub>
+      <td align="center" style="width: 50%; padding: 5px;">
+        <img src="diagrams/svg_output/results/20_selective_routing_comparison.svg" width="100%">
+        <br><b>Selective Routing</b>
       </td>
     </tr>
   </table>
