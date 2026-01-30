@@ -22,13 +22,16 @@
 
 ### Key Contributions
 
-- **Hybrid Architecture**: Combines fast local inference with selective LLM routing
-- **Entropy-Based Routing**: Uses Shannon entropy to detect model uncertainty
-- **Entity-Specific Routing**: Intelligent routing based on entity type (+90 net improvement)
+- **Hybrid Architecture**: Combines fast local inference (22ms) with selective LLM routing
+- **Entropy-Based Routing**: Uses Shannon entropy to detect model uncertainty (only **0.57%** tokens routed)
+- **Entity-Specific Routing**: +20.9% improvement on credit cards, +10.9% on phone numbers
+- **Cost Efficient**: **78% cost savings** while maintaining 88.89% correction accuracy
 - **Multilingual Support**: Cross-lingual transfer to 8 European languages (F1 up to 0.744)
-- **Production-Ready**: Sliding window processing, caching, and comprehensive validation
-- **Benchmarking Suite**: Comparison against Presidio, GLiNER, and SpaCy
+- **2x Better**: Outperforms GLiNER, Presidio, and SpaCy by **>2x** on F1-score (0.904 vs 0.446)
 
+<p align="center">
+  <img src="plots/evaluation_results/efficiency_frontier.png" alt="Benchmark Comparison" width="700">
+</p>
 
 ## Quick Start
 
@@ -88,52 +91,9 @@ print(redacted)
 
 ## Architecture
 
-```
-    Input Text
-         │
-         ▼
-┌─────────────────┐
-│   Tokenizer     │  mDeBERTa-v3 tokenizer
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Sliding Window  │  Handles documents > 512 tokens
-│ (stride: 382)   │  Overlap: 128 tokens
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ mDeBERTa-v3     │  Token classification
-│ Encoder         │  21 entity types (BIO scheme)
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│ Uncertainty     │  Entropy + Confidence
-│ Estimation      │  computation
-└────────┬────────┘
-         │
-    ┌────┴────┐
-    │         │
-    ▼         ▼
- Certain   Uncertain
-    │         │
-    │    ┌────┴────┐
-    │    │  LLM    │  Selective routing
-    │    │ Router  │  with caching
-    │    └────┬────┘
-    │         │
-    └────┬────┘
-         │
-         ▼
-┌─────────────────┐
-│ BIO Validation  │  Consistency check
-└────────┬────────┘
-         │
-         ▼
-   Output Labels
-```
+<p align="center">
+  <img src="diagrams/svg_output/paper/fig5_model_architecture.svg" alt="LLM Impact per Entity Type" width="700">
+</p>
 
 ### Routing Criteria
 
@@ -141,6 +101,64 @@ LLM disambiguation is triggered when:
 - `entropy > 0.583` AND `confidence < 0.787`
 
 Thresholds optimized via grid search with bootstrap confidence intervals.
+
+---
+
+## Why LLM Router?
+
+The selective LLM routing is the key innovation of NerGuard. Instead of routing all predictions to an expensive LLM, we use uncertainty quantification to identify only the tokens that need disambiguation.
+
+### Efficiency Metrics
+
+| Metric | Value |
+|--------|-------|
+| Tokens Routed | **0.57%** |
+| Correction Accuracy | **88.89%** |
+| Cost Savings | **78%** |
+| Help:Harm Ratio | **2.2:1** |
+
+### Entity-Specific Improvements
+
+The LLM Router significantly improves detection of structured PII where the base model struggles:
+
+| Entity Type | Without LLM | With LLM | Improvement |
+|-------------|-------------|----------|-------------|
+| Credit Card Number | 4.7% | 25.6% | **+20.9%** |
+| Phone Number | 38.5% | 49.4% | **+10.9%** |
+| Surname | 60.9% | 63.7% | +2.7% |
+| Date | 82.3% | 84.3% | +2.0% |
+
+<div align="center">
+  <table style="width: 100%; max-width: 900px; table-layout: fixed;">
+    <tr>
+      <td align="center" style="padding: 10px;">
+        <img src="diagrams/svg_output/results/12_validation_metrics.svg" alt="Validation Metrics" style="width: 100%; height: auto;">
+        <br><sub><b>Figure A:</b> Validation Metrics</sub>
+      </td>
+      <td align="center" style="padding: 10px;">
+        <img src="diagrams/svg_output/results/23_intervention_rate.svg" alt="Intervention Rate" style="width: 100%; height: auto;">
+        <br><sub><b>Figure B:</b> Intervention Rate</sub>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding: 10px;">
+        <img src="diagrams/svg_output/results/09_quantization_impact.svg" alt="Quantization Impact" style="width: 100%; height: auto;">
+        <br><sub><b>Figure C:</b> Quantization Impact</sub>
+      </td>
+      <td align="center" style="padding: 10px;">
+        <img src="diagrams/svg_output/results/20_selective_routing_comparison.svg" alt="Selective Routing" style="width: 100%; height: auto;">
+        <br><sub><b>Figure D:</b> Selective Routing</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+### How It Works
+
+1. **Uncertainty Detection**: Compute entropy and confidence for each token prediction
+2. **Selective Routing**: Only route tokens with `entropy > 0.583 AND confidence < 0.787`
+3. **Entity Filtering**: Block I-continuation tokens (where LLM causes harm) and non-beneficial entity types
+4. **LLM Disambiguation**: GPT-4o corrects uncertain predictions with 88.89% accuracy
 
 ---
 
@@ -218,30 +236,42 @@ NerGuard detects **21 PII entity types** using BIO tagging:
 
 ## Evaluation Results
 
-### Performance on NVIDIA PII Dataset
+### Benchmark Comparison
 
-| Metric | Score |
-|--------|-------|
-| Overall Accuracy | 93.22% |
-| Weighted F1 | 95.17% |
-| Macro F1 | 35.06% |
+NerGuard significantly outperforms all open-source alternatives on PII detection:
 
-*Evaluated on 1,000 samples from NVIDIA/Nemotron-PII dataset with label alignment.*
+| Model | F1-Score | Latency (ms) | vs NerGuard |
+|-------|----------|--------------|-------------|
+| **NerGuard (Base)** | **0.904** | 22.4 | — |
+| NerGuard (Hybrid) | 0.899 | 321.6 | -0.6% |
+| GLiNER | 0.446 | 20.9 | **-50.7%** |
+| Presidio | 0.315 | 10.1 | **-65.2%** |
+| SpaCy | 0.142 | 8.8 | **-84.3%** |
 
-### Hybrid System Analysis
+*Evaluated on 3,000 samples. NerGuard achieves **2x better F1-score** than the best competitor.*
 
-The hybrid system combines base model inference with selective LLM routing:
+### LLM Router Ablation Study
 
-- **LLM routing criteria**: entropy > 0.583 AND confidence < 0.787
-- **Entity-specific routing**: Only routes beneficial entity types (CREDITCARD, TELEPHONE, etc.)
-- **I-continuation blocking**: Prevents BIO sequence errors
-- **Context window**: 400 characters for disambiguation
+The selective routing strategy is critical for efficiency and accuracy:
 
-| Configuration | Net Improvement | F1-W | Routing Rate |
-|---------------|-----------------|------|--------------|
-| No Selective | +543 | 0.679 | 2.40% |
-| Selective Only | +447 | 0.682 | 1.78% |
-| **Selective + I-Block** | +76 to +90 | **0.690** | 0.57% |
+| Configuration | Net Improvement | F1-W | Routing Rate | LLM Calls |
+|---------------|-----------------|------|--------------|-----------|
+| No Selective | +543 | 0.679 | 2.40% | 2,448 |
+| Selective Only | +447 | 0.682 | 1.78% | 1,820 |
+| **Selective + I-Block** | **+89** | **0.690** | **0.57%** | 581 |
+
+**Key Insight**: The optimal configuration (Selective + I-Block) achieves the best F1 score while routing only 0.57% of tokens, reducing API costs by **78%**.
+
+### LLM Model Comparison
+
+| Model | Correction Accuracy | Harm Rate | Cost/100 samples |
+|-------|---------------------|-----------|------------------|
+| **GPT-4o** | **88.89%** | 3.52% | $0.64 |
+| GPT-4-turbo | 90.53% | 2.64% | $1.28 |
+| GPT-3.5-turbo | 80.67% | 6.74% | $0.09 |
+| GPT-4o-mini | 80.77% | 5.87% | $0.03 |
+
+*GPT-4o provides the best balance of accuracy and cost.*
 
 ### Multilingual Evaluation
 
@@ -254,18 +284,23 @@ Cross-lingual transfer on WikiNeural dataset (8 European languages):
 | Italian | 0.604 | Romance |
 | German | 0.600 | Germanic |
 | English | 0.600 | Germanic |
+| French | 0.561 | Romance |
+| Portuguese | 0.538 | Romance |
+| Spanish | 0.515 | Romance |
 
-### Benchmark Comparison (3,000 samples)
+<p align="center">
+  <img src="diagrams/svg_output/results/04_multilingual.svg" alt="LLM Impact per Entity Type" width="700">
+</p>
 
-| Model | F1-Score | Latency (ms) |
-|-------|----------|--------------|
-| **NerGuard (Base)** | **0.904** | 22.4 |
-| NerGuard (Hybrid) | 0.899 | 321.6 |
-| GLiNER | 0.446 | 20.9 |
-| Presidio | 0.315 | 10.1 |
-| SpaCy | 0.142 | 8.8 |
+### Performance on NVIDIA PII Dataset
 
-*NerGuard significantly outperforms open-source alternatives on PII detection.*
+| Metric | Score |
+|--------|-------|
+| Overall Accuracy | 93.22% |
+| Weighted F1 | 95.17% |
+| Macro F1 | 35.06% |
+
+*Evaluated on 1,000 samples from NVIDIA/Nemotron-PII dataset.*
 
 ---
 
@@ -339,7 +374,7 @@ python -m src.evaluation.ablation_study --max-samples 500
 
 ```bibtex
 @mastersthesis{nerguard2026,
-  title     = {NerGuard: Hybrid PII Detection with Entropy-Based LLM Routing},
+  title     = {Engineering a Scalable Multilingual PII Detection System with mDeBERTa-v3 and LLM-Based Validation},
   author    = {[Gabriele Durante]},
   year      = {2026},
   school    = {University of Verona},

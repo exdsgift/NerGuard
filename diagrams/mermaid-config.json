@@ -2,20 +2,45 @@
   "theme": "neutral",
   "themeVariables": {
     "fontFamily": "Arial, Helvetica, sans-serif",
-    "fontSize": "14px",
+    "fontSize": "12px",
     "primaryColor": "#e8e8e8",
     "primaryTextColor": "#000000",
     "primaryBorderColor": "#333333",
     "lineColor": "#333333",
     "secondaryColor": "#f4f4f4",
     "tertiaryColor": "#ffffff",
-    "background": "#ffffff"
+    "background": "#ffffff",
+    "noteBkgColor": "#fff5ad",
+    "noteTextColor": "#000000",
+    "noteBorderColor": "#333333"
   },
   "flowchart": {
     "curve": "basis",
-    "htmlLabels": true
+    "htmlLabels": false,
+    "useMaxWidth": false,
+    "padding": 20,
+    "nodeSpacing": 50,
+    "rankSpacing": 50
   },
   "sequence": {
-    "mirrorActors": false
+    "mirrorActors": false,
+    "useMaxWidth": false,
+    "wrap": true,
+    "actorMargin": 80,
+    "noteMargin": 20,
+    "messageMargin": 40
+  },
+  "gantt": {
+    "useMaxWidth": false,
+    "barHeight": 20,
+    "barGap": 4,
+    "topPadding": 50,
+    "leftPadding": 75,
+    "gridLineStartPadding": 35,
+    "fontSize": 11
+  },
+  "class": {
+    "useMaxWidth": false,
+    "padding": 10
   }
 }

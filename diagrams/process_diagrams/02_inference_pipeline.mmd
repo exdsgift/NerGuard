@@ -6,144 +6,48 @@ sequenceDiagram
 
     participant User
     participant PIITester
-    participant Tokenizer as Tokenizer<br/>(mDeBERTa)
-    participant Model as DeBERTa Model<br/>(Token Classification)
-    participant Metrics as metrics.py<br/>(Uncertainty)
-    participant EntityRouter as EntitySpecificRouter
-    participant LLMRouter
-    participant LLMCache
-    participant LLM as LLM Backend<br/>(OpenAI/Ollama)
+    participant Model as mDeBERTa-v3
+    participant Uncertainty as Uncertainty Module
+    participant Router as Entity Router
+    participant LLM as LLM Backend
 
-    User->>PIITester: analyze_text(text, lang="en")
+    User->>PIITester: analyze_text(text)
     activate PIITester
 
-    Note over PIITester: MAX_CONTEXT_LENGTH = 512<br/>STRIDE = 382, OVERLAP = 128
+    Note over PIITester: Tokenize + Sliding Window<br/>(512 tokens, stride 382)
 
-    PIITester->>Tokenizer: tokenize(text, return_offsets_mapping=True)
-    activate Tokenizer
-    Tokenizer-->>PIITester: input_ids, attention_mask, offsets
-    deactivate Tokenizer
+    PIITester->>Model: forward(input_ids)
+    activate Model
+    Model-->>PIITester: logits [batch, seq, 43]
+    deactivate Model
 
-    Note over PIITester: Check: len(tokens) > 510?
+    PIITester->>Uncertainty: compute_entropy_confidence(logits)
+    activate Uncertainty
+    Note over Uncertainty: H = entropy(softmax(z))<br/>c = max(softmax(z))
+    Uncertainty-->>PIITester: entropy[], confidence[], pred_ids[]
+    deactivate Uncertainty
 
-    alt Text fits in single chunk (≤510 tokens)
-        PIITester->>PIITester: Process all tokens as single chunk
-    else Text requires sliding window (>510 tokens)
-        Note over PIITester: Split into overlapping chunks<br/>Chunk N: tokens[N*382 : N*382+510]
+    loop For each token
+        alt Confident (H ≤ 0.583 or c ≥ 0.787)
+            PIITester->>PIITester: Use model prediction
+        else Uncertain + Routable Entity
+            PIITester->>Router: should_route(label, entropy, confidence)
+            activate Router
 
-        loop For each chunk
-            PIITester->>PIITester: _process_chunk(chunk_tokens)
-            Note over PIITester: Handle overlap deduplication
-        end
-    end
+            alt Blocked (GIVENNAME, SURNAME, I-tokens)
+                Router-->>PIITester: False
+            else Routable (CREDITCARD, TELEPHONE, etc.)
+                Router-->>PIITester: True
+                deactivate Router
 
-    rect rgb(240, 248, 255)
-        Note over PIITester,Metrics: CHUNK PROCESSING PIPELINE
-
-        PIITester->>PIITester: Add special tokens: [CLS] + tokens + [SEP]
-        PIITester->>PIITester: Create attention_mask tensor
-
-        PIITester->>Model: model.forward(input_ids, attention_mask)
-        activate Model
-        Note over Model: Batch inference<br/>Shape: (1, seq_len, 43 classes)
-        Model-->>PIITester: logits
-        deactivate Model
-
-        PIITester->>Metrics: compute_entropy_confidence(logits)
-        activate Metrics
-        Note over Metrics: probs = softmax(logits)<br/>entropy = -Σ(p × log(p))<br/>confidence = max(probs)<br/>pred_ids = argmax(probs)
-        Metrics-->>PIITester: entropy[], confidence[], pred_ids[]
-        deactivate Metrics
-
-        PIITester->>PIITester: Remove special token predictions [1:-1]
-    end
-
-    rect rgb(255, 248, 240)
-        Note over PIITester,LLM: PER-TOKEN ROUTING DECISION
-
-        loop For each token i
-            PIITester->>PIITester: pred_label = id2label[pred_ids[i]]
-
-            alt LLM routing enabled (enable_llm=True)
-                PIITester->>EntityRouter: should_route(pred_label, entropy[i], confidence[i], prev_label)
-                activate EntityRouter
-
-                Note over EntityRouter: UNCERTAINTY CHECK<br/>entropy > 0.583?<br/>confidence < 0.787?
-
-                alt Not uncertain
-                    EntityRouter-->>PIITester: False (keep model prediction)
-
-                else Is I- continuation token
-                    Note over EntityRouter: BLOCKED: I- tokens<br/>LLM harms BIO consistency<br/>I-TELEPHONE: -8.8%<br/>I-DATE: -2.0%
-                    EntityRouter-->>PIITester: False
-
-                else Entity in BLOCKED_ENTITIES
-                    Note over EntityRouter: BLOCKED entities:<br/>GIVENNAME, SURNAME,<br/>TITLE, CITY, STREET
-                    EntityRouter-->>PIITester: False
-
-                else Entity in ROUTABLE_ENTITIES or high-uncertainty "O"
-                    Note over EntityRouter: ROUTABLE entities:<br/>CREDITCARD, TELEPHONE,<br/>EMAIL, SOCIALNUM, DATE
-                    EntityRouter-->>PIITester: True
-                    deactivate EntityRouter
-
-                    PIITester->>LLMRouter: disambiguate(token, text, char_start, char_end, pred_label, prev_label)
-                    activate LLMRouter
-
-                    LLMRouter->>LLMRouter: context = _extract_context(text, ±400 chars)
-                    Note over LLMRouter: "...prefix>>> TARGET <<<suffix..."
-
-                    LLMRouter->>LLMCache: get(token, context, prev_label, pred)
-                    activate LLMCache
-
-                    alt Cache HIT
-                        LLMCache-->>LLMRouter: cached_result
-                        deactivate LLMCache
-                        Note over LLMRouter: Skip LLM call<br/>Use cached response
-
-                    else Cache MISS
-                        LLMCache-->>LLMRouter: None
-                        deactivate LLMCache
-
-                        LLMRouter->>LLMRouter: Format prompt (PROMPT_V9)
-                        Note over LLMRouter: Include:<br/>• Valid labels list<br/>• Context window<br/>• Previous label<br/>• BIO rules
-
-                        alt OpenAI backend
-                            LLMRouter->>LLM: chat.completions.create(model="gpt-4o")
-                            activate LLM
-                            Note over LLM: temp=0.0<br/>response_format=json<br/>max_tokens=150
-                            LLM-->>LLMRouter: {"is_pii": bool, "corrected_label": str, "reasoning": str}
-                            deactivate LLM
-
-                        else Ollama backend
-                            LLMRouter->>LLM: ollama.chat(model="qwen2.5:3b")
-                            activate LLM
-                            LLM-->>LLMRouter: JSON response
-                            deactivate LLM
-                        end
-
-                        LLMRouter->>LLMRouter: _validate_response()
-                        Note over LLMRouter: VALIDATION:<br/>1. Label in VALID_LABELS_SET?<br/>2. BIO consistency:<br/>   - I-X needs B-X/I-X before<br/>   - Cannot follow O with I-
-
-                        alt Validation passed
-                            LLMRouter->>LLMCache: set(token, context, result)
-                        else Validation failed
-                            Note over LLMRouter: Fallback to model prediction
-                        end
-                    end
-
-                    LLMRouter-->>PIITester: {is_pii, corrected_label, reasoning, cached}
-                    deactivate LLMRouter
-
-                    PIITester->>PIITester: final_label = corrected_label<br/>source = "LLM (openai)"
-                end
+                PIITester->>LLM: disambiguate(token, context)
+                activate LLM
+                Note over LLM: gpt-4o-mini<br/>Context: ±400 chars
+                LLM-->>PIITester: corrected_label
+                deactivate LLM
             end
-
-            PIITester->>PIITester: Store: {token, label, confidence, entropy, source, char_start, char_end}
-            PIITester->>PIITester: prev_label = final_label
         end
     end
 
     PIITester-->>User: List[TokenResult]
     deactivate PIITester
-
-    Note over User,PIITester: OUTPUT FORMAT:<br/>[{token: "John", label: "B-GIVENNAME",<br/>confidence: 0.92, entropy: 0.34,<br/>source: "Model", char_start: 5, char_end: 9}, ...]
