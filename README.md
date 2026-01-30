@@ -129,28 +129,17 @@ The LLM Router significantly improves detection of structured PII where the base
 | Date | 82.3% | 84.3% | +2.0% |
 
 <div align="center">
-  <table style="width: 100%; table-layout: fixed; border-collapse: collapse;">
-    <tr>
-      <td align="center" style="width: 50%; padding: 5px;">
-        <img src="diagrams/svg_output/results/12_validation_metrics.svg" width="100%">
-        <br><b>Validation Metrics</b>
-      </td>
-      <td align="center" style="width: 50%; padding: 5px;">
-        <img src="diagrams/svg_output/results/23_intervention_rate.svg" width="100%">
-        <br><b>Intervention Rate</b>
-      </td>
-    </tr>
-    <tr>
-      <td align="center" style="width: 50%; padding: 5px;">
-        <img src="diagrams/svg_output/results/09_quantization_impact.svg" width="100%">
-        <br><b>Quantization Impact</b>
-      </td>
-      <td align="center" style="width: 50%; padding: 5px;">
-        <img src="diagrams/svg_output/results/20_selective_routing_comparison.svg" width="100%">
-        <br><b>Selective Routing</b>
-      </td>
-    </tr>
-  </table>
+  <img src="diagrams/svg_output/results/12_validation_metrics.svg" width="700">
+  <br><b>Validation Metrics</b>
+  <br><br>
+  <img src="diagrams/svg_output/results/23_intervention_rate.svg" width="700">
+  <br><b>Intervention Rate</b>
+  <br><br>
+  <img src="diagrams/svg_output/results/09_quantization_impact.svg" width="700">
+  <br><b>Quantization Impact</b>
+  <br><br>
+  <img src="diagrams/svg_output/results/20_selective_routing_comparison.svg" width="700">
+  <br><b>Selective Routing</b>
 </div>
 
 ### How It Works
