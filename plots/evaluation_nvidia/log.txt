@@ -1,116 +1,0 @@
-2026-01-24 06:32:18.173989: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
-To enable the following instructions: AVX2 AVX512F FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2026-01-24 06:32:19,772 - NvidiaEval - INFO - Loading model resources from: ./models/mdeberta-pii-safe/final
-2026-01-24 06:32:20,384 - NvidiaEval - INFO - Inference device: cuda
-2026-01-24 06:32:20,746 - NvidiaEval - INFO - Loading NVIDIA/Nemotron-PII dataset...
-2026-01-24 06:32:22,927 - NvidiaEval - INFO - Subsampling dataset to 1000 samples.
-2026-01-24 06:32:22,929 - NvidiaEval - INFO - Aligning labels (Pre-processing)...
-Aligning labels:   0%|          | 0/1000 [00:00<?, ? examples/s]Aligning labels:  11%|█▏        | 113/1000 [00:00<00:00, 1110.71 examples/s]Aligning labels:  25%|██▌       | 251/1000 [00:00<00:00, 974.11 examples/s] Aligning labels:  37%|███▋      | 370/1000 [00:00<00:00, 873.42 examples/s]Aligning labels:  50%|████▉     | 496/1000 [00:00<00:00, 993.03 examples/s]Aligning labels:  62%|██████▏   | 622/1000 [00:00<00:00, 917.16 examples/s]Aligning labels:  72%|███████▏  | 718/1000 [00:00<00:00, 927.52 examples/s]Aligning labels:  83%|████████▎ | 831/1000 [00:00<00:00, 981.87 examples/s]Aligning labels:  94%|█████████▍| 940/1000 [00:01<00:00, 880.78 examples/s]Aligning labels: 100%|██████████| 1000/1000 [00:01<00:00, 845.06 examples/s]
-2026-01-24 06:32:38,709 - NvidiaEval - INFO - Starting inference on 1000 samples...
-Inference:   0%|          | 0/63 [00:00<?, ?it/s]Inference:   2%|▏         | 1/63 [00:00<00:34,  1.77it/s]Inference:   3%|▎         | 2/63 [00:00<00:23,  2.61it/s]Inference:   5%|▍         | 3/63 [00:01<00:18,  3.25it/s]Inference:   6%|▋         | 4/63 [00:01<00:19,  2.99it/s]Inference:   8%|▊         | 5/63 [00:01<00:16,  3.54it/s]Inference:  11%|█         | 7/63 [00:01<00:12,  4.64it/s]Inference:  13%|█▎        | 8/63 [00:02<00:11,  4.99it/s]Inference:  14%|█▍        | 9/63 [00:02<00:10,  5.30it/s]Inference:  16%|█▌        | 10/63 [00:02<00:11,  4.79it/s]Inference:  17%|█▋        | 11/63 [00:02<00:09,  5.57it/s]Inference:  19%|█▉        | 12/63 [00:02<00:10,  5.07it/s]Inference:  21%|██        | 13/63 [00:03<00:10,  4.64it/s]Inference:  22%|██▏       | 14/63 [00:03<00:10,  4.71it/s]Inference:  24%|██▍       | 15/63 [00:03<00:10,  4.44it/s]Inference:  25%|██▌       | 16/63 [00:03<00:11,  4.23it/s]Inference:  27%|██▋       | 17/63 [00:04<00:11,  4.09it/s]Inference:  29%|██▊       | 18/63 [00:04<00:11,  4.00it/s]Inference:  30%|███       | 19/63 [00:04<00:11,  3.92it/s]Inference:  32%|███▏      | 20/63 [00:04<00:11,  3.87it/s]Inference:  33%|███▎      | 21/63 [00:05<00:10,  3.88it/s]Inference:  37%|███▋      | 23/63 [00:05<00:07,  5.31it/s]Inference:  38%|███▊      | 24/63 [00:05<00:06,  5.82it/s]Inference:  40%|███▉      | 25/63 [00:05<00:06,  6.21it/s]Inference:  41%|████▏     | 26/63 [00:05<00:05,  6.74it/s]Inference:  43%|████▎     | 27/63 [00:05<00:04,  7.32it/s]Inference:  44%|████▍     | 28/63 [00:05<00:05,  6.91it/s]Inference:  46%|████▌     | 29/63 [00:06<00:04,  7.01it/s]Inference:  48%|████▊     | 30/63 [00:06<00:05,  5.87it/s]Inference:  49%|████▉     | 31/63 [00:06<00:05,  5.83it/s]Inference:  51%|█████     | 32/63 [00:06<00:06,  5.05it/s]Inference:  52%|█████▏    | 33/63 [00:06<00:05,  5.51it/s]Inference:  54%|█████▍    | 34/63 [00:07<00:05,  4.86it/s]Inference:  56%|█████▌    | 35/63 [00:07<00:06,  4.50it/s]Inference:  57%|█████▋    | 36/63 [00:07<00:06,  4.27it/s]Inference:  59%|█████▊    | 37/63 [00:07<00:06,  4.13it/s]Inference:  60%|██████    | 38/63 [00:08<00:06,  4.02it/s]Inference:  62%|██████▏   | 39/63 [00:08<00:06,  3.94it/s]Inference:  63%|██████▎   | 40/63 [00:08<00:05,  3.88it/s]Inference:  65%|██████▌   | 41/63 [00:09<00:05,  3.86it/s]Inference:  68%|██████▊   | 43/63 [00:09<00:03,  5.50it/s]Inference:  70%|██████▉   | 44/63 [00:09<00:03,  5.42it/s]Inference:  73%|███████▎  | 46/63 [00:09<00:02,  6.34it/s]Inference:  75%|███████▍  | 47/63 [00:09<00:02,  6.16it/s]Inference:  76%|███████▌  | 48/63 [00:09<00:02,  6.17it/s]Inference:  78%|███████▊  | 49/63 [00:10<00:02,  5.77it/s]Inference:  79%|███████▉  | 50/63 [00:10<00:02,  5.87it/s]Inference:  81%|████████  | 51/63 [00:10<00:02,  5.11it/s]Inference:  83%|████████▎ | 52/63 [00:10<00:02,  5.14it/s]Inference:  84%|████████▍ | 53/63 [00:11<00:01,  5.06it/s]Inference:  86%|████████▌ | 54/63 [00:11<00:01,  5.31it/s]Inference:  87%|████████▋ | 55/63 [00:11<00:01,  4.74it/s]Inference:  89%|████████▉ | 56/63 [00:11<00:01,  4.41it/s]Inference:  90%|█████████ | 57/63 [00:11<00:01,  4.20it/s]Inference:  92%|█████████▏| 58/63 [00:12<00:01,  4.06it/s]Inference:  94%|█████████▎| 59/63 [00:12<00:01,  3.96it/s]Inference:  95%|█████████▌| 60/63 [00:12<00:00,  3.89it/s]Inference:  97%|█████████▋| 61/63 [00:13<00:00,  3.86it/s]Inference: 100%|██████████| 63/63 [00:13<00:00,  5.96it/s]Inference: 100%|██████████| 63/63 [00:13<00:00,  4.79it/s]
-2026-01-24 06:32:51,875 - NvidiaEval - INFO - Generating performance report...
-2026-01-24 06:32:53,301 - NvidiaEval - INFO - 
-                    precision    recall  f1-score   support
-
-             B-AGE     0.4273    1.0000    0.5987        47
-     B-BUILDINGNUM     0.0000    0.0000    0.0000         0
-            B-CITY     0.4286    0.8503    0.5699       187
-B-CREDITCARDNUMBER     0.1667    0.0225    0.0396        89
-            B-DATE     0.8242    0.7758    0.7993       834
-B-DRIVERLICENSENUM     0.0000    0.0000    0.0000         0
-           B-EMAIL     0.8803    0.9698    0.9229       364
-          B-GENDER     0.5000    0.0143    0.0278        70
-       B-GIVENNAME     0.8343    0.5823    0.6858       778
-       B-IDCARDNUM     0.0000    0.0000    0.0000         0
-     B-PASSPORTNUM     0.0000    0.0000    0.0000         0
-             B-SEX     0.0000    0.0000    0.0000         0
-       B-SOCIALNUM     0.1509    1.0000    0.2622        67
-          B-STREET     0.0615    0.0606    0.0611       198
-         B-SURNAME     0.9137    0.5468    0.6842       523
-          B-TAXNUM     0.0476    0.2727    0.0811        22
-    B-TELEPHONENUM     0.6240    0.4522    0.5244       356
-            B-TIME     0.8222    0.6167    0.7048       240
-           B-TITLE     0.0000    0.0000    0.0000         0
-         B-ZIPCODE     0.2997    0.8990    0.4495        99
-             I-AGE     0.0000    0.0000    0.0000         1
-     I-BUILDINGNUM     0.0000    0.0000    0.0000         0
-            I-CITY     0.3151    0.8876    0.4651       169
-I-CREDITCARDNUMBER     0.2424    0.0148    0.0279       540
-            I-DATE     0.6511    0.8043    0.7197      1339
-I-DRIVERLICENSENUM     0.0000    0.0000    0.0000         0
-           I-EMAIL     0.8611    0.9846    0.9187      2727
-          I-GENDER     1.0000    0.1176    0.2105        17
-       I-GIVENNAME     0.6089    0.4113    0.4910       564
-       I-IDCARDNUM     0.0000    0.0000    0.0000         0
-     I-PASSPORTNUM     0.0000    0.0000    0.0000         0
-       I-SOCIALNUM     0.0739    1.0000    0.1376       199
-          I-STREET     0.9901    0.6812    0.8071       734
-         I-SURNAME     0.8509    0.6462    0.7346       424
-          I-TAXNUM     0.0493    0.2833    0.0840        60
-    I-TELEPHONENUM     0.6465    0.6175    0.6317      1247
-            I-TIME     0.8316    0.6269    0.7149       260
-         I-ZIPCODE     0.2176    0.9271    0.3525        96
-
-         micro avg     0.3905    0.7017    0.5018     12251
-         macro avg     0.3768    0.4228    0.3344     12251
-      weighted avg     0.7077    0.7017    0.6736     12251
-
-2026-01-24 06:32:54,937 - NvidiaEval - INFO - Global Accuracy: 0.9322
-2026-01-24 06:32:54,937 - NvidiaEval - INFO - Macro F1: 0.3506 | Weighted F1: 0.9517
-2026-01-24 06:32:54,937 - NvidiaEval - INFO - Reports saved to ./plots/evaluation_nvidia
-2026-01-24 06:32:54,937 - NvidiaEval - INFO - --- Mapping Coverage Stats ---
-2026-01-24 06:32:54,937 - NvidiaEval - INFO - url                       -> O              : 5977
-2026-01-24 06:32:54,937 - NvidiaEval - INFO - company_name              -> O              : 3156
-2026-01-24 06:32:54,937 - NvidiaEval - INFO - email                     -> EMAIL          : 3091
-2026-01-24 06:32:54,937 - NvidiaEval - INFO - api_key                   -> O              : 2089
-2026-01-24 06:32:54,937 - NvidiaEval - INFO - date                      -> DATE           : 1984
-2026-01-24 06:32:54,937 - NvidiaEval - INFO - http_cookie               -> O              : 1887
-2026-01-24 06:32:54,937 - NvidiaEval - INFO - occupation                -> O              : 1225
-2026-01-24 06:32:54,937 - NvidiaEval - INFO - phone_number              -> TELEPHONENUM   : 1160
-2026-01-24 06:32:54,937 - NvidiaEval - INFO - first_name                -> GIVENNAME      : 951
-2026-01-24 06:32:54,937 - NvidiaEval - INFO - last_name                 -> SURNAME        : 947
-2026-01-24 06:32:54,937 - NvidiaEval - INFO - street_address            -> STREET         : 932
-2026-01-24 06:32:54,937 - NvidiaEval - INFO - ipv6                      -> O              : 915
-2026-01-24 06:32:54,937 - NvidiaEval - INFO - device_identifier         -> O              : 900
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - vehicle_identifier        -> O              : 858
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - coordinate                -> O              : 764
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - date_time                 -> O              : 698
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - mac_address               -> O              : 668
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - credit_debit_card         -> CREDITCARDNUMBER: 629
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - biometric_identifier      -> O              : 594
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - customer_id               -> O              : 550
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - time                      -> TIME           : 500
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - account_number            -> O              : 462
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - fax_number                -> TELEPHONENUM   : 443
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - certificate_license_number -> O              : 435
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - password                  -> O              : 419
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - user_name                 -> GIVENNAME      : 391
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - education_level           -> O              : 382
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - health_plan_beneficiary_number -> O              : 376
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - ipv4                      -> O              : 370
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - employee_id               -> O              : 370
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - swift_bic                 -> O              : 362
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - city                      -> CITY           : 356
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - county                    -> O              : 350
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - unique_id                 -> O              : 344
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - license_plate             -> O              : 308
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - medical_record_number     -> O              : 275
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - ssn                       -> SOCIALNUM      : 266
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - state                     -> O              : 255
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - country                   -> O              : 217
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - bank_routing_number       -> O              : 206
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - employment_status         -> O              : 197
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - postcode                  -> ZIPCODE        : 195
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - date_of_birth             -> DATE           : 189
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - pin                       -> O              : 147
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - race_ethnicity            -> O              : 116
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - tax_id                    -> TAXNUM         : 82
-2026-01-24 06:32:54,938 - NvidiaEval - INFO - political_view            -> O              : 79
-2026-01-24 06:32:54,939 - NvidiaEval - INFO - blood_type                -> O              : 74
-2026-01-24 06:32:54,939 - NvidiaEval - INFO - religious_belief          -> O              : 66
-2026-01-24 06:32:54,939 - NvidiaEval - INFO - gender                    -> GENDER         : 52
-2026-01-24 06:32:54,939 - NvidiaEval - INFO - language                  -> O              : 50
-2026-01-24 06:32:54,939 - NvidiaEval - INFO - age                       -> AGE            : 48
-2026-01-24 06:32:54,939 - NvidiaEval - INFO - sexuality                 -> GENDER         : 35
-2026-01-24 06:32:54,939 - NvidiaEval - INFO - cvv                       -> O              : 35
-2026-01-24 06:32:56,889 - NvidiaEval - INFO - Confusion matrix saved to ./plots/evaluation_nvidia/confusion_matrix.png
