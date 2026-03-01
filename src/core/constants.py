@@ -31,20 +31,20 @@ ROUTABLE_ENTITIES = {
     "TELEPHONENUM",
     "SOCIALNUM",
     "DATE",
-    "EMAIL",
     "TAXNUM",
     "PASSPORTNUM",
     "DRIVERLICENSENUM",
     "IDCARDNUM",
 }
 
-# Entities where LLM routing causes harm (name confusion, BIO errors)
+# Entities where LLM routing causes harm (name confusion, BIO errors, high baseline)
 BLOCKED_ENTITIES = {
     "GIVENNAME",
     "SURNAME",
     "TITLE",
     "CITY",
     "STREET",
+    "EMAIL",
 }
 
 # Entity-specific thresholds (more aggressive for numeric, conservative for names)
@@ -53,7 +53,6 @@ ENTITY_THRESHOLDS = {
     "CREDITCARDNUMBER": {"entropy": 0.4, "confidence": 0.9},
     "TELEPHONENUM": {"entropy": 0.5, "confidence": 0.85},
     "SOCIALNUM": {"entropy": 0.4, "confidence": 0.9},
-    "EMAIL": {"entropy": 0.5, "confidence": 0.85},
     # Default thresholds
     "DEFAULT": {"entropy": DEFAULT_ENTROPY_THRESHOLD, "confidence": DEFAULT_CONFIDENCE_THRESHOLD},
 }
@@ -109,11 +108,14 @@ NVIDIA_TO_MODEL_MAP = {
     "tax_id": "TAXNUM",
     "driver_license": "DRIVERLICENSENUM",
     "drivers_license": "DRIVERLICENSENUM",
+    "national_id": "IDCARDNUM",
+    "passport_number": "PASSPORTNUM",
     # Financial
     "credit_debit_card": "CREDITCARDNUMBER",
     # Temporal
     "date": "DATE",
     "date_of_birth": "DATE",
+    "date_time": "DATE",
     "time": "TIME",
     # Demographics
     "age": "AGE",
@@ -130,8 +132,6 @@ NVIDIA_TO_MODEL_MAP = {
     "country": "O",
     "state": "O",
     "account_number": "O",
-    "national_id": "O",
-    "passport_number": "O",
 }
 
 # UNIFIED SCHEMA FOR CROSS-MODEL BENCHMARKS
@@ -154,6 +154,26 @@ for unified_cat, specific_labels in UNIFIED_SCHEMA.items():
         LABEL_TO_UNIFIED[label] = unified_cat
         LABEL_TO_UNIFIED[f"B-{label}"] = unified_cat
         LABEL_TO_UNIFIED[f"I-{label}"] = unified_cat
+
+# CONLL-2003 LABEL MAPPING (for standard NER benchmark evaluation)
+CONLL_ID_TO_LABEL = {
+    0: "O",
+    1: "B-PER",
+    2: "I-PER",
+    3: "B-ORG",
+    4: "I-ORG",
+    5: "B-LOC",
+    6: "I-LOC",
+    7: "B-MISC",
+    8: "I-MISC",
+}
+
+CONLL_TO_UNIFIED = {
+    "PER": "PER",
+    "LOC": "LOC",
+    "ORG": "O",     # Organizations not in PII schema
+    "MISC": "O",    # Miscellaneous not in PII schema
+}
 
 # TRAINING CONFIGURATION
 DEFAULT_BATCH_SIZE = 32
