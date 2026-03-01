@@ -9,7 +9,6 @@ from typing import List, Tuple
 from transformers import AutoTokenizer, AutoModelForTokenClassification, AutoConfig
 from datasets import load_from_disk
 from sklearn.metrics import classification_report
-import sys
 import os
 import logging
 from dotenv import load_dotenv
@@ -22,46 +21,34 @@ from src.core.constants import (
     LABEL_TO_UNIFIED,
 )
 from src.inference.entity_router import EntitySpecificRouter
-from src.visualization.style import set_publication_style
-from src.visualization.benchmark_plots import (
-    plot_main_metrics,
-    plot_efficiency_frontier,
-    plot_entity_comparison,
-    plot_confusion_matrix_single,
-)
 
 GLINER_AVAILABLE = False
 PRESIDIO_AVAILABLE = False
 SPACY_AVAILABLE = False
 
-load_dotenv()
+logger = logging.getLogger(__name__)
 logging.getLogger("transformers").setLevel(logging.ERROR)
-
-current_file = os.path.abspath(__file__)
-project_root = os.path.dirname(os.path.dirname(os.path.dirname(current_file)))
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
 
 try:
     from gliner import GLiNER
 
     GLINER_AVAILABLE = True
 except ImportError:
-    print("⚠️  GLiNER non installato.")
+    logger.warning("GLiNER not available, skipping")
 
 try:
     from presidio_analyzer import AnalyzerEngine
 
     PRESIDIO_AVAILABLE = True
 except ImportError:
-    print("⚠️  Presidio non installato.")
+    logger.warning("Presidio not available, skipping")
 
 try:
     import spacy
 
     SPACY_AVAILABLE = True
 except ImportError:
-    print("⚠️  SpaCy non installato.")
+    logger.warning("SpaCy not available, skipping")
 
 try:
     from src.inference.llm_router import LLMRouter
@@ -69,7 +56,7 @@ try:
     LLM_AVAILABLE = True
 except ImportError:
     LLM_AVAILABLE = False
-    print("⚠️  LLMRouter non disponibile - NerGuard Hybrid disabilitato")
+    logger.warning("LLMRouter not available, hybrid mode disabled")
 
 MODEL_PATH = DEFAULT_MODEL_PATH
 DATA_PATH = DEFAULT_DATA_PATH
@@ -101,8 +88,6 @@ class EntitySpan:
 
 
 def plot_results(results, output_dir="evaluation_results"):
-    set_publication_style()
-
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
@@ -129,15 +114,6 @@ def plot_results(results, output_dir="evaluation_results"):
         )
 
     df_metrics = pd.DataFrame(metrics)
-
-    plot_main_metrics(df_metrics, output_dir)
-    plot_efficiency_frontier(df_metrics, output_dir)
-    plot_entity_comparison(results, output_dir)
-
-    for res in results:
-        plot_confusion_matrix_single(
-            res["y_true"], res["y_pred"], res["model"], output_dir
-        )
 
     df_metrics.to_csv(f"{output_dir}/metrics_summary.csv", index=False)
 
@@ -198,22 +174,22 @@ class NerGuard(ModelWrapper):
         input_ids = sample["input_ids"]
         labels = sample["labels"]
 
-        # Decodifica testo per LLM
+        # Decode text for LLM context
         text = tokenizer.decode(input_ids, skip_special_tokens=True)
 
-        # Ottieni offset mapping (CRITICO per LLM)
+        # Get offset mapping for LLM routing
         try:
             encoding = tokenizer(
                 text, return_offsets_mapping=True, add_special_tokens=True
             )
             offset_mapping = encoding["offset_mapping"]
-        except:
+        except Exception:
             encoding = tokenizer.encode_plus(
                 text, return_offsets_mapping=True, add_special_tokens=True
             )
             offset_mapping = encoding["offset_mapping"]
 
-        # Predizione modello
+        # Model prediction
         input_ids_tensor = torch.tensor([input_ids]).to(self.device)
         attention_mask = torch.tensor([sample["attention_mask"]]).to(self.device)
 
@@ -260,17 +236,6 @@ class NerGuard(ModelWrapper):
                     if i < len(offset_mapping):
                         char_start, char_end = offset_mapping[i]
 
-                        # DEBUG
-                        if self.llm_calls <= 3:
-                            print(f"\n  [LLM DEBUG #{self.llm_calls}]")
-                            print(
-                                f"    Token: '{tokens[i]}' | Entropy: {entropy[i]:.3f} | Conf: {conf[i]:.3f}"
-                            )
-                            print(f"    Pred: {raw_pred} | Prev: {prev_pred}")
-                            print(
-                                f"    Chars: {char_start}-{char_end} in '{text[max(0, char_start - 20) : char_end + 20]}'"
-                            )
-
                         res = self.router.disambiguate(
                             target_token=tokens[i],
                             full_text=text,
@@ -286,11 +251,6 @@ class NerGuard(ModelWrapper):
                         new_label = res.get("corrected_label", raw_pred)
                         new_is_entity = new_label != "O"
 
-                        if self.llm_calls <= 3:
-                            print(
-                                f"    LLM Result: {new_label} (is_pii: {res.get('is_pii')})"
-                            )
-
                         if old_is_entity == new_is_entity:
                             self.llm_kept_same += 1
                         elif not old_is_entity and new_is_entity:
@@ -302,9 +262,7 @@ class NerGuard(ModelWrapper):
                             raw_pred = new_label
                         else:
                             raw_pred = "O"
-                except Exception as e:
-                    if self.llm_calls <= 3:
-                        print(f"    ERROR: {e}")
+                except Exception:
                     pass
 
             clean_pred = raw_pred.replace("B-", "").replace("I-", "").upper()
@@ -393,7 +351,7 @@ class ExternalWrapper(ModelWrapper):
                 text, return_offsets_mapping=True, add_special_tokens=True
             )
             offset_mapping = encoding["offset_mapping"]
-        except:
+        except Exception:
             encoding = tokenizer.encode_plus(
                 text, return_offsets_mapping=True, add_special_tokens=True
             )
@@ -498,7 +456,7 @@ def run_benchmark():
             llm_info += f"\n    LLM calls: {model.llm_calls}"
             llm_info += f"\n    Changes: O→Entity={model.llm_changed_to_entity}, Entity→O={model.llm_changed_to_o}, Same={model.llm_kept_same}"
 
-        print(f"  ✓ {len(lats)} samples | {avg_lat:.2f}ms{llm_info}\n")
+        print(f"  Done: {len(lats)} samples | {avg_lat:.2f}ms{llm_info}\n")
 
         results.append(
             {
@@ -514,4 +472,5 @@ def run_benchmark():
 
 
 if __name__ == "__main__":
+    load_dotenv()
     run_benchmark()

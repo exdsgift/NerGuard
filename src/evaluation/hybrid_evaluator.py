@@ -1,7 +1,4 @@
-from dotenv import load_dotenv
-
 import os
-import sys
 import logging
 import json
 import ast
@@ -18,8 +15,6 @@ from collections import defaultdict
 
 from src.inference.llm_router import LLMRouter
 from src.inference.entity_router import EntitySpecificRouter
-from src.visualization.plotting_mixin import PlottingMixin
-from src.visualization.style import set_publication_style
 from src.core.constants import (
     DEFAULT_MODEL_PATH,
     DEFAULT_ENTROPY_THRESHOLD,
@@ -33,8 +28,6 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
 )
 logger = logging.getLogger("HybridEval")
-
-load_dotenv()  # Load .env file for API keys
 
 
 @dataclass
@@ -74,7 +67,7 @@ class HybridResult:
     )
 
 
-class HybridEvaluator(PlottingMixin):
+class HybridEvaluator:
     def __init__(
         self, config: EvalConfig, llm_router: Optional[LLMRouter] = None
     ):
@@ -92,7 +85,6 @@ class HybridEvaluator(PlottingMixin):
         logger.info(f"Entity router: {self.entity_router}")
 
         self._init_resources()
-        self._setup_plotting()
         os.makedirs(config.output_dir, exist_ok=True)
 
     def _init_resources(self):
@@ -108,10 +100,7 @@ class HybridEvaluator(PlottingMixin):
             logger.info(f"Model loaded successfully on {self.device}")
         except Exception as e:
             logger.critical(f"Failed to load model: {e}")
-            sys.exit(1)
-
-    def _setup_plotting(self):
-        set_publication_style()
+            raise RuntimeError(f"Failed to load model: {e}")
 
     def load_and_preprocess(self):
         logger.info("Loading NVIDIA/Nemotron-PII dataset...")
@@ -165,10 +154,10 @@ class HybridEvaluator(PlottingMixin):
         if isinstance(spans, str):
             try:
                 spans = json.loads(spans)
-            except:
+            except (json.JSONDecodeError, ValueError):
                 try:
                     spans = ast.literal_eval(spans)
-                except:
+                except (ValueError, SyntaxError):
                     return []
         if isinstance(spans, list):
             valid = [
@@ -327,7 +316,7 @@ class HybridEvaluator(PlottingMixin):
             y_true, y_hyb, labels=labels, zero_division=0
         )
 
-        # Report testuale
+        # Text report
         report_lines = []
         report_lines.append("=" * 80)
         report_lines.append("BASELINE MODEL (DeBERTa Only)")
@@ -360,7 +349,7 @@ class HybridEvaluator(PlottingMixin):
         report_lines.append("=" * 80)
         report_lines.append(hyb_report)
 
-        # Analisi per-class
+        # Per-class analysis
         report_lines.append("\n" + "=" * 80)
         report_lines.append("PER-CLASS LLM IMPACT ANALYSIS")
         report_lines.append("=" * 80)
@@ -386,7 +375,7 @@ class HybridEvaluator(PlottingMixin):
 
         report_text = "\n".join(report_lines)
 
-        # Log e salva
+        # Log and save
         for line in report_lines:
             logger.info(line)
 
@@ -395,14 +384,7 @@ class HybridEvaluator(PlottingMixin):
         ) as f:
             f.write(report_text)
 
-        # Genera tutti i grafici
-        self._plot_confusion_matrices(y_true, y_base, y_hyb, labels)
-        self._plot_per_class_improvements(res)
-        self._plot_confidence_entropy_analysis(res)
-        self._plot_llm_impact_analysis(res)
-        self._plot_error_analysis(y_true, y_base, y_hyb)
-
-        logger.info(f"All reports and visualizations saved to {self.config.output_dir}")
+        logger.info(f"All reports saved to {self.config.output_dir}")
 
 
 if __name__ == "__main__":

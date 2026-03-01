@@ -370,14 +370,3 @@ class PIITester:
             result = result[:entity["start"]] + replacement + result[entity["end"]:]
 
         return result
-
-
-# For backwards compatibility
-def analyze_sentence(text: str, model_path: str = DEFAULT_MODEL_PATH, llm_routing: bool = False):
-    """
-    Convenience function for quick analysis.
-
-    Deprecated: Use PIITester class directly for better control.
-    """
-    tester = PIITester(model_path=model_path, llm_routing=llm_routing)
-    return tester.analyze_text(text, verbose=True)

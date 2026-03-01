@@ -27,14 +27,6 @@ from src.core.metrics import compute_entropy_confidence
 from src.inference.llm_router import LLMRouter
 from src.utils.io import ensure_dir
 from src.utils.logging_config import setup_logging
-from src.visualization.style import set_publication_style
-from src.visualization.plots import (
-    plot_confusion_matrix,
-    plot_entropy_separation,
-    plot_model_comparison,
-)
-from dotenv import load_dotenv
-load_dotenv()
 
 logger = setup_logging("ModelValidation")
 
@@ -205,7 +197,6 @@ def evaluate(
     logger.info("HYBRID EVALUATION PROTOCOL")
     logger.info(f"Model: {model_path}")
     ensure_dir(output_dir)
-    set_publication_style()
 
     device = get_device()
     logger.info(f"Device: {device}")
@@ -311,29 +302,6 @@ def evaluate(
         labels=active_labels, target_names=target_names,
         digits=4, zero_division=0,
     ))
-
-    # Generate plots
-    logger.info("Generating plots...")
-
-    plot_confusion_matrix(
-        true_labels, baseline_preds, id2label,
-        "Baseline Confusion Matrix",
-        os.path.join(output_dir, "cm_baseline.png"),
-    )
-    plot_confusion_matrix(
-        true_labels, hybrid_preds, id2label,
-        "Hybrid Confusion Matrix",
-        os.path.join(output_dir, "cm_hybrid.png"),
-    )
-    plot_entropy_separation(
-        correct_entropies, incorrect_entropies,
-        entropy_threshold,
-        os.path.join(output_dir, "entropy_calibration.png"),
-    )
-    plot_model_comparison(
-        base_report_dict, hybrid_report_dict,
-        os.path.join(output_dir, "f1_comparison.png"),
-    )
 
     # Save text report
     with open(os.path.join(output_dir, "report.txt"), "w") as f:

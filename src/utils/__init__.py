@@ -6,7 +6,6 @@ This module contains general-purpose utilities:
 - logging_config: Unified logging configuration
 - colors: ANSI color codes for terminal output
 - samples: Sample PII texts for testing
-- calibration: Debug and calibration utilities
 """
 
 from src.utils.io import ensure_dir, load_json, save_json

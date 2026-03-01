@@ -42,8 +42,6 @@ from src.core.constants import (
     DEFAULT_CONFIDENCE_THRESHOLD,
     LABEL_TO_UNIFIED,
 )
-from src.visualization.style import set_publication_style
-
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 

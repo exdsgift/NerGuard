@@ -35,8 +35,6 @@ from src.core.constants import (
     NVIDIA_TO_MODEL_MAP,
 )
 from src.core.label_mapper import LabelMapper
-from src.visualization.style import set_publication_style
-
 load_dotenv()
 
 logging.basicConfig(
@@ -139,7 +137,6 @@ class LLMRouterExperiment:
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         os.makedirs(config.output_dir, exist_ok=True)
         self._init_model()
-        set_publication_style()
 
     def _init_model(self):
         """Initialize the base NER model."""

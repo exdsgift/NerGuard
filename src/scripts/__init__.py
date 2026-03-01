@@ -7,5 +7,4 @@ Available scripts:
 - inference.py: Run inference on text
 - benchmark.py: Run cross-model benchmarks
 - quantize.py: Quantize model to ONNX
-- upload.py: Upload model to HuggingFace Hub
 """

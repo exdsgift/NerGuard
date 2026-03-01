@@ -11,8 +11,6 @@ from transformers import AutoTokenizer, AutoModelForTokenClassification
 
 from src.core.constants import DEFAULT_MODEL_PATH, DEFAULT_DATA_PATH
 from src.utils.io import ensure_dir
-from src.visualization.style import set_publication_style
-from src.visualization.optimization_plots import plot_optimization_heatmap, plot_pareto_frontier
 
 
 
@@ -27,7 +25,7 @@ BATCH_SIZE = 32
 SAMPLE_LIMIT = None  # Use all samples for accurate thresholds
 
 LLM_COST_PER_TOKEN = 0.00002  # GPT-4 Turbo pricing $0.02/1K tokens
-ERROR_COST_PER_TOKEN = 0.001  # Cost violantion per token GDPR (example value)
+ERROR_COST_PER_TOKEN = 0.001  # Estimated GDPR violation cost per leaked PII token
 
 BETA_SCORE = 0.5
 GRID_RESOLUTION = 30
@@ -214,7 +212,6 @@ def optimize():
     )
 
     ensure_dir(OUTPUT_DIR)
-    set_publication_style()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"\n   Device: {device}")
@@ -312,12 +309,12 @@ def optimize():
     )
 
     print("\n" + "=" * 70)
-    print("   RISULTATI FINALI (PUBLICATION-READY)")
+    print("   FINAL RESULTS (PUBLICATION-READY)")
     print("=" * 70)
-    print(f"\n   Soglie Ottimali:")
+    print(f"\n   Optimal Thresholds:")
     print(f"   • Entropy:    > {best_ent:.3f}")
     print(f"   • Confidence: < {best_conf:.3f}")
-    print(f"\n   Metriche di Performance:")
+    print(f"\n   Performance Metrics:")
     print(
         f"   • Precision:  {precision:.3f} (95% CI: [{precision_ci[0]:.3f}, {precision_ci[1]:.3f}])"
     )
@@ -327,50 +324,21 @@ def optimize():
     print(
         f"   • F{BETA_SCORE}-Score:  {f_score:.3f} (95% CI: [{f_score_ci[0]:.3f}, {f_score_ci[1]:.3f}])"
     )
-    print(f"\n   Metriche Economiche:")
+    print(f"\n   Economic Metrics:")
     print(f"   • Intervention Rate: {intervention_rate:.2%}")
     print(f"   • Expected Cost:     ${expected_cost:.2f}")
     print(
         f"   • Cost Savings:      ${cost_savings:.2f} ({(cost_savings / baseline_cost) * 100:.1f}%)"
     )
     print(f"\n   Confusion Matrix:")
-    print(f"   • True Positives:  {tp:,} (errori rilevati correttamente)")
-    print(f"   • False Positives: {fp:,} (falsi allarmi)")
-    print(f"   • False Negatives: {fn:,} (errori mancati)")
+    print(f"   • True Positives:  {tp:,} (correctly detected errors)")
+    print(f"   • False Positives: {fp:,} (false alarms)")
+    print(f"   • False Negatives: {fn:,} (missed errors)")
     print(f"   • True Negatives:  {tn:,}")
     print("=" * 70)
 
-    print("\n[6/6] Generating publication-quality plots...")
-    plot_optimization_heatmap(
-        ent_grid,
-        conf_grid,
-        results["f_score"],
-        max_idx,
-        f"F{BETA_SCORE}-Score",
-        f"{OUTPUT_DIR}/opt_fscore_heatmap.png",
-    )
-    plot_optimization_heatmap(
-        ent_grid,
-        conf_grid,
-        results["precision"],
-        max_idx,
-        "Precision",
-        f"{OUTPUT_DIR}/opt_precision_heatmap.png",
-    )
-    plot_optimization_heatmap(
-        ent_grid,
-        conf_grid,
-        results["expected_cost"],
-        max_idx,
-        "Expected Cost ($)",
-        f"{OUTPUT_DIR}/opt_cost_heatmap.png",
-    )
-    plot_pareto_frontier(
-        results, ent_grid, conf_grid, f"{OUTPUT_DIR}/pareto_frontier.png"
-    )
-
     def convert_to_native(obj):
-        """Converte NumPy types a Python nativi per JSON."""
+        """Convert NumPy types to native Python for JSON serialization."""
         if isinstance(obj, np.integer):
             return int(obj)
         elif isinstance(obj, np.floating):
@@ -387,7 +355,7 @@ def optimize():
     with open(f"{OUTPUT_DIR}/results.json", "w") as f:
         json.dump(result_dict_native, f, indent=2)
 
-    # TXT leggibile
+    # Human-readable TXT
     with open(f"{OUTPUT_DIR}/optimal_params.txt", "w") as f:
         f.write(f"# Optimal Hyperparameters (F{BETA_SCORE}-Score Optimization)\n")
         f.write(f"# Random Seed: {RANDOM_SEED}\n")
@@ -396,7 +364,7 @@ def optimize():
             f.write(f"{key}: {value}\n")
 
     print(f"\nAll results saved to: {OUTPUT_DIR}/")
-    print("JSON export: results.json (per riproducibilità)")
+    print("JSON export: results.json (for reproducibility)")
 
     return result
 

@@ -14,13 +14,8 @@ from optimum.onnxruntime.configuration import AutoQuantizationConfig
 from tqdm import tqdm
 
 from src.core.constants import DEFAULT_MODEL_PATH, DEFAULT_DATA_PATH
-from src.visualization.optimization_plots import (
-    plot_quantization_metrics,
-    plot_quantization_radar,
-    save_quantization_report,
-)
 
-warnings.filterwarnings("ignore")
+warnings.filterwarnings("ignore", category=FutureWarning, module="transformers")
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
@@ -266,9 +261,6 @@ def quantize_and_evaluate(model_path, data_path, output_dir):
     )
     logger.info("=" * 80 + "\n")
 
-    plot_quantization_metrics(metrics, output_dir)
-    plot_quantization_radar(metrics, output_dir)
-    save_quantization_report(metrics, output_dir)
     logger.info("Quantization pipeline completed successfully!")
 
 

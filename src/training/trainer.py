@@ -37,7 +37,7 @@ from src.core.constants import (
 )
 from src.utils.logging_config import setup_logging
 
-warnings.filterwarnings("ignore")
+warnings.filterwarnings("ignore", category=FutureWarning, module="transformers")
 
 logger = setup_logging("ModelTraining")
 
@@ -227,6 +227,3 @@ def main(
 
 if __name__ == "__main__":
     main()
-
-
-# CUDA_VISIBLE_DEVICES=2,3 python -m torch.distributed.run --nproc_per_node=2 -m src.training.trainer

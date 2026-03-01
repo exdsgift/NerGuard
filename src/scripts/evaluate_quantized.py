@@ -24,13 +24,8 @@ from optimum.onnxruntime import ORTModelForTokenClassification
 from tqdm import tqdm
 
 from src.core.constants import DEFAULT_MODEL_PATH, DEFAULT_DATA_PATH
-from src.visualization.optimization_plots import (
-    plot_quantization_metrics,
-    plot_quantization_radar,
-    save_quantization_report,
-)
 
-warnings.filterwarnings("ignore")
+warnings.filterwarnings("ignore", category=FutureWarning, module="transformers")
 
 logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
@@ -308,16 +303,6 @@ def main():
 
         print_results(baseline_results, "Baseline (FP32)", baseline_size)
         print_comparison(baseline_results, quantized_results, baseline_size, quantized_size)
-
-        # Generate plots and report
-        metrics = {
-            "Original (FP32)": {**baseline_results, "size": baseline_size},
-            "Quantized (INT8)": {**quantized_results, "size": quantized_size},
-        }
-
-        plot_quantization_metrics(metrics, args.output_dir)
-        plot_quantization_radar(metrics, args.output_dir)
-        save_quantization_report(metrics, args.output_dir)
 
         del baseline_model
         torch.cuda.empty_cache() if torch.cuda.is_available() else None
