@@ -1,0 +1,327 @@
+================================================================================
+BASELINE MODEL (DeBERTa Only)
+================================================================================
+                    precision    recall  f1-score   support
+
+             B-AGE       0.43      1.00      0.60        47
+            B-CITY       0.43      0.85      0.57       187
+B-CREDITCARDNUMBER       0.17      0.02      0.04        89
+            B-DATE       0.97      0.79      0.87       961
+           B-EMAIL       0.88      0.97      0.92       364
+          B-GENDER       0.50      0.01      0.03        70
+       B-GIVENNAME       0.83      0.58      0.69       778
+       B-SOCIALNUM       0.15      1.00      0.26        67
+          B-STREET       0.06      0.06      0.06       198
+         B-SURNAME       0.91      0.55      0.68       523
+          B-TAXNUM       0.05      0.27      0.08        22
+    B-TELEPHONENUM       0.62      0.45      0.52       356
+            B-TIME       0.82      0.62      0.70       240
+         B-ZIPCODE       0.30      0.90      0.45        99
+             I-AGE       0.00      0.00      0.00         1
+            I-CITY       0.32      0.89      0.47       169
+I-CREDITCARDNUMBER       0.24      0.01      0.03       540
+            I-DATE       0.98      0.85      0.91      1910
+           I-EMAIL       0.86      0.98      0.92      2727
+          I-GENDER       1.00      0.12      0.21        17
+       I-GIVENNAME       0.61      0.41      0.49       564
+       I-SOCIALNUM       0.07      1.00      0.14       199
+          I-STREET       0.99      0.68      0.81       734
+         I-SURNAME       0.85      0.65      0.73       424
+          I-TAXNUM       0.05      0.28      0.08        60
+    I-TELEPHONENUM       0.65      0.62      0.63      1247
+            I-TIME       0.83      0.63      0.71       260
+         I-ZIPCODE       0.22      0.93      0.35        96
+
+         micro avg       0.60      0.71      0.65     12949
+         macro avg       0.53      0.58      0.46     12949
+      weighted avg       0.77      0.71      0.71     12949
+
+
+================================================================================
+HYBRID MODEL (DeBERTa + LLM Router)
+Thresholds: Conf < 0.787, Entropy > 0.583
+Selective Routing: True
+Tokens Checked: 224537
+Routed to LLM: 2098 (0.93%)
+Blocked by Entity Type: 80
+Blocked by I- Continuation: 2697
+Blocked by Threshold: 219662
+Routed by Entity: {'SEX': 9, 'TELEPHONENUM': 501, 'PASSPORTNUM': 77, 'IDCARDNUM': 150, 'SURNAME': 67, 'SOCIALNUM': 146, 'BUILDINGNUM': 60, 'O_high_uncertainty': 673, 'DRIVERLICENSENUM': 83, 'EMAIL': 20, 'ZIPCODE': 96, 'CITY': 46, 'TAXNUM': 59, 'CREDITCARDNUMBER': 32, 'STREET': 19, 'AGE': 27, 'TIME': 4, 'DATE': 26, 'TITLE': 1, 'GENDER': 2}
+
+LLM Calls: 473
+Helpful Corrections: 102
+Harmful Corrections: 47
+Net Improvement: 55
+Elapsed Time: 322.4s (5.37 min)
+================================================================================
+                    precision    recall  f1-score   support
+
+             B-AGE       0.42      0.98      0.59        47
+            B-CITY       0.43      0.84      0.57       187
+B-CREDITCARDNUMBER       0.59      0.38      0.46        89
+            B-DATE       0.97      0.80      0.88       961
+           B-EMAIL       0.88      0.97      0.92       364
+          B-GENDER       0.83      0.07      0.13        70
+       B-GIVENNAME       0.83      0.58      0.69       778
+       B-SOCIALNUM       0.18      1.00      0.30        67
+          B-STREET       0.06      0.06      0.06       198
+         B-SURNAME       0.91      0.55      0.68       523
+          B-TAXNUM       0.06      0.32      0.09        22
+    B-TELEPHONENUM       0.61      0.57      0.59       356
+            B-TIME       0.83      0.62      0.71       240
+         B-ZIPCODE       0.31      0.90      0.46        99
+             I-AGE       0.00      0.00      0.00         1
+            I-CITY       0.32      0.89      0.47       169
+I-CREDITCARDNUMBER       0.32      0.02      0.04       540
+            I-DATE       0.98      0.85      0.91      1910
+           I-EMAIL       0.86      0.98      0.92      2727
+          I-GENDER       1.00      0.12      0.21        17
+       I-GIVENNAME       0.61      0.41      0.49       564
+       I-SOCIALNUM       0.07      1.00      0.14       199
+          I-STREET       0.99      0.68      0.81       734
+         I-SURNAME       0.85      0.65      0.73       424
+          I-TAXNUM       0.05      0.28      0.08        60
+    I-TELEPHONENUM       0.64      0.59      0.61      1247
+            I-TIME       0.83      0.63      0.71       260
+         I-ZIPCODE       0.22      0.93      0.35        96
+
+         micro avg       0.61      0.72      0.66     12949
+         macro avg       0.56      0.60      0.49     12949
+      weighted avg       0.77      0.72      0.71     12949
+
+
+================================================================================
+PER-CLASS LLM IMPACT ANALYSIS
+================================================================================
+
+B-AGE:
+  Total instances: 47
+  Baseline accuracy: 100.0%
+  Hybrid accuracy: 97.9%
+  Improvement: -2.1%
+  LLM interventions: 1
+  Helped: 0, Hurt: 1
+
+B-CITY:
+  Total instances: 187
+  Baseline accuracy: 85.0%
+  Hybrid accuracy: 84.5%
+  Improvement: -0.5%
+  LLM interventions: 4
+  Helped: 0, Hurt: 1
+
+B-CREDITCARDNUMBER:
+  Total instances: 89
+  Baseline accuracy: 2.2%
+  Hybrid accuracy: 38.2%
+  Improvement: +36.0%
+  LLM interventions: 35
+  Helped: 32, Hurt: 0
+
+B-DATE:
+  Total instances: 961
+  Baseline accuracy: 79.1%
+  Hybrid accuracy: 80.2%
+  Improvement: +1.1%
+  LLM interventions: 42
+  Helped: 11, Hurt: 0
+
+B-EMAIL:
+  Total instances: 364
+  Baseline accuracy: 97.0%
+  Hybrid accuracy: 97.0%
+  Improvement: +0.0%
+  LLM interventions: 1
+  Helped: 0, Hurt: 0
+
+B-GENDER:
+  Total instances: 70
+  Baseline accuracy: 1.4%
+  Hybrid accuracy: 7.1%
+  Improvement: +5.7%
+  LLM interventions: 5
+  Helped: 4, Hurt: 0
+
+B-GIVENNAME:
+  Total instances: 778
+  Baseline accuracy: 58.2%
+  Hybrid accuracy: 58.2%
+  Improvement: +0.0%
+  LLM interventions: 15
+  Helped: 0, Hurt: 0
+
+B-SOCIALNUM:
+  Total instances: 67
+  Baseline accuracy: 100.0%
+  Hybrid accuracy: 100.0%
+  Improvement: +0.0%
+  LLM interventions: 1
+  Helped: 0, Hurt: 0
+
+B-STREET:
+  Total instances: 198
+  Baseline accuracy: 6.1%
+  Hybrid accuracy: 5.6%
+  Improvement: -0.5%
+  LLM interventions: 11
+  Helped: 1, Hurt: 2
+
+B-SURNAME:
+  Total instances: 523
+  Baseline accuracy: 54.7%
+  Hybrid accuracy: 54.7%
+  Improvement: +0.0%
+  LLM interventions: 46
+  Helped: 0, Hurt: 0
+
+B-TAXNUM:
+  Total instances: 22
+  Baseline accuracy: 27.3%
+  Hybrid accuracy: 31.8%
+  Improvement: +4.5%
+  LLM interventions: 3
+  Helped: 1, Hurt: 0
+
+B-TELEPHONENUM:
+  Total instances: 356
+  Baseline accuracy: 45.2%
+  Hybrid accuracy: 57.3%
+  Improvement: +12.1%
+  LLM interventions: 93
+  Helped: 43, Hurt: 0
+
+B-TIME:
+  Total instances: 240
+  Baseline accuracy: 61.7%
+  Hybrid accuracy: 61.7%
+  Improvement: +0.0%
+  LLM interventions: 3
+  Helped: 0, Hurt: 0
+
+B-ZIPCODE:
+  Total instances: 99
+  Baseline accuracy: 89.9%
+  Hybrid accuracy: 89.9%
+  Improvement: +0.0%
+  LLM interventions: 1
+  Helped: 0, Hurt: 0
+
+I-AGE:
+  Total instances: 1
+  Baseline accuracy: 0.0%
+  Hybrid accuracy: 0.0%
+  Improvement: +0.0%
+  LLM interventions: 0
+  Helped: 0, Hurt: 0
+
+I-CITY:
+  Total instances: 169
+  Baseline accuracy: 88.8%
+  Hybrid accuracy: 88.8%
+  Improvement: +0.0%
+  LLM interventions: 0
+  Helped: 0, Hurt: 0
+
+I-CREDITCARDNUMBER:
+  Total instances: 540
+  Baseline accuracy: 1.5%
+  Hybrid accuracy: 2.2%
+  Improvement: +0.7%
+  LLM interventions: 25
+  Helped: 8, Hurt: 4
+
+I-DATE:
+  Total instances: 1910
+  Baseline accuracy: 84.7%
+  Hybrid accuracy: 84.7%
+  Improvement: +0.0%
+  LLM interventions: 0
+  Helped: 0, Hurt: 0
+
+I-EMAIL:
+  Total instances: 2727
+  Baseline accuracy: 98.5%
+  Hybrid accuracy: 98.5%
+  Improvement: +0.0%
+  LLM interventions: 0
+  Helped: 0, Hurt: 0
+
+I-GENDER:
+  Total instances: 17
+  Baseline accuracy: 11.8%
+  Hybrid accuracy: 11.8%
+  Improvement: +0.0%
+  LLM interventions: 0
+  Helped: 0, Hurt: 0
+
+I-GIVENNAME:
+  Total instances: 564
+  Baseline accuracy: 41.1%
+  Hybrid accuracy: 41.1%
+  Improvement: +0.0%
+  LLM interventions: 9
+  Helped: 0, Hurt: 0
+
+I-SOCIALNUM:
+  Total instances: 199
+  Baseline accuracy: 100.0%
+  Hybrid accuracy: 100.0%
+  Improvement: +0.0%
+  LLM interventions: 0
+  Helped: 0, Hurt: 0
+
+I-STREET:
+  Total instances: 734
+  Baseline accuracy: 68.1%
+  Hybrid accuracy: 68.4%
+  Improvement: +0.3%
+  LLM interventions: 12
+  Helped: 2, Hurt: 0
+
+I-SURNAME:
+  Total instances: 424
+  Baseline accuracy: 64.6%
+  Hybrid accuracy: 64.6%
+  Improvement: +0.0%
+  LLM interventions: 1
+  Helped: 0, Hurt: 0
+
+I-TAXNUM:
+  Total instances: 60
+  Baseline accuracy: 28.3%
+  Hybrid accuracy: 28.3%
+  Improvement: +0.0%
+  LLM interventions: 0
+  Helped: 0, Hurt: 0
+
+I-TELEPHONENUM:
+  Total instances: 1247
+  Baseline accuracy: 61.7%
+  Hybrid accuracy: 58.6%
+  Improvement: -3.1%
+  LLM interventions: 165
+  Helped: 0, Hurt: 39
+
+I-TIME:
+  Total instances: 260
+  Baseline accuracy: 62.7%
+  Hybrid accuracy: 62.7%
+  Improvement: +0.0%
+  LLM interventions: 0
+  Helped: 0, Hurt: 0
+
+I-ZIPCODE:
+  Total instances: 96
+  Baseline accuracy: 92.7%
+  Hybrid accuracy: 92.7%
+  Improvement: +0.0%
+  LLM interventions: 0
+  Helped: 0, Hurt: 0
+
+O:
+  Total instances: 211588
+  Baseline accuracy: 94.8%
+  Hybrid accuracy: 94.8%
+  Improvement: +0.0%
+  LLM interventions: 0
+  Helped: 0, Hurt: 0

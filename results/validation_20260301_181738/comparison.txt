@@ -1,0 +1,6 @@
+NVIDIA Validation Comparison — results/validation_20260301_181738
+Model                   Base F1   Hyb F1      ΔF1   Net  Time(min)
+------------------------------------------------------------------
+  gpt-oss_20b            0.3573   0.3735  +0.0162   +89       8.6
+  llama3.1_8b            0.3573   0.3730  +0.0157   +79       2.2
+  qwen2.5_7b             0.3573   0.3714  +0.0141   +73       1.9

@@ -19,8 +19,9 @@ from src.core.constants import (
     VALID_LABELS_SET,
     ROUTABLE_ENTITIES,
     BLOCKED_ENTITIES,
+    ENTITY_CLASSES_WITH_O,
 )
-from src.inference.prompts import PROMPT, VALID_LABELS_STR
+from src.inference.prompts import PROMPT, PROMPT_V12, PROMPT_V13, PROMPT_V14_SPAN, ENTITY_CLASSES_STR, VALID_LABELS_STR
 
 logger = logging.getLogger(__name__)
 
@@ -178,7 +179,11 @@ class LLMRouter:
         self.model = model if self.source == "openai" else ollama_model
         self.cache = LLMCache(max_size=cache_size) if enable_cache else None
         self.valid_labels = valid_labels or VALID_LABELS_SET
+        self.valid_entity_classes = ENTITY_CLASSES_WITH_O
         self.client = None
+        # V9 for OpenAI (JSON mode, full BIO labels)
+        # V13 for Ollama (class-only paradigm: LLM predicts class, BIO assigned deterministically)
+        self.prompt_template = PROMPT if self.source == "openai" else PROMPT_V13
 
         # Initialize client
         if self.source == "openai":
@@ -245,13 +250,16 @@ class LLMRouter:
                 return cached_result
 
         # Format prompt
+        # V9 (OpenAI): full BIO labels, uses valid_labels_str
+        # V13 (Ollama): class-only, uses entity_classes_str; BIO assigned deterministically after
         try:
-            prompt = PROMPT.format(
+            prompt = self.prompt_template.format(
                 context=context,
                 target_token=clean_token,
                 prev_label=prev_label,
                 current_pred=current_pred,
                 valid_labels_str=VALID_LABELS_STR,
+                entity_classes_str=ENTITY_CLASSES_STR,
             )
         except KeyError as e:
             return self._error_response(current_pred, f"Prompt formatting error: {e}")
@@ -271,6 +279,72 @@ class LLMRouter:
         except Exception as e:
             logger.error(f"[LLM ERROR]: {e}")
             return self._error_response(current_pred, str(e))
+
+    def disambiguate_span(
+        self,
+        span_text: str,
+        token_count: int,
+        full_text: str,
+        span_start: int,
+        span_end: int,
+        current_pred: str,
+        prev_label: str,
+    ) -> Dict[str, Any]:
+        """
+        Route an entire entity span to the LLM as a single call (V14_SPAN).
+
+        Instead of routing each token independently, the whole span (e.g. "John Smith")
+        is presented to the LLM with its full context. BIO is applied deterministically:
+        - corrected_label = B-{class} for the first token (caller applies I-{class} to rest)
+        - corrected_label = "O" → caller sets all span tokens to O
+
+        Args:
+            span_text: Full span text, e.g. "John Smith"
+            token_count: Number of tokens in the span
+            full_text: Complete document text (for context extraction)
+            span_start: Character start of the first span token
+            span_end: Character end of the last span token
+            current_pred: Entity class without BIO prefix, e.g. "SURNAME"
+            prev_label: BIO label of the token immediately before the span
+
+        Returns:
+            {is_pii, corrected_label, reasoning, cached}
+        """
+        context = self._extract_context(full_text, span_start, span_end)
+        clean_span = full_text[span_start:span_end].strip()
+        fallback_label = f"B-{current_pred}"
+
+        if self.cache:
+            cached = self.cache.get(clean_span, context, prev_label, current_pred)
+            if cached:
+                result = cached.copy()
+                result["cached"] = True
+                return result
+
+        try:
+            prompt = PROMPT_V14_SPAN.format(
+                context=context,
+                span_text=clean_span,
+                token_count=token_count,
+                entity_class=current_pred,
+                entity_classes_str=ENTITY_CLASSES_STR,
+            )
+        except KeyError as e:
+            return self._error_response(fallback_label, f"Prompt formatting error: {e}")
+
+        try:
+            raw_result = self._call_llm(prompt)
+            validated = self._validate_response(raw_result, fallback_label, prev_label)
+
+            if self.cache:
+                self.cache.set(clean_span, context, prev_label, current_pred, validated)
+
+            validated["cached"] = False
+            return validated
+
+        except Exception as e:
+            logger.error(f"[LLM SPAN ERROR]: {e}")
+            return self._error_response(fallback_label, str(e))
 
     def _extract_context(
         self,
@@ -328,10 +402,55 @@ class LLMRouter:
         response = self._ollama.chat(
             model=self.model,
             messages=[{"role": "user", "content": prompt}],
-            format="json",
-            options={"temperature": 0.0, "num_predict": 150},
+            options={"temperature": 0.0, "num_predict": -1},
         )
-        return json.loads(response["message"]["content"])
+        msg = response["message"]
+        raw_content = msg.content
+        thinking = getattr(msg, "thinking", None) or ""
+
+        # Ollama thinking models may return content as a list of blocks
+        if isinstance(raw_content, list):
+            raw_content = " ".join(
+                block.get("text", "") if isinstance(block, dict) else str(block)
+                for block in raw_content
+            )
+
+        # If content is empty, the model may have put everything in the thinking field
+        # Extract the first valid JSON object from whichever field contains it
+        decoder = json.JSONDecoder()
+        for source in (str(raw_content), str(thinking)):
+            content = source.strip()
+            idx = 0
+            while idx < len(content):
+                try:
+                    obj, _ = decoder.raw_decode(content, idx)
+                    if isinstance(obj, dict):
+                        return obj
+                except json.JSONDecodeError:
+                    pass
+                next_brace = content.find("{", idx + 1)
+                if next_brace == -1:
+                    break
+                idx = next_brace
+
+        raise ValueError("No JSON found in model response")
+
+    @staticmethod
+    def _class_to_bio(entity_class: str, prev_label: str) -> str:
+        """
+        Convert an entity class to a BIO label deterministically.
+
+        Rules:
+          - "O" → "O"
+          - If prev token was same entity type (B-X or I-X) → I-{class}
+          - Otherwise → B-{class}
+
+        This guarantees BIO consistency by construction.
+        """
+        if entity_class == "O":
+            return "O"
+        prev_type = prev_label.replace("B-", "").replace("I-", "") if prev_label != "O" else ""
+        return f"I-{entity_class}" if prev_type == entity_class else f"B-{entity_class}"
 
     def _validate_bio_consistency(
         self,
@@ -343,6 +462,7 @@ class LLMRouter:
 
         Returns False if the correction violates BIO rules, indicating
         we should reject it and keep the model's original prediction.
+        Used only for V9/V12 (full BIO label) responses.
         """
         # Rule 1: I- cannot follow O
         if corrected_label.startswith("I-") and prev_label == "O":
@@ -367,18 +487,38 @@ class LLMRouter:
         fallback_label: str,
         prev_label: str = "O",
     ) -> Dict[str, Any]:
-        """Validate and normalize LLM response."""
-        # Support both V6 format ("label") and older formats ("corrected_label")
-        label = raw.get("label") or raw.get("corrected_label", fallback_label)
-        label = label.strip().upper()
+        """Validate and normalize LLM response.
+
+        Supports two paradigms:
+        - V13 (entity_class key): LLM returns class only, BIO assigned via _class_to_bio()
+        - V9/V12 (label key): LLM returns full BIO label, validated with BIO consistency check
+        """
         reasoning = raw.get("reasoning", "")[:200]
 
-        # Validate label is in valid set
+        # --- V13 paradigm: entity class → deterministic BIO ---
+        entity_class = raw.get("entity_class")
+        if entity_class is not None:
+            entity_class = str(entity_class).strip().upper()
+            if entity_class not in self.valid_entity_classes:
+                logger.warning(f"[WARNING] Invalid entity class '{entity_class}' → fallback to '{fallback_label}'")
+                label = fallback_label
+            else:
+                label = self._class_to_bio(entity_class, prev_label)
+                logger.debug(f"[V13] class='{entity_class}' prev='{prev_label}' → '{label}'")
+            return {"is_pii": label != "O", "corrected_label": label, "reasoning": reasoning}
+
+        # --- V9/V12 paradigm: full BIO label with consistency validation ---
+        label = raw.get("label") or raw.get("corrected_label", fallback_label)
+        # Some models (e.g. thinking models) return a list of labels; take the first valid one
+        if isinstance(label, list):
+            valid = [l for l in label if isinstance(l, str) and l.strip().upper() in self.valid_labels]
+            label = valid[0] if valid else fallback_label
+        label = str(label).strip().upper()
+
         if label not in self.valid_labels:
             logger.warning(f"[WARNING] Invalid label '{label}' → fallback to '{fallback_label}'")
             label = fallback_label
 
-        # Validate BIO consistency - reject corrections that violate BIO rules
         if not self._validate_bio_consistency(prev_label, label):
             logger.info(f"[BIO REJECT] LLM correction '{label}' violates BIO rules → keeping '{fallback_label}'")
             label = fallback_label

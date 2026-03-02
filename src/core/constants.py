@@ -24,28 +24,6 @@ DEFAULT_OPENAI_MODEL = "gpt-4o"
 DEFAULT_OLLAMA_MODEL = "qwen2.5:3b"
 DEFAULT_CACHE_SIZE = 1000
 
-# SELECTIVE ENTITY ROUTING
-# Entities where LLM routing has proven beneficial (numeric patterns)
-ROUTABLE_ENTITIES = {
-    "CREDITCARDNUMBER",
-    "TELEPHONENUM",
-    "SOCIALNUM",
-    "DATE",
-    "TAXNUM",
-    "PASSPORTNUM",
-    "DRIVERLICENSENUM",
-    "IDCARDNUM",
-}
-
-# Entities where LLM routing causes harm (name confusion, BIO errors, high baseline)
-BLOCKED_ENTITIES = {
-    "GIVENNAME",
-    "SURNAME",
-    "TITLE",
-    "CITY",
-    "STREET",
-    "EMAIL",
-}
 
 # Entity-specific thresholds (more aggressive for numeric, conservative for names)
 ENTITY_THRESHOLDS = {
@@ -83,7 +61,22 @@ VALID_LABELS = [
 ]
 
 VALID_LABELS_SET = set(VALID_LABELS)
+
+# Entity classes without BIO prefix — used by PROMPT_V13 paradigm
+# where LLM predicts only the class and B-/I- is assigned deterministically
+ENTITY_CLASSES = {lbl.replace("B-", "").replace("I-", "") for lbl in VALID_LABELS if lbl != "O"}
+ENTITY_CLASSES_WITH_O = ENTITY_CLASSES | {"O"}
+
+# SELECTIVE ENTITY ROUTING — Universal configuration (empirically best: ΔF1 +0.0222)
+# All entity types routable for B- tokens; all I- tokens routable (no per-type filtering).
+# See notes/routing_observations.md for full ablation analysis.
+ROUTABLE_ENTITIES = ENTITY_CLASSES        # all 20 types
+BLOCKED_ENTITIES: set = set()             # no types blocked
+ROUTABLE_I_ENTITIES = ENTITY_CLASSES      # I- routing open for all
+
 # NVIDIA DATASET LABEL MAPPING
+# Full map (original behavior) — includes ambiguous/merged entries.
+# Use CLEAN_NVIDIA_MAP for unbiased evaluation.
 
 NVIDIA_TO_MODEL_MAP = {
     # Direct Matches - Person
@@ -132,6 +125,65 @@ NVIDIA_TO_MODEL_MAP = {
     "country": "O",
     "state": "O",
     "account_number": "O",
+}
+
+# CLEAN NVIDIA LABEL MAPPING — unambiguous 1:1 mappings only.
+# Used with unbiased=True in HybridEvaluator to avoid merging bias.
+# Labels NOT listed here (nor in this dict's values) are in EXCLUDED_NVIDIA_LABELS
+# and will be marked as -100 (excluded from TP/FP/FN calculations).
+CLEAN_NVIDIA_MAP = {
+    # Person
+    "first_name": "GIVENNAME",
+    "last_name": "SURNAME",
+    # Contact
+    "email": "EMAIL",
+    "phone_number": "TELEPHONENUM",
+    "cell_phone": "TELEPHONENUM",           # cell phone = telephone number
+    # Location
+    "city": "CITY",
+    "street_address": "STREET",
+    "zipcode": "ZIPCODE",
+    "postcode": "ZIPCODE",                  # alias
+    # IDs
+    "ssn": "SOCIALNUM",
+    "social_security_number": "SOCIALNUM",  # alias
+    "tax_id": "TAXNUM",
+    "driver_license": "DRIVERLICENSENUM",
+    "drivers_license": "DRIVERLICENSENUM",  # alias
+    "national_id": "IDCARDNUM",
+    "passport_number": "PASSPORTNUM",
+    # Financial
+    "credit_debit_card": "CREDITCARDNUMBER",
+    # Temporal
+    "date": "DATE",
+    "date_of_birth": "DATE",
+    "time": "TIME",
+    # Demographics
+    "age": "AGE",
+    "gender": "GENDER",
+    # Non-PII in model schema — valid O ground truth, included to avoid FP inflation
+    "company_name": "O",
+    "organization": "O",
+    "occupation": "O",
+    "url": "O",
+    "ip_address": "O",
+    "ipv4": "O",
+    "ipv6": "O",
+    "country": "O",
+    "state": "O",
+    "account_number": "O",
+}
+
+# NVIDIA labels excluded from unbiased evaluation.
+# Tokens with these labels are marked as -100 (no contribution to TP/FP/FN).
+# Rationale: ambiguous or semantically incorrect mapping to model classes.
+EXCLUDED_NVIDIA_LABELS = {
+    "middle_name",  # Middle name ≠ given name; model not trained on this distinction
+    "name",         # Too generic (could be given name, surname, company name)
+    "user_name",    # Username ≠ given name; semantically incorrect original merge
+    "fax_number",   # Rare in training corpus, ambiguous context vs phone
+    "date_time",    # Compound datetime span → token alignment issues
+    "sexuality",    # Sexuality ≠ gender; semantically incorrect original merge
 }
 
 # UNIFIED SCHEMA FOR CROSS-MODEL BENCHMARKS

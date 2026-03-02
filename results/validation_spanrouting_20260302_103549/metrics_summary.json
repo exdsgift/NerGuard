@@ -1,0 +1,42 @@
+{
+    "samples": 1000,
+    "evaluation_mode": "unbiased",
+    "span_routing": true,
+    "two_pass_routing": false,
+    "regex_enabled": true,
+    "coverage": {
+        "total_span_tokens": 38427,
+        "included_span_tokens": 36860,
+        "excluded_span_tokens": 1567,
+        "coverage_pct": 95.9
+    },
+    "baseline": {
+        "accuracy": 0.9377,
+        "macro_precision": 0.4068,
+        "macro_recall": 0.4612,
+        "macro_f1": 0.3776
+    },
+    "hybrid": {
+        "accuracy": 0.9395,
+        "macro_precision": 0.4367,
+        "macro_recall": 0.4896,
+        "macro_f1": 0.4047
+    },
+    "delta": {
+        "accuracy": 0.0018,
+        "macro_f1": 0.0271
+    },
+    "baseline_span_f1": 0.482,
+    "hybrid_span_f1": 0.5071,
+    "delta_span_f1": 0.0251,
+    "routing": {
+        "llm_calls": 250,
+        "llm_helped": 278,
+        "llm_hurt": 13,
+        "net_corrections": 265,
+        "regex_llm_skips": 21,
+        "regex_promotions": 576
+    },
+    "elapsed_seconds": 175.2,
+    "elapsed_minutes": 2.92
+}

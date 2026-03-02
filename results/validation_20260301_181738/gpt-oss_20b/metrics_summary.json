@@ -1,0 +1,27 @@
+{
+    "samples": 1000,
+    "baseline": {
+        "accuracy": 0.935,
+        "macro_precision": 0.4046,
+        "macro_recall": 0.4377,
+        "macro_f1": 0.3573
+    },
+    "hybrid": {
+        "accuracy": 0.9354,
+        "macro_precision": 0.4228,
+        "macro_recall": 0.4505,
+        "macro_f1": 0.3735
+    },
+    "delta": {
+        "accuracy": 0.0004,
+        "macro_f1": 0.0162
+    },
+    "routing": {
+        "llm_calls": 172,
+        "llm_helped": 92,
+        "llm_hurt": 3,
+        "net_corrections": 89
+    },
+    "elapsed_seconds": 514.9,
+    "elapsed_minutes": 8.58
+}

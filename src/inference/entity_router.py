@@ -24,6 +24,7 @@ from src.core.constants import (
     DEFAULT_CONFIDENCE_THRESHOLD,
     ROUTABLE_ENTITIES,
     BLOCKED_ENTITIES,
+    ROUTABLE_I_ENTITIES,
     ENTITY_THRESHOLDS,
 )
 
@@ -57,6 +58,7 @@ class EntitySpecificRouter:
         confidence_threshold: float = DEFAULT_CONFIDENCE_THRESHOLD,
         routable_entities: Optional[Set[str]] = None,
         blocked_entities: Optional[Set[str]] = None,
+        routable_i_entities: Optional[Set[str]] = None,
         entity_thresholds: Optional[Dict[str, Dict[str, float]]] = None,
         enable_selective: bool = True,
         block_continuation_tokens: bool = True,
@@ -67,20 +69,21 @@ class EntitySpecificRouter:
         Args:
             entropy_threshold: Default entropy threshold for routing
             confidence_threshold: Default confidence threshold for routing
-            routable_entities: Set of entity types that benefit from LLM routing
-            blocked_entities: Set of entity types that are harmed by LLM routing
+            routable_entities: Entity types routed for B- tokens (all except GIVENNAME)
+            blocked_entities: Entity types never routed (GIVENNAME: net -7 empirically)
+            routable_i_entities: Entity types where I- routing is also allowed.
+                Empirically only CREDITCARDNUMBER (+120 net) and TELEPHONENUM (+76 net)
+                benefit from I- routing with V13. All other I- tokens are blocked
+                (I-SURNAME: -16, I-GIVENNAME: -15, I-DATE: -12, I-EMAIL: -6, etc.)
             entity_thresholds: Per-entity-type threshold overrides
             enable_selective: Whether to apply entity-type filtering (False = route all)
-            block_continuation_tokens: Block all I- continuation tokens (default True)
-                Based on empirical finding that LLM harms I- tokens across all types:
-                - I-TELEPHONENUM: -8.8% (129 hurt)
-                - I-DATE: -2.0% (27 hurt)
-                - I-EMAIL: -0.5% (14 hurt)
+            block_continuation_tokens: Whether to apply I- continuation token filtering
         """
         self.entropy_threshold = entropy_threshold
         self.confidence_threshold = confidence_threshold
         self.routable_entities = routable_entities or ROUTABLE_ENTITIES
         self.blocked_entities = blocked_entities or BLOCKED_ENTITIES
+        self.routable_i_entities = routable_i_entities or ROUTABLE_I_ENTITIES
         self.entity_thresholds = entity_thresholds or ENTITY_THRESHOLDS
         self.enable_selective = enable_selective
         self.block_continuation_tokens = block_continuation_tokens
@@ -151,12 +154,17 @@ class EntitySpecificRouter:
             self.stats["routed"] += 1
             return True
 
-        # Block I- continuation tokens (LLM harms these across all entity types)
-        # Empirical finding: I-TELEPHONENUM -8.8%, I-DATE -2.0%, I-EMAIL -0.5%
+        # I- continuation token filtering.
+        # Only CREDITCARDNUMBER and TELEPHONENUM benefit from I- routing with V13
+        # (empirical: I-CREDITCARDNUMBER net +120, I-TELEPHONENUM net +76).
+        # All other I- tokens are blocked: I-SURNAME(-16), I-GIVENNAME(-15),
+        # I-DATE(-12), I-EMAIL(-6), I-STREET(-6).
         if self.block_continuation_tokens and predicted_label.startswith("I-"):
-            self.stats["blocked_by_continuation"] += 1
-            logger.debug(f"Routing blocked for continuation token: {predicted_label}")
-            return False
+            if entity_type not in self.routable_i_entities:
+                self.stats["blocked_by_continuation"] += 1
+                logger.debug(f"Routing blocked for I- continuation: {predicted_label}")
+                return False
+            # entity_type in routable_i_entities → fall through to entity routing check
 
         # Check if entity is blocked (causes harm)
         if entity_type in self.blocked_entities:
@@ -259,6 +267,7 @@ class EntitySpecificRouter:
             f"confidence={self.confidence_threshold}, "
             f"selective={self.enable_selective}, "
             f"block_I={self.block_continuation_tokens}, "
-            f"routable={len(self.routable_entities)} types, "
+            f"routable_B={len(self.routable_entities)} types, "
+            f"routable_I={len(self.routable_i_entities)} types, "
             f"blocked={len(self.blocked_entities)} types)"
         )
