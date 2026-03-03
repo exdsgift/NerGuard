@@ -1,0 +1,341 @@
+{
+  "n_errors": 48,
+  "errors": [
+    {
+      "token": "at",
+      "context": "or via email at o.smythe@harbournest.co.uk. She is",
+      "predicted": "B-email",
+      "expected": "O",
+      "sample_id": "6fb3d64baee244a69d984c581c93ca0b"
+    },
+    {
+      "token": "emma_larson123",
+      "context": "a) emma_larson b) emma_larson123 c) elarson d)",
+      "predicted": "B-user_name",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "elarson",
+      "context": "b) emma_larson123 c) elarson d) elarson123 4.",
+      "predicted": "B-user_name",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "elarson123",
+      "context": "c) elarson d) elarson123 4. What is",
+      "predicted": "B-user_name",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "729-85-3141",
+      "context": "national id? a) 729-85-3141 b) 729-85-3142 c)",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "729-85-3143",
+      "context": "b) 729-85-3142 c) 729-85-3143 d) 729-85-3144 Please",
+      "predicted": "B-tax_id",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "729-85-3144",
+      "context": "c) 729-85-3143 d) 729-85-3144 Please ensure you",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "at",
+      "context": "recipient via email at a.n@kazoragoods.kz or by",
+      "predicted": "B-email",
+      "expected": "O",
+      "sample_id": "9fc62a0171cf4c54978c7d21aebc4653"
+    },
+    {
+      "token": "9876543210",
+      "context": "1234567890 **Claim Number:** 9876543210 **Adjuster's Name:** Jane",
+      "predicted": "B-account_number",
+      "expected": "O",
+      "sample_id": "6b87ebe759df4d0f89f64823222144fe"
+    },
+    {
+      "token": "at",
+      "context": "or via email at a.almansoori@emiratesinsurance.ae. This policy",
+      "predicted": "B-email",
+      "expected": "O",
+      "sample_id": "ba434080e7c349f4af149317e7054f2f"
+    },
+    {
+      "token": "162.234.12.1",
+      "context": "| 255.255.255.0 | 162.234.12.1 | 8.8.8.8, 8.8.4.4",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "c76e549733744bd9a99cd2b4047d9651"
+    },
+    {
+      "token": "is",
+      "context": "Our email address is a.elsayed@niletransit.eg.",
+      "predicted": "B-email",
+      "expected": "O",
+      "sample_id": "255b79605595447692a58cff72b69a1e"
+    },
+    {
+      "token": "PO123456",
+      "context": "Order** **PO Number:** PO123456 **Date:** 15/08/2023 **Supplier",
+      "predicted": "B-user_name",
+      "expected": "O",
+      "sample_id": "8005b149c07141acb1d351100334909a"
+    },
+    {
+      "token": "XAVIER",
+      "context": "in his work. XAVIER BERNARD12 (looking at",
+      "predicted": "B-user_name",
+      "expected": "O",
+      "sample_id": "5ae1af7c6f7e4e7083d20cd23ace370d"
+    },
+    {
+      "token": "BERNARD12",
+      "context": "his work. XAVIER BERNARD12 (looking at his",
+      "predicted": "I-user_name",
+      "expected": "O",
+      "sample_id": "5ae1af7c6f7e4e7083d20cd23ace370d"
+    },
+    {
+      "token": "XAVIER",
+      "context": "under the documents. XAVIER BERNARD12 Great, thanks!",
+      "predicted": "B-user_name",
+      "expected": "O",
+      "sample_id": "5ae1af7c6f7e4e7083d20cd23ace370d"
+    },
+    {
+      "token": "BERNARD12",
+      "context": "the documents. XAVIER BERNARD12 Great, thanks! We",
+      "predicted": "I-user_name",
+      "expected": "O",
+      "sample_id": "5ae1af7c6f7e4e7083d20cd23ace370d"
+    },
+    {
+      "token": "555-123-4567,",
+      "context": "the following numbers: 555-123-4567, 555-987-6543. Please block",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "919a04fe2c804d648a16ee3a1bd91424"
+    },
+    {
+      "token": "at",
+      "context": "us via email at tskipper39@outlook.com. Our support",
+      "predicted": "B-email",
+      "expected": "O",
+      "sample_id": "67b520e95dc8423bbb6bfb8cbe6e4294"
+    },
+    {
+      "token": "<Username>oscarburke</Username>",
+      "context": "```xml <IdentityManagementSystem> <UserCredentials> <Username>oscarburke</Username> <Password>WhisperingWind#Moonlight</Password> <Email>oscareburton@gmail.com</Email> </UserCredentials>",
+      "predicted": "B-user_name",
+      "expected": "O",
+      "sample_id": "0445ea8cc4594617b61bede193fb2ee2"
+    },
+    {
+      "token": "<FirstName>Oscar</FirstName>",
+      "context": "<Email>oscareburton@gmail.com</Email> </UserCredentials> <UserDetails> <FirstName>Oscar</FirstName> <LastName>Burke</LastName> <Gender>Male</Gender> </UserDetails>",
+      "predicted": "B-first_name",
+      "expected": "O",
+      "sample_id": "0445ea8cc4594617b61bede193fb2ee2"
+    },
+    {
+      "token": "<LastName>Burke</LastName>",
+      "context": "</UserCredentials> <UserDetails> <FirstName>Oscar</FirstName> <LastName>Burke</LastName> <Gender>Male</Gender> </UserDetails> <AccountDetails>",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "0445ea8cc4594617b61bede193fb2ee2"
+    },
+    {
+      "token": "530-31-9843,",
+      "context": "social security number 530-31-9843, hereby request the",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "7497d77553d14274bcecd7c883d410a9"
+    },
+    {
+      "token": "at",
+      "context": "can be reached at a.khan@pakistanprogressfoundation.org.pk. --- ####",
+      "predicted": "B-email",
+      "expected": "O",
+      "sample_id": "77666ca3906b4c6d9d3aa749e14f83a0"
+    },
+    {
+      "token": "1-800-222-1020",
+      "context": "- Customer Service: 1-800-222-1020 - Website: www.gm.com",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "b394cfd258e649629b67aaec172ef912"
+    },
+    {
+      "token": "Green",
+      "context": "| |------------|------|---------------------|---------------------|---------------------|-------------------------------| | Green Park | 08/15/2024",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "510bee63f0c64a4ab404de95f00d3292"
+    },
+    {
+      "token": "Park",
+      "context": "|------------|------|---------------------|---------------------|---------------------|-------------------------------| | Green Park | 08/15/2024 |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "510bee63f0c64a4ab404de95f00d3292"
+    },
+    {
+      "token": "3456789.",
+      "context": "contract number is 3456789. The product details",
+      "predicted": "B-account_number",
+      "expected": "O",
+      "sample_id": "bc4e3334f9b04739bb47ae1ed33b8181"
+    },
+    {
+      "token": "1001-2000",
+      "context": "Zionsville, USA | 1001-2000 | Road |",
+      "predicted": "B-street_address",
+      "expected": "O",
+      "sample_id": "f83ea0330ea84e539300c31064d1c633"
+    },
+    {
+      "token": "is",
+      "context": "accurate. Your email is a.koch@edusolutions.edu and your",
+      "predicted": "B-email",
+      "expected": "O",
+      "sample_id": "3158222d701f427b9c54ff44e0645e40"
+    },
+    {
+      "token": "N/A",
+      "context": "30,500 **Technician's Name:** N/A **Signature:** **Notes:** -",
+      "predicted": "B-user_name",
+      "expected": "O",
+      "sample_id": "f22a35e2dc374ae99734cc8c49941fbf"
+    },
+    {
+      "token": "Green",
+      "context": "- Facility Name: Green River Hydroelectric Plant",
+      "predicted": "B-street_address",
+      "expected": "O",
+      "sample_id": "7d3fa6eef61a4695b7b2f315a5a1af28"
+    },
+    {
+      "token": "River",
+      "context": "Facility Name: Green River Hydroelectric Plant -",
+      "predicted": "I-street_address",
+      "expected": "O",
+      "sample_id": "7d3fa6eef61a4695b7b2f315a5a1af28"
+    },
+    {
+      "token": "Green",
+      "context": "**Project Description:** The Green River Hydroelectric Plant,",
+      "predicted": "B-street_address",
+      "expected": "O",
+      "sample_id": "7d3fa6eef61a4695b7b2f315a5a1af28"
+    },
+    {
+      "token": "River",
+      "context": "Description:** The Green River Hydroelectric Plant, operated",
+      "predicted": "I-street_address",
+      "expected": "O",
+      "sample_id": "7d3fa6eef61a4695b7b2f315a5a1af28"
+    },
+    {
+      "token": "392-74-0661",
+      "context": "providing their SSN: 392-74-0661 for documentation purposes.",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "93079bda79c84422aab462b14ae6cac1"
+    },
+    {
+      "token": "FB12345",
+      "context": "| |-------------|------------------|------------------------|---------------|------------------------------|-------------------|----------------------------|--------------------------|-----------------|--------|--------------------| | FB12345 | Name: Gregory",
+      "predicted": "B-user_name",
+      "expected": "O",
+      "sample_id": "0fd5d8281f184c6180a1d3461ea94c62"
+    },
+    {
+      "token": "is",
+      "context": "My email address is e.lefebvre@canadaservices.gc.ca. I currently",
+      "predicted": "B-email",
+      "expected": "O",
+      "sample_id": "63cfda5e1bc74042998fc0e74970d619"
+    },
+    {
+      "token": "Retail",
+      "context": "**Store Location:** Kiev Retail Khreshchatyk Street 26",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "086bba6b69f14dc2b6cd5087aa055993"
+    },
+    {
+      "token": "ipv4",
+      "context": "were conducted from ipv4 189.202.101.25 at time",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "8720630326f547b5aeb5550f9129426a"
+    },
+    {
+      "token": "SN001",
+      "context": "| Router | SN001 | Active |",
+      "predicted": "B-user_name",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "CM00123",
+      "context": "| |-------------|------------|---------------------|----------------|---------------------------------------------------|--------------|------------------| | CM00123 | 2023-11-15 |",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "3ce38ab32b784f01a35702193a464861"
+    },
+    {
+      "token": "Zarajordan",
+      "context": "Welcome to the Zarajordan Retail Training Manual.",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "ddde1410dea24f3ab789403d520bd552"
+    },
+    {
+      "token": "at",
+      "context": "or via email at strainm31@outlook.com. 2. Follow",
+      "predicted": "B-email",
+      "expected": "O",
+      "sample_id": "d6e4b48ac92b4cba9c2dafc3b0e16936"
+    },
+    {
+      "token": "at",
+      "context": "or via email at strainm31@outlook.com. 2. Follow",
+      "predicted": "B-email",
+      "expected": "O",
+      "sample_id": "d6e4b48ac92b4cba9c2dafc3b0e16936"
+    },
+    {
+      "token": "Sea,",
+      "context": "over the Black Sea, Nikolay Kuznetsov, a",
+      "predicted": "B-street_address",
+      "expected": "O",
+      "sample_id": "da1999cf8b6d45eea9d4d2ade9347da9"
+    },
+    {
+      "token": "Cobb,",
+      "context": "film follows Dom Cobb, played by Leonardo",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "da1999cf8b6d45eea9d4d2ade9347da9"
+    },
+    {
+      "token": "at",
+      "context": "or via email at aemrick72@yahoo.com. We are",
+      "predicted": "B-email",
+      "expected": "O",
+      "sample_id": "8a057e1d8d2c4bfe9aa14c9b790b703e"
+    }
+  ]
+}

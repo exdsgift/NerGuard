@@ -1,0 +1,55 @@
+======================================================================
+NER PII Benchmark — spaCy (en_core_web_trf) × nvidia-pii
+======================================================================
+
+Tier: 2
+Evaluated labels: 8
+  System labels: 18
+  Dataset labels: 54
+  Mapping applied: True
+
+Samples: 1000
+Tokens: 135894
+
+--- Token-Level Metrics ---
+  Precision (macro/micro/weighted): 0.3915 / 0.3273 / 0.4910
+  Recall    (macro/micro/weighted): 0.5429 / 0.5763 / 0.5763
+  F1        (macro/micro/weighted): 0.3607 / 0.4175 / 0.4729
+
+--- Entity-Level Metrics (seqeval) ---
+  Precision: 0.4314
+  Recall:    0.7688
+  F1:        0.5527
+
+--- Latency ---
+  Mean:   144.22 ms
+  Median: 119.16 ms
+  P95:    281.84 ms
+  P99:    349.18 ms
+  Throughput: 6.9 samples/sec
+
+--- Per-Entity F1 Scores ---
+  B-date_of_birth                P=1.0000  R=0.9924  F1=0.9962  (n=131.0)
+  B-first_name                   P=1.0000  R=0.9277  F1=0.9625  (n=595.0)
+  B-time                         P=0.6291  R=0.7746  F1=0.6943  (n=173.0)
+  B-date                         P=0.4681  R=0.7514  F1=0.5768  (n=712.0)
+  I-time                         P=0.4474  R=0.7312  F1=0.5551  (n=93.0)
+  B-city                         P=0.2733  R=0.8910  F1=0.4182  (n=211.0)
+  I-date                         P=0.2174  R=0.8962  F1=0.3499  (n=212.0)
+  I-first_name                   P=1.0000  R=0.2000  F1=0.3333  (n=5.0)
+  I-city                         P=0.1722  R=0.8182  F1=0.2846  (n=44.0)
+  B-last_name                    P=0.4121  R=0.1589  F1=0.2293  (n=428.0)
+  I-last_name                    P=0.0027  R=1.0000  F1=0.0055  (n=1.0)
+  I-street_address               P=0.2500  R=0.0021  F1=0.0041  (n=479.0)
+  B-age                          P=0.0000  R=0.0000  F1=0.0000  (n=37.0)
+  B-street_address               P=0.0000  R=0.0000  F1=0.0000  (n=183.0)
+  I-age                          P=0.0000  R=0.0000  F1=0.0000  (n=0.0)
+
+--- Per-Length Bucket ---
+  short   : F1=0.4441 (n=9)
+  medium  : F1=0.3722 (n=238)
+  long    : F1=0.3983 (n=753)
+
+--- Error Summary ---
+  False positives: 500
+  False negatives: 500

@@ -1,0 +1,76 @@
+{
+  "system": "spaCy (en_core_web_trf)",
+  "dataset": "nvidia-pii",
+  "n_samples": 1000,
+  "n_tokens": 135894,
+  "n_evaluated_labels": 8,
+  "token_level": {
+    "precision_macro": 0.39148715206395723,
+    "precision_micro": 0.32731648616125153,
+    "precision_weighted": 0.49097088155759094,
+    "recall_macro": 0.5429080633336599,
+    "recall_micro": 0.576271186440678,
+    "recall_weighted": 0.576271186440678,
+    "f1_macro": 0.36066218243202086,
+    "f1_micro": 0.4174980813507291,
+    "f1_weighted": 0.4728787677071806
+  },
+  "entity_level": {
+    "precision": 0.43139482053611994,
+    "recall": 0.7688259109311741,
+    "f1": 0.5526775320139697
+  },
+  "latency": {
+    "mean_ms": 144.22184419631958,
+    "median_ms": 119.1631555557251,
+    "p95_ms": 281.8440198898315,
+    "p99_ms": 349.1761922836303,
+    "throughput_samples_per_sec": 6.933762396206546
+  },
+  "memory": {
+    "peak_mb": 21.488357543945312,
+    "gpu_peak_mb": 0.0
+  },
+  "per_length_bucket": {
+    "short": {
+      "f1_macro": 0.4440559440559441,
+      "n_samples": 9
+    },
+    "medium": {
+      "f1_macro": 0.37215815005104286,
+      "n_samples": 238
+    },
+    "long": {
+      "f1_macro": 0.3982535872079279,
+      "n_samples": 753
+    }
+  },
+  "per_entity_frequency": {
+    "tail": {
+      "f1_macro": 0.0,
+      "n_entities": 1,
+      "entities": [
+        "age"
+      ]
+    },
+    "mid": {
+      "f1_macro": 0.4547457703465644,
+      "n_entities": 4,
+      "entities": [
+        "city",
+        "date_of_birth",
+        "last_name",
+        "time"
+      ]
+    },
+    "head": {
+      "f1_macro": 0.37111872400906054,
+      "n_entities": 3,
+      "entities": [
+        "date",
+        "first_name",
+        "street_address"
+      ]
+    }
+  }
+}

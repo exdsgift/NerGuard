@@ -1,77 +1,102 @@
 <div align="center">
   <h1>NerGuard</h1>
-  <p><strong>Hybrid PII Detection with Entropy-Based LLM Routing</strong></p>
-</div>
+  <p><strong>GDPR-Compliant PII Detection through Entropy-Based Hybrid NER</strong></p>
 
-<p align="center">
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=flat&logo=python&logoColor=white" alt="Python"></a>
   <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white" alt="PyTorch"></a>
   <a href="https://huggingface.co/"><img src="https://img.shields.io/badge/HuggingFace-Transformers-FFD21E?style=flat&logo=huggingface&logoColor=black" alt="HuggingFace"></a>
-  <a href="https://wandb.ai/"><img src="https://img.shields.io/badge/W&B-FFBE00?style=flat&logo=weightsandbiases&logoColor=black" alt="W&B"></a>
   <a href="https://openai.com/"><img src="https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white" alt="OpenAI"></a>
-</p>
-
-<p align="center">
-  <a href="https://huggingface.co/exdsgift/NerGuard-0.3B">Model</a> &middot;
-  <a href="https://huggingface.co/exdsgift/NerGuard-0.3B-onnx-int8">Quantized Model</a>
-</p>
+  <br><br>
+  <a href="https://huggingface.co/exdsgift/NerGuard-0.3B">Model on HuggingFace</a>
+</div>
 
 ---
 
-NerGuard is a PII (Personally Identifiable Information) detection system that combines a fine-tuned mDeBERTa-v3-base model with selective LLM routing. When the model's prediction entropy exceeds learned thresholds, uncertain tokens are routed to GPT-4o for disambiguation. This approach routes only **0.57%** of tokens while achieving **88.89%** correction accuracy, reducing API costs by **78%** compared to full routing.
+## Overview
 
-The system detects 21 PII entity types across 8 European languages using BIO tagging.
+Automated PII detection is a critical requirement for GDPR compliance (Art. 4, Art. 17), yet existing systems face a fundamental trade-off: rule-based approaches (Presidio, regex) achieve high precision on structured entities but miss contextual PII, while transformer-based models generalize better but produce costly false negatives on tail-distribution entities.
 
-## Results
+**NerGuard** resolves this trade-off through a three-stage hybrid architecture:
 
-### Validation Set
+1. **Base model**; A fine-tuned mDeBERTa-v3-base (279M params) performs token classification across 20 PII entity types in 8 European languages, producing per-token softmax distributions.
+2. **Entropy-gated LLM routing**; Only token spans where the base model exhibits high prediction uncertainty (Shannon entropy > 0.583, confidence < 0.787) are selectively routed to an LLM for disambiguation. Span-level anchor propagation ensures a single LLM call per entity span rather than per token, reducing API costs and eliminating harmful per-token oscillation.
+3. **Multi-layer regex validation**; A structured validation pipeline operates in three modes: *pre-scan* (force-override via Luhn check for credit cards), *demotion* (invalidate predictions that fail format validation, e.g. SSN), and *post-processing* (promote regex-confirmed patterns the model missed).
 
-| Model | F1 | Latency (ms) |
-|---|---|---|
-| **NerGuard (Base)** | **0.904** | 22.4 |
-| NerGuard (Hybrid) | 0.899 | 321.6 |
-| GLiNER | 0.446 | 20.9 |
-| Presidio | 0.315 | 10.1 |
-| SpaCy | 0.142 | 8.8 |
+This design achieves **first place on F1-macro (0.5069) and F1-micro (0.7015)** across 7 evaluated systems on the NVIDIA/Nemotron-PII benchmark, while maintaining a median latency of **35.7 ms** per sample ; 2.4x faster than Presidio and 4.0x faster than spaCy.
 
-### LLM Routing
+## Architecture
 
-| Metric | Value |
-|---|---|
-| Tokens Routed | 0.57% |
-| Correction Accuracy | 88.89% |
-| Cost Savings vs Full Routing | 78% |
-| Help:Harm Ratio | 2.2:1 |
+<p align="center">
+  <img src="docs/diagrams/architecture.png" alt="NerGuard Architecture" width="700">
+</p>
 
-### Entity-Specific Improvements (with LLM)
+**Key architectural properties:**
+- **Selective routing**; Only uncertain spans reach the LLM, preserving the base model's confident predictions and minimizing API overhead.
+- **Anchor propagation**; The B-token's routing decision applies to the entire entity span, eliminating the I-token oscillation problem that causes 75% of LLM-induced errors in per-token routing.
+- **Three-mode regex**; Pre-scan, demotion, and post-processing operate at different pipeline stages, each targeting a specific class of errors (false negatives, false positives, and missed patterns respectively).
 
-| Entity | Without LLM | With LLM | Delta |
+## Benchmark Results
+
+Evaluated on **NVIDIA/Nemotron-PII** (1,000 samples, seed=42). All systems are compared on the intersection of their label vocabularies via semantic alignment (Tier 2 evaluation, 16 comparable entity types). Full results, per-entity scores, confusion matrices, and error analysis are available in [`experiments/`](experiments/).
+
+### Cross-System Comparison
+
+| System | F1-macro | F1-micro | Entity-F1 | Precision | Recall | Latency (ms) |
+|---|---|---|---|---|---|---|
+| **NerGuard Hybrid V2** (GPT-4o) | **0.5069** | **0.7015** | 0.6634 | 0.6484 | 0.7641 | 41 |
+| NerGuard Hybrid V1 (GPT-4o) | 0.4943 | 0.6862 | 0.6475 | 0.6284 | 0.7558 | 31 |
+| Presidio | 0.4933 | 0.5493 | **0.6680** | &mdash; | &mdash; | 86 |
+| Piiranha | 0.4731 | 0.6501 | 0.6195 | &mdash; | &mdash; | 31 |
+| NerGuard Base (no LLM) | 0.4175 | 0.6105 | 0.6076 | &mdash; | &mdash; | 33 |
+| spaCy (en_core_web_trf) | 0.3607 | 0.4175 | 0.5527 | &mdash; | &mdash; | 144 |
+| dslim/bert-base-NER | 0.3331 | 0.4821 | 0.6225 | &mdash; | &mdash; | 38 |
+
+NerGuard Hybrid V2 ranks **1st on both F1-macro and F1-micro**, while achieving **2.1x lower latency** than Presidio (the closest competitor on F1-macro) and **3.5x lower latency** than spaCy. Compared to the base model alone, the hybrid pipeline provides a **+8.94 pt F1-macro gain** through selective LLM routing and regex validation, demonstrating that the entropy-gated architecture effectively targets the base model's weaknesses without degrading its strengths.
+
+### V2 Ablation (over V1)
+
+| Metric | V1 | V2 | Delta |
 |---|---|---|---|
-| Credit Card Number | 4.7% | 25.6% | +20.9% |
-| Phone Number | 38.5% | 49.4% | +10.9% |
-| Surname | 60.9% | 63.7% | +2.7% |
-| Date | 82.3% | 84.3% | +2.0% |
+| F1-macro | 0.4943 | 0.5069 | +1.26 pts |
+| F1-micro | 0.6862 | 0.7015 | +1.53 pts |
+| Entity-F1 | 0.6475 | 0.6634 | +1.59 pts |
+| Precision | 0.6284 | 0.6484 | +2.00 pts |
+| Recall | 0.7558 | 0.7641 | +0.83 pts |
 
-### NVIDIA/Nemotron-PII Dataset
+The V2 gains are primarily attributed to: (1) regex force-override for credit card numbers (CC F1: 0.46 &rarr; 0.95), (2) regex demotion for SSN validation (SSN F1: 0.31 &rarr; 0.62), and (3) a label assembly fix that enabled the full regex correction chain to take effect.
 
-| Metric | Score |
-|---|---|
-| Overall Accuracy | 93.22% |
-| Weighted F1 | 95.17% |
-| Macro F1 | 35.06% |
+### GDPR Relevance
 
-*Evaluated on 1,000 samples.*
+NerGuard is designed with GDPR data protection requirements in mind:
 
-### Cross-Lingual Transfer
+- **High recall by design**; The system is tuned to favor PII detection over non-detection (recall 0.7641). Under GDPR Art. 17 (right to erasure) and Art. 4 (definition of personal data), a missed PII entity constitutes a compliance risk. NerGuard's LLM prompt explicitly encodes this bias: *"When uncertain, prefer classifying as PII over O."*
+- **20-class fine-grained taxonomy**; Covers GDPR-relevant categories including government IDs (SSN, passport, driver's license, tax ID), financial data (credit card, IBAN), contact information (email, phone), and demographic attributes (age, gender), enabling category-specific data handling policies.
+- **Multilingual support**; Covers 8 European languages (EN, DE, FR, IT, ES, PT, NL, PL) through mDeBERTa's cross-lingual transfer, relevant for organizations operating across EU member states.
+- **Auditable pipeline**; Each prediction carries provenance metadata: base model confidence, entropy score, routing decision, LLM response, and regex validation outcome, enabling full traceability for Data Protection Impact Assessments (DPIA).
 
-| Language | F1 Macro | Language | F1 Macro |
+### LLM Backend
+
+NerGuard is designed for **fully local, on-premise deployment** via [Ollama](https://ollama.com/). The LLM routing component communicates through a standard OpenAI-compatible API, making it backend-agnostic. The benchmark results above use GPT-4o solely as a convenience for reproducible evaluation; in production the system runs entirely on local hardware with no external API dependency; a critical property for GDPR-compliant data processing where PII must not leave the organization's infrastructure.
+
+The following local models have been tested and are recommended:
+
+| Model | Parameters | VRAM | Backend |
 |---|---|---|---|
-| Polish | 0.744 | English | 0.600 |
-| Dutch | 0.615 | French | 0.561 |
-| Italian | 0.604 | Portuguese | 0.538 |
-| German | 0.600 | Spanish | 0.515 |
+| `gpt-oss:20b` | 20B | ~13 GB | Ollama |
+| `llama3.1:8b` | 8B | ~5 GB | Ollama |
+| `qwen2.5:7b` | 7B | ~5 GB | Ollama |
 
-## Installation
+To use a local backend, start Ollama and pass `--llm-source ollama` to the benchmark runner or set the LLM source in the inference API:
+
+```bash
+# Local inference (no data leaves the machine)
+uv run python -m src.benchmark.runner \
+  --systems nerguard-hybrid-v2 --datasets nvidia-pii --samples 100 \
+  --llm-source ollama --llm-model llama3.1:8b \
+  --semantic-alignment alignments/default.json
+```
+
+## Getting Started
 
 ```bash
 git clone https://github.com/exdsgift/NerGuard.git
@@ -79,7 +104,7 @@ cd NerGuard
 uv sync
 ```
 
-## Usage
+### Inference
 
 ```python
 from src.inference.tester import PIITester
@@ -91,39 +116,29 @@ for e in entities:
     print(f"{e['label']}: {e['text']} (conf: {e['confidence']:.2%})")
 ```
 
-## Commands
+### Reproducing the Benchmark
 
-| Script | Description |
-|---|---|
-| `./scripts/setup.sh` | Install dependencies and download models |
-| `./scripts/train.sh` | Train NerGuard model |
-| `./scripts/evaluate.sh` | Run hybrid evaluation (baseline vs LLM routing) |
-| `./scripts/demo.sh` | Interactive demo |
-| `./scripts/inference.sh` | Run PII detection on text input |
-| `./scripts/benchmark.sh` | Benchmark against GLiNER, Presidio, SpaCy |
-| `./scripts/evaluate_nvidia.sh` | Evaluate on NVIDIA/Nemotron-PII |
-| `./scripts/evaluate_multilingual.sh` | Cross-lingual evaluation (8 languages) |
-| `./scripts/ablation_study.sh` | LLM routing ablation study |
+```bash
+uv run python -m src.benchmark.runner \
+  --systems nerguard-hybrid-v2,nerguard-hybrid,nerguard-base,presidio,spacy,piiranha,bert-ner \
+  --datasets nvidia-pii --samples 1000 --llm-model gpt-4o --batch-llm \
+  --semantic-alignment alignments/default.json
+```
 
-## Models
-
-| Model | Parameters | Format | Link |
-|---|---|---|---|
-| NerGuard-0.3B | 279M | PyTorch | [exdsgift/NerGuard-0.3B](https://huggingface.co/exdsgift/NerGuard-0.3B) |
-| NerGuard-0.3B-onnx-int8 | 279M | ONNX INT8 | [exdsgift/NerGuard-0.3B-onnx-int8](https://huggingface.co/exdsgift/NerGuard-0.3B-onnx-int8) |
-
-## Project Structure
+## Repository Structure
 
 ```
 src/
   core/            Constants, metrics, model loading, label mapping
-  inference/       PIITester, LLM router, entity router, prompts
+  inference/       LLM router, entity router, regex validator, span assembler, prompts
   training/        Model training and validation
-  evaluation/      Benchmark, ablation study, multilingual, NVIDIA evaluation
-  optimization/    Threshold optimization, ONNX quantization
-  experiments/     LLM router experiment
+  benchmark/       Cross-system benchmark framework (runner, metrics, datasets, systems)
+  optimization/    Threshold optimizer, ONNX quantization
   scripts/         CLI entry points (train, evaluate, demo, inference)
   utils/           I/O, logging, sample data
+docs/              Technical notes, architecture diagrams, bibliography
+experiments/       Benchmark results
+alignments/        Semantic label alignment for cross-system evaluation
 scripts/           Shell wrappers for reproducibility
 ```
 

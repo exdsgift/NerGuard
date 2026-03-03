@@ -162,6 +162,9 @@ class LLMRouter:
         enable_cache: bool = True,
         cache_size: int = DEFAULT_CACHE_SIZE,
         valid_labels: Optional[Set[str]] = None,
+        context_window: int = 400,
+        span_prompt_version: str = "V14_SPAN",
+        use_structured_outputs: bool = True,
     ):
         """
         Initialize the LLM Router.
@@ -174,6 +177,9 @@ class LLMRouter:
             enable_cache: Whether to enable response caching
             cache_size: Maximum cache size
             valid_labels: Set of valid label strings for validation
+            context_window: Character window size around target for context extraction
+            span_prompt_version: Prompt version for span routing (V14_SPAN or V15_SPAN)
+            use_structured_outputs: Use OpenAI json_schema mode (only for OpenAI)
         """
         self.source = source.lower()
         self.model = model if self.source == "openai" else ollama_model
@@ -181,18 +187,25 @@ class LLMRouter:
         self.valid_labels = valid_labels or VALID_LABELS_SET
         self.valid_entity_classes = ENTITY_CLASSES_WITH_O
         self.client = None
+        self.context_window = context_window
+        self.use_structured_outputs = use_structured_outputs and self.source == "openai"
         # V9 for OpenAI (JSON mode, full BIO labels)
         # V13 for Ollama (class-only paradigm: LLM predicts class, BIO assigned deterministically)
         self.prompt_template = PROMPT if self.source == "openai" else PROMPT_V13
+        # Span prompt: configurable version for span-level routing
+        from src.inference.prompts import PROMPTS
+        self.span_prompt_template = PROMPTS.get(span_prompt_version, PROMPT_V14_SPAN)
 
         # Initialize client
+        self.async_client = None
         if self.source == "openai":
             api_key = api_key or os.getenv("OPENAI_API_KEY")
             if not api_key:
                 raise ValueError("OpenAI API key required. Set OPENAI_API_KEY env var or pass api_key.")
             try:
-                from openai import OpenAI
+                from openai import OpenAI, AsyncOpenAI
                 self.client = OpenAI(api_key=api_key)
+                self.async_client = AsyncOpenAI(api_key=api_key)
                 logger.info(f"[LLM] Backend: OpenAI ({self.model})")
             except ImportError:
                 raise ImportError("openai package required. Install with: pip install openai")
@@ -322,7 +335,7 @@ class LLMRouter:
                 return result
 
         try:
-            prompt = PROMPT_V14_SPAN.format(
+            prompt = self.span_prompt_template.format(
                 context=context,
                 span_text=clean_span,
                 token_count=token_count,
@@ -351,9 +364,10 @@ class LLMRouter:
         text: str,
         start: int,
         end: int,
-        window: int = 400,
+        window: Optional[int] = None,
     ) -> str:
         """Extract context window around the target token."""
+        window = window or self.context_window
         # Left context with word boundary snapping
         ctx_start = max(0, start - window)
         if ctx_start > 0:
@@ -381,7 +395,27 @@ class LLMRouter:
             return self._call_ollama(prompt)
 
     def _call_openai(self, prompt: str) -> Dict[str, Any]:
-        """Call OpenAI API."""
+        """Call OpenAI API with optional structured outputs."""
+        if self.use_structured_outputs:
+            response_format = {
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "pii_classification",
+                    "strict": True,
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "reasoning": {"type": "string"},
+                            "entity_class": {"type": "string"},
+                        },
+                        "required": ["reasoning", "entity_class"],
+                        "additionalProperties": False,
+                    },
+                },
+            }
+        else:
+            response_format = {"type": "json_object"}
+
         response = self.client.chat.completions.create(
             model=self.model,
             messages=[
@@ -392,7 +426,7 @@ class LLMRouter:
                 {"role": "user", "content": prompt},
             ],
             temperature=0.0,
-            response_format={"type": "json_object"},
+            response_format=response_format,
             max_tokens=150,
         )
         return json.loads(response.choices[0].message.content)
@@ -499,6 +533,9 @@ class LLMRouter:
         entity_class = raw.get("entity_class")
         if entity_class is not None:
             entity_class = str(entity_class).strip().upper()
+            # Strip accidental BIO prefix (V9 prompt + structured output may produce "B-SURNAME")
+            if entity_class.startswith(("B-", "I-")):
+                entity_class = entity_class[2:]
             if entity_class not in self.valid_entity_classes:
                 logger.warning(f"[WARNING] Invalid entity class '{entity_class}' → fallback to '{fallback_label}'")
                 label = fallback_label
@@ -538,6 +575,90 @@ class LLMRouter:
             "reasoning": f"Error: {error_msg}",
             "cached": False,
         }
+
+    async def _call_openai_async(self, prompt: str) -> Dict[str, Any]:
+        """Call OpenAI API asynchronously."""
+        if self.use_structured_outputs:
+            response_format = {
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "pii_classification",
+                    "strict": True,
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "reasoning": {"type": "string"},
+                            "entity_class": {"type": "string"},
+                        },
+                        "required": ["reasoning", "entity_class"],
+                        "additionalProperties": False,
+                    },
+                },
+            }
+        else:
+            response_format = {"type": "json_object"}
+
+        response = await self.async_client.chat.completions.create(
+            model=self.model,
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are a PII classification expert. Output only valid JSON.",
+                },
+                {"role": "user", "content": prompt},
+            ],
+            temperature=0.0,
+            response_format=response_format,
+            max_tokens=150,
+        )
+        return json.loads(response.choices[0].message.content)
+
+    async def disambiguate_span_async(
+        self,
+        span_text: str,
+        token_count: int,
+        full_text: str,
+        span_start: int,
+        span_end: int,
+        current_pred: str,
+        prev_label: str,
+    ) -> Dict[str, Any]:
+        """Async version of disambiguate_span for concurrent API calls."""
+        context = self._extract_context(full_text, span_start, span_end)
+        clean_span = full_text[span_start:span_end].strip()
+        fallback_label = f"B-{current_pred}"
+
+        if self.cache:
+            cached = self.cache.get(clean_span, context, prev_label, current_pred)
+            if cached:
+                result = cached.copy()
+                result["cached"] = True
+                return result
+
+        try:
+            prompt = self.span_prompt_template.format(
+                context=context,
+                span_text=clean_span,
+                token_count=token_count,
+                entity_class=current_pred,
+                entity_classes_str=ENTITY_CLASSES_STR,
+            )
+        except KeyError as e:
+            return self._error_response(fallback_label, f"Prompt formatting error: {e}")
+
+        try:
+            raw_result = await self._call_openai_async(prompt)
+            validated = self._validate_response(raw_result, fallback_label, prev_label)
+
+            if self.cache:
+                self.cache.set(clean_span, context, prev_label, current_pred, validated)
+
+            validated["cached"] = False
+            return validated
+
+        except Exception as e:
+            logger.error(f"[LLM ASYNC SPAN ERROR]: {e}")
+            return self._error_response(fallback_label, str(e))
 
     def get_cache_stats(self) -> Optional[Dict[str, Any]]:
         """Get cache statistics."""

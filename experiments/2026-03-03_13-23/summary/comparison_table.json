@@ -1,0 +1,79 @@
+[
+  {
+    "system": "NerGuard Hybrid V2 (gpt-4o)",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.5069331565589086,
+    "f1_micro": 0.7015482186159299,
+    "entity_f1": 0.6633846153846154,
+    "latency_mean_ms": 41.36054515838623,
+    "n_evaluated_labels": 16,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "NerGuard Hybrid (gpt-4o)",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.4942518726911789,
+    "f1_micro": 0.6862202545655783,
+    "entity_f1": 0.6474522680286998,
+    "latency_mean_ms": 31.312038898468018,
+    "n_evaluated_labels": 16,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "NerGuard Base",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.41748284282807985,
+    "f1_micro": 0.610504121142419,
+    "entity_f1": 0.6076304708434349,
+    "latency_mean_ms": 33.232110023498535,
+    "n_evaluated_labels": 16,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "Piiranha",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.47305605530745354,
+    "f1_micro": 0.65009234266231,
+    "entity_f1": 0.6194895591647331,
+    "latency_mean_ms": 30.905214309692383,
+    "n_evaluated_labels": 14,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "Presidio",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.4932662590734013,
+    "f1_micro": 0.5492622560685388,
+    "entity_f1": 0.667984600978046,
+    "latency_mean_ms": 86.0899748802185,
+    "n_evaluated_labels": 15,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "spaCy (en_core_web_trf)",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.36066218243202086,
+    "f1_micro": 0.4174980813507291,
+    "entity_f1": 0.5526775320139697,
+    "latency_mean_ms": 144.22184419631958,
+    "n_evaluated_labels": 8,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "dslim/bert-base-NER",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.3330673825902174,
+    "f1_micro": 0.48205128205128206,
+    "entity_f1": 0.622528460155782,
+    "latency_mean_ms": 37.58880066871643,
+    "n_evaluated_labels": 4,
+    "tier": 2,
+    "n_samples": 1000
+  }
+]

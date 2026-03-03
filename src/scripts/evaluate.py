@@ -35,7 +35,7 @@ def main():
     parser.add_argument(
         "--output-dir",
         type=str,
-        default="./plots/validation_results",
+        default="./results/validation",
         help="Output directory for results",
     )
     parser.add_argument(
@@ -61,6 +61,17 @@ def main():
         default=DEFAULT_CONFIDENCE_THRESHOLD,
         help="Confidence threshold for LLM routing",
     )
+    parser.add_argument(
+        "--llm-source",
+        choices=["openai", "ollama"],
+        default=None,
+        help="Explicitly choose LLM backend (default: auto-detect)",
+    )
+    parser.add_argument(
+        "--openai-model",
+        default="gpt-4o-mini",
+        help="OpenAI model name (default: gpt-4o-mini)",
+    )
 
     args = parser.parse_args()
 
@@ -72,6 +83,8 @@ def main():
         sample_limit=args.sample_limit if args.sample_limit > 0 else None,
         entropy_threshold=args.entropy_threshold,
         confidence_threshold=args.confidence_threshold,
+        llm_source=args.llm_source,
+        openai_model=args.openai_model,
     )
 
 

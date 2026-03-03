@@ -17,36 +17,30 @@ dependencies = [
     "datasets>=2.18",
     "evaluate>=0.4",
     "seqeval>=1.2",
-
     # Scientific computing
     "numpy>=1.26",
     "pandas>=2.2",
     "scikit-learn>=1.4",
     "scipy>=1.12",
-
     # LLM routing
     "openai>=1.12",
     "ollama>=0.1",
-
     # Quantization
     "onnxruntime>=1.17",
     "optimum[onnxruntime]>=1.17",
-
     # Visualization
     "matplotlib>=3.8",
     "seaborn>=0.13",
-
     # Utilities
     "tqdm>=4.66",
     "python-dotenv>=1.0",
-
     # Experiment tracking
     "wandb>=0.16",
-
     # Benchmark competitors
     "gliner>=0.2",
     "presidio-analyzer>=2.2",
     "spacy>=3.7",
+    "psutil>=7.2.1",
 ]
 
 [project.optional-dependencies]

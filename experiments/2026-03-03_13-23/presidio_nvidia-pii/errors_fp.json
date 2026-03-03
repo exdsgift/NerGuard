@@ -1,0 +1,3505 @@
+{
+  "n_errors": 500,
+  "errors": [
+    {
+      "token": "annual",
+      "context": "review on an annual basis. The vendor",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "bdf607c65a054a9d94b94a423119e670"
+    },
+    {
+      "token": "weekly",
+      "context": "Goods on a weekly basis, with the",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "bdf607c65a054a9d94b94a423119e670"
+    },
+    {
+      "token": "30",
+      "context": "be made within 30 days of receipt",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "bdf607c65a054a9d94b94a423119e670"
+    },
+    {
+      "token": "days",
+      "context": "made within 30 days of receipt of",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "bdf607c65a054a9d94b94a423119e670"
+    },
+    {
+      "token": "30",
+      "context": "this Agreement with 30 days' written notice.",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "bdf607c65a054a9d94b94a423119e670"
+    },
+    {
+      "token": "days'",
+      "context": "Agreement with 30 days' written notice. In",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "bdf607c65a054a9d94b94a423119e670"
+    },
+    {
+      "token": "annual",
+      "context": "The annual budget for 09/15/2024",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "b47679a6669b4c0fbcbfe51ca377db9c"
+    },
+    {
+      "token": "the",
+      "context": "financial plan for the year, including income",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "b47679a6669b4c0fbcbfe51ca377db9c"
+    },
+    {
+      "token": "year,",
+      "context": "plan for the year, including income projections,",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "b47679a6669b4c0fbcbfe51ca377db9c"
+    },
+    {
+      "token": "4/12",
+      "context": "shingles - **Slope:** 4/12 - **Drainage System:**",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "4ce1b0f2b0de4e0da2e2cabbc1df3d33"
+    },
+    {
+      "token": "-",
+      "context": "First Name: Samantha - Last Name: Perera",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "520fe736f6154fa1a6fbce3576c47a97"
+    },
+    {
+      "token": "-",
+      "context": "Last Name: Perera - Date of Birth:",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "520fe736f6154fa1a6fbce3576c47a97"
+    },
+    {
+      "token": "Date",
+      "context": "Name: Perera - Date of Birth: 1987-05-16",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "520fe736f6154fa1a6fbce3576c47a97"
+    },
+    {
+      "token": "-",
+      "context": "First Name: Mike - Last Name: Striplin",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "4b3bf4fa3e184634b84fd0432d1c9732"
+    },
+    {
+      "token": "-",
+      "context": "Time**: 7:22 am - **Expiration Date**: May",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "34fdecefb63646bfb4342418c65af4aa"
+    },
+    {
+      "token": "a",
+      "context": "duration is for a period of 5",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "cb152a27d8314915b54c563f4c11f434"
+    },
+    {
+      "token": "period",
+      "context": "is for a period of 5 years,",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "cb152a27d8314915b54c563f4c11f434"
+    },
+    {
+      "token": "of",
+      "context": "for a period of 5 years, commencing",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "cb152a27d8314915b54c563f4c11f434"
+    },
+    {
+      "token": "5",
+      "context": "a period of 5 years, commencing on",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "cb152a27d8314915b54c563f4c11f434"
+    },
+    {
+      "token": "years,",
+      "context": "period of 5 years, commencing on the",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "cb152a27d8314915b54c563f4c11f434"
+    },
+    {
+      "token": "monthly",
+      "context": "this agreement. The monthly rental payment is",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "cb152a27d8314915b54c563f4c11f434"
+    },
+    {
+      "token": "the",
+      "context": "$5,000, payable on the first day of",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "cb152a27d8314915b54c563f4c11f434"
+    },
+    {
+      "token": "first",
+      "context": "payable on the first day of each",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "cb152a27d8314915b54c563f4c11f434"
+    },
+    {
+      "token": "day",
+      "context": "on the first day of each month.",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "cb152a27d8314915b54c563f4c11f434"
+    },
+    {
+      "token": "of",
+      "context": "the first day of each month. Maintenance",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "cb152a27d8314915b54c563f4c11f434"
+    },
+    {
+      "token": "each",
+      "context": "first day of each month. Maintenance responsibilities",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "cb152a27d8314915b54c563f4c11f434"
+    },
+    {
+      "token": "month.",
+      "context": "day of each month. Maintenance responsibilities for",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "cb152a27d8314915b54c563f4c11f434"
+    },
+    {
+      "token": "30-day",
+      "context": "lease with a 30-day written notice. For",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "cb152a27d8314915b54c563f4c11f434"
+    },
+    {
+      "token": "Ammann",
+      "context": "At Ammann Bazaar, we are",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "f269c636352649a09e47770d5beed6dc"
+    },
+    {
+      "token": "Bazaar,",
+      "context": "At Ammann Bazaar, we are committed",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "f269c636352649a09e47770d5beed6dc"
+    },
+    {
+      "token": "Annual",
+      "context": "Manufacturing **Financial Period:** Annual **Date:** 15/09/2024 **Country:**",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "697dc79f0f5f4d06975440e99cb324d5"
+    },
+    {
+      "token": "The",
+      "context": "**Project**: The Lion King **URL**:",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Lion",
+      "context": "**Project**: The Lion King **URL**: https://studios.waltdisney.com/storyboards?project=lionking&version=final&status=approved",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "King",
+      "context": "**Project**: The Lion King **URL**: https://studios.waltdisney.com/storyboards?project=lionking&version=final&status=approved **Submitted",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "**URL**:",
+      "context": "The Lion King **URL**: https://studios.waltdisney.com/storyboards?project=lionking&version=final&status=approved **Submitted By**:",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "the",
+      "context": "vast savannah, signaling the end of another",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "end",
+      "context": "savannah, signaling the end of another day.",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "of",
+      "context": "signaling the end of another day. |",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "another",
+      "context": "the end of another day. | |",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "day.",
+      "context": "end of another day. | | 2",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Field",
+      "context": "Result Notice** | Field | Data Entry",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "697d9c3254434eea84aec336c5e9be9a"
+    },
+    {
+      "token": "-",
+      "context": "Name: John Doe - Date of Birth:",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "252c1e76bbc745028118aa1e409b5239"
+    },
+    {
+      "token": "Date",
+      "context": "John Doe - Date of Birth: 1950-12-27",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "252c1e76bbc745028118aa1e409b5239"
+    },
+    {
+      "token": "Monthly",
+      "context": "**Reporting:** - **Frequency:** Monthly reports will be",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "03fc556b81034d90adc997a4ca62ba98"
+    },
+    {
+      "token": "each",
+      "context": "be imposed for each hour of delay",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "03fc556b81034d90adc997a4ca62ba98"
+    },
+    {
+      "token": "hour",
+      "context": "imposed for each hour of delay beyond",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "03fc556b81034d90adc997a4ca62ba98"
+    },
+    {
+      "token": "30-day",
+      "context": "agreement with a 30-day notice. - **Non-Compliance",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "03fc556b81034d90adc997a4ca62ba98"
+    },
+    {
+      "token": "30",
+      "context": "- Customers have 30 days from the",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "16f5932434ec43859d19f37dc8fa95a9"
+    },
+    {
+      "token": "days",
+      "context": "Customers have 30 days from the date",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "16f5932434ec43859d19f37dc8fa95a9"
+    },
+    {
+      "token": "the",
+      "context": "placement guidelines by the end of this",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "92c3bc2083854c949521b9968d0f4f97"
+    },
+    {
+      "token": "end",
+      "context": "guidelines by the end of this week.",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "92c3bc2083854c949521b9968d0f4f97"
+    },
+    {
+      "token": "of",
+      "context": "by the end of this week. Mary",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "92c3bc2083854c949521b9968d0f4f97"
+    },
+    {
+      "token": "this",
+      "context": "the end of this week. Mary will",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "92c3bc2083854c949521b9968d0f4f97"
+    },
+    {
+      "token": "week.",
+      "context": "end of this week. Mary will follow",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "92c3bc2083854c949521b9968d0f4f97"
+    },
+    {
+      "token": "only",
+      "context": "was minimal, totaling only 12 minutes over",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "1d6b85e2c25f419e9826b45ffff3961b"
+    },
+    {
+      "token": "12",
+      "context": "minimal, totaling only 12 minutes over the",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "1d6b85e2c25f419e9826b45ffff3961b"
+    },
+    {
+      "token": "minutes",
+      "context": "totaling only 12 minutes over the entire",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "1d6b85e2c25f419e9826b45ffff3961b"
+    },
+    {
+      "token": "the",
+      "context": "12 minutes over the entire period. Incident",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "1d6b85e2c25f419e9826b45ffff3961b"
+    },
+    {
+      "token": "entire",
+      "context": "minutes over the entire period. Incident details",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "1d6b85e2c25f419e9826b45ffff3961b"
+    },
+    {
+      "token": "period.",
+      "context": "over the entire period. Incident details reveal",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "1d6b85e2c25f419e9826b45ffff3961b"
+    },
+    {
+      "token": "L.",
+      "context": "Larson b) Emma L. Larson c) Larson",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "L",
+      "context": "Emma d) Emma L 2. When is",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "2.",
+      "context": "d) Emma L 2. When is your",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "d)",
+      "context": "1995-07-30 c) 1996-07-30 d) 1997-07-30 3. What",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "3.",
+      "context": "1996-07-30 d) 1997-07-30 3. What is your",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "729-85-3141",
+      "context": "national id? a) 729-85-3141 b) 729-85-3142 c)",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "729-85-3143",
+      "context": "b) 729-85-3142 c) 729-85-3143 d) 729-85-3144 Please",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "729-85-3144",
+      "context": "c) 729-85-3143 d) 729-85-3144 Please ensure you",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "-",
+      "context": "First Name: Walter - Last Name: Stone",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "acf47d3e22694f88b58aca746b501bd9"
+    },
+    {
+      "token": "Last",
+      "context": "Name: Walter - Last Name: Stone -",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "acf47d3e22694f88b58aca746b501bd9"
+    },
+    {
+      "token": "daily",
+      "context": "- Hydrochlorothiazide 12.5mg daily **Therapy Sessions** -",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "acf47d3e22694f88b58aca746b501bd9"
+    },
+    {
+      "token": "Weekly",
+      "context": "**Therapy Sessions** - Weekly counseling sessions with",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "acf47d3e22694f88b58aca746b501bd9"
+    },
+    {
+      "token": "the",
+      "context": "sales analysis for the quarter ending on",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "20e36d57aba04be8b7e8879333f86e0d"
+    },
+    {
+      "token": "quarter",
+      "context": "analysis for the quarter ending on 07/15/2027",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "20e36d57aba04be8b7e8879333f86e0d"
+    },
+    {
+      "token": "ending",
+      "context": "for the quarter ending on 07/15/2027 reveals",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "20e36d57aba04be8b7e8879333f86e0d"
+    },
+    {
+      "token": "on",
+      "context": "the quarter ending on 07/15/2027 reveals several",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "20e36d57aba04be8b7e8879333f86e0d"
+    },
+    {
+      "token": "kWh",
+      "context": "Energy Consumption: 5,000,000 kWh - Peak Demand:",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "5c0c29b6a12a4f43a809fdac02423f70"
+    },
+    {
+      "token": "kWh",
+      "context": "Energy Savings: 1,000,000 kWh - Peak Demand",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "5c0c29b6a12a4f43a809fdac02423f70"
+    },
+    {
+      "token": "5",
+      "context": "- Payback Period: 5 years - Annual",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "5c0c29b6a12a4f43a809fdac02423f70"
+    },
+    {
+      "token": "years",
+      "context": "Payback Period: 5 years - Annual ROI:",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "5c0c29b6a12a4f43a809fdac02423f70"
+    },
+    {
+      "token": "Annual",
+      "context": "5 years - Annual ROI: 20% **Additional",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "5c0c29b6a12a4f43a809fdac02423f70"
+    },
+    {
+      "token": "1234567890",
+      "context": "Confirmation** **Order Number:** 1234567890 **Date of Purchase:**",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "0844dbba5fc64a5cb6f301144e5fe50d"
+    },
+    {
+      "token": "**Last",
+      "context": "7456 3210 4789 **Last Four Digits of",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "0844dbba5fc64a5cb6f301144e5fe50d"
+    },
+    {
+      "token": "Four",
+      "context": "3210 4789 **Last Four Digits of Card:**",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "0844dbba5fc64a5cb6f301144e5fe50d"
+    },
+    {
+      "token": "Digits",
+      "context": "4789 **Last Four Digits of Card:** 4789",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "0844dbba5fc64a5cb6f301144e5fe50d"
+    },
+    {
+      "token": "today,",
+      "context": "is valid from today, 11/15/2026, and will",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "5a35dd67d5d84c73979e718efe3148a9"
+    },
+    {
+      "token": "Dear",
+      "context": "Dear Gail, Your new",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "c53fafcf335d4a28b2eedc4e677014d6"
+    },
+    {
+      "token": "the",
+      "context": "media performance for the quarter. Key insights",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "e3b36678394d4c4ea75c9ebb0de0de17"
+    },
+    {
+      "token": "quarter.",
+      "context": "performance for the quarter. Key insights include",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "e3b36678394d4c4ea75c9ebb0de0de17"
+    },
+    {
+      "token": "Monthly",
+      "context": "Marketing** - Campaigns: Monthly newsletters, special offers,",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "2c2e6c0358504d4885427217467cc277"
+    },
+    {
+      "token": "(2023-10-16",
+      "context": "- Phase 2 (2023-10-16 to 2023-11-15): Implementation",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "2c2e6c0358504d4885427217467cc277"
+    },
+    {
+      "token": "1234567890",
+      "context": "Notice** **Policy Number:** 1234567890 **Claim Number:** 9876543210",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "6b87ebe759df4d0f89f64823222144fe"
+    },
+    {
+      "token": "-",
+      "context": "**First Name:** Ethan - **Last Name:** Meyer",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "6b87ebe759df4d0f89f64823222144fe"
+    },
+    {
+      "token": "recent",
+      "context": "significant advancements in recent years, with a",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "c0e89cb3b426469da48682948625d1e8"
+    },
+    {
+      "token": "years,",
+      "context": "advancements in recent years, with a particular",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "c0e89cb3b426469da48682948625d1e8"
+    },
+    {
+      "token": "the",
+      "context": "please refer to the United Kingdom Intellectual",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "c0e89cb3b426469da48682948625d1e8"
+    },
+    {
+      "token": "Intellectual",
+      "context": "the United Kingdom Intellectual Property Office at",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "c0e89cb3b426469da48682948625d1e8"
+    },
+    {
+      "token": "Property",
+      "context": "United Kingdom Intellectual Property Office at the",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "c0e89cb3b426469da48682948625d1e8"
+    },
+    {
+      "token": "Office",
+      "context": "Kingdom Intellectual Property Office at the url",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "c0e89cb3b426469da48682948625d1e8"
+    },
+    {
+      "token": "weekly",
+      "context": "Trends **Subtitle:** Your weekly dose of technology",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "add860a556af43de82cac7b14ea240c6"
+    },
+    {
+      "token": "weekly",
+      "context": "ensure you receive weekly updates directly to",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "add860a556af43de82cac7b14ea240c6"
+    },
+    {
+      "token": "the",
+      "context": "and innovation in the years ahead.",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "ab940e02bbc14ddc92a78aacc45a50c2"
+    },
+    {
+      "token": "years",
+      "context": "innovation in the years ahead.",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "ab940e02bbc14ddc92a78aacc45a50c2"
+    },
+    {
+      "token": "ahead.",
+      "context": "in the years ahead.",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "ab940e02bbc14ddc92a78aacc45a50c2"
+    },
+    {
+      "token": "at",
+      "context": "volunteers must be at least 18 years",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "36de4cb5ab1e4f77a300e52fdeff4a41"
+    },
+    {
+      "token": "least",
+      "context": "must be at least 18 years old.",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "36de4cb5ab1e4f77a300e52fdeff4a41"
+    },
+    {
+      "token": "18",
+      "context": "be at least 18 years old. |",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "36de4cb5ab1e4f77a300e52fdeff4a41"
+    },
+    {
+      "token": "years",
+      "context": "at least 18 years old. | |",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "36de4cb5ab1e4f77a300e52fdeff4a41"
+    },
+    {
+      "token": "old.",
+      "context": "least 18 years old. | | **Eligibility",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "36de4cb5ab1e4f77a300e52fdeff4a41"
+    },
+    {
+      "token": "at",
+      "context": "to commit to at least 2 hours",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "36de4cb5ab1e4f77a300e52fdeff4a41"
+    },
+    {
+      "token": "least",
+      "context": "commit to at least 2 hours per",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "36de4cb5ab1e4f77a300e52fdeff4a41"
+    },
+    {
+      "token": "2",
+      "context": "to at least 2 hours per week",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "36de4cb5ab1e4f77a300e52fdeff4a41"
+    },
+    {
+      "token": "hours",
+      "context": "at least 2 hours per week and",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "36de4cb5ab1e4f77a300e52fdeff4a41"
+    },
+    {
+      "token": "Email",
+      "context": "762-442-9972 | | Email | davidspencer25@outlook.com |",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "00bcf0b5a20246f6a966de937b730540"
+    },
+    {
+      "token": "LAB001",
+      "context": "| |---------------|-----------------|--------------|----------------|----------------| | LAB001 | Labor (Employee",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "562eacced3d4416c8ec55151a2c4fab1"
+    },
+    {
+      "token": "100",
+      "context": "ID: M3795K) | 100 hours | $50.00/hour",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "562eacced3d4416c8ec55151a2c4fab1"
+    },
+    {
+      "token": "hours",
+      "context": "M3795K) | 100 hours | $50.00/hour |",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "562eacced3d4416c8ec55151a2c4fab1"
+    },
+    {
+      "token": "Concrete",
+      "context": "| MAT001 | Concrete | 50 tons",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "562eacced3d4416c8ec55151a2c4fab1"
+    },
+    {
+      "token": "Miscellaneous",
+      "context": "| MISC001 | Miscellaneous | N/A |",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "562eacced3d4416c8ec55151a2c4fab1"
+    },
+    {
+      "token": "Date",
+      "context": "First Name: Diana Date of Birth: 2006-04-24",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "daily",
+      "context": "Increase independence in daily activities **Rehabilitation Interventions**",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "daily",
+      "context": "ability to perform daily tasks. This will",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "60",
+      "context": "sessions per week, 60 minutes each, for",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "minutes",
+      "context": "per week, 60 minutes each, for 12",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "12",
+      "context": "minutes each, for 12 weeks - Occupational",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "weeks",
+      "context": "each, for 12 weeks - Occupational Therapy:",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "45",
+      "context": "sessions per week, 45 minutes each, for",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "minutes",
+      "context": "per week, 45 minutes each, for 12",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "12",
+      "context": "minutes each, for 12 weeks - Speech",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "weeks",
+      "context": "each, for 12 weeks - Speech Therapy:",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "30",
+      "context": "sessions per week, 30 minutes each, for",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "minutes",
+      "context": "per week, 30 minutes each, for 12",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "12",
+      "context": "minutes each, for 12 weeks **Progress Monitoring**",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "weeks",
+      "context": "each, for 12 weeks **Progress Monitoring** Progress",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "bi-weekly",
+      "context": "will be monitored bi-weekly by the rehabilitation",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "daily",
+      "context": "and independence in daily activities. The biometric",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "daily",
+      "context": "independence in performing daily activities **Signatures** -",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "dd0ef3c67b2c4eafbf15e22dac819ea0"
+    },
+    {
+      "token": "Crush",
+      "context": "Methods** - **Concrete**: Crush and reuse as",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "b160bcd22fa84028b5d0e8f2dd8eb992"
+    },
+    {
+      "token": "daily.",
+      "context": "services are provided daily. - For special",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "to",
+      "context": "from 10:00 PM to 8:00 AM. -",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "Field",
+      "context": "Registration Certificate** | Field | Value |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "0de7850e36c24d19a7a08d4fece32b71"
+    },
+    {
+      "token": "|",
+      "context": "Certificate** | Field | Value | |------------------------|--------------------------------|",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "0de7850e36c24d19a7a08d4fece32b71"
+    },
+    {
+      "token": "123456789",
+      "context": "Unique Identifier | 123456789 | | Issuing",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "0de7850e36c24d19a7a08d4fece32b71"
+    },
+    {
+      "token": "the",
+      "context": "into as of the 1st day of",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "monthly",
+      "context": "4. **RENT** The monthly rent shall be",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "the",
+      "context": "in advance on the first day of",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "first",
+      "context": "advance on the first day of each",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "day",
+      "context": "on the first day of each calendar",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "2",
+      "context": "a minimum of 2 years of teaching",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "29768d12370e4752a519c26e40597ddc"
+    },
+    {
+      "token": "years",
+      "context": "minimum of 2 years of teaching experience.",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "29768d12370e4752a519c26e40597ddc"
+    },
+    {
+      "token": "60",
+      "context": "be reported within 60 days of occurrence.",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "9ba36c6b574d4b17b4ae8f6c761b572a"
+    },
+    {
+      "token": "days",
+      "context": "reported within 60 days of occurrence. -",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "9ba36c6b574d4b17b4ae8f6c761b572a"
+    },
+    {
+      "token": "30",
+      "context": "either party with 30 days' written notice.",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "9ba36c6b574d4b17b4ae8f6c761b572a"
+    },
+    {
+      "token": "days'",
+      "context": "party with 30 days' written notice. **Signatures**",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "9ba36c6b574d4b17b4ae8f6c761b572a"
+    },
+    {
+      "token": "48",
+      "context": "are canceled within 48 hours of the",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "0a99fd3f6cb2496f84388455c7ded6d3"
+    },
+    {
+      "token": "hours",
+      "context": "canceled within 48 hours of the arrival",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "0a99fd3f6cb2496f84388455c7ded6d3"
+    },
+    {
+      "token": "daily,",
+      "context": "standards are maintained daily, ensuring your room",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "0a99fd3f6cb2496f84388455c7ded6d3"
+    },
+    {
+      "token": "the",
+      "context": "be conducted on the 18th of every",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "2dad245ecc1e4e4883c478c10dd5d4b6"
+    },
+    {
+      "token": "monthly.",
+      "context": "accessible and inspected monthly. - **Smoking Policy:**",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "2dad245ecc1e4e4883c478c10dd5d4b6"
+    },
+    {
+      "token": "quarterly.",
+      "context": "Inspected and maintained quarterly. - **Sprinkler Systems:**",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "2dad245ecc1e4e4883c478c10dd5d4b6"
+    },
+    {
+      "token": "annually.",
+      "context": "**Sprinkler Systems:** Inspected annually. - **Emergency Lights:**",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "2dad245ecc1e4e4883c478c10dd5d4b6"
+    },
+    {
+      "token": "monthly.",
+      "context": "**Emergency Lights:** Tested monthly. #### Safety Training",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "2dad245ecc1e4e4883c478c10dd5d4b6"
+    },
+    {
+      "token": "every",
+      "context": "fire safety training every six months. -",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "2dad245ecc1e4e4883c478c10dd5d4b6"
+    },
+    {
+      "token": "six",
+      "context": "safety training every six months. - **Training",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "2dad245ecc1e4e4883c478c10dd5d4b6"
+    },
+    {
+      "token": "months.",
+      "context": "training every six months. - **Training Records:**",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "2dad245ecc1e4e4883c478c10dd5d4b6"
+    },
+    {
+      "token": "the",
+      "context": "funding sources for the upcoming fiscal year.",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "f730c6f84b8a4fd2bfd96e20c0a5311c"
+    },
+    {
+      "token": "upcoming",
+      "context": "sources for the upcoming fiscal year. Our",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "f730c6f84b8a4fd2bfd96e20c0a5311c"
+    },
+    {
+      "token": "fiscal",
+      "context": "for the upcoming fiscal year. Our primary",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "f730c6f84b8a4fd2bfd96e20c0a5311c"
+    },
+    {
+      "token": "year.",
+      "context": "the upcoming fiscal year. Our primary funding",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "f730c6f84b8a4fd2bfd96e20c0a5311c"
+    },
+    {
+      "token": "or",
+      "context": "individuals aged 20 or older. Once your",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "53a7abf9246f4552af6bc4b7bd9ced0a"
+    },
+    {
+      "token": "older.",
+      "context": "aged 20 or older. Once your card",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "53a7abf9246f4552af6bc4b7bd9ced0a"
+    },
+    {
+      "token": "15",
+      "context": "call lasted for 15 minutes. Kathryn's email",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "0807552dafaf4bc8aa445363309656e4"
+    },
+    {
+      "token": "minutes.",
+      "context": "lasted for 15 minutes. Kathryn's email address,",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "0807552dafaf4bc8aa445363309656e4"
+    },
+    {
+      "token": "annually",
+      "context": "reviewed and updated annually on 20230915. **2.2",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "6c97f6eb8b1448de8b5a053e00abd768"
+    },
+    {
+      "token": "2025.",
+      "context": "by 20% by 2025. This will be",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "6c97f6eb8b1448de8b5a053e00abd768"
+    },
+    {
+      "token": "36",
+      "context": "term is for 36 months, with payments",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "a85a82ec0270496196ee674187f5185c"
+    },
+    {
+      "token": "months,",
+      "context": "is for 36 months, with payments due",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "a85a82ec0270496196ee674187f5185c"
+    },
+    {
+      "token": "12345",
+      "context": "claim number is 12345 and the date",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "2fae009af9134f5f8d869f1d25408113"
+    },
+    {
+      "token": "2-minute",
+      "context": "- Prepare a 2-minute monologue or song.",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "48b42886a99d4858bf98a9c6f1bbcb25"
+    },
+    {
+      "token": "Roth,",
+      "context": "Contribution Type (Pre-Tax, Roth, or After-Tax): **Authorization**",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "020fa4bba545406293619c7374e3dfbf"
+    },
+    {
+      "token": "the",
+      "context": "Solutions Inc., and the United States Government.",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "cc9f428fa2e845d6a0c548a1cd4edcbc"
+    },
+    {
+      "token": "United",
+      "context": "Inc., and the United States Government. This",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "cc9f428fa2e845d6a0c548a1cd4edcbc"
+    },
+    {
+      "token": "States",
+      "context": "and the United States Government. This agreement",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "cc9f428fa2e845d6a0c548a1cd4edcbc"
+    },
+    {
+      "token": "Government.",
+      "context": "the United States Government. This agreement is",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "cc9f428fa2e845d6a0c548a1cd4edcbc"
+    },
+    {
+      "token": "123456,",
+      "context": "permit number is 123456, issued on 01/01/2023",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "58ec71ede5cb481e81ae6c4b654783f9"
+    },
+    {
+      "token": "five",
+      "context": "a duration of five years. The annual",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "0a48a533cf7e40f7b424f5ca38fc4b5c"
+    },
+    {
+      "token": "years.",
+      "context": "duration of five years. The annual rent",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "0a48a533cf7e40f7b424f5ca38fc4b5c"
+    },
+    {
+      "token": "annual",
+      "context": "five years. The annual rent is to",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "0a48a533cf7e40f7b424f5ca38fc4b5c"
+    },
+    {
+      "token": "the",
+      "context": "in advance on the first day of",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "0a48a533cf7e40f7b424f5ca38fc4b5c"
+    },
+    {
+      "token": "first",
+      "context": "advance on the first day of each",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "0a48a533cf7e40f7b424f5ca38fc4b5c"
+    },
+    {
+      "token": "day",
+      "context": "on the first day of each calendar",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "0a48a533cf7e40f7b424f5ca38fc4b5c"
+    },
+    {
+      "token": "1964**:",
+      "context": "Rights Act of 1964**: Prohibits discrimination based",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "a23331cebc644650be4d38d1cf30d1e7"
+    },
+    {
+      "token": "Last",
+      "context": "First Name: Edward Last Name: Woodall Street",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "425a19b1027142a7a01a77b8f1b20878"
+    },
+    {
+      "token": "Name:",
+      "context": "Name: Edward Last Name: Woodall Street Address:",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "425a19b1027142a7a01a77b8f1b20878"
+    },
+    {
+      "token": "Street",
+      "context": "Last Name: Woodall Street Address: 146 Gatcombe",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "425a19b1027142a7a01a77b8f1b20878"
+    },
+    {
+      "token": "Address:",
+      "context": "Name: Woodall Street Address: 146 Gatcombe Run",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "425a19b1027142a7a01a77b8f1b20878"
+    },
+    {
+      "token": "3.",
+      "context": "Given Name: James 3. Date of Birth:",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "5557395aa6ca4414a707b1416e19e240"
+    },
+    {
+      "token": "TC23456",
+      "context": "Ticket ID: TC23456 Customer ID: 22CUST01347",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "66c1a9e503f54b4f9d7d50395b8b8153"
+    },
+    {
+      "token": "many",
+      "context": "Lulista supporter for many years. The customer",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "66c1a9e503f54b4f9d7d50395b8b8153"
+    },
+    {
+      "token": "years.",
+      "context": "supporter for many years. The customer is",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "66c1a9e503f54b4f9d7d50395b8b8153"
+    },
+    {
+      "token": "the",
+      "context": "loyal subscriber for the last 5 years.",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "66c1a9e503f54b4f9d7d50395b8b8153"
+    },
+    {
+      "token": "last",
+      "context": "subscriber for the last 5 years. The",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "66c1a9e503f54b4f9d7d50395b8b8153"
+    },
+    {
+      "token": "5",
+      "context": "for the last 5 years. The issue",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "66c1a9e503f54b4f9d7d50395b8b8153"
+    },
+    {
+      "token": "years.",
+      "context": "the last 5 years. The issue seems",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "66c1a9e503f54b4f9d7d50395b8b8153"
+    },
+    {
+      "token": "-",
+      "context": "Name: Yelena Ivanov - Policy Number: BCBS-4512-7839-67",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "d4a3b3bc3ddf46e8b9aef4c6a7880ebe"
+    },
+    {
+      "token": "Every",
+      "context": "| 08/15/2024 | Every 2 weeks |",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "443662df280241849cf3abf94f6cee5d"
+    },
+    {
+      "token": "2",
+      "context": "08/15/2024 | Every 2 weeks | 50",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "443662df280241849cf3abf94f6cee5d"
+    },
+    {
+      "token": "weeks",
+      "context": "| Every 2 weeks | 50 kg",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "443662df280241849cf3abf94f6cee5d"
+    },
+    {
+      "token": "Route",
+      "context": "| |----------------------|--------------------------------------| | Route Description | The",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "2bab918aabb54f319edba88adbb72db2"
+    },
+    {
+      "token": "Description",
+      "context": "|----------------------|--------------------------------------| | Route Description | The shipment",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "2bab918aabb54f319edba88adbb72db2"
+    },
+    {
+      "token": "|",
+      "context": "| June 2023 | July 2023 |",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "da2772c13db64759bf402d47fe366dcf"
+    },
+    {
+      "token": "the",
+      "context": "margins compared to the previous month. The",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "da2772c13db64759bf402d47fe366dcf"
+    },
+    {
+      "token": "previous",
+      "context": "compared to the previous month. The efficiency",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "da2772c13db64759bf402d47fe366dcf"
+    },
+    {
+      "token": "month.",
+      "context": "to the previous month. The efficiency rate",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "da2772c13db64759bf402d47fe366dcf"
+    },
+    {
+      "token": "RA123456",
+      "context": "Return Authorization Number: RA123456 Order Number: ORD789012",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "a9a043e8aa0b4db9a01b24f6059bfd67"
+    },
+    {
+      "token": "RA123456",
+      "context": "return authorization number RA123456 inside the package.",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "a9a043e8aa0b4db9a01b24f6059bfd67"
+    },
+    {
+      "token": "the",
+      "context": "to commence on the date 15/09/2024. This",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "259680c19795479e95b596ee0b522d05"
+    },
+    {
+      "token": "date",
+      "context": "commence on the date 15/09/2024. This plan",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "259680c19795479e95b596ee0b522d05"
+    },
+    {
+      "token": "years",
+      "context": "you are 64 years old, you are",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "57a97fe8b2de428aba638878218e3cd8"
+    },
+    {
+      "token": "old,",
+      "context": "are 64 years old, you are still",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "57a97fe8b2de428aba638878218e3cd8"
+    },
+    {
+      "token": "the",
+      "context": "key objectives for the upcoming fiscal year",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "9b70a2592c094231b9bcb1586e83b193"
+    },
+    {
+      "token": "upcoming",
+      "context": "objectives for the upcoming fiscal year include:",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "9b70a2592c094231b9bcb1586e83b193"
+    },
+    {
+      "token": "fiscal",
+      "context": "for the upcoming fiscal year include: -",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "9b70a2592c094231b9bcb1586e83b193"
+    },
+    {
+      "token": "year",
+      "context": "the upcoming fiscal year include: - Enhance",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "9b70a2592c094231b9bcb1586e83b193"
+    },
+    {
+      "token": "the",
+      "context": "total budget for the fiscal year is",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "9b70a2592c094231b9bcb1586e83b193"
+    },
+    {
+      "token": "fiscal",
+      "context": "budget for the fiscal year is distributed",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "9b70a2592c094231b9bcb1586e83b193"
+    },
+    {
+      "token": "year",
+      "context": "for the fiscal year is distributed as",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "9b70a2592c094231b9bcb1586e83b193"
+    },
+    {
+      "token": "Q2",
+      "context": "- Research phase: Q2 2024 - Development",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "9b70a2592c094231b9bcb1586e83b193"
+    },
+    {
+      "token": "2024",
+      "context": "Research phase: Q2 2024 - Development phase:",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "9b70a2592c094231b9bcb1586e83b193"
+    },
+    {
+      "token": "Q3",
+      "context": "- Development phase: Q3 2024 - Testing",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "9b70a2592c094231b9bcb1586e83b193"
+    },
+    {
+      "token": "2024",
+      "context": "Development phase: Q3 2024 - Testing and",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "9b70a2592c094231b9bcb1586e83b193"
+    },
+    {
+      "token": "Q4",
+      "context": "Testing and validation: Q4 2024 - Project",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "9b70a2592c094231b9bcb1586e83b193"
+    },
+    {
+      "token": "2024",
+      "context": "and validation: Q4 2024 - Project completion:",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "9b70a2592c094231b9bcb1586e83b193"
+    },
+    {
+      "token": "Q1",
+      "context": "- Project completion: Q1 2025 **Risk Assessment**",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "9b70a2592c094231b9bcb1586e83b193"
+    },
+    {
+      "token": "Country:",
+      "context": "Name: Caminos Veloz Country: Chile **Importer Details:**",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "4da5b6cfe327449ca2fd7d1d944c42f3"
+    },
+    {
+      "token": "years",
+      "context": "who is 21 years old, has demonstrated",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "01ef738b7c81446183c52a0133b15de6"
+    },
+    {
+      "token": "old,",
+      "context": "is 21 years old, has demonstrated a",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "01ef738b7c81446183c52a0133b15de6"
+    },
+    {
+      "token": "This",
+      "context": "office at noura@kuvexpharma.com. This year, we focused",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "3b3acb4ee1a94abdb8fdc017d6651fc7"
+    },
+    {
+      "token": "year,",
+      "context": "at noura@kuvexpharma.com. This year, we focused on",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "3b3acb4ee1a94abdb8fdc017d6651fc7"
+    },
+    {
+      "token": "daily.",
+      "context": "taken orally once daily. Always check the",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "80d7ac8a450540c2af9dea643fdff9cb"
+    },
+    {
+      "token": "one",
+      "context": "a term of one year. The monthly",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "db9ee7829ba341a09a5858e070bb9abc"
+    },
+    {
+      "token": "year.",
+      "context": "term of one year. The monthly rent",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "db9ee7829ba341a09a5858e070bb9abc"
+    },
+    {
+      "token": "monthly",
+      "context": "one year. The monthly rent shall be",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "db9ee7829ba341a09a5858e070bb9abc"
+    },
+    {
+      "token": "the",
+      "context": "the rent on the first day of",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "db9ee7829ba341a09a5858e070bb9abc"
+    },
+    {
+      "token": "first",
+      "context": "rent on the first day of each",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "db9ee7829ba341a09a5858e070bb9abc"
+    },
+    {
+      "token": "day",
+      "context": "on the first day of each calendar",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "db9ee7829ba341a09a5858e070bb9abc"
+    },
+    {
+      "token": "Date",
+      "context": "Name: Joon Kim Date of Birth: 1990-09-04",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "197e6ea83b6348519e0e92bdcb4c8f4f"
+    },
+    {
+      "token": "\"https://api.securitymonitoring.com/v1/ids.\"",
+      "context": "endpoint required is \"https://api.securitymonitoring.com/v1/ids.\" The necessary permissions",
+      "predicted": "B-url",
+      "expected": "O",
+      "sample_id": "e706d7a7769f426e90e8308405a76312"
+    },
+    {
+      "token": "E3.",
+      "context": "outlined in ICH E3. **Methodology** **Study Design**",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "e2792dc0ed2d4c04b2b4f6f13fe63fc4"
+    },
+    {
+      "token": "today.",
+      "context": "seemed particularly active today. The farm's owner,",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "56f22d8592b24d5aae03412231552212"
+    },
+    {
+      "token": "Wi-Fi",
+      "context": "quality. The farm's Wi-Fi is secured with",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "56f22d8592b24d5aae03412231552212"
+    },
+    {
+      "token": "recent",
+      "context": "remarkable advancements in recent years, with companies",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "650ffb671eae479fa7c4542b2fcdfb7c"
+    },
+    {
+      "token": "years,",
+      "context": "advancements in recent years, with companies like",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "650ffb671eae479fa7c4542b2fcdfb7c"
+    },
+    {
+      "token": "years",
+      "context": "Hansen, is 52 years old and has",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "eb1c5d8aa3784827a388af65ed521925"
+    },
+    {
+      "token": "old",
+      "context": "is 52 years old and has a",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "eb1c5d8aa3784827a388af65ed521925"
+    },
+    {
+      "token": "12345",
+      "context": "Order Number: 12345 Date: 10/15/2023 Customer",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "0f68dfe742914d5ca9ccdb8b181c979f"
+    },
+    {
+      "token": "Date:",
+      "context": "Order Number: 12345 Date: 10/15/2023 Customer ID:",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "0f68dfe742914d5ca9ccdb8b181c979f"
+    },
+    {
+      "token": "the",
+      "context": "market performance over the past year. For",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "577727ad134845a5af8dcd0f1c460afb"
+    },
+    {
+      "token": "past",
+      "context": "performance over the past year. For more",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "577727ad134845a5af8dcd0f1c460afb"
+    },
+    {
+      "token": "year.",
+      "context": "over the past year. For more detailed",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "577727ad134845a5af8dcd0f1c460afb"
+    },
+    {
+      "token": "VM001",
+      "context": "| |-------|-------------------|-----------------|-------------|---------------|-------------------------------------|---------|--------------| | VM001 | eth0 |",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "c76e549733744bd9a99cd2b4047d9651"
+    },
+    {
+      "token": "255.255.255.0",
+      "context": "| 162.234.12.234 | 255.255.255.0 | 162.234.12.1 |",
+      "predicted": "B-ipv4",
+      "expected": "O",
+      "sample_id": "c76e549733744bd9a99cd2b4047d9651"
+    },
+    {
+      "token": "162.234.12.1",
+      "context": "| 255.255.255.0 | 162.234.12.1 | 8.8.8.8, 8.8.4.4",
+      "predicted": "B-ipv4",
+      "expected": "O",
+      "sample_id": "c76e549733744bd9a99cd2b4047d9651"
+    },
+    {
+      "token": "8.8.8.8,",
+      "context": "| 162.234.12.1 | 8.8.8.8, 8.8.4.4 | 100",
+      "predicted": "B-ipv4",
+      "expected": "O",
+      "sample_id": "c76e549733744bd9a99cd2b4047d9651"
+    },
+    {
+      "token": "8.8.4.4",
+      "context": "162.234.12.1 | 8.8.8.8, 8.8.4.4 | 100 |",
+      "predicted": "B-ipv4",
+      "expected": "O",
+      "sample_id": "c76e549733744bd9a99cd2b4047d9651"
+    },
+    {
+      "token": "VM002",
+      "context": "High | | VM002 | eth1 |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "c76e549733744bd9a99cd2b4047d9651"
+    },
+    {
+      "token": "fe80::1",
+      "context": "| N/A | fe80::1 | http://telecomcorp.net:8080/vmnetworksettings, 2001:4860:4860::8888",
+      "predicted": "B-ipv4",
+      "expected": "O",
+      "sample_id": "c76e549733744bd9a99cd2b4047d9651"
+    },
+    {
+      "token": "2001:4860:4860::8888",
+      "context": "fe80::1 | http://telecomcorp.net:8080/vmnetworksettings, 2001:4860:4860::8888 | 200 |",
+      "predicted": "B-ipv4",
+      "expected": "O",
+      "sample_id": "c76e549733744bd9a99cd2b4047d9651"
+    },
+    {
+      "token": "30",
+      "context": "- Terms: Net 30 days **Delivery Schedule:**",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "21d5f2f0ee864f928fcfe0e7ca6160ba"
+    },
+    {
+      "token": "days",
+      "context": "Terms: Net 30 days **Delivery Schedule:** -",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "21d5f2f0ee864f928fcfe0e7ca6160ba"
+    },
+    {
+      "token": "the",
+      "context": "and waste in the Dominican Republic. The",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "Warehouse",
+      "context": "Warehouse A and Warehouse B. 4. Contact",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "B.",
+      "context": "A and Warehouse B. 4. Contact local",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "4.",
+      "context": "and Warehouse B. 4. Contact local authorities",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "the",
+      "context": "environmental regulations in the Dominican Republic. Regular",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "(hours)",
+      "context": "Frequency | Duration (hours) | |-------------------------------|-----------|------------------| |",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "Quarterly",
+      "context": "Chemical Handling | Quarterly | 4 |",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "Annually",
+      "context": "Emergency Response | Annually | 2 |",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "0",
+      "context": "for children aged 0 to 12 years",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "d13f0a589369453aa8b9740a36d7d9f8"
+    },
+    {
+      "token": "to",
+      "context": "children aged 0 to 12 years old.",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "d13f0a589369453aa8b9740a36d7d9f8"
+    },
+    {
+      "token": "12",
+      "context": "aged 0 to 12 years old. Upon",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "d13f0a589369453aa8b9740a36d7d9f8"
+    },
+    {
+      "token": "years",
+      "context": "0 to 12 years old. Upon guest",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "d13f0a589369453aa8b9740a36d7d9f8"
+    },
+    {
+      "token": "old.",
+      "context": "to 12 years old. Upon guest arrival,",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "d13f0a589369453aa8b9740a36d7d9f8"
+    },
+    {
+      "token": "the",
+      "context": "pricing trends over the past few years,",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "5efdbb84f90a4e58852aa16d1ca18d81"
+    },
+    {
+      "token": "past",
+      "context": "trends over the past few years, highlighting",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "5efdbb84f90a4e58852aa16d1ca18d81"
+    },
+    {
+      "token": "few",
+      "context": "over the past few years, highlighting the",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "5efdbb84f90a4e58852aa16d1ca18d81"
+    },
+    {
+      "token": "years,",
+      "context": "the past few years, highlighting the impact",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "5efdbb84f90a4e58852aa16d1ca18d81"
+    },
+    {
+      "token": "the",
+      "context": "and developments over the next decade. It",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "5efdbb84f90a4e58852aa16d1ca18d81"
+    },
+    {
+      "token": "next",
+      "context": "developments over the next decade. It emphasizes",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "5efdbb84f90a4e58852aa16d1ca18d81"
+    },
+    {
+      "token": "decade.",
+      "context": "over the next decade. It emphasizes the",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "5efdbb84f90a4e58852aa16d1ca18d81"
+    },
+    {
+      "token": "the",
+      "context": "LumenFusion Energy, in the coming years.",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "5efdbb84f90a4e58852aa16d1ca18d81"
+    },
+    {
+      "token": "coming",
+      "context": "Energy, in the coming years.",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "5efdbb84f90a4e58852aa16d1ca18d81"
+    },
+    {
+      "token": "years.",
+      "context": "in the coming years.",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "5efdbb84f90a4e58852aa16d1ca18d81"
+    },
+    {
+      "token": "-",
+      "context": "**First Name:** Steven - **Last Name:** Santos",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "db29201907534a01977d0f04fabbe11b"
+    },
+    {
+      "token": "Date",
+      "context": "Last Name: Dawson Date of Birth: 2001-09-29",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "2290439791c34436af0271b7cadfcb66"
+    },
+    {
+      "token": "annual",
+      "context": "has submitted its annual Agricultural Compliance Report",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "dc38920a2b534116ab0d84e67463bd8b"
+    },
+    {
+      "token": "approximately",
+      "context": "these symptoms for approximately three months. Physical",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "fc55503caff74e2bb9db5d34b37464f3"
+    },
+    {
+      "token": "three",
+      "context": "symptoms for approximately three months. Physical examination",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "fc55503caff74e2bb9db5d34b37464f3"
+    },
+    {
+      "token": "months.",
+      "context": "for approximately three months. Physical examination findings",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "fc55503caff74e2bb9db5d34b37464f3"
+    },
+    {
+      "token": "Please",
+      "context": "portal is: K9$rPm8Zx!4L Please use the following",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "c8000158c2c0457d9feb51032d840b66"
+    },
+    {
+      "token": "SHA-256",
+      "context": "Algorithms #### SHA-256 SHA-256 is a widely",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "fb38882782954284acbd253c73e530ee"
+    },
+    {
+      "token": "bcrypt.gensalt()",
+      "context": "salt salt = bcrypt.gensalt() # Hash the",
+      "predicted": "B-url",
+      "expected": "O",
+      "sample_id": "fb38882782954284acbd253c73e530ee"
+    },
+    {
+      "token": "print(hashed_password)",
+      "context": "= bcrypt.hashpw(password.encode('utf-8'), salt) print(hashed_password) ``` #### Example:",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "fb38882782954284acbd253c73e530ee"
+    },
+    {
+      "token": "com.github.legion2.argon2.Argon2;",
+      "context": "Java ```java import com.github.legion2.argon2.Argon2; import com.github.legion2.argon2.Argon2Factory; public",
+      "predicted": "B-url",
+      "expected": "O",
+      "sample_id": "fb38882782954284acbd253c73e530ee"
+    },
+    {
+      "token": "com.github.legion2.argon2.Argon2Factory;",
+      "context": "import com.github.legion2.argon2.Argon2; import com.github.legion2.argon2.Argon2Factory; public class PasswordHashing",
+      "predicted": "B-url",
+      "expected": "O",
+      "sample_id": "fb38882782954284acbd253c73e530ee"
+    },
+    {
+      "token": "Argon2Factory.create();",
+      "context": "Argon2 argon2 = Argon2Factory.create(); String hash =",
+      "predicted": "B-url",
+      "expected": "O",
+      "sample_id": "fb38882782954284acbd253c73e530ee"
+    },
+    {
+      "token": "32,",
+      "context": "hash = argon2.hash(256, 32, 1, password, 32);",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "fb38882782954284acbd253c73e530ee"
+    },
+    {
+      "token": "1,",
+      "context": "= argon2.hash(256, 32, 1, password, 32); System.out.println(hash);",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "fb38882782954284acbd253c73e530ee"
+    },
+    {
+      "token": "System.out.println(hash);",
+      "context": "1, password, 32); System.out.println(hash); } } ```",
+      "predicted": "B-url",
+      "expected": "O",
+      "sample_id": "fb38882782954284acbd253c73e530ee"
+    },
+    {
+      "token": "at",
+      "context": "with notice given at least 48 hours",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "dde693b85b1b4a4f8c4d282776a645fb"
+    },
+    {
+      "token": "least",
+      "context": "notice given at least 48 hours in",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "dde693b85b1b4a4f8c4d282776a645fb"
+    },
+    {
+      "token": "48",
+      "context": "given at least 48 hours in advance",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "dde693b85b1b4a4f8c4d282776a645fb"
+    },
+    {
+      "token": "hours",
+      "context": "at least 48 hours in advance via",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "dde693b85b1b4a4f8c4d282776a645fb"
+    },
+    {
+      "token": "id",
+      "context": "by the employee id SM456, are trained",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "9446cec1940545a0b86d1b9d4f885255"
+    },
+    {
+      "token": "2023-Q3",
+      "context": "Campaign Number:** - 2023-Q3 **Issue Description:** The",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "615ffea5302d49b5bbf19d7687d10969"
+    },
+    {
+      "token": "Today,",
+      "context": "patient education materials. Today, 2024-07-15, we will",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "328038ac35a3450499675e06ff0ca046"
+    },
+    {
+      "token": "12-week",
+      "context": "intervention over a 12-week period. **Patient Demographics**",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "fdb80465313c4be283dde0acc278144a"
+    },
+    {
+      "token": "19-year-old",
+      "context": "One participant, a 19-year-old female of Mexican",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "fdb80465313c4be283dde0acc278144a"
+    },
+    {
+      "token": "-",
+      "context": "**First Name**: Eddy - **Last Name**: Llana",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "539a6ca40b6c42a1857075d0b68105b0"
+    },
+    {
+      "token": "-",
+      "context": "**Last Name**: Llana - **Customer ID**: ACU148237",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "539a6ca40b6c42a1857075d0b68105b0"
+    },
+    {
+      "token": "**Annual",
+      "context": "and Deductibles** - **Annual Premium**: $1,200 -",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "539a6ca40b6c42a1857075d0b68105b0"
+    },
+    {
+      "token": "PO123456",
+      "context": "Order** **PO Number:** PO123456 **Date:** 15/08/2023 **Supplier",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "8005b149c07141acb1d351100334909a"
+    },
+    {
+      "token": "30",
+      "context": "promptly, typically within 30 days, unless extenuating",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "55f3bde11c194a1eae44e6d32aa7f8cc"
+    },
+    {
+      "token": "days,",
+      "context": "typically within 30 days, unless extenuating circumstances",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "55f3bde11c194a1eae44e6d32aa7f8cc"
+    },
+    {
+      "token": "Medical",
+      "context": "Last Name: Ivanov Medical Record Number: M-24-000187",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "23b44259f5164fe099e0322b53ac6028"
+    },
+    {
+      "token": "Record",
+      "context": "Name: Ivanov Medical Record Number: M-24-000187 Date",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "23b44259f5164fe099e0322b53ac6028"
+    },
+    {
+      "token": "23456-7890",
+      "context": "Case Number 23456-7890 Testimony Date: 17/09/2024",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Today's",
+      "context": "Albuquerque, New Mexico Today's testimony involves a",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "the",
+      "context": "Crop Selection For the 2024 season, Green",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "d2a9f3b6c4b946889de284970d648d50"
+    },
+    {
+      "token": "2024",
+      "context": "Selection For the 2024 season, Green Harvest",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "d2a9f3b6c4b946889de284970d648d50"
+    },
+    {
+      "token": "season,",
+      "context": "For the 2024 season, Green Harvest Cooperative",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "d2a9f3b6c4b946889de284970d648d50"
+    },
+    {
+      "token": "six",
+      "context": "be completed within six months from the",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "bafa3e0f36334a4f9729d71e89bf6ff3"
+    },
+    {
+      "token": "months",
+      "context": "completed within six months from the date",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "bafa3e0f36334a4f9729d71e89bf6ff3"
+    },
+    {
+      "token": "-",
+      "context": "Name: Denise Fuqua - Date of Birth:",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "4d1935363ecb419bbb75cd34185232f9"
+    },
+    {
+      "token": "Date",
+      "context": "Denise Fuqua - Date of Birth: 1946-10-01",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "4d1935363ecb419bbb75cd34185232f9"
+    },
+    {
+      "token": "123456",
+      "context": "- Lot Number: 123456 - Administered by:",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "654321",
+      "context": "- Lot Number: 654321 - Administered by:",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "-",
+      "context": "First Name: Jahongir - Date of Birth:",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "2289a2a0f6554216a807798660e0ce9d"
+    },
+    {
+      "token": "Date",
+      "context": "Name: Jahongir - Date of Birth: 2002-10-27",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "2289a2a0f6554216a807798660e0ce9d"
+    },
+    {
+      "token": "-",
+      "context": "- Name: donna - Email: donnajanr@gmail.com **Vehicle",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "4f49ee16b9714528b0aaa6abbb4a9beb"
+    },
+    {
+      "token": "Email:",
+      "context": "Name: donna - Email: donnajanr@gmail.com **Vehicle Details:**",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "4f49ee16b9714528b0aaa6abbb4a9beb"
+    },
+    {
+      "token": "the",
+      "context": "this agreement include the United States. For",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "4f0b31795f9c4d259c1734f99aa87531"
+    },
+    {
+      "token": "year",
+      "context": "consists of **22 year old** females, who",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "367f8fe8c0b5436789c06389f453c311"
+    },
+    {
+      "token": "old**",
+      "context": "of **22 year old** females, who identify",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "367f8fe8c0b5436789c06389f453c311"
+    },
+    {
+      "token": "daily",
+      "context": "resonates with their daily experiences and interests.",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "367f8fe8c0b5436789c06389f453c311"
+    },
+    {
+      "token": "AES-256,",
+      "context": "encryption methods include AES-256, RSA, and TLS.",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "95901f65b3d7442b9c4e32304c465a29"
+    },
+    {
+      "token": "This",
+      "context": "excitement and anticipation. This year's festival, covered",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "170a34e05632448caca1ef347ff553e2"
+    },
+    {
+      "token": "year's",
+      "context": "and anticipation. This year's festival, covered extensively",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "170a34e05632448caca1ef347ff553e2"
+    },
+    {
+      "token": "31,",
+      "context": "lead engineer, aged 31, has been instrumental",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "ed74502b10e94456a31823782508f3ee"
+    },
+    {
+      "token": "daily",
+      "context": "subscribed to our daily newsletter, you can",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "3795bdf8f86644788a93129b1ce45b07"
+    },
+    {
+      "token": "This",
+      "context": "informed. **Feature Articles** This month, we dive",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "3795bdf8f86644788a93129b1ce45b07"
+    },
+    {
+      "token": "month,",
+      "context": "**Feature Articles** This month, we dive into",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "3795bdf8f86644788a93129b1ce45b07"
+    },
+    {
+      "token": "Monthly",
+      "context": "| | | Monthly Revenue | 500,000",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "d55dac62f1ee4c5fb35c6dcfb68548f8"
+    },
+    {
+      "token": "Monthly",
+      "context": "Sold**| | | Monthly COGS | 250,000",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "d55dac62f1ee4c5fb35c6dcfb68548f8"
+    },
+    {
+      "token": "Order",
+      "context": "12 45 67 Order Date: March 15,",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "9d5c4dde046541e8b9e8db3ebaa0a89e"
+    },
+    {
+      "token": "Date:",
+      "context": "45 67 Order Date: March 15, 2024",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "9d5c4dde046541e8b9e8db3ebaa0a89e"
+    },
+    {
+      "token": "Email",
+      "context": "Last Name: Lefevre Email Address: m.lefevre@verifunid.fr Phone",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "9d5c4dde046541e8b9e8db3ebaa0a89e"
+    },
+    {
+      "token": "Address:",
+      "context": "Name: Lefevre Email Address: m.lefevre@verifunid.fr Phone Number:",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "9d5c4dde046541e8b9e8db3ebaa0a89e"
+    },
+    {
+      "token": "Dimensions",
+      "context": "Weight (kg) | Dimensions (cm) | Special",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "4660da3e020b4a868879f5dbbd752476"
+    },
+    {
+      "token": "one",
+      "context": "and lasts for one year. **Coverage Details:**",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "00c037cd9dfc4e528c315681edb8cccc"
+    },
+    {
+      "token": "year.",
+      "context": "lasts for one year. **Coverage Details:** -",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "00c037cd9dfc4e528c315681edb8cccc"
+    },
+    {
+      "token": "T47521",
+      "context": "Shipment ID: T47521 Origin Address: 328",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "5ee05648812c4205b32b85ea192553f5"
+    },
+    {
+      "token": "XAVIER",
+      "context": "in his work. XAVIER BERNARD12 (looking at",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "5ae1af7c6f7e4e7083d20cd23ace370d"
+    },
+    {
+      "token": "BERNARD12",
+      "context": "his work. XAVIER BERNARD12 (looking at his",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "5ae1af7c6f7e4e7083d20cd23ace370d"
+    },
+    {
+      "token": "tomorrow.",
+      "context": "go live by tomorrow. Another engineer approaches",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "5ae1af7c6f7e4e7083d20cd23ace370d"
+    },
+    {
+      "token": "XAVIER",
+      "context": "under the documents. XAVIER BERNARD12 Great, thanks!",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "5ae1af7c6f7e4e7083d20cd23ace370d"
+    },
+    {
+      "token": "BERNARD12",
+      "context": "the documents. XAVIER BERNARD12 Great, thanks! We",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "5ae1af7c6f7e4e7083d20cd23ace370d"
+    },
+    {
+      "token": "Great,",
+      "context": "documents. XAVIER BERNARD12 Great, thanks! We need",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "5ae1af7c6f7e4e7083d20cd23ace370d"
+    },
+    {
+      "token": "Today,",
+      "context": "of our vlog! Today, we have a",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "0874f05aeacf4b63854eff28764d3727"
+    },
+    {
+      "token": "Caesar",
+      "context": "breast, romaine lettuce, Caesar dressing, and croutons.",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "27fec7482b474215b1a4d8ba64f3fc3c"
+    },
+    {
+      "token": "daily",
+      "context": "service is available daily from 7:00 AM",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "27fec7482b474215b1a4d8ba64f3fc3c"
+    },
+    {
+      "token": "to",
+      "context": "from 7:00 AM to 10:00 PM.* *Please",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "27fec7482b474215b1a4d8ba64f3fc3c"
+    },
+    {
+      "token": "Exemplary",
+      "context": "Classroom Management | Exemplary | Souk effectively",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "ddd617d5720d416989d710af42386741"
+    },
+    {
+      "token": "Developing",
+      "context": "| Professionalism | Developing | Souk shows",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "ddd617d5720d416989d710af42386741"
+    },
+    {
+      "token": "-",
+      "context": "Name: Eric Cadle - Date of Birth:",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "d949487f7830410492a46043c53a37ec"
+    },
+    {
+      "token": "Date",
+      "context": "Eric Cadle - Date of Birth: 1997-02-03",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "d949487f7830410492a46043c53a37ec"
+    },
+    {
+      "token": "M54.5",
+      "context": "- ICD-10 Code: M54.5 - Description: Low",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "d949487f7830410492a46043c53a37ec"
+    },
+    {
+      "token": "4",
+      "context": "by 50% within 4 weeks. - Improve",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "d949487f7830410492a46043c53a37ec"
+    },
+    {
+      "token": "weeks.",
+      "context": "50% within 4 weeks. - Improve functional",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "d949487f7830410492a46043c53a37ec"
+    },
+    {
+      "token": "3",
+      "context": "pain-free status within 3 months. **Interventions** -",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "d949487f7830410492a46043c53a37ec"
+    },
+    {
+      "token": "months.",
+      "context": "status within 3 months. **Interventions** - Medications:",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "d949487f7830410492a46043c53a37ec"
+    },
+    {
+      "token": "MD",
+      "context": "Dr. Jane Doe, MD - Physical Therapist:",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "d949487f7830410492a46043c53a37ec"
+    },
+    {
+      "token": "-",
+      "context": "Jane Doe, MD - Physical Therapist: John",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "d949487f7830410492a46043c53a37ec"
+    },
+    {
+      "token": "peak",
+      "context": "usage, particularly during peak hours. The IP",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "96152b574b3747afb95f791f3ab2d720"
+    },
+    {
+      "token": "hours.",
+      "context": "particularly during peak hours. The IP address",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "96152b574b3747afb95f791f3ab2d720"
+    },
+    {
+      "token": "the",
+      "context": "500 Mbps during the evening hours. Additionally,",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "96152b574b3747afb95f791f3ab2d720"
+    },
+    {
+      "token": "evening",
+      "context": "Mbps during the evening hours. Additionally, the",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "96152b574b3747afb95f791f3ab2d720"
+    },
+    {
+      "token": "hours.",
+      "context": "during the evening hours. Additionally, the IPV6",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "96152b574b3747afb95f791f3ab2d720"
+    },
+    {
+      "token": "Electricity",
+      "context": "| |-------------------|-----------------------|-------------| | Electricity | 50,000 |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "671838941dda43f1a9751912256b5f70"
+    },
+    {
+      "token": "-",
+      "context": "**Phase 3 (05/16/2024 - 06/15/2024)**: Replace outdated",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "671838941dda43f1a9751912256b5f70"
+    },
+    {
+      "token": "Birth",
+      "context": "| Date of Birth | 1987-07-25 |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "cf4d57eb259644799c045add75396825"
+    },
+    {
+      "token": "year",
+      "context": "McKenzie, a 37 year old male, presents",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "cf4d57eb259644799c045add75396825"
+    },
+    {
+      "token": "old",
+      "context": "a 37 year old male, presents with",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "cf4d57eb259644799c045add75396825"
+    },
+    {
+      "token": "approximately",
+      "context": "the pain started approximately 2 hours prior",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "cf4d57eb259644799c045add75396825"
+    },
+    {
+      "token": "2",
+      "context": "pain started approximately 2 hours prior to",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "cf4d57eb259644799c045add75396825"
+    },
+    {
+      "token": "hours",
+      "context": "started approximately 2 hours prior to EMS",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "cf4d57eb259644799c045add75396825"
+    },
+    {
+      "token": "10",
+      "context": "a minimum of 10 years post-study completion,",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "40be1f49ca12400590324d9a1e2445ec"
+    },
+    {
+      "token": "years",
+      "context": "minimum of 10 years post-study completion, in",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "40be1f49ca12400590324d9a1e2445ec"
+    },
+    {
+      "token": "the",
+      "context": "ID: 345-23-6789** **For the Fiscal Year Ended",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "ad69951ae15f4f23b6d2be35b6f25bc0"
+    },
+    {
+      "token": "Fiscal",
+      "context": "345-23-6789** **For the Fiscal Year Ended December",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "ad69951ae15f4f23b6d2be35b6f25bc0"
+    },
+    {
+      "token": "Year",
+      "context": "**For the Fiscal Year Ended December 31,",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "ad69951ae15f4f23b6d2be35b6f25bc0"
+    },
+    {
+      "token": "Ended",
+      "context": "the Fiscal Year Ended December 31, 2023**",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "ad69951ae15f4f23b6d2be35b6f25bc0"
+    },
+    {
+      "token": "2022",
+      "context": "| 2023 | 2022 | |------------------------|------------|------------| |",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "ad69951ae15f4f23b6d2be35b6f25bc0"
+    },
+    {
+      "token": "2022",
+      "context": "| 2023 | 2022 | |------------------------|------------|------------| |",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "ad69951ae15f4f23b6d2be35b6f25bc0"
+    },
+    {
+      "token": "2022",
+      "context": "| 2023 | 2022 | |------------------------|------------|------------| |",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "ad69951ae15f4f23b6d2be35b6f25bc0"
+    },
+    {
+      "token": "2022",
+      "context": "| 2023 | 2022 | |------------------------|------------|------------| |",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "ad69951ae15f4f23b6d2be35b6f25bc0"
+    },
+    {
+      "token": "2022",
+      "context": "| 2023 | 2022 | |------------------------|------------|------------| |",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "ad69951ae15f4f23b6d2be35b6f25bc0"
+    },
+    {
+      "token": "the",
+      "context": "manufacturer based in the United States, specifically",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "ed55e0b2975f4613bac68c595e08f104"
+    },
+    {
+      "token": "quarterly",
+      "context": "Georgia, submitted its quarterly regulatory filing. The",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "ed55e0b2975f4613bac68c595e08f104"
+    },
+    {
+      "token": "-",
+      "context": "Full Name: Alison - Date of Birth:",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "5691b6cdbcd84d36ab8589e221363e5c"
+    },
+    {
+      "token": "Date",
+      "context": "Name: Alison - Date of Birth: 1964-10-29",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "5691b6cdbcd84d36ab8589e221363e5c"
+    },
+    {
+      "token": "approximately",
+      "context": "payback period of approximately 3 years. **Implementation",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "5a59ee1bc8cf4ee1bf68b964d622d34e"
+    },
+    {
+      "token": "3",
+      "context": "period of approximately 3 years. **Implementation Plan**",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "5a59ee1bc8cf4ee1bf68b964d622d34e"
+    },
+    {
+      "token": "years.",
+      "context": "of approximately 3 years. **Implementation Plan** The",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "5a59ee1bc8cf4ee1bf68b964d622d34e"
+    },
+    {
+      "token": "a",
+      "context": "services. Please take a few moments to",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "7be250f997ca46c1a7ce3c5b7fe3fecd"
+    },
+    {
+      "token": "few",
+      "context": "Please take a few moments to complete",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "7be250f997ca46c1a7ce3c5b7fe3fecd"
+    },
+    {
+      "token": "moments",
+      "context": "take a few moments to complete this",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "7be250f997ca46c1a7ce3c5b7fe3fecd"
+    },
+    {
+      "token": "Likert",
+      "context": "website? | 1-5 Likert Scale | |",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "7be250f997ca46c1a7ce3c5b7fe3fecd"
+    },
+    {
+      "token": "Scale",
+      "context": "| 1-5 Likert Scale | | |",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "7be250f997ca46c1a7ce3c5b7fe3fecd"
+    },
+    {
+      "token": "Likert",
+      "context": "available? | 1-5 Likert Scale | |",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "7be250f997ca46c1a7ce3c5b7fe3fecd"
+    },
+    {
+      "token": "Scale",
+      "context": "| 1-5 Likert Scale | | |",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "7be250f997ca46c1a7ce3c5b7fe3fecd"
+    },
+    {
+      "token": "Likert",
+      "context": "process? | 1-5 Likert Scale | |",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "7be250f997ca46c1a7ce3c5b7fe3fecd"
+    },
+    {
+      "token": "Scale",
+      "context": "| 1-5 Likert Scale | | |",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "7be250f997ca46c1a7ce3c5b7fe3fecd"
+    },
+    {
+      "token": "Likert",
+      "context": "team? | 1-5 Likert Scale | |",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "7be250f997ca46c1a7ce3c5b7fe3fecd"
+    },
+    {
+      "token": "Scale",
+      "context": "| 1-5 Likert Scale | | |",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "7be250f997ca46c1a7ce3c5b7fe3fecd"
+    },
+    {
+      "token": "Likert",
+      "context": "others? | 1-5 Likert Scale | |",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "7be250f997ca46c1a7ce3c5b7fe3fecd"
+    },
+    {
+      "token": "Scale",
+      "context": "| 1-5 Likert Scale | | |",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "7be250f997ca46c1a7ce3c5b7fe3fecd"
+    },
+    {
+      "token": "-",
+      "context": "First Name: William - Last Name: -",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "625950e521c8411ab66208cb2cc11956"
+    },
+    {
+      "token": "the",
+      "context": "the organization for the fiscal year ending",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "b9d94bd272164d7b9a150e28e2bfadb0"
+    },
+    {
+      "token": "fiscal",
+      "context": "organization for the fiscal year ending 2023.",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "b9d94bd272164d7b9a150e28e2bfadb0"
+    },
+    {
+      "token": "year",
+      "context": "for the fiscal year ending 2023. Key",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "b9d94bd272164d7b9a150e28e2bfadb0"
+    },
+    {
+      "token": "ending",
+      "context": "the fiscal year ending 2023. Key highlights",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "b9d94bd272164d7b9a150e28e2bfadb0"
+    },
+    {
+      "token": "annual",
+      "context": "Audit Findings The annual audit revealed no",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "b9d94bd272164d7b9a150e28e2bfadb0"
+    },
+    {
+      "token": "colder",
+      "context": "heat loss during colder months. Based on",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "edd3a7073d3845dc8f2032e58b3184d0"
+    },
+    {
+      "token": "months.",
+      "context": "loss during colder months. Based on these",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "edd3a7073d3845dc8f2032e58b3184d0"
+    },
+    {
+      "token": "the",
+      "context": "are due on the first day of",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "78e3dbe233fa49f9902d5e396d40ab51"
+    },
+    {
+      "token": "first",
+      "context": "due on the first day of each",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "78e3dbe233fa49f9902d5e396d40ab51"
+    },
+    {
+      "token": "day",
+      "context": "on the first day of each billing",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "78e3dbe233fa49f9902d5e396d40ab51"
+    },
+    {
+      "token": "one",
+      "context": "a period of one year, commencing from",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "78e3dbe233fa49f9902d5e396d40ab51"
+    },
+    {
+      "token": "year,",
+      "context": "period of one year, commencing from the",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "78e3dbe233fa49f9902d5e396d40ab51"
+    },
+    {
+      "token": "one-year",
+      "context": "renew for successive one-year terms unless terminated",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "78e3dbe233fa49f9902d5e396d40ab51"
+    },
+    {
+      "token": "(30)",
+      "context": "by providing thirty (30) days written notice",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "78e3dbe233fa49f9902d5e396d40ab51"
+    },
+    {
+      "token": "days",
+      "context": "providing thirty (30) days written notice to",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "78e3dbe233fa49f9902d5e396d40ab51"
+    },
+    {
+      "token": "36",
+      "context": "- Lease Duration: 36 months - Monthly",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "2b957e957c994bd7bb989f8ecfd1388a"
+    },
+    {
+      "token": "months",
+      "context": "Lease Duration: 36 months - Monthly Lease",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "2b957e957c994bd7bb989f8ecfd1388a"
+    },
+    {
+      "token": "Monthly",
+      "context": "36 months - Monthly Lease Payment: $350.00",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "2b957e957c994bd7bb989f8ecfd1388a"
+    },
+    {
+      "token": "Annual",
+      "context": "**Mileage Limits** - Annual Mileage Limit: 12,000",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "2b957e957c994bd7bb989f8ecfd1388a"
+    },
+    {
+      "token": "555-123-4567,",
+      "context": "the following numbers: 555-123-4567, 555-987-6543. Please block",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "919a04fe2c804d648a16ee3a1bd91424"
+    },
+    {
+      "token": "555-987-6543.",
+      "context": "following numbers: 555-123-4567, 555-987-6543. Please block these",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "919a04fe2c804d648a16ee3a1bd91424"
+    },
+    {
+      "token": "Email:",
+      "context": "Name: Lerato Mokoena Email: lerato.m@ubuntuimpact.org.za Start Date:",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "7d283b070e1a4b91a009bff0a9a0a594"
+    },
+    {
+      "token": "one",
+      "context": "a period of one year from the",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "1479eea6581c4f89af28557510d6bd56"
+    },
+    {
+      "token": "year",
+      "context": "period of one year from the date",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "1479eea6581c4f89af28557510d6bd56"
+    },
+    {
+      "token": "a",
+      "context": "in effect for a period of five",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "abe9be02498043d282df87b125f837bf"
+    },
+    {
+      "token": "period",
+      "context": "effect for a period of five years",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "abe9be02498043d282df87b125f837bf"
+    },
+    {
+      "token": "of",
+      "context": "for a period of five years from",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "abe9be02498043d282df87b125f837bf"
+    },
+    {
+      "token": "five",
+      "context": "a period of five years from the",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "abe9be02498043d282df87b125f837bf"
+    },
+    {
+      "token": "years",
+      "context": "period of five years from the effective",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "abe9be02498043d282df87b125f837bf"
+    },
+    {
+      "token": "P001",
+      "context": "| |----------|------------|------------------|-----------------|--------| | P001 | Security |",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "f088ff9025ea457b9254f724a13d7905"
+    },
+    {
+      "token": "P002",
+      "context": "Deployed | | P002 | Feature |",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "f088ff9025ea457b9254f724a13d7905"
+    },
+    {
+      "token": "P003",
+      "context": "Deployed | | P003 | Bug Fix",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "f088ff9025ea457b9254f724a13d7905"
+    },
+    {
+      "token": "Year",
+      "context": "**URL:** https://grantmakers.org/search/grants?document_type=Financial_Forecast&year=2024 | Year | Program Service",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "aa4179b9248b4731a22afd078729d647"
+    },
+    {
+      "token": "Birth",
+      "context": "| Date of Birth | 1976-04-28 |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "d061a5ce6ce0432baac0da6a606076be"
+    },
+    {
+      "token": "-",
+      "context": "Name: Elijah Reyes - Date of Birth:",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "97324945e9ae400cada6a9a1ddf63b1b"
+    },
+    {
+      "token": "Date",
+      "context": "Elijah Reyes - Date of Birth: 1992-06-01",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "97324945e9ae400cada6a9a1ddf63b1b"
+    },
+    {
+      "token": "Month:**",
+      "context": "units - **Delivery Month:** 2028-11-23 - **Tick",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "84b7e798ad7447cab1591ad3ed2a53b5"
+    },
+    {
+      "token": "-",
+      "context": "**Trading Hours:** 22:15 - 06:00 - **Asset:**",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "84b7e798ad7447cab1591ad3ed2a53b5"
+    },
+    {
+      "token": "2",
+      "context": "will not exceed 2 hours. **3. Service",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "e942044a3bfc4d428cf9458ac74a8f90"
+    },
+    {
+      "token": "hours.",
+      "context": "not exceed 2 hours. **3. Service Availability**",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "e942044a3bfc4d428cf9458ac74a8f90"
+    },
+    {
+      "token": "Monthly",
+      "context": "support. **6. Reporting** Monthly reports will be",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "e942044a3bfc4d428cf9458ac74a8f90"
+    },
+    {
+      "token": "30-day",
+      "context": "agreement with a 30-day written notice. The",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "e942044a3bfc4d428cf9458ac74a8f90"
+    },
+    {
+      "token": "20",
+      "context": "Consulting Services | 20 hours | $10,000",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "hours",
+      "context": "Services | 20 hours | $10,000 |",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "30",
+      "context": "be paid within 30 days of 20230915",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "days",
+      "context": "paid within 30 days of 20230915 via",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "10",
+      "context": "Financial Group within 10 days of delivery.",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "days",
+      "context": "Group within 10 days of delivery. **Warranties**",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "Year-to-Date",
+      "context": "2023 Value | Year-to-Date Value | |---------------------|---------------|--------------------|",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "9c99d21da66f4539b35d55e4c1297f1f"
+    },
+    {
+      "token": "the",
+      "context": "risk assessment for the year remains moderate,",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "9c99d21da66f4539b35d55e4c1297f1f"
+    },
+    {
+      "token": "year",
+      "context": "assessment for the year remains moderate, with",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "9c99d21da66f4539b35d55e4c1297f1f"
+    },
+    {
+      "token": "the",
+      "context": "Industries, located in the United Arab Emirates,",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "01a6423030c24ba19c24eb3f6adbdf2c"
+    },
+    {
+      "token": "daily",
+      "context": "at 09:15 AM daily to minimize risks",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "01a6423030c24ba19c24eb3f6adbdf2c"
+    },
+    {
+      "token": "cvv",
+      "context": "3394 and the cvv is 379.",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "60490595dd844798bb242f5364af84cc"
+    },
+    {
+      "token": "10",
+      "context": "a minimum of 10 years.",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "b6930c3693484d91bbf1f9a00a1b4ac6"
+    },
+    {
+      "token": "years.",
+      "context": "minimum of 10 years.",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "b6930c3693484d91bbf1f9a00a1b4ac6"
+    },
+    {
+      "token": "Hours:**",
+      "context": "https://services.marriott.com/guest-directory - **Operating Hours:** - 24/7 -",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "5cfe63971d4f41608baeb6e9cd668972"
+    },
+    {
+      "token": "age",
+      "context": "including those with age 27 or older,",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "f157ee4639e4465584a4a7ef5546323f"
+    },
+    {
+      "token": "or",
+      "context": "with age 27 or older, are well-informed.",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "f157ee4639e4465584a4a7ef5546323f"
+    },
+    {
+      "token": "older,",
+      "context": "age 27 or older, are well-informed. For",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "f157ee4639e4465584a4a7ef5546323f"
+    },
+    {
+      "token": "monthly",
+      "context": "**Premium Updates:** The monthly premium has been",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "a2ebeff448a0434a99fd5dafc28aad7b"
+    },
+    {
+      "token": "'.mywebsite.com',",
+      "context": "'TRK1.2.fj92k48m72.1692453214', { domain: '.mywebsite.com', expires: new Date('Fri,",
+      "predicted": "B-url",
+      "expected": "O",
+      "sample_id": "f8a673d5911047cda26030df7843aadb"
+    },
+    {
+      "token": "Linux",
+      "context": "10.14 or later, Linux (Ubuntu 18.04 or",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "e5cb73a1c3304ac4b07a946ab5376991"
+    },
+    {
+      "token": "GB",
+      "context": "- **Storage**: 20 GB available disk space",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "e5cb73a1c3304ac4b07a946ab5376991"
+    },
+    {
+      "token": "4.",
+      "context": "following key: Jk5LpR2zH0qYcW4EutBiZ7vA. 4. **Device Identifier**: Note",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "e5cb73a1c3304ac4b07a946ab5376991"
+    },
+    {
+      "token": "-",
+      "context": "452 Delegate Dr - **Coordinates**: 41.8781, -87.6298",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "**Coordinates**:",
+      "context": "Delegate Dr - **Coordinates**: 41.8781, -87.6298 -",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "30",
+      "context": "2023-08-15 **Notice Period:** 30 days **Reason for",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "a9fd7165ce02467c8a4b917a57b69411"
+    },
+    {
+      "token": "days",
+      "context": "**Notice Period:** 30 days **Reason for Termination:**",
+      "predicted": "I-date",
+      "expected": "O",
+      "sample_id": "a9fd7165ce02467c8a4b917a57b69411"
+    },
+    {
+      "token": "monthly",
+      "context": "to non-payment of monthly service fees. **Signature:**",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "a9fd7165ce02467c8a4b917a57b69411"
+    },
+    {
+      "token": "daily",
+      "context": "Atorvastatin 40 mg daily - Aspirin 81",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "7d242be8f2a549898680870783238ddb"
+    },
+    {
+      "token": "daily",
+      "context": "Aspirin 81 mg daily **Assessment Findings:** -",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "7d242be8f2a549898680870783238ddb"
+    }
+  ]
+}

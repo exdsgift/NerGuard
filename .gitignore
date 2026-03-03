@@ -219,6 +219,5 @@ models/
 
 .data/
 notebooks/
-docs/
-diagrams/
 plots/
+docs/
