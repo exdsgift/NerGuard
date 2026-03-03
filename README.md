@@ -27,7 +27,7 @@ This design achieves **first place on F1-macro (0.5069) and F1-micro (0.7015)** 
 ## Architecture
 
 <p align="center">
-  <img src="docs/diagrams/architecture.png" alt="NerGuard Architecture" width="700">
+  <img src="https://github.com/user-attachments/assets/f493a3d4-a055-4f5d-a657-ce78f980b038" alt="NerGuard Architecture" width="700">
 </p>
 
 **Key architectural properties:**
