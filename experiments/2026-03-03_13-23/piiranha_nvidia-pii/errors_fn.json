@@ -1,0 +1,3505 @@
+{
+  "n_errors": 500,
+  "errors": [
+    {
+      "token": "386-922-2436",
+      "context": "follows: phone number 386-922-2436 and email rogercobb75@gmail.com.",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "01b0e74d4d9e46cfaa21963a6316abd6"
+    },
+    {
+      "token": "RN7583246",
+      "context": "License Number | RN7583246 |",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "4eda522e312542d285bd46b01877e18a"
+    },
+    {
+      "token": "715",
+      "context": "Hartford Construction Group 715 Canyon Dr Canton,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "4ce1b0f2b0de4e0da2e2cabbc1df3d33"
+    },
+    {
+      "token": "Canyon",
+      "context": "Construction Group 715 Canyon Dr Canton, Massachusetts,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "4ce1b0f2b0de4e0da2e2cabbc1df3d33"
+    },
+    {
+      "token": "Dr",
+      "context": "Group 715 Canyon Dr Canton, Massachusetts, 02021",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "4ce1b0f2b0de4e0da2e2cabbc1df3d33"
+    },
+    {
+      "token": "Canton,",
+      "context": "715 Canyon Dr Canton, Massachusetts, 02021",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "4ce1b0f2b0de4e0da2e2cabbc1df3d33"
+    },
+    {
+      "token": "02021",
+      "context": "Dr Canton, Massachusetts, 02021",
+      "predicted": "O",
+      "expected": "B-postcode",
+      "sample_id": "4ce1b0f2b0de4e0da2e2cabbc1df3d33"
+    },
+    {
+      "token": "ENG-842135",
+      "context": "**Certificate License Number:** ENG-842135 **Applicant Details:** -",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "fc8385359ab24da6a1f165a02f0f2e1e"
+    },
+    {
+      "token": "ENG-842135.",
+      "context": "license number is ENG-842135.",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "fc8385359ab24da6a1f165a02f0f2e1e"
+    },
+    {
+      "token": "ENG-UT-20240512",
+      "context": "Certificate** **Certificate Number:** ENG-UT-20240512 **Full Name:** Elena",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "ef7289c855fe446fb28ad287924ceb44"
+    },
+    {
+      "token": "ENG-UT-20240512",
+      "context": "the certificate number ENG-UT-20240512 **Signature:** _________________________ Issuing",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "ef7289c855fe446fb28ad287924ceb44"
+    },
+    {
+      "token": "Mike",
+      "context": "Evidence] **Signature:** _________________________ Mike Striplin **Date of",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "4b3bf4fa3e184634b84fd0432d1c9732"
+    },
+    {
+      "token": "**6011",
+      "context": "credit/debit card information: **6011 9875 3214 6587**.",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "6199312d2e4648ae8b29adf85ffacb72"
+    },
+    {
+      "token": "9875",
+      "context": "card information: **6011 9875 3214 6587**. This",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "6199312d2e4648ae8b29adf85ffacb72"
+    },
+    {
+      "token": "3214",
+      "context": "information: **6011 9875 3214 6587**. This information",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "6199312d2e4648ae8b29adf85ffacb72"
+    },
+    {
+      "token": "6587**.",
+      "context": "**6011 9875 3214 6587**. This information will",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "6199312d2e4648ae8b29adf85ffacb72"
+    },
+    {
+      "token": "808-679-4013.",
+      "context": "phone number is 808-679-4013. I request that",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "fba539b8c86c4b5a9bd83f21afc4604f"
+    },
+    {
+      "token": "0777332119.",
+      "context": "your phone number, 0777332119. We also collect",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "f269c636352649a09e47770d5beed6dc"
+    },
+    {
+      "token": "savannah",
+      "context": "shot of the savannah at sunset |",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "savannah,",
+      "context": "over the vast savannah, signaling the end",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "| Close-up of Simba | Close-up |",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "| Close-up | Simba looks out over",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "| 3 | Simba and Nala playing",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Nala",
+      "context": "| Simba and Nala playing | Medium",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "Medium shot | Simba and Nala playfully",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Mufasa",
+      "context": "| 5 | Mufasa teaching Simba |",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "| Mufasa teaching Simba | Medium shot",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Mufasa",
+      "context": "Medium shot | Mufasa teaches Simba about",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "| Mufasa teaches Simba about the \"Circle",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "the safety of Simba and Nala. |",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Nala.",
+      "context": "of Simba and Nala. | | 7",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Mufasa",
+      "context": "| 7 | Mufasa saving Simba |",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "| Mufasa saving Simba | Close-up, then",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Mufasa",
+      "context": "wide shot | Mufasa bravely saves Simba",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "Mufasa bravely saves Simba from the stampede",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba's",
+      "context": "| 8 | Simba's grief | Close-up",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba,",
+      "context": "| Close-up | Simba, devastated, watches as",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Scar's",
+      "context": "| 9 | Scar's plot | Medium",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Scar,",
+      "context": "Medium shot | Scar, Mufasa's treacherous brother,",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Mufasa's",
+      "context": "shot | Scar, Mufasa's treacherous brother, begins",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "begins to manipulate Simba into believing he",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Mufasa's",
+      "context": "is responsible for Mufasa's death. | |",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba's",
+      "context": "| 10 | Simba's exile | Long",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba,",
+      "context": "Long shot | Simba, heartbroken and guilt-ridden,",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "John",
+      "context": "- Full Name: John Doe - Date",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "252c1e76bbc745028118aa1e409b5239"
+    },
+    {
+      "token": "Doe",
+      "context": "Full Name: John Doe - Date of",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "252c1e76bbc745028118aa1e409b5239"
+    },
+    {
+      "token": "574-323-0201",
+      "context": "- Contact Details: 574-323-0201 **Blocking Details:** -",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "36560e0b9c6e488f8374c81abdd465a5"
+    },
+    {
+      "token": "574-323-0201",
+      "context": "Number to Block: 574-323-0201 - Type of",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "36560e0b9c6e488f8374c81abdd465a5"
+    },
+    {
+      "token": "River99$",
+      "context": "compliance. The password River99$ will be used",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "4e6db2737efd464bb6c6a3a6339ef20c"
+    },
+    {
+      "token": "ENG-CA-20249510.",
+      "context": "license number is ENG-CA-20249510. The address provided",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "6ac3ce7faf654f398e79ee889730c9c6"
+    },
+    {
+      "token": "75823194",
+      "context": "certificate license number 75823194 standards. - **Performance",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "03fc556b81034d90adc997a4ca62ba98"
+    },
+    {
+      "token": "09-775-2948",
+      "context": "service team at 09-775-2948 or email cheng@vivalifestyle.com.my",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "16f5932434ec43859d19f37dc8fa95a9"
+    },
+    {
+      "token": "09-775-2948",
+      "context": "contact: - Phone: 09-775-2948 - Email: cheng@vivalifestyle.com.my",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "16f5932434ec43859d19f37dc8fa95a9"
+    },
+    {
+      "token": "cheng@vivalifestyle.com.my",
+      "context": "09-775-2948 - Email: cheng@vivalifestyle.com.my - Website: https://returns.bestbuy.com",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "16f5932434ec43859d19f37dc8fa95a9"
+    },
+    {
+      "token": "No.",
+      "context": "be shipped to: No. 23, Jalan Ampang",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "16f5932434ec43859d19f37dc8fa95a9"
+    },
+    {
+      "token": "23,",
+      "context": "shipped to: No. 23, Jalan Ampang",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "16f5932434ec43859d19f37dc8fa95a9"
+    },
+    {
+      "token": "Jalan",
+      "context": "to: No. 23, Jalan Ampang",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "16f5932434ec43859d19f37dc8fa95a9"
+    },
+    {
+      "token": "Ampang",
+      "context": "No. 23, Jalan Ampang",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "16f5932434ec43859d19f37dc8fa95a9"
+    },
+    {
+      "token": "78593124",
+      "context": "**Bond Serial Number:** 78593124 **Face Value:** $1,000,000",
+      "predicted": "O",
+      "expected": "B-account_number",
+      "sample_id": "7ccd8a7e2d4b4874a16f9a03bb388e94"
+    },
+    {
+      "token": "Olivia",
+      "context": "emergency, please contact Olivia Smythe. She can",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "6fb3d64baee244a69d984c581c93ca0b"
+    },
+    {
+      "token": "Olivia's",
+      "context": "In addition to Olivia's contact information, please",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "6fb3d64baee244a69d984c581c93ca0b"
+    },
+    {
+      "token": "Mary",
+      "context": "of this week. Mary will follow up",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "92c3bc2083854c949521b9968d0f4f97"
+    },
+    {
+      "token": "triciak81@outlook.com.",
+      "context": "contact us at triciak81@outlook.com. **Campus Facilities** Our",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "a452dad9cbdb46feabfe7b441bb2cbf7"
+    },
+    {
+      "token": "triciak81@outlook.com.",
+      "context": "to us at triciak81@outlook.com. We are here",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "a452dad9cbdb46feabfe7b441bb2cbf7"
+    },
+    {
+      "token": "032",
+      "context": "contact us at 032 784 3567 or",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "c5f4dc0be1294fef8dfe7047d1dd3048"
+    },
+    {
+      "token": "784",
+      "context": "us at 032 784 3567 or via",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "c5f4dc0be1294fef8dfe7047d1dd3048"
+    },
+    {
+      "token": "3567",
+      "context": "at 032 784 3567 or via email",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "c5f4dc0be1294fef8dfe7047d1dd3048"
+    },
+    {
+      "token": "623-319-3901.",
+      "context": "SIM card is 623-319-3901. The subscriber's email",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "9566976e1e7a43f7b17c2acd48cff1a6"
+    },
+    {
+      "token": "Emma",
+      "context": "full name? a) Emma Larson b) Emma",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "Larson",
+      "context": "name? a) Emma Larson b) Emma L.",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "Emma",
+      "context": "Emma Larson b) Emma L. Larson c)",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "Larson",
+      "context": "b) Emma L. Larson c) Larson Emma",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "Larson",
+      "context": "L. Larson c) Larson Emma d) Emma",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "Emma",
+      "context": "Larson c) Larson Emma d) Emma L",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "Emma",
+      "context": "Larson Emma d) Emma L 2. When",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "04-8672-155",
+      "context": "be reached at 04-8672-155 or via email",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "64be49c2d344414393d686215403d4f5"
+    },
+    {
+      "token": "jamesmoore",
+      "context": "in with username jamesmoore and email james.moore@outlook.com",
+      "predicted": "O",
+      "expected": "B-user_name",
+      "sample_id": "c5499b742c7b4e559e04cb6da0f3d7cb"
+    },
+    {
+      "token": "james.moore@outlook.com",
+      "context": "jamesmoore and email james.moore@outlook.com | User redirected",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "c5499b742c7b4e559e04cb6da0f3d7cb"
+    },
+    {
+      "token": "Stone",
+      "context": "- Last Name: Stone - Date of",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "acf47d3e22694f88b58aca746b501bd9"
+    },
+    {
+      "token": "Jane",
+      "context": "sessions with Dr. Jane Smith **Follow-Up Appointments**",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "acf47d3e22694f88b58aca746b501bd9"
+    },
+    {
+      "token": "Smith",
+      "context": "with Dr. Jane Smith **Follow-Up Appointments** -",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "acf47d3e22694f88b58aca746b501bd9"
+    },
+    {
+      "token": "Jane",
+      "context": "Care Physician: Dr. Jane Smith - Date:",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "acf47d3e22694f88b58aca746b501bd9"
+    },
+    {
+      "token": "Smith",
+      "context": "Physician: Dr. Jane Smith - Date: 2025-09-10T19:20:15",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "acf47d3e22694f88b58aca746b501bd9"
+    },
+    {
+      "token": "Dwight's",
+      "context": "Dear Dwight's Parents, I am",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fed9a0f7c98a45fe873d23282d5f9ebb"
+    },
+    {
+      "token": "Dwight's",
+      "context": "to his studies. Dwight's attendance record has",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fed9a0f7c98a45fe873d23282d5f9ebb"
+    },
+    {
+      "token": "Dwight's",
+      "context": "to his education. Dwight's current occupation as",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fed9a0f7c98a45fe873d23282d5f9ebb"
+    },
+    {
+      "token": "Dwight's",
+      "context": "for improvement include Dwight's pin, 3070, which",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fed9a0f7c98a45fe873d23282d5f9ebb"
+    },
+    {
+      "token": "Dwight",
+      "context": "the subject matter. Dwight is aware of",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fed9a0f7c98a45fe873d23282d5f9ebb"
+    },
+    {
+      "token": "Dwight's",
+      "context": "his performance. Overall, Dwight's progress has been",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fed9a0f7c98a45fe873d23282d5f9ebb"
+    },
+    {
+      "token": "(402)",
+      "context": "support team at (402) 555-8937 for further",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "d97b720db35f40de9ddf53dc5b80aec9"
+    },
+    {
+      "token": "555-8937",
+      "context": "team at (402) 555-8937 for further assistance.",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "d97b720db35f40de9ddf53dc5b80aec9"
+    },
+    {
+      "token": "(402)",
+      "context": "team by calling (402) 555-8937 or by",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "d97b720db35f40de9ddf53dc5b80aec9"
+    },
+    {
+      "token": "555-8937",
+      "context": "by calling (402) 555-8937 or by sending",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "d97b720db35f40de9ddf53dc5b80aec9"
+    },
+    {
+      "token": "e.hendricks@pinnaclemediagroup.com.",
+      "context": "an email to e.hendricks@pinnaclemediagroup.com. Our support team",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "d97b720db35f40de9ddf53dc5b80aec9"
+    },
+    {
+      "token": "845-456-4321",
+      "context": "contact us at 845-456-4321 or email us",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "7cd09eda8edd4dbeb8090f8c00e21933"
+    },
+    {
+      "token": "209-602-4141",
+      "context": "contact us at 209-602-4141 or email toledom26@icloud.com.",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "ee4c5fae8c0d4d46b7f698a1e1dd051d"
+    },
+    {
+      "token": "302-428-6728",
+      "context": "contact us at 302-428-6728 or via email",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "1f7011414bd1444bbd696fbceec9743e"
+    },
+    {
+      "token": "302-428-6728.",
+      "context": "front desk at 302-428-6728. We look forward",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "1f7011414bd1444bbd696fbceec9743e"
+    },
+    {
+      "token": "WhisperingWind@2025.",
+      "context": "haris2021 and password: WhisperingWind@2025. The system then",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "688ffd7dd8b042c2bbbf5b095eccf0ea"
+    },
+    {
+      "token": "declan.mckenzie@mediapulse.com.au.",
+      "context": "to subscribers via declan.mckenzie@mediapulse.com.au. **Media Channels** 1.",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "2c2e6c0358504d4885427217467cc277"
+    },
+    {
+      "token": "Jane",
+      "context": "9876543210 **Adjuster's Name:** Jane Doe **Date of",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "6b87ebe759df4d0f89f64823222144fe"
+    },
+    {
+      "token": "Doe",
+      "context": "**Adjuster's Name:** Jane Doe **Date of Loss:**",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "6b87ebe759df4d0f89f64823222144fe"
+    },
+    {
+      "token": "Meyer",
+      "context": "- **Last Name:** Meyer - **Date of",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "6b87ebe759df4d0f89f64823222144fe"
+    },
+    {
+      "token": "Meyer,",
+      "context": "submitted by Ethan Meyer, and based on",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "6b87ebe759df4d0f89f64823222144fe"
+    },
+    {
+      "token": "layla.al-sudairi@alriyadhfinance.com.",
+      "context": "contact us at layla.al-sudairi@alriyadhfinance.com. Our dedicated team",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "1161d731296748178392d1aac175e623"
+    },
+    {
+      "token": "g.rossi@mediafutura.it.",
+      "context": "to us at g.rossi@mediafutura.it. Stay tuned for",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "add860a556af43de82cac7b14ea240c6"
+    },
+    {
+      "token": "832-366-8733.",
+      "context": "by phone at 832-366-8733. The agreement is",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "3c9cc9d36fd643c28087b4bd8d3c8e71"
+    },
+    {
+      "token": "4921",
+      "context": "card, such as 4921 7834 5690 1234,",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "36de4cb5ab1e4f77a300e52fdeff4a41"
+    },
+    {
+      "token": "7834",
+      "context": "such as 4921 7834 5690 1234, to",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "36de4cb5ab1e4f77a300e52fdeff4a41"
+    },
+    {
+      "token": "5690",
+      "context": "as 4921 7834 5690 1234, to support",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "36de4cb5ab1e4f77a300e52fdeff4a41"
+    },
+    {
+      "token": "1234,",
+      "context": "4921 7834 5690 1234, to support ongoing",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "36de4cb5ab1e4f77a300e52fdeff4a41"
+    },
+    {
+      "token": "b.batsaikhan@steppesustain.mn",
+      "context": "contact us at b.batsaikhan@steppesustain.mn or call 9762",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "36de4cb5ab1e4f77a300e52fdeff4a41"
+    },
+    {
+      "token": "9762",
+      "context": "b.batsaikhan@steppesustain.mn or call 9762 3805. |",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "36de4cb5ab1e4f77a300e52fdeff4a41"
+    },
+    {
+      "token": "3805.",
+      "context": "or call 9762 3805. |",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "36de4cb5ab1e4f77a300e52fdeff4a41"
+    },
+    {
+      "token": "785632149012",
+      "context": "the account number 785632149012 using the routing",
+      "predicted": "O",
+      "expected": "B-account_number",
+      "sample_id": "562eacced3d4416c8ec55151a2c4fab1"
+    },
+    {
+      "token": "FR72-3000-6000-0100-0123-456,",
+      "context": "your account number, FR72-3000-6000-0100-0123-456, is correctly listed",
+      "predicted": "O",
+      "expected": "B-account_number",
+      "sample_id": "b61b6853131f43028718382ceaaa239c"
+    },
+    {
+      "token": "Corner",
+      "context": "the city of Corner Brook and the",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "b160bcd22fa84028b5d0e8f2dd8eb992"
+    },
+    {
+      "token": "Brook",
+      "context": "city of Corner Brook and the state",
+      "predicted": "O",
+      "expected": "I-city",
+      "sample_id": "b160bcd22fa84028b5d0e8f2dd8eb992"
+    },
+    {
+      "token": "Melanie,",
+      "context": "Dear Melanie, We are writing",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "20483c2b3d8e4921abb8ec3ef401e3c5"
+    },
+    {
+      "token": "+218",
+      "context": "IT department at +218 91 927 1457.",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "91",
+      "context": "department at +218 91 927 1457. **Guest",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "927",
+      "context": "at +218 91 927 1457. **Guest Conduct**",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "1457.",
+      "context": "+218 91 927 1457. **Guest Conduct** -",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "+218",
+      "context": "front desk at +218 91 927 1457",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "91",
+      "context": "desk at +218 91 927 1457 or",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "927",
+      "context": "at +218 91 927 1457 or email",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "1457",
+      "context": "+218 91 927 1457 or email yusufabdelkader@saharasuites.com.ly.",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "yusufabdelkader@saharasuites.com.ly.",
+      "context": "1457 or email yusufabdelkader@saharasuites.com.ly. Thank you for",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "Brent",
+      "context": "be made to Brent Callaway at 859-339-7637.",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "Callaway",
+      "context": "made to Brent Callaway at 859-339-7637. 5.",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "Pope",
+      "context": "Information **Name:** Bruce Pope **Company:** Harborlight Media",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "0f5c33d78f27405d8e51b13fa5e8763d"
+    },
+    {
+      "token": "Pope,",
+      "context": "Narrative Content Bruce Pope, a pansexual Part-Time",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "0f5c33d78f27405d8e51b13fa5e8763d"
+    },
+    {
+      "token": "support@guardiancyber.com.mm.",
+      "context": "my email address support@guardiancyber.com.mm. My phone number",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "627842304e8c4a1d9de47264f1138fb8"
+    },
+    {
+      "token": "94187-3281.",
+      "context": "phone number is 94187-3281. My current PIN",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "627842304e8c4a1d9de47264f1138fb8"
+    },
+    {
+      "token": "WhisperingWinds#Moonlight",
+      "context": "- A password: WhisperingWinds#Moonlight - An api",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "7065988ad2fc4d91a14a356e60e438e5"
+    },
+    {
+      "token": "WhisperingWinds#Moonlight",
+      "context": "and the password: WhisperingWinds#Moonlight to log in.",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "7065988ad2fc4d91a14a356e60e438e5"
+    },
+    {
+      "token": "joon78@hanbittech.com.",
+      "context": "contact support at joon78@hanbittech.com. #### FAQs **Q:",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "7065988ad2fc4d91a14a356e60e438e5"
+    },
+    {
+      "token": "FL-003-9857.",
+      "context": "this project is FL-003-9857.",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "101b341493044439b3c9e250c234a790"
+    },
+    {
+      "token": "caleb.henderson@evergreenmarketplace.com",
+      "context": "contact us at caleb.henderson@evergreenmarketplace.com or visit our",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "3f980151190d45fd905d0563d564b964"
+    },
+    {
+      "token": "4532",
+      "context": "credit debit card, 4532 7845 9123 6789,",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "3f980151190d45fd905d0563d564b964"
+    },
+    {
+      "token": "7845",
+      "context": "debit card, 4532 7845 9123 6789, is",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "3f980151190d45fd905d0563d564b964"
+    },
+    {
+      "token": "9123",
+      "context": "card, 4532 7845 9123 6789, is valid",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "3f980151190d45fd905d0563d564b964"
+    },
+    {
+      "token": "6789,",
+      "context": "4532 7845 9123 6789, is valid and",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "3f980151190d45fd905d0563d564b964"
+    },
+    {
+      "token": "Kathryn's",
+      "context": "services. On 2024-11-15T11:35:11, Kathryn's device with identifier",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "0807552dafaf4bc8aa445363309656e4"
+    },
+    {
+      "token": "Kathryn's",
+      "context": "for 15 minutes. Kathryn's email address, smiliek@hotmail.com,",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "0807552dafaf4bc8aa445363309656e4"
+    },
+    {
+      "token": "Kathryn's",
+      "context": "to the customer. Kathryn's device mac address",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "0807552dafaf4bc8aa445363309656e4"
+    },
+    {
+      "token": "John",
+      "context": "an agreement between John Doe and the",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "5f523f4adb664f0f92500db44783775c"
+    },
+    {
+      "token": "Doe",
+      "context": "agreement between John Doe and the seller",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "5f523f4adb664f0f92500db44783775c"
+    },
+    {
+      "token": "John",
+      "context": "is valid for John Doe, whose social",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "5f523f4adb664f0f92500db44783775c"
+    },
+    {
+      "token": "Sunrise@2025.",
+      "context": "management portal is Sunrise@2025. **4. Compliance Requirements**",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "6c97f6eb8b1448de8b5a053e00abd768"
+    },
+    {
+      "token": "aygul.d@turkmanutech.tm",
+      "context": "be reported to aygul.d@turkmanutech.tm immediately.",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "6c97f6eb8b1448de8b5a053e00abd768"
+    },
+    {
+      "token": "Martinez",
+      "context": "Employee Name: Luz Martinez Employee ID: MKT-4892",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "020fa4bba545406293619c7374e3dfbf"
+    },
+    {
+      "token": "ENG-001-7836,",
+      "context": "certificate license number ENG-001-7836, is designed to",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "4a6a93883fb3484a90620991f26463fa"
+    },
+    {
+      "token": "jia.tan@vitalispharma.com.sg.",
+      "context": "be contacted at jia.tan@vitalispharma.com.sg. This team is",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "4a6a93883fb3484a90620991f26463fa"
+    },
+    {
+      "token": "CPA-2023-00738.",
+      "context": "certificate license number CPA-2023-00738. **Procedures** 1. **Quality",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "f2148b06834640d39d987bd3ab2c66ad"
+    },
+    {
+      "token": "yasmina.b@solaraenergy.ma.",
+      "context": "through the email yasmina.b@solaraenergy.ma. - **Strengthen Regulatory",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "fdd21fad20eb4938a454e683723cf91d"
+    },
+    {
+      "token": "Y15329647",
+      "context": "The account number Y15329647 will be used",
+      "predicted": "O",
+      "expected": "B-account_number",
+      "sample_id": "9b70a2592c094231b9bcb1586e83b193"
+    },
+    {
+      "token": "WA-ENG-003417",
+      "context": "Assurance Plan | WA-ENG-003417 | 03/11/2024 |",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "27c53c6bb75b483a90be26f36dd7dca6"
+    },
+    {
+      "token": "031-234-5678",
+      "context": "Information: Phone Number: 031-234-5678 Email: joonkim@veraid.co.kr In",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "197e6ea83b6348519e0e92bdcb4c8f4f"
+    },
+    {
+      "token": "Taylor",
+      "context": "Security Card Name: Taylor Henderson Social Security",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "350f80cc42184ea1ab5bbf661f61842c"
+    },
+    {
+      "token": "Henderson",
+      "context": "Card Name: Taylor Henderson Social Security Number:",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "350f80cc42184ea1ab5bbf661f61842c"
+    },
+    {
+      "token": "C157938462.",
+      "context": "at account number C157938462. **6. Confidentiality** All",
+      "predicted": "O",
+      "expected": "B-account_number",
+      "sample_id": "5f2fc113ec0f46048419b8aeade22da9"
+    },
+    {
+      "token": "Dolphin$Moon#Pineapple.",
+      "context": "with the password Dolphin$Moon#Pineapple. This ensures the",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "5f2fc113ec0f46048419b8aeade22da9"
+    },
+    {
+      "token": "Prasit",
+      "context": "suggestions, please contact Prasit Sriwong at sriwong@siamjusticeadvocates.org.",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "61230c13f0db44679e11940cd1753990"
+    },
+    {
+      "token": "Sriwong",
+      "context": "please contact Prasit Sriwong at sriwong@siamjusticeadvocates.org. Our",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "61230c13f0db44679e11940cd1753990"
+    },
+    {
+      "token": "sriwong@siamjusticeadvocates.org.",
+      "context": "Prasit Sriwong at sriwong@siamjusticeadvocates.org. Our commitment to",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "61230c13f0db44679e11940cd1753990"
+    },
+    {
+      "token": "737-633-1180",
+      "context": "Contact Information: kilgorep46@protonmail.com, 737-633-1180 **Executive Summary** The",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "106",
+      "context": "Volt, located at 106 Irenic Mist Ct,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Irenic",
+      "context": "located at 106 Irenic Mist Ct, Austin,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Mist",
+      "context": "at 106 Irenic Mist Ct, Austin, Texas,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Ct,",
+      "context": "106 Irenic Mist Ct, Austin, Texas, 78754,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Austin,",
+      "context": "Irenic Mist Ct, Austin, Texas, 78754, complies",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "78754,",
+      "context": "Ct, Austin, Texas, 78754, complies with all",
+      "predicted": "O",
+      "expected": "B-postcode",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Patrick",
+      "context": "was conducted by Patrick Kilgore, who can",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Kilgore,",
+      "context": "conducted by Patrick Kilgore, who can be",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "kilgorep46@protonmail.com",
+      "context": "be reached at kilgorep46@protonmail.com or 737-633-1180 for",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "737-633-1180",
+      "context": "at kilgorep46@protonmail.com or 737-633-1180 for any further",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "724-231-1858.",
+      "context": "by phone at 724-231-1858. I am excited",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "fceaf2e1551e4acbb6e9996aac64b01a"
+    },
+    {
+      "token": "ENG-TX-20230415",
+      "context": "Certificate license number ENG-TX-20230415 - BioPulse's contact",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "ad100d6acf6c4e67a32867d339a56ac5"
+    },
+    {
+      "token": "W7$kP9jZ*3tV**.",
+      "context": "use the **password: W7$kP9jZ*3tV**.",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "577727ad134845a5af8dcd0f1c460afb"
+    },
+    {
+      "token": "+998",
+      "context": "be reached at +998 90 123 45",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "d13f0a589369453aa8b9740a36d7d9f8"
+    },
+    {
+      "token": "90",
+      "context": "reached at +998 90 123 45 67,",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "d13f0a589369453aa8b9740a36d7d9f8"
+    },
+    {
+      "token": "123",
+      "context": "at +998 90 123 45 67, and",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "d13f0a589369453aa8b9740a36d7d9f8"
+    },
+    {
+      "token": "45",
+      "context": "+998 90 123 45 67, and we",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "d13f0a589369453aa8b9740a36d7d9f8"
+    },
+    {
+      "token": "67,",
+      "context": "90 123 45 67, and we will",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "d13f0a589369453aa8b9740a36d7d9f8"
+    },
+    {
+      "token": "behzod@tashkentgrandhotel.uz.",
+      "context": "contact us at behzod@tashkentgrandhotel.uz. We are committed",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "d13f0a589369453aa8b9740a36d7d9f8"
+    },
+    {
+      "token": "+966",
+      "context": "the phone number +966 5 5389 6754,",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "29e4aea1588b49fa92b3e6b652402a45"
+    },
+    {
+      "token": "5",
+      "context": "phone number +966 5 5389 6754, to",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "29e4aea1588b49fa92b3e6b652402a45"
+    },
+    {
+      "token": "5389",
+      "context": "number +966 5 5389 6754, to ensure",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "29e4aea1588b49fa92b3e6b652402a45"
+    },
+    {
+      "token": "6754,",
+      "context": "+966 5 5389 6754, to ensure timely",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "29e4aea1588b49fa92b3e6b652402a45"
+    },
+    {
+      "token": "VA-003-6821,",
+      "context": "certificate license number VA-003-6821, with key personnel",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "6894d8b12d974350bf90951e0c614240"
+    },
+    {
+      "token": "01012345678",
+      "context": "the phone number 01012345678 or via fax",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "255b79605595447692a58cff72b69a1e"
+    },
+    {
+      "token": "River2023@",
+      "context": "| Password | River2023@ |",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "5829961c0e9042cca1480e218c4f232f"
+    },
+    {
+      "token": "ENG-000-5348.",
+      "context": "license number is ENG-000-5348. Before handling any",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "cc1ba8e2a8d949648674d40b3452dc93"
+    },
+    {
+      "token": "\"Sunflower@2025\"",
+      "context": "bcrypt password = \"Sunflower@2025\" # Generate a",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "fb38882782954284acbd253c73e530ee"
+    },
+    {
+      "token": "\"Sunflower@2025\";",
+      "context": "String password = \"Sunflower@2025\"; Argon2 argon2 =",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "fb38882782954284acbd253c73e530ee"
+    },
+    {
+      "token": "Michael_ShadowHunter",
+      "context": "quality. | | Michael_ShadowHunter | 07/15/2024 |",
+      "predicted": "O",
+      "expected": "B-user_name",
+      "sample_id": "a806005ae1064edfb1615909e2fac09b"
+    },
+    {
+      "token": "nabila486@bengaltp.com.",
+      "context": "contact us at nabila486@bengaltp.com. Our customer service",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "6fcd359f53cc4886a9766cd97b6c40bb"
+    },
+    {
+      "token": "Aisha",
+      "context": "above written. __________________________ Aisha **NOTARIZATION** STATE OF",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "25f84b80d80545b9857965b105aceac7"
+    },
+    {
+      "token": "Aisha,",
+      "context": "________, 2030, by Aisha, the person who",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "25f84b80d80545b9857965b105aceac7"
+    },
+    {
+      "token": "Aiden",
+      "context": "for the record? Aiden Cunningham: Good morning.",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Cunningham:",
+      "context": "the record? Aiden Cunningham: Good morning. I",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Aiden",
+      "context": "you currently reside? Aiden Cunningham: I live",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Cunningham:",
+      "context": "currently reside? Aiden Cunningham: I live in",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Aiden",
+      "context": "like to mention? Aiden Cunningham: I am",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Cunningham:",
+      "context": "to mention? Aiden Cunningham: I am a",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Smith",
+      "context": "Administered by: Dr. Smith 2. MMR Vaccine:",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "Johnson",
+      "context": "Administered by: Nurse Johnson",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "Maple",
+      "context": "Listings** - **123 Maple Street, Los Angeles,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "Street,",
+      "context": "- **123 Maple Street, Los Angeles, California",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "Los",
+      "context": "dream homes in Los Angeles. With a",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "Angeles.",
+      "context": "homes in Los Angeles. With a high",
+      "predicted": "O",
+      "expected": "I-city",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "Los",
+      "context": "estate opportunities in Los Angeles. For more",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "Angeles.",
+      "context": "opportunities in Los Angeles. For more updates",
+      "predicted": "O",
+      "expected": "I-city",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "4921",
+      "context": "Certificate License Number: 4921 3456 7890 1234",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "4f49ee16b9714528b0aaa6abbb4a9beb"
+    },
+    {
+      "token": "3456",
+      "context": "License Number: 4921 3456 7890 1234",
+      "predicted": "O",
+      "expected": "I-certificate_license_number",
+      "sample_id": "4f49ee16b9714528b0aaa6abbb4a9beb"
+    },
+    {
+      "token": "7890",
+      "context": "Number: 4921 3456 7890 1234",
+      "predicted": "O",
+      "expected": "I-certificate_license_number",
+      "sample_id": "4f49ee16b9714528b0aaa6abbb4a9beb"
+    },
+    {
+      "token": "1234",
+      "context": "4921 3456 7890 1234",
+      "predicted": "O",
+      "expected": "I-certificate_license_number",
+      "sample_id": "4f49ee16b9714528b0aaa6abbb4a9beb"
+    },
+    {
+      "token": "Ahmed",
+      "context": "Engineering** **Author:** Mark Ahmed **Contact Information:** -",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "9f0b436a2df346fb88ee2a6dd5ab18cc"
+    },
+    {
+      "token": "Rainbow@2025.",
+      "context": "and the password Rainbow@2025. Participants were asked",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "9f0b436a2df346fb88ee2a6dd5ab18cc"
+    },
+    {
+      "token": "908-873-0949",
+      "context": "**Procedure:** - Call 908-873-0949 immediately. - Provide",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "72e0ae7e0263475795a3a48a201c1249"
+    },
+    {
+      "token": "terrymuller88@gmail.com",
+      "context": "arrives. - Contact terrymuller88@gmail.com to notify them",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "72e0ae7e0263475795a3a48a201c1249"
+    },
+    {
+      "token": "Sarah1995",
+      "context": "instance, the password Sarah1995 is a strong",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "95901f65b3d7442b9c4e32304c465a29"
+    },
+    {
+      "token": "layla.al-atrash@cybershieldcorp.com",
+      "context": "example, the email layla.al-atrash@cybershieldcorp.com should be encrypted",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "95901f65b3d7442b9c4e32304c465a29"
+    },
+    {
+      "token": "Sarah1995,",
+      "context": "to the password Sarah1995, a user might",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "95901f65b3d7442b9c4e32304c465a29"
+    },
+    {
+      "token": "4921",
+      "context": "credit debit card 4921 7834 5623 1987",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "95901f65b3d7442b9c4e32304c465a29"
+    },
+    {
+      "token": "7834",
+      "context": "debit card 4921 7834 5623 1987 must",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "95901f65b3d7442b9c4e32304c465a29"
+    },
+    {
+      "token": "5623",
+      "context": "card 4921 7834 5623 1987 must be",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "95901f65b3d7442b9c4e32304c465a29"
+    },
+    {
+      "token": "1987",
+      "context": "4921 7834 5623 1987 must be stored",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "95901f65b3d7442b9c4e32304c465a29"
+    },
+    {
+      "token": "Pauline",
+      "context": "an interview with Pauline Munson, a teaching",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "170a34e05632448caca1ef347ff553e2"
+    },
+    {
+      "token": "Cannes",
+      "context": "of cinema. The Cannes Film Festival of",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "170a34e05632448caca1ef347ff553e2"
+    },
+    {
+      "token": "michael.verhaegen39@icloud.com",
+      "context": "Media Group. Contact michael.verhaegen39@icloud.com for more information.",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "3795bdf8f86644788a93129b1ce45b07"
+    },
+    {
+      "token": "!LkJ4hgfLkJ4",
+      "context": "use the password: !LkJ4hgfLkJ4 to log in",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "3795bdf8f86644788a93129b1ce45b07"
+    },
+    {
+      "token": "3003",
+      "context": "credit debit card: 3003 1427 1231 6919",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "3795bdf8f86644788a93129b1ce45b07"
+    },
+    {
+      "token": "1427",
+      "context": "debit card: 3003 1427 1231 6919 to",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "3795bdf8f86644788a93129b1ce45b07"
+    },
+    {
+      "token": "1231",
+      "context": "card: 3003 1427 1231 6919 to avail",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "3795bdf8f86644788a93129b1ce45b07"
+    },
+    {
+      "token": "6919",
+      "context": "3003 1427 1231 6919 to avail exclusive",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "3795bdf8f86644788a93129b1ce45b07"
+    },
+    {
+      "token": "077",
+      "context": "- **Phone Number:** 077 745 5678 -",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "4660da3e020b4a868879f5dbbd752476"
+    },
+    {
+      "token": "745",
+      "context": "**Phone Number:** 077 745 5678 - **City:**",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "4660da3e020b4a868879f5dbbd752476"
+    },
+    {
+      "token": "5678",
+      "context": "Number:** 077 745 5678 - **City:** Kandy",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "4660da3e020b4a868879f5dbbd752476"
+    },
+    {
+      "token": "503-267-9285",
+      "context": "& Co. Phone: 503-267-9285 Email: schampagne@hotmail.com For",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "00c037cd9dfc4e528c315681edb8cccc"
+    },
+    {
+      "token": "schampagne@hotmail.com",
+      "context": "Phone: 503-267-9285 Email: schampagne@hotmail.com For more detailed",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "00c037cd9dfc4e528c315681edb8cccc"
+    },
+    {
+      "token": "Main",
+      "context": "Destination Address: 1234 Main St Carrier Details:",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "5ee05648812c4205b32b85ea192553f5"
+    },
+    {
+      "token": "St",
+      "context": "Address: 1234 Main St Carrier Details: FastTrack",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "5ee05648812c4205b32b85ea192553f5"
+    },
+    {
+      "token": "Jane",
+      "context": "Date:** 2023-09-15 **Director:** Jane Doe **Cast:** John",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "Doe",
+      "context": "2023-09-15 **Director:** Jane Doe **Cast:** John Smith,",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "John",
+      "context": "Jane Doe **Cast:** John Smith, Emily Davis",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "Smith,",
+      "context": "Doe **Cast:** John Smith, Emily Davis **Rating:**",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "Emily",
+      "context": "**Cast:** John Smith, Emily Davis **Rating:** 4/5",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "Davis",
+      "context": "John Smith, Emily Davis **Rating:** 4/5 **Review",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "John",
+      "context": "The performances by John Smith and Emily",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "Smith",
+      "context": "performances by John Smith and Emily Davis",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "Emily",
+      "context": "John Smith and Emily Davis are particularly",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "Davis",
+      "context": "Smith and Emily Davis are particularly noteworthy,",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "826-776-3343",
+      "context": "hatterb@yahoo.com Phone Number: 826-776-3343 **Employment History** |",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "86b81adae9e04a1a999b5e1ad2cb483b"
+    },
+    {
+      "token": "River45#.",
+      "context": "My password is River45#.",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "e37a667de6ff4f72b2850e90651a5ff3"
+    },
+    {
+      "token": "055-218-3479",
+      "context": "meal by calling 055-218-3479 or emailing jungho.k@seouluxe.com.*",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "27fec7482b474215b1a4d8ba64f3fc3c"
+    },
+    {
+      "token": "jungho.k@seouluxe.com.*",
+      "context": "055-218-3479 or emailing jungho.k@seouluxe.com.* *Room service is",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "27fec7482b474215b1a4d8ba64f3fc3c"
+    },
+    {
+      "token": "Seoul,",
+      "context": "is located in Seoul, South Korea, and",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "27fec7482b474215b1a4d8ba64f3fc3c"
+    },
+    {
+      "token": "Seoul.*",
+      "context": "your stay in Seoul.*",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "27fec7482b474215b1a4d8ba64f3fc3c"
+    },
+    {
+      "token": "Souk",
+      "context": "in tasks. Overall, Souk is a developing",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ddd617d5720d416989d710af42386741"
+    },
+    {
+      "token": "Jane",
+      "context": "Care Physician: Dr. Jane Doe, MD -",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "d949487f7830410492a46043c53a37ec"
+    },
+    {
+      "token": "Doe,",
+      "context": "Physician: Dr. Jane Doe, MD - Physical",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "d949487f7830410492a46043c53a37ec"
+    },
+    {
+      "token": "John",
+      "context": "- Physical Therapist: John Smith, DPT **Progress",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "d949487f7830410492a46043c53a37ec"
+    },
+    {
+      "token": "Smith,",
+      "context": "Physical Therapist: John Smith, DPT **Progress Notes**",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "d949487f7830410492a46043c53a37ec"
+    },
+    {
+      "token": "**elijah234@verdantenergy.co.uk**",
+      "context": "contact us at **elijah234@verdantenergy.co.uk** or via fax",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "671838941dda43f1a9751912256b5f70"
+    },
+    {
+      "token": "careers@nilepharma.eg.",
+      "context": "upon request via careers@nilepharma.eg. **5. Data Retention",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "40be1f49ca12400590324d9a1e2445ec"
+    },
+    {
+      "token": "careers@nilepharma.eg.",
+      "context": "upon request via careers@nilepharma.eg.",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "40be1f49ca12400590324d9a1e2445ec"
+    },
+    {
+      "token": "DVM-782439.",
+      "context": "license number is DVM-782439. The biometric identifier",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "4c8accdb109c48e2a92086b0ab8e17da"
+    },
+    {
+      "token": "230915-872541",
+      "context": "| Account Number: 230915-872541 | | Bank",
+      "predicted": "O",
+      "expected": "B-account_number",
+      "sample_id": "ad69951ae15f4f23b6d2be35b6f25bc0"
+    },
+    {
+      "token": "Martin",
+      "context": "Label From: Thierry Martin 22, Boulevard Haussmann",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "809a2d58025746ec9369abf6f9d28a00"
+    },
+    {
+      "token": "Recipient",
+      "context": "Name Recipient Address Recipient City, State, Zip",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "809a2d58025746ec9369abf6f9d28a00"
+    },
+    {
+      "token": "City,",
+      "context": "Recipient Address Recipient City, State, Zip Code",
+      "predicted": "O",
+      "expected": "I-city",
+      "sample_id": "809a2d58025746ec9369abf6f9d28a00"
+    },
+    {
+      "token": "Zip",
+      "context": "Recipient City, State, Zip Code Recipient Country",
+      "predicted": "O",
+      "expected": "B-postcode",
+      "sample_id": "809a2d58025746ec9369abf6f9d28a00"
+    },
+    {
+      "token": "Code",
+      "context": "City, State, Zip Code Recipient Country Order",
+      "predicted": "O",
+      "expected": "I-postcode",
+      "sample_id": "809a2d58025746ec9369abf6f9d28a00"
+    },
+    {
+      "token": "sopheak.h@khmermart.com.",
+      "context": "contact us at sopheak.h@khmermart.com.",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "68b111e0f19146fca16d98928e275513"
+    },
+    {
+      "token": "House",
+      "context": "residence located at House No. 45, Block",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "6d8633806d6c4c6f9c1f89b8a9e8320e"
+    },
+    {
+      "token": "No.",
+      "context": "located at House No. 45, Block 9,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "6d8633806d6c4c6f9c1f89b8a9e8320e"
+    },
+    {
+      "token": "Block",
+      "context": "House No. 45, Block 9, Gulshan-e-Iqbal. The",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "6d8633806d6c4c6f9c1f89b8a9e8320e"
+    },
+    {
+      "token": "9,",
+      "context": "No. 45, Block 9, Gulshan-e-Iqbal. The purchase",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "6d8633806d6c4c6f9c1f89b8a9e8320e"
+    },
+    {
+      "token": "ENG-TX-20230198.",
+      "context": "certificate license number ENG-TX-20230198. The company's tax",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "ed55e0b2975f4613bac68c595e08f104"
+    },
+    {
+      "token": "+33",
+      "context": "- Phone Number: +33 3 27 90",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "af24b235cd324b83b94f3a7f6b310ad4"
+    },
+    {
+      "token": "3",
+      "context": "Phone Number: +33 3 27 90 61",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "af24b235cd324b83b94f3a7f6b310ad4"
+    },
+    {
+      "token": "27",
+      "context": "Number: +33 3 27 90 61 54",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "af24b235cd324b83b94f3a7f6b310ad4"
+    },
+    {
+      "token": "90",
+      "context": "+33 3 27 90 61 54 -",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "af24b235cd324b83b94f3a7f6b310ad4"
+    },
+    {
+      "token": "61",
+      "context": "3 27 90 61 54 - Biometric",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "af24b235cd324b83b94f3a7f6b310ad4"
+    },
+    {
+      "token": "54",
+      "context": "27 90 61 54 - Biometric Identifier:",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "af24b235cd324b83b94f3a7f6b310ad4"
+    },
+    {
+      "token": "kyshaun.mcinnis@gmail.com",
+      "context": "via email at kyshaun.mcinnis@gmail.com for assistance. ####",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "eb8c0456d9af49ea8600a008689b2ed5"
+    },
+    {
+      "token": "kyshaun.mcinnis@gmail.com",
+      "context": "- **Support Email**: kyshaun.mcinnis@gmail.com",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "eb8c0456d9af49ea8600a008689b2ed5"
+    },
+    {
+      "token": "edita_chen,",
+      "context": "All employees, including edita_chen, are responsible for",
+      "predicted": "O",
+      "expected": "B-user_name",
+      "sample_id": "eae8bf0af605445f98043a8012a8c7b3"
+    },
+    {
+      "token": "River2025$",
+      "context": "password protected with River2025$ and can be",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "5a59ee1bc8cf4ee1bf68b964d622d34e"
+    },
+    {
+      "token": "oliverhargreaves@bumblebeemarket.co.uk,",
+      "context": "your email address, oliverhargreaves@bumblebeemarket.co.uk, for follow-up if",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "7be250f997ca46c1a7ce3c5b7fe3fecd"
+    },
+    {
+      "token": "William",
+      "context": "- First Name: William - Last Name:",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "625950e521c8411ab66208cb2cc11956"
+    },
+    {
+      "token": "301-2587436901",
+      "context": "and account number 301-2587436901 have been verified",
+      "predicted": "O",
+      "expected": "B-account_number",
+      "sample_id": "b9d94bd272164d7b9a150e28e2bfadb0"
+    },
+    {
+      "token": "amilam28@gmail.com.",
+      "context": "any incidents to amilam28@gmail.com. Our policy is",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "0cf916b930bd4809b70a34c71dd5c35d"
+    },
+    {
+      "token": "Stephanie",
+      "context": "My name is Stephanie Watkins, and my",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "919a04fe2c804d648a16ee3a1bd91424"
+    },
+    {
+      "token": "Watkins,",
+      "context": "name is Stephanie Watkins, and my account",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "919a04fe2c804d648a16ee3a1bd91424"
+    },
+    {
+      "token": "FR72-2000-7432-0532-098-01.",
+      "context": "account number is FR72-2000-7432-0532-098-01. My phone number",
+      "predicted": "O",
+      "expected": "B-account_number",
+      "sample_id": "919a04fe2c804d648a16ee3a1bd91424"
+    },
+    {
+      "token": "Stephanie",
+      "context": "this matter. Sincerely, Stephanie Watkins",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "919a04fe2c804d648a16ee3a1bd91424"
+    },
+    {
+      "token": "Watkins",
+      "context": "matter. Sincerely, Stephanie Watkins",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "919a04fe2c804d648a16ee3a1bd91424"
+    },
+    {
+      "token": "3486",
+      "context": "credit debit card 3486 789432 11234 is",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "7d283b070e1a4b91a009bff0a9a0a594"
+    },
+    {
+      "token": "789432",
+      "context": "debit card 3486 789432 11234 is required",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "7d283b070e1a4b91a009bff0a9a0a594"
+    },
+    {
+      "token": "11234",
+      "context": "card 3486 789432 11234 is required for",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "7d283b070e1a4b91a009bff0a9a0a594"
+    },
+    {
+      "token": "o.alsheikh@alfarisconsumergoods.jo",
+      "context": "via the email o.alsheikh@alfarisconsumergoods.jo or the fax",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "1479eea6581c4f89af28557510d6bd56"
+    },
+    {
+      "token": "43210.",
+      "context": "number +91 98765 43210. 3. Traced network",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "53c5a82395bb4bfd93c676958e7c5439"
+    },
+    {
+      "token": "m.patil",
+      "context": "the user name m.patil and device identifier",
+      "predicted": "O",
+      "expected": "B-user_name",
+      "sample_id": "53c5a82395bb4bfd93c676958e7c5439"
+    },
+    {
+      "token": "+91",
+      "context": "the phone number +91 98765 43210 to",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "53c5a82395bb4bfd93c676958e7c5439"
+    },
+    {
+      "token": "98765",
+      "context": "phone number +91 98765 43210 to an",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "53c5a82395bb4bfd93c676958e7c5439"
+    },
+    {
+      "token": "43210",
+      "context": "number +91 98765 43210 to an unauthorized",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "53c5a82395bb4bfd93c676958e7c5439"
+    },
+    {
+      "token": "+91",
+      "context": "the phone number +91 98765 43210. 2.",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "53c5a82395bb4bfd93c676958e7c5439"
+    },
+    {
+      "token": "98765",
+      "context": "phone number +91 98765 43210. 2. Block",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "53c5a82395bb4bfd93c676958e7c5439"
+    },
+    {
+      "token": "43210.",
+      "context": "number +91 98765 43210. 2. Block IP",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "53c5a82395bb4bfd93c676958e7c5439"
+    },
+    {
+      "token": "meera_patil@connectiva.com.in",
+      "context": "Notify the email meera_patil@connectiva.com.in of the fraudulent",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "53c5a82395bb4bfd93c676958e7c5439"
+    },
+    {
+      "token": "River@2025.",
+      "context": "The password is River@2025. Please ensure that",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "4963bedd10a3495fb42ef7a41f87dc1d"
+    },
+    {
+      "token": "WA-ENG-792431,",
+      "context": "license number was WA-ENG-792431, ensuring compliance with",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "09139b3f89754d5881948f6bc1248b82"
+    },
+    {
+      "token": "415-296-8333",
+      "context": "team reachable at 415-296-8333 for any issues",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "e942044a3bfc4d428cf9458ac74a8f90"
+    },
+    {
+      "token": "trung_nguyen@hotmail.com.",
+      "context": "process, which is trung_nguyen@hotmail.com. **7. Termination Clauses**",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "e942044a3bfc4d428cf9458ac74a8f90"
+    },
+    {
+      "token": "trung_nguyen@hotmail.com.",
+      "context": "process, which is trung_nguyen@hotmail.com. This Service Level",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "e942044a3bfc4d428cf9458ac74a8f90"
+    },
+    {
+      "token": "qwe123qwe.",
+      "context": "provide the password qwe123qwe. The CVV number",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "3c7c132d2d424df18ebc17ea09e81972"
+    },
+    {
+      "token": "WA-ENG-482916,",
+      "context": "certificate license number WA-ENG-482916, ensuring that all",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "00220837bc4c4f50abbbc296ab8ed8f5"
+    },
+    {
+      "token": "<Password>WhisperingWind#Moonlight</Password>",
+      "context": "<IdentityManagementSystem> <UserCredentials> <Username>oscarburke</Username> <Password>WhisperingWind#Moonlight</Password> <Email>oscareburton@gmail.com</Email> </UserCredentials> <UserDetails>",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "0445ea8cc4594617b61bede193fb2ee2"
+    },
+    {
+      "token": "mahsa_javadi.",
+      "context": "feedback, please contact mahsa_javadi.",
+      "predicted": "O",
+      "expected": "B-user_name",
+      "sample_id": "215518eb886b4d539d206d352762dbfd"
+    },
+    {
+      "token": "Michael",
+      "context": "Outline** **Customer Name:** Michael Hudson **Email:** michaelthudson@gmail.com",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "d75a30131f1749b79395b50013ab910c"
+    },
+    {
+      "token": "5478",
+      "context": "credit debit card 5478 3210 0798 2468",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "3210",
+      "context": "debit card 5478 3210 0798 2468 1372",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "0798",
+      "context": "card 5478 3210 0798 2468 1372 8932",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "2468",
+      "context": "5478 3210 0798 2468 1372 8932 4567",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "1372",
+      "context": "3210 0798 2468 1372 8932 4567 2341.",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "8932",
+      "context": "0798 2468 1372 8932 4567 2341. **Delivery",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "4567",
+      "context": "2468 1372 8932 4567 2341. **Delivery and",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "2341.",
+      "context": "1372 8932 4567 2341. **Delivery and Acceptance**",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "C98327651",
+      "context": "the account number C98327651 is valid and",
+      "predicted": "O",
+      "expected": "B-account_number",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "4921",
+      "context": "- Credit/Debit Card: 4921 7385 1296 5408",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "9c99d21da66f4539b35d55e4c1297f1f"
+    },
+    {
+      "token": "7385",
+      "context": "Credit/Debit Card: 4921 7385 1296 5408 -",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "9c99d21da66f4539b35d55e4c1297f1f"
+    },
+    {
+      "token": "1296",
+      "context": "Card: 4921 7385 1296 5408 - Swift",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "9c99d21da66f4539b35d55e4c1297f1f"
+    },
+    {
+      "token": "5408",
+      "context": "4921 7385 1296 5408 - Swift BIC:",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "9c99d21da66f4539b35d55e4c1297f1f"
+    },
+    {
+      "token": "230515-CERT721.",
+      "context": "the policy number 230515-CERT721. This certificate is",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "ac8e579a44964209be0f6e505cc30a55"
+    },
+    {
+      "token": "yuni.s@bionusa.co.id",
+      "context": "more information, contact yuni.s@bionusa.co.id or visit https://biotechjournal.com/resources?document_type=whitepaper&category=genomics.",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "80dba7db683a4c13935e1bfeb1bd62fd"
+    },
+    {
+      "token": "River57!.",
+      "context": "Aigerim.Mukhamedzhanov and password: River57!. The main points",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "c8e1e522236845ac8255544b72ef2695"
+    },
+    {
+      "token": "dalew92@icloud.com",
+      "context": "use the email dalew92@icloud.com to keep them",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "f8a673d5911047cda26030df7843aadb"
+    },
+    {
+      "token": "nigar.m@aztechinnovate.az",
+      "context": "support team at nigar.m@aztechinnovate.az for further assistance.",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "e5cb73a1c3304ac4b07a946ab5376991"
+    },
+    {
+      "token": "IL-897245-36",
+      "context": "- **License Number**: IL-897245-36 **Plumbing System Details:**",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "Cottage",
+      "context": "and regulations in Cottage Hills, IL. -",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "Hills,",
+      "context": "regulations in Cottage Hills, IL. - **Scale",
+      "predicted": "O",
+      "expected": "I-city",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "IL-897245-36.",
+      "context": "Construction, licensed under IL-897245-36. All work will",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "Cottage",
+      "context": "and regulations of Cottage Hills, IL.",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "Hills,",
+      "context": "regulations of Cottage Hills, IL.",
+      "predicted": "O",
+      "expected": "I-city",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "84052713.",
+      "context": "certificate license number: 84052713. This document is",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "7580de9c11bc4a00bd39a358f7accea2"
+    },
+    {
+      "token": "Eduardo",
+      "context": "is intended for Eduardo Lefevre. Please send",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ba4408e5e7d94708a0123a7907a5192d"
+    },
+    {
+      "token": "Lefevre.",
+      "context": "intended for Eduardo Lefevre. Please send the",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "ba4408e5e7d94708a0123a7907a5192d"
+    },
+    {
+      "token": "Lea",
+      "context": "- Employee Name: Lea Zimmermann - Employee",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "7497d77553d14274bcecd7c883d410a9"
+    },
+    {
+      "token": "Zimmermann",
+      "context": "Employee Name: Lea Zimmermann - Employee ID:",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "7497d77553d14274bcecd7c883d410a9"
+    },
+    {
+      "token": "Maria's",
+      "context": "to ensure that Maria's rights are protected.",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fd684b4417f44e8d9a49620bce582340"
+    },
+    {
+      "token": "Maria",
+      "context": "courses of action. Maria should consider seeking",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fd684b4417f44e8d9a49620bce582340"
+    },
+    {
+      "token": "091",
+      "context": "| |----------------|------------|------------|---------------|---------------| | 091 279 4465 |",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "5fe7940306b04a1ab25a2b2b196cbaaa"
+    },
+    {
+      "token": "279",
+      "context": "|----------------|------------|------------|---------------|---------------| | 091 279 4465 | Mobile",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "5fe7940306b04a1ab25a2b2b196cbaaa"
+    },
+    {
+      "token": "4465",
+      "context": "| 091 279 4465 | Mobile |",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "5fe7940306b04a1ab25a2b2b196cbaaa"
+    },
+    {
+      "token": "091",
+      "context": "the phone number 091 279 4465 showing",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "5fe7940306b04a1ab25a2b2b196cbaaa"
+    },
+    {
+      "token": "279",
+      "context": "phone number 091 279 4465 showing consistent",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "5fe7940306b04a1ab25a2b2b196cbaaa"
+    },
+    {
+      "token": "4465",
+      "context": "number 091 279 4465 showing consistent usage",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "5fe7940306b04a1ab25a2b2b196cbaaa"
+    },
+    {
+      "token": "091",
+      "context": "the phone number 091 279 4465 and",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "5fe7940306b04a1ab25a2b2b196cbaaa"
+    },
+    {
+      "token": "279",
+      "context": "phone number 091 279 4465 and the",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "5fe7940306b04a1ab25a2b2b196cbaaa"
+    },
+    {
+      "token": "4465",
+      "context": "number 091 279 4465 and the associated",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "5fe7940306b04a1ab25a2b2b196cbaaa"
+    },
+    {
+      "token": "j.velasquez@andinamediagroup.com",
+      "context": "8921 - **Email**: j.velasquez@andinamediagroup.com - **Website**: https://cbsnews.com",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "74acde6b912f4e91ad92f73d4bb3342c"
+    },
+    {
+      "token": "+591",
+      "context": "- **Phone Number**: +591 2 647 8921",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "74acde6b912f4e91ad92f73d4bb3342c"
+    },
+    {
+      "token": "2",
+      "context": "**Phone Number**: +591 2 647 8921 -",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "74acde6b912f4e91ad92f73d4bb3342c"
+    },
+    {
+      "token": "647",
+      "context": "Number**: +591 2 647 8921 - **Email**:",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "74acde6b912f4e91ad92f73d4bb3342c"
+    },
+    {
+      "token": "8921",
+      "context": "+591 2 647 8921 - **Email**: j.velasquez@andinamediagroup.com",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "74acde6b912f4e91ad92f73d4bb3342c"
+    },
+    {
+      "token": "j.velasquez@andinamediagroup.com",
+      "context": "8921 - **Email**: j.velasquez@andinamediagroup.com - **Street Address**:",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "74acde6b912f4e91ad92f73d4bb3342c"
+    },
+    {
+      "token": "Calle",
+      "context": "- **Street Address**: Calle Sucre 143, 81000",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "74acde6b912f4e91ad92f73d4bb3342c"
+    },
+    {
+      "token": "Sucre",
+      "context": "**Street Address**: Calle Sucre 143, 81000 -",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "74acde6b912f4e91ad92f73d4bb3342c"
+    },
+    {
+      "token": "143,",
+      "context": "Address**: Calle Sucre 143, 81000 - **Country**:",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "74acde6b912f4e91ad92f73d4bb3342c"
+    },
+    {
+      "token": "81000",
+      "context": "Calle Sucre 143, 81000 - **Country**: Bolivia",
+      "predicted": "O",
+      "expected": "B-postcode",
+      "sample_id": "74acde6b912f4e91ad92f73d4bb3342c"
+    },
+    {
+      "token": "amani@nilefinance.sd.",
+      "context": "contact us at amani@nilefinance.sd. **Contact Information:** For",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "1f1b44eb504448bab97bc86309d342d0"
+    },
+    {
+      "token": "amani@nilefinance.sd",
+      "context": "via email at amani@nilefinance.sd or through our",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "1f1b44eb504448bab97bc86309d342d0"
+    },
+    {
+      "token": "House",
+      "context": "Details:** - **Address:** House 45, Road 7,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "45,",
+      "context": "- **Address:** House 45, Road 7, Block",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "Block",
+      "context": "45, Road 7, Block A, Gulshan -",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "A,",
+      "context": "Road 7, Block A, Gulshan - **Coordinates:**",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "House",
+      "context": "property located at House 45, Road 7,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "45,",
+      "context": "located at House 45, Road 7, Block",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "Block",
+      "context": "45, Road 7, Block A, Gulshan, Pabna,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "A,",
+      "context": "Road 7, Block A, Gulshan, Pabna, 6004,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "nazia_hossain@dhanakestate.com",
+      "context": "contact us at nazia_hossain@dhanakestate.com or call +880",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "+880",
+      "context": "nazia_hossain@dhanakestate.com or call +880 787 412 349.",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "787",
+      "context": "or call +880 787 412 349.",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "412",
+      "context": "call +880 787 412 349.",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "349.",
+      "context": "+880 787 412 349.",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "nikolay.ivanov,",
+      "context": "are highlighted by nikolay.ivanov, who has a",
+      "predicted": "O",
+      "expected": "B-user_name",
+      "sample_id": "25572c662c334641aa83de62fd5dca71"
+    },
+    {
+      "token": "nikolay.ivanov,",
+      "context": "in Russia, with nikolay.ivanov, being a supporter",
+      "predicted": "O",
+      "expected": "B-user_name",
+      "sample_id": "25572c662c334641aa83de62fd5dca71"
+    },
+    {
+      "token": "FL-ENG-002749",
+      "context": "License Certificate Number: FL-ENG-002749 - Street Address:",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "41899084eef04e3bb119b298162ea2ff"
+    },
+    {
+      "token": "stille15@gmail.com",
+      "context": "at: - Email: stille15@gmail.com - Phone Number:",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "57cf1dfda4ef46779e537b0204244d00"
+    },
+    {
+      "token": "810-482-8664",
+      "context": "- Phone Number: 810-482-8664",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "57cf1dfda4ef46779e537b0204244d00"
+    },
+    {
+      "token": "No.",
+      "context": "Property Address | No. 35, Anawrahta Road,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "02f755bfee414055b9f730c633784570"
+    },
+    {
+      "token": "Cruz,",
+      "context": "registration of Roberto Cruz, who has been",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "a0ed56508eca4913a5c0eb4609a56b0a"
+    },
+    {
+      "token": "Pass@123Pass",
+      "context": "keep your password Pass@123Pass secure and do",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "c3a4953ceae04ba0a91b993a3c01b84a"
+    },
+    {
+      "token": "562-282-1567",
+      "context": "Your phone number 562-282-1567 is registered with",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "c3a4953ceae04ba0a91b993a3c01b84a"
+    },
+    {
+      "token": "Apt",
+      "context": "Country View Rd Apt 122. The fax",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "9ea1891a58b94c4cb9bced8e479ee00d"
+    },
+    {
+      "token": "122.",
+      "context": "View Rd Apt 122. The fax number",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "9ea1891a58b94c4cb9bced8e479ee00d"
+    },
+    {
+      "token": "FR76-1020-6879-2345-0067-85",
+      "context": "The account number FR76-1020-6879-2345-0067-85 is referenced for",
+      "predicted": "O",
+      "expected": "B-account_number",
+      "sample_id": "b3e8cb59b4ef4f76bea154e23b7f9ad5"
+    },
+    {
+      "token": "012-289",
+      "context": "customer service at 012-289 7563. **Conditions for",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "7563.",
+      "context": "service at 012-289 7563. **Conditions for Return**:",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "012-289",
+      "context": "customer service at 012-289 7563 or email",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "7563",
+      "context": "service at 012-289 7563 or email us",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "aishah.r@easterngrove.com.my.",
+      "context": "email us at aishah.r@easterngrove.com.my. **Return Process**: 1.",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "012-289",
+      "context": "customer service at 012-289 7563 or emailing",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "7563",
+      "context": "service at 012-289 7563 or emailing us",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "aishah.r@easterngrove.com.my.",
+      "context": "emailing us at aishah.r@easterngrove.com.my. 2. Provide your",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "TX-1484.",
+      "context": "certificate license number: TX-1484. The installation site",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "247693550d854271a786725a33a7642d"
+    },
+    {
+      "token": "MarylinxMystic",
+      "context": "report generated by MarylinxMystic highlights key trends",
+      "predicted": "O",
+      "expected": "B-user_name",
+      "sample_id": "76a767051f2b4ceda1c6383fe2e25f4a"
+    },
+    {
+      "token": "Rome,",
+      "context": "coordinate: 40.8476,-17.2345 | Rome, Italy | 1500",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "afd5145d595b4c83a1095e2febfe3348"
+    },
+    {
+      "token": "Rome,",
+      "context": "Vehicle | | Rome, Italy | Milan,",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "afd5145d595b4c83a1095e2febfe3348"
+    },
+    {
+      "token": "Milan,",
+      "context": "Rome, Italy | Milan, Italy | 550",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "afd5145d595b4c83a1095e2febfe3348"
+    },
+    {
+      "token": "Elena",
+      "context": "in the workplace. Elena Rojas, an insurance",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "87d1d60e9fd74148b7e38c8d857c7fc7"
+    },
+    {
+      "token": "Rojas,",
+      "context": "the workplace. Elena Rojas, an insurance claims",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "87d1d60e9fd74148b7e38c8d857c7fc7"
+    },
+    {
+      "token": "e.rojas@justiciadigital.mx,",
+      "context": "discussed. The email: e.rojas@justiciadigital.mx, will be used",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "87d1d60e9fd74148b7e38c8d857c7fc7"
+    },
+    {
+      "token": "Geelong,",
+      "context": "| |------------------|--------------------|-------------------|---------------------|----------------------|----------------------| | Geelong, Victoria | Melbourne,",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Melbourne,",
+      "context": "Geelong, Victoria | Melbourne, Victoria | 0",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Geelong,",
+      "context": "5.00 | | Geelong, Victoria | Sydney,",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Sydney,",
+      "context": "Geelong, Victoria | Sydney, New South Wales",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Geelong,",
+      "context": "6.00 | | Geelong, Victoria | Brisbane,",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Brisbane,",
+      "context": "Geelong, Victoria | Brisbane, Queensland | 1001",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Geelong,",
+      "context": "7.00 | | Geelong, Victoria | Adelaide,",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Adelaide,",
+      "context": "Geelong, Victoria | Adelaide, South Australia |",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Geelong,",
+      "context": "8.00 | | Geelong, Victoria | Perth,",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Perth,",
+      "context": "Geelong, Victoria | Perth, Western Australia |",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Lea,",
+      "context": "Hi Lea, We received a",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "eada7c5e61b24e62b23f848043c19b8b"
+    },
+    {
+      "token": "River!Moon#Star.",
+      "context": "current password is River!Moon#Star. Please change it",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "eada7c5e61b24e62b23f848043c19b8b"
+    },
+    {
+      "token": "Rain!Sun#Star.",
+      "context": "secure, such as Rain!Sun#Star. Thank you for",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "eada7c5e61b24e62b23f848043c19b8b"
+    },
+    {
+      "token": "4916",
+      "context": "credit debit card, 4916 7932 4568 1785,",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "6760ec100b7c4563a79a79b0d799d1cf"
+    },
+    {
+      "token": "7932",
+      "context": "debit card, 4916 7932 4568 1785, or",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "6760ec100b7c4563a79a79b0d799d1cf"
+    },
+    {
+      "token": "4568",
+      "context": "card, 4916 7932 4568 1785, or any",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "6760ec100b7c4563a79a79b0d799d1cf"
+    },
+    {
+      "token": "1785,",
+      "context": "4916 7932 4568 1785, or any other",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "6760ec100b7c4563a79a79b0d799d1cf"
+    },
+    {
+      "token": "023",
+      "context": "be reached at 023 9284 5678 or",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "87424bdcbbee49b9bb7a78fc95a5dc63"
+    },
+    {
+      "token": "9284",
+      "context": "reached at 023 9284 5678 or via",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "87424bdcbbee49b9bb7a78fc95a5dc63"
+    },
+    {
+      "token": "5678",
+      "context": "at 023 9284 5678 or via email",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "87424bdcbbee49b9bb7a78fc95a5dc63"
+    },
+    {
+      "token": "987321-4567891234",
+      "context": "- **Account Information:** 987321-4567891234 **Additional Information:** For",
+      "predicted": "O",
+      "expected": "B-account_number",
+      "sample_id": "3dbba7d9407445ccb8bb6189f63a29f4"
+    },
+    {
+      "token": "919-327-4453",
+      "context": "contact us at 919-327-4453 or visit our",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "98e68565b5a14d74843b45173556b4fc"
+    },
+    {
+      "token": "john@williamson.com.",
+      "context": "via email at john@williamson.com. Our team is",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "98e68565b5a14d74843b45173556b4fc"
+    },
+    {
+      "token": "Road,",
+      "context": "at King Fahd Road, Bldg 18. **3.2",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "ee4ca2de16db4c959f9e8b13c8a5ef80"
+    },
+    {
+      "token": "Bldg",
+      "context": "King Fahd Road, Bldg 18. **3.2 Fire",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "ee4ca2de16db4c959f9e8b13c8a5ef80"
+    },
+    {
+      "token": "18.",
+      "context": "Fahd Road, Bldg 18. **3.2 Fire Response**",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "ee4ca2de16db4c959f9e8b13c8a5ef80"
+    },
+    {
+      "token": "FR72-1234-5678-9012-3456-78.",
+      "context": "the account number FR72-1234-5678-9012-3456-78. The bank routing",
+      "predicted": "O",
+      "expected": "B-account_number",
+      "sample_id": "a1fedbf82be44a6fb539d12bb4ef9cdb"
+    },
+    {
+      "token": "1234-5678-9012-3456",
+      "context": "and account number 1234-5678-9012-3456 were used for",
+      "predicted": "O",
+      "expected": "B-account_number",
+      "sample_id": "a44f3122310e412ea574e526af0c0bed"
+    },
+    {
+      "token": "4916",
+      "context": "credit debit card 4916 7583 4521 9876",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "a44f3122310e412ea574e526af0c0bed"
+    },
+    {
+      "token": "7583",
+      "context": "debit card 4916 7583 4521 9876 with",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "a44f3122310e412ea574e526af0c0bed"
+    },
+    {
+      "token": "4521",
+      "context": "card 4916 7583 4521 9876 with cvv",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "a44f3122310e412ea574e526af0c0bed"
+    },
+    {
+      "token": "9876",
+      "context": "4916 7583 4521 9876 with cvv 447",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "a44f3122310e412ea574e526af0c0bed"
+    },
+    {
+      "token": "304-377-1865",
+      "context": "service. Please call 304-377-1865 for updates. |",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "9d50ab01a7e04ac1998ba9609c1ec619"
+    },
+    {
+      "token": "David",
+      "context": "LexLumina Legal and David Long. **RECITALS** WHEREAS,",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "3a716439c0c54d59936374b9a4b668c8"
+    },
+    {
+      "token": "Long.",
+      "context": "Legal and David Long. **RECITALS** WHEREAS, David",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "3a716439c0c54d59936374b9a4b668c8"
+    },
+    {
+      "token": "David",
+      "context": "Long. **RECITALS** WHEREAS, David Long is a",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "3a716439c0c54d59936374b9a4b668c8"
+    },
+    {
+      "token": "Long",
+      "context": "**RECITALS** WHEREAS, David Long is a white",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "3a716439c0c54d59936374b9a4b668c8"
+    },
+    {
+      "token": "David",
+      "context": "By: ___________________________ Name: David Long David Long",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "3a716439c0c54d59936374b9a4b668c8"
+    },
+    {
+      "token": "Long",
+      "context": "___________________________ Name: David Long David Long By:",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "3a716439c0c54d59936374b9a4b668c8"
+    },
+    {
+      "token": "David",
+      "context": "Name: David Long David Long By: ___________________________",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "3a716439c0c54d59936374b9a4b668c8"
+    },
+    {
+      "token": "Long",
+      "context": "David Long David Long By: ___________________________ Name:",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "3a716439c0c54d59936374b9a4b668c8"
+    },
+    {
+      "token": "David",
+      "context": "By: ___________________________ Name: David Long **EXHIBITS** Exhibit",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "3a716439c0c54d59936374b9a4b668c8"
+    },
+    {
+      "token": "Long",
+      "context": "___________________________ Name: David Long **EXHIBITS** Exhibit A:",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "3a716439c0c54d59936374b9a4b668c8"
+    },
+    {
+      "token": "HOMER",
+      "context": "LA COUNTY OF HOMER **AFFIDAVIT** I, Chelsea",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "ENG-846237,",
+      "context": "the license number ENG-846237, provides a comprehensive",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "b67c99381aba4aebaf36d2ebac3bdbfb"
+    },
+    {
+      "token": "Building",
+      "context": "Al Rayyan Road, Building 24 in Al",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "1d689646f5ed45df8f98b1c8138f30a1"
+    },
+    {
+      "token": "m.a@adalah.org.sa.",
+      "context": "individuals can contact m.a@adalah.org.sa. #### Enforcement Violations",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "af0ad8dd192946b292044966f680c87b"
+    },
+    {
+      "token": "Building",
+      "context": "site visits is Building 14 Tahrir Street,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "b50452b34e60481c996e295b86c643d4"
+    },
+    {
+      "token": "Smith",
+      "context": "Memorandum** **Case Name:** Smith v. Johnson **Citation:**",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "917cc73043cf4e5d9b557b4035944999"
+    },
+    {
+      "token": "Johnson",
+      "context": "Name:** Smith v. Johnson **Citation:** 55 U.S.",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "917cc73043cf4e5d9b557b4035944999"
+    },
+    {
+      "token": "Johnson,",
+      "context": "contract. The defendant, Johnson, is accused of",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "917cc73043cf4e5d9b557b4035944999"
+    },
+    {
+      "token": "Johnson,",
+      "context": "whether the defendant, Johnson, breached the contract",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "917cc73043cf4e5d9b557b4035944999"
+    },
+    {
+      "token": "199-44-7589",
+      "context": "the plaintiff's ssn 199-44-7589 was used to",
+      "predicted": "O",
+      "expected": "B-ssn",
+      "sample_id": "917cc73043cf4e5d9b557b4035944999"
+    },
+    {
+      "token": "Johnson,",
+      "context": "that the defendant, Johnson, breached the contract.",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "917cc73043cf4e5d9b557b4035944999"
+    },
+    {
+      "token": "Jamescosgrove,",
+      "context": "contract. The plaintiff, Jamescosgrove, is entitled to",
+      "predicted": "O",
+      "expected": "B-user_name",
+      "sample_id": "917cc73043cf4e5d9b557b4035944999"
+    },
+    {
+      "token": "PurpleCat#Moonlight",
+      "context": "example, the password PurpleCat#Moonlight meets these criteria.",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "89c1f0dfce5d471daae81dc96fa043fd"
+    },
+    {
+      "token": "cyberguardian@cybershieldisrael.co.il,",
+      "context": "including the email cyberguardian@cybershieldisrael.co.il, must be kept",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "89c1f0dfce5d471daae81dc96fa043fd"
+    },
+    {
+      "token": "John",
+      "context": "Entertainment Studio | John Gaines, Director |",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f3627340aa174186a878bd10af127d0f"
+    },
+    {
+      "token": "Gaines,",
+      "context": "Studio | John Gaines, Director | Cameras,",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "f3627340aa174186a878bd10af127d0f"
+    },
+    {
+      "token": "John",
+      "context": "Lane County | John Gaines, Director |",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f3627340aa174186a878bd10af127d0f"
+    },
+    {
+      "token": "Gaines,",
+      "context": "County | John Gaines, Director | Sound",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "f3627340aa174186a878bd10af127d0f"
+    },
+    {
+      "token": "John",
+      "context": "| Eugene | John Gaines, Director |",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f3627340aa174186a878bd10af127d0f"
+    },
+    {
+      "token": "Gaines,",
+      "context": "Eugene | John Gaines, Director | Props",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "f3627340aa174186a878bd10af127d0f"
+    },
+    {
+      "token": "John",
+      "context": "- **Contact Person**: John Gaines - **Phone",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f3627340aa174186a878bd10af127d0f"
+    },
+    {
+      "token": "Gaines",
+      "context": "**Contact Person**: John Gaines - **Phone Number**:",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "f3627340aa174186a878bd10af127d0f"
+    },
+    {
+      "token": "[Confidential]",
+      "context": "Number: 46.00411401340036 PIN: [Confidential] Please keep this",
+      "predicted": "O",
+      "expected": "B-password",
+      "sample_id": "0a11277ae0544f53aa7f2e819c140c1e"
+    },
+    {
+      "token": "582-975-1787",
+      "context": "reach us at 582-975-1787 or via email",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "506e8f0ae55e4806b8f88598cba06858"
+    },
+    {
+      "token": "623-937-3726",
+      "context": "SFO-3219450 Phone Number: 623-937-3726 **Billing Period** 01/01/2024",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "74ebad571ee84573b1ce1b59d528de00"
+    },
+    {
+      "token": "623-937-3726",
+      "context": "15 min | 623-937-3726 | $2.50 |",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "74ebad571ee84573b1ce1b59d528de00"
+    },
+    {
+      "token": "623-937-3726",
+      "context": "20 min | 623-937-3726 | $3.00 |",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "74ebad571ee84573b1ce1b59d528de00"
+    },
+    {
+      "token": "623-937-3726",
+      "context": "10 min | 623-937-3726 | $1.50 |",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "74ebad571ee84573b1ce1b59d528de00"
+    },
+    {
+      "token": "19JAN30-8376",
+      "context": "Invoice** **Invoice Number:** 19JAN30-8376 **Date:** 20230915 **Customer",
+      "predicted": "O",
+      "expected": "B-account_number",
+      "sample_id": "fecd852ea3e848f29c99abce433dbc97"
+    },
+    {
+      "token": "Christine",
+      "context": "Christine Sheehan, whose medical",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "d0a45199e9b1415b85aa191be54b81b0"
+    },
+    {
+      "token": "Sheehan,",
+      "context": "Christine Sheehan, whose medical record",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "d0a45199e9b1415b85aa191be54b81b0"
+    },
+    {
+      "token": "6223",
+      "context": "- **Credit/Debit Card:** 6223 1597 4912 0476",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "aebcdb43a80b4406855bf6f0f3c1d4ed"
+    },
+    {
+      "token": "1597",
+      "context": "**Credit/Debit Card:** 6223 1597 4912 0476 **Additional",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "aebcdb43a80b4406855bf6f0f3c1d4ed"
+    },
+    {
+      "token": "4912",
+      "context": "Card:** 6223 1597 4912 0476 **Additional Information:**",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "aebcdb43a80b4406855bf6f0f3c1d4ed"
+    },
+    {
+      "token": "0476",
+      "context": "6223 1597 4912 0476 **Additional Information:** -",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "aebcdb43a80b4406855bf6f0f3c1d4ed"
+    },
+    {
+      "token": "Ivanov",
+      "context": "- **Name:** Dmitry Ivanov - **Contact Details:**",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "4ef10d04f8c345a897418e318a4b74f4"
+    },
+    {
+      "token": "ivanov@astrasecure.ru",
+      "context": "Details:** - **Email:** ivanov@astrasecure.ru - **Phone Number:**",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "4ef10d04f8c345a897418e318a4b74f4"
+    },
+    {
+      "token": "a.s@amiramedia.ly",
+      "context": "contact us at a.s@amiramedia.ly at 17:23:45+01:00.",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "386575e54d8f4307b55af7b2763a7ea9"
+    },
+    {
+      "token": "4532",
+      "context": "credit debit card 4532 0156 7894 3256",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "7dbc8e04c2ad404bbc980d679e30c990"
+    },
+    {
+      "token": "0156",
+      "context": "debit card 4532 0156 7894 3256 is",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "7dbc8e04c2ad404bbc980d679e30c990"
+    },
+    {
+      "token": "7894",
+      "context": "card 4532 0156 7894 3256 is managed",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "7dbc8e04c2ad404bbc980d679e30c990"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "presidio": {
+    "ai4privacy": {
+      "PERSON": ["GIVENNAME", "SURNAME"],
+      "PHONE_NUMBER": ["TELEPHONENUM"],
+      "EMAIL_ADDRESS": ["EMAIL"],
+      "CREDIT_CARD": ["CREDITCARDNUMBER"],
+      "DATE_TIME": ["DATE", "TIME"],
+      "LOCATION": ["CITY", "STREET"],
+      "US_SSN": ["SOCIALNUM"],
+      "US_DRIVER_LICENSE": ["DRIVERLICENSENUM"],
+      "US_PASSPORT": ["PASSPORTNUM"]
+    },
+    "wikineural": {
+      "PERSON": ["PER"],
+      "LOCATION": ["LOC"]
+    },
+    "nvidia-pii": {
+      "PERSON": ["first_name", "last_name"],
+      "PHONE_NUMBER": ["phone_number"],
+      "EMAIL_ADDRESS": ["email"],
+      "CREDIT_CARD": ["credit_debit_card"],
+      "DATE_TIME": ["date", "date_of_birth", "time"],
+      "LOCATION": ["city", "street_address"],
+      "US_SSN": ["ssn"],
+      "US_DRIVER_LICENSE": ["certificate_license_number"],
+      "URL": ["url"],
+      "IP_ADDRESS": ["ipv4", "ipv6"]
+    }
+  },
+  "spacy": {
+    "ai4privacy": {
+      "PERSON": ["GIVENNAME", "SURNAME", "TITLE"],
+      "GPE": ["CITY"],
+      "LOC": ["STREET"],
+      "DATE": ["DATE"],
+      "TIME": ["TIME"],
+      "CARDINAL": ["AGE"]
+    },
+    "nvidia-pii": {
+      "PERSON": ["first_name", "last_name"],
+      "GPE": ["city"],
+      "LOC": ["street_address"],
+      "DATE": ["date", "date_of_birth"],
+      "TIME": ["time"],
+      "CARDINAL": ["age"]
+    },
+    "wikineural": {
+      "PERSON": ["PER"],
+      "GPE": ["LOC"],
+      "ORG": ["ORG"]
+    }
+  },
+  "dslim/bert-base-ner": {
+    "ai4privacy": {
+      "PER": ["GIVENNAME", "SURNAME", "TITLE"],
+      "LOC": ["CITY", "STREET"]
+    },
+    "nvidia-pii": {
+      "PER": ["first_name", "last_name"],
+      "LOC": ["city", "street_address"]
+    }
+  },
+  "nerguard": {
+    "wikineural": {
+      "GIVENNAME": ["PER"],
+      "SURNAME": ["PER"],
+      "TITLE": ["PER"],
+      "CITY": ["LOC"],
+      "STREET": ["LOC"]
+    },
+    "nvidia-pii": {
+      "GIVENNAME": ["first_name"],
+      "SURNAME": ["last_name"],
+      "EMAIL": ["email"],
+      "TELEPHONENUM": ["phone_number"],
+      "CITY": ["city"],
+      "STREET": ["street_address"],
+      "ZIPCODE": ["postcode"],
+      "SOCIALNUM": ["ssn"],
+      "TAXNUM": ["tax_id"],
+      "DRIVERLICENSENUM": ["certificate_license_number"],
+      "CREDITCARDNUMBER": ["credit_debit_card"],
+      "DATE": ["date", "date_of_birth"],
+      "TIME": ["time"],
+      "AGE": ["age"],
+      "GENDER": ["gender"]
+    }
+  },
+  "piiranha": {
+    "wikineural": {
+      "GIVENNAME": ["PER"],
+      "SURNAME": ["PER"],
+      "CITY": ["LOC"],
+      "STREET": ["LOC"]
+    },
+    "nvidia-pii": {
+      "GIVENNAME": ["first_name"],
+      "SURNAME": ["last_name"],
+      "EMAIL": ["email"],
+      "TELEPHONENUM": ["phone_number"],
+      "CITY": ["city"],
+      "STREET": ["street_address"],
+      "ZIPCODE": ["postcode"],
+      "SOCIALNUM": ["ssn"],
+      "TAXNUM": ["tax_id"],
+      "DRIVERLICENSENUM": ["certificate_license_number"],
+      "CREDITCARDNUMBER": ["credit_debit_card"],
+      "ACCOUNTNUM": ["account_number"],
+      "PASSWORD": ["password"],
+      "USERNAME": ["user_name"]
+    }
+  }
+}

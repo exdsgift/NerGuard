@@ -178,6 +178,118 @@ Respond with JSON only:
 {{"reasoning": "<10-15 words>", "entity_class": "<CLASS_NAME>"}}"""
 
 
+PROMPT_V15_SPAN = """You are a PII detection expert. Determine whether the highlighted span is personally identifiable information.
+
+CONTEXT:
+{context}
+
+TARGET SPAN: "{span_text}"
+TOKENS IN SPAN: {token_count}
+MODEL PREDICTION: {entity_class}
+
+## TASK:
+Decide if this span is a {entity_class} entity, a DIFFERENT PII entity type, or not PII at all.
+
+## ENTITY FORMAT REFERENCE:
+- GIVENNAME: A person's first/given name (e.g. "John", "Maria"). NOT a company, title, or surname.
+- SURNAME: A person's family/last name (e.g. "Smith", "Tanaka"). NOT a company name or given name.
+- TITLE: Honorific or professional title (e.g. "Mr.", "Dr.", "Professor").
+- STREET: Physical street address with number (e.g. "123 Main Street", "Via Roma 45"). NOT a city or country.
+- CITY: City or town name (e.g. "New York", "Tokyo"). NOT a street address.
+- BUILDINGNUM: Building or house number (e.g. "42", "12B").
+- ZIPCODE: Postal/ZIP code (e.g. "90210", "SW1A 1AA").
+- CREDITCARDNUMBER: 13-19 digit payment card, possibly with spaces/dashes (e.g. "4111 1111 1111 1111").
+- TELEPHONENUM: Phone number in any format (e.g. "+1 (555) 123-4567", "555.123.4567").
+- EMAIL: Email address (e.g. "user@example.com").
+- SOCIALNUM: Social Security Number or national ID (e.g. "123-45-6789"). NOT a phone or account number.
+- TAXNUM: Tax identification number (e.g. EIN "12-3456789", VAT "DE123456789").
+- PASSPORTNUM: Passport number (e.g. "AB1234567").
+- DRIVERLICENSENUM: Driver's license number.
+- IDCARDNUM: National identity card number.
+- DATE: Calendar date (e.g. "2024-01-15", "January 15, 2024", "15/01/2024").
+- TIME: Time of day (e.g. "14:30", "2:30 PM").
+- AGE: A person's age (e.g. "35", "thirty-five years old").
+- SEX: Biological sex (e.g. "Male", "Female").
+- GENDER: Gender identity (e.g. "Non-binary"). NOT a pronoun or title.
+
+## EXAMPLES:
+
+Example 1 (confirm prediction):
+SPAN: "555-867-5309"  |  MODEL: TELEPHONENUM
+Answer: {{"reasoning": "Matches phone number pattern", "entity_class": "TELEPHONENUM"}}
+
+Example 2 (reject — not PII):
+SPAN: "the invoice"  |  MODEL: GIVENNAME
+Answer: {{"reasoning": "Common words, not a person's name", "entity_class": "O"}}
+
+Example 3 (correct entity type):
+SPAN: "123 Oak Avenue"  |  MODEL: CITY
+Answer: {{"reasoning": "Street address with number, not a city name", "entity_class": "STREET"}}
+
+Example 4 (reject — common word):
+SPAN: "Spring"  |  MODEL: SURNAME
+Answer: {{"reasoning": "Season word in this context, not a surname", "entity_class": "O"}}
+
+Example 5 (confirm gender):
+SPAN: "Female"  |  MODEL: GENDER
+Answer: {{"reasoning": "Gender descriptor", "entity_class": "GENDER"}}
+
+Example 6 (distinguish tax vs phone):
+SPAN: "DE-283456789"  |  MODEL: TELEPHONENUM
+Answer: {{"reasoning": "Country-prefix tax ID format, not phone", "entity_class": "TAXNUM"}}
+
+IMPORTANT: When uncertain, prefer classifying as PII over O. Missing PII is worse than a false positive.
+
+Valid entity types (or "O" if not PII):
+{entity_classes_str}
+
+Respond with JSON only:
+{{"reasoning": "<10-20 words>", "entity_class": "<CLASS_NAME>"}}"""
+
+
+PROMPT_O_SPAN = """You are a PII detection expert. The NER model tagged this span as non-PII (O), but it is uncertain.
+
+CONTEXT:
+{context}
+
+TARGET SPAN: "{span_text}"
+TOKEN COUNT: {token_count}
+
+## TASK (two steps):
+
+STEP 1 — Is this span personally identifiable information (PII)?
+Under GDPR, PII includes any data that can identify a person directly or indirectly:
+names, IDs, financial data, health data, location, contact info, credentials, device identifiers.
+
+STEP 2 — If PII, assign the most specific label from this list:
+{target_labels_str}
+
+If not PII, output "O".
+
+## EXAMPLES:
+
+Example 1 (missed PII — passport):
+SPAN: "XK1234567"
+Answer: {{"is_pii": true, "reasoning": "Matches passport number pattern", "entity_class": "PASSPORTNUM"}}
+
+Example 2 (not PII):
+SPAN: "the annual"
+Answer: {{"is_pii": false, "reasoning": "Common words, not PII", "entity_class": "O"}}
+
+Example 3 (missed PII — credit card CVV):
+SPAN: "847"
+Answer: {{"is_pii": true, "reasoning": "3-digit CVV after card number", "entity_class": "CREDITCARDNUMBER"}}
+
+Example 4 (missed PII — name):
+SPAN: "Rodriguez"
+Answer: {{"is_pii": true, "reasoning": "Person's surname", "entity_class": "SURNAME"}}
+
+IMPORTANT: When uncertain, prefer classifying as PII over O. Missing PII is a GDPR compliance risk.
+
+Respond with JSON only:
+{{"is_pii": true/false, "reasoning": "<10-15 words>", "entity_class": "<CLASS_NAME>"}}"""
+
+
 # Default prompt: V9 achieved best performance with GPT-4o (+70 net improvement)
 PROMPT = PROMPT_V9
 
@@ -187,4 +299,6 @@ PROMPTS = {
     "V12": PROMPT_V12,
     "V13": PROMPT_V13,
     "V14_SPAN": PROMPT_V14_SPAN,
+    "V15_SPAN": PROMPT_V15_SPAN,
+    "O_SPAN": PROMPT_O_SPAN,
 }

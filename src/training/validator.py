@@ -176,11 +176,13 @@ def process_sample(
 def evaluate(
     model_path: str = DEFAULT_MODEL_PATH,
     data_path: str = DEFAULT_DATA_PATH,
-    output_dir: str = "./plots/validation_results",
+    output_dir: str = "./results/validation",
     llm_routing: bool = True,
     sample_limit: Optional[int] = 1000,
     entropy_threshold: float = DEFAULT_ENTROPY_THRESHOLD,
     confidence_threshold: float = DEFAULT_CONFIDENCE_THRESHOLD,
+    llm_source: Optional[str] = None,
+    openai_model: str = "gpt-4o-mini",
 ):
     """
     Run hybrid evaluation comparing baseline vs hybrid model.
@@ -208,8 +210,14 @@ def evaluate(
     # Initialize LLM router
     router = None
     if llm_routing:
+        import os
+        source = llm_source or ("openai" if os.getenv("OPENAI_API_KEY") else "ollama")
         try:
-            router = LLMRouter(source="openai")
+            if source == "openai":
+                router = LLMRouter(source="openai", model=openai_model)
+            else:
+                router = LLMRouter(source="ollama")
+            logger.info(f"LLM Router: {source} ({openai_model if source == 'openai' else 'default'})")
         except Exception as e:
             logger.warning(f"Failed to initialize LLM router: {e}")
             llm_routing = False

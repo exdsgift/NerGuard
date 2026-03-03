@@ -25,6 +25,17 @@ DEFAULT_OLLAMA_MODEL = "qwen2.5:3b"
 DEFAULT_CACHE_SIZE = 1000
 
 
+# REGEX DEMOTION — entity types validated against regex patterns (precision filter).
+# If the model predicts one of these but the text doesn't match the regex, demote to O.
+REGEX_VALIDATABLE_ENTITIES = {"SOCIALNUM"}
+
+# PER-ENTITY CONFIDENCE GATES — controls when LLM's "not PII" verdict is rejected.
+# None = always accept LLM correction; value = reject LLM's O verdict if model conf > value.
+# CAUTION: Gating preserves model predictions, so it increases recall but can hurt precision.
+ENTITY_CONFIDENCE_GATES = {
+    "DEFAULT": None,            # no gating — trust LLM corrections by default
+}
+
 # Entity-specific thresholds (more aggressive for numeric, conservative for names)
 ENTITY_THRESHOLDS = {
     # Entities where LLM helps -> more aggressive routing
@@ -69,7 +80,7 @@ ENTITY_CLASSES_WITH_O = ENTITY_CLASSES | {"O"}
 
 # SELECTIVE ENTITY ROUTING — Universal configuration (empirically best: ΔF1 +0.0222)
 # All entity types routable for B- tokens; all I- tokens routable (no per-type filtering).
-# See notes/routing_observations.md for full ablation analysis.
+# See docs/notes/routing_observations.md for full ablation analysis.
 ROUTABLE_ENTITIES = ENTITY_CLASSES        # all 20 types
 BLOCKED_ENTITIES: set = set()             # no types blocked
 ROUTABLE_I_ENTITIES = ENTITY_CLASSES      # I- routing open for all
