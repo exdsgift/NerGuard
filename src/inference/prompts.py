@@ -247,6 +247,74 @@ Respond with JSON only:
 {{"reasoning": "<10-20 words>", "entity_class": "<CLASS_NAME>"}}"""
 
 
+PROMPT_V16_SPAN = """You are a PII detection expert. Determine whether the highlighted span is PII and classify it.
+
+CONTEXT (surrounding text with target marked as >>> <<<):
+{context}
+
+TARGET SPAN: "{span_text}"
+TOKENS IN SPAN: {token_count}
+MODEL PREDICTION: {entity_class}
+
+## YOUR TASK:
+The NER model flagged this span as {entity_class}. Choose ONE outcome:
+1. CONFIRM — return "{entity_class}" (or an alias)
+2. CORRECT — return the right entity type if it is PII but a different type
+3. REJECT — return "O" ONLY if you are CERTAIN it is not personal information
+
+Missed PII is a GDPR compliance violation — when in doubt, confirm PII.
+
+## VALID ENTITY TYPES (output exactly one of these):
+
+GIVENNAME / first_name — First/given name: "John", "Maria", "Ahmed"
+SURNAME / last_name — Family/last name: "Smith", "Tanaka", "Al-Farsi"
+TITLE — Honorific or professional title: "Mr.", "Dr.", "Prof.", "Ms."
+EMAIL — Email address: "user@example.com"
+TELEPHONENUM / phone_number / cell_phone — Phone in any format: "+1 555-123-4567", "555.123.4567"
+CITY — City or town name: "New York", "Berlin", "Tokyo"
+STREET / street_address — Street address with or without number: "123 Main St", "Via Roma 45"
+BUILDINGNUM — Building or house number alone: "42", "12B"
+ZIPCODE / zipcode / postcode — Postal/ZIP code: "90210", "SW1A 1AA", "10115"
+SOCIALNUM / ssn / social_security_number — SSN or national insurance: "123-45-6789"
+TAXNUM / tax_id — Tax ID: EIN "12-3456789", EU VAT "DE123456789", UK UTR "1234567890"
+PASSPORTNUM / passport_number — Passport number: "AB1234567", "P<GBR...", "C3045654"
+DRIVERLICENSENUM / driver_license / certificate_license_number — Driver license: "D8954201", "F198-760-190-098"
+IDCARDNUM / national_id — National identity card: "IT-AB1234567", "1234567890"
+CREDITCARDNUMBER / credit_debit_card — Payment card: "4111 1111 1111 1111", 13-19 digits
+DATE / date_of_birth — Calendar date: "2024-01-15", "15/01/1990", "January 15 2024"
+TIME — Time of day: "14:30", "2:30 PM"
+AGE — Person's age: "35", "thirty-five years old"
+SEX — Biological sex: "Male", "Female"
+GENDER / sexuality — Gender identity: "female", "male", "non-binary", "transgender"
+O — Clearly NOT personal information
+
+## EXAMPLES:
+
+SPAN: "555-867-5309"  |  MODEL: TELEPHONENUM
+{{"reasoning": "Classic US phone number pattern", "entity_class": "TELEPHONENUM"}}
+
+SPAN: "the invoice"  |  MODEL: GIVENNAME
+{{"reasoning": "Common phrase, not a person name", "entity_class": "O"}}
+
+SPAN: "123 Oak Avenue"  |  MODEL: CITY
+{{"reasoning": "Street address with number, not a city name", "entity_class": "STREET"}}
+
+SPAN: "female"  |  MODEL: GENDER
+{{"reasoning": "Gender descriptor, personal information under GDPR", "entity_class": "GENDER"}}
+
+SPAN: "DE-283456789"  |  MODEL: TELEPHONENUM
+{{"reasoning": "Country-prefix EU VAT number format, not a phone", "entity_class": "TAXNUM"}}
+
+SPAN: "D8954201"  |  MODEL: DRIVERLICENSENUM
+{{"reasoning": "Letter + digit license number pattern", "entity_class": "DRIVERLICENSENUM"}}
+
+SPAN: "123-45-6789"  |  MODEL: SOCIALNUM
+{{"reasoning": "Classic SSN format XXX-XX-XXXX", "entity_class": "ssn"}}
+
+Respond with JSON only:
+{{"reasoning": "<10-20 words>", "entity_class": "<ENTITY_TYPE_OR_O>"}}"""
+
+
 PROMPT_O_SPAN = """You are a PII detection expert. The NER model tagged this span as non-PII (O), but it is uncertain.
 
 CONTEXT:
@@ -300,5 +368,6 @@ PROMPTS = {
     "V13": PROMPT_V13,
     "V14_SPAN": PROMPT_V14_SPAN,
     "V15_SPAN": PROMPT_V15_SPAN,
+    "V16_SPAN": PROMPT_V16_SPAN,
     "O_SPAN": PROMPT_O_SPAN,
 }

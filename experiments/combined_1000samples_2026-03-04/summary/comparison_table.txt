@@ -1,0 +1,22 @@
+====================================================================================================
+NER PII Benchmark — Comparative Summary
+====================================================================================================
+
+Dataset: nvidia-pii
+--------------------------------------------------------------------------------
+System                                F1-macro   F1-micro  Entity-F1  Latency(ms)  Tier
+----------------------------------------------------------------------------------
+NerGuard Hybrid V2 (gpt-4o)             0.5069     0.7015     0.6634        41.36     2 (16 labels)
+NerGuard Hybrid V2 (qwen2.5:7b)         0.5051     0.7009     0.6618       563.67     2 (16 labels)
+NerGuard Hybrid V2 (gpt-oss:20b)        0.5028     0.7012     0.6640      3139.28     2 (16 labels)
+NerGuard Hybrid V2 (deepseek-r1:14      0.5008     0.6970     0.6606      7566.13     2 (16 labels)
+NerGuard Hybrid V2 (llama3.1:8b)        0.4972     0.6973     0.6583       706.52     2 (16 labels)
+NerGuard Hybrid (gpt-4o)                0.4943     0.6862     0.6475        31.31     2 (16 labels)
+Presidio                                0.4933     0.5493     0.6680        86.09     2 (15 labels)
+NerGuard Hybrid V2 (phi4:14b)           0.4778     0.6981     0.6595      1251.25     2 (16 labels)
+NerGuard Hybrid V2 (mistral-nemo:1      0.4774     0.6967     0.6582       734.33     2 (16 labels)
+NerGuard Hybrid V2 (qwen2.5:14b)        0.4773     0.6975     0.6619       981.33     2 (16 labels)
+Piiranha                                0.4731     0.6501     0.6195        30.91     2 (14 labels)
+NerGuard Base                           0.4175     0.6105     0.6076        33.23     2 (16 labels)
+spaCy (en_core_web_trf)                 0.3607     0.4175     0.5527       144.22     2 (8 labels)
+dslim/bert-base-NER                     0.3331     0.4821     0.6225        37.59     2 (4 labels)

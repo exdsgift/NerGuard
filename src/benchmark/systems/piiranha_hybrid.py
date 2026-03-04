@@ -130,7 +130,11 @@ class PiiranhaHybridWrapper(SystemWrapper):
                 self._raw_to_extended[raw_id] = raw_label
 
         # Initialize routing components (same as NerGuard Hybrid)
-        self.router = LLMRouter(source=self.llm_source, model=self.llm_model)
+        self.router = LLMRouter(
+            source=self.llm_source,
+            model=self.llm_model,
+            ollama_model=self.llm_model,
+        )
         self.entity_router = EntitySpecificRouter(
             entropy_threshold=DEFAULT_ENTROPY_THRESHOLD,
             confidence_threshold=DEFAULT_CONFIDENCE_THRESHOLD,

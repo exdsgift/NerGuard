@@ -38,8 +38,9 @@ class NerGuardHybridV2(NerGuardHybrid):
         device: str = "auto",
         llm_source: str = "openai",
         llm_model: str = "gpt-4o",
+        span_prompt_version: str = "V14_SPAN",
     ):
-        super().__init__(model_path, device, llm_source, llm_model)
+        super().__init__(model_path, device, llm_source, llm_model, span_prompt_version)
         self._target_labels: Optional[Set[str]] = None
         self._target_labels_str: Optional[str] = None
         self._o_prompt_template = None
@@ -237,6 +238,117 @@ class NerGuardHybridV2(NerGuardHybrid):
             ner_latency_ms=ner_latency_ms,
             conf_vals=conf_vals,
         )
+
+    def predict(
+        self,
+        text: str,
+        tokens: List[str],
+        token_spans: List[Tuple[int, int]],
+    ) -> "SystemPrediction":
+        """Synchronous predict with all V2 features (used in --no-batch-llm mode).
+
+        Runs V2's predict_ner_only (regex pre-scan, hints, span assembly), then
+        routes each span synchronously, applies per-entity confidence gating,
+        regex demotion, and regex post-processing.
+        O-span routing is skipped here (async-only feature for OpenAI batch mode).
+        """
+        from src.core.constants import (
+            ENTITY_CONFIDENCE_GATES,
+            REGEX_VALIDATABLE_ENTITIES,
+        )
+
+        t0 = time.time()
+
+        # Phase 1: V2 NER + regex pre-scan + span/hint/O-span assembly
+        deferred = self.predict_ner_only(0, text, tokens, token_spans)
+        subword_preds = list(deferred.subword_preds)
+        label2id = {v: int(k) for k, v in self.id2label.items()}
+        llm_calls = 0
+
+        # Phase 2: sync routing — entity spans and regex-hint spans only
+        for span, prev_label in deferred.pending_spans:
+            if span.entity_class == "O":
+                # O-span routing requires async; skip in sync mode
+                continue
+            try:
+                res = self.router.disambiguate_span(
+                    span_text=text[span.char_start:span.char_end],
+                    token_count=len(span.indices),
+                    full_text=text,
+                    span_start=span.char_start,
+                    span_end=span.char_end,
+                    current_pred=span.entity_class,
+                    prev_label=prev_label,
+                )
+                llm_calls += 1
+
+                if res.get("is_pii"):
+                    entity_out = res.get("corrected_label", f"B-{span.entity_class}")
+                    entity_class = entity_out.replace("B-", "").replace("I-", "")
+                    for k, idx in enumerate(span.indices):
+                        bio_prefix = "B-" if k == 0 else "I-"
+                        subword_preds[idx] = f"{bio_prefix}{entity_class}"
+                else:
+                    # V2: per-entity confidence gating before accepting "not PII" verdict
+                    entity_gate = ENTITY_CONFIDENCE_GATES.get(
+                        span.entity_class,
+                        ENTITY_CONFIDENCE_GATES.get("DEFAULT"),
+                    )
+                    anchor_idx = span.indices[0]
+                    anchor_conf = (
+                        deferred.conf_vals[anchor_idx]
+                        if deferred.conf_vals and anchor_idx < len(deferred.conf_vals)
+                        else 0.0
+                    )
+                    if entity_gate is not None and anchor_conf > entity_gate:
+                        self._routing_meta["confidence_gates_applied"] += 1
+                    else:
+                        for idx in span.indices:
+                            subword_preds[idx] = "O"
+            except Exception:
+                pass
+
+        self._routing_meta["llm_calls"] += llm_calls
+
+        # Phase 3: V2 regex demotion — demote entities that fail regex validation
+        pred_ids_array = np.array(
+            [label2id.get(p, label2id.get("O", 0)) for p in subword_preds]
+        )
+        offset_array = np.array(deferred.offset_mapping)
+        old_before_demotion = pred_ids_array.copy()
+        demoted_ids = self.regex_validator.validate_predictions(
+            text=text,
+            offset_mapping=offset_array,
+            preds=pred_ids_array,
+            id2label=self.id2label,
+            label2id=label2id,
+            entities_to_validate=REGEX_VALIDATABLE_ENTITIES,
+        )
+        self._routing_meta["regex_demotions"] += int(
+            (demoted_ids != old_before_demotion).sum()
+        )
+
+        # Phase 4: regex post-processing (O → Entity promotions)
+        old_preds = demoted_ids.copy()
+        corrected_ids = self.regex_validator.correct_predictions(
+            text=text,
+            offset_mapping=offset_array,
+            preds=demoted_ids,
+            id2label=self.id2label,
+            label2id=label2id,
+            correct_partial=True,
+        )
+        self._routing_meta["regex_promotions"] += int(
+            (corrected_ids != old_preds).sum()
+        )
+        subword_preds = [self.id2label.get(int(pid), "O") for pid in corrected_ids]
+
+        word_labels = self._align_to_word_tokens(
+            subword_preds, deferred.offset_mapping, tokens, token_spans
+        )
+
+        latency_ms = (time.time() - t0) * 1000
+        return SystemPrediction(labels=word_labels, latency_ms=latency_ms)
 
     async def resolve_routing_batch(
         self,

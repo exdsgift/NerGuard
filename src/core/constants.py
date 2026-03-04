@@ -197,6 +197,45 @@ EXCLUDED_NVIDIA_LABELS = {
     "sexuality",    # Sexuality ≠ gender; semantically incorrect original merge
 }
 
+# NVIDIA ALIAS → BASE MODEL LABEL MAPPING
+# Used in LLMRouter._validate_response() to accept NVIDIA-style entity names.
+# Only includes NVIDIA labels that map to non-O base model entities (FP-safe):
+# labels that map to O in CLEAN_NVIDIA_MAP (account_number, ip_address, url,
+# organization, country, state) are intentionally excluded so the LLM never
+# sees them in the prompt and cannot produce them (no FP inflation).
+NVIDIA_CLASS_TO_BASE = {
+    # Person
+    "first_name": "GIVENNAME",
+    "last_name": "SURNAME",
+    "middle_name": "GIVENNAME",
+    # Contact
+    "phone_number": "TELEPHONENUM",
+    "cell_phone": "TELEPHONENUM",
+    "fax_number": "TELEPHONENUM",
+    # Location
+    "street_address": "STREET",
+    "zipcode": "ZIPCODE",
+    "postcode": "ZIPCODE",
+    # IDs
+    "ssn": "SOCIALNUM",
+    "social_security_number": "SOCIALNUM",
+    "tax_id": "TAXNUM",
+    "driver_license": "DRIVERLICENSENUM",
+    "drivers_license": "DRIVERLICENSENUM",
+    "certificate_license_number": "DRIVERLICENSENUM",
+    "national_id": "IDCARDNUM",
+    "passport_number": "PASSPORTNUM",
+    # Financial
+    "credit_debit_card": "CREDITCARDNUMBER",
+    # Temporal & Demographics
+    "date_of_birth": "DATE",
+    "sexuality": "GENDER",
+}
+
+# Extended FP-safe entity class set: base 20 classes + NVIDIA PII aliases.
+# Used to expand the LLM's valid response vocabulary in V16_SPAN routing.
+EXTENDED_ENTITY_CLASSES_WITH_O = ENTITY_CLASSES_WITH_O | set(NVIDIA_CLASS_TO_BASE.keys())
+
 # UNIFIED SCHEMA FOR CROSS-MODEL BENCHMARKS
 UNIFIED_SCHEMA = {
     "PERSON": ["GIVENNAME", "SURNAME", "TITLE"],

@@ -1,6 +1,7 @@
 """Main benchmark runner — orchestrates datasets, systems, metrics, and reports."""
 
 import gc
+import json
 import logging
 import os
 import sys
@@ -36,8 +37,11 @@ class BenchmarkRunner:
         self.timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
         self.metrics_computer = MetricsComputer()
         self.all_results = []
-        # Session directory groups all experiments from this run
-        self.session_dir = os.path.join(self.config.output_dir, self.timestamp)
+        # Session directory: fixed path if --session-dir provided, else timestamped subdir
+        if self.config.session_dir:
+            self.session_dir = self.config.session_dir
+        else:
+            self.session_dir = os.path.join(self.config.output_dir, self.timestamp)
 
     def run(self) -> None:
         logger.info(f"NER PII Benchmark starting at {self.timestamp}")
@@ -109,8 +113,35 @@ class BenchmarkRunner:
         ds_clean = ds_name.lower().replace(" ", "_")
         exp_dir = os.path.join(self.session_dir, f"{sys_clean}_{ds_clean}")
         logger.debug(f"  Experiment dir: {exp_dir}")
-        if os.path.exists(os.path.join(exp_dir, "results.json")):
+        results_json_path = os.path.join(exp_dir, "results.json")
+        if os.path.exists(results_json_path):
             logger.info(f"  Skipping {sys_name} × {ds_name} (already exists)")
+            # Load cached results so they appear in the session summary
+            try:
+                with open(results_json_path) as f:
+                    cached = json.load(f)
+                tl = cached.get("token_level", {})
+                el = cached.get("entity_level", {})
+                lat = cached.get("latency", {})
+                tier, n_labels = 1, cached.get("n_evaluated_labels", 0)
+                config_json_path = os.path.join(exp_dir, "config.json")
+                if os.path.exists(config_json_path):
+                    with open(config_json_path) as f:
+                        cfg = json.load(f)
+                    tier = cfg.get("tier", 1)
+                self.all_results.append({
+                    "system": cached.get("system", sys_name),
+                    "dataset": cached.get("dataset", ds_name),
+                    "f1_macro": tl.get("f1_macro", 0),
+                    "f1_micro": tl.get("f1_micro", 0),
+                    "entity_f1": el.get("f1", 0),
+                    "latency_mean_ms": lat.get("mean_ms", 0),
+                    "n_evaluated_labels": n_labels,
+                    "tier": tier,
+                    "n_samples": cached.get("n_samples", 0),
+                })
+            except Exception as exc:
+                logger.warning(f"  Could not load cached results from {results_json_path}: {exc}")
             return
 
         logger.info(f"\n  Evaluating: {sys_name} × {ds_name} ({len(samples)} samples)")
@@ -338,6 +369,7 @@ class BenchmarkRunner:
                 device=self.config.device,
                 llm_source=self.config.llm_source,
                 llm_model=self.config.llm_model,
+                span_prompt_version=self.config.span_prompt_version,
             )
         elif name == "nerguard-hybrid-v2":
             from src.benchmark.systems.nerguard_hybrid_v2 import NerGuardHybridV2
@@ -346,6 +378,7 @@ class BenchmarkRunner:
                 device=self.config.device,
                 llm_source=self.config.llm_source,
                 llm_model=self.config.llm_model,
+                span_prompt_version=self.config.span_prompt_version,
             )
         elif name == "piiranha":
             from src.benchmark.systems.piiranha import PiiranhaWrapper

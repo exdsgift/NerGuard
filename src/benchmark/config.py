@@ -52,6 +52,8 @@ class BenchmarkConfig:
     device: str = "auto"
     batch_llm: bool = True  # Batch async LLM calls (fast for OpenAI, disable for local LLMs)
     batch_llm_concurrency: int = 50  # Max concurrent async LLM requests
+    session_dir: Optional[str] = None  # Override timestamped session dir (for multi-model runs)
+    span_prompt_version: str = "V14_SPAN"  # Span routing prompt version (V14_SPAN, V15_SPAN, V16_SPAN)
 
     def get_samples_for_dataset(self, dataset_name: str) -> int:
         """Return effective sample count: CLI override > per-dataset default."""
@@ -83,6 +85,13 @@ def parse_args(argv: Optional[List[str]] = None) -> BenchmarkConfig:
         help="Max samples per dataset (0 = use per-dataset defaults: ai4privacy=full, nvidia=3000, wikineural=full)",
     )
     parser.add_argument("--output-dir", type=str, default="./experiments")
+    parser.add_argument(
+        "--session-dir",
+        type=str,
+        default=None,
+        help="Use a fixed session directory instead of ./experiments/{timestamp}. "
+             "Useful to consolidate multiple model runs into a single summary.",
+    )
     parser.add_argument("--batch-size", type=int, default=16)
     parser.add_argument("--runs", type=int, default=3)
     parser.add_argument("--seed", type=int, default=42)
@@ -120,6 +129,13 @@ def parse_args(argv: Optional[List[str]] = None) -> BenchmarkConfig:
         default=50,
         help="Max concurrent async LLM requests (default: 50)",
     )
+    parser.add_argument(
+        "--span-prompt-version",
+        type=str,
+        default="V14_SPAN",
+        choices=["V14_SPAN", "V15_SPAN", "V16_SPAN"],
+        help="Span routing prompt version (default: V14_SPAN). V16_SPAN enables extended NVIDIA label set.",
+    )
 
     args = parser.parse_args(argv)
 
@@ -146,4 +162,6 @@ def parse_args(argv: Optional[List[str]] = None) -> BenchmarkConfig:
         device=args.device,
         batch_llm=batch_llm,
         batch_llm_concurrency=args.batch_llm_concurrency,
+        session_dir=args.session_dir,
+        span_prompt_version=args.span_prompt_version,
     )

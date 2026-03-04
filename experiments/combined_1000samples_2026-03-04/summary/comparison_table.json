@@ -1,0 +1,156 @@
+[
+  {
+    "system": "dslim/bert-base-NER",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.3330673825902174,
+    "f1_micro": 0.48205128205128206,
+    "entity_f1": 0.622528460155782,
+    "latency_mean_ms": 37.58880066871643,
+    "n_evaluated_labels": 4,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "NerGuard Base",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.41748284282807985,
+    "f1_micro": 0.610504121142419,
+    "entity_f1": 0.6076304708434349,
+    "latency_mean_ms": 33.232110023498535,
+    "n_evaluated_labels": 16,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "NerGuard Hybrid (gpt-4o)",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.4942518726911789,
+    "f1_micro": 0.6862202545655783,
+    "entity_f1": 0.6474522680286998,
+    "latency_mean_ms": 31.312038898468018,
+    "n_evaluated_labels": 16,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "NerGuard Hybrid V2 (gpt-4o)",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.5069331565589086,
+    "f1_micro": 0.7015482186159299,
+    "entity_f1": 0.6633846153846154,
+    "latency_mean_ms": 41.36054515838623,
+    "n_evaluated_labels": 16,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "Piiranha",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.47305605530745354,
+    "f1_micro": 0.65009234266231,
+    "entity_f1": 0.6194895591647331,
+    "latency_mean_ms": 30.905214309692383,
+    "n_evaluated_labels": 14,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "Presidio",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.4932662590734013,
+    "f1_micro": 0.5492622560685388,
+    "entity_f1": 0.667984600978046,
+    "latency_mean_ms": 86.0899748802185,
+    "n_evaluated_labels": 15,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "spaCy (en_core_web_trf)",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.36066218243202086,
+    "f1_micro": 0.4174980813507291,
+    "entity_f1": 0.5526775320139697,
+    "latency_mean_ms": 144.22184419631958,
+    "n_evaluated_labels": 8,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "NerGuard Hybrid V2 (deepseek-r1:14b)",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.5008219370368414,
+    "f1_micro": 0.6970348891591058,
+    "entity_f1": 0.6605866403746611,
+    "latency_mean_ms": 7566.1291382312775,
+    "n_evaluated_labels": 16,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "NerGuard Hybrid V2 (gpt-oss:20b)",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.5027982084223965,
+    "f1_micro": 0.7011773500280322,
+    "entity_f1": 0.6639536317671723,
+    "latency_mean_ms": 3139.2777841091156,
+    "n_evaluated_labels": 16,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "NerGuard Hybrid V2 (llama3.1:8b)",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.4972034760283981,
+    "f1_micro": 0.6973464464650213,
+    "entity_f1": 0.6583394562821454,
+    "latency_mean_ms": 706.5240757465363,
+    "n_evaluated_labels": 16,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "NerGuard Hybrid V2 (mistral-nemo:12b)",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.47736282180172335,
+    "f1_micro": 0.69667937866245,
+    "entity_f1": 0.6581563765803363,
+    "latency_mean_ms": 734.3318831920624,
+    "n_evaluated_labels": 16,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "NerGuard Hybrid V2 (phi4:14b)",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.47777889480534713,
+    "f1_micro": 0.6981079317736975,
+    "entity_f1": 0.6594568022612757,
+    "latency_mean_ms": 1251.2529153823853,
+    "n_evaluated_labels": 16,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "NerGuard Hybrid V2 (qwen2.5:14b)",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.4772786978635774,
+    "f1_micro": 0.6975175644028103,
+    "entity_f1": 0.6618918251420103,
+    "latency_mean_ms": 981.3253326416016,
+    "n_evaluated_labels": 16,
+    "tier": 2,
+    "n_samples": 1000
+  },
+  {
+    "system": "NerGuard Hybrid V2 (qwen2.5:7b)",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.505145384689498,
+    "f1_micro": 0.7008674563939931,
+    "entity_f1": 0.6618226600985222,
+    "latency_mean_ms": 563.6706073284149,
+    "n_evaluated_labels": 16,
+    "tier": 2,
+    "n_samples": 1000
+  }
+]

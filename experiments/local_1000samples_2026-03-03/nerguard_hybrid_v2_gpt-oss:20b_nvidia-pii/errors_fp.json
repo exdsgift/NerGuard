@@ -1,0 +1,782 @@
+{
+  "n_errors": 111,
+  "errors": [
+    {
+      "token": "Ammann",
+      "context": "At Ammann Bazaar, we are",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "f269c636352649a09e47770d5beed6dc"
+    },
+    {
+      "token": "SI-2025-1104-001",
+      "context": "Report **Incident ID:** SI-2025-1104-001 **Date/Time of Incident:**",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "4f2fb6ab130448edae32500c61e9132d"
+    },
+    {
+      "token": "12",
+      "context": "minimal, totaling only 12 minutes over the",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "1d6b85e2c25f419e9826b45ffff3961b"
+    },
+    {
+      "token": "729-85-3141",
+      "context": "national id? a) 729-85-3141 b) 729-85-3142 c)",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "729-85-3143",
+      "context": "b) 729-85-3142 c) 729-85-3143 d) 729-85-3144 Please",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "729-85-3144",
+      "context": "c) 729-85-3143 d) 729-85-3144 Please ensure you",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "1234567890",
+      "context": "Confirmation** **Order Number:** 1234567890 **Date of Purchase:**",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "0844dbba5fc64a5cb6f301144e5fe50d"
+    },
+    {
+      "token": "4789",
+      "context": "Digits of Card:** 4789 **CVV:** 330 **CVV",
+      "predicted": "B-credit_debit_card",
+      "expected": "O",
+      "sample_id": "0844dbba5fc64a5cb6f301144e5fe50d"
+    },
+    {
+      "token": "12345",
+      "context": "Order Number 12345 is scheduled for",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "9fc62a0171cf4c54978c7d21aebc4653"
+    },
+    {
+      "token": "67890.",
+      "context": "this shipment is 67890. Please contact the",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "9fc62a0171cf4c54978c7d21aebc4653"
+    },
+    {
+      "token": "(2023-10-16",
+      "context": "- Phase 2 (2023-10-16 to 2023-11-15): Implementation",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "2c2e6c0358504d4885427217467cc277"
+    },
+    {
+      "token": "1234567890",
+      "context": "Notice** **Policy Number:** 1234567890 **Claim Number:** 9876543210",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "6b87ebe759df4d0f89f64823222144fe"
+    },
+    {
+      "token": "9876543210",
+      "context": "1234567890 **Claim Number:** 9876543210 **Adjuster's Name:** Jane",
+      "predicted": "B-tax_id",
+      "expected": "O",
+      "sample_id": "6b87ebe759df4d0f89f64823222144fe"
+    },
+    {
+      "token": "18",
+      "context": "be at least 18 years old. |",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "36de4cb5ab1e4f77a300e52fdeff4a41"
+    },
+    {
+      "token": "123456789",
+      "context": "Unique Identifier | 123456789 | | Issuing",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "0de7850e36c24d19a7a08d4fece32b71"
+    },
+    {
+      "token": "2",
+      "context": "a minimum of 2 years of teaching",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "29768d12370e4752a519c26e40597ddc"
+    },
+    {
+      "token": "36",
+      "context": "term is for 36 months, with payments",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "a85a82ec0270496196ee674187f5185c"
+    },
+    {
+      "token": "12345",
+      "context": "claim number is 12345 and the date",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "2fae009af9134f5f8d869f1d25408113"
+    },
+    {
+      "token": "74856321.",
+      "context": "the serial number 74856321. The nature of",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "2fae009af9134f5f8d869f1d25408113"
+    },
+    {
+      "token": "5",
+      "context": "for the last 5 years. The issue",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "66c1a9e503f54b4f9d7d50395b8b8153"
+    },
+    {
+      "token": "30",
+      "context": "Denim Jeans, Size 30 Reason for Return:",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "a9a043e8aa0b4db9a01b24f6059bfd67"
+    },
+    {
+      "token": "E3.",
+      "context": "outlined in ICH E3. **Methodology** **Study Design**",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "e2792dc0ed2d4c04b2b4f6f13fe63fc4"
+    },
+    {
+      "token": "18",
+      "context": "participants ranged from 18 to 65, with",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "e2792dc0ed2d4c04b2b4f6f13fe63fc4"
+    },
+    {
+      "token": "65,",
+      "context": "from 18 to 65, with an average",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "e2792dc0ed2d4c04b2b4f6f13fe63fc4"
+    },
+    {
+      "token": "50",
+      "context": "a package weighing 50 lbs or less",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "596d17166c074a3e83969a908ba7b13e"
+    },
+    {
+      "token": "12345",
+      "context": "Order Number: 12345 Date: 10/15/2023 Customer",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "0f68dfe742914d5ca9ccdb8b181c979f"
+    },
+    {
+      "token": "255.255.255.0",
+      "context": "| 162.234.12.234 | 255.255.255.0 | 162.234.12.1 |",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "c76e549733744bd9a99cd2b4047d9651"
+    },
+    {
+      "token": "0",
+      "context": "for children aged 0 to 12 years",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "d13f0a589369453aa8b9740a36d7d9f8"
+    },
+    {
+      "token": "12",
+      "context": "aged 0 to 12 years old. Upon",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "d13f0a589369453aa8b9740a36d7d9f8"
+    },
+    {
+      "token": "2030-11-15,,,,095610724",
+      "context": "Method,Bank Routing Number 2030-11-15,,,,095610724 Acknowledgement Status Acknowledged",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "90a71dcaddce49f295c6d163a7263c30"
+    },
+    {
+      "token": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+      "context": "My commission expires: token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QifQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "25f84b80d80545b9857965b105aceac7"
+    },
+    {
+      "token": "12-week",
+      "context": "intervention over a 12-week period. **Patient Demographics**",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "fdb80465313c4be283dde0acc278144a"
+    },
+    {
+      "token": "19-year-old",
+      "context": "One participant, a 19-year-old female of Mexican",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "fdb80465313c4be283dde0acc278144a"
+    },
+    {
+      "token": "987654321",
+      "context": "**Redemption Code** | 987654321 | | **Card",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "890605d4d9014876b5abeaccddc94bd8"
+    },
+    {
+      "token": "TEL-7321",
+      "context": "Ticket Number: TEL-7321 Customer ID: BOS-3490817",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "e96fdfba7a6d4a16adbd383f597ede33"
+    },
+    {
+      "token": "23456-7890",
+      "context": "Case Number 23456-7890 Testimony Date: 17/09/2024",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "\"67890\",",
+      "context": "\"TokenExpirationDate\": \"07/15/2024\", \"LastFourDigitsOfTheCard\": \"67890\", \"TransactionLimits\": { \"DailyLimit\":",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "0541f3a44af24293bd08c10fe4c3aef1"
+    },
+    {
+      "token": "\"15000\"",
+      "context": "\"DailyLimit\": \"5000\", \"MonthlyLimit\": \"15000\" }, \"CardDetails\": {",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "0541f3a44af24293bd08c10fe4c3aef1"
+    },
+    {
+      "token": "3",
+      "context": "estimated yield of 3 tons per hectare.",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "d2a9f3b6c4b946889de284970d648d50"
+    },
+    {
+      "token": "R-1",
+      "context": "Residential **Zoning District:** R-1 **Permit Conditions:** -",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "bafa3e0f36334a4f9729d71e89bf6ff3"
+    },
+    {
+      "token": "654321",
+      "context": "- Lot Number: 654321 - Administered by:",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "31,",
+      "context": "lead engineer, aged 31, has been instrumental",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "ed74502b10e94456a31823782508f3ee"
+    },
+    {
+      "token": "M54.5",
+      "context": "- ICD-10 Code: M54.5 - Description: Low",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "d949487f7830410492a46043c53a37ec"
+    },
+    {
+      "token": "88",
+      "context": "Heart Rate | 88 | | Respiratory",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "cf4d57eb259644799c045add75396825"
+    },
+    {
+      "token": "16",
+      "context": "Respiratory Rate | 16 | | Oxygen",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "cf4d57eb259644799c045add75396825"
+    },
+    {
+      "token": "<DeviceSerialNumber>490154203237518</DeviceSerialNumber>",
+      "context": "```xml <DeviceUnlockBiometricMetadata> <UserID>F48293015678</UserID> <DeviceSerialNumber>490154203237518</DeviceSerialNumber> <BiometricType>Fingerprint</BiometricType> <Timestamp>2025-06-13T16:46:06</Timestamp> <Location>",
+      "predicted": "B-credit_debit_card",
+      "expected": "O",
+      "sample_id": "771a06455ed746cead467b2a6cb3090a"
+    },
+    {
+      "token": "<Timestamp>2025-06-13T16:46:06</Timestamp>",
+      "context": "<UserID>F48293015678</UserID> <DeviceSerialNumber>490154203237518</DeviceSerialNumber> <BiometricType>Fingerprint</BiometricType> <Timestamp>2025-06-13T16:46:06</Timestamp> <Location> <Latitude>46.7789</Latitude> <Longitude>19.1456</Longitude>",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "771a06455ed746cead467b2a6cb3090a"
+    },
+    {
+      "token": "<Longitude>19.1456</Longitude>",
+      "context": "<Timestamp>2025-06-13T16:46:06</Timestamp> <Location> <Latitude>46.7789</Latitude> <Longitude>19.1456</Longitude> </Location> <Status>Successful</Status> </DeviceUnlockBiometricMetadata>",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "771a06455ed746cead467b2a6cb3090a"
+    },
+    {
+      "token": "120",
+      "context": "**Total Credits Required:** 120 **Additional Information:** -",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "214e615301eb43ee8ceef2bc02de46fe"
+    },
+    {
+      "token": "36",
+      "context": "- Lease Duration: 36 months - Monthly",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "2b957e957c994bd7bb989f8ecfd1388a"
+    },
+    {
+      "token": "555-123-4567,",
+      "context": "the following numbers: 555-123-4567, 555-987-6543. Please block",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "919a04fe2c804d648a16ee3a1bd91424"
+    },
+    {
+      "token": "555-987-6543.",
+      "context": "following numbers: 555-123-4567, 555-987-6543. Please block these",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "919a04fe2c804d648a16ee3a1bd91424"
+    },
+    {
+      "token": "37.",
+      "context": "the employee is 37.",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "4963bedd10a3495fb42ef7a41f87dc1d"
+    },
+    {
+      "token": "<FirstName>Oscar</FirstName>",
+      "context": "<Email>oscareburton@gmail.com</Email> </UserCredentials> <UserDetails> <FirstName>Oscar</FirstName> <LastName>Burke</LastName> <Gender>Male</Gender> </UserDetails>",
+      "predicted": "B-first_name",
+      "expected": "O",
+      "sample_id": "0445ea8cc4594617b61bede193fb2ee2"
+    },
+    {
+      "token": "<LastName>Burke</LastName>",
+      "context": "</UserCredentials> <UserDetails> <FirstName>Oscar</FirstName> <LastName>Burke</LastName> <Gender>Male</Gender> </UserDetails> <AccountDetails>",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "0445ea8cc4594617b61bede193fb2ee2"
+    },
+    {
+      "token": "<AccountNumber>FR76-2005-0001-1234-5678</AccountNumber>",
+      "context": "<Gender>Male</Gender> </UserDetails> <AccountDetails> <AccountNumber>FR76-2005-0001-1234-5678</AccountNumber> </AccountDetails> </IdentityManagementSystem> ```",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "0445ea8cc4594617b61bede193fb2ee2"
+    },
+    {
+      "token": "'TRK1.2.fj92k48m72.1692453214',",
+      "context": "=> { res.cookie('_trackid', 'TRK1.2.fj92k48m72.1692453214', { domain: '.mywebsite.com',",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "f8a673d5911047cda26030df7843aadb"
+    },
+    {
+      "token": "TRK1.2.fj92k48m72.1692453214,",
+      "context": "with the value TRK1.2.fj92k48m72.1692453214, and it expires",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "f8a673d5911047cda26030df7843aadb"
+    },
+    {
+      "token": "22",
+      "context": "- Respiratory Rate: 22 breaths per minute",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "7d242be8f2a549898680870783238ddb"
+    },
+    {
+      "token": "530-31-9843,",
+      "context": "social security number 530-31-9843, hereby request the",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "7497d77553d14274bcecd7c883d410a9"
+    },
+    {
+      "token": "1",
+      "context": "Biometric Verification | 1 | **Payment Information**",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "a3022987317541d9ac5740ab61eb08d9"
+    },
+    {
+      "token": "25",
+      "context": "4,321 **Session Duration:** 25 minutes **Bounce Rate:**",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "76a767051f2b4ceda1c6383fe2e25f4a"
+    },
+    {
+      "token": "40",
+      "context": "individuals who are 40 years of age",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "87d1d60e9fd74148b7e38c8d857c7fc7"
+    },
+    {
+      "token": "123456789",
+      "context": "Incident ID | 123456789 | | Reported",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "9d50ab01a7e04ac1998ba9609c1ec619"
+    },
+    {
+      "token": "1234",
+      "context": "**Citation:** 55 U.S. 1234 (2023) **Date:** 2023-07-15",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "917cc73043cf4e5d9b557b4035944999"
+    },
+    {
+      "token": "KNAXJ34G7D8874123**",
+      "context": "with **vehicle identifier KNAXJ34G7D8874123** and **license plate",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "e4692f5a32ad48de92c4cb2609ae3081"
+    },
+    {
+      "token": "72",
+      "context": "120/80, heart rate 72 beats per minute,",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "13b241bbf01f41c1bb34ac171a56376e"
+    },
+    {
+      "token": "$4.62",
+      "context": "**Sales Tax (7%):** $4.62 **Total:** $70.62 **Payment",
+      "predicted": "B-tax_id",
+      "expected": "O",
+      "sample_id": "fecd852ea3e848f29c99abce433dbc97"
+    },
+    {
+      "token": "54-year-old",
+      "context": "0004829731, is a 54-year-old male born on",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "d0a45199e9b1415b85aa191be54b81b0"
+    },
+    {
+      "token": "2023",
+      "context": "AL, 36521 | 2023 | $2,500.00 |",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "5fa07b3980d24bf2a35e0b6d897ebe92"
+    },
+    {
+      "token": "1234-5678-9012-3456",
+      "context": "- **Card Number**: 1234-5678-9012-3456 - **PIN**: 36750442",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "4a45a1765a264781bf50c70ea16d72f8"
+    },
+    {
+      "token": "TRUJ4K18904R012345,",
+      "context": "the vehicle identifier TRUJ4K18904R012345, license plate H7K-593,",
+      "predicted": "B-certificate_license_number",
+      "expected": "O",
+      "sample_id": "415c298ee1d445d9856a5f523addfc86"
+    },
+    {
+      "token": "0123456789",
+      "context": "**Unique Identification Number:** 0123456789 **Digital Photograph:** [Embedded",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "cbc85b8f669c4043a870eda40c26d84d"
+    },
+    {
+      "token": "18-35",
+      "context": "tech-savvy individuals aged 18-35 who are interested",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "ebfd964171044acf91721b3924aa563b"
+    },
+    {
+      "token": "R23-1234",
+      "context": "Documentation** **Recall Number:** R23-1234 **Vehicle Model:** BMW",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "f49458f3c23d4fb9a8a482b245be7259"
+    },
+    {
+      "token": "14-18",
+      "context": "- Youth aged 14-18 - Individuals from",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "853a6f48cc394f2fa0504c0ebe4cb827"
+    },
+    {
+      "token": "41-year-old",
+      "context": "project success. Our 41-year-old project manager, will",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "5ff75b846fe34b9db9ffa0cf95f8165e"
+    },
+    {
+      "token": "00123456789",
+      "context": "Ticket Number | 00123456789 | | Customer",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "7489a1ce5a104a0a9e0563df704be68e"
+    },
+    {
+      "token": "255.255.255.0",
+      "context": "- **Subnet Mask**: 255.255.255.0 - **Gateway**: 17.148.220.1",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "c263206a79204f4cac412e4b24011aad"
+    },
+    {
+      "token": "17.148.220.1",
+      "context": "255.255.255.0 - **Gateway**: 17.148.220.1 #### VLAN Assignment",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "c263206a79204f4cac412e4b24011aad"
+    },
+    {
+      "token": "50",
+      "context": "Supplies - **Quantity:** 50 - **Estimated Value:**",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "7b5d0d7d49b74e73a410acfe91e712d1"
+    },
+    {
+      "token": "2024-06-16",
+      "context": "Clinical Trials | 2024-06-16 | 2025-06-15 |",
+      "predicted": "B-date",
+      "expected": "O",
+      "sample_id": "a8ee779fcd2c47238c3c2e103c3cef32"
+    },
+    {
+      "token": "24",
+      "context": "expected to take 24 months to complete.",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "ae3a1960a0724aab88b01d43e94214bc"
+    },
+    {
+      "token": "12345",
+      "context": "- **User ID**: 12345 - **Race Ethnicity**:",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "f89744c8b785449fbab2aa689a9a865c"
+    },
+    {
+      "token": "Malibu",
+      "context": "Vehicle:** - Make: Malibu - Model: LT",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "b394cfd258e649629b67aaec172ef912"
+    },
+    {
+      "token": "1-800-222-1020",
+      "context": "- Customer Service: 1-800-222-1020 - Website: www.gm.com",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "b394cfd258e649629b67aaec172ef912"
+    },
+    {
+      "token": "3456789.",
+      "context": "contract number is 3456789. The product details",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "bc4e3334f9b04739bb47ae1ed33b8181"
+    },
+    {
+      "token": "$50000,",
+      "context": "renewal period is $50000, with payment terms",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "bc4e3334f9b04739bb47ae1ed33b8181"
+    },
+    {
+      "token": "19",
+      "context": "2005-07-25 - **Age**: 19 - **Education Level**:",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "4c0ed09c22444940ac4d1410929cf617"
+    },
+    {
+      "token": "2025-CR-12345",
+      "context": "Report **Case Number:** 2025-CR-12345 **Biometric Sample Details:**",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "f91f535a0f7c41fea78a221a7e8840d1"
+    },
+    {
+      "token": "Vivida",
+      "context": "Shipper Name | Vivida Goods | |",
+      "predicted": "B-first_name",
+      "expected": "O",
+      "sample_id": "ae724cf9c23243f2b6c62de8c088e375"
+    },
+    {
+      "token": "12345,",
+      "context": "Details | SKU: 12345, Quantity: 2, Description:",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "ae724cf9c23243f2b6c62de8c088e375"
+    },
+    {
+      "token": "392-74-0661",
+      "context": "providing their SSN: 392-74-0661 for documentation purposes.",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "93079bda79c84422aab462b14ae6cac1"
+    },
+    {
+      "token": "7647-01-0",
+      "context": "Hydrochloric Acid | 7647-01-0 | 300 L",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "4e0637b09ad04520972f76cde3c9eac9"
+    },
+    {
+      "token": "7664-93-9",
+      "context": "Sulfuric Acid | 7664-93-9 | 200 L",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "4e0637b09ad04520972f76cde3c9eac9"
+    },
+    {
+      "token": "67-64-1",
+      "context": "| Acetone | 67-64-1 | 100 L",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "4e0637b09ad04520972f76cde3c9eac9"
+    },
+    {
+      "token": "67-56-1",
+      "context": "| Methanol | 67-56-1 | 50 L",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "4e0637b09ad04520972f76cde3c9eac9"
+    },
+    {
+      "token": "480-82-6258",
+      "context": "BIO-7648129358 - **ssn**: 480-82-6258",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "4e0637b09ad04520972f76cde3c9eac9"
+    },
+    {
+      "token": "5",
+      "context": "call duration was 5 minutes, and the",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "b5da49fe08104cef938739203b705c38"
+    },
+    {
+      "token": "18-35",
+      "context": "Demographics:** - Age: 18-35 - Gender: All",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "8704f50d823a4e2285c745498701e3b6"
+    },
+    {
+      "token": "#12345",
+      "context": "Sons Construction Invoice #12345 Date: 07/15/2024 Customer",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "7cfea69d306c405d915b3ef8e3710d9c"
+    },
+    {
+      "token": "40",
+      "context": "| Labor | 40 hours | $80.00",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "7cfea69d306c405d915b3ef8e3710d9c"
+    },
+    {
+      "token": "56-year-old",
+      "context": "believe that our 56-year-old health plan beneficiary",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "53533226f5bd4ba1ae98fb9f66a3c0a8"
+    },
+    {
+      "token": "24",
+      "context": "be completed within 24 months. #### 2.4",
+      "predicted": "B-age",
+      "expected": "O",
+      "sample_id": "979ebecdb0a243f8addd7aecb309d5e6"
+    },
+    {
+      "token": "00:1A:2B:3C:4D:5E",
+      "context": "| 192.168.1.2 | 00:1A:2B:3C:4D:5E | Server Room",
+      "predicted": "B-ssn",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "12345,",
+      "context": "| INV09876 | 12345, Widget, 2, $19.99",
+      "predicted": "B-postcode",
+      "expected": "O",
+      "sample_id": "3ce38ab32b784f01a35702193a464861"
+    },
+    {
+      "token": "+971",
+      "context": "**Customer Service Hotline:** +971 4 214 5000",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "6a5d30948b864ab99ca7d2ec32b2874f"
+    },
+    {
+      "token": "4",
+      "context": "Service Hotline:** +971 4 214 5000",
+      "predicted": "I-phone_number",
+      "expected": "O",
+      "sample_id": "6a5d30948b864ab99ca7d2ec32b2874f"
+    },
+    {
+      "token": "214",
+      "context": "Hotline:** +971 4 214 5000",
+      "predicted": "I-phone_number",
+      "expected": "O",
+      "sample_id": "6a5d30948b864ab99ca7d2ec32b2874f"
+    },
+    {
+      "token": "5000",
+      "context": "+971 4 214 5000",
+      "predicted": "I-phone_number",
+      "expected": "O",
+      "sample_id": "6a5d30948b864ab99ca7d2ec32b2874f"
+    },
+    {
+      "token": "31536000,",
+      "context": "\"Path\": \"/\", \"Max-Age\": 31536000, \"Expiration Date\": \"February",
+      "predicted": "B-phone_number",
+      "expected": "O",
+      "sample_id": "45744cd3c759425aa854fd5b8f0cae27"
+    }
+  ]
+}

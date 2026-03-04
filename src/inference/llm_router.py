@@ -20,6 +20,8 @@ from src.core.constants import (
     ROUTABLE_ENTITIES,
     BLOCKED_ENTITIES,
     ENTITY_CLASSES_WITH_O,
+    EXTENDED_ENTITY_CLASSES_WITH_O,
+    NVIDIA_CLASS_TO_BASE,
 )
 from src.inference.prompts import PROMPT, PROMPT_V12, PROMPT_V13, PROMPT_V14_SPAN, ENTITY_CLASSES_STR, VALID_LABELS_STR
 
@@ -165,6 +167,7 @@ class LLMRouter:
         context_window: int = 400,
         span_prompt_version: str = "V14_SPAN",
         use_structured_outputs: bool = True,
+        use_extended_labels: bool = False,
     ):
         """
         Initialize the LLM Router.
@@ -178,14 +181,19 @@ class LLMRouter:
             cache_size: Maximum cache size
             valid_labels: Set of valid label strings for validation
             context_window: Character window size around target for context extraction
-            span_prompt_version: Prompt version for span routing (V14_SPAN or V15_SPAN)
+            span_prompt_version: Prompt version for span routing (V14_SPAN, V15_SPAN, V16_SPAN)
             use_structured_outputs: Use OpenAI json_schema mode (only for OpenAI)
+            use_extended_labels: Accept NVIDIA-alias entity names in responses (e.g. "ssn",
+                "certificate_license_number"); mapped to base model classes automatically.
+                Automatically enabled when span_prompt_version=="V16_SPAN".
         """
         self.source = source.lower()
         self.model = model if self.source == "openai" else ollama_model
         self.cache = LLMCache(max_size=cache_size) if enable_cache else None
         self.valid_labels = valid_labels or VALID_LABELS_SET
-        self.valid_entity_classes = ENTITY_CLASSES_WITH_O
+        # V16_SPAN always uses extended labels (NVIDIA aliases included in the prompt)
+        _use_extended = use_extended_labels or (span_prompt_version == "V16_SPAN")
+        self.valid_entity_classes = EXTENDED_ENTITY_CLASSES_WITH_O if _use_extended else ENTITY_CLASSES_WITH_O
         self.client = None
         self.context_window = context_window
         self.use_structured_outputs = use_structured_outputs and self.source == "openai"
@@ -537,11 +545,18 @@ class LLMRouter:
             if entity_class.startswith(("B-", "I-")):
                 entity_class = entity_class[2:]
             if entity_class not in self.valid_entity_classes:
-                logger.warning(f"[WARNING] Invalid entity class '{entity_class}' → fallback to '{fallback_label}'")
-                label = fallback_label
-            else:
-                label = self._class_to_bio(entity_class, prev_label)
-                logger.debug(f"[V13] class='{entity_class}' prev='{prev_label}' → '{label}'")
+                # Try NVIDIA alias lookup (case-insensitive) before falling back.
+                # e.g. "CERTIFICATE_LICENSE_NUMBER" → "DRIVERLICENSENUM"
+                nvidia_mapped = NVIDIA_CLASS_TO_BASE.get(entity_class.lower())
+                if nvidia_mapped is not None:
+                    logger.debug(f"[NVIDIA alias] '{entity_class}' → '{nvidia_mapped}'")
+                    entity_class = nvidia_mapped
+                else:
+                    logger.warning(f"[WARNING] Invalid entity class '{entity_class}' → fallback to '{fallback_label}'")
+                    label = fallback_label
+                    return {"is_pii": label != "O", "corrected_label": label, "reasoning": reasoning}
+            label = self._class_to_bio(entity_class, prev_label)
+            logger.debug(f"[V13] class='{entity_class}' prev='{prev_label}' → '{label}'")
             return {"is_pii": label != "O", "corrected_label": label, "reasoning": reasoning}
 
         # --- V9/V12 paradigm: full BIO label with consistency validation ---

@@ -24,11 +24,13 @@ class NerGuardHybrid(SystemWrapper):
         device: str = "auto",
         llm_source: str = "openai",
         llm_model: str = "gpt-4o",
+        span_prompt_version: str = "V14_SPAN",
     ):
         self.model_path = model_path
         self.device_str = device
         self.llm_source = llm_source
         self.llm_model = llm_model
+        self.span_prompt_version = span_prompt_version
         self.model = None
         self.tokenizer = None
         self.id2label = None
@@ -80,7 +82,12 @@ class NerGuardHybrid(SystemWrapper):
                 self._native_labels.add(label.replace("B-", "").replace("I-", ""))
 
         # Initialize routing components
-        self.router = LLMRouter(source=self.llm_source, model=self.llm_model)
+        self.router = LLMRouter(
+            source=self.llm_source,
+            model=self.llm_model,
+            ollama_model=self.llm_model,
+            span_prompt_version=self.span_prompt_version,
+        )
         self.entity_router = EntitySpecificRouter(
             entropy_threshold=DEFAULT_ENTROPY_THRESHOLD,
             confidence_threshold=DEFAULT_CONFIDENCE_THRESHOLD,
