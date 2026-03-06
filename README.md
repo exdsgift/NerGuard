@@ -5,14 +5,17 @@
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=flat&logo=python&logoColor=white" alt="Python"></a>
   <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white" alt="PyTorch"></a>
   <a href="https://huggingface.co/"><img src="https://img.shields.io/badge/HuggingFace-Transformers-FFD21E?style=flat&logo=huggingface&logoColor=black" alt="HuggingFace"></a>
-  <a href="https://openai.com/"><img src="https://img.shields.io/badge/OpenAI-compatible-412991?style=flat&logo=openai&logoColor=white" alt="OpenAI"></a>
+  <a href="https://ollama.com/"><img src="https://img.shields.io/badge/Ollama-local%20inference-black?style=flat&logo=ollama&logoColor=white" alt="Ollama"></a>
+  <a href="https://github.com/astral-sh/uv"><img src="https://img.shields.io/badge/uv-package%20manager-DE5FE9?style=flat&logo=astral&logoColor=white" alt="uv"></a>
+  <img src="https://img.shields.io/badge/Languages-EN%20·%20DE%20·%20FR%20·%20IT%20·%20ES%20·%20PT%20·%20NL%20·%20PL-4CAF50?style=flat" alt="8 Languages">
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat" alt="MIT License">
   <br><br>
   <a href="https://huggingface.co/exdsgift/NerGuard-0.3B">🤗 Model on HuggingFace</a>
 </div>
 
 ---
 
-Organizations subject to GDPR cannot send documents to external APIs for PII detection, yet purely rule-based tools miss contextual entities, and neural models alone produce too many false negatives to be trusted for compliance. NerGuard resolves this trade-off through a three-stage hybrid architecture: a fine-tuned mDeBERTa-v3-base (279M params) classifies 20 PII entity types across 8 European languages, routing only the spans where it is genuinely uncertain to a secondary LLM for disambiguation,  reducing API calls by ~50% vs. naive always-route strategies. A multi-mode regex layer handles structured patterns (Luhn check for credit cards, format validation for SSNs) before and after neural inference. The system is designed for **fully local, on-premise deployment** via [Ollama](https://ollama.com/): `qwen2.5:7b` achieves within 0.002 F1-macro of GPT-4o at zero API cost, keeping PII entirely within the organization's infrastructure. On the NVIDIA/Nemotron-PII benchmark (1,000 samples, 7 systems), NerGuard ranks **1st on F1-macro (0.5069) and F1-micro (0.7015)** at a median latency of **41 ms** — 2.1× faster than Microsoft Presidio.
+Organizations subject to GDPR cannot send documents to external APIs for PII detection, yet purely rule-based tools miss contextual entities, and neural models alone produce too many false negatives to be trusted for compliance. NerGuard resolves this trade-off through a three-stage hybrid architecture: a fine-tuned mDeBERTa-v3-base (279M params) classifies 20 PII entity types across 8 European languages, routing only the spans where it is genuinely uncertain to a secondary LLM for disambiguation,  reducing API calls by ~50% vs. naive always-route strategies. A multi-mode regex layer handles structured patterns (Luhn check for credit cards, format validation for SSNs) before and after neural inference. The system is designed for **fully local, on-premise deployment** via [Ollama](https://ollama.com/): `qwen2.5:7b` achieves within 0.002 F1-macro of GPT-4o at zero API cost, keeping PII entirely within the organization's infrastructure. On the NVIDIA/Nemotron-PII benchmark (1,000 samples, 7 systems), NerGuard ranks **1st on F1-macro (0.5069) and F1-micro (0.7015)** at a median latency of **41 ms**, 2.1× faster than Microsoft Presidio.
 
 ---
 
