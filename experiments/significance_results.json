@@ -1,0 +1,71 @@
+[
+  {
+    "domain": "PII (nvidia-pii)",
+    "n_samples": 500,
+    "bootstrap": {
+      "p_value": 0.0,
+      "mean_delta": 0.08486209258926314,
+      "ci_lower": 0.06694004942130162,
+      "ci_upper": 0.10289096605011024,
+      "n_samples": 500,
+      "n_bootstrap": 10000,
+      "scores_a_mean": 0.5530753187473001,
+      "scores_b_mean": 0.6379374113365632
+    },
+    "mcnemar": {
+      "p_value": 0.0,
+      "chi2": 208.14114391143912,
+      "n_a_correct_b_wrong": 304,
+      "n_b_correct_a_wrong": 780,
+      "n_both_correct": 66345,
+      "n_both_wrong": 930,
+      "n_tokens": 68359
+    }
+  },
+  {
+    "domain": "Biomedical (BC5CDR)",
+    "n_samples": 500,
+    "bootstrap": {
+      "p_value": 0.0235,
+      "mean_delta": 0.004107864357864588,
+      "ci_lower": 0.0007887788600289298,
+      "ci_upper": 0.007904709595959666,
+      "n_samples": 500,
+      "n_bootstrap": 10000,
+      "scores_a_mean": 0.6369066453154687,
+      "scores_b_mean": 0.6410145096733333
+    },
+    "mcnemar": {
+      "p_value": 0.4414183267820536,
+      "chi2": 0.5925925925925926,
+      "n_a_correct_b_wrong": 11,
+      "n_b_correct_a_wrong": 16,
+      "n_both_correct": 9571,
+      "n_both_wrong": 218,
+      "n_tokens": 9816
+    }
+  },
+  {
+    "domain": "Financial (BUSTER)",
+    "n_samples": 500,
+    "bootstrap": {
+      "p_value": 0.2246,
+      "mean_delta": -0.00427799424089359,
+      "ci_lower": -0.01139822445505789,
+      "ci_upper": 0.002490447568789938,
+      "n_samples": 500,
+      "n_bootstrap": 10000,
+      "scores_a_mean": 0.6811391551855113,
+      "scores_b_mean": 0.6768611609446177
+    },
+    "mcnemar": {
+      "p_value": 0.5760892814194605,
+      "chi2": 0.31259968102073366,
+      "n_a_correct_b_wrong": 306,
+      "n_b_correct_a_wrong": 321,
+      "n_both_correct": 444047,
+      "n_both_wrong": 3776,
+      "n_tokens": 448450
+    }
+  }
+]

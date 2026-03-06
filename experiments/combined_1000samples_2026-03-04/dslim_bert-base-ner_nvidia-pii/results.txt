@@ -1,0 +1,48 @@
+======================================================================
+NER PII Benchmark — dslim/bert-base-NER × nvidia-pii
+======================================================================
+
+Tier: 2
+Evaluated labels: 4
+  System labels: 4
+  Dataset labels: 54
+  Mapping applied: True
+
+Samples: 1000
+Tokens: 135894
+
+--- Token-Level Metrics ---
+  Precision (macro/micro/weighted): 0.4134 / 0.4258 / 0.7656
+  Recall    (macro/micro/weighted): 0.4368 / 0.5555 / 0.5555
+  F1        (macro/micro/weighted): 0.3331 / 0.4821 / 0.5760
+
+--- Entity-Level Metrics (seqeval) ---
+  Precision: 0.5409
+  Recall:    0.7332
+  F1:        0.6225
+
+--- Latency ---
+  Mean:   37.59 ms
+  Median: 33.84 ms
+  P95:    62.14 ms
+  P99:    64.06 ms
+  Throughput: 26.6 samples/sec
+
+--- Per-Entity F1 Scores ---
+  B-first_name                   P=1.0000  R=0.8218  F1=0.9022  (n=595.0)
+  I-street_address               P=0.9862  R=0.4468  F1=0.6149  (n=479.0)
+  B-last_name                    P=0.7676  R=0.2547  F1=0.3825  (n=428.0)
+  B-city                         P=0.2249  R=0.9005  F1=0.3598  (n=211.0)
+  B-street_address               P=0.2308  R=0.2295  F1=0.2301  (n=183.0)
+  I-city                         P=0.0976  R=0.8409  F1=0.1749  (n=44.0)
+  I-first_name                   P=0.0000  R=0.0000  F1=0.0000  (n=5.0)
+  I-last_name                    P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+
+--- Per-Length Bucket ---
+  short   : F1=0.4283 (n=9)
+  medium  : F1=0.3462 (n=238)
+  long    : F1=0.3295 (n=753)
+
+--- Error Summary ---
+  False positives: 288
+  False negatives: 391

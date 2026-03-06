@@ -1,0 +1,24 @@
+[
+  {
+    "system": "NerGuard Base",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.41682815056866884,
+    "f1_micro": 0.6114264093832765,
+    "entity_f1": 0.6078380482740722,
+    "latency_mean_ms": 34.980674266815186,
+    "n_evaluated_labels": 16,
+    "tier": 2,
+    "n_samples": 500
+  },
+  {
+    "system": "NerGuard Hybrid V2 (gpt-4o)",
+    "dataset": "nvidia-pii",
+    "f1_macro": 0.6094239454041415,
+    "f1_micro": 0.7333202895715124,
+    "entity_f1": 0.697961373390558,
+    "latency_mean_ms": 39.893935680389404,
+    "n_evaluated_labels": 16,
+    "tier": 2,
+    "n_samples": 500
+  }
+]

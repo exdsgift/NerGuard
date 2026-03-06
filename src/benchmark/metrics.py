@@ -87,6 +87,10 @@ class BenchmarkMetrics:
     false_positives: List[Dict] = field(default_factory=list)
     false_negatives: List[Dict] = field(default_factory=list)
 
+    # Aligned predictions (for significance tests)
+    aligned_y_true: List[List[str]] = field(default_factory=list)
+    aligned_y_pred: List[List[str]] = field(default_factory=list)
+
     # Metadata
     n_samples: int = 0
     n_tokens: int = 0
@@ -213,6 +217,8 @@ class MetricsComputer:
             y_pred_seq.append(pred_masked)
 
         metrics.n_tokens = len(y_true_flat)
+        metrics.aligned_y_true = y_true_seq
+        metrics.aligned_y_pred = y_pred_seq
         metrics.n_evaluated_labels = len(evaluated_labels)
 
         if not y_true_flat:

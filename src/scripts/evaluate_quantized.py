@@ -14,13 +14,18 @@ import argparse
 import logging
 import warnings
 
+import json
 import torch
 import numpy as np
 import onnxruntime as ort
-from sklearn.metrics import f1_score, precision_score, recall_score
 from datasets import load_from_disk
 from transformers import AutoTokenizer, AutoModelForTokenClassification
 from optimum.onnxruntime import ORTModelForTokenClassification
+from seqeval.metrics import (
+    f1_score as seqeval_f1,
+    precision_score as seqeval_precision,
+    recall_score as seqeval_recall,
+)
 from tqdm import tqdm
 
 from src.core.constants import DEFAULT_MODEL_PATH, DEFAULT_DATA_PATH
@@ -50,11 +55,11 @@ def get_model_size(path):
     return total / (1024 * 1024)
 
 
-def evaluate_onnx_model(model, tokenizer, dataset, desc="Evaluating ONNX"):
-    """Evaluate an ONNX model on the dataset."""
+def evaluate_onnx_model(model, tokenizer, dataset, id2label, desc="Evaluating ONNX"):
+    """Evaluate an ONNX model on the dataset using span-level (seqeval) metrics."""
     latencies = []
-    all_preds = []
-    all_labels = []
+    all_preds_seq = []
+    all_labels_seq = []
 
     # Warmup
     dummy_text = "Warmup routine for stable latency measurement."
@@ -82,32 +87,31 @@ def evaluate_onnx_model(model, tokenizer, dataset, desc="Evaluating ONNX"):
         predictions = np.argmax(outputs.logits, axis=-1)[0]
         latencies.append((end_time - start_time) * 1000)
 
-        active_labels = [l for l in labels if l != -100]
-        active_preds = [p for p, l in zip(predictions, labels) if l != -100]
-
-        all_labels.extend(active_labels)
-        all_preds.extend(active_preds)
+        sample_labels = []
+        sample_preds = []
+        for p, l in zip(predictions, labels):
+            if l != -100:
+                sample_labels.append(id2label[l])
+                sample_preds.append(id2label[p])
+        all_labels_seq.append(sample_labels)
+        all_preds_seq.append(sample_preds)
 
     return {
         "latency": np.mean(latencies),
         "latency_std": np.std(latencies),
-        "f1": f1_score(all_labels, all_preds, average="weighted", zero_division=0),
-        "precision": precision_score(
-            all_labels, all_preds, average="weighted", zero_division=0
-        ),
-        "recall": recall_score(
-            all_labels, all_preds, average="weighted", zero_division=0
-        ),
+        "f1": seqeval_f1(all_labels_seq, all_preds_seq, zero_division=0),
+        "precision": seqeval_precision(all_labels_seq, all_preds_seq, zero_division=0),
+        "recall": seqeval_recall(all_labels_seq, all_preds_seq, zero_division=0),
     }
 
 
-def evaluate_pytorch_model(model, tokenizer, dataset, device="cpu", desc="Evaluating PyTorch"):
-    """Evaluate a PyTorch model on the dataset."""
+def evaluate_pytorch_model(model, tokenizer, dataset, id2label, device="cpu", desc="Evaluating PyTorch"):
+    """Evaluate a PyTorch model on the dataset using span-level (seqeval) metrics."""
     model.to(device)
     model.eval()
     latencies = []
-    all_preds = []
-    all_labels = []
+    all_preds_seq = []
+    all_labels_seq = []
 
     # Warmup
     dummy_text = "Warmup routine for stable latency measurement."
@@ -134,22 +138,21 @@ def evaluate_pytorch_model(model, tokenizer, dataset, device="cpu", desc="Evalua
         predictions = torch.argmax(outputs.logits, dim=-1)[0].cpu().numpy()
         latencies.append((end_time - start_time) * 1000)
 
-        active_labels = [l for l in labels if l != -100]
-        active_preds = [p for p, l in zip(predictions, labels) if l != -100]
-
-        all_labels.extend(active_labels)
-        all_preds.extend(active_preds)
+        sample_labels = []
+        sample_preds = []
+        for p, l in zip(predictions, labels):
+            if l != -100:
+                sample_labels.append(id2label[l])
+                sample_preds.append(id2label[int(p)])
+        all_labels_seq.append(sample_labels)
+        all_preds_seq.append(sample_preds)
 
     return {
         "latency": np.mean(latencies),
         "latency_std": np.std(latencies),
-        "f1": f1_score(all_labels, all_preds, average="weighted", zero_division=0),
-        "precision": precision_score(
-            all_labels, all_preds, average="weighted", zero_division=0
-        ),
-        "recall": recall_score(
-            all_labels, all_preds, average="weighted", zero_division=0
-        ),
+        "f1": seqeval_f1(all_labels_seq, all_preds_seq, zero_division=0),
+        "precision": seqeval_precision(all_labels_seq, all_preds_seq, zero_division=0),
+        "recall": seqeval_recall(all_labels_seq, all_preds_seq, zero_division=0),
     }
 
 
@@ -263,9 +266,14 @@ def main():
         dataset = dataset.select(range(min(args.sample_limit, len(dataset))))
     logger.info(f"  Loaded {len(dataset)} samples")
 
-    # Load tokenizer
+    # Load tokenizer and id2label mapping
     logger.info(f"Loading tokenizer from {args.original_model_path}...")
     tokenizer = AutoTokenizer.from_pretrained(args.original_model_path)
+
+    config_path = os.path.join(args.original_model_path, "config.json")
+    with open(config_path) as f:
+        config = json.load(f)
+    id2label = {int(k): v for k, v in config["id2label"].items()}
 
     # Create output directory
     os.makedirs(args.output_dir, exist_ok=True)
@@ -284,7 +292,7 @@ def main():
     )
 
     quantized_results = evaluate_onnx_model(
-        quantized_model, tokenizer, dataset, desc="Evaluating Quantized INT8"
+        quantized_model, tokenizer, dataset, id2label, desc="Evaluating Quantized INT8"
     )
     quantized_size = os.path.getsize(quantized_model_path) / (1024 * 1024)
 
@@ -297,7 +305,7 @@ def main():
             args.original_model_path
         )
         baseline_results = evaluate_pytorch_model(
-            baseline_model, tokenizer, dataset, device="cpu", desc="Evaluating Baseline FP32"
+            baseline_model, tokenizer, dataset, id2label, device="cpu", desc="Evaluating Baseline FP32"
         )
         baseline_size = get_model_size(args.original_model_path)
 

@@ -1,0 +1,812 @@
+{
+  "B-AccrualForEnvironmentalLossContingencies": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 0.0
+  },
+  "B-AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife": {
+    "precision": 0.3333333333333333,
+    "recall": 0.14285714285714285,
+    "f1": 0.2,
+    "support": 7.0
+  },
+  "B-AllocatedShareBasedCompensationExpense": {
+    "precision": 0.9047619047619048,
+    "recall": 0.95,
+    "f1": 0.926829268292683,
+    "support": 20.0
+  },
+  "B-AmortizationOfFinancingCosts": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 4.0
+  },
+  "B-AmortizationOfIntangibleAssets": {
+    "precision": 0.7,
+    "recall": 1.0,
+    "f1": 0.8235294117647058,
+    "support": 7.0
+  },
+  "B-AntidilutiveSecuritiesExcludedFromComputationOfEarningsPerShareAmount": {
+    "precision": 0.9444444444444444,
+    "recall": 1.0,
+    "f1": 0.9714285714285714,
+    "support": 17.0
+  },
+  "B-AreaOfRealEstateProperty": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 0.0
+  },
+  "B-AssetImpairmentCharges": {
+    "precision": 1.0,
+    "recall": 0.4444444444444444,
+    "f1": 0.6153846153846154,
+    "support": 9.0
+  },
+  "B-BusinessAcquisitionEquityInterestsIssuedOrIssuableNumberOfSharesIssued": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 5.0
+  },
+  "B-BusinessAcquisitionPercentageOfVotingInterestsAcquired": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1.0
+  },
+  "B-BusinessCombinationAcquisitionRelatedCosts": {
+    "precision": 0.6,
+    "recall": 1.0,
+    "f1": 0.75,
+    "support": 3.0
+  },
+  "B-BusinessCombinationConsiderationTransferred1": {
+    "precision": 0.4,
+    "recall": 0.8,
+    "f1": 0.5333333333333333,
+    "support": 5.0
+  },
+  "B-BusinessCombinationContingentConsiderationLiability": {
+    "precision": 1.0,
+    "recall": 0.25,
+    "f1": 0.4,
+    "support": 4.0
+  },
+  "B-BusinessCombinationRecognizedIdentifiableAssetsAcquiredAndLiabilitiesAssumedIntangibleAssetsOtherThanGoodwill": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 1.0
+  },
+  "B-CapitalizedContractCostAmortization": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 4.0
+  },
+  "B-CashAndCashEquivalentsFairValueDisclosure": {
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1": 0.6666666666666666,
+    "support": 4.0
+  },
+  "B-ClassOfWarrantOrRightExercisePriceOfWarrantsOrRights1": {
+    "precision": 0.7142857142857143,
+    "recall": 0.625,
+    "f1": 0.6666666666666666,
+    "support": 8.0
+  },
+  "B-CommonStockCapitalSharesReservedForFutureIssuance": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 3.0
+  },
+  "B-CommonStockDividendsPerShareDeclared": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 4.0
+  },
+  "B-CommonStockParOrStatedValuePerShare": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 2.0
+  },
+  "B-CommonStockSharesOutstanding": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1.0
+  },
+  "B-ConcentrationRiskPercentage1": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 13.0
+  },
+  "B-ContractWithCustomerLiability": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 2.0
+  },
+  "B-ContractWithCustomerLiabilityRevenueRecognized": {
+    "precision": 0.5555555555555556,
+    "recall": 0.8333333333333334,
+    "f1": 0.6666666666666666,
+    "support": 6.0
+  },
+  "B-CumulativeEffectOfNewAccountingPrincipleInPeriodOfAdoption": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1.0
+  },
+  "B-DebtInstrumentBasisSpreadOnVariableRate1": {
+    "precision": 0.9459459459459459,
+    "recall": 0.9210526315789473,
+    "f1": 0.9333333333333333,
+    "support": 38.0
+  },
+  "B-DebtInstrumentCarryingAmount": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 6.0
+  },
+  "B-DebtInstrumentConvertibleConversionPrice1": {
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "f1": 0.9090909090909091,
+    "support": 5.0
+  },
+  "B-DebtInstrumentFaceAmount": {
+    "precision": 0.6739130434782609,
+    "recall": 0.7560975609756098,
+    "f1": 0.7126436781609196,
+    "support": 41.0
+  },
+  "B-DebtInstrumentFairValue": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 4.0
+  },
+  "B-DebtInstrumentInterestRateEffectivePercentage": {
+    "precision": 0.4375,
+    "recall": 0.875,
+    "f1": 0.5833333333333334,
+    "support": 8.0
+  },
+  "B-DebtInstrumentInterestRateStatedPercentage": {
+    "precision": 0.8979591836734694,
+    "recall": 0.9361702127659575,
+    "f1": 0.9166666666666666,
+    "support": 47.0
+  },
+  "B-DebtInstrumentMaturityDate": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 3.0
+  },
+  "B-DebtInstrumentRedemptionPricePercentage": {
+    "precision": 0.42857142857142855,
+    "recall": 1.0,
+    "f1": 0.6,
+    "support": 3.0
+  },
+  "B-DebtInstrumentTerm": {
+    "precision": 0.7142857142857143,
+    "recall": 0.7142857142857143,
+    "f1": 0.7142857142857143,
+    "support": 7.0
+  },
+  "B-DebtInstrumentUnamortizedDiscount": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 2.0
+  },
+  "B-DebtWeightedAverageInterestRate": {
+    "precision": 1.0,
+    "recall": 0.3333333333333333,
+    "f1": 0.5,
+    "support": 6.0
+  },
+  "B-DeferredFinanceCostsGross": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 2.0
+  },
+  "B-DeferredFinanceCostsNet": {
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "f1": 0.8,
+    "support": 4.0
+  },
+  "B-DefinedBenefitPlanContributionsByEmployer": {
+    "precision": 1.0,
+    "recall": 0.2,
+    "f1": 0.3333333333333333,
+    "support": 5.0
+  },
+  "B-DefinedContributionPlanCostRecognized": {
+    "precision": 0.4,
+    "recall": 1.0,
+    "f1": 0.5714285714285714,
+    "support": 2.0
+  },
+  "B-Depreciation": {
+    "precision": 0.8571428571428571,
+    "recall": 1.0,
+    "f1": 0.9230769230769231,
+    "support": 6.0
+  },
+  "B-DerivativeFixedInterestRate": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 4.0
+  },
+  "B-DerivativeNotionalAmount": {
+    "precision": 1.0,
+    "recall": 0.875,
+    "f1": 0.9333333333333333,
+    "support": 16.0
+  },
+  "B-DisposalGroupIncludingDiscontinuedOperationConsideration": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 6.0
+  },
+  "B-EffectiveIncomeTaxRateContinuingOperations": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 11.0
+  },
+  "B-EffectiveIncomeTaxRateReconciliationAtFederalStatutoryIncomeTaxRate": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 4.0
+  },
+  "B-EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognized": {
+    "precision": 0.7142857142857143,
+    "recall": 1.0,
+    "f1": 0.8333333333333334,
+    "support": 10.0
+  },
+  "B-EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognizedPeriodForRecognition1": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 14.0
+  },
+  "B-EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognizedShareBasedAwardsOtherThanOptions": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 3.0
+  },
+  "B-EmployeeServiceShareBasedCompensationTaxBenefitFromCompensationExpense": {
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1": 0.6666666666666666,
+    "support": 4.0
+  },
+  "B-EquityMethodInvestmentOwnershipPercentage": {
+    "precision": 0.35,
+    "recall": 0.7,
+    "f1": 0.4666666666666667,
+    "support": 10.0
+  },
+  "B-EquityMethodInvestments": {
+    "precision": 1.0,
+    "recall": 0.4,
+    "f1": 0.5714285714285714,
+    "support": 5.0
+  },
+  "B-FiniteLivedIntangibleAssetUsefulLife": {
+    "precision": 0.2222222222222222,
+    "recall": 0.4,
+    "f1": 0.2857142857142857,
+    "support": 5.0
+  },
+  "B-GainsLossesOnExtinguishmentOfDebt": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 1.0
+  },
+  "B-Goodwill": {
+    "precision": 1.0,
+    "recall": 0.8888888888888888,
+    "f1": 0.9411764705882353,
+    "support": 9.0
+  },
+  "B-GoodwillImpairmentLoss": {
+    "precision": 1.0,
+    "recall": 0.6666666666666666,
+    "f1": 0.8,
+    "support": 3.0
+  },
+  "B-GuaranteeObligationsMaximumExposure": {
+    "precision": 1.0,
+    "recall": 0.3333333333333333,
+    "f1": 0.5,
+    "support": 3.0
+  },
+  "B-IncomeTaxExpenseBenefit": {
+    "precision": 1.0,
+    "recall": 0.6428571428571429,
+    "f1": 0.782608695652174,
+    "support": 14.0
+  },
+  "B-InterestExpense": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 3.0
+  },
+  "B-InterestExpenseDebt": {
+    "precision": 0.25,
+    "recall": 0.5,
+    "f1": 0.3333333333333333,
+    "support": 4.0
+  },
+  "B-LeaseAndRentalExpense": {
+    "precision": 0.16666666666666666,
+    "recall": 1.0,
+    "f1": 0.2857142857142857,
+    "support": 2.0
+  },
+  "B-LesseeOperatingLeaseRenewalTerm": {
+    "precision": 1.0,
+    "recall": 0.25,
+    "f1": 0.4,
+    "support": 8.0
+  },
+  "B-LesseeOperatingLeaseTermOfContract": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 3.0
+  },
+  "B-LettersOfCreditOutstandingAmount": {
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "f1": 0.8,
+    "support": 6.0
+  },
+  "B-LineOfCredit": {
+    "precision": 0.6153846153846154,
+    "recall": 0.6153846153846154,
+    "f1": 0.6153846153846154,
+    "support": 13.0
+  },
+  "B-LineOfCreditFacilityCurrentBorrowingCapacity": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 7.0
+  },
+  "B-LineOfCreditFacilityInterestRateAtPeriodEnd": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 2.0
+  },
+  "B-LineOfCreditFacilityMaximumBorrowingCapacity": {
+    "precision": 0.796875,
+    "recall": 0.8793103448275862,
+    "f1": 0.8360655737704918,
+    "support": 58.0
+  },
+  "B-LineOfCreditFacilityRemainingBorrowingCapacity": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 5.0
+  },
+  "B-LineOfCreditFacilityUnusedCapacityCommitmentFeePercentage": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 3.0
+  },
+  "B-LongTermDebt": {
+    "precision": 1.0,
+    "recall": 0.125,
+    "f1": 0.2222222222222222,
+    "support": 8.0
+  },
+  "B-LongTermDebtFairValue": {
+    "precision": 0.2727272727272727,
+    "recall": 1.0,
+    "f1": 0.42857142857142855,
+    "support": 3.0
+  },
+  "B-LossContingencyAccrualAtCarryingValue": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 4.0
+  },
+  "B-LossContingencyDamagesSoughtValue": {
+    "precision": 0.5,
+    "recall": 0.5,
+    "f1": 0.5,
+    "support": 4.0
+  },
+  "B-MinorityInterestOwnershipPercentageByNoncontrollingOwners": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 8.0
+  },
+  "B-MinorityInterestOwnershipPercentageByParent": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 5.0
+  },
+  "B-NumberOfOperatingSegments": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 5.0
+  },
+  "B-NumberOfRealEstateProperties": {
+    "precision": 1.0,
+    "recall": 0.875,
+    "f1": 0.9333333333333333,
+    "support": 16.0
+  },
+  "B-NumberOfReportableSegments": {
+    "precision": 0.7647058823529411,
+    "recall": 1.0,
+    "f1": 0.8666666666666667,
+    "support": 13.0
+  },
+  "B-OperatingLeaseCost": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 0.0
+  },
+  "B-OperatingLeaseExpense": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 10.0
+  },
+  "B-OperatingLeaseLiability": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 5.0
+  },
+  "B-OperatingLeasePayments": {
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1": 0.6666666666666666,
+    "support": 4.0
+  },
+  "B-OperatingLeaseRightOfUseAsset": {
+    "precision": 0.625,
+    "recall": 0.8333333333333334,
+    "f1": 0.7142857142857143,
+    "support": 6.0
+  },
+  "B-OperatingLeaseWeightedAverageDiscountRatePercent": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 2.0
+  },
+  "B-OperatingLeaseWeightedAverageRemainingLeaseTerm1": {
+    "precision": 1.0,
+    "recall": 0.75,
+    "f1": 0.8571428571428571,
+    "support": 4.0
+  },
+  "B-OperatingLossCarryforwards": {
+    "precision": 1.0,
+    "recall": 0.3333333333333333,
+    "f1": 0.5,
+    "support": 3.0
+  },
+  "B-PaymentsToAcquireBusinessesGross": {
+    "precision": 1.0,
+    "recall": 0.14285714285714285,
+    "f1": 0.25,
+    "support": 7.0
+  },
+  "B-PreferredStockDividendRatePercentage": {
+    "precision": 0.6666666666666666,
+    "recall": 0.8,
+    "f1": 0.7272727272727273,
+    "support": 5.0
+  },
+  "B-ProceedsFromIssuanceOfCommonStock": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 2.0
+  },
+  "B-PropertyPlantAndEquipmentUsefulLife": {
+    "precision": 0.5,
+    "recall": 0.5,
+    "f1": 0.5,
+    "support": 2.0
+  },
+  "B-PublicUtilitiesRequestedRateIncreaseDecreaseAmount": {
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1": 0.6666666666666666,
+    "support": 4.0
+  },
+  "B-RelatedPartyTransactionAmountsOfTransaction": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 3.0
+  },
+  "B-RelatedPartyTransactionExpensesFromTransactionsWithRelatedParty": {
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1": 0.6666666666666666,
+    "support": 8.0
+  },
+  "B-RepaymentsOfDebt": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 5.0
+  },
+  "B-RestructuringCharges": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 2.0
+  },
+  "B-RevenueFromContractWithCustomerExcludingAssessedTax": {
+    "precision": 0.6,
+    "recall": 0.3,
+    "f1": 0.4,
+    "support": 10.0
+  },
+  "B-RevenueFromRelatedParties": {
+    "precision": 0.5555555555555556,
+    "recall": 0.625,
+    "f1": 0.5882352941176471,
+    "support": 8.0
+  },
+  "B-RevenueRemainingPerformanceObligation": {
+    "precision": 0.875,
+    "recall": 0.875,
+    "f1": 0.875,
+    "support": 8.0
+  },
+  "B-Revenues": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 2.0
+  },
+  "B-SaleOfStockNumberOfSharesIssuedInTransaction": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 11.0
+  },
+  "B-SaleOfStockPricePerShare": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 6.0
+  },
+  "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardAwardVestingPeriod1": {
+    "precision": 0.38461538461538464,
+    "recall": 0.7142857142857143,
+    "f1": 0.5,
+    "support": 7.0
+  },
+  "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsGrantsInPeriod": {
+    "precision": 0.8333333333333334,
+    "recall": 0.8333333333333334,
+    "f1": 0.8333333333333334,
+    "support": 6.0
+  },
+  "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsGrantsInPeriodWeightedAverageGrantDateFairValue": {
+    "precision": 0.42857142857142855,
+    "recall": 1.0,
+    "f1": 0.6,
+    "support": 3.0
+  },
+  "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedNumber": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 2.0
+  },
+  "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodTotalFairValue": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 6.0
+  },
+  "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAuthorized": {
+    "precision": 1.0,
+    "recall": 0.2857142857142857,
+    "f1": 0.4444444444444444,
+    "support": 7.0
+  },
+  "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAvailableForGrant": {
+    "precision": 0.3157894736842105,
+    "recall": 1.0,
+    "f1": 0.48,
+    "support": 6.0
+  },
+  "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisesInPeriodTotalIntrinsicValue": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 4.0
+  },
+  "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsGrantsInPeriodGross": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1.0
+  },
+  "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageGrantDateFairValue": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 3.0
+  },
+  "B-SharePrice": {
+    "precision": 1.0,
+    "recall": 0.25,
+    "f1": 0.4,
+    "support": 4.0
+  },
+  "B-SharebasedCompensationArrangementBySharebasedPaymentAwardAwardVestingRightsPercentage": {
+    "precision": 1.0,
+    "recall": 0.3333333333333333,
+    "f1": 0.5,
+    "support": 3.0
+  },
+  "B-SharebasedCompensationArrangementBySharebasedPaymentAwardExpirationPeriod": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 4.0
+  },
+  "B-StockIssuedDuringPeriodSharesNewIssues": {
+    "precision": 0.17647058823529413,
+    "recall": 1.0,
+    "f1": 0.3,
+    "support": 3.0
+  },
+  "B-StockRepurchaseProgramAuthorizedAmount1": {
+    "precision": 1.0,
+    "recall": 0.75,
+    "f1": 0.8571428571428571,
+    "support": 4.0
+  },
+  "B-StockRepurchaseProgramRemainingAuthorizedRepurchaseAmount1": {
+    "precision": 0.75,
+    "recall": 1.0,
+    "f1": 0.8571428571428571,
+    "support": 3.0
+  },
+  "B-StockRepurchasedAndRetiredDuringPeriodShares": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 3.0
+  },
+  "B-StockRepurchasedDuringPeriodShares": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 4.0
+  },
+  "B-SupplementalInformationForPropertyCasualtyInsuranceUnderwritersPriorYearClaimsAndClaimsAdjustmentExpense": {
+    "precision": 1.0,
+    "recall": 0.4,
+    "f1": 0.5714285714285714,
+    "support": 5.0
+  },
+  "B-TreasuryStockAcquiredAverageCostPerShare": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1": 0.6666666666666666,
+    "support": 1.0
+  },
+  "B-TreasuryStockSharesAcquired": {
+    "precision": 0.38461538461538464,
+    "recall": 1.0,
+    "f1": 0.5555555555555556,
+    "support": 5.0
+  },
+  "B-TreasuryStockValueAcquiredCostMethod": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 3.0
+  },
+  "B-UnrecognizedTaxBenefits": {
+    "precision": 1.0,
+    "recall": 0.8333333333333334,
+    "f1": 0.9090909090909091,
+    "support": 6.0
+  },
+  "I-AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 4.0
+  },
+  "I-DebtInstrumentMaturityDate": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 9.0
+  },
+  "I-DebtInstrumentTerm": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 2.0
+  },
+  "I-FiniteLivedIntangibleAssetUsefulLife": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 2.0
+  },
+  "I-LesseeOperatingLeaseRenewalTerm": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 3.0
+  },
+  "I-LesseeOperatingLeaseTermOfContract": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 2.0
+  },
+  "I-PropertyPlantAndEquipmentUsefulLife": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1.0
+  },
+  "I-ShareBasedCompensationArrangementByShareBasedPaymentAwardAwardVestingPeriod1": {
+    "precision": 0.45454545454545453,
+    "recall": 0.7142857142857143,
+    "f1": 0.5555555555555556,
+    "support": 7.0
+  },
+  "I-SharebasedCompensationArrangementBySharebasedPaymentAwardExpirationPeriod": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 3.0
+  }
+}

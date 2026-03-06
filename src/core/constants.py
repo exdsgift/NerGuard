@@ -6,7 +6,7 @@ used throughout the project.
 """
 
 DEFAULT_MODEL_PATH = "./models/mdeberta-pii-safe/final"
-DEFAULT_DATA_PATH = "./data/processed/tokenized_data"
+DEFAULT_DATA_PATH = "./data/ai4privacy/open-pii-masking-500k-ai4privacy/processed/tokenized_data"
 DEFAULT_LABEL_PATH = "./data/processed/id2label.json"
 
 # THRESHOLDS (optimized via grid search in optimization/threshold_optimizer.py)

@@ -1,0 +1,44 @@
+======================================================================
+NER PII Benchmark — Biomedical Hybrid (gpt-4o) × bc5cdr
+======================================================================
+
+Tier: 1
+Evaluated labels: 2
+  System labels: 2
+  Dataset labels: 2
+  Mapping applied: False
+
+Samples: 500
+Tokens: 9816
+
+--- Token-Level Metrics ---
+  Precision (macro/micro/weighted): 0.8587 / 0.8813 / 0.8807
+  Recall    (macro/micro/weighted): 0.8210 / 0.8781 / 0.8781
+  F1        (macro/micro/weighted): 0.8379 / 0.8797 / 0.8791
+
+--- Entity-Level Metrics (seqeval) ---
+  Precision: 0.8860
+  Recall:    0.8902
+  F1:        0.8881
+
+--- Latency ---
+  Mean:   25.08 ms
+  Median: 24.86 ms
+  P95:    27.90 ms
+  P99:    29.50 ms
+  Throughput: 39.9 samples/sec
+
+--- Per-Entity F1 Scores ---
+  B-Chemical                     P=0.9325  R=0.9424  F1=0.9374  (n=469.0)
+  B-Disease                      P=0.8700  R=0.8677  F1=0.8689  (n=378.0)
+  I-Disease                      P=0.7934  R=0.7897  F1=0.7916  (n=214.0)
+  I-Chemical                     P=0.8387  R=0.6842  F1=0.7536  (n=38.0)
+
+--- Per-Length Bucket ---
+  short   : F1=0.8184 (n=314)
+  medium  : F1=0.8396 (n=184)
+  long    : F1=0.9900 (n=2)
+
+--- Error Summary ---
+  False positives: 95
+  False negatives: 99

@@ -1,0 +1,71 @@
+{
+  "system": "dslim/bert-base-NER",
+  "dataset": "nvidia-pii",
+  "n_samples": 1000,
+  "n_tokens": 135894,
+  "n_evaluated_labels": 4,
+  "token_level": {
+    "precision_macro": 0.4133784225750802,
+    "precision_micro": 0.4257581725088618,
+    "precision_weighted": 0.765613135753766,
+    "recall_macro": 0.4367721187287236,
+    "recall_micro": 0.5554984583761562,
+    "recall_weighted": 0.5554984583761562,
+    "f1_macro": 0.3330673825902174,
+    "f1_micro": 0.48205128205128206,
+    "f1_weighted": 0.5759540292041843
+  },
+  "entity_level": {
+    "precision": 0.540864133263925,
+    "recall": 0.7332392378263938,
+    "f1": 0.622528460155782
+  },
+  "latency": {
+    "mean_ms": 37.58880066871643,
+    "median_ms": 33.84232521057129,
+    "p95_ms": 62.140095233917236,
+    "p99_ms": 64.0574312210083,
+    "throughput_samples_per_sec": 26.603668704765504
+  },
+  "memory": {
+    "peak_mb": 2.3968849182128906,
+    "gpu_peak_mb": 18.02734375
+  },
+  "per_length_bucket": {
+    "short": {
+      "f1_macro": 0.42828475871954136,
+      "n_samples": 9
+    },
+    "medium": {
+      "f1_macro": 0.34619741759525563,
+      "n_samples": 238
+    },
+    "long": {
+      "f1_macro": 0.3294664931024877,
+      "n_samples": 753
+    }
+  },
+  "per_entity_frequency": {
+    "tail": {
+      "f1_macro": 0.0,
+      "n_entities": 0,
+      "entities": []
+    },
+    "mid": {
+      "f1_macro": 0.22931138088612896,
+      "n_entities": 2,
+      "entities": [
+        "city",
+        "last_name"
+      ]
+    },
+    "head": {
+      "f1_macro": 0.4368233842943059,
+      "n_entities": 2,
+      "entities": [
+        "first_name",
+        "street_address"
+      ]
+    }
+  }
+}

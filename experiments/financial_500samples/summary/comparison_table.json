@@ -1,0 +1,13 @@
+[
+  {
+    "system": "Financial Hybrid (gpt-4o)",
+    "dataset": "finer-139",
+    "f1_macro": 0.23422490956127862,
+    "f1_micro": 0.5461658841940532,
+    "entity_f1": 0.554021121039805,
+    "latency_mean_ms": 14.391602993011475,
+    "n_evaluated_labels": 139,
+    "tier": 1,
+    "n_samples": 500
+  }
+]

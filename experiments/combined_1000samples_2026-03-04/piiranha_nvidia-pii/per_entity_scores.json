@@ -1,0 +1,164 @@
+{
+  "B-account_number": {
+    "precision": 0.4393939393939394,
+    "recall": 0.5979381443298969,
+    "f1": 0.5065502183406113,
+    "support": 97.0
+  },
+  "B-certificate_license_number": {
+    "precision": 0.29545454545454547,
+    "recall": 0.1511627906976744,
+    "f1": 0.2,
+    "support": 86.0
+  },
+  "B-city": {
+    "precision": 0.5622775800711743,
+    "recall": 0.7488151658767772,
+    "f1": 0.6422764227642277,
+    "support": 211.0
+  },
+  "B-credit_debit_card": {
+    "precision": 0.9859154929577465,
+    "recall": 0.7368421052631579,
+    "f1": 0.8433734939759037,
+    "support": 95.0
+  },
+  "B-email": {
+    "precision": 0.9626436781609196,
+    "recall": 0.6781376518218624,
+    "f1": 0.7957244655581948,
+    "support": 494.0
+  },
+  "B-first_name": {
+    "precision": 0.9443155452436195,
+    "recall": 0.6840336134453782,
+    "f1": 0.7933723196881092,
+    "support": 595.0
+  },
+  "B-last_name": {
+    "precision": 0.9556451612903226,
+    "recall": 0.5537383177570093,
+    "f1": 0.7011834319526628,
+    "support": 428.0
+  },
+  "B-password": {
+    "precision": 1.0,
+    "recall": 0.3176470588235294,
+    "f1": 0.48214285714285715,
+    "support": 85.0
+  },
+  "B-phone_number": {
+    "precision": 0.6631016042780749,
+    "recall": 0.5040650406504065,
+    "f1": 0.5727482678983834,
+    "support": 246.0
+  },
+  "B-postcode": {
+    "precision": 0.9021739130434783,
+    "recall": 0.8645833333333334,
+    "f1": 0.8829787234042553,
+    "support": 96.0
+  },
+  "B-ssn": {
+    "precision": 0.3700787401574803,
+    "recall": 0.9038461538461539,
+    "f1": 0.5251396648044693,
+    "support": 52.0
+  },
+  "B-street_address": {
+    "precision": 0.21081081081081082,
+    "recall": 0.21311475409836064,
+    "f1": 0.21195652173913043,
+    "support": 183.0
+  },
+  "B-tax_id": {
+    "precision": 0.45454545454545453,
+    "recall": 0.6818181818181818,
+    "f1": 0.5454545454545454,
+    "support": 22.0
+  },
+  "B-user_name": {
+    "precision": 0.4876543209876543,
+    "recall": 0.6929824561403509,
+    "f1": 0.572463768115942,
+    "support": 114.0
+  },
+  "I-account_number": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 6.0
+  },
+  "I-certificate_license_number": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 5.0
+  },
+  "I-city": {
+    "precision": 0.2318840579710145,
+    "recall": 0.7272727272727273,
+    "f1": 0.3516483516483517,
+    "support": 44.0
+  },
+  "I-credit_debit_card": {
+    "precision": 1.0,
+    "recall": 0.7226277372262774,
+    "f1": 0.8389830508474576,
+    "support": 274.0
+  },
+  "I-email": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1.0
+  },
+  "I-first_name": {
+    "precision": 0.023255813953488372,
+    "recall": 0.2,
+    "f1": 0.041666666666666664,
+    "support": 5.0
+  },
+  "I-last_name": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1": 0.6666666666666666,
+    "support": 1.0
+  },
+  "I-phone_number": {
+    "precision": 0.6436170212765957,
+    "recall": 0.5817307692307693,
+    "f1": 0.6111111111111112,
+    "support": 208.0
+  },
+  "I-postcode": {
+    "precision": 0.25,
+    "recall": 0.5,
+    "f1": 0.3333333333333333,
+    "support": 2.0
+  },
+  "I-ssn": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 0.0
+  },
+  "I-street_address": {
+    "precision": 0.9711934156378601,
+    "recall": 0.49269311064718163,
+    "f1": 0.6537396121883656,
+    "support": 479.0
+  },
+  "I-tax_id": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1.0
+  },
+  "I-user_name": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 0.0
+  }
+}

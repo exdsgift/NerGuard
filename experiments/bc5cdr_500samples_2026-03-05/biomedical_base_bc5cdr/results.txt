@@ -1,0 +1,44 @@
+======================================================================
+NER PII Benchmark — Biomedical Base × bc5cdr
+======================================================================
+
+Tier: 1
+Evaluated labels: 2
+  System labels: 2
+  Dataset labels: 2
+  Mapping applied: False
+
+Samples: 500
+Tokens: 9816
+
+--- Token-Level Metrics ---
+  Precision (macro/micro/weighted): 0.8489 / 0.8652 / 0.8652
+  Recall    (macro/micro/weighted): 0.8352 / 0.8881 / 0.8881
+  F1        (macro/micro/weighted): 0.8404 / 0.8765 / 0.8762
+
+--- Entity-Level Metrics (seqeval) ---
+  Precision: 0.8635
+  Recall:    0.8961
+  F1:        0.8795
+
+--- Latency ---
+  Mean:   25.75 ms
+  Median: 24.70 ms
+  P95:    28.33 ms
+  P99:    33.04 ms
+  Throughput: 38.8 samples/sec
+
+--- Per-Entity F1 Scores ---
+  B-Chemical                     P=0.9253  R=0.9510  F1=0.9380  (n=469.0)
+  B-Disease                      P=0.8338  R=0.8757  F1=0.8542  (n=378.0)
+  I-Disease                      P=0.7926  R=0.8037  F1=0.7981  (n=214.0)
+  I-Chemical                     P=0.8438  R=0.7105  F1=0.7714  (n=38.0)
+
+--- Per-Length Bucket ---
+  short   : F1=0.8186 (n=314)
+  medium  : F1=0.8421 (n=184)
+  long    : F1=0.9900 (n=2)
+
+--- Error Summary ---
+  False positives: 111
+  False negatives: 82

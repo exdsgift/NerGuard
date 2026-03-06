@@ -1,0 +1,74 @@
+{
+  "B-Advisors.GENERIC_CONSULTING_COMPANY": {
+    "precision": 0.6075949367088608,
+    "recall": 0.2926829268292683,
+    "f1": 0.3950617283950617,
+    "support": 164.0
+  },
+  "B-Advisors.LEGAL_CONSULTING_COMPANY": {
+    "precision": 0.8285714285714286,
+    "recall": 0.3020833333333333,
+    "f1": 0.44274809160305345,
+    "support": 96.0
+  },
+  "B-Generic_Info.ANNUAL_REVENUES": {
+    "precision": 0.7160493827160493,
+    "recall": 0.6236559139784946,
+    "f1": 0.6666666666666666,
+    "support": 93.0
+  },
+  "B-Parties.ACQUIRED_COMPANY": {
+    "precision": 0.7679012345679013,
+    "recall": 0.6680988184747583,
+    "f1": 0.7145318782309018,
+    "support": 931.0
+  },
+  "B-Parties.BUYING_COMPANY": {
+    "precision": 0.7891891891891892,
+    "recall": 0.7670753064798599,
+    "f1": 0.7779751332149201,
+    "support": 1142.0
+  },
+  "B-Parties.SELLING_COMPANY": {
+    "precision": 0.7079646017699115,
+    "recall": 0.7766990291262136,
+    "f1": 0.7407407407407407,
+    "support": 309.0
+  },
+  "I-Advisors.GENERIC_CONSULTING_COMPANY": {
+    "precision": 0.8073394495412844,
+    "recall": 0.32653061224489793,
+    "f1": 0.46499339498018494,
+    "support": 539.0
+  },
+  "I-Advisors.LEGAL_CONSULTING_COMPANY": {
+    "precision": 0.935251798561151,
+    "recall": 0.3170731707317073,
+    "f1": 0.47358834244080145,
+    "support": 410.0
+  },
+  "I-Generic_Info.ANNUAL_REVENUES": {
+    "precision": 0.75,
+    "recall": 0.5533980582524272,
+    "f1": 0.6368715083798883,
+    "support": 103.0
+  },
+  "I-Parties.ACQUIRED_COMPANY": {
+    "precision": 0.8120063191153238,
+    "recall": 0.7287334593572778,
+    "f1": 0.7681195516811955,
+    "support": 2116.0
+  },
+  "I-Parties.BUYING_COMPANY": {
+    "precision": 0.827613104524181,
+    "recall": 0.8155265180630284,
+    "f1": 0.8215253581107239,
+    "support": 2602.0
+  },
+  "I-Parties.SELLING_COMPANY": {
+    "precision": 0.7185929648241206,
+    "recall": 0.8277858176555717,
+    "f1": 0.769334229993275,
+    "support": 691.0
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "B-age": {
+    "precision": 0.48,
+    "recall": 0.972972972972973,
+    "f1": 0.6428571428571429,
+    "support": 37.0
+  },
+  "B-certificate_license_number": {
+    "precision": 0.0932475884244373,
+    "recall": 0.3372093023255814,
+    "f1": 0.14609571788413098,
+    "support": 86.0
+  },
+  "B-city": {
+    "precision": 0.5080385852090032,
+    "recall": 0.7488151658767772,
+    "f1": 0.6053639846743295,
+    "support": 211.0
+  },
+  "B-credit_debit_card": {
+    "precision": 0.7807017543859649,
+    "recall": 0.9368421052631579,
+    "f1": 0.8516746411483254,
+    "support": 95.0
+  },
+  "B-date": {
+    "precision": 0.973015873015873,
+    "recall": 0.8609550561797753,
+    "f1": 0.9135618479880775,
+    "support": 712.0
+  },
+  "B-date_of_birth": {
+    "precision": 0.48161764705882354,
+    "recall": 1.0,
+    "f1": 0.6501240694789082,
+    "support": 131.0
+  },
+  "B-email": {
+    "precision": 0.7945670628183361,
+    "recall": 0.9473684210526315,
+    "f1": 0.8642659279778393,
+    "support": 494.0
+  },
+  "B-first_name": {
+    "precision": 0.7937743190661478,
+    "recall": 0.6857142857142857,
+    "f1": 0.7357980162308386,
+    "support": 595.0
+  },
+  "B-gender": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 36.0
+  },
+  "B-last_name": {
+    "precision": 0.9452054794520548,
+    "recall": 0.6448598130841121,
+    "f1": 0.7666666666666667,
+    "support": 428.0
+  },
+  "B-phone_number": {
+    "precision": 0.403747870528109,
+    "recall": 0.9634146341463414,
+    "f1": 0.5690276110444178,
+    "support": 246.0
+  },
+  "B-postcode": {
+    "precision": 0.3775933609958506,
+    "recall": 0.9479166666666666,
+    "f1": 0.5400593471810089,
+    "support": 96.0
+  },
+  "B-ssn": {
+    "precision": 0.45714285714285713,
+    "recall": 0.9230769230769231,
+    "f1": 0.6114649681528662,
+    "support": 52.0
+  },
+  "B-street_address": {
+    "precision": 0.3240223463687151,
+    "recall": 0.31693989071038253,
+    "f1": 0.32044198895027626,
+    "support": 183.0
+  },
+  "B-tax_id": {
+    "precision": 0.09565217391304348,
+    "recall": 0.5,
+    "f1": 0.16058394160583941,
+    "support": 22.0
+  },
+  "B-time": {
+    "precision": 0.8253012048192772,
+    "recall": 0.791907514450867,
+    "f1": 0.8082595870206489,
+    "support": 173.0
+  },
+  "I-certificate_license_number": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 5.0
+  },
+  "I-city": {
+    "precision": 0.248,
+    "recall": 0.7045454545454546,
+    "f1": 0.3668639053254438,
+    "support": 44.0
+  },
+  "I-credit_debit_card": {
+    "precision": 0.9766536964980544,
+    "recall": 0.916058394160584,
+    "f1": 0.9453860640301318,
+    "support": 274.0
+  },
+  "I-date": {
+    "precision": 1.0,
+    "recall": 0.6273584905660378,
+    "f1": 0.7710144927536232,
+    "support": 212.0
+  },
+  "I-date_of_birth": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 0.0
+  },
+  "I-email": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1.0
+  },
+  "I-first_name": {
+    "precision": 0.02857142857142857,
+    "recall": 0.2,
+    "f1": 0.05,
+    "support": 5.0
+  },
+  "I-last_name": {
+    "precision": 0.3333333333333333,
+    "recall": 1.0,
+    "f1": 0.5,
+    "support": 1.0
+  },
+  "I-phone_number": {
+    "precision": 0.631578947368421,
+    "recall": 0.9230769230769231,
+    "f1": 0.75,
+    "support": 208.0
+  },
+  "I-postcode": {
+    "precision": 0.2,
+    "recall": 0.5,
+    "f1": 0.2857142857142857,
+    "support": 2.0
+  },
+  "I-ssn": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 0.0
+  },
+  "I-street_address": {
+    "precision": 0.9962546816479401,
+    "recall": 0.5553235908141962,
+    "f1": 0.7131367292225201,
+    "support": 479.0
+  },
+  "I-tax_id": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1.0
+  },
+  "I-time": {
+    "precision": 0.9661016949152542,
+    "recall": 0.6129032258064516,
+    "f1": 0.75,
+    "support": 93.0
+  }
+}

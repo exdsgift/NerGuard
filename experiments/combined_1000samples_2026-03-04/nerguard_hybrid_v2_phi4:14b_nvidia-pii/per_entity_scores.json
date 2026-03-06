@@ -1,0 +1,182 @@
+{
+  "B-age": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1": 0.6666666666666666,
+    "support": 37.0
+  },
+  "B-certificate_license_number": {
+    "precision": 0.09180327868852459,
+    "recall": 0.32558139534883723,
+    "f1": 0.1432225063938619,
+    "support": 86.0
+  },
+  "B-city": {
+    "precision": 0.5047318611987381,
+    "recall": 0.7582938388625592,
+    "f1": 0.6060606060606061,
+    "support": 211.0
+  },
+  "B-credit_debit_card": {
+    "precision": 0.7377049180327869,
+    "recall": 0.9473684210526315,
+    "f1": 0.8294930875576036,
+    "support": 95.0
+  },
+  "B-date": {
+    "precision": 0.9730586370839936,
+    "recall": 0.8623595505617978,
+    "f1": 0.9143708116157856,
+    "support": 712.0
+  },
+  "B-date_of_birth": {
+    "precision": 0.4763636363636364,
+    "recall": 1.0,
+    "f1": 0.645320197044335,
+    "support": 131.0
+  },
+  "B-email": {
+    "precision": 0.7959183673469388,
+    "recall": 0.9473684210526315,
+    "f1": 0.8650646950092421,
+    "support": 494.0
+  },
+  "B-first_name": {
+    "precision": 0.7876447876447876,
+    "recall": 0.6857142857142857,
+    "f1": 0.7331536388140162,
+    "support": 595.0
+  },
+  "B-gender": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 36.0
+  },
+  "B-last_name": {
+    "precision": 0.9419795221843004,
+    "recall": 0.6448598130841121,
+    "f1": 0.7656033287101248,
+    "support": 428.0
+  },
+  "B-phone_number": {
+    "precision": 0.38599348534201955,
+    "recall": 0.9634146341463414,
+    "f1": 0.5511627906976744,
+    "support": 246.0
+  },
+  "B-postcode": {
+    "precision": 0.37916666666666665,
+    "recall": 0.9479166666666666,
+    "f1": 0.5416666666666666,
+    "support": 96.0
+  },
+  "B-ssn": {
+    "precision": 0.45794392523364486,
+    "recall": 0.9423076923076923,
+    "f1": 0.6163522012578616,
+    "support": 52.0
+  },
+  "B-street_address": {
+    "precision": 0.31382978723404253,
+    "recall": 0.3224043715846995,
+    "f1": 0.31805929919137466,
+    "support": 183.0
+  },
+  "B-tax_id": {
+    "precision": 0.1,
+    "recall": 0.45454545454545453,
+    "f1": 0.16393442622950818,
+    "support": 22.0
+  },
+  "B-time": {
+    "precision": 0.8214285714285714,
+    "recall": 0.7976878612716763,
+    "f1": 0.8093841642228738,
+    "support": 173.0
+  },
+  "I-certificate_license_number": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 5.0
+  },
+  "I-city": {
+    "precision": 0.248,
+    "recall": 0.7045454545454546,
+    "f1": 0.3668639053254438,
+    "support": 44.0
+  },
+  "I-credit_debit_card": {
+    "precision": 0.9769230769230769,
+    "recall": 0.927007299270073,
+    "f1": 0.951310861423221,
+    "support": 274.0
+  },
+  "I-date": {
+    "precision": 1.0,
+    "recall": 0.6273584905660378,
+    "f1": 0.7710144927536232,
+    "support": 212.0
+  },
+  "I-date_of_birth": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 0.0
+  },
+  "I-email": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1.0
+  },
+  "I-first_name": {
+    "precision": 0.029411764705882353,
+    "recall": 0.2,
+    "f1": 0.05128205128205128,
+    "support": 5.0
+  },
+  "I-last_name": {
+    "precision": 0.3333333333333333,
+    "recall": 1.0,
+    "f1": 0.5,
+    "support": 1.0
+  },
+  "I-phone_number": {
+    "precision": 0.6378737541528239,
+    "recall": 0.9230769230769231,
+    "f1": 0.7544204322200393,
+    "support": 208.0
+  },
+  "I-postcode": {
+    "precision": 0.2,
+    "recall": 0.5,
+    "f1": 0.2857142857142857,
+    "support": 2.0
+  },
+  "I-ssn": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 0.0
+  },
+  "I-street_address": {
+    "precision": 0.9893617021276596,
+    "recall": 0.5824634655532359,
+    "f1": 0.7332457293035479,
+    "support": 479.0
+  },
+  "I-tax_id": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1.0
+  },
+  "I-time": {
+    "precision": 0.9661016949152542,
+    "recall": 0.6129032258064516,
+    "f1": 0.75,
+    "support": 93.0
+  }
+}

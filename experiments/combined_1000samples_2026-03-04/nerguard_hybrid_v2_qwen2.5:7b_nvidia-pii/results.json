@@ -1,0 +1,84 @@
+{
+  "system": "NerGuard Hybrid V2 (qwen2.5:7b)",
+  "dataset": "nvidia-pii",
+  "n_samples": 1000,
+  "n_tokens": 135894,
+  "n_evaluated_labels": 16,
+  "token_level": {
+    "precision_macro": 0.4812672454613425,
+    "precision_micro": 0.6478703224693912,
+    "precision_weighted": 0.7540328073121191,
+    "recall_macro": 0.6170066664597903,
+    "recall_micro": 0.76330759853718,
+    "recall_weighted": 0.76330759853718,
+    "f1_macro": 0.505145384689498,
+    "f1_micro": 0.7008674563939931,
+    "f1_weighted": 0.7326740878889411
+  },
+  "entity_level": {
+    "precision": 0.5940747291620606,
+    "recall": 0.7470113983875452,
+    "f1": 0.6618226600985222
+  },
+  "latency": {
+    "mean_ms": 563.6706073284149,
+    "median_ms": 498.2386827468872,
+    "p95_ms": 1550.9625911712646,
+    "p99_ms": 2985.442423820495,
+    "throughput_samples_per_sec": 1.774085763917372
+  },
+  "memory": {
+    "peak_mb": 2.236438751220703,
+    "gpu_peak_mb": 111.5087890625
+  },
+  "per_length_bucket": {
+    "short": {
+      "f1_macro": 0.8064997804128239,
+      "n_samples": 9
+    },
+    "medium": {
+      "f1_macro": 0.5603533898359561,
+      "n_samples": 238
+    },
+    "long": {
+      "f1_macro": 0.5123258117039522,
+      "n_samples": 753
+    }
+  },
+  "per_entity_frequency": {
+    "tail": {
+      "f1_macro": 0.20074224021592443,
+      "n_entities": 3,
+      "entities": [
+        "age",
+        "gender",
+        "tax_id"
+      ]
+    },
+    "mid": {
+      "f1_macro": 0.5490721564190174,
+      "n_entities": 10,
+      "entities": [
+        "certificate_license_number",
+        "city",
+        "credit_debit_card",
+        "date_of_birth",
+        "email",
+        "last_name",
+        "phone_number",
+        "postcode",
+        "ssn",
+        "time"
+      ]
+    },
+    "head": {
+      "f1_macro": 0.5689793705284018,
+      "n_entities": 3,
+      "entities": [
+        "date",
+        "first_name",
+        "street_address"
+      ]
+    }
+  }
+}

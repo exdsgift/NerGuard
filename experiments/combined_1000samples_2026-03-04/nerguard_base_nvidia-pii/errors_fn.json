@@ -1,0 +1,3505 @@
+{
+  "n_errors": 500,
+  "errors": [
+    {
+      "token": "20230915",
+      "context": "- **Start Date:** 20230915 - **Expiration Date",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "fc8385359ab24da6a1f165a02f0f2e1e"
+    },
+    {
+      "token": "ENG-UT-20240512",
+      "context": "the certificate number ENG-UT-20240512 **Signature:** _________________________ Issuing",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "ef7289c855fe446fb28ad287924ceb44"
+    },
+    {
+      "token": "BUG-2024-09-15-001",
+      "context": "Form** **Bug ID:** BUG-2024-09-15-001 **Title:** API Key",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "836257a017f9491ca46e6011a30145ee"
+    },
+    {
+      "token": "Wed,",
+      "context": "of Incident:** On Wed, 15 Oct 2024",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "4b3bf4fa3e184634b84fd0432d1c9732"
+    },
+    {
+      "token": "Mike",
+      "context": "Evidence] **Signature:** _________________________ Mike Striplin **Date of",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "4b3bf4fa3e184634b84fd0432d1c9732"
+    },
+    {
+      "token": "**teresa.alvaradomendez@gmail.com**.",
+      "context": "creator, which is **teresa.alvaradomendez@gmail.com**. 3. **Delivery Obligations**",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "6199312d2e4648ae8b29adf85ffacb72"
+    },
+    {
+      "token": "**6011",
+      "context": "credit/debit card information: **6011 9875 3214 6587**.",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "6199312d2e4648ae8b29adf85ffacb72"
+    },
+    {
+      "token": "Harsh",
+      "context": "born on 1989-01-21. Harsh identifies as a",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ef2ea69f04f447da97d836cac2b70ba0"
+    },
+    {
+      "token": "male,",
+      "context": "as a Malayali male, and his occupation",
+      "predicted": "O",
+      "expected": "B-gender",
+      "sample_id": "ef2ea69f04f447da97d836cac2b70ba0"
+    },
+    {
+      "token": "Harsh's",
+      "context": "in these topics. Harsh's email, patil@samaikyarights.org.in, will",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ef2ea69f04f447da97d836cac2b70ba0"
+    },
+    {
+      "token": "Harsh",
+      "context": "scheduled for 2024-01-22T15:30:00. Harsh follows the religious",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ef2ea69f04f447da97d836cac2b70ba0"
+    },
+    {
+      "token": "savannah",
+      "context": "shot of the savannah at sunset |",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "savannah,",
+      "context": "over the vast savannah, signaling the end",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "| Close-up of Simba | Close-up |",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "| Close-up | Simba looks out over",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "| 3 | Simba and Nala playing",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Nala",
+      "context": "| Simba and Nala playing | Medium",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "Medium shot | Simba and Nala playfully",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Nala",
+      "context": "| Simba and Nala playfully chase each",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Mufasa",
+      "context": "| 4 | Mufasa arriving | Long",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Mufasa,",
+      "context": "Long shot | Mufasa, the wise and",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Mufasa",
+      "context": "| 5 | Mufasa teaching Simba |",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "| Mufasa teaching Simba | Medium shot",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Mufasa",
+      "context": "Medium shot | Mufasa teaches Simba about",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "| Mufasa teaches Simba about the \"Circle",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "the safety of Simba and Nala. |",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Nala.",
+      "context": "of Simba and Nala. | | 7",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Mufasa",
+      "context": "| 7 | Mufasa saving Simba |",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "| Mufasa saving Simba | Close-up, then",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Mufasa",
+      "context": "wide shot | Mufasa bravely saves Simba",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "Mufasa bravely saves Simba from the stampede",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba's",
+      "context": "| 8 | Simba's grief | Close-up",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba,",
+      "context": "| Close-up | Simba, devastated, watches as",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Scar's",
+      "context": "| 9 | Scar's plot | Medium",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Scar,",
+      "context": "Medium shot | Scar, Mufasa's treacherous brother,",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Mufasa's",
+      "context": "shot | Scar, Mufasa's treacherous brother, begins",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba",
+      "context": "begins to manipulate Simba into believing he",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Mufasa's",
+      "context": "is responsible for Mufasa's death. | |",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba's",
+      "context": "| 10 | Simba's exile | Long",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Simba,",
+      "context": "Long shot | Simba, heartbroken and guilt-ridden,",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "574-323-0201",
+      "context": "- Contact Details: 574-323-0201 **Blocking Details:** -",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "36560e0b9c6e488f8374c81abdd465a5"
+    },
+    {
+      "token": "574-323-0201",
+      "context": "Number to Block: 574-323-0201 - Type of",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "36560e0b9c6e488f8374c81abdd465a5"
+    },
+    {
+      "token": "Jasmin",
+      "context": "**Authorization Signature:** __________________________ Jasmin Kahrim",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "36560e0b9c6e488f8374c81abdd465a5"
+    },
+    {
+      "token": "Kahrim",
+      "context": "Signature:** __________________________ Jasmin Kahrim",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "36560e0b9c6e488f8374c81abdd465a5"
+    },
+    {
+      "token": "genderqueer",
+      "context": "to Seth, a genderqueer individual of puerto",
+      "predicted": "O",
+      "expected": "B-gender",
+      "sample_id": "6ac3ce7faf654f398e79ee889730c9c6"
+    },
+    {
+      "token": "24",
+      "context": "service requests within 24 hours. - **Vehicle",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "03fc556b81034d90adc997a4ca62ba98"
+    },
+    {
+      "token": "hours.",
+      "context": "requests within 24 hours. - **Vehicle Maintenance:**",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "03fc556b81034d90adc997a4ca62ba98"
+    },
+    {
+      "token": "cheng@vivalifestyle.com.my",
+      "context": "09-775-2948 or email cheng@vivalifestyle.com.my with your customer",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "16f5932434ec43859d19f37dc8fa95a9"
+    },
+    {
+      "token": "No.",
+      "context": "be shipped to: No. 23, Jalan Ampang",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "16f5932434ec43859d19f37dc8fa95a9"
+    },
+    {
+      "token": "Olivia's",
+      "context": "In addition to Olivia's contact information, please",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "6fb3d64baee244a69d984c581c93ca0b"
+    },
+    {
+      "token": "2024-07-20",
+      "context": "aisle 5 by 2024-07-20 - Restock seasonal",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "92c3bc2083854c949521b9968d0f4f97"
+    },
+    {
+      "token": "2024-07-22",
+      "context": "seasonal items by 2024-07-22 **Overall Compliance Ratings:**",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "92c3bc2083854c949521b9968d0f4f97"
+    },
+    {
+      "token": "Larson",
+      "context": "name? a) Emma Larson b) Emma L.",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "Emma",
+      "context": "Emma Larson b) Emma L. Larson c)",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "Larson",
+      "context": "b) Emma L. Larson c) Larson Emma",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "Emma",
+      "context": "Larson Emma d) Emma L 2. When",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "1996-07-30",
+      "context": "b) 1995-07-30 c) 1996-07-30 d) 1997-07-30 3.",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "1997-07-30",
+      "context": "c) 1996-07-30 d) 1997-07-30 3. What is",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "james.moore@outlook.com",
+      "context": "jamesmoore and email james.moore@outlook.com | User redirected",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "c5499b742c7b4e559e04cb6da0f3d7cb"
+    },
+    {
+      "token": "Smith",
+      "context": "with Dr. Jane Smith **Follow-Up Appointments** -",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "acf47d3e22694f88b58aca746b501bd9"
+    },
+    {
+      "token": "female",
+      "context": "a straight, white, female employee might unconsciously",
+      "predicted": "O",
+      "expected": "B-gender",
+      "sample_id": "53867dfe11a94796981518a154922a7c"
+    },
+    {
+      "token": "female",
+      "context": "scenario where a female employee is overlooked",
+      "predicted": "O",
+      "expected": "B-gender",
+      "sample_id": "53867dfe11a94796981518a154922a7c"
+    },
+    {
+      "token": "Dwight's",
+      "context": "Dear Dwight's Parents, I am",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fed9a0f7c98a45fe873d23282d5f9ebb"
+    },
+    {
+      "token": "Dwight.",
+      "context": "progress report for Dwight. Dwight has shown",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fed9a0f7c98a45fe873d23282d5f9ebb"
+    },
+    {
+      "token": "Dwight",
+      "context": "report for Dwight. Dwight has shown commendable",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fed9a0f7c98a45fe873d23282d5f9ebb"
+    },
+    {
+      "token": "Dwight's",
+      "context": "to his studies. Dwight's attendance record has",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fed9a0f7c98a45fe873d23282d5f9ebb"
+    },
+    {
+      "token": "Dwight's",
+      "context": "to his education. Dwight's current occupation as",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fed9a0f7c98a45fe873d23282d5f9ebb"
+    },
+    {
+      "token": "Dwight",
+      "context": "school is commendable. Dwight resides in Henrico",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fed9a0f7c98a45fe873d23282d5f9ebb"
+    },
+    {
+      "token": "Dwight's",
+      "context": "for improvement include Dwight's pin, 3070, which",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fed9a0f7c98a45fe873d23282d5f9ebb"
+    },
+    {
+      "token": "Dwight",
+      "context": "the subject matter. Dwight is aware of",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fed9a0f7c98a45fe873d23282d5f9ebb"
+    },
+    {
+      "token": "Dwight's",
+      "context": "his performance. Overall, Dwight's progress has been",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fed9a0f7c98a45fe873d23282d5f9ebb"
+    },
+    {
+      "token": "(402)",
+      "context": "support team at (402) 555-8937. ### 2.",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "d97b720db35f40de9ddf53dc5b80aec9"
+    },
+    {
+      "token": "(402)",
+      "context": "support team at (402) 555-8937 for further",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "d97b720db35f40de9ddf53dc5b80aec9"
+    },
+    {
+      "token": "chidinma.lawyer@adebayolegals.com.ng",
+      "context": "Sons Legal Practitioners chidinma.lawyer@adebayolegals.com.ng 03.11.2026 To Whom",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "5ae072109a7545e6bd3a879e0df8f43c"
+    },
+    {
+      "token": "03.11.2026",
+      "context": "Legal Practitioners chidinma.lawyer@adebayolegals.com.ng 03.11.2026 To Whom It",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "5ae072109a7545e6bd3a879e0df8f43c"
+    },
+    {
+      "token": "chidinma.lawyer@adebayolegals.com.ng.",
+      "context": "the email address chidinma.lawyer@adebayolegals.com.ng. As the date,",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "5ae072109a7545e6bd3a879e0df8f43c"
+    },
+    {
+      "token": "chidinma.lawyer@adebayolegals.com.ng.",
+      "context": "contact us at chidinma.lawyer@adebayolegals.com.ng. Sincerely, Chidinma",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "5ae072109a7545e6bd3a879e0df8f43c"
+    },
+    {
+      "token": "haris.khan@paktechsolutions.pk.",
+      "context": "to the email: haris.khan@paktechsolutions.pk. The user enters",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "688ffd7dd8b042c2bbbf5b095eccf0ea"
+    },
+    {
+      "token": "haris.khan@paktechsolutions.pk,",
+      "context": "at the email: haris.khan@paktechsolutions.pk, and the system",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "688ffd7dd8b042c2bbbf5b095eccf0ea"
+    },
+    {
+      "token": "(2023-09-15",
+      "context": "- Phase 1 (2023-09-15 to 2023-10-15): Initial",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "2c2e6c0358504d4885427217467cc277"
+    },
+    {
+      "token": "2023-10-15):",
+      "context": "1 (2023-09-15 to 2023-10-15): Initial keyword research",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "2c2e6c0358504d4885427217467cc277"
+    },
+    {
+      "token": "2023-11-15):",
+      "context": "2 (2023-10-16 to 2023-11-15): Implementation of on-page",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "2c2e6c0358504d4885427217467cc277"
+    },
+    {
+      "token": "(2023-11-16",
+      "context": "- Phase 3 (2023-11-16 to 2023-12-15): Monitoring",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "2c2e6c0358504d4885427217467cc277"
+    },
+    {
+      "token": "2023-12-15):",
+      "context": "3 (2023-11-16 to 2023-12-15): Monitoring and adjustment",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "2c2e6c0358504d4885427217467cc277"
+    },
+    {
+      "token": "Jane",
+      "context": "9876543210 **Adjuster's Name:** Jane Doe **Date of",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "6b87ebe759df4d0f89f64823222144fe"
+    },
+    {
+      "token": "Doe",
+      "context": "**Adjuster's Name:** Jane Doe **Date of Loss:**",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "6b87ebe759df4d0f89f64823222144fe"
+    },
+    {
+      "token": "Stephen",
+      "context": "control measures. Additionally, Stephen Calero, a Gun",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "617e3020c8e74fd2b7d06849d38ef1fc"
+    },
+    {
+      "token": "2025-01-01",
+      "context": "Cancellations made before 2025-01-01 will be fully",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "2025-01-01",
+      "context": "Cancellations made after 2025-01-01 will incur a",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "10:00",
+      "context": "hours are from 10:00 PM to 8:00",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "PM",
+      "context": "are from 10:00 PM to 8:00 AM.",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "8:00",
+      "context": "10:00 PM to 8:00 AM. - Please",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "AM.",
+      "context": "PM to 8:00 AM. - Please respect",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "+218",
+      "context": "IT department at +218 91 927 1457.",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "91",
+      "context": "department at +218 91 927 1457. **Guest",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "927",
+      "context": "at +218 91 927 1457. **Guest Conduct**",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "1457.",
+      "context": "+218 91 927 1457. **Guest Conduct** -",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "+218",
+      "context": "front desk at +218 91 927 1457",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "91",
+      "context": "desk at +218 91 927 1457 or",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "927",
+      "context": "at +218 91 927 1457 or email",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "1457",
+      "context": "+218 91 927 1457 or email yusufabdelkader@saharasuites.com.ly.",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "yusufabdelkader@saharasuites.com.ly.",
+      "context": "1457 or email yusufabdelkader@saharasuites.com.ly. Thank you for",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "day",
+      "context": "of the 1st day of January, 2023,",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "of",
+      "context": "the 1st day of January, 2023, by",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "Brent",
+      "context": "1. **PARTIES** Landlord: Brent Callaway, 859-339-7637 Tenant:",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "Callaway,",
+      "context": "**PARTIES** Landlord: Brent Callaway, 859-339-7637 Tenant: [Tenant's",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "859-339-7637",
+      "context": "Landlord: Brent Callaway, 859-339-7637 Tenant: [Tenant's Name]",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "Brent",
+      "context": "be made to Brent Callaway at 859-339-7637.",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "Callaway",
+      "context": "made to Brent Callaway at 859-339-7637. 5.",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "859-339-7637.",
+      "context": "Brent Callaway at 859-339-7637. 5. **SECURITY DEPOSIT**",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "Bruce",
+      "context": "### Narrative Content Bruce Pope, a pansexual",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "0f5c33d78f27405d8e51b13fa5e8763d"
+    },
+    {
+      "token": "Pope,",
+      "context": "Narrative Content Bruce Pope, a pansexual Part-Time",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "0f5c33d78f27405d8e51b13fa5e8763d"
+    },
+    {
+      "token": "Bruce",
+      "context": "our media services. Bruce mentioned, \"The platform",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "0f5c33d78f27405d8e51b13fa5e8763d"
+    },
+    {
+      "token": "Bruce",
+      "context": "### Permissions I, Bruce Pope, hereby grant",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "0f5c33d78f27405d8e51b13fa5e8763d"
+    },
+    {
+      "token": "support@guardiancyber.com.mm.",
+      "context": "my email address support@guardiancyber.com.mm. My phone number",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "627842304e8c4a1d9de47264f1138fb8"
+    },
+    {
+      "token": "**2024-03-15**.",
+      "context": "was conducted on **2024-03-15**. The inspection, carried",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "639c495464af4523ac5fe92e9b4788b2"
+    },
+    {
+      "token": "**ENG-002-642221**,",
+      "context": "certificate license number **ENG-002-642221**, revealed several key",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "639c495464af4523ac5fe92e9b4788b2"
+    },
+    {
+      "token": "caleb.henderson@evergreenmarketplace.com",
+      "context": "contact us at caleb.henderson@evergreenmarketplace.com or visit our",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "3f980151190d45fd905d0563d564b964"
+    },
+    {
+      "token": "4532",
+      "context": "credit debit card, 4532 7845 9123 6789,",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "3f980151190d45fd905d0563d564b964"
+    },
+    {
+      "token": "7845",
+      "context": "debit card, 4532 7845 9123 6789, is",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "3f980151190d45fd905d0563d564b964"
+    },
+    {
+      "token": "9123",
+      "context": "card, 4532 7845 9123 6789, is valid",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "3f980151190d45fd905d0563d564b964"
+    },
+    {
+      "token": "6789,",
+      "context": "4532 7845 9123 6789, is valid and",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "3f980151190d45fd905d0563d564b964"
+    },
+    {
+      "token": "May",
+      "context": "effective as of May 15, 2027. Evergreen",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "3f980151190d45fd905d0563d564b964"
+    },
+    {
+      "token": "15,",
+      "context": "as of May 15, 2027. Evergreen Marketplace",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "3f980151190d45fd905d0563d564b964"
+    },
+    {
+      "token": "2027.",
+      "context": "of May 15, 2027. Evergreen Marketplace reserves",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "3f980151190d45fd905d0563d564b964"
+    },
+    {
+      "token": "18th",
+      "context": "conducted on the 18th of every month",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "2dad245ecc1e4e4883c478c10dd5d4b6"
+    },
+    {
+      "token": "of",
+      "context": "on the 18th of every month at",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "2dad245ecc1e4e4883c478c10dd5d4b6"
+    },
+    {
+      "token": "every",
+      "context": "the 18th of every month at 07:40:50.",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "2dad245ecc1e4e4883c478c10dd5d4b6"
+    },
+    {
+      "token": "month",
+      "context": "18th of every month at 07:40:50. ####",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "2dad245ecc1e4e4883c478c10dd5d4b6"
+    },
+    {
+      "token": "Kathryn's",
+      "context": "services. On 2024-11-15T11:35:11, Kathryn's device with identifier",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "0807552dafaf4bc8aa445363309656e4"
+    },
+    {
+      "token": "CST",
+      "context": "at 08:15 AM CST to 934-765-5222. The",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "0807552dafaf4bc8aa445363309656e4"
+    },
+    {
+      "token": "Kathryn's",
+      "context": "for 15 minutes. Kathryn's email address, smiliek@hotmail.com,",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "0807552dafaf4bc8aa445363309656e4"
+    },
+    {
+      "token": "Kathryn's",
+      "context": "to the customer. Kathryn's device mac address",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "0807552dafaf4bc8aa445363309656e4"
+    },
+    {
+      "token": "John",
+      "context": "an agreement between John Doe and the",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "5f523f4adb664f0f92500db44783775c"
+    },
+    {
+      "token": "Doe",
+      "context": "agreement between John Doe and the seller",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "5f523f4adb664f0f92500db44783775c"
+    },
+    {
+      "token": "John",
+      "context": "is valid for John Doe, whose social",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "5f523f4adb664f0f92500db44783775c"
+    },
+    {
+      "token": "Doe,",
+      "context": "valid for John Doe, whose social security",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "5f523f4adb664f0f92500db44783775c"
+    },
+    {
+      "token": "aygul.d@turkmanutech.tm",
+      "context": "be reported to aygul.d@turkmanutech.tm immediately.",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "6c97f6eb8b1448de8b5a053e00abd768"
+    },
+    {
+      "token": "EST",
+      "context": "at 10:30 AM EST - **Production Start",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "bc492103ecdd4eb79ffbd1fc04e7271e"
+    },
+    {
+      "token": "Maria",
+      "context": "the outlined methodologies. Maria can be reached",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ce25ffa835ab4ac3874ddfa9a6851bb0"
+    },
+    {
+      "token": "Daniels",
+      "context": "and between Charles Daniels of Government Solutions",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "cc9f428fa2e845d6a0c548a1cd4edcbc"
+    },
+    {
+      "token": "Charles",
+      "context": "as of 06/15/2023. Charles Daniels, whose email",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "cc9f428fa2e845d6a0c548a1cd4edcbc"
+    },
+    {
+      "token": "Daniels,",
+      "context": "of 06/15/2023. Charles Daniels, whose email is",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "cc9f428fa2e845d6a0c548a1cd4edcbc"
+    },
+    {
+      "token": "Charles",
+      "context": "and jurisdiction details. Charles Daniels is responsible",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "cc9f428fa2e845d6a0c548a1cd4edcbc"
+    },
+    {
+      "token": "Daniels",
+      "context": "jurisdiction details. Charles Daniels is responsible for",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "cc9f428fa2e845d6a0c548a1cd4edcbc"
+    },
+    {
+      "token": "a",
+      "context": "to be within a quarter to four",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "4ea27bd17abd4eeda85afdc8db1724a7"
+    },
+    {
+      "token": "Wed,",
+      "context": "On Wed, 15 Jan 2024,",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "c26b2bcd64ae45628f52784c546b87ba"
+    },
+    {
+      "token": "male.",
+      "context": "gender, for example, male. - **Religious Discrimination**:",
+      "predicted": "O",
+      "expected": "B-gender",
+      "sample_id": "a23331cebc644650be4d38d1cf30d1e7"
+    },
+    {
+      "token": "Record",
+      "context": "Best regards, Irene Record",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "d69579321b994ec49d9ef612efa258a0"
+    },
+    {
+      "token": "Andersson,",
+      "context": "Linus Andersson, a male born",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "5374e588b6f74a46935e9994bc742a93"
+    },
+    {
+      "token": "male",
+      "context": "Linus Andersson, a male born on 1973-09-13,",
+      "predicted": "O",
+      "expected": "B-gender",
+      "sample_id": "5374e588b6f74a46935e9994bc742a93"
+    },
+    {
+      "token": "Linus",
+      "context": "quality of life. Linus Andersson can be",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "5374e588b6f74a46935e9994bc742a93"
+    },
+    {
+      "token": "Andersson",
+      "context": "of life. Linus Andersson can be reached",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "5374e588b6f74a46935e9994bc742a93"
+    },
+    {
+      "token": "male.",
+      "context": "1948-01-31 and is male. His blood type",
+      "predicted": "O",
+      "expected": "B-gender",
+      "sample_id": "0c9bd09822e6416289d19ff246d96cb2"
+    },
+    {
+      "token": "June",
+      "context": "| Metric | June 2023 | July",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "da2772c13db64759bf402d47fe366dcf"
+    },
+    {
+      "token": "2023",
+      "context": "Metric | June 2023 | July 2023",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "da2772c13db64759bf402d47fe366dcf"
+    },
+    {
+      "token": "July",
+      "context": "June 2023 | July 2023 | |----------------------|-------------|-------------|",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "da2772c13db64759bf402d47fe366dcf"
+    },
+    {
+      "token": "2023",
+      "context": "2023 | July 2023 | |----------------------|-------------|-------------| |",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "da2772c13db64759bf402d47fe366dcf"
+    },
+    {
+      "token": "July",
+      "context": "profitability report for July 2023 shows a",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "da2772c13db64759bf402d47fe366dcf"
+    },
+    {
+      "token": "2023",
+      "context": "report for July 2023 shows a significant",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "da2772c13db64759bf402d47fe366dcf"
+    },
+    {
+      "token": "\"2024-01-01\",",
+      "context": "\"user_id\": \"g.green\", \"issuance_date\": \"2024-01-01\", \"expiration_date\": \"2025-01-01\", \"permissions\":",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "98c6177f12f8493eb311a5b28932bf87"
+    },
+    {
+      "token": "\"2025-01-01\",",
+      "context": "\"issuance_date\": \"2024-01-01\", \"expiration_date\": \"2025-01-01\", \"permissions\": [ \"read\",",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "98c6177f12f8493eb311a5b28932bf87"
+    },
+    {
+      "token": "**17/09/2027**",
+      "context": "Contract** **UrbanNest Realty** **17/09/2027** This Renewal Contract",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "db9ee7829ba341a09a5858e070bb9abc"
+    },
+    {
+      "token": "03/11/2024",
+      "context": "(0072589) | | 03/11/2024 | #### Document",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "27c53c6bb75b483a90be26f36dd7dca6"
+    },
+    {
+      "token": "03/11/2024",
+      "context": "| WA-ENG-003417 | 03/11/2024 | 03/11/2024 |",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "27c53c6bb75b483a90be26f36dd7dca6"
+    },
+    {
+      "token": "03/11/2024",
+      "context": "| 03/11/2024 | 03/11/2024 | #### Organizational",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "27c53c6bb75b483a90be26f36dd7dca6"
+    },
+    {
+      "token": "03/11/2024",
+      "context": "implementing QMS | 03/11/2024 |",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "27c53c6bb75b483a90be26f36dd7dca6"
+    },
+    {
+      "token": "May",
+      "context": "and reviewed on May 15, 2026.",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "e2792dc0ed2d4c04b2b4f6f13fe63fc4"
+    },
+    {
+      "token": "15,",
+      "context": "reviewed on May 15, 2026.",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "e2792dc0ed2d4c04b2b4f6f13fe63fc4"
+    },
+    {
+      "token": "2026.",
+      "context": "on May 15, 2026.",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "e2792dc0ed2d4c04b2b4f6f13fe63fc4"
+    },
+    {
+      "token": "2023-09-15",
+      "context": "| |------------|------------|--------------------|---------------|---------|-------------------|----------------|-------|-------------------------| | 2023-09-15 | 18:30:45 |",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "6c775d21d841442690ca6cd641bed7cd"
+    },
+    {
+      "token": "2023-09-15",
+      "context": "$50.00| | | 2023-09-15 | 18:30:45 |",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "6c775d21d841442690ca6cd641bed7cd"
+    },
+    {
+      "token": "737-633-1180",
+      "context": "Contact Information: kilgorep46@protonmail.com, 737-633-1180 **Executive Summary** The",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Austin,",
+      "context": "Irenic Mist Ct, Austin, Texas, 78754, was",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Patrick",
+      "context": "on 07/15/2026 by Patrick Kilgore. The inspection",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Austin,",
+      "context": "Irenic Mist Ct, Austin, Texas, 78754, complies",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "737-633-1180",
+      "context": "at kilgorep46@protonmail.com or 737-633-1180 for any further",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "male",
+      "context": "Henry Atkinson, a male born on 1989-01-01.",
+      "predicted": "O",
+      "expected": "B-gender",
+      "sample_id": "8d7453027e60441c8bca8c512d39f7d5"
+    },
+    {
+      "token": "Henry",
+      "context": "preoperative evaluation for Henry Atkinson was conducted",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "8d7453027e60441c8bca8c512d39f7d5"
+    },
+    {
+      "token": "Atkinson",
+      "context": "evaluation for Henry Atkinson was conducted on",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "8d7453027e60441c8bca8c512d39f7d5"
+    },
+    {
+      "token": "**82",
+      "context": "Confirmation **SwiftFlow Logistics** **82 Ronson Rd, Phoenix,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "21d5f2f0ee864f928fcfe0e7ca6160ba"
+    },
+    {
+      "token": "Start",
+      "context": "002148 Position: Department: Start Date:",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "2290439791c34436af0271b7cadfcb66"
+    },
+    {
+      "token": "Date:",
+      "context": "Position: Department: Start Date:",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "2290439791c34436af0271b7cadfcb66"
+    },
+    {
+      "token": "15",
+      "context": "Lockout Duration | 15 minutes | |",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "5829961c0e9042cca1480e218c4f232f"
+    },
+    {
+      "token": "minutes",
+      "context": "Duration | 15 minutes | | Customer",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "5829961c0e9042cca1480e218c4f232f"
+    },
+    {
+      "token": "male",
+      "context": "example, if a male employee with blood",
+      "predicted": "O",
+      "expected": "B-gender",
+      "sample_id": "ce8a83bfb1804d55881214f2698702b3"
+    },
+    {
+      "token": "female",
+      "context": "number 0004567821, a female patient with a",
+      "predicted": "O",
+      "expected": "B-gender",
+      "sample_id": "76ef97392cee4b6cb2c2553a2ba0e384"
+    },
+    {
+      "token": "Remi",
+      "context": "illness indicates that Remi has been experiencing",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fc55503caff74e2bb9db5d34b37464f3"
+    },
+    {
+      "token": "Details,Donation",
+      "context": "Kevins Court,Birmingham Donation Details,Donation Date,Donation Amount,Donation Method,Bank",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "90a71dcaddce49f295c6d163a7263c30"
+    },
+    {
+      "token": "07/15/2024",
+      "context": "| 48729016 | 07/15/2024 | Biotech Kit",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "a806005ae1064edfb1615909e2fac09b"
+    },
+    {
+      "token": "_________________________________",
+      "context": "assistance services. Signature: _________________________________ Date: _________________________________",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "05cb8fd1ed3146cbb884e2d553ed8df4"
+    },
+    {
+      "token": "_________________________________",
+      "context": "Signature: _________________________________ Date: _________________________________",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "05cb8fd1ed3146cbb884e2d553ed8df4"
+    },
+    {
+      "token": "1-2",
+      "context": "city typically takes 1-2 business days, while",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "6fcd359f53cc4886a9766cd97b6c40bb"
+    },
+    {
+      "token": "business",
+      "context": "typically takes 1-2 business days, while air",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "6fcd359f53cc4886a9766cd97b6c40bb"
+    },
+    {
+      "token": "days,",
+      "context": "takes 1-2 business days, while air freight",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "6fcd359f53cc4886a9766cd97b6c40bb"
+    },
+    {
+      "token": "3-5",
+      "context": "international destinations within 3-5 business days. For",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "6fcd359f53cc4886a9766cd97b6c40bb"
+    },
+    {
+      "token": "business",
+      "context": "destinations within 3-5 business days. For more",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "6fcd359f53cc4886a9766cd97b6c40bb"
+    },
+    {
+      "token": "days.",
+      "context": "within 3-5 business days. For more detailed",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "6fcd359f53cc4886a9766cd97b6c40bb"
+    },
+    {
+      "token": "7",
+      "context": "notify us within 7 business days of",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "6fcd359f53cc4886a9766cd97b6c40bb"
+    },
+    {
+      "token": "business",
+      "context": "us within 7 business days of receipt.",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "6fcd359f53cc4886a9766cd97b6c40bb"
+    },
+    {
+      "token": "days",
+      "context": "within 7 business days of receipt. Returns",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "6fcd359f53cc4886a9766cd97b6c40bb"
+    },
+    {
+      "token": "Aisha",
+      "context": "above written. __________________________ Aisha **NOTARIZATION** STATE OF",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "25f84b80d80545b9857965b105aceac7"
+    },
+    {
+      "token": "______",
+      "context": "before me this ______ day of ________,",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "25f84b80d80545b9857965b105aceac7"
+    },
+    {
+      "token": "day",
+      "context": "me this ______ day of ________, 2030,",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "25f84b80d80545b9857965b105aceac7"
+    },
+    {
+      "token": "of",
+      "context": "this ______ day of ________, 2030, by",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "25f84b80d80545b9857965b105aceac7"
+    },
+    {
+      "token": "________,",
+      "context": "______ day of ________, 2030, by Aisha,",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "25f84b80d80545b9857965b105aceac7"
+    },
+    {
+      "token": "2030,",
+      "context": "day of ________, 2030, by Aisha, the",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "25f84b80d80545b9857965b105aceac7"
+    },
+    {
+      "token": "female",
+      "context": "participant, a 19-year-old female of Mexican ethnicity,",
+      "predicted": "O",
+      "expected": "B-gender",
+      "sample_id": "fdb80465313c4be283dde0acc278144a"
+    },
+    {
+      "token": "EST,",
+      "context": "at 8:15 AM EST, when you placed",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "950bdfab1de84302b6c0466a39dc7e8a"
+    },
+    {
+      "token": "\"Khalid\",",
+      "context": "```json { \"recipient_name\": \"Khalid\", \"street_address\": \"Faiha Street,",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "c4ea167aac5c411b830df6ecc91df96f"
+    },
+    {
+      "token": "\"Faiha",
+      "context": "\"recipient_name\": \"Khalid\", \"street_address\": \"Faiha Street, 14\", \"city\":",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "c4ea167aac5c411b830df6ecc91df96f"
+    },
+    {
+      "token": "\"Ahmadi\",",
+      "context": "Street, 14\", \"city\": \"Ahmadi\", \"country\": \"Kuwait\" }",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "c4ea167aac5c411b830df6ecc91df96f"
+    },
+    {
+      "token": "Mon,",
+      "context": "**Redemption Date** | Mon, 15 Oct 2024",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "890605d4d9014876b5abeaccddc94bd8"
+    },
+    {
+      "token": "Aiden",
+      "context": "the name of Aiden Cunningham. Mr. Cunningham",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Cunningham.",
+      "context": "name of Aiden Cunningham. Mr. Cunningham has",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Cunningham",
+      "context": "Aiden Cunningham. Mr. Cunningham has a history",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Aiden",
+      "context": "and the witness Aiden Cunningham. Counsel: Good",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Cunningham.",
+      "context": "the witness Aiden Cunningham. Counsel: Good morning,",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Aiden",
+      "context": "for the record? Aiden Cunningham: Good morning.",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Cunningham:",
+      "context": "the record? Aiden Cunningham: Good morning. I",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Aiden",
+      "context": "morning. I am Aiden Cunningham. Counsel: Thank",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Cunningham.",
+      "context": "I am Aiden Cunningham. Counsel: Thank you.",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Aiden",
+      "context": "you currently reside? Aiden Cunningham: I live",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Cunningham:",
+      "context": "currently reside? Aiden Cunningham: I live in",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Aiden",
+      "context": "like to mention? Aiden Cunningham: I am",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Cunningham:",
+      "context": "to mention? Aiden Cunningham: I am a",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "\"07/15/2024\",",
+      "context": "\"Tokenized Card\", \"TokenExpirationDate\": \"07/15/2024\", \"LastFourDigitsOfTheCard\": \"67890\", \"TransactionLimits\":",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "0541f3a44af24293bd08c10fe4c3aef1"
+    },
+    {
+      "token": "\"3714",
+      "context": "\"CardDetails\": { \"CardNumber\": \"3714 892345 67890\", \"CVV\":",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "0541f3a44af24293bd08c10fe4c3aef1"
+    },
+    {
+      "token": "\"07/15/2024\",",
+      "context": "\"CVV\": \"441\", \"ExpirationDate\": \"07/15/2024\", \"Postcode\": \"90250\" },",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "0541f3a44af24293bd08c10fe4c3aef1"
+    },
+    {
+      "token": "\"90250\"",
+      "context": "\"ExpirationDate\": \"07/15/2024\", \"Postcode\": \"90250\" }, \"ContactEmail\": \"rosarestrepo82@yahoo.com\"",
+      "predicted": "O",
+      "expected": "B-postcode",
+      "sample_id": "0541f3a44af24293bd08c10fe4c3aef1"
+    },
+    {
+      "token": "\"rosarestrepo82@yahoo.com\"",
+      "context": "\"90250\" }, \"ContactEmail\": \"rosarestrepo82@yahoo.com\" } ```",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "0541f3a44af24293bd08c10fe4c3aef1"
+    },
+    {
+      "token": "**Athens",
+      "context": "--- **Athens Zoning Permit** **Applicant",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "bafa3e0f36334a4f9729d71e89bf6ff3"
+    },
+    {
+      "token": "**Onset",
+      "context": "**Adverse Event Description:** **Onset Date:** **End Date:**",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "2289a2a0f6554216a807798660e0ce9d"
+    },
+    {
+      "token": "Date:**",
+      "context": "Event Description:** **Onset Date:** **End Date:** **Severity:**",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "2289a2a0f6554216a807798660e0ce9d"
+    },
+    {
+      "token": "**End",
+      "context": "Description:** **Onset Date:** **End Date:** **Severity:** **Outcome:**",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "2289a2a0f6554216a807798660e0ce9d"
+    },
+    {
+      "token": "Date:**",
+      "context": "**Onset Date:** **End Date:** **Severity:** **Outcome:** **Reporter",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "2289a2a0f6554216a807798660e0ce9d"
+    },
+    {
+      "token": "Los",
+      "context": "estate market in Los Angeles, California is",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "90018",
+      "context": "Prices in the 90018 area have continued",
+      "predicted": "O",
+      "expected": "B-postcode",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "**123",
+      "context": "**Featured Listings** - **123 Maple Street, Los",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "Los",
+      "context": "**123 Maple Street, Los Angeles, California 90018**",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "Angeles,",
+      "context": "Maple Street, Los Angeles, California 90018** -",
+      "predicted": "O",
+      "expected": "I-city",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "90018**",
+      "context": "Los Angeles, California 90018** - Price: $850,000",
+      "predicted": "O",
+      "expected": "B-postcode",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "**456",
+      "context": "spacious backyard. - **456 Oak Avenue, Los",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "Los",
+      "context": "**456 Oak Avenue, Los Angeles, California 90018**",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "Angeles,",
+      "context": "Oak Avenue, Los Angeles, California 90018** -",
+      "predicted": "O",
+      "expected": "I-city",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "90018**",
+      "context": "Los Angeles, California 90018** - Price: $950,000",
+      "predicted": "O",
+      "expected": "B-postcode",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "908-873-0949",
+      "context": "an emergency, dial 908-873-0949 immediately. - Send",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "72e0ae7e0263475795a3a48a201c1249"
+    },
+    {
+      "token": "908-873-0949",
+      "context": "**Procedure:** - Call 908-873-0949 immediately. - Provide",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "72e0ae7e0263475795a3a48a201c1249"
+    },
+    {
+      "token": "**22",
+      "context": "group consists of **22 year old** females,",
+      "predicted": "O",
+      "expected": "B-age",
+      "sample_id": "367f8fe8c0b5436789c06389f453c311"
+    },
+    {
+      "token": "200",
+      "context": "an average of 200 ms, with minimal",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "b346d825e1ec430e8f7e1098b5114a17"
+    },
+    {
+      "token": "ms,",
+      "context": "average of 200 ms, with minimal error",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "b346d825e1ec430e8f7e1098b5114a17"
+    },
+    {
+      "token": "4921",
+      "context": "credit debit card 4921 7834 5623 1987",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "95901f65b3d7442b9c4e32304c465a29"
+    },
+    {
+      "token": "7834",
+      "context": "debit card 4921 7834 5623 1987 must",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "95901f65b3d7442b9c4e32304c465a29"
+    },
+    {
+      "token": "5623",
+      "context": "card 4921 7834 5623 1987 must be",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "95901f65b3d7442b9c4e32304c465a29"
+    },
+    {
+      "token": "1987",
+      "context": "4921 7834 5623 1987 must be stored",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "95901f65b3d7442b9c4e32304c465a29"
+    },
+    {
+      "token": "Cannes",
+      "context": "The Cannes Film Festival, a",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "170a34e05632448caca1ef347ff553e2"
+    },
+    {
+      "token": "Cannes",
+      "context": "of cinema. The Cannes Film Festival of",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "170a34e05632448caca1ef347ff553e2"
+    },
+    {
+      "token": "07/15/2024",
+      "context": "Film Festival of 07/15/2024 was a testament",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "170a34e05632448caca1ef347ff553e2"
+    },
+    {
+      "token": "Net",
+      "context": "http://supplierlist.consumergoods.com:8080/contact Payment Terms: Net 30 Fax Number:",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "ba80f83af8a941f3aa0a95a01288bdbb"
+    },
+    {
+      "token": "503-267-9285",
+      "context": "service department at 503-267-9285 or via email",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "00c037cd9dfc4e528c315681edb8cccc"
+    },
+    {
+      "token": "Main",
+      "context": "Destination Address: 1234 Main St Carrier Details:",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "5ee05648812c4205b32b85ea192553f5"
+    },
+    {
+      "token": "Jane",
+      "context": "Date:** 2023-09-15 **Director:** Jane Doe **Cast:** John",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "Doe",
+      "context": "2023-09-15 **Director:** Jane Doe **Cast:** John Smith,",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "John",
+      "context": "Jane Doe **Cast:** John Smith, Emily Davis",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "Smith,",
+      "context": "Doe **Cast:** John Smith, Emily Davis **Rating:**",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "Emily",
+      "context": "**Cast:** John Smith, Emily Davis **Rating:** 4/5",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "Davis",
+      "context": "John Smith, Emily Davis **Rating:** 4/5 **Review",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "John",
+      "context": "The performances by John Smith and Emily",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "Smith",
+      "context": "performances by John Smith and Emily Davis",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "Emily",
+      "context": "John Smith and Emily Davis are particularly",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "Davis",
+      "context": "Smith and Emily Davis are particularly noteworthy,",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "Xavier",
+      "context": "cutting-edge video technology. Xavier Bernard12, an engineering",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "5ae1af7c6f7e4e7083d20cd23ace370d"
+    },
+    {
+      "token": "Bernard12,",
+      "context": "video technology. Xavier Bernard12, an engineering technologist",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "5ae1af7c6f7e4e7083d20cd23ace370d"
+    },
+    {
+      "token": "Xavier,",
+      "context": "card. ENGINEER Hey, Xavier, I found the",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "5ae1af7c6f7e4e7083d20cd23ace370d"
+    },
+    {
+      "token": "Xavier",
+      "context": "set up correctly. Xavier nods and turns",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "5ae1af7c6f7e4e7083d20cd23ace370d"
+    },
+    {
+      "token": "7:00",
+      "context": "available daily from 7:00 AM to 10:00",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "27fec7482b474215b1a4d8ba64f3fc3c"
+    },
+    {
+      "token": "AM",
+      "context": "daily from 7:00 AM to 10:00 PM.*",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "27fec7482b474215b1a4d8ba64f3fc3c"
+    },
+    {
+      "token": "10:00",
+      "context": "7:00 AM to 10:00 PM.* *Please provide",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "27fec7482b474215b1a4d8ba64f3fc3c"
+    },
+    {
+      "token": "PM.*",
+      "context": "AM to 10:00 PM.* *Please provide your",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "27fec7482b474215b1a4d8ba64f3fc3c"
+    },
+    {
+      "token": "Seoul,",
+      "context": "is located in Seoul, South Korea, and",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "27fec7482b474215b1a4d8ba64f3fc3c"
+    },
+    {
+      "token": "Seoul.*",
+      "context": "your stay in Seoul.*",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "27fec7482b474215b1a4d8ba64f3fc3c"
+    },
+    {
+      "token": "Souk",
+      "context": "| Proficient | Souk demonstrates a strong",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ddd617d5720d416989d710af42386741"
+    },
+    {
+      "token": "Souk",
+      "context": "| Exemplary | Souk effectively manages the",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ddd617d5720d416989d710af42386741"
+    },
+    {
+      "token": "Souk",
+      "context": "| Developing | Souk shows potential in",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ddd617d5720d416989d710af42386741"
+    },
+    {
+      "token": "Souk",
+      "context": "Overall Evaluation Summary Souk has shown proficiency",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ddd617d5720d416989d710af42386741"
+    },
+    {
+      "token": "**elijah234@verdantenergy.co.uk**",
+      "context": "contact us at **elijah234@verdantenergy.co.uk** or via fax",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "671838941dda43f1a9751912256b5f70"
+    },
+    {
+      "token": "(03/15/2024",
+      "context": "1. **Phase 1 (03/15/2024 - 04/15/2024)**: Conduct",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "671838941dda43f1a9751912256b5f70"
+    },
+    {
+      "token": "04/15/2024)**:",
+      "context": "1 (03/15/2024 - 04/15/2024)**: Conduct a detailed",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "671838941dda43f1a9751912256b5f70"
+    },
+    {
+      "token": "(04/16/2024",
+      "context": "2. **Phase 2 (04/16/2024 - 05/15/2024)**: Upgrade",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "671838941dda43f1a9751912256b5f70"
+    },
+    {
+      "token": "05/15/2024)**:",
+      "context": "2 (04/16/2024 - 05/15/2024)**: Upgrade HVAC systems",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "671838941dda43f1a9751912256b5f70"
+    },
+    {
+      "token": "(05/16/2024",
+      "context": "3. **Phase 3 (05/16/2024 - 06/15/2024)**: Replace",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "671838941dda43f1a9751912256b5f70"
+    },
+    {
+      "token": "06/15/2024)**:",
+      "context": "3 (05/16/2024 - 06/15/2024)**: Replace outdated machinery",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "671838941dda43f1a9751912256b5f70"
+    },
+    {
+      "token": "**elijah234@verdantenergy.co.uk**",
+      "context": "contact us at **elijah234@verdantenergy.co.uk** or via fax",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "671838941dda43f1a9751912256b5f70"
+    },
+    {
+      "token": "male,",
+      "context": "37 year old male, presents with acute",
+      "predicted": "O",
+      "expected": "B-gender",
+      "sample_id": "cf4d57eb259644799c045add75396825"
+    },
+    {
+      "token": "Kane",
+      "context": "management. **Narrative Notes** Kane McKenzie, male, blood",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "cf4d57eb259644799c045add75396825"
+    },
+    {
+      "token": "male,",
+      "context": "Notes** Kane McKenzie, male, blood type A+,",
+      "predicted": "O",
+      "expected": "B-gender",
+      "sample_id": "cf4d57eb259644799c045add75396825"
+    },
+    {
+      "token": "careers@nilepharma.eg.",
+      "context": "upon request via careers@nilepharma.eg. **5. Data Retention",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "40be1f49ca12400590324d9a1e2445ec"
+    },
+    {
+      "token": "careers@nilepharma.eg.",
+      "context": "upon request via careers@nilepharma.eg.",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "40be1f49ca12400590324d9a1e2445ec"
+    },
+    {
+      "token": "Martin",
+      "context": "Label From: Thierry Martin 22, Boulevard Haussmann",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "809a2d58025746ec9369abf6f9d28a00"
+    },
+    {
+      "token": "Recipient",
+      "context": "Name Recipient Address Recipient City, State, Zip",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "809a2d58025746ec9369abf6f9d28a00"
+    },
+    {
+      "token": "City,",
+      "context": "Recipient Address Recipient City, State, Zip Code",
+      "predicted": "O",
+      "expected": "I-city",
+      "sample_id": "809a2d58025746ec9369abf6f9d28a00"
+    },
+    {
+      "token": "Zip",
+      "context": "Recipient City, State, Zip Code Recipient Country",
+      "predicted": "O",
+      "expected": "B-postcode",
+      "sample_id": "809a2d58025746ec9369abf6f9d28a00"
+    },
+    {
+      "token": "Code",
+      "context": "City, State, Zip Code Recipient Country Order",
+      "predicted": "O",
+      "expected": "I-postcode",
+      "sample_id": "809a2d58025746ec9369abf6f9d28a00"
+    },
+    {
+      "token": "September",
+      "context": "at 12:34:56+01:00 on September 15, 2024, we",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "37e4c5157e6f4da49a6bd853ca117236"
+    },
+    {
+      "token": "Block",
+      "context": "House No. 45, Block 9, Gulshan-e-Iqbal. The",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "6d8633806d6c4c6f9c1f89b8a9e8320e"
+    },
+    {
+      "token": "Sun,",
+      "context": "Sun, 15 Dec 2024",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "2fc0a310876c4f79b354184fcd979fe9"
+    },
+    {
+      "token": "Sun,",
+      "context": "was received on Sun, 15 Dec 2024.",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "2fc0a310876c4f79b354184fcd979fe9"
+    },
+    {
+      "token": "(2024",
+      "context": "1. **Phase 1 (2024 Q1-Q2)**: Upgrade lighting",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "5a59ee1bc8cf4ee1bf68b964d622d34e"
+    },
+    {
+      "token": "Q1-Q2)**:",
+      "context": "**Phase 1 (2024 Q1-Q2)**: Upgrade lighting systems",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "5a59ee1bc8cf4ee1bf68b964d622d34e"
+    },
+    {
+      "token": "(2024",
+      "context": "2. **Phase 2 (2024 Q3-Q4)**: Conduct regular",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "5a59ee1bc8cf4ee1bf68b964d622d34e"
+    },
+    {
+      "token": "Q3-Q4)**:",
+      "context": "**Phase 2 (2024 Q3-Q4)**: Conduct regular maintenance",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "5a59ee1bc8cf4ee1bf68b964d622d34e"
+    },
+    {
+      "token": "(2025",
+      "context": "3. **Phase 3 (2025 Q1)**: Integrate renewable",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "5a59ee1bc8cf4ee1bf68b964d622d34e"
+    },
+    {
+      "token": "oliverhargreaves@bumblebeemarket.co.uk,",
+      "context": "your email address, oliverhargreaves@bumblebeemarket.co.uk, for follow-up if",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "7be250f997ca46c1a7ce3c5b7fe3fecd"
+    },
+    {
+      "token": "2023.",
+      "context": "fiscal year ending 2023. Key highlights include",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "b9d94bd272164d7b9a150e28e2bfadb0"
+    },
+    {
+      "token": "559-964-8375",
+      "context": "Ct Phone Number: 559-964-8375 Email: adolfojohnampuero@icloud.com Fax",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "559-964-8375",
+      "context": "Customer Phone Number: 559-964-8375 Customer Email: adolfojohnampuero@icloud.com",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "o.alsheikh@alfarisconsumergoods.jo.",
+      "context": "to the email o.alsheikh@alfarisconsumergoods.jo. **5. Delivery Schedule**",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "1479eea6581c4f89af28557510d6bd56"
+    },
+    {
+      "token": "o.alsheikh@alfarisconsumergoods.jo.",
+      "context": "via the email o.alsheikh@alfarisconsumergoods.jo. **6. Warranties** Al",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "1479eea6581c4f89af28557510d6bd56"
+    },
+    {
+      "token": "o.alsheikh@alfarisconsumergoods.jo",
+      "context": "via the email o.alsheikh@alfarisconsumergoods.jo or the fax",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "1479eea6581c4f89af28557510d6bd56"
+    },
+    {
+      "token": "meera_patil@connectiva.com.in",
+      "context": "| Email | meera_patil@connectiva.com.in | | Phone",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "53c5a82395bb4bfd93c676958e7c5439"
+    },
+    {
+      "token": "meera_patil@connectiva.com.in",
+      "context": "Notify the email meera_patil@connectiva.com.in of the fraudulent",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "53c5a82395bb4bfd93c676958e7c5439"
+    },
+    {
+      "token": "2023-10-01",
+      "context": "All Servers | 2023-10-01 | Deployed |",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "f088ff9025ea457b9254f724a13d7905"
+    },
+    {
+      "token": "2023-10-05",
+      "context": "Application A | 2023-10-05 | Deployed |",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "f088ff9025ea457b9254f724a13d7905"
+    },
+    {
+      "token": "2023-10-10",
+      "context": "Database B | 2023-10-10 | Pending |",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "f088ff9025ea457b9254f724a13d7905"
+    },
+    {
+      "token": "2024",
+      "context": "| |----------|------------------------|---------------|--------|----------|----------|--------------------------|--------------|---------------|-------------| | 2024 | =SUM(B2:B100) |",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "aa4179b9248b4731a22afd078729d647"
+    },
+    {
+      "token": "2025",
+      "context": "=H2-I2 | | 2025 | =SUM(B2:B100) |",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "aa4179b9248b4731a22afd078729d647"
+    },
+    {
+      "token": "2026",
+      "context": "=H2-I2 | | 2026 | =SUM(B2:B100) |",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "aa4179b9248b4731a22afd078729d647"
+    },
+    {
+      "token": "2024",
+      "context": "- 15 March 2024 Dear Team, I",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "3bf7df4912614b80a6fe9651eb0f768a"
+    },
+    {
+      "token": "<Email>oscareburton@gmail.com</Email>",
+      "context": "<UserCredentials> <Username>oscarburke</Username> <Password>WhisperingWind#Moonlight</Password> <Email>oscareburton@gmail.com</Email> </UserCredentials> <UserDetails> <FirstName>Oscar</FirstName>",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "0445ea8cc4594617b61bede193fb2ee2"
+    },
+    {
+      "token": "20230915",
+      "context": "into as of 20230915 by and between",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "20230915",
+      "context": "30 days of 20230915 via credit debit",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "2468",
+      "context": "5478 3210 0798 2468 1372 8932 4567",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "20231015.",
+      "context": "on or before 20231015. Acceptance of the",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "Q4",
+      "context": "| Metric | Q4 2023 Value |",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "9c99d21da66f4539b35d55e4c1297f1f"
+    },
+    {
+      "token": "2023",
+      "context": "Metric | Q4 2023 Value | Year-to-Date",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "9c99d21da66f4539b35d55e4c1297f1f"
+    },
+    {
+      "token": "Q4",
+      "context": "**Quarterly Performance** - Q4 2023 showed a",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "9c99d21da66f4539b35d55e4c1297f1f"
+    },
+    {
+      "token": "2023",
+      "context": "Performance** - Q4 2023 showed a strong",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "9c99d21da66f4539b35d55e4c1297f1f"
+    },
+    {
+      "token": "Q4",
+      "context": "risk assessment for Q4 2023 was moderate,",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "9c99d21da66f4539b35d55e4c1297f1f"
+    },
+    {
+      "token": "2023",
+      "context": "assessment for Q4 2023 was moderate, with",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "9c99d21da66f4539b35d55e4c1297f1f"
+    },
+    {
+      "token": "Q1",
+      "context": "**Projections** - For Q1 2024, we project",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "9c99d21da66f4539b35d55e4c1297f1f"
+    },
+    {
+      "token": "2024,",
+      "context": "- For Q1 2024, we project an",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "9c99d21da66f4539b35d55e4c1297f1f"
+    },
+    {
+      "token": "nigar.m@aztechinnovate.az",
+      "context": "support team at nigar.m@aztechinnovate.az for further assistance.",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "e5cb73a1c3304ac4b07a946ab5376991"
+    },
+    {
+      "token": "Expiration",
+      "context": "the document) - Expiration Date: (Provide the",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "56812bb025764dcd9cf74b370fc1c911"
+    },
+    {
+      "token": "Date:",
+      "context": "document) - Expiration Date: (Provide the expiration",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "56812bb025764dcd9cf74b370fc1c911"
+    },
+    {
+      "token": "Verification",
+      "context": "**Verification Status** - Verification Date: (Specify the",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "56812bb025764dcd9cf74b370fc1c911"
+    },
+    {
+      "token": "Date:",
+      "context": "Status** - Verification Date: (Specify the date",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "56812bb025764dcd9cf74b370fc1c911"
+    },
+    {
+      "token": "Maria",
+      "context": "courses of action. Maria should consider seeking",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "fd684b4417f44e8d9a49620bce582340"
+    },
+    {
+      "token": "091",
+      "context": "| |----------------|------------|------------|---------------|---------------| | 091 279 4465 |",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "5fe7940306b04a1ab25a2b2b196cbaaa"
+    },
+    {
+      "token": "091",
+      "context": "the phone number 091 279 4465 showing",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "5fe7940306b04a1ab25a2b2b196cbaaa"
+    },
+    {
+      "token": "091",
+      "context": "the phone number 091 279 4465 and",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "5fe7940306b04a1ab25a2b2b196cbaaa"
+    },
+    {
+      "token": "House",
+      "context": "Details:** - **Address:** House 45, Road 7,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "House",
+      "context": "property located at House 45, Road 7,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "Wed,",
+      "context": "6004, conducted on Wed, 15 Oct 2024,",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "20240515",
+      "context": "| 1.0 | 20240515 | Initial Draft",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "f7b81ab42e134bd8bd71f3b187e975b8"
+    },
+    {
+      "token": "20240515",
+      "context": "**Date of Approval:** 20240515 **Project Details:** **Project",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "f7b81ab42e134bd8bd71f3b187e975b8"
+    },
+    {
+      "token": "20240515,",
+      "context": "and as of 20240515, all workers are",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "f7b81ab42e134bd8bd71f3b187e975b8"
+    },
+    {
+      "token": "Mon,",
+      "context": "footprint. As of Mon, 15 Oct 2024,",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "6897d06561b143b08c0156ad5df420a8"
+    },
+    {
+      "token": "No.",
+      "context": "Property Address | No. 35, Anawrahta Road,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "02f755bfee414055b9f730c633784570"
+    },
+    {
+      "token": "Roberto",
+      "context": "registration number for Roberto Cruz is H4569872-02.",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "a0ed56508eca4913a5c0eb4609a56b0a"
+    },
+    {
+      "token": "Cruz",
+      "context": "number for Roberto Cruz is H4569872-02. This",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "a0ed56508eca4913a5c0eb4609a56b0a"
+    },
+    {
+      "token": "Apt",
+      "context": "Country View Rd Apt 122. The fax",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "9ea1891a58b94c4cb9bced8e479ee00d"
+    },
+    {
+      "token": "2023,",
+      "context": "for the year 2023, available for review",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "b3e8cb59b4ef4f76bea154e23b7f9ad5"
+    },
+    {
+      "token": "Vivian",
+      "context": "approaching soon, so Vivian needs to submit",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f7c67666ba1242a49bf354f5581e55f7"
+    },
+    {
+      "token": "Vivian",
+      "context": "before the deadline. Vivian can send her",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f7c67666ba1242a49bf354f5581e55f7"
+    },
+    {
+      "token": "30",
+      "context": "be returned within 30 days of purchase.",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "days",
+      "context": "returned within 30 days of purchase. To",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "aishah.r@easterngrove.com.my.",
+      "context": "to the email aishah.r@easterngrove.com.my. 2. **In-Store**: If",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "7-10",
+      "context": "purchase. Please allow 7-10 business days for",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "business",
+      "context": "Please allow 7-10 business days for the",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "days",
+      "context": "allow 7-10 business days for the refund",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "30",
+      "context": "be initiated within 30 days of the",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "days",
+      "context": "initiated within 30 days of the purchase",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "aishah.r@easterngrove.com.my.",
+      "context": "email us at aishah.r@easterngrove.com.my. **Return Process**: 1.",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "aishah.r@easterngrove.com.my.",
+      "context": "emailing us at aishah.r@easterngrove.com.my. 2. Provide your",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "a",
+      "context": "the loan at a quarter to four.",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "b62218b82a4d41b0af57c3496114235d"
+    },
+    {
+      "token": "2023-07-14:",
+      "context": "Active Users:** - 2023-07-14: 4,200 - 2023-07-15:",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "76a767051f2b4ceda1c6383fe2e25f4a"
+    },
+    {
+      "token": "2023-07-15:",
+      "context": "2023-07-14: 4,200 - 2023-07-15: 4,321 - **Monthly",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "76a767051f2b4ceda1c6383fe2e25f4a"
+    },
+    {
+      "token": "June",
+      "context": "Active Users:** - June 2023: 4,000 -",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "76a767051f2b4ceda1c6383fe2e25f4a"
+    },
+    {
+      "token": "2023:",
+      "context": "Users:** - June 2023: 4,000 - July",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "76a767051f2b4ceda1c6383fe2e25f4a"
+    },
+    {
+      "token": "July",
+      "context": "2023: 4,000 - July 2023: 4,321 ---",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "76a767051f2b4ceda1c6383fe2e25f4a"
+    },
+    {
+      "token": "2023:",
+      "context": "4,000 - July 2023: 4,321 --- **System",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "76a767051f2b4ceda1c6383fe2e25f4a"
+    },
+    {
+      "token": "Rome,",
+      "context": "coordinate: 40.8476,-17.2345 | Rome, Italy | 1500",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "afd5145d595b4c83a1095e2febfe3348"
+    },
+    {
+      "token": "Rome,",
+      "context": "Vehicle | | Rome, Italy | Milan,",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "afd5145d595b4c83a1095e2febfe3348"
+    },
+    {
+      "token": "Milan,",
+      "context": "Rome, Italy | Milan, Italy | 550",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "afd5145d595b4c83a1095e2febfe3348"
+    },
+    {
+      "token": "female",
+      "context": "study involving a female employee who faced",
+      "predicted": "O",
+      "expected": "B-gender",
+      "sample_id": "87d1d60e9fd74148b7e38c8d857c7fc7"
+    },
+    {
+      "token": "Geelong,",
+      "context": "| |------------------|--------------------|-------------------|---------------------|----------------------|----------------------| | Geelong, Victoria | Melbourne,",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Melbourne,",
+      "context": "Geelong, Victoria | Melbourne, Victoria | 0",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Geelong,",
+      "context": "5.00 | | Geelong, Victoria | Sydney,",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Sydney,",
+      "context": "Geelong, Victoria | Sydney, New South Wales",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Geelong,",
+      "context": "6.00 | | Geelong, Victoria | Brisbane,",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Brisbane,",
+      "context": "Geelong, Victoria | Brisbane, Queensland | 1001",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Geelong,",
+      "context": "7.00 | | Geelong, Victoria | Adelaide,",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Adelaide,",
+      "context": "Geelong, Victoria | Adelaide, South Australia |",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Geelong,",
+      "context": "8.00 | | Geelong, Victoria | Perth,",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Perth,",
+      "context": "Geelong, Victoria | Perth, Western Australia |",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Abrar's",
+      "context": "or degree requirements. Abrar's political views align",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "79aa1b803f9c488cbf84c3226f83c798"
+    },
+    {
+      "token": "Abrar",
+      "context": "smooth academic journey, Abrar must adhere to",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "79aa1b803f9c488cbf84c3226f83c798"
+    },
+    {
+      "token": "annually",
+      "context": "will be reviewed annually on 05.11.2023, or",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "6760ec100b7c4563a79a79b0d799d1cf"
+    },
+    {
+      "token": "5",
+      "context": "Response Time | 5 minutes | Monthly",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "28049b3ada074be1a1b1a4c0b8a39737"
+    },
+    {
+      "token": "minutes",
+      "context": "Time | 5 minutes | Monthly |",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "28049b3ada074be1a1b1a4c0b8a39737"
+    },
+    {
+      "token": "2023-12-31",
+      "context": "**Authorized Representative** **Date:** 2023-12-31 Client _____________________________ **Authorized",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "28049b3ada074be1a1b1a4c0b8a39737"
+    },
+    {
+      "token": "Bldg",
+      "context": "King Fahd Road, Bldg 18. **3.2 Fire",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "ee4ca2de16db4c959f9e8b13c8a5ef80"
+    },
+    {
+      "token": "David",
+      "context": "Long. **RECITALS** WHEREAS, David Long is a",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "3a716439c0c54d59936374b9a4b668c8"
+    },
+    {
+      "token": "David",
+      "context": "By: ___________________________ Name: David Long David Long",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "3a716439c0c54d59936374b9a4b668c8"
+    },
+    {
+      "token": "Long",
+      "context": "___________________________ Name: David Long David Long By:",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "3a716439c0c54d59936374b9a4b668c8"
+    },
+    {
+      "token": "David",
+      "context": "Name: David Long David Long By: ___________________________",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "3a716439c0c54d59936374b9a4b668c8"
+    },
+    {
+      "token": "Long",
+      "context": "David Long David Long By: ___________________________ Name:",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "3a716439c0c54d59936374b9a4b668c8"
+    },
+    {
+      "token": "David",
+      "context": "By: ___________________________ Name: David Long **EXHIBITS** Exhibit",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "3a716439c0c54d59936374b9a4b668c8"
+    },
+    {
+      "token": "Long",
+      "context": "___________________________ Name: David Long **EXHIBITS** Exhibit A:",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "3a716439c0c54d59936374b9a4b668c8"
+    },
+    {
+      "token": "HOMER",
+      "context": "LA COUNTY OF HOMER **AFFIDAVIT** I, Chelsea",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "______",
+      "context": "Executed on this ______ day of _______,",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "day",
+      "context": "on this ______ day of _______, 20______.",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "of",
+      "context": "this ______ day of _______, 20______. Chelsea",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "_______,",
+      "context": "______ day of _______, 20______. Chelsea Flateau",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "20______.",
+      "context": "day of _______, 20______. Chelsea Flateau Affiant",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "Chelsea",
+      "context": "of _______, 20______. Chelsea Flateau Affiant Sworn",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "Flateau",
+      "context": "_______, 20______. Chelsea Flateau Affiant Sworn to",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "______",
+      "context": "before me this ______ day of _______,",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "day",
+      "context": "me this ______ day of _______, 20______.",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "of",
+      "context": "this ______ day of _______, 20______. Notary",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "_______,",
+      "context": "______ day of _______, 20______. Notary Public",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "20______.",
+      "context": "day of _______, 20______. Notary Public",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "Building",
+      "context": "Al Rayyan Road, Building 24 in Al",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "1d689646f5ed45df8f98b1c8138f30a1"
+    },
+    {
+      "token": "319-536-5644",
+      "context": "customer service at 319-536-5644 to initiate the",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "0bf7691d23a7489cbfdb5b67ed755bcb"
+    },
+    {
+      "token": "5-7",
+      "context": "method. Please allow 5-7 business days for",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "0bf7691d23a7489cbfdb5b67ed755bcb"
+    },
+    {
+      "token": "business",
+      "context": "Please allow 5-7 business days for the",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "0bf7691d23a7489cbfdb5b67ed755bcb"
+    },
+    {
+      "token": "days",
+      "context": "allow 5-7 business days for the refund",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "0bf7691d23a7489cbfdb5b67ed755bcb"
+    },
+    {
+      "token": "319-536-5644",
+      "context": "customer service at 319-536-5644 or email us",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "0bf7691d23a7489cbfdb5b67ed755bcb"
+    },
+    {
+      "token": "Johnson,",
+      "context": "whether the defendant, Johnson, breached the contract",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "917cc73043cf4e5d9b557b4035944999"
+    },
+    {
+      "token": "Johnson,",
+      "context": "that the defendant, Johnson, breached the contract.",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "917cc73043cf4e5d9b557b4035944999"
+    },
+    {
+      "token": "cyberguardian@cybershieldisrael.co.il,",
+      "context": "including the email cyberguardian@cybershieldisrael.co.il, must be kept",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "89c1f0dfce5d471daae81dc96fa043fd"
+    },
+    {
+      "token": "**09/15/2024**.",
+      "context": "oil change on **09/15/2024**. Please bring the",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "e4692f5a32ad48de92c4cb2609ae3081"
+    },
+    {
+      "token": "John",
+      "context": "Entertainment Studio | John Gaines, Director |",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f3627340aa174186a878bd10af127d0f"
+    },
+    {
+      "token": "Gaines,",
+      "context": "Studio | John Gaines, Director | Cameras,",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "f3627340aa174186a878bd10af127d0f"
+    },
+    {
+      "token": "John",
+      "context": "Lane County | John Gaines, Director |",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f3627340aa174186a878bd10af127d0f"
+    },
+    {
+      "token": "Gaines,",
+      "context": "County | John Gaines, Director | Sound",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "f3627340aa174186a878bd10af127d0f"
+    },
+    {
+      "token": "John",
+      "context": "| Eugene | John Gaines, Director |",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "f3627340aa174186a878bd10af127d0f"
+    },
+    {
+      "token": "Gaines,",
+      "context": "Eugene | John Gaines, Director | Props",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "f3627340aa174186a878bd10af127d0f"
+    },
+    {
+      "token": "623-937-3726",
+      "context": "SFO-3219450 Phone Number: 623-937-3726 **Billing Period** 01/01/2024",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "74ebad571ee84573b1ce1b59d528de00"
+    },
+    {
+      "token": "623-937-3726",
+      "context": "15 min | 623-937-3726 | $2.50 |",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "74ebad571ee84573b1ce1b59d528de00"
+    },
+    {
+      "token": "623-937-3726",
+      "context": "20 min | 623-937-3726 | $3.00 |",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "74ebad571ee84573b1ce1b59d528de00"
+    },
+    {
+      "token": "623-937-3726",
+      "context": "10 min | 623-937-3726 | $1.50 |",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "74ebad571ee84573b1ce1b59d528de00"
+    },
+    {
+      "token": "male",
+      "context": "is a 54-year-old male born on 1969-09-28.",
+      "predicted": "O",
+      "expected": "B-gender",
+      "sample_id": "d0a45199e9b1415b85aa191be54b81b0"
+    },
+    {
+      "token": "a.s@amiramedia.ly",
+      "context": "contact us at a.s@amiramedia.ly at 17:23:45+01:00.",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "386575e54d8f4307b55af7b2763a7ea9"
+    },
+    {
+      "token": "17:23:45+01:00.",
+      "context": "at a.s@amiramedia.ly at 17:23:45+01:00.",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "386575e54d8f4307b55af7b2763a7ea9"
+    },
+    {
+      "token": "4532",
+      "context": "credit debit card 4532 0156 7894 3256",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "7dbc8e04c2ad404bbc980d679e30c990"
+    },
+    {
+      "token": "0156",
+      "context": "debit card 4532 0156 7894 3256 with",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "7dbc8e04c2ad404bbc980d679e30c990"
+    },
+    {
+      "token": "7894",
+      "context": "card 4532 0156 7894 3256 with CVV",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "7dbc8e04c2ad404bbc980d679e30c990"
+    },
+    {
+      "token": "3256",
+      "context": "4532 0156 7894 3256 with CVV 602",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "7dbc8e04c2ad404bbc980d679e30c990"
+    },
+    {
+      "token": "Thu,",
+      "context": "efficiency metrics. On Thu, 15 Aug 2024,",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "c4f2d063989b4a4daacff98310773c53"
+    },
+    {
+      "token": "15",
+      "context": "effective as of 15 March 2024. _____________________________",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "a5b170e591ad4b61b8d52328b1a31029"
+    },
+    {
+      "token": "March",
+      "context": "as of 15 March 2024. _____________________________ _____________________________",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "a5b170e591ad4b61b8d52328b1a31029"
+    },
+    {
+      "token": "2024.",
+      "context": "of 15 March 2024. _____________________________ _____________________________ Supplier's",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "a5b170e591ad4b61b8d52328b1a31029"
+    },
+    {
+      "token": "15",
+      "context": "_____________________________ _____________________________ Date: 15 March 2024 Date:",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "a5b170e591ad4b61b8d52328b1a31029"
+    },
+    {
+      "token": "March",
+      "context": "_____________________________ Date: 15 March 2024 Date: 15",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "a5b170e591ad4b61b8d52328b1a31029"
+    },
+    {
+      "token": "2024",
+      "context": "Date: 15 March 2024 Date: 15 March",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "a5b170e591ad4b61b8d52328b1a31029"
+    },
+    {
+      "token": "15",
+      "context": "March 2024 Date: 15 March 2024",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "a5b170e591ad4b61b8d52328b1a31029"
+    },
+    {
+      "token": "March",
+      "context": "2024 Date: 15 March 2024",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "a5b170e591ad4b61b8d52328b1a31029"
+    },
+    {
+      "token": "2024",
+      "context": "Date: 15 March 2024",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "a5b170e591ad4b61b8d52328b1a31029"
+    },
+    {
+      "token": "John",
+      "context": "of 59** **Author:** John Doe **Publication Date:**",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "127b36a33124411ba62ad0ca8191491d"
+    },
+    {
+      "token": "Doe",
+      "context": "59** **Author:** John Doe **Publication Date:** 2030-08-15",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "127b36a33124411ba62ad0ca8191491d"
+    },
+    {
+      "token": "06/15/2023",
+      "context": "$100.00 | | 06/15/2023 | Purchase |",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "4a45a1765a264781bf50c70ea16d72f8"
+    },
+    {
+      "token": "Ethan",
+      "context": "need to contact Ethan via fax, the",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "2876c08d9864434eaad1540ed5e5d555"
+    },
+    {
+      "token": "Syracuse,",
+      "context": "the city of Syracuse, New York. ---",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "2c5414ffdf334343accecbd1bcdcae28"
+    },
+    {
+      "token": "Syracuse,",
+      "context": "the city of Syracuse, New York.",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "2c5414ffdf334343accecbd1bcdcae28"
+    },
+    {
+      "token": "Yanira",
+      "context": "El Conde 123. Yanira Cruz is fluent",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "bc857eddb0ad480d9fb6512c41857c77"
+    },
+    {
+      "token": "Cruz",
+      "context": "Conde 123. Yanira Cruz is fluent in",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "bc857eddb0ad480d9fb6512c41857c77"
+    },
+    {
+      "token": "EST",
+      "context": "Time: 10:15 AM EST ```",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "62c8b41bfe91445780a423240b3992d8"
+    },
+    {
+      "token": "German",
+      "context": "O+ Progress Notes: German Servin, a driver",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ed640159bf85417180ce382622ed5d65"
+    },
+    {
+      "token": "Servin,",
+      "context": "Progress Notes: German Servin, a driver sales",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "ed640159bf85417180ce382622ed5d65"
+    },
+    {
+      "token": "Fairbanks,",
+      "context": "through arbitration in Fairbanks, AK, 99643. **9.",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "b57bc0d167c540f0b8e8de8b42940289"
+    },
+    {
+      "token": "99643.",
+      "context": "in Fairbanks, AK, 99643. **9. CONFIDENTIALITY** The",
+      "predicted": "O",
+      "expected": "B-postcode",
+      "sample_id": "b57bc0d167c540f0b8e8de8b42940289"
+    },
+    {
+      "token": "(401)",
+      "context": "- **Phone Number:** (401) 555-7892 - **Email:**",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "25853881cdf945019972205b0c0f5075"
+    },
+    {
+      "token": "(401)",
+      "context": "- **Phone Number:** (401) 555-7892 - **Email:**",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "25853881cdf945019972205b0c0f5075"
+    },
+    {
+      "token": "555-7892",
+      "context": "**Phone Number:** (401) 555-7892 - **Email:** elijah.baker@transitflowlogistics.com",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "25853881cdf945019972205b0c0f5075"
+    },
+    {
+      "token": "elijah.baker@transitflowlogistics.com",
+      "context": "555-7892 - **Email:** elijah.baker@transitflowlogistics.com **Consignee Information:** -",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "25853881cdf945019972205b0c0f5075"
+    },
+    {
+      "token": "(401)",
+      "context": "- **Phone Number:** (401) 555-7892 - **Email:**",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "25853881cdf945019972205b0c0f5075"
+    },
+    {
+      "token": "elijah.baker@transitflowlogistics.com",
+      "context": "555-7892 - **Email:** elijah.baker@transitflowlogistics.com **Description of Goods:**",
+      "predicted": "O",
+      "expected": "B-email",
+      "sample_id": "25853881cdf945019972205b0c0f5075"
+    },
+    {
+      "token": "Anna",
+      "context": "college. On 1989-01-07, Anna was born. Unfortunately,",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "9cc28bdc8ab1486387cd8711a36a3666"
+    },
+    {
+      "token": "Anna's",
+      "context": "was born. Unfortunately, Anna's medical condition has",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "9cc28bdc8ab1486387cd8711a36a3666"
+    },
+    {
+      "token": "Bradley",
+      "context": "development **Progress Updates:** Bradley has shown significant",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "2fa5ca6b221546e7bbc3ec6ed9f498da"
+    },
+    {
+      "token": "Silas'",
+      "context": "various studies and Silas' own findings to",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "0422b097dbc140ba86c858a6a9e14478"
+    },
+    {
+      "token": "Silas",
+      "context": "support this claim. Silas can be contacted",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "0422b097dbc140ba86c858a6a9e14478"
+    },
+    {
+      "token": "433-51-0186",
+      "context": "__________________________ Consumer's SSN: 433-51-0186",
+      "predicted": "O",
+      "expected": "B-ssn",
+      "sample_id": "24843650aa7041da871875720aea6b0a"
+    },
+    {
+      "token": "Smith,",
+      "context": "| Dr. J. Smith, RN | **Additional",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "c1b551716bd2444496885e9c883c6aa8"
+    },
+    {
+      "token": "agender.",
+      "context": "gender identity as agender. My name is",
+      "predicted": "O",
+      "expected": "B-gender",
+      "sample_id": "87a42af5eb924e4883eaf6fc67265d91"
+    },
+    {
+      "token": "Bldg",
+      "context": "King Fahd Road, Bldg 24 - Contact",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "4dbe9f787f924e48bdfa7f1bac271dd3"
+    },
+    {
+      "token": "\"18:23:45\",",
+      "context": "\"ipv6\": \"5f3b:1a7c:9d2e:3f8b:6c4a:5e1b:7c9d:2e4c\", \"time\": \"18:23:45\", \"date_time\": \"15-11-2026\", \"http_cookie\":",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "2ad790d074954f71af53e6bc97f69fda"
+    },
+    {
+      "token": "230915-5924,",
+      "context": "certificate license number 230915-5924, ensuring compliance with",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "3e977e1b40464ba39b4163eb081b40c9"
+    },
+    {
+      "token": "2024-11-01",
+      "context": "| 2024-10-06T23:43:13 | 2024-11-01 | | Production",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "ebfd964171044acf91721b3924aa563b"
+    },
+    {
+      "token": "2024-11-02",
+      "context": "| Production | 2024-11-02 | 2024-11-15 |",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "ebfd964171044acf91721b3924aa563b"
+    },
+    {
+      "token": "2024-11-15",
+      "context": "| 2024-11-02 | 2024-11-15 | | Post-production|",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "ebfd964171044acf91721b3924aa563b"
+    },
+    {
+      "token": "2024-11-16",
+      "context": "| | Post-production| 2024-11-16 | 2024-12-01 |",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "ebfd964171044acf91721b3924aa563b"
+    },
+    {
+      "token": "2024-12-01",
+      "context": "Post-production| 2024-11-16 | 2024-12-01 | **Detailed Shot",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "ebfd964171044acf91721b3924aa563b"
+    },
+    {
+      "token": "2024-11-20",
+      "context": "Rough Cut | 2024-11-20 | | Final",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "ebfd964171044acf91721b3924aa563b"
+    },
+    {
+      "token": "2024-11-30",
+      "context": "Final Cut | 2024-11-30 | | Distribution",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "ebfd964171044acf91721b3924aa563b"
+    },
+    {
+      "token": "2024-12-01",
+      "context": "| Distribution | 2024-12-01 |",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "ebfd964171044acf91721b3924aa563b"
+    },
+    {
+      "token": "2023",
+      "context": "and projections from 2023 to 2028. The",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "901f1f6377b74665aa4b1a753267a07e"
+    },
+    {
+      "token": "2028.",
+      "context": "from 2023 to 2028. The report can",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "901f1f6377b74665aa4b1a753267a07e"
+    },
+    {
+      "token": "female,",
+      "context": "Kurtis Shear, a female, white, born on",
+      "predicted": "O",
+      "expected": "B-gender",
+      "sample_id": "105d44ef31d5455bbf51ec99376ef63d"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+======================================================================
+NER PII Benchmark — Financial Hybrid (gpt-4o) × finer-139
+======================================================================
+
+Tier: 1
+Evaluated labels: 139
+  System labels: 139
+  Dataset labels: 139
+  Mapping applied: False
+
+Samples: 500
+Tokens: 25933
+
+--- Token-Level Metrics ---
+  Precision (macro/micro/weighted): 0.2520 / 0.7670 / 0.4289
+  Recall    (macro/micro/weighted): 0.2380 / 0.4241 / 0.4241
+  F1        (macro/micro/weighted): 0.2342 / 0.5462 / 0.4176
+
+--- Entity-Level Metrics (seqeval) ---
+  Precision: 0.7821
+  Recall:    0.4289
+  F1:        0.5540
+
+--- Latency ---
+  Mean:   14.39 ms
+  Median: 13.77 ms
+  P95:    15.36 ms
+  P99:    18.16 ms
+  Throughput: 69.5 samples/sec
+
+--- Per-Entity F1 Scores ---
+  B-BusinessAcquisitionPercentageOfVotingInterestsAcquired P=1.0000  R=1.0000  F1=1.0000  (n=1.0)
+  B-BusinessCombinationAcquisitionRelatedCosts P=1.0000  R=1.0000  F1=1.0000  (n=1.0)
+  B-EffectiveIncomeTaxRateContinuingOperations P=1.0000  R=1.0000  F1=1.0000  (n=7.0)
+  B-EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognizedPeriodForRecognition1 P=1.0000  R=1.0000  F1=1.0000  (n=14.0)
+  B-ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsExercisesInPeriodTotalIntrinsicValue P=1.0000  R=1.0000  F1=1.0000  (n=2.0)
+  B-StockRepurchaseProgramAuthorizedAmount1 P=1.0000  R=1.0000  F1=1.0000  (n=5.0)
+  B-ConcentrationRiskPercentage1 P=1.0000  R=0.9167  F1=0.9565  (n=12.0)
+  B-IncomeTaxExpenseBenefit      P=1.0000  R=0.9000  F1=0.9474  (n=10.0)
+  B-NumberOfRealEstateProperties P=1.0000  R=0.8947  F1=0.9444  (n=19.0)
+  B-AntidilutiveSecuritiesExcludedFromComputationOfEarningsPerShareAmount P=0.9412  R=0.9412  F1=0.9412  (n=17.0)
+  B-RestructuringCharges         P=1.0000  R=0.8750  F1=0.9333  (n=8.0)
+  B-RevenueRemainingPerformanceObligation P=1.0000  R=0.8571  F1=0.9231  (n=7.0)
+  B-AllocatedShareBasedCompensationExpense P=0.8462  R=1.0000  F1=0.9167  (n=22.0)
+  B-DebtInstrumentInterestRateStatedPercentage P=0.8919  R=0.8919  F1=0.8919  (n=37.0)
+  B-Goodwill                     P=0.8000  R=1.0000  F1=0.8889  (n=4.0)
+  B-OperatingLeaseWeightedAverageDiscountRatePercent P=0.8000  R=1.0000  F1=0.8889  (n=4.0)
+  B-NumberOfReportableSegments   P=0.7895  R=1.0000  F1=0.8824  (n=15.0)
+  B-DebtInstrumentBasisSpreadOnVariableRate1 P=0.8286  R=0.9062  F1=0.8657  (n=32.0)
+  B-CommonStockDividendsPerShareDeclared P=0.7500  R=1.0000  F1=0.8571  (n=3.0)
+  B-ContractWithCustomerLiabilityRevenueRecognized P=0.7500  R=1.0000  F1=0.8571  (n=6.0)
+  B-Depreciation                 P=0.7500  R=1.0000  F1=0.8571  (n=6.0)
+  B-DerivativeNotionalAmount     P=1.0000  R=0.6667  F1=0.8000  (n=9.0)
+  B-LettersOfCreditOutstandingAmount P=1.0000  R=0.6667  F1=0.8000  (n=3.0)
+  B-OperatingLeaseRightOfUseAsset P=1.0000  R=0.6667  F1=0.8000  (n=3.0)
+  B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsGrantsInPeriod P=1.0000  R=0.6667  F1=0.8000  (n=6.0)
+  B-LineOfCreditFacilityMaximumBorrowingCapacity P=0.7258  R=0.8654  F1=0.7895  (n=52.0)
+  B-AmortizationOfIntangibleAssets P=0.7857  R=0.7333  F1=0.7586  (n=15.0)
+  B-SharebasedCompensationArrangementBySharebasedPaymentAwardAwardVestingRightsPercentage P=1.0000  R=0.6000  F1=0.7500  (n=5.0)
+  B-EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognized P=0.5714  R=1.0000  F1=0.7273  (n=8.0)
+  B-ShareBasedCompensationArrangementByShareBasedPaymentAwardAwardVestingPeriod1 P=0.6364  R=0.7778  F1=0.7000  (n=9.0)
+  I-ShareBasedCompensationArrangementByShareBasedPaymentAwardAwardVestingPeriod1 P=0.6364  R=0.7778  F1=0.7000  (n=9.0)
+  B-DebtInstrumentRedemptionPricePercentage P=0.5000  R=1.0000  F1=0.6667  (n=4.0)
+  B-EffectiveIncomeTaxRateReconciliationAtFederalStatutoryIncomeTaxRate P=1.0000  R=0.5000  F1=0.6667  (n=4.0)
+  B-OperatingLeaseWeightedAverageRemainingLeaseTerm1 P=1.0000  R=0.5000  F1=0.6667  (n=4.0)
+  B-StockRepurchaseProgramRemainingAuthorizedRepurchaseAmount1 P=1.0000  R=0.5000  F1=0.6667  (n=2.0)
+  B-DebtInstrumentFaceAmount     P=0.6296  R=0.6071  F1=0.6182  (n=28.0)
+  B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodTotalFairValue P=1.0000  R=0.3333  F1=0.5000  (n=6.0)
+  B-DebtInstrumentTerm           P=1.0000  R=0.2857  F1=0.4444  (n=7.0)
+  B-EquityMethodInvestmentOwnershipPercentage P=0.5000  R=0.3077  F1=0.3810  (n=13.0)
+  B-LineOfCredit                 P=0.5000  R=0.2000  F1=0.2857  (n=5.0)
+  B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsGrantsInPeriodWeightedAverageGrantDateFairValue P=0.1429  R=1.0000  F1=0.2500  (n=1.0)
+  B-AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife P=0.0000  R=0.0000  F1=0.0000  (n=3.0)
+  B-AmortizationOfFinancingCosts P=0.0000  R=0.0000  F1=0.0000  (n=4.0)
+  B-AreaOfRealEstateProperty     P=0.0000  R=0.0000  F1=0.0000  (n=0.0)
+  B-AssetImpairmentCharges       P=0.0000  R=0.0000  F1=0.0000  (n=11.0)
+  B-BusinessAcquisitionEquityInterestsIssuedOrIssuableNumberOfSharesIssued P=0.0000  R=0.0000  F1=0.0000  (n=4.0)
+  B-BusinessCombinationConsiderationTransferred1 P=0.0000  R=0.0000  F1=0.0000  (n=4.0)
+  B-BusinessCombinationContingentConsiderationLiability P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+  B-BusinessCombinationRecognizedIdentifiableAssetsAcquiredAndLiabilitiesAssumedIntangibleAssetsOtherThanGoodwill P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+  B-BusinessCombinationRecognizedIdentifiableAssetsAcquiredAndLiabilitiesAssumedIntangibles P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+  B-CapitalizedContractCostAmortization P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-CashAndCashEquivalentsFairValueDisclosure P=0.0000  R=0.0000  F1=0.0000  (n=6.0)
+  B-ClassOfWarrantOrRightExercisePriceOfWarrantsOrRights1 P=0.0000  R=0.0000  F1=0.0000  (n=7.0)
+  B-CommonStockCapitalSharesReservedForFutureIssuance P=0.0000  R=0.0000  F1=0.0000  (n=5.0)
+  B-CommonStockParOrStatedValuePerShare P=0.0000  R=0.0000  F1=0.0000  (n=3.0)
+  B-CommonStockSharesAuthorized  P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-CommonStockSharesOutstanding P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+  B-ContractWithCustomerLiability P=0.0000  R=0.0000  F1=0.0000  (n=6.0)
+  B-CumulativeEffectOfNewAccountingPrincipleInPeriodOfAdoption P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+  B-DebtInstrumentCarryingAmount P=0.0000  R=0.0000  F1=0.0000  (n=6.0)
+  B-DebtInstrumentConvertibleConversionPrice1 P=0.0000  R=0.0000  F1=0.0000  (n=4.0)
+  B-DebtInstrumentFairValue      P=0.0000  R=0.0000  F1=0.0000  (n=7.0)
+  B-DebtInstrumentInterestRateEffectivePercentage P=0.0000  R=0.0000  F1=0.0000  (n=10.0)
+  B-DebtInstrumentMaturityDate   P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-DebtInstrumentUnamortizedDiscount P=0.0000  R=0.0000  F1=0.0000  (n=4.0)
+  B-DebtWeightedAverageInterestRate P=0.0000  R=0.0000  F1=0.0000  (n=8.0)
+  B-DeferredFinanceCostsGross    P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+  B-DeferredFinanceCostsNet      P=0.0000  R=0.0000  F1=0.0000  (n=6.0)
+  B-DefinedBenefitPlanContributionsByEmployer P=0.0000  R=0.0000  F1=0.0000  (n=10.0)
+  B-DefinedContributionPlanCostRecognized P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-DerivativeFixedInterestRate  P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+  B-DisposalGroupIncludingDiscontinuedOperationConsideration P=0.0000  R=0.0000  F1=0.0000  (n=5.0)
+  B-EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognizedShareBasedAwardsOtherThanOptions P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-EmployeeServiceShareBasedCompensationTaxBenefitFromCompensationExpense P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-EquityMethodInvestments      P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+  B-FiniteLivedIntangibleAssetUsefulLife P=0.0000  R=0.0000  F1=0.0000  (n=5.0)
+  B-GainsLossesOnExtinguishmentOfDebt P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-GoodwillImpairmentLoss       P=0.0000  R=0.0000  F1=0.0000  (n=5.0)
+  B-GuaranteeObligationsMaximumExposure P=0.0000  R=0.0000  F1=0.0000  (n=3.0)
+  B-InterestExpense              P=0.0000  R=0.0000  F1=0.0000  (n=4.0)
+  B-InterestExpenseDebt          P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-LeaseAndRentalExpense        P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-LesseeOperatingLeaseRenewalTerm P=0.0000  R=0.0000  F1=0.0000  (n=3.0)
+  B-LesseeOperatingLeaseTermOfContract P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+  B-LineOfCreditFacilityCommitmentFeePercentage P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+  B-LineOfCreditFacilityCurrentBorrowingCapacity P=0.0000  R=0.0000  F1=0.0000  (n=10.0)
+  B-LineOfCreditFacilityInterestRateAtPeriodEnd P=0.0000  R=0.0000  F1=0.0000  (n=3.0)
+  B-LineOfCreditFacilityRemainingBorrowingCapacity P=0.0000  R=0.0000  F1=0.0000  (n=3.0)
+  B-LineOfCreditFacilityUnusedCapacityCommitmentFeePercentage P=0.0000  R=0.0000  F1=0.0000  (n=3.0)
+  B-LongTermDebt                 P=0.0000  R=0.0000  F1=0.0000  (n=9.0)
+  B-LongTermDebtFairValue        P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-LossContingencyDamagesSoughtValue P=0.0000  R=0.0000  F1=0.0000  (n=3.0)
+  B-MinorityInterestOwnershipPercentageByNoncontrollingOwners P=0.0000  R=0.0000  F1=0.0000  (n=8.0)
+  B-MinorityInterestOwnershipPercentageByParent P=0.0000  R=0.0000  F1=0.0000  (n=3.0)
+  B-NumberOfOperatingSegments    P=0.0000  R=0.0000  F1=0.0000  (n=6.0)
+  B-OperatingLeaseCost           P=0.0000  R=0.0000  F1=0.0000  (n=3.0)
+  B-OperatingLeaseExpense        P=0.0000  R=0.0000  F1=0.0000  (n=12.0)
+  B-OperatingLeaseLiability      P=0.0000  R=0.0000  F1=0.0000  (n=3.0)
+  B-OperatingLeasePayments       P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+  B-OperatingLossCarryforwards   P=0.0000  R=0.0000  F1=0.0000  (n=5.0)
+  B-PaymentsToAcquireBusinessesGross P=0.0000  R=0.0000  F1=0.0000  (n=5.0)
+  B-PaymentsToAcquireBusinessesNetOfCashAcquired P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-PreferredStockDividendRatePercentage P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-PreferredStockSharesAuthorized P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-ProceedsFromIssuanceOfCommonStock P=0.0000  R=0.0000  F1=0.0000  (n=4.0)
+  B-PropertyPlantAndEquipmentUsefulLife P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-PublicUtilitiesRequestedRateIncreaseDecreaseAmount P=0.0000  R=0.0000  F1=0.0000  (n=6.0)
+  B-RelatedPartyTransactionAmountsOfTransaction P=0.0000  R=0.0000  F1=0.0000  (n=3.0)
+  B-RelatedPartyTransactionExpensesFromTransactionsWithRelatedParty P=0.0000  R=0.0000  F1=0.0000  (n=6.0)
+  B-RepaymentsOfDebt             P=0.0000  R=0.0000  F1=0.0000  (n=3.0)
+  B-RevenueFromContractWithCustomerExcludingAssessedTax P=0.0000  R=0.0000  F1=0.0000  (n=12.0)
+  B-RevenueFromRelatedParties    P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-Revenues                     P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+  B-SaleOfStockNumberOfSharesIssuedInTransaction P=0.0000  R=0.0000  F1=0.0000  (n=13.0)
+  B-SaleOfStockPricePerShare     P=0.0000  R=0.0000  F1=0.0000  (n=7.0)
+  B-ShareBasedCompensation       P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedNumber P=0.0000  R=0.0000  F1=0.0000  (n=5.0)
+  B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAuthorized P=0.0000  R=0.0000  F1=0.0000  (n=13.0)
+  B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAvailableForGrant P=0.0000  R=0.0000  F1=0.0000  (n=8.0)
+  B-ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsGrantsInPeriodGross P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+  B-ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsGrantsInPeriodWeightedAverageGrantDateFairValue P=0.0000  R=0.0000  F1=0.0000  (n=6.0)
+  B-SharePrice                   P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-SharebasedCompensationArrangementBySharebasedPaymentAwardExpirationPeriod P=0.0000  R=0.0000  F1=0.0000  (n=4.0)
+  B-StockIssuedDuringPeriodSharesNewIssues P=0.0000  R=0.0000  F1=0.0000  (n=5.0)
+  B-StockRepurchasedAndRetiredDuringPeriodShares P=0.0000  R=0.0000  F1=0.0000  (n=6.0)
+  B-StockRepurchasedDuringPeriodShares P=0.0000  R=0.0000  F1=0.0000  (n=4.0)
+  B-TreasuryStockAcquiredAverageCostPerShare P=0.0000  R=0.0000  F1=0.0000  (n=5.0)
+  B-TreasuryStockSharesAcquired  P=0.0000  R=0.0000  F1=0.0000  (n=6.0)
+  B-TreasuryStockValueAcquiredCostMethod P=0.0000  R=0.0000  F1=0.0000  (n=3.0)
+  B-UnrecognizedTaxBenefits      P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  B-UnrecognizedTaxBenefitsThatWouldImpactEffectiveTaxRate P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  I-AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife P=0.0000  R=0.0000  F1=0.0000  (n=3.0)
+  I-DebtInstrumentMaturityDate   P=0.0000  R=0.0000  F1=0.0000  (n=6.0)
+  I-DebtInstrumentTerm           P=0.0000  R=0.0000  F1=0.0000  (n=3.0)
+  I-FiniteLivedIntangibleAssetUsefulLife P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  I-LesseeOperatingLeaseRenewalTerm P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+  I-PropertyPlantAndEquipmentUsefulLife P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+  I-SharebasedCompensationArrangementBySharebasedPaymentAwardExpirationPeriod P=0.0000  R=0.0000  F1=0.0000  (n=2.0)
+
+--- Per-Length Bucket ---
+  short   : F1=0.2948 (n=85)
+  medium  : F1=0.2461 (n=363)
+  long    : F1=0.3337 (n=52)
+
+--- Error Summary ---
+  False positives: 53
+  False negatives: 421

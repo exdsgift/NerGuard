@@ -1,0 +1,558 @@
+{
+  "n_errors": 79,
+  "errors": [
+    {
+      "token": "orphanin",
+      "context": "Nociceptin / orphanin FQ and nocistatin",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "12"
+    },
+    {
+      "token": "FQ",
+      "context": "Nociceptin / orphanin FQ and nocistatin on",
+      "predicted": "O",
+      "expected": "I-Chemical",
+      "sample_id": "12"
+    },
+    {
+      "token": "Syndrome",
+      "context": "Syndrome of inappropriate antidiuretic",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "48"
+    },
+    {
+      "token": "of",
+      "context": "Syndrome of inappropriate antidiuretic hormone",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "48"
+    },
+    {
+      "token": "inappropriate",
+      "context": "Syndrome of inappropriate antidiuretic hormone secretion",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "48"
+    },
+    {
+      "token": "antidiuretic",
+      "context": "Syndrome of inappropriate antidiuretic hormone secretion associated",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "48"
+    },
+    {
+      "token": "hormone",
+      "context": "of inappropriate antidiuretic hormone secretion associated with",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "48"
+    },
+    {
+      "token": "acute",
+      "context": "classically manifests with acute hepatitis leading to",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "62"
+    },
+    {
+      "token": "histamine",
+      "context": "acts as a histamine agonist .",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "68"
+    },
+    {
+      "token": "adult",
+      "context": "septic shock and adult respiratory distress syndrome",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "76"
+    },
+    {
+      "token": "AgSD",
+      "context": "was closest to AgSD in pain tolerance",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "89"
+    },
+    {
+      "token": "AgSD",
+      "context": "differed statistically from AgSD or from each",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "89"
+    },
+    {
+      "token": "Bpd",
+      "context": "Bpd was administered to",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "108"
+    },
+    {
+      "token": "androgen",
+      "context": "men with metastatic androgen - independent prostate",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "115"
+    },
+    {
+      "token": "vaccine",
+      "context": "of lethal pertussis vaccine reaction with histamine",
+      "predicted": "O",
+      "expected": "I-Chemical",
+      "sample_id": "121"
+    },
+    {
+      "token": "B2",
+      "context": "PGE2 and thromboxane B2 ( TXB2 )",
+      "predicted": "O",
+      "expected": "I-Chemical",
+      "sample_id": "135"
+    },
+    {
+      "token": "TXB2",
+      "context": "thromboxane B2 ( TXB2 ) measurements .",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "135"
+    },
+    {
+      "token": "orphanin",
+      "context": "also known as orphanin FQ , is",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "138"
+    },
+    {
+      "token": "GTN",
+      "context": "per os or GTN patches the first",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "144"
+    },
+    {
+      "token": "transient",
+      "context": ", stroke , transient ischaemic attacks ,",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "147"
+    },
+    {
+      "token": "sensitivity",
+      "context": "difference in insulin sensitivity index among groups",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "152"
+    },
+    {
+      "token": "TCA",
+      "context": ", substances inthe TCA cycle and other",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "171"
+    },
+    {
+      "token": "tubular",
+      "context": "significantly reduced the tubular damage and lipid",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "182"
+    },
+    {
+      "token": "subcellular",
+      "context": "the myocardium revealed subcellular degeneration and marked",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "188"
+    },
+    {
+      "token": "raised",
+      "context": "of cataract and raised intraocular pressure were",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "192"
+    },
+    {
+      "token": "intraocular",
+      "context": "cataract and raised intraocular pressure were collected",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "192"
+    },
+    {
+      "token": "pressure",
+      "context": "and raised intraocular pressure were collected in",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "192"
+    },
+    {
+      "token": "4HNE",
+      "context": "showed ADR induced 4HNE - protein adducts",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "199"
+    },
+    {
+      "token": "posterior",
+      "context": "Late fulminant posterior reversible encephalopathy syndrome",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "209"
+    },
+    {
+      "token": "reversible",
+      "context": "Late fulminant posterior reversible encephalopathy syndrome after",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "209"
+    },
+    {
+      "token": "channel",
+      "context": "of 1,4-dihydropyridine calcium channel blockers : therapeutic",
+      "predicted": "O",
+      "expected": "I-Chemical",
+      "sample_id": "237"
+    },
+    {
+      "token": "blockers",
+      "context": "1,4-dihydropyridine calcium channel blockers : therapeutic implications",
+      "predicted": "O",
+      "expected": "I-Chemical",
+      "sample_id": "237"
+    },
+    {
+      "token": "QT",
+      "context": "risk factors for QT prolongation .",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "242"
+    },
+    {
+      "token": "prolongation",
+      "context": "factors for QT prolongation .",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "242"
+    },
+    {
+      "token": "PAN",
+      "context": "renal function in PAN neprotic",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "244"
+    },
+    {
+      "token": "neprotic",
+      "context": "function in PAN neprotic",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "244"
+    },
+    {
+      "token": "neuroinflammatory",
+      "context": "data indicates that neuroinflammatory process and oxidative",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "257"
+    },
+    {
+      "token": "neonatal",
+      "context": ", polycythemia , neonatal apnea , and",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "268"
+    },
+    {
+      "token": "postoperative",
+      "context": "are a serious postoperative complication after cardiac",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "275"
+    },
+    {
+      "token": "complication",
+      "context": "a serious postoperative complication after cardiac surgery",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "275"
+    },
+    {
+      "token": "nervous",
+      "context": "or structural central nervous system abnormalities that",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "291"
+    },
+    {
+      "token": "system",
+      "context": "structural central nervous system abnormalities that could",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "291"
+    },
+    {
+      "token": "abnormalities",
+      "context": "central nervous system abnormalities that could have",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "291"
+    },
+    {
+      "token": "surface",
+      "context": "Chinese hepatitis B surface antigen carriers :",
+      "predicted": "O",
+      "expected": "I-Chemical",
+      "sample_id": "295"
+    },
+    {
+      "token": "antigen",
+      "context": "hepatitis B surface antigen carriers : a",
+      "predicted": "O",
+      "expected": "I-Chemical",
+      "sample_id": "295"
+    },
+    {
+      "token": "NMS",
+      "context": "report suggests that NMS in a patient",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "303"
+    },
+    {
+      "token": "TNA",
+      "context": "TNA was discontinued .",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "308"
+    },
+    {
+      "token": "Drug-Induced",
+      "context": "Drug-Induced Acute Liver Injury",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "311"
+    },
+    {
+      "token": "Acute",
+      "context": "Drug-Induced Acute Liver Injury Within",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "311"
+    },
+    {
+      "token": "thiols",
+      "context": "non - protein thiols , mediating its",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "315"
+    },
+    {
+      "token": "MMC",
+      "context": "to improve this MMC - dependent schedule",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "316"
+    },
+    {
+      "token": "MMC",
+      "context": "- weekly bolus MMC .",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "316"
+    },
+    {
+      "token": "or",
+      "context": "of the lung or lymph node at",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "321"
+    },
+    {
+      "token": "lymph",
+      "context": "the lung or lymph node at Siriraj",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "321"
+    },
+    {
+      "token": "node",
+      "context": "lung or lymph node at Siriraj Hospital",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "321"
+    },
+    {
+      "token": "Neurologic",
+      "context": "Neurologic toxicities have been",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "328"
+    },
+    {
+      "token": "monoHER",
+      "context": "DOX preceded by monoHER and those in",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "341"
+    },
+    {
+      "token": "Terminalia",
+      "context": "ethanolic extract of Terminalia chebula fruits (",
+      "predicted": "O",
+      "expected": "I-Chemical",
+      "sample_id": "342"
+    },
+    {
+      "token": "subependymal",
+      "context": "The incidence of subependymal cysts in the",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "358"
+    },
+    {
+      "token": "subependymal",
+      "context": "The incidence of subependymal cysts in infants",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "358"
+    },
+    {
+      "token": "FBAL",
+      "context": ", suggests that FBAL is related to",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "360"
+    },
+    {
+      "token": "pathological",
+      "context": "may lead to pathological renal medullary lesions",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "383"
+    },
+    {
+      "token": "STZ",
+      "context": "replacement in improving STZ - and castration",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "387"
+    },
+    {
+      "token": "Acute",
+      "context": "Acute encephalopathy and cerebral",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "391"
+    },
+    {
+      "token": "PEG-asparaginase",
+      "context": "multiagent chemotherapy including PEG-asparaginase and intrathecal cytarabine",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "391"
+    },
+    {
+      "token": "CCK-8",
+      "context": "hippocampal LTP and CCK-8 ( 1ug ,",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "400"
+    },
+    {
+      "token": "Hematologic",
+      "context": "Hematologic toxicity was moderate",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "406"
+    },
+    {
+      "token": "pulmonary",
+      "context": "Amiodarone - related pulmonary mass and unique",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "408"
+    },
+    {
+      "token": "mass",
+      "context": "- related pulmonary mass and unique membranous",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "408"
+    },
+    {
+      "token": "membranous",
+      "context": "mass and unique membranous glomerulonephritis in a",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "408"
+    },
+    {
+      "token": "triglyceride",
+      "context": "of cholesterol , triglyceride and LDL .",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "420"
+    },
+    {
+      "token": "PAP",
+      "context": "APAP excreted as PAP by 64 and",
+      "predicted": "O",
+      "expected": "B-Chemical",
+      "sample_id": "428"
+    },
+    {
+      "token": "postural",
+      "context": "no evidence of postural hypotension",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "440"
+    },
+    {
+      "token": "Accelerated",
+      "context": "Accelerated junctional rhythms and",
+      "predicted": "O",
+      "expected": "B-Disease",
+      "sample_id": "447"
+    },
+    {
+      "token": "junctional",
+      "context": "Accelerated junctional rhythms and AV",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "447"
+    },
+    {
+      "token": "rhythms",
+      "context": "Accelerated junctional rhythms and AV dissociation",
+      "predicted": "O",
+      "expected": "I-Disease",
+      "sample_id": "447"
+    },
+    {
+      "token": "channel",
+      "context": "use of calcium channel blocking agents for",
+      "predicted": "O",
+      "expected": "I-Chemical",
+      "sample_id": "469"
+    },
+    {
+      "token": "blocking",
+      "context": "of calcium channel blocking agents for treatment",
+      "predicted": "O",
+      "expected": "I-Chemical",
+      "sample_id": "469"
+    },
+    {
+      "token": "agents",
+      "context": "calcium channel blocking agents for treatment of",
+      "predicted": "O",
+      "expected": "I-Chemical",
+      "sample_id": "469"
+    }
+  ]
+}

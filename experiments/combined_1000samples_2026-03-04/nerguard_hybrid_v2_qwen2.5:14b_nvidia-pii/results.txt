@@ -1,0 +1,70 @@
+======================================================================
+NER PII Benchmark — NerGuard Hybrid V2 (qwen2.5:14b) × nvidia-pii
+======================================================================
+
+Tier: 2
+Evaluated labels: 16
+  System labels: 20
+  Dataset labels: 54
+  Mapping applied: True
+
+Samples: 1000
+Tokens: 135894
+
+--- Token-Level Metrics ---
+  Precision (macro/micro/weighted): 0.4571 / 0.6471 / 0.7691
+  Recall    (macro/micro/weighted): 0.5872 / 0.7564 / 0.7564
+  F1        (macro/micro/weighted): 0.4773 / 0.6975 / 0.7327
+
+--- Entity-Level Metrics (seqeval) ---
+  Precision: 0.5954
+  Recall:    0.7451
+  F1:        0.6619
+
+--- Latency ---
+  Mean:   981.33 ms
+  Median: 816.89 ms
+  P95:    2941.14 ms
+  P99:    5067.42 ms
+  Throughput: 1.0 samples/sec
+
+--- Per-Entity F1 Scores ---
+  I-credit_debit_card            P=0.9767  R=0.9161  F1=0.9454  (n=274.0)
+  B-date                         P=0.9730  R=0.8610  F1=0.9136  (n=712.0)
+  B-email                        P=0.7946  R=0.9474  F1=0.8643  (n=494.0)
+  B-credit_debit_card            P=0.7807  R=0.9368  F1=0.8517  (n=95.0)
+  B-time                         P=0.8253  R=0.7919  F1=0.8083  (n=173.0)
+  I-date                         P=1.0000  R=0.6274  F1=0.7710  (n=212.0)
+  B-last_name                    P=0.9452  R=0.6449  F1=0.7667  (n=428.0)
+  I-phone_number                 P=0.6316  R=0.9231  F1=0.7500  (n=208.0)
+  I-time                         P=0.9661  R=0.6129  F1=0.7500  (n=93.0)
+  B-first_name                   P=0.7938  R=0.6857  F1=0.7358  (n=595.0)
+  I-street_address               P=0.9963  R=0.5553  F1=0.7131  (n=479.0)
+  B-date_of_birth                P=0.4816  R=1.0000  F1=0.6501  (n=131.0)
+  B-age                          P=0.4800  R=0.9730  F1=0.6429  (n=37.0)
+  B-ssn                          P=0.4571  R=0.9231  F1=0.6115  (n=52.0)
+  B-city                         P=0.5080  R=0.7488  F1=0.6054  (n=211.0)
+  B-phone_number                 P=0.4037  R=0.9634  F1=0.5690  (n=246.0)
+  B-postcode                     P=0.3776  R=0.9479  F1=0.5401  (n=96.0)
+  I-last_name                    P=0.3333  R=1.0000  F1=0.5000  (n=1.0)
+  I-city                         P=0.2480  R=0.7045  F1=0.3669  (n=44.0)
+  B-street_address               P=0.3240  R=0.3169  F1=0.3204  (n=183.0)
+  I-postcode                     P=0.2000  R=0.5000  F1=0.2857  (n=2.0)
+  B-tax_id                       P=0.0957  R=0.5000  F1=0.1606  (n=22.0)
+  B-certificate_license_number   P=0.0932  R=0.3372  F1=0.1461  (n=86.0)
+  I-first_name                   P=0.0286  R=0.2000  F1=0.0500  (n=5.0)
+  B-gender                       P=0.0000  R=0.0000  F1=0.0000  (n=36.0)
+  I-certificate_license_number   P=0.0000  R=0.0000  F1=0.0000  (n=5.0)
+  I-date_of_birth                P=0.0000  R=0.0000  F1=0.0000  (n=0.0)
+  I-email                        P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+  I-ssn                          P=0.0000  R=0.0000  F1=0.0000  (n=0.0)
+  I-tax_id                       P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+
+--- Per-Length Bucket ---
+  short   : F1=0.7393 (n=9)
+  medium  : F1=0.5309 (n=238)
+  long    : F1=0.4801 (n=753)
+
+--- Error Summary ---
+  False positives: 113
+  False negatives: 500

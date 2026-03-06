@@ -3,13 +3,18 @@ LLM Router for NerGuard.
 
 This module provides intelligent routing to LLM for disambiguating
 uncertain NER predictions, with caching and robust error handling.
+
+The router is task-agnostic when used with a PromptProvider: the provider
+supplies system messages, prompt templates, valid labels, and entity
+aliases. Without a PromptProvider, it defaults to PII behavior for
+backward compatibility.
 """
 
 import hashlib
 import json
 import logging
 import os
-from typing import Dict, Any, Optional, Set
+from typing import TYPE_CHECKING, Dict, Any, Optional, Set
 
 from src.core.constants import (
     DEFAULT_LLM_SOURCE,
@@ -24,6 +29,9 @@ from src.core.constants import (
     NVIDIA_CLASS_TO_BASE,
 )
 from src.inference.prompts import PROMPT, PROMPT_V12, PROMPT_V13, PROMPT_V14_SPAN, ENTITY_CLASSES_STR, VALID_LABELS_STR
+
+if TYPE_CHECKING:
+    from src.core.base_prompt import PromptProvider
 
 logger = logging.getLogger(__name__)
 
@@ -168,6 +176,7 @@ class LLMRouter:
         span_prompt_version: str = "V14_SPAN",
         use_structured_outputs: bool = True,
         use_extended_labels: bool = False,
+        prompt_provider: Optional["PromptProvider"] = None,
     ):
         """
         Initialize the LLM Router.
@@ -186,17 +195,31 @@ class LLMRouter:
             use_extended_labels: Accept NVIDIA-alias entity names in responses (e.g. "ssn",
                 "certificate_license_number"); mapped to base model classes automatically.
                 Automatically enabled when span_prompt_version=="V16_SPAN".
+            prompt_provider: Task-specific prompt provider. When set, overrides
+                system_message, valid_entity_classes, and entity aliases.
+                When None, defaults to PII behavior.
         """
         self.source = source.lower()
         self.model = model if self.source == "openai" else ollama_model
         self.cache = LLMCache(max_size=cache_size) if enable_cache else None
         self.valid_labels = valid_labels or VALID_LABELS_SET
-        # V16_SPAN always uses extended labels (NVIDIA aliases included in the prompt)
-        _use_extended = use_extended_labels or (span_prompt_version == "V16_SPAN")
-        self.valid_entity_classes = EXTENDED_ENTITY_CLASSES_WITH_O if _use_extended else ENTITY_CLASSES_WITH_O
+        self.prompt_provider = prompt_provider
         self.client = None
         self.context_window = context_window
         self.use_structured_outputs = use_structured_outputs and self.source == "openai"
+
+        if prompt_provider is not None:
+            # Task-agnostic path: use provider for labels, aliases, system message
+            self.valid_entity_classes = prompt_provider.valid_entity_classes()
+            self._entity_aliases = prompt_provider.entity_class_aliases()
+            self._system_message = prompt_provider.system_message()
+        else:
+            # Legacy PII path: use hardcoded constants
+            _use_extended = use_extended_labels or (span_prompt_version == "V16_SPAN")
+            self.valid_entity_classes = EXTENDED_ENTITY_CLASSES_WITH_O if _use_extended else ENTITY_CLASSES_WITH_O
+            self._entity_aliases = NVIDIA_CLASS_TO_BASE
+            self._system_message = "You are a PII classification expert. Output only valid JSON."
+
         # V9 for OpenAI (JSON mode, full BIO labels)
         # V13 for Ollama (class-only paradigm: LLM predicts class, BIO assigned deterministically)
         self.prompt_template = PROMPT if self.source == "openai" else PROMPT_V13
@@ -408,7 +431,7 @@ class LLMRouter:
             response_format = {
                 "type": "json_schema",
                 "json_schema": {
-                    "name": "pii_classification",
+                    "name": "ner_classification",
                     "strict": True,
                     "schema": {
                         "type": "object",
@@ -429,7 +452,7 @@ class LLMRouter:
             messages=[
                 {
                     "role": "system",
-                    "content": "You are a PII classification expert. Output only valid JSON.",
+                    "content": self._system_message,
                 },
                 {"role": "user", "content": prompt},
             ],
@@ -545,12 +568,12 @@ class LLMRouter:
             if entity_class.startswith(("B-", "I-")):
                 entity_class = entity_class[2:]
             if entity_class not in self.valid_entity_classes:
-                # Try NVIDIA alias lookup (case-insensitive) before falling back.
+                # Try alias lookup (case-insensitive) before falling back.
                 # e.g. "CERTIFICATE_LICENSE_NUMBER" → "DRIVERLICENSENUM"
-                nvidia_mapped = NVIDIA_CLASS_TO_BASE.get(entity_class.lower())
-                if nvidia_mapped is not None:
-                    logger.debug(f"[NVIDIA alias] '{entity_class}' → '{nvidia_mapped}'")
-                    entity_class = nvidia_mapped
+                alias_mapped = self._entity_aliases.get(entity_class.lower())
+                if alias_mapped is not None:
+                    logger.debug(f"[alias] '{entity_class}' → '{alias_mapped}'")
+                    entity_class = alias_mapped
                 else:
                     logger.warning(f"[WARNING] Invalid entity class '{entity_class}' → fallback to '{fallback_label}'")
                     label = fallback_label
@@ -597,7 +620,7 @@ class LLMRouter:
             response_format = {
                 "type": "json_schema",
                 "json_schema": {
-                    "name": "pii_classification",
+                    "name": "ner_classification",
                     "strict": True,
                     "schema": {
                         "type": "object",
@@ -618,7 +641,7 @@ class LLMRouter:
             messages=[
                 {
                     "role": "system",
-                    "content": "You are a PII classification expert. Output only valid JSON.",
+                    "content": self._system_message,
                 },
                 {"role": "user", "content": prompt},
             ],

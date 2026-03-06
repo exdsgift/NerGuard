@@ -1,0 +1,176 @@
+{
+  "B-age": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1": 0.6666666666666666,
+    "support": 37.0
+  },
+  "B-certificate_license_number": {
+    "precision": 0.09003215434083602,
+    "recall": 0.32558139534883723,
+    "f1": 0.14105793450881612,
+    "support": 86.0
+  },
+  "B-city": {
+    "precision": 0.5128205128205128,
+    "recall": 0.7582938388625592,
+    "f1": 0.6118546845124283,
+    "support": 211.0
+  },
+  "B-credit_debit_card": {
+    "precision": 0.7317073170731707,
+    "recall": 0.9473684210526315,
+    "f1": 0.8256880733944955,
+    "support": 95.0
+  },
+  "B-date": {
+    "precision": 0.7934640522875817,
+    "recall": 0.8525280898876404,
+    "f1": 0.8219363574813812,
+    "support": 712.0
+  },
+  "B-date_of_birth": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 131.0
+  },
+  "B-email": {
+    "precision": 0.7945670628183361,
+    "recall": 0.9473684210526315,
+    "f1": 0.8642659279778393,
+    "support": 494.0
+  },
+  "B-first_name": {
+    "precision": 0.8067061143984221,
+    "recall": 0.6873949579831933,
+    "f1": 0.7422867513611615,
+    "support": 595.0
+  },
+  "B-gender": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 36.0
+  },
+  "B-last_name": {
+    "precision": 0.9427609427609428,
+    "recall": 0.6542056074766355,
+    "f1": 0.7724137931034483,
+    "support": 428.0
+  },
+  "B-phone_number": {
+    "precision": 0.39565943238731216,
+    "recall": 0.9634146341463414,
+    "f1": 0.5609467455621302,
+    "support": 246.0
+  },
+  "B-postcode": {
+    "precision": 0.375,
+    "recall": 0.9375,
+    "f1": 0.5357142857142857,
+    "support": 96.0
+  },
+  "B-ssn": {
+    "precision": 0.45714285714285713,
+    "recall": 0.9230769230769231,
+    "f1": 0.6114649681528662,
+    "support": 52.0
+  },
+  "B-street_address": {
+    "precision": 0.31868131868131866,
+    "recall": 0.31693989071038253,
+    "f1": 0.3178082191780822,
+    "support": 183.0
+  },
+  "B-tax_id": {
+    "precision": 0.09322033898305085,
+    "recall": 0.5,
+    "f1": 0.15714285714285714,
+    "support": 22.0
+  },
+  "B-time": {
+    "precision": 0.8292682926829268,
+    "recall": 0.7861271676300579,
+    "f1": 0.8071216617210683,
+    "support": 173.0
+  },
+  "I-certificate_license_number": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 5.0
+  },
+  "I-city": {
+    "precision": 0.25396825396825395,
+    "recall": 0.7272727272727273,
+    "f1": 0.3764705882352941,
+    "support": 44.0
+  },
+  "I-credit_debit_card": {
+    "precision": 0.9769230769230769,
+    "recall": 0.927007299270073,
+    "f1": 0.951310861423221,
+    "support": 274.0
+  },
+  "I-date": {
+    "precision": 0.8843537414965986,
+    "recall": 0.6132075471698113,
+    "f1": 0.724233983286908,
+    "support": 212.0
+  },
+  "I-email": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1.0
+  },
+  "I-first_name": {
+    "precision": 0.027777777777777776,
+    "recall": 0.2,
+    "f1": 0.04878048780487805,
+    "support": 5.0
+  },
+  "I-last_name": {
+    "precision": 0.3333333333333333,
+    "recall": 1.0,
+    "f1": 0.5,
+    "support": 1.0
+  },
+  "I-phone_number": {
+    "precision": 0.6378737541528239,
+    "recall": 0.9230769230769231,
+    "f1": 0.7544204322200393,
+    "support": 208.0
+  },
+  "I-postcode": {
+    "precision": 0.2,
+    "recall": 0.5,
+    "f1": 0.2857142857142857,
+    "support": 2.0
+  },
+  "I-ssn": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 0.0
+  },
+  "I-street_address": {
+    "precision": 0.9963235294117647,
+    "recall": 0.5657620041753654,
+    "f1": 0.7217043941411452,
+    "support": 479.0
+  },
+  "I-tax_id": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "support": 1.0
+  },
+  "I-time": {
+    "precision": 0.9642857142857143,
+    "recall": 0.5806451612903226,
+    "f1": 0.7248322147651006,
+    "support": 93.0
+  }
+}

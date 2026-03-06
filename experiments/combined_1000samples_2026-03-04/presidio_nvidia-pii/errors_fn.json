@@ -1,0 +1,3505 @@
+{
+  "n_errors": 500,
+  "errors": [
+    {
+      "token": "4532",
+      "context": "credit debit card 4532 0358 1297 6432,",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "b47679a6669b4c0fbcbfe51ca377db9c"
+    },
+    {
+      "token": "0358",
+      "context": "debit card 4532 0358 1297 6432, ensuring",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "b47679a6669b4c0fbcbfe51ca377db9c"
+    },
+    {
+      "token": "1297",
+      "context": "card 4532 0358 1297 6432, ensuring transparency",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "b47679a6669b4c0fbcbfe51ca377db9c"
+    },
+    {
+      "token": "6432,",
+      "context": "4532 0358 1297 6432, ensuring transparency and",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "b47679a6669b4c0fbcbfe51ca377db9c"
+    },
+    {
+      "token": "14:05:33",
+      "context": "Date: 17/09/2026 Time: 14:05:33 Customer ID: 9732450861",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "422644e0a7a448149883f8f626547244"
+    },
+    {
+      "token": "715",
+      "context": "Group **Project Location:** 715 Canyon Dr **City,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "4ce1b0f2b0de4e0da2e2cabbc1df3d33"
+    },
+    {
+      "token": "Canyon",
+      "context": "**Project Location:** 715 Canyon Dr **City, State,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "4ce1b0f2b0de4e0da2e2cabbc1df3d33"
+    },
+    {
+      "token": "Dr",
+      "context": "Location:** 715 Canyon Dr **City, State, Postcode:**",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "4ce1b0f2b0de4e0da2e2cabbc1df3d33"
+    },
+    {
+      "token": "715",
+      "context": "Hartford Construction Group 715 Canyon Dr Canton,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "4ce1b0f2b0de4e0da2e2cabbc1df3d33"
+    },
+    {
+      "token": "Reno",
+      "context": "Nevada - **City:** Reno **Commodity Description:** Electronics",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "fc8385359ab24da6a1f165a02f0f2e1e"
+    },
+    {
+      "token": "18:22:45Z",
+      "context": "2024-09-15 **Time Reported:** 18:22:45Z **URL:** https://support.microsoft.com/bug-report-form",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "836257a017f9491ca46e6011a30145ee"
+    },
+    {
+      "token": "58",
+      "context": "- Street Address: 58 Kings Grant Road",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "4b3bf4fa3e184634b84fd0432d1c9732"
+    },
+    {
+      "token": "Kings",
+      "context": "Street Address: 58 Kings Grant Road -",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "4b3bf4fa3e184634b84fd0432d1c9732"
+    },
+    {
+      "token": "Wed,",
+      "context": "Details:** - Date: Wed, 15 Oct 2024",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "4b3bf4fa3e184634b84fd0432d1c9732"
+    },
+    {
+      "token": "17:30:45",
+      "context": "2024 - Time: 17:30:45 - Date Time:",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "4b3bf4fa3e184634b84fd0432d1c9732"
+    },
+    {
+      "token": "Wed,",
+      "context": "of Incident:** On Wed, 15 Oct 2024",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "4b3bf4fa3e184634b84fd0432d1c9732"
+    },
+    {
+      "token": "17:30:45,",
+      "context": "Oct 2024 at 17:30:45, an incident occurred",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "4b3bf4fa3e184634b84fd0432d1c9732"
+    },
+    {
+      "token": "5",
+      "context": "The property at 5 Port Lillian Dr,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "d7d6582d037e48048bf9580967e356c8"
+    },
+    {
+      "token": "Port",
+      "context": "property at 5 Port Lillian Dr, Chicago,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "d7d6582d037e48048bf9580967e356c8"
+    },
+    {
+      "token": "75",
+      "context": "is provided at 75 Yulgok-ro. The phone",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "dc89b50ed95a40ec812099455a232ccb"
+    },
+    {
+      "token": "031-832-3957.",
+      "context": "the account is 031-832-3957. I would like",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "dc89b50ed95a40ec812099455a232ccb"
+    },
+    {
+      "token": "366",
+      "context": "be reached at 366 SW 35th Ter.",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "57a193acc7154efebc312e587a1c40a0"
+    },
+    {
+      "token": "SW",
+      "context": "reached at 366 SW 35th Ter. The",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "57a193acc7154efebc312e587a1c40a0"
+    },
+    {
+      "token": "35th",
+      "context": "at 366 SW 35th Ter. The MAC",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "57a193acc7154efebc312e587a1c40a0"
+    },
+    {
+      "token": "Ter.",
+      "context": "366 SW 35th Ter. The MAC address",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "57a193acc7154efebc312e587a1c40a0"
+    },
+    {
+      "token": "http://192.168.1.100:8080/customer-service-agreement.pdf.",
+      "context": "at the URL http://192.168.1.100:8080/customer-service-agreement.pdf. Our support team,",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "6be0e0ad40384639aeb21f1b170718bf"
+    },
+    {
+      "token": "Herzl",
+      "context": "- **Property Address**: Herzl Street 42 **Warranty",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "34fdecefb63646bfb4342418c65af4aa"
+    },
+    {
+      "token": "Street",
+      "context": "**Property Address**: Herzl Street 42 **Warranty Provider",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "34fdecefb63646bfb4342418c65af4aa"
+    },
+    {
+      "token": "42",
+      "context": "Address**: Herzl Street 42 **Warranty Provider Details**",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "34fdecefb63646bfb4342418c65af4aa"
+    },
+    {
+      "token": "4916",
+      "context": "- **Payment Information**: 4916 7894 5621 3487",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "34fdecefb63646bfb4342418c65af4aa"
+    },
+    {
+      "token": "7894",
+      "context": "**Payment Information**: 4916 7894 5621 3487 -",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "34fdecefb63646bfb4342418c65af4aa"
+    },
+    {
+      "token": "5621",
+      "context": "Information**: 4916 7894 5621 3487 - **Claim",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "34fdecefb63646bfb4342418c65af4aa"
+    },
+    {
+      "token": "3487",
+      "context": "4916 7894 5621 3487 - **Claim Submission",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "34fdecefb63646bfb4342418c65af4aa"
+    },
+    {
+      "token": "**6011",
+      "context": "credit/debit card information: **6011 9875 3214 6587**.",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "6199312d2e4648ae8b29adf85ffacb72"
+    },
+    {
+      "token": "9875",
+      "context": "card information: **6011 9875 3214 6587**. This",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "6199312d2e4648ae8b29adf85ffacb72"
+    },
+    {
+      "token": "3214",
+      "context": "information: **6011 9875 3214 6587**. This information",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "6199312d2e4648ae8b29adf85ffacb72"
+    },
+    {
+      "token": "6587**.",
+      "context": "**6011 9875 3214 6587**. This information will",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "6199312d2e4648ae8b29adf85ffacb72"
+    },
+    {
+      "token": "10",
+      "context": "property located at 10 Mac Murray St,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "cb152a27d8314915b54c563f4c11f434"
+    },
+    {
+      "token": "5210",
+      "context": "card information, specifically 5210 7834 5672 3458.",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "f269c636352649a09e47770d5beed6dc"
+    },
+    {
+      "token": "7834",
+      "context": "information, specifically 5210 7834 5672 3458. This",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "f269c636352649a09e47770d5beed6dc"
+    },
+    {
+      "token": "5672",
+      "context": "specifically 5210 7834 5672 3458. This information",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "f269c636352649a09e47770d5beed6dc"
+    },
+    {
+      "token": "3458.",
+      "context": "5210 7834 5672 3458. This information is",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "f269c636352649a09e47770d5beed6dc"
+    },
+    {
+      "token": "Harsh",
+      "context": "born on 1989-01-21. Harsh identifies as a",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ef2ea69f04f447da97d836cac2b70ba0"
+    },
+    {
+      "token": "Harsh's",
+      "context": "in these topics. Harsh's email, patil@samaikyarights.org.in, will",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ef2ea69f04f447da97d836cac2b70ba0"
+    },
+    {
+      "token": "Harsh",
+      "context": "scheduled for 2024-01-22T15:30:00. Harsh follows the religious",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ef2ea69f04f447da97d836cac2b70ba0"
+    },
+    {
+      "token": "Curitiba",
+      "context": "Date**: 09/15/2024 **City**: Curitiba **Country**: Brazil **Contact",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "savannah",
+      "context": "shot of the savannah at sunset |",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "savannah,",
+      "context": "over the vast savannah, signaling the end",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Scar's",
+      "context": "| 9 | Scar's plot | Medium",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "Scar,",
+      "context": "Medium shot | Scar, Mufasa's treacherous brother,",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "beb02c51ce774f219d06bd944ac4347a"
+    },
+    {
+      "token": "18:30",
+      "context": "| Time | 18:30 |",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "697d9c3254434eea84aec336c5e9be9a"
+    },
+    {
+      "token": "5",
+      "context": "address provided is 5 Vinyater 7.",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "6ac3ce7faf654f398e79ee889730c9c6"
+    },
+    {
+      "token": "Vinyater",
+      "context": "provided is 5 Vinyater 7.",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "6ac3ce7faf654f398e79ee889730c9c6"
+    },
+    {
+      "token": "7.",
+      "context": "is 5 Vinyater 7.",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "6ac3ce7faf654f398e79ee889730c9c6"
+    },
+    {
+      "token": "No.",
+      "context": "be shipped to: No. 23, Jalan Ampang",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "16f5932434ec43859d19f37dc8fa95a9"
+    },
+    {
+      "token": "23,",
+      "context": "shipped to: No. 23, Jalan Ampang",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "16f5932434ec43859d19f37dc8fa95a9"
+    },
+    {
+      "token": "MD-38472-091",
+      "context": "**Certificate License Number:** MD-38472-091 **Bank Routing Number:**",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "7ccd8a7e2d4b4874a16f9a03bb388e94"
+    },
+    {
+      "token": "3742",
+      "context": "Credit Debit Card 3742 845678 98754 **Signature",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "7ccd8a7e2d4b4874a16f9a03bb388e94"
+    },
+    {
+      "token": "98754",
+      "context": "Card 3742 845678 98754 **Signature of Authorized",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "7ccd8a7e2d4b4874a16f9a03bb388e94"
+    },
+    {
+      "token": "Saint",
+      "context": "Date:** 2024-07-15 **Store/Location:** Saint Hedwig **Auditor Name:**",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "92c3bc2083854c949521b9968d0f4f97"
+    },
+    {
+      "token": "Hedwig",
+      "context": "2024-07-15 **Store/Location:** Saint Hedwig **Auditor Name:** Mary",
+      "predicted": "O",
+      "expected": "I-city",
+      "sample_id": "92c3bc2083854c949521b9968d0f4f97"
+    },
+    {
+      "token": "Mary",
+      "context": "Hedwig **Auditor Name:** Mary **Employee ID:** SM123",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "92c3bc2083854c949521b9968d0f4f97"
+    },
+    {
+      "token": "20:15:45",
+      "context": "15, 2024, at 20:15:45 **Introduction:** VistaMedia, a",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "954a1f7804b34ae48a141e0ad892bcc5"
+    },
+    {
+      "token": "032",
+      "context": "contact us at 032 784 3567 or",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "c5f4dc0be1294fef8dfe7047d1dd3048"
+    },
+    {
+      "token": "784",
+      "context": "us at 032 784 3567 or via",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "c5f4dc0be1294fef8dfe7047d1dd3048"
+    },
+    {
+      "token": "3567",
+      "context": "at 032 784 3567 or via email",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "c5f4dc0be1294fef8dfe7047d1dd3048"
+    },
+    {
+      "token": "http://192.168.1.100:8080/design/plans/blueprint.",
+      "context": "be accessed at http://192.168.1.100:8080/design/plans/blueprint. For any inquiries,",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "a873889b711249eba65b25874381e3f4"
+    },
+    {
+      "token": "Stone",
+      "context": "- Last Name: Stone - Date of",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "acf47d3e22694f88b58aca746b501bd9"
+    },
+    {
+      "token": "2a02:3d60:1f31::85e1:b352:1c89:742b",
+      "context": "Key| Medium | 2a02:3d60:1f31::85e1:b352:1c89:742b | 80 |",
+      "predicted": "O",
+      "expected": "B-ipv6",
+      "sample_id": "7188b667957243d2acd311f6cd607b36"
+    },
+    {
+      "token": "5298",
+      "context": "**Credit/Debit Card Used:** 5298 7456 3210 4789",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "0844dbba5fc64a5cb6f301144e5fe50d"
+    },
+    {
+      "token": "14:25:45,",
+      "context": "at kelliegregory@icloud.com. At 14:25:45, the incident occurred,",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "c8333e68c5ba4b60904e8742e4a25a1e"
+    },
+    {
+      "token": "Chidinma",
+      "context": "at chidinma.lawyer@adebayolegals.com.ng. Sincerely, Chidinma",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "5ae072109a7545e6bd3a879e0df8f43c"
+    },
+    {
+      "token": "21:30:45",
+      "context": "been unemployed since 21:30:45 and I am",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "88fa8dabd7c247da801934726c6eb6d9"
+    },
+    {
+      "token": "Meyer",
+      "context": "- **Last Name:** Meyer - **Date of",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "6b87ebe759df4d0f89f64823222144fe"
+    },
+    {
+      "token": "4916",
+      "context": "credit debit card, 4916 3875 9246 8527,",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "1161d731296748178392d1aac175e623"
+    },
+    {
+      "token": "3875",
+      "context": "debit card, 4916 3875 9246 8527, remain",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "1161d731296748178392d1aac175e623"
+    },
+    {
+      "token": "9246",
+      "context": "card, 4916 3875 9246 8527, remain secure.",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "1161d731296748178392d1aac175e623"
+    },
+    {
+      "token": "8527,",
+      "context": "4916 3875 9246 8527, remain secure. These",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "1161d731296748178392d1aac175e623"
+    },
+    {
+      "token": "40",
+      "context": "is located at 40 Newhall Dr C,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "Newhall",
+      "context": "located at 40 Newhall Dr C, Lexington,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "Dr",
+      "context": "at 40 Newhall Dr C, Lexington, KY",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "C,",
+      "context": "40 Newhall Dr C, Lexington, KY 40511.",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "8d2f7972adf14130825511bd63920c76"
+    },
+    {
+      "token": "Loikaw",
+      "context": "project in Kayah, Loikaw were completed by",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "c40755c6c514454e9ab8fe49252ba528"
+    },
+    {
+      "token": "3714",
+      "context": "credit debit card 3714 295780 09446, and",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "0f5c33d78f27405d8e51b13fa5e8763d"
+    },
+    {
+      "token": "84",
+      "context": "- **Street Address:** 84 W Main St",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "9ba36c6b574d4b17b4ae8f6c761b572a"
+    },
+    {
+      "token": "W",
+      "context": "**Street Address:** 84 W Main St K2",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "9ba36c6b574d4b17b4ae8f6c761b572a"
+    },
+    {
+      "token": "Main",
+      "context": "Address:** 84 W Main St K2 4.",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "9ba36c6b574d4b17b4ae8f6c761b572a"
+    },
+    {
+      "token": "St",
+      "context": "84 W Main St K2 4. **Coverage",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "9ba36c6b574d4b17b4ae8f6c761b572a"
+    },
+    {
+      "token": "http://192.168.1.100:8080/user-onboarding-guide",
+      "context": "to the URL: http://192.168.1.100:8080/user-onboarding-guide - Enter the",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "7065988ad2fc4d91a14a356e60e438e5"
+    },
+    {
+      "token": "308",
+      "context": "to commence at 308 Iron Springs Road.",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "101b341493044439b3c9e250c234a790"
+    },
+    {
+      "token": "Iron",
+      "context": "commence at 308 Iron Springs Road. **Project",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "101b341493044439b3c9e250c234a790"
+    },
+    {
+      "token": "Springs",
+      "context": "at 308 Iron Springs Road. **Project Description**",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "101b341493044439b3c9e250c234a790"
+    },
+    {
+      "token": "Road.",
+      "context": "308 Iron Springs Road. **Project Description** The",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "101b341493044439b3c9e250c234a790"
+    },
+    {
+      "token": "FL-003-9857.",
+      "context": "this project is FL-003-9857.",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "101b341493044439b3c9e250c234a790"
+    },
+    {
+      "token": "07:40:50.",
+      "context": "every month at 07:40:50. #### Fire Prevention",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "2dad245ecc1e4e4883c478c10dd5d4b6"
+    },
+    {
+      "token": "3423",
+      "context": "card number is 3423 145678 90123. Please",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "53a7abf9246f4552af6bc4b7bd9ced0a"
+    },
+    {
+      "token": "14:23:45.678.",
+      "context": "was signed at 14:23:45.678.",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "8934e063fa1445c9a3414ef3653ccd41"
+    },
+    {
+      "token": "http://192.168.1.10:8080/request/mac_change|",
+      "context": "Request URL | http://192.168.1.10:8080/request/mac_change|",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "fbb57bfa3fdb4e368170b2e839b01a82"
+    },
+    {
+      "token": "15:45",
+      "context": "| Interview | 15:45 | | |",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "bc492103ecdd4eb79ffbd1fc04e7271e"
+    },
+    {
+      "token": "Aarav",
+      "context": "**Name:** First Name: Aarav Last Name: Patil",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "79bfcb606e5f45b88099c579277e7146"
+    },
+    {
+      "token": "18:30",
+      "context": "**Date:** 15/07/2024 **Time:** 18:30 **Location:** Chesterfield County",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "48b42886a99d4858bf98a9c6f1bbcb25"
+    },
+    {
+      "token": "http://192.168.1.100:8080/audition-notices.",
+      "context": "more information, visit http://192.168.1.100:8080/audition-notices.",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "48b42886a99d4858bf98a9c6f1bbcb25"
+    },
+    {
+      "token": "Cobija,",
+      "context": "Energiabol, headquartered in Cobija, Pando, Bolivia, is",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "ce25ffa835ab4ac3874ddfa9a6851bb0"
+    },
+    {
+      "token": "Cobija.",
+      "context": "urban areas like Cobija. The methodologies involve",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "ce25ffa835ab4ac3874ddfa9a6851bb0"
+    },
+    {
+      "token": "ENG-001-7836,",
+      "context": "certificate license number ENG-001-7836, is designed to",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "4a6a93883fb3484a90620991f26463fa"
+    },
+    {
+      "token": "four",
+      "context": "a quarter to four hours from the",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "4ea27bd17abd4eeda85afdc8db1724a7"
+    },
+    {
+      "token": "Wed,",
+      "context": "On Wed, 15 Jan 2024,",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "c26b2bcd64ae45628f52784c546b87ba"
+    },
+    {
+      "token": "11",
+      "context": "property located at 11 Hurlbut Rd, Lowell.",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "58ec71ede5cb481e81ae6c4b654783f9"
+    },
+    {
+      "token": "82",
+      "context": "is situated at 82 S Broadacres Rd.",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "0a48a533cf7e40f7b424f5ca38fc4b5c"
+    },
+    {
+      "token": "S",
+      "context": "situated at 82 S Broadacres Rd. This",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "0a48a533cf7e40f7b424f5ca38fc4b5c"
+    },
+    {
+      "token": "Broadacres",
+      "context": "at 82 S Broadacres Rd. This lease",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "0a48a533cf7e40f7b424f5ca38fc4b5c"
+    },
+    {
+      "token": "Rd.",
+      "context": "82 S Broadacres Rd. This lease will",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "0a48a533cf7e40f7b424f5ca38fc4b5c"
+    },
+    {
+      "token": "09h30,",
+      "context": "On 07/15/2028, at 09h30, an inspection was",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "afa299a1f01b4c6680310d20a88265e9"
+    },
+    {
+      "token": "Lincoln",
+      "context": "was conducted in Lincoln by Bryce, a",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "afa299a1f01b4c6680310d20a88265e9"
+    },
+    {
+      "token": "Bryce,",
+      "context": "in Lincoln by Bryce, a civil engineer",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "afa299a1f01b4c6680310d20a88265e9"
+    },
+    {
+      "token": "335",
+      "context": "association, located at 335 Schubert Ln in",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "56f770f45b4c4c838832820623d00150"
+    },
+    {
+      "token": "146",
+      "context": "Woodall Street Address: 146 Gatcombe Run Phone",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "425a19b1027142a7a01a77b8f1b20878"
+    },
+    {
+      "token": "Gatcombe",
+      "context": "Street Address: 146 Gatcombe Run Phone Number:",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "425a19b1027142a7a01a77b8f1b20878"
+    },
+    {
+      "token": "Run",
+      "context": "Address: 146 Gatcombe Run Phone Number: 614-687-6935",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "425a19b1027142a7a01a77b8f1b20878"
+    },
+    {
+      "token": "CPA-2023-00738.",
+      "context": "certificate license number CPA-2023-00738. **Procedures** 1. **Quality",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "f2148b06834640d39d987bd3ab2c66ad"
+    },
+    {
+      "token": "Blanks",
+      "context": "1. Family Name: Blanks 2. Given Name:",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "5557395aa6ca4414a707b1416e19e240"
+    },
+    {
+      "token": "21",
+      "context": "Address: Ulitsa Tverskaya, 21 - Percentage of",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "d4a3b3bc3ddf46e8b9aef4c6a7880ebe"
+    },
+    {
+      "token": "http://192.168.1.50:8080/manufacturing/reports/profitability",
+      "context": "A921F4 **Report URL:** http://192.168.1.50:8080/manufacturing/reports/profitability **Production Metrics** |",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "da2772c13db64759bf402d47fe366dcf"
+    },
+    {
+      "token": "http://192.168.1.50:8080/manufacturing/reports/profitability.",
+      "context": "the following URL: http://192.168.1.50:8080/manufacturing/reports/profitability.",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "da2772c13db64759bf402d47fe366dcf"
+    },
+    {
+      "token": "College",
+      "context": "the city of College Station, the consumer",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "01ef738b7c81446183c52a0133b15de6"
+    },
+    {
+      "token": "Station,",
+      "context": "city of College Station, the consumer goods",
+      "predicted": "O",
+      "expected": "I-city",
+      "sample_id": "01ef738b7c81446183c52a0133b15de6"
+    },
+    {
+      "token": "384",
+      "context": "property located at 384 W Wade Hampton",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "db9ee7829ba341a09a5858e070bb9abc"
+    },
+    {
+      "token": "W",
+      "context": "located at 384 W Wade Hampton Blvd,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "db9ee7829ba341a09a5858e070bb9abc"
+    },
+    {
+      "token": "Wade",
+      "context": "at 384 W Wade Hampton Blvd, Fayetteville,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "db9ee7829ba341a09a5858e070bb9abc"
+    },
+    {
+      "token": "WA-ENG-003417",
+      "context": "Assurance Plan | WA-ENG-003417 | 03/11/2024 |",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "27c53c6bb75b483a90be26f36dd7dca6"
+    },
+    {
+      "token": "031-234-5678",
+      "context": "Information: Phone Number: 031-234-5678 Email: joonkim@veraid.co.kr In",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "197e6ea83b6348519e0e92bdcb4c8f4f"
+    },
+    {
+      "token": "Wed,",
+      "context": "Confirm installation date: Wed, 15 Oct 2024.",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "85de684ef36c4ddeb2eb547f193dee77"
+    },
+    {
+      "token": "13",
+      "context": "716-250-5898 Street Address: 13 W Forest Park",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "4a18664a2de74e0c90ca81ca91d4865c"
+    },
+    {
+      "token": "W",
+      "context": "Street Address: 13 W Forest Park Ave",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "4a18664a2de74e0c90ca81ca91d4865c"
+    },
+    {
+      "token": "Forest",
+      "context": "Address: 13 W Forest Park Ave B",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "4a18664a2de74e0c90ca81ca91d4865c"
+    },
+    {
+      "token": "Park",
+      "context": "13 W Forest Park Ave B City:",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "4a18664a2de74e0c90ca81ca91d4865c"
+    },
+    {
+      "token": "Ave",
+      "context": "W Forest Park Ave B City: Buffalo",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "4a18664a2de74e0c90ca81ca91d4865c"
+    },
+    {
+      "token": "B",
+      "context": "Forest Park Ave B City: Buffalo State:",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "4a18664a2de74e0c90ca81ca91d4865c"
+    },
+    {
+      "token": "Buffalo",
+      "context": "Ave B City: Buffalo State: New York",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "4a18664a2de74e0c90ca81ca91d4865c"
+    },
+    {
+      "token": "742",
+      "context": "* Street Address: 742 Evergreen Terrace *",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "97f69fba816040b483de60a5414a2fce"
+    },
+    {
+      "token": "Evergreen",
+      "context": "Street Address: 742 Evergreen Terrace * City:",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "97f69fba816040b483de60a5414a2fce"
+    },
+    {
+      "token": "Terrace",
+      "context": "Address: 742 Evergreen Terrace * City: Buffalo",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "97f69fba816040b483de60a5414a2fce"
+    },
+    {
+      "token": "Buffalo",
+      "context": "Terrace * City: Buffalo * State: New",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "97f69fba816040b483de60a5414a2fce"
+    },
+    {
+      "token": "21",
+      "context": "Farms, located at 21 E Mt Vernon",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "56f22d8592b24d5aae03412231552212"
+    },
+    {
+      "token": "E",
+      "context": "located at 21 E Mt Vernon Rd",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "56f22d8592b24d5aae03412231552212"
+    },
+    {
+      "token": "Mt",
+      "context": "at 21 E Mt Vernon Rd 12,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "56f22d8592b24d5aae03412231552212"
+    },
+    {
+      "token": "Vernon",
+      "context": "21 E Mt Vernon Rd 12, in",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "56f22d8592b24d5aae03412231552212"
+    },
+    {
+      "token": "Rd",
+      "context": "E Mt Vernon Rd 12, in Cooper",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "56f22d8592b24d5aae03412231552212"
+    },
+    {
+      "token": "12,",
+      "context": "Mt Vernon Rd 12, in Cooper County,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "56f22d8592b24d5aae03412231552212"
+    },
+    {
+      "token": "18:30:45",
+      "context": "| 2023-09-15 | 18:30:45 | YS4LN946L7B856347 |",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "6c775d21d841442690ca6cd641bed7cd"
+    },
+    {
+      "token": "18:30:45",
+      "context": "| 2023-09-15 | 18:30:45 | YS4LN946L7B856347 |",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "6c775d21d841442690ca6cd641bed7cd"
+    },
+    {
+      "token": "Al-Kharj",
+      "context": "46.7229 - City: Al-Kharj",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "6c775d21d841442690ca6cd641bed7cd"
+    },
+    {
+      "token": "49",
+      "context": "all shipments is 49 Woodschurch Road, Buffalo,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "596d17166c074a3e83969a908ba7b13e"
+    },
+    {
+      "token": "Woodschurch",
+      "context": "shipments is 49 Woodschurch Road, Buffalo, NY",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "596d17166c074a3e83969a908ba7b13e"
+    },
+    {
+      "token": "Road,",
+      "context": "is 49 Woodschurch Road, Buffalo, NY 14226,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "596d17166c074a3e83969a908ba7b13e"
+    },
+    {
+      "token": "106",
+      "context": "Volt - Address: 106 Irenic Mist Ct,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Irenic",
+      "context": "- Address: 106 Irenic Mist Ct, Austin,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Mist",
+      "context": "Address: 106 Irenic Mist Ct, Austin, Texas,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Ct,",
+      "context": "106 Irenic Mist Ct, Austin, Texas, 78754",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "106",
+      "context": "Volt located at 106 Irenic Mist Ct,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Irenic",
+      "context": "located at 106 Irenic Mist Ct, Austin,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Mist",
+      "context": "at 106 Irenic Mist Ct, Austin, Texas,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Ct,",
+      "context": "106 Irenic Mist Ct, Austin, Texas, 78754,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "106",
+      "context": "Volt, located at 106 Irenic Mist Ct,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Irenic",
+      "context": "located at 106 Irenic Mist Ct, Austin,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Mist",
+      "context": "at 106 Irenic Mist Ct, Austin, Texas,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "Ct,",
+      "context": "106 Irenic Mist Ct, Austin, Texas, 78754,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "df2ba09645a64495898624b839f30b00"
+    },
+    {
+      "token": "17",
+      "context": "are located at 17 Mcpherson St, Niles,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "d12b28b3dd094aafbce47952d8bc5ecc"
+    },
+    {
+      "token": "19:22",
+      "context": "current strategies at 19:22 to align with",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "577727ad134845a5af8dcd0f1c460afb"
+    },
+    {
+      "token": "http://telecomcorp.net:8080/vmnetworksettings,",
+      "context": "| fe80::1 | http://telecomcorp.net:8080/vmnetworksettings, 2001:4860:4860::8888 | 200",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "c76e549733744bd9a99cd2b4047d9651"
+    },
+    {
+      "token": "**82",
+      "context": "Confirmation **SwiftFlow Logistics** **82 Ronson Rd, Phoenix,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "21d5f2f0ee864f928fcfe0e7ca6160ba"
+    },
+    {
+      "token": "Wed,",
+      "context": "last updated on Wed, 15 Aug 2026.",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "3748",
+      "context": "credit debit card 3748 037252 13491 with",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "646482598c7041369233de1f83d60d39"
+    },
+    {
+      "token": "VA-003-6821,",
+      "context": "certificate license number VA-003-6821, with key personnel",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "6894d8b12d974350bf90951e0c614240"
+    },
+    {
+      "token": "Santos",
+      "context": "- **Last Name:** Santos - **Date of",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "db29201907534a01977d0f04fabbe11b"
+    },
+    {
+      "token": "55",
+      "context": "street address is 55 Stirling Drive North.",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "621d07f40623439bbb98921ba9bbd887"
+    },
+    {
+      "token": "119",
+      "context": "**Property Address** | 119 Lambourn Path, Pittsburgh,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "cf5e214491104c6ca41090c234c7edac"
+    },
+    {
+      "token": "Start",
+      "context": "002148 Position: Department: Start Date:",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "2290439791c34436af0271b7cadfcb66"
+    },
+    {
+      "token": "Date:",
+      "context": "Position: Department: Start Date:",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "2290439791c34436af0271b7cadfcb66"
+    },
+    {
+      "token": "ENG-000-5348.",
+      "context": "license number is ENG-000-5348. Before handling any",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "cc1ba8e2a8d949648674d40b3452dc93"
+    },
+    {
+      "token": "http://192.168.1.100:8080/identity/temp-password-notification",
+      "context": "change your password: http://192.168.1.100:8080/identity/temp-password-notification **Important Instructions:** 1.",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "c8000158c2c0457d9feb51032d840b66"
+    },
+    {
+      "token": "http://192.168.1.100:5000/cybersecurity/password_hashing.",
+      "context": "best practices, visit http://192.168.1.100:5000/cybersecurity/password_hashing. ### Conclusion Proper",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "fb38882782954284acbd253c73e530ee"
+    },
+    {
+      "token": "113",
+      "context": "Donor Address,Street Address,City 113 Kevins Court,Birmingham Donation",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "90a71dcaddce49f295c6d163a7263c30"
+    },
+    {
+      "token": "Kevins",
+      "context": "Address,Street Address,City 113 Kevins Court,Birmingham Donation Details,Donation",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "90a71dcaddce49f295c6d163a7263c30"
+    },
+    {
+      "token": "Details,Donation",
+      "context": "Kevins Court,Birmingham Donation Details,Donation Date,Donation Amount,Donation Method,Bank",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "90a71dcaddce49f295c6d163a7263c30"
+    },
+    {
+      "token": "http://192.168.1.100:8080/recalls/announcement/2023-q3",
+      "context": "visit the url http://192.168.1.100:8080/recalls/announcement/2023-q3 or call the",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "615ffea5302d49b5bbf19d7687d10969"
+    },
+    {
+      "token": "245",
+      "context": "property located at 245 Independence Avenue South,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "3cdb9a3d036b437dad4c98b168948535"
+    },
+    {
+      "token": "Independence",
+      "context": "located at 245 Independence Avenue South, USA",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "3cdb9a3d036b437dad4c98b168948535"
+    },
+    {
+      "token": "Avenue",
+      "context": "at 245 Independence Avenue South, USA is",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "3cdb9a3d036b437dad4c98b168948535"
+    },
+    {
+      "token": "South,",
+      "context": "245 Independence Avenue South, USA is now",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "3cdb9a3d036b437dad4c98b168948535"
+    },
+    {
+      "token": "_________________________________",
+      "context": "assistance services. Signature: _________________________________ Date: _________________________________",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "05cb8fd1ed3146cbb884e2d553ed8df4"
+    },
+    {
+      "token": "_________________________________",
+      "context": "Signature: _________________________________ Date: _________________________________",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "05cb8fd1ed3146cbb884e2d553ed8df4"
+    },
+    {
+      "token": "1-2",
+      "context": "city typically takes 1-2 business days, while",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "6fcd359f53cc4886a9766cd97b6c40bb"
+    },
+    {
+      "token": "business",
+      "context": "typically takes 1-2 business days, while air",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "6fcd359f53cc4886a9766cd97b6c40bb"
+    },
+    {
+      "token": "days,",
+      "context": "takes 1-2 business days, while air freight",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "6fcd359f53cc4886a9766cd97b6c40bb"
+    },
+    {
+      "token": "3-5",
+      "context": "international destinations within 3-5 business days. For",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "6fcd359f53cc4886a9766cd97b6c40bb"
+    },
+    {
+      "token": "business",
+      "context": "destinations within 3-5 business days. For more",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "6fcd359f53cc4886a9766cd97b6c40bb"
+    },
+    {
+      "token": "days.",
+      "context": "within 3-5 business days. For more detailed",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "6fcd359f53cc4886a9766cd97b6c40bb"
+    },
+    {
+      "token": "5234",
+      "context": "debit card number 5234 7892 3456 7890.",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "434638c3c73644bba64c1cfee5a613af"
+    },
+    {
+      "token": "7892",
+      "context": "card number 5234 7892 3456 7890. For",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "434638c3c73644bba64c1cfee5a613af"
+    },
+    {
+      "token": "3456",
+      "context": "number 5234 7892 3456 7890. For any",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "434638c3c73644bba64c1cfee5a613af"
+    },
+    {
+      "token": "7890.",
+      "context": "5234 7892 3456 7890. For any inquiries",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "434638c3c73644bba64c1cfee5a613af"
+    },
+    {
+      "token": "Aisha,",
+      "context": "is hereby acknowledged, Aisha, hereafter referred to",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "25f84b80d80545b9857965b105aceac7"
+    },
+    {
+      "token": "Aisha.",
+      "context": "been paid to Aisha. **DESCRIPTION OF RELEASE**",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "25f84b80d80545b9857965b105aceac7"
+    },
+    {
+      "token": "Aisha",
+      "context": "above written. __________________________ Aisha **NOTARIZATION** STATE OF",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "25f84b80d80545b9857965b105aceac7"
+    },
+    {
+      "token": "______",
+      "context": "before me this ______ day of ________,",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "25f84b80d80545b9857965b105aceac7"
+    },
+    {
+      "token": "day",
+      "context": "me this ______ day of ________, 2030,",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "25f84b80d80545b9857965b105aceac7"
+    },
+    {
+      "token": "of",
+      "context": "this ______ day of ________, 2030, by",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "25f84b80d80545b9857965b105aceac7"
+    },
+    {
+      "token": "________,",
+      "context": "______ day of ________, 2030, by Aisha,",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "25f84b80d80545b9857965b105aceac7"
+    },
+    {
+      "token": "Aisha,",
+      "context": "________, 2030, by Aisha, the person who",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "25f84b80d80545b9857965b105aceac7"
+    },
+    {
+      "token": "\"Faiha",
+      "context": "\"recipient_name\": \"Khalid\", \"street_address\": \"Faiha Street, 14\", \"city\":",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "c4ea167aac5c411b830df6ecc91df96f"
+    },
+    {
+      "token": "Street,",
+      "context": "\"Khalid\", \"street_address\": \"Faiha Street, 14\", \"city\": \"Ahmadi\",",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "c4ea167aac5c411b830df6ecc91df96f"
+    },
+    {
+      "token": "14\",",
+      "context": "\"street_address\": \"Faiha Street, 14\", \"city\": \"Ahmadi\", \"country\":",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "c4ea167aac5c411b830df6ecc91df96f"
+    },
+    {
+      "token": "http://192.168.1.100:8080/ecommerce/gift-card/redemption",
+      "context": "**Redemption URL** | http://192.168.1.100:8080/ecommerce/gift-card/redemption | | **Customer",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "890605d4d9014876b5abeaccddc94bd8"
+    },
+    {
+      "token": "Mon,",
+      "context": "**Redemption Date** | Mon, 15 Oct 2024",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "890605d4d9014876b5abeaccddc94bd8"
+    },
+    {
+      "token": "\"3714",
+      "context": "\"CardDetails\": { \"CardNumber\": \"3714 892345 67890\", \"CVV\":",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "0541f3a44af24293bd08c10fe4c3aef1"
+    },
+    {
+      "token": "Sinuiju",
+      "context": "Korea - **City:** Sinuiju - **Coordinates:** 39.0179,125.7344",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "d2a9f3b6c4b946889de284970d648d50"
+    },
+    {
+      "token": "**Athens",
+      "context": "--- **Athens Zoning Permit** **Applicant",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "bafa3e0f36334a4f9729d71e89bf6ff3"
+    },
+    {
+      "token": "Elena",
+      "context": "- **First Name:** Elena - **Last Name:**",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "bafa3e0f36334a4f9729d71e89bf6ff3"
+    },
+    {
+      "token": "Papadopoulos",
+      "context": "- **Last Name:** Papadopoulos - **Email:** e.papadopoulos@athenarealty.gr",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "bafa3e0f36334a4f9729d71e89bf6ff3"
+    },
+    {
+      "token": "Ermou",
+      "context": "- **Street Address:** Ermou 56 - **City:**",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "bafa3e0f36334a4f9729d71e89bf6ff3"
+    },
+    {
+      "token": "56",
+      "context": "**Street Address:** Ermou 56 - **City:** Athens",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "bafa3e0f36334a4f9729d71e89bf6ff3"
+    },
+    {
+      "token": "790",
+      "context": "- Current Address: 790 Oxbow Cv -",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "4d1935363ecb419bbb75cd34185232f9"
+    },
+    {
+      "token": "Oxbow",
+      "context": "Current Address: 790 Oxbow Cv - State:",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "4d1935363ecb419bbb75cd34185232f9"
+    },
+    {
+      "token": "Cv",
+      "context": "Address: 790 Oxbow Cv - State: South",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "4d1935363ecb419bbb75cd34185232f9"
+    },
+    {
+      "token": "Playa",
+      "context": "a resident of Playa Vista, California, USA",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "071bd797e8a944f7a239224833f1b8ad"
+    },
+    {
+      "token": "Vista,",
+      "context": "resident of Playa Vista, California, USA with",
+      "predicted": "O",
+      "expected": "I-city",
+      "sample_id": "071bd797e8a944f7a239224833f1b8ad"
+    },
+    {
+      "token": "Justin.",
+      "context": "Record Patient name: Justin. Date of birth:",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "**Onset",
+      "context": "**Adverse Event Description:** **Onset Date:** **End Date:**",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "2289a2a0f6554216a807798660e0ce9d"
+    },
+    {
+      "token": "Date:**",
+      "context": "Event Description:** **Onset Date:** **End Date:** **Severity:**",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "2289a2a0f6554216a807798660e0ce9d"
+    },
+    {
+      "token": "**End",
+      "context": "Description:** **Onset Date:** **End Date:** **Severity:** **Outcome:**",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "2289a2a0f6554216a807798660e0ce9d"
+    },
+    {
+      "token": "Date:**",
+      "context": "**Onset Date:** **End Date:** **Severity:** **Outcome:** **Reporter",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "2289a2a0f6554216a807798660e0ce9d"
+    },
+    {
+      "token": "**123",
+      "context": "**Featured Listings** - **123 Maple Street, Los",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "Maple",
+      "context": "Listings** - **123 Maple Street, Los Angeles,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "Street,",
+      "context": "- **123 Maple Street, Los Angeles, California",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "**456",
+      "context": "spacious backyard. - **456 Oak Avenue, Los",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "Oak",
+      "context": "backyard. - **456 Oak Avenue, Los Angeles,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "Avenue,",
+      "context": "- **456 Oak Avenue, Los Angeles, California",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "26a77e9fff2649baa18d8eeac3c2ed79"
+    },
+    {
+      "token": "225",
+      "context": "**Origin:** **Street Address:** 225 Atlantic Ave **Coordinate:**",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "039e94b25e5b4cd69acdb0dc1a132072"
+    },
+    {
+      "token": "Atlantic",
+      "context": "**Street Address:** 225 Atlantic Ave **Coordinate:** 37.62345,-87.45678",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "039e94b25e5b4cd69acdb0dc1a132072"
+    },
+    {
+      "token": "Ave",
+      "context": "Address:** 225 Atlantic Ave **Coordinate:** 37.62345,-87.45678 **Destination:**",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "039e94b25e5b4cd69acdb0dc1a132072"
+    },
+    {
+      "token": "294",
+      "context": "assembly point at 294 Chestnut Street. **Communication",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "72e0ae7e0263475795a3a48a201c1249"
+    },
+    {
+      "token": "Chestnut",
+      "context": "point at 294 Chestnut Street. **Communication Protocols**",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "72e0ae7e0263475795a3a48a201c1249"
+    },
+    {
+      "token": "Street.",
+      "context": "at 294 Chestnut Street. **Communication Protocols** **Emergency",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "72e0ae7e0263475795a3a48a201c1249"
+    },
+    {
+      "token": "a",
+      "context": "on 15/07/2026 at a quarter to four.",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "60b698daefdb467db0af497f2be81a83"
+    },
+    {
+      "token": "quarter",
+      "context": "15/07/2026 at a quarter to four.",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "60b698daefdb467db0af497f2be81a83"
+    },
+    {
+      "token": "to",
+      "context": "at a quarter to four.",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "60b698daefdb467db0af497f2be81a83"
+    },
+    {
+      "token": "four.",
+      "context": "a quarter to four.",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "60b698daefdb467db0af497f2be81a83"
+    },
+    {
+      "token": "67",
+      "context": "Horn, residing at 67 Gray Rd, Henry",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "54dca208ff2b44d3bc44058dd0072516"
+    },
+    {
+      "token": "200",
+      "context": "an average of 200 ms, with minimal",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "b346d825e1ec430e8f7e1098b5114a17"
+    },
+    {
+      "token": "ms,",
+      "context": "average of 200 ms, with minimal error",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "b346d825e1ec430e8f7e1098b5114a17"
+    },
+    {
+      "token": "Cannes",
+      "context": "The Cannes Film Festival, a",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "170a34e05632448caca1ef347ff553e2"
+    },
+    {
+      "token": "Cannes",
+      "context": "of cinema. The Cannes Film Festival of",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "170a34e05632448caca1ef347ff553e2"
+    },
+    {
+      "token": "476",
+      "context": "Street Address | 476 Deer Trl |",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "00d792d56ee74ab5842478aedbf05fb3"
+    },
+    {
+      "token": "Deer",
+      "context": "Address | 476 Deer Trl | |",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "00d792d56ee74ab5842478aedbf05fb3"
+    },
+    {
+      "token": "Trl",
+      "context": "| 476 Deer Trl | | City",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "00d792d56ee74ab5842478aedbf05fb3"
+    },
+    {
+      "token": "706",
+      "context": "abennett1968@icloud.com Company Address: 706 W State Highway",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "ba80f83af8a941f3aa0a95a01288bdbb"
+    },
+    {
+      "token": "W",
+      "context": "Company Address: 706 W State Highway 243",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "ba80f83af8a941f3aa0a95a01288bdbb"
+    },
+    {
+      "token": "State",
+      "context": "Address: 706 W State Highway 243 Product",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "ba80f83af8a941f3aa0a95a01288bdbb"
+    },
+    {
+      "token": "Highway",
+      "context": "706 W State Highway 243 Product Catalog:",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "ba80f83af8a941f3aa0a95a01288bdbb"
+    },
+    {
+      "token": "243",
+      "context": "W State Highway 243 Product Catalog: http://supplierlist.consumergoods.com:8080/contact",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "ba80f83af8a941f3aa0a95a01288bdbb"
+    },
+    {
+      "token": "Net",
+      "context": "http://supplierlist.consumergoods.com:8080/contact Payment Terms: Net 30 Fax Number:",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "ba80f83af8a941f3aa0a95a01288bdbb"
+    },
+    {
+      "token": "30",
+      "context": "Payment Terms: Net 30 Fax Number: 832-869-4836",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "ba80f83af8a941f3aa0a95a01288bdbb"
+    },
+    {
+      "token": "18,",
+      "context": "57 Street Address: 18, Rue Cler Services",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "9d5c4dde046541e8b9e8db3ebaa0a89e"
+    },
+    {
+      "token": "Kandy",
+      "context": "5678 - **City:** Kandy - **Country:** Sri",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "4660da3e020b4a868879f5dbbd752476"
+    },
+    {
+      "token": "123",
+      "context": "- **Street Address:** 123 Galle Road **Itemized",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "4660da3e020b4a868879f5dbbd752476"
+    },
+    {
+      "token": "Galle",
+      "context": "**Street Address:** 123 Galle Road **Itemized List",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "4660da3e020b4a868879f5dbbd752476"
+    },
+    {
+      "token": "Road",
+      "context": "Address:** 123 Galle Road **Itemized List of",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "4660da3e020b4a868879f5dbbd752476"
+    },
+    {
+      "token": "328",
+      "context": "T47521 Origin Address: 328 Sand Basin Rd,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "5ee05648812c4205b32b85ea192553f5"
+    },
+    {
+      "token": "Sand",
+      "context": "Origin Address: 328 Sand Basin Rd, Marathon,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "5ee05648812c4205b32b85ea192553f5"
+    },
+    {
+      "token": "Basin",
+      "context": "Address: 328 Sand Basin Rd, Marathon, USA",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "5ee05648812c4205b32b85ea192553f5"
+    },
+    {
+      "token": "Rd,",
+      "context": "328 Sand Basin Rd, Marathon, USA Destination",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "5ee05648812c4205b32b85ea192553f5"
+    },
+    {
+      "token": "Marathon,",
+      "context": "Sand Basin Rd, Marathon, USA Destination Address:",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "5ee05648812c4205b32b85ea192553f5"
+    },
+    {
+      "token": "1234",
+      "context": "USA Destination Address: 1234 Main St Carrier",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "5ee05648812c4205b32b85ea192553f5"
+    },
+    {
+      "token": "5432",
+      "context": "credit debit card, 5432 7891 2345 6789,",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "58bcf98603b747e7961a0fbc68eb468a"
+    },
+    {
+      "token": "7891",
+      "context": "debit card, 5432 7891 2345 6789, was",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "58bcf98603b747e7961a0fbc68eb468a"
+    },
+    {
+      "token": "2345",
+      "context": "card, 5432 7891 2345 6789, was used",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "58bcf98603b747e7961a0fbc68eb468a"
+    },
+    {
+      "token": "6789,",
+      "context": "5432 7891 2345 6789, was used to",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "58bcf98603b747e7961a0fbc68eb468a"
+    },
+    {
+      "token": "twenty",
+      "context": "story unfolds at twenty to seven, adding",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "to",
+      "context": "unfolds at twenty to seven, adding to",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "seven,",
+      "context": "at twenty to seven, adding to the",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "f4476505136244b5a297d253b565ecff"
+    },
+    {
+      "token": "4532",
+      "context": "credit debit card 4532 7841 2356 1987",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "5ae1af7c6f7e4e7083d20cd23ace370d"
+    },
+    {
+      "token": "7841",
+      "context": "debit card 4532 7841 2356 1987 you",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "5ae1af7c6f7e4e7083d20cd23ace370d"
+    },
+    {
+      "token": "2356",
+      "context": "card 4532 7841 2356 1987 you were",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "5ae1af7c6f7e4e7083d20cd23ace370d"
+    },
+    {
+      "token": "596",
+      "context": "224-70-5922 Street Address: 596 Dry Creek Rd",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "86b81adae9e04a1a999b5e1ad2cb483b"
+    },
+    {
+      "token": "Dry",
+      "context": "Street Address: 596 Dry Creek Rd Email:",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "86b81adae9e04a1a999b5e1ad2cb483b"
+    },
+    {
+      "token": "Creek",
+      "context": "Address: 596 Dry Creek Rd Email: hatterb@yahoo.com",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "86b81adae9e04a1a999b5e1ad2cb483b"
+    },
+    {
+      "token": "Rd",
+      "context": "596 Dry Creek Rd Email: hatterb@yahoo.com Phone",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "86b81adae9e04a1a999b5e1ad2cb483b"
+    },
+    {
+      "token": "Avenida",
+      "context": "the origin at Avenida Santa Fe 2456.",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "271bed29da1d491f99fb9a1ef426c036"
+    },
+    {
+      "token": "Santa",
+      "context": "origin at Avenida Santa Fe 2456. The",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "271bed29da1d491f99fb9a1ef426c036"
+    },
+    {
+      "token": "Fe",
+      "context": "at Avenida Santa Fe 2456. The coordinates",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "271bed29da1d491f99fb9a1ef426c036"
+    },
+    {
+      "token": "2456.",
+      "context": "Avenida Santa Fe 2456. The coordinates for",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "271bed29da1d491f99fb9a1ef426c036"
+    },
+    {
+      "token": "Souk",
+      "context": "- **First Name:** Souk - **Employee ID:**",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ddd617d5720d416989d710af42386741"
+    },
+    {
+      "token": "Souk",
+      "context": "| Proficient | Souk demonstrates a strong",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ddd617d5720d416989d710af42386741"
+    },
+    {
+      "token": "Souk",
+      "context": "| Exemplary | Souk effectively manages the",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ddd617d5720d416989d710af42386741"
+    },
+    {
+      "token": "Souk",
+      "context": "| Developing | Souk shows potential in",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ddd617d5720d416989d710af42386741"
+    },
+    {
+      "token": "Souk",
+      "context": "Overall Evaluation Summary Souk has shown proficiency",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ddd617d5720d416989d710af42386741"
+    },
+    {
+      "token": "Souk",
+      "context": "in tasks. Overall, Souk is a developing",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ddd617d5720d416989d710af42386741"
+    },
+    {
+      "token": "2001:db8:85a3::123f:abcd:5678:9ef0",
+      "context": "the IPV6 address 2001:db8:85a3::123f:abcd:5678:9ef0 showed consistent high",
+      "predicted": "O",
+      "expected": "B-ipv6",
+      "sample_id": "96152b574b3747afb95f791f3ab2d720"
+    },
+    {
+      "token": "2a02:4d60:1031::85e1:79f2:9122:aecd.",
+      "context": "IPv6 address is 2a02:4d60:1031::85e1:79f2:9122:aecd. The HTTP cookie",
+      "predicted": "O",
+      "expected": "B-ipv6",
+      "sample_id": "5666e4c3ad1949b396a80e2339d3daf1"
+    },
+    {
+      "token": "4916",
+      "context": "debit card number 4916 3872 6534 1237",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "4c8accdb109c48e2a92086b0ab8e17da"
+    },
+    {
+      "token": "17:23:45",
+      "context": "| Incident at 17:23:45 | 00:15:00 |",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "8e108d84f22f40d18a4d2d33003cb6eb"
+    },
+    {
+      "token": "17:23:45",
+      "context": "Resolution initiated at 17:23:45 | | |",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "8e108d84f22f40d18a4d2d33003cb6eb"
+    },
+    {
+      "token": "2023**",
+      "context": "Ended December 31, 2023** **Revenue** | Revenue",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "ad69951ae15f4f23b6d2be35b6f25bc0"
+    },
+    {
+      "token": "Recipient",
+      "context": "Name Recipient Address Recipient City, State, Zip",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "809a2d58025746ec9369abf6f9d28a00"
+    },
+    {
+      "token": "City,",
+      "context": "Recipient Address Recipient City, State, Zip Code",
+      "predicted": "O",
+      "expected": "I-city",
+      "sample_id": "809a2d58025746ec9369abf6f9d28a00"
+    },
+    {
+      "token": "3419",
+      "context": "card, such as 3419 341123 60128, for",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "68b111e0f19146fca16d98928e275513"
+    },
+    {
+      "token": "60128,",
+      "context": "as 3419 341123 60128, for processing transactions.",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "68b111e0f19146fca16d98928e275513"
+    },
+    {
+      "token": "http://192.168.1.100:8080/privacy-policy.",
+      "context": "policy page at http://192.168.1.100:8080/privacy-policy. #### Contact Information",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "68b111e0f19146fca16d98928e275513"
+    },
+    {
+      "token": "House",
+      "context": "residence located at House No. 45, Block",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "6d8633806d6c4c6f9c1f89b8a9e8320e"
+    },
+    {
+      "token": "No.",
+      "context": "located at House No. 45, Block 9,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "6d8633806d6c4c6f9c1f89b8a9e8320e"
+    },
+    {
+      "token": "45,",
+      "context": "at House No. 45, Block 9, Gulshan-e-Iqbal.",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "6d8633806d6c4c6f9c1f89b8a9e8320e"
+    },
+    {
+      "token": "Block",
+      "context": "House No. 45, Block 9, Gulshan-e-Iqbal. The",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "6d8633806d6c4c6f9c1f89b8a9e8320e"
+    },
+    {
+      "token": "9,",
+      "context": "No. 45, Block 9, Gulshan-e-Iqbal. The purchase",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "6d8633806d6c4c6f9c1f89b8a9e8320e"
+    },
+    {
+      "token": "Sun,",
+      "context": "Sun, 15 Dec 2024",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "2fc0a310876c4f79b354184fcd979fe9"
+    },
+    {
+      "token": "Sun,",
+      "context": "was received on Sun, 15 Dec 2024.",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "2fc0a310876c4f79b354184fcd979fe9"
+    },
+    {
+      "token": "http://192.168.1.100:8080/data-integrity-policy",
+      "context": "| URL | http://192.168.1.100:8080/data-integrity-policy | **Revision History**",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "eae8bf0af605445f98043a8012a8c7b3"
+    },
+    {
+      "token": "04:51:15",
+      "context": "| 03/07/2027 | 04:51:15 | **Policy Statement**",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "eae8bf0af605445f98043a8012a8c7b3"
+    },
+    {
+      "token": "1830",
+      "context": "Application** - Time: 1830",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "5691b6cdbcd84d36ab8589e221363e5c"
+    },
+    {
+      "token": "(2024",
+      "context": "1. **Phase 1 (2024 Q1-Q2)**: Upgrade lighting",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "5a59ee1bc8cf4ee1bf68b964d622d34e"
+    },
+    {
+      "token": "Q1-Q2)**:",
+      "context": "**Phase 1 (2024 Q1-Q2)**: Upgrade lighting systems",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "5a59ee1bc8cf4ee1bf68b964d622d34e"
+    },
+    {
+      "token": "(2024",
+      "context": "2. **Phase 2 (2024 Q3-Q4)**: Conduct regular",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "5a59ee1bc8cf4ee1bf68b964d622d34e"
+    },
+    {
+      "token": "(2025",
+      "context": "3. **Phase 3 (2025 Q1)**: Integrate renewable",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "5a59ee1bc8cf4ee1bf68b964d622d34e"
+    },
+    {
+      "token": "Ampuero",
+      "context": "Adolfo Last Name: Ampuero Street Address: 26",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "26",
+      "context": "Ampuero Street Address: 26 Bowen Ct Phone",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "26",
+      "context": "242 Billing Address: 26 Bowen Ct **Terms",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Bowen",
+      "context": "Billing Address: 26 Bowen Ct **Terms and",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Ct",
+      "context": "Address: 26 Bowen Ct **Terms and Conditions**",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "5",
+      "context": "audit conducted at 5 Rio Sombra Dr,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "edd3a7073d3845dc8f2032e58b3184d0"
+    },
+    {
+      "token": "Nino",
+      "context": "_______________________________ Print Name: Nino Date: _______________________________ Lessor's",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "2b957e957c994bd7bb989f8ecfd1388a"
+    },
+    {
+      "token": "gate",
+      "context": "Address:** Karl Johans gate 5 **Service Description:**",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "765101202d92433d8eced126e01da850"
+    },
+    {
+      "token": "5",
+      "context": "Karl Johans gate 5 **Service Description:** Identity",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "765101202d92433d8eced126e01da850"
+    },
+    {
+      "token": "Wed,",
+      "context": "last updated on Wed, 15 Aug 2023,",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "abde831ca04e42a2a2fff038cbf42def"
+    },
+    {
+      "token": "3486",
+      "context": "credit debit card 3486 789432 11234 is",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "7d283b070e1a4b91a009bff0a9a0a594"
+    },
+    {
+      "token": "Kalinda",
+      "context": "Form** **Guest Name:** Kalinda Molina **Room Number:**",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "2177d14321ac42898a2e20d2761941fe"
+    },
+    {
+      "token": "Molina",
+      "context": "**Guest Name:** Kalinda Molina **Room Number:** _____________________",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "2177d14321ac42898a2e20d2761941fe"
+    },
+    {
+      "token": "6223",
+      "context": "follows: Card Number: 6223 1456 8975 2341",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "67b520e95dc8423bbb6bfb8cbe6e4294"
+    },
+    {
+      "token": "1456",
+      "context": "Card Number: 6223 1456 8975 2341 Expiration",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "67b520e95dc8423bbb6bfb8cbe6e4294"
+    },
+    {
+      "token": "8975",
+      "context": "Number: 6223 1456 8975 2341 Expiration Date:",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "67b520e95dc8423bbb6bfb8cbe6e4294"
+    },
+    {
+      "token": "2341",
+      "context": "6223 1456 8975 2341 Expiration Date: 12/25",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "67b520e95dc8423bbb6bfb8cbe6e4294"
+    },
+    {
+      "token": "Nikolaos",
+      "context": "the employment of Nikolaos Papadopoulos at Aegis",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "2055b8b0fc284203b26423071641234f"
+    },
+    {
+      "token": "Papadopoulos",
+      "context": "employment of Nikolaos Papadopoulos at Aegis Ecomm.",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "2055b8b0fc284203b26423071641234f"
+    },
+    {
+      "token": "http://192.168.1.100:8080/licenses/biotech_license_agreement.pdf.",
+      "context": "agreement available at http://192.168.1.100:8080/licenses/biotech_license_agreement.pdf. **Term and Termination**",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "abe9be02498043d282df87b125f837bf"
+    },
+    {
+      "token": "http://192.168.1.1:8080/retail/vpn_credentials.txt.",
+      "context": "credentials document is http://192.168.1.1:8080/retail/vpn_credentials.txt. The age of",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "4963bedd10a3495fb42ef7a41f87dc1d"
+    },
+    {
+      "token": "2024",
+      "context": "| |----------|------------------------|---------------|--------|----------|----------|--------------------------|--------------|---------------|-------------| | 2024 | =SUM(B2:B100) |",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "aa4179b9248b4731a22afd078729d647"
+    },
+    {
+      "token": "2025",
+      "context": "=H2-I2 | | 2025 | =SUM(B2:B100) |",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "aa4179b9248b4731a22afd078729d647"
+    },
+    {
+      "token": "15",
+      "context": "Funding Update - 15 March 2024 Dear",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "3bf7df4912614b80a6fe9651eb0f768a"
+    },
+    {
+      "token": "March",
+      "context": "Update - 15 March 2024 Dear Team,",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "3bf7df4912614b80a6fe9651eb0f768a"
+    },
+    {
+      "token": "2024",
+      "context": "- 15 March 2024 Dear Team, I",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "3bf7df4912614b80a6fe9651eb0f768a"
+    },
+    {
+      "token": "5312",
+      "context": "credit debit card 5312 7845 6390 1254",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "3bf7df4912614b80a6fe9651eb0f768a"
+    },
+    {
+      "token": "7845",
+      "context": "debit card 5312 7845 6390 1254 was",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "3bf7df4912614b80a6fe9651eb0f768a"
+    },
+    {
+      "token": "6390",
+      "context": "card 5312 7845 6390 1254 was used",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "3bf7df4912614b80a6fe9651eb0f768a"
+    },
+    {
+      "token": "1254",
+      "context": "5312 7845 6390 1254 was used for",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "3bf7df4912614b80a6fe9651eb0f768a"
+    },
+    {
+      "token": "WA-ENG-792431,",
+      "context": "license number was WA-ENG-792431, ensuring compliance with",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "09139b3f89754d5881948f6bc1248b82"
+    },
+    {
+      "token": "21",
+      "context": "Street Address | 21 Canuela Way |",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "d061a5ce6ce0432baac0da6a606076be"
+    },
+    {
+      "token": "Canuela",
+      "context": "Address | 21 Canuela Way | |",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "d061a5ce6ce0432baac0da6a606076be"
+    },
+    {
+      "token": "Way",
+      "context": "| 21 Canuela Way | | Date",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "d061a5ce6ce0432baac0da6a606076be"
+    },
+    {
+      "token": "WA-ENG-482916,",
+      "context": "certificate license number WA-ENG-482916, ensuring that all",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "00220837bc4c4f50abbbc296ab8ed8f5"
+    },
+    {
+      "token": "258",
+      "context": "the package to 258 Ruby Rd, Carrollton,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "b21a11ce43f94d519dc2d5fc9639790d"
+    },
+    {
+      "token": "Ruby",
+      "context": "package to 258 Ruby Rd, Carrollton, Denton",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "b21a11ce43f94d519dc2d5fc9639790d"
+    },
+    {
+      "token": "Rd,",
+      "context": "to 258 Ruby Rd, Carrollton, Denton County.",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "b21a11ce43f94d519dc2d5fc9639790d"
+    },
+    {
+      "token": "5478",
+      "context": "credit debit card 5478 3210 0798 2468",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "3210",
+      "context": "debit card 5478 3210 0798 2468 1372",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "0798",
+      "context": "card 5478 3210 0798 2468 1372 8932",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "2468",
+      "context": "5478 3210 0798 2468 1372 8932 4567",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "601718f5dced4bb88fd173a8b4d1bb4c"
+    },
+    {
+      "token": "2023",
+      "context": "Metric | Q4 2023 Value | Year-to-Date",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "9c99d21da66f4539b35d55e4c1297f1f"
+    },
+    {
+      "token": "Carrera",
+      "context": "- **Street Address**: Carrera 7 #72-41 -",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "5f7869fadbe04859859791291f9f298d"
+    },
+    {
+      "token": "7",
+      "context": "**Street Address**: Carrera 7 #72-41 - **Date",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "5f7869fadbe04859859791291f9f298d"
+    },
+    {
+      "token": "#72-41",
+      "context": "Address**: Carrera 7 #72-41 - **Date of",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "5f7869fadbe04859859791291f9f298d"
+    },
+    {
+      "token": "Bahnhofstrasse",
+      "context": "Energy, headquartered at Bahnhofstrasse 21 in Glarus,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "624b814be72a45479fe33ad18f643199"
+    },
+    {
+      "token": "21",
+      "context": "headquartered at Bahnhofstrasse 21 in Glarus, Switzerland,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "624b814be72a45479fe33ad18f643199"
+    },
+    {
+      "token": "271",
+      "context": "Application** **Project Address:** 271 Painted Sky St",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "94cc6a8b122347bcbf3c19a2a3a3c077"
+    },
+    {
+      "token": "Painted",
+      "context": "**Project Address:** 271 Painted Sky St **Owner",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "94cc6a8b122347bcbf3c19a2a3a3c077"
+    },
+    {
+      "token": "Sky",
+      "context": "Address:** 271 Painted Sky St **Owner Information:**",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "94cc6a8b122347bcbf3c19a2a3a3c077"
+    },
+    {
+      "token": "St",
+      "context": "271 Painted Sky St **Owner Information:** Name:",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "94cc6a8b122347bcbf3c19a2a3a3c077"
+    },
+    {
+      "token": "230515-CERT721.",
+      "context": "the policy number 230515-CERT721. This certificate is",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "ac8e579a44964209be0f6e505cc30a55"
+    },
+    {
+      "token": "231215-CERT957",
+      "context": "Update** **Policy Number:** 231215-CERT957 **Customer ID:** CUS735129",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "a2ebeff448a0434a99fd5dafc28aad7b"
+    },
+    {
+      "token": "Xiomara",
+      "context": "- **First Name:** Xiomara - **City:** Austin",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "defa578b8e494f0f8cf0d6f5a1106b92"
+    },
+    {
+      "token": "Austin",
+      "context": "Xiomara - **City:** Austin - **State:** Texas",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "defa578b8e494f0f8cf0d6f5a1106b92"
+    },
+    {
+      "token": "10h30",
+      "context": "**Project Submission Time:** 10h30 **Site Plan Approvals:**",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "defa578b8e494f0f8cf0d6f5a1106b92"
+    },
+    {
+      "token": "fe80::a5b7:8cde:1f2b:3c4d,",
+      "context": "as 159.22.87.232 or fe80::a5b7:8cde:1f2b:3c4d, you can configure",
+      "predicted": "O",
+      "expected": "B-ipv6",
+      "sample_id": "f8a673d5911047cda26030df7843aadb"
+    },
+    {
+      "token": "452",
+      "context": "IL - **Address**: 452 Delegate Dr -",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "Delegate",
+      "context": "- **Address**: 452 Delegate Dr - **Coordinates**:",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "IL-897245-36.",
+      "context": "Construction, licensed under IL-897245-36. All work will",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "Luc",
+      "context": "stamps and endorsements. Luc Lefevre's occupation is",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "072b941eb6464b108935559ad718db67"
+    },
+    {
+      "token": "18:23",
+      "context": "**Contact Information:** **Time:** 18:23 **Contract Details:** **Contract",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "a9fd7165ce02467c8a4b917a57b69411"
+    },
+    {
+      "token": "Ndilu",
+      "context": "- First Name: Ndilu - Last Name:",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "7d242be8f2a549898680870783238ddb"
+    },
+    {
+      "token": "Expiration",
+      "context": "the document) - Expiration Date: (Provide the",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "56812bb025764dcd9cf74b370fc1c911"
+    },
+    {
+      "token": "Date:",
+      "context": "document) - Expiration Date: (Provide the expiration",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "56812bb025764dcd9cf74b370fc1c911"
+    },
+    {
+      "token": "Verification",
+      "context": "**Verification Status** - Verification Date: (Specify the",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "56812bb025764dcd9cf74b370fc1c911"
+    },
+    {
+      "token": "Date:",
+      "context": "Status** - Verification Date: (Specify the date",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "56812bb025764dcd9cf74b370fc1c911"
+    },
+    {
+      "token": "2428",
+      "context": "the package to 2428 Waterwood Dr, Dallas,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "ba4408e5e7d94708a0123a7907a5192d"
+    },
+    {
+      "token": "+591",
+      "context": "- **Phone Number**: +591 2 647 8921",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "74acde6b912f4e91ad92f73d4bb3342c"
+    },
+    {
+      "token": "+591",
+      "context": "- **Phone Number**: +591 2 647 8921",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "74acde6b912f4e91ad92f73d4bb3342c"
+    },
+    {
+      "token": "143,",
+      "context": "Address**: Calle Sucre 143, 81000 - **Country**:",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "74acde6b912f4e91ad92f73d4bb3342c"
+    },
+    {
+      "token": "http://192.168.1.100:8080/licenses/software-license-agreement.pdf.",
+      "context": "at the url http://192.168.1.100:8080/licenses/software-license-agreement.pdf. The license grant",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "a384a7b76ab5490da3cd6d5622d5f8c6"
+    },
+    {
+      "token": "House",
+      "context": "Details:** - **Address:** House 45, Road 7,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "Road",
+      "context": "**Address:** House 45, Road 7, Block A,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "7,",
+      "context": "House 45, Road 7, Block A, Gulshan",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "Block",
+      "context": "45, Road 7, Block A, Gulshan -",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "A,",
+      "context": "Road 7, Block A, Gulshan - **Coordinates:**",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "Pabna",
+      "context": "E - **City:** Pabna - **Postcode:** 6004",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "Wed,",
+      "context": "6004 **Inspection Date:** Wed, 15 Oct 2024",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "+880",
+      "context": "- **Phone Number:** +880 787 412 349",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "787",
+      "context": "**Phone Number:** +880 787 412 349 **Summary",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "412",
+      "context": "Number:** +880 787 412 349 **Summary of",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "349",
+      "context": "+880 787 412 349 **Summary of Findings",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "House",
+      "context": "property located at House 45, Road 7,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "45,",
+      "context": "located at House 45, Road 7, Block",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "Road",
+      "context": "at House 45, Road 7, Block A,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "7,",
+      "context": "House 45, Road 7, Block A, Gulshan,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "Block",
+      "context": "45, Road 7, Block A, Gulshan, Pabna,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "A,",
+      "context": "Road 7, Block A, Gulshan, Pabna, 6004,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "Wed,",
+      "context": "6004, conducted on Wed, 15 Oct 2024,",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "+880",
+      "context": "nazia_hossain@dhanakestate.com or call +880 787 412 349.",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "787",
+      "context": "or call +880 787 412 349.",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "412",
+      "context": "call +880 787 412 349.",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "349.",
+      "context": "+880 787 412 349.",
+      "predicted": "O",
+      "expected": "I-phone_number",
+      "sample_id": "7acbc80cb5d247b7a802c37ef39c32d7"
+    },
+    {
+      "token": "4532",
+      "context": "Information** Credit/Debit Card: 4532 0189 7856 2317",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "0531a5efdc2042e6ac909ddebe5962ca"
+    },
+    {
+      "token": "0189",
+      "context": "Credit/Debit Card: 4532 0189 7856 2317 CVV:",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "0531a5efdc2042e6ac909ddebe5962ca"
+    },
+    {
+      "token": "7856",
+      "context": "Card: 4532 0189 7856 2317 CVV: 153",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "0531a5efdc2042e6ac909ddebe5962ca"
+    },
+    {
+      "token": "2317",
+      "context": "4532 0189 7856 2317 CVV: 153 Password:",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "0531a5efdc2042e6ac909ddebe5962ca"
+    },
+    {
+      "token": "FL-ENG-002749",
+      "context": "License Certificate Number: FL-ENG-002749 - Street Address:",
+      "predicted": "O",
+      "expected": "B-certificate_license_number",
+      "sample_id": "41899084eef04e3bb119b298162ea2ff"
+    },
+    {
+      "token": "362",
+      "context": "- Street Address: 362 N Euclid St",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "41899084eef04e3bb119b298162ea2ff"
+    },
+    {
+      "token": "N",
+      "context": "Street Address: 362 N Euclid St -",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "41899084eef04e3bb119b298162ea2ff"
+    },
+    {
+      "token": "109",
+      "context": "1951-11-29, resides at 109 Embassy Ave, Hernando,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "724932948c744eb59674973e294ffdb8"
+    },
+    {
+      "token": "Embassy",
+      "context": "resides at 109 Embassy Ave, Hernando, Florida,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "724932948c744eb59674973e294ffdb8"
+    },
+    {
+      "token": "Ave,",
+      "context": "at 109 Embassy Ave, Hernando, Florida, USA.",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "724932948c744eb59674973e294ffdb8"
+    },
+    {
+      "token": "Mon,",
+      "context": "footprint. As of Mon, 15 Oct 2024,",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "6897d06561b143b08c0156ad5df420a8"
+    },
+    {
+      "token": "24",
+      "context": "be shipped to 24 Pecan Brook Ct,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "281097a5b4af44f493a4955705b1f6aa"
+    },
+    {
+      "token": "Pecan",
+      "context": "shipped to 24 Pecan Brook Ct, Waco,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "281097a5b4af44f493a4955705b1f6aa"
+    },
+    {
+      "token": "Brook",
+      "context": "to 24 Pecan Brook Ct, Waco, Texas,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "281097a5b4af44f493a4955705b1f6aa"
+    },
+    {
+      "token": "Ct,",
+      "context": "24 Pecan Brook Ct, Waco, Texas, 76706,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "281097a5b4af44f493a4955705b1f6aa"
+    },
+    {
+      "token": "No.",
+      "context": "Property Address | No. 35, Anawrahta Road,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "02f755bfee414055b9f730c633784570"
+    },
+    {
+      "token": "35,",
+      "context": "Address | No. 35, Anawrahta Road, Myitkyina",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "02f755bfee414055b9f730c633784570"
+    },
+    {
+      "token": "21",
+      "context": "street address is 21 Country View Rd",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "9ea1891a58b94c4cb9bced8e479ee00d"
+    },
+    {
+      "token": "Country",
+      "context": "address is 21 Country View Rd Apt",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "9ea1891a58b94c4cb9bced8e479ee00d"
+    },
+    {
+      "token": "View",
+      "context": "is 21 Country View Rd Apt 122.",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "9ea1891a58b94c4cb9bced8e479ee00d"
+    },
+    {
+      "token": "Rd",
+      "context": "21 Country View Rd Apt 122. The",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "9ea1891a58b94c4cb9bced8e479ee00d"
+    },
+    {
+      "token": "Apt",
+      "context": "Country View Rd Apt 122. The fax",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "9ea1891a58b94c4cb9bced8e479ee00d"
+    },
+    {
+      "token": "122.",
+      "context": "View Rd Apt 122. The fax number",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "9ea1891a58b94c4cb9bced8e479ee00d"
+    },
+    {
+      "token": "Awolowo",
+      "context": "Street Address | Awolowo Road, 38 |",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "a3022987317541d9ac5740ab61eb08d9"
+    },
+    {
+      "token": "Road,",
+      "context": "Address | Awolowo Road, 38 | |",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "a3022987317541d9ac5740ab61eb08d9"
+    },
+    {
+      "token": "38",
+      "context": "| Awolowo Road, 38 | | Customer",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "a3022987317541d9ac5740ab61eb08d9"
+    },
+    {
+      "token": "http://192.168.1.100:8080/reports/hazardous_materials",
+      "context": "- **Contact URL:** http://192.168.1.100:8080/reports/hazardous_materials - **Biometric Identifier:**",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "860ae8dd8a0e47a196c404df555903f0"
+    },
+    {
+      "token": "23",
+      "context": "Birth: 1993-07-09 Address: 23 Kumsusan Street Phone",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "42d3d9eacce74df6906e75fa35266b8b"
+    },
+    {
+      "token": "Kumsusan",
+      "context": "1993-07-09 Address: 23 Kumsusan Street Phone Number:",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "42d3d9eacce74df6906e75fa35266b8b"
+    },
+    {
+      "token": "Street",
+      "context": "Address: 23 Kumsusan Street Phone Number: +850",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "42d3d9eacce74df6906e75fa35266b8b"
+    },
+    {
+      "token": "19:43:22.",
+      "context": "document as time 19:43:22.",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "42d3d9eacce74df6906e75fa35266b8b"
+    },
+    {
+      "token": "Victor,",
+      "context": "Reset Confirmation Dear Victor, We have received",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "8de8d7ffa09d42a6a1c6fddcb889813f"
+    },
+    {
+      "token": "7-10",
+      "context": "purchase. Please allow 7-10 business days for",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "business",
+      "context": "Please allow 7-10 business days for the",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "days",
+      "context": "allow 7-10 business days for the refund",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "012-289",
+      "context": "customer service at 012-289 7563. **Conditions for",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "012-289",
+      "context": "customer service at 012-289 7563 or email",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "012-289",
+      "context": "customer service at 012-289 7563 or emailing",
+      "predicted": "O",
+      "expected": "B-phone_number",
+      "sample_id": "6572911300b74147bd4db4ce9fdbe54c"
+    },
+    {
+      "token": "June",
+      "context": "Active Users:** - June 2023: 4,000 -",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "76a767051f2b4ceda1c6383fe2e25f4a"
+    },
+    {
+      "token": "2023:",
+      "context": "Users:** - June 2023: 4,000 - July",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "76a767051f2b4ceda1c6383fe2e25f4a"
+    },
+    {
+      "token": "4916",
+      "context": "credit debit card, 4916 7932 4568 1785,",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "6760ec100b7c4563a79a79b0d799d1cf"
+    },
+    {
+      "token": "7932",
+      "context": "debit card, 4916 7932 4568 1785, or",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "6760ec100b7c4563a79a79b0d799d1cf"
+    },
+    {
+      "token": "http://192.168.1.10:8080/projects/proposal.",
+      "context": "proposal, accessible at http://192.168.1.10:8080/projects/proposal. This initiative aims",
+      "predicted": "O",
+      "expected": "B-url",
+      "sample_id": "cdac9f0f90dc40bb9c20180b4e5675cb"
+    },
+    {
+      "token": "153",
+      "context": "is located at 153 Shady in Middlesex.",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "98e68565b5a14d74843b45173556b4fc"
+    },
+    {
+      "token": "Shady",
+      "context": "located at 153 Shady in Middlesex. This",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "98e68565b5a14d74843b45173556b4fc"
+    },
+    {
+      "token": "Bldg",
+      "context": "King Fahd Road, Bldg 18. **3.2 Fire",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "ee4ca2de16db4c959f9e8b13c8a5ef80"
+    },
+    {
+      "token": "18.",
+      "context": "Fahd Road, Bldg 18. **3.2 Fire Response**",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "ee4ca2de16db4c959f9e8b13c8a5ef80"
+    },
+    {
+      "token": "4532",
+      "context": "credit debit card, 4532 0158 7436 9210,",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "a1fedbf82be44a6fb539d12bb4ef9cdb"
+    },
+    {
+      "token": "0158",
+      "context": "debit card, 4532 0158 7436 9210, was",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "a1fedbf82be44a6fb539d12bb4ef9cdb"
+    },
+    {
+      "token": "7436",
+      "context": "card, 4532 0158 7436 9210, was utilized",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "a1fedbf82be44a6fb539d12bb4ef9cdb"
+    },
+    {
+      "token": "9210,",
+      "context": "4532 0158 7436 9210, was utilized for",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "a1fedbf82be44a6fb539d12bb4ef9cdb"
+    },
+    {
+      "token": "4916",
+      "context": "credit debit card 4916 7583 4521 9876",
+      "predicted": "O",
+      "expected": "B-credit_debit_card",
+      "sample_id": "a44f3122310e412ea574e526af0c0bed"
+    },
+    {
+      "token": "7583",
+      "context": "debit card 4916 7583 4521 9876 with",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "a44f3122310e412ea574e526af0c0bed"
+    },
+    {
+      "token": "4521",
+      "context": "card 4916 7583 4521 9876 with cvv",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "a44f3122310e412ea574e526af0c0bed"
+    },
+    {
+      "token": "9876",
+      "context": "4916 7583 4521 9876 with cvv 447",
+      "predicted": "O",
+      "expected": "I-credit_debit_card",
+      "sample_id": "a44f3122310e412ea574e526af0c0bed"
+    },
+    {
+      "token": "HOMER",
+      "context": "LA COUNTY OF HOMER **AFFIDAVIT** I, Chelsea",
+      "predicted": "O",
+      "expected": "B-city",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "Chelsea",
+      "context": "HOMER **AFFIDAVIT** I, Chelsea Flateau, being first",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "Flateau,",
+      "context": "**AFFIDAVIT** I, Chelsea Flateau, being first duly",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "7",
+      "context": "I reside at 7 Lapalco Blvd, Homer,",
+      "predicted": "O",
+      "expected": "B-street_address",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "______",
+      "context": "Executed on this ______ day of _______,",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "day",
+      "context": "on this ______ day of _______, 20______.",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "of",
+      "context": "this ______ day of _______, 20______. Chelsea",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "_______,",
+      "context": "______ day of _______, 20______. Chelsea Flateau",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "20______.",
+      "context": "day of _______, 20______. Chelsea Flateau Affiant",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "Chelsea",
+      "context": "of _______, 20______. Chelsea Flateau Affiant Sworn",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "Flateau",
+      "context": "_______, 20______. Chelsea Flateau Affiant Sworn to",
+      "predicted": "O",
+      "expected": "B-last_name",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "______",
+      "context": "before me this ______ day of _______,",
+      "predicted": "O",
+      "expected": "B-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "day",
+      "context": "me this ______ day of _______, 20______.",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "of",
+      "context": "this ______ day of _______, 20______. Notary",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "_______,",
+      "context": "______ day of _______, 20______. Notary Public",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "20______.",
+      "context": "day of _______, 20______. Notary Public",
+      "predicted": "O",
+      "expected": "I-date",
+      "sample_id": "ce8f8fd9df104a299869e24cfc23fc63"
+    },
+    {
+      "token": "112,",
+      "context": "Calle El Conde 112, Dominican Republic, has",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "b67c99381aba4aebaf36d2ebac3bdbfb"
+    },
+    {
+      "token": "Building",
+      "context": "Al Rayyan Road, Building 24 in Al",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "1d689646f5ed45df8f98b1c8138f30a1"
+    },
+    {
+      "token": "24",
+      "context": "Rayyan Road, Building 24 in Al Daayen,",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "1d689646f5ed45df8f98b1c8138f30a1"
+    },
+    {
+      "token": "5-7",
+      "context": "method. Please allow 5-7 business days for",
+      "predicted": "O",
+      "expected": "B-time",
+      "sample_id": "0bf7691d23a7489cbfdb5b67ed755bcb"
+    },
+    {
+      "token": "business",
+      "context": "Please allow 5-7 business days for the",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "0bf7691d23a7489cbfdb5b67ed755bcb"
+    },
+    {
+      "token": "days",
+      "context": "allow 5-7 business days for the refund",
+      "predicted": "O",
+      "expected": "I-time",
+      "sample_id": "0bf7691d23a7489cbfdb5b67ed755bcb"
+    },
+    {
+      "token": "18",
+      "context": "Street Address: Avenida 18 de Julio 1234",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "b61a4a23b93a49d089bef73e7ef889ac"
+    },
+    {
+      "token": "de",
+      "context": "Address: Avenida 18 de Julio 1234 |",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "b61a4a23b93a49d089bef73e7ef889ac"
+    },
+    {
+      "token": "Julio",
+      "context": "Avenida 18 de Julio 1234 | |",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "b61a4a23b93a49d089bef73e7ef889ac"
+    },
+    {
+      "token": "1234",
+      "context": "18 de Julio 1234 | | Identification",
+      "predicted": "O",
+      "expected": "I-street_address",
+      "sample_id": "b61a4a23b93a49d089bef73e7ef889ac"
+    },
+    {
+      "token": "Isabella",
+      "context": "First Name | Isabella | | Last",
+      "predicted": "O",
+      "expected": "B-first_name",
+      "sample_id": "854e6bffe7bf4ff8a535a9221d94a32b"
+    }
+  ]
+}

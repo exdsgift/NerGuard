@@ -1,0 +1,24 @@
+[
+  {
+    "system": "Biomedical Base",
+    "dataset": "bc5cdr",
+    "f1_macro": 0.8404315033461943,
+    "f1_micro": 0.8765154916928604,
+    "entity_f1": 0.8794901506373116,
+    "latency_mean_ms": 25.754831314086914,
+    "n_evaluated_labels": 2,
+    "tier": 1,
+    "n_samples": 500
+  },
+  {
+    "system": "Biomedical Hybrid (gpt-4o)",
+    "dataset": "bc5cdr",
+    "f1_macro": 0.8378750423513975,
+    "f1_micro": 0.8796718322698268,
+    "entity_f1": 0.8881036513545348,
+    "latency_mean_ms": 25.081210136413574,
+    "n_evaluated_labels": 2,
+    "tier": 1,
+    "n_samples": 500
+  }
+]

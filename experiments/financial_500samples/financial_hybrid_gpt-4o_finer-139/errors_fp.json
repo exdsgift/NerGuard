@@ -1,0 +1,376 @@
+{
+  "n_errors": 53,
+  "errors": [
+    {
+      "token": "20",
+      "context": "for a $ 20 million demand loan",
+      "predicted": "B-DebtInstrumentFaceAmount",
+      "expected": "O",
+      "sample_id": "1061307"
+    },
+    {
+      "token": "70.4",
+      "context": "2036 , $ 70.4 million UPB of",
+      "predicted": "B-DebtInstrumentFaceAmount",
+      "expected": "O",
+      "sample_id": "1058850"
+    },
+    {
+      "token": "8.7",
+      "context": ", and $ 8.7 million UPB of",
+      "predicted": "B-DebtInstrumentFaceAmount",
+      "expected": "O",
+      "sample_id": "1058850"
+    },
+    {
+      "token": "no",
+      "context": "the Company had no available borrowings under",
+      "predicted": "B-LineOfCredit",
+      "expected": "O",
+      "sample_id": "1106052"
+    },
+    {
+      "token": "2.2",
+      "context": "centers totaling approximately 2.2 million square feet",
+      "predicted": "B-AreaOfRealEstateProperty",
+      "expected": "O",
+      "sample_id": "1064587"
+    },
+    {
+      "token": "1.75",
+      "context": "of LIBOR plus 1.75 .",
+      "predicted": "B-DebtInstrumentBasisSpreadOnVariableRate1",
+      "expected": "O",
+      "sample_id": "1026088"
+    },
+    {
+      "token": "four",
+      "context": "per year for four years .",
+      "predicted": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardAwardVestingPeriod1",
+      "expected": "O",
+      "sample_id": "1059292"
+    },
+    {
+      "token": "years",
+      "context": "year for four years .",
+      "predicted": "I-ShareBasedCompensationArrangementByShareBasedPaymentAwardAwardVestingPeriod1",
+      "expected": "O",
+      "sample_id": "1059292"
+    },
+    {
+      "token": "55.0",
+      "context": "comprising a $ 55.0 million draw in",
+      "predicted": "B-LineOfCreditFacilityMaximumBorrowingCapacity",
+      "expected": "O",
+      "sample_id": "1054687"
+    },
+    {
+      "token": "17",
+      "context": "Apollo purchased a 17 % incremental equity",
+      "predicted": "B-EquityMethodInvestmentOwnershipPercentage",
+      "expected": "O",
+      "sample_id": "1064346"
+    },
+    {
+      "token": "1.8",
+      "context": "there was $ 1.8 million in compensation",
+      "predicted": "B-EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognized",
+      "expected": "O",
+      "sample_id": "1014590"
+    },
+    {
+      "token": "100",
+      "context": ", 2020 to 100 % , prior",
+      "predicted": "B-DebtInstrumentRedemptionPricePercentage",
+      "expected": "O",
+      "sample_id": "1081991"
+    },
+    {
+      "token": "105",
+      "context": ", 2020 to 105 % and to",
+      "predicted": "B-DebtInstrumentRedemptionPricePercentage",
+      "expected": "O",
+      "sample_id": "1081991"
+    },
+    {
+      "token": "110",
+      "context": "% and to 110 % thereafter (",
+      "predicted": "B-DebtInstrumentRedemptionPricePercentage",
+      "expected": "O",
+      "sample_id": "1081991"
+    },
+    {
+      "token": "115",
+      "context": "as opposed to 115 % ) ,",
+      "predicted": "B-DebtInstrumentRedemptionPricePercentage",
+      "expected": "O",
+      "sample_id": "1081991"
+    },
+    {
+      "token": "1.5",
+      "context": "Company issued $ 1.5 billion of medium",
+      "predicted": "B-DebtInstrumentFaceAmount",
+      "expected": "O",
+      "sample_id": "1045706"
+    },
+    {
+      "token": "500",
+      "context": "notes : $ 500 million with an",
+      "predicted": "B-DebtInstrumentFaceAmount",
+      "expected": "O",
+      "sample_id": "1045706"
+    },
+    {
+      "token": "6.375",
+      "context": "The 6.375 % Notes are",
+      "predicted": "B-DebtInstrumentInterestRateStatedPercentage",
+      "expected": "O",
+      "sample_id": "1056517"
+    },
+    {
+      "token": "77,000",
+      "context": "65,000 and $ 77,000 , respectively .",
+      "predicted": "B-AmortizationOfIntangibleAssets",
+      "expected": "O",
+      "sample_id": "1062254"
+    },
+    {
+      "token": "November",
+      "context": "maturity date of November 17 , 2025",
+      "predicted": "B-DebtInstrumentMaturityDate",
+      "expected": "O",
+      "sample_id": "1092710"
+    },
+    {
+      "token": ",",
+      "context": "of November 17 , 2025 and $",
+      "predicted": "B-DebtInstrumentMaturityDate",
+      "expected": "O",
+      "sample_id": "1092710"
+    },
+    {
+      "token": "2025",
+      "context": "November 17 , 2025 and $ 1,600.0",
+      "predicted": "I-DebtInstrumentMaturityDate",
+      "expected": "O",
+      "sample_id": "1092710"
+    },
+    {
+      "token": "2026",
+      "context": "August 17 , 2026 .",
+      "predicted": "B-DebtInstrumentMaturityDate",
+      "expected": "O",
+      "sample_id": "1092710"
+    },
+    {
+      "token": "118.7",
+      "context": "would have been 118.7 million for the",
+      "predicted": "B-AntidilutiveSecuritiesExcludedFromComputationOfEarningsPerShareAmount",
+      "expected": "O",
+      "sample_id": "1058522"
+    },
+    {
+      "token": "one",
+      "context": "five years commencing one year from the",
+      "predicted": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardAwardVestingPeriod1",
+      "expected": "O",
+      "sample_id": "1056969"
+    },
+    {
+      "token": "year",
+      "context": "years commencing one year from the date",
+      "predicted": "I-ShareBasedCompensationArrangementByShareBasedPaymentAwardAwardVestingPeriod1",
+      "expected": "O",
+      "sample_id": "1056969"
+    },
+    {
+      "token": "6",
+      "context": "revenue of $ 6 million and $",
+      "predicted": "B-ContractWithCustomerLiabilityRevenueRecognized",
+      "expected": "O",
+      "sample_id": "1033671"
+    },
+    {
+      "token": "12",
+      "context": "million and $ 12 million , respectively",
+      "predicted": "B-ContractWithCustomerLiabilityRevenueRecognized",
+      "expected": "O",
+      "sample_id": "1033671"
+    },
+    {
+      "token": "August",
+      "context": "maturity date of August 31 , 2024",
+      "predicted": "B-DebtInstrumentMaturityDate",
+      "expected": "O",
+      "sample_id": "1102851"
+    },
+    {
+      "token": "31",
+      "context": "date of August 31 , 2024 ,",
+      "predicted": "I-DebtInstrumentMaturityDate",
+      "expected": "O",
+      "sample_id": "1102851"
+    },
+    {
+      "token": ",",
+      "context": "of August 31 , 2024 , compared",
+      "predicted": "I-DebtInstrumentMaturityDate",
+      "expected": "O",
+      "sample_id": "1102851"
+    },
+    {
+      "token": "2024",
+      "context": "August 31 , 2024 , compared to",
+      "predicted": "I-DebtInstrumentMaturityDate",
+      "expected": "O",
+      "sample_id": "1102851"
+    },
+    {
+      "token": "August",
+      "context": "maturity date of August 31 , 2022",
+      "predicted": "B-DebtInstrumentMaturityDate",
+      "expected": "O",
+      "sample_id": "1102851"
+    },
+    {
+      "token": "31",
+      "context": "date of August 31 , 2022 .",
+      "predicted": "I-DebtInstrumentMaturityDate",
+      "expected": "O",
+      "sample_id": "1102851"
+    },
+    {
+      "token": ",",
+      "context": "of August 31 , 2022 .",
+      "predicted": "I-DebtInstrumentMaturityDate",
+      "expected": "O",
+      "sample_id": "1102851"
+    },
+    {
+      "token": "2022",
+      "context": "August 31 , 2022 .",
+      "predicted": "I-DebtInstrumentMaturityDate",
+      "expected": "O",
+      "sample_id": "1102851"
+    },
+    {
+      "token": "265",
+      "context": "Towers to $ 265 million , generating",
+      "predicted": "B-LineOfCreditFacilityMaximumBorrowingCapacity",
+      "expected": "O",
+      "sample_id": "1077135"
+    },
+    {
+      "token": "28,575,896",
+      "context": "expenses were $ 28,575,896 and $ 18,282,293",
+      "predicted": "B-Depreciation",
+      "expected": "O",
+      "sample_id": "1094854"
+    },
+    {
+      "token": "18,282,293",
+      "context": "28,575,896 and $ 18,282,293 for the three",
+      "predicted": "B-Depreciation",
+      "expected": "O",
+      "sample_id": "1094854"
+    },
+    {
+      "token": "28.9",
+      "context": "resulted in $ 28.9 million of goodwill",
+      "predicted": "B-Goodwill",
+      "expected": "O",
+      "sample_id": "1115561"
+    },
+    {
+      "token": "0.25",
+      "context": "B Facility to 0.25 % and (",
+      "predicted": "B-DebtInstrumentBasisSpreadOnVariableRate1",
+      "expected": "O",
+      "sample_id": "1106629"
+    },
+    {
+      "token": "0.75",
+      "context": "rate plus a 0.75 % margin ,",
+      "predicted": "B-DebtInstrumentBasisSpreadOnVariableRate1",
+      "expected": "O",
+      "sample_id": "1063510"
+    },
+    {
+      "token": "0.385",
+      "context": "% to $ 0.385 per share and",
+      "predicted": "B-CommonStockDividendsPerShareDeclared",
+      "expected": "O",
+      "sample_id": "1075378"
+    },
+    {
+      "token": "July",
+      "context": "unsecured notes due July 15 , 2026",
+      "predicted": "B-DebtInstrumentMaturityDate",
+      "expected": "O",
+      "sample_id": "1061698"
+    },
+    {
+      "token": ",",
+      "context": "due July 15 , 2026 ( \"",
+      "predicted": "B-DebtInstrumentMaturityDate",
+      "expected": "O",
+      "sample_id": "1061698"
+    },
+    {
+      "token": "2026",
+      "context": "July 15 , 2026 ( \" 2026",
+      "predicted": "I-DebtInstrumentMaturityDate",
+      "expected": "O",
+      "sample_id": "1061698"
+    },
+    {
+      "token": "202",
+      "context": "grants was $ 202 thousand and is",
+      "predicted": "B-EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognized",
+      "expected": "O",
+      "sample_id": "1065292"
+    },
+    {
+      "token": "31.9",
+      "context": "2020 , $ 31.9 million of total",
+      "predicted": "B-EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognized",
+      "expected": "O",
+      "sample_id": "1018576"
+    },
+    {
+      "token": "3,442",
+      "context": "taxes of $ 3,442 ) in compensation",
+      "predicted": "B-AllocatedShareBasedCompensationExpense",
+      "expected": "O",
+      "sample_id": "1107440"
+    },
+    {
+      "token": "7",
+      "context": "was approximately $ 7 thousand , which",
+      "predicted": "B-EmployeeServiceShareBasedCompensationNonvestedAwardsTotalCompensationCostNotYetRecognized",
+      "expected": "O",
+      "sample_id": "1016105"
+    },
+    {
+      "token": "80",
+      "context": "totaling NT $ 80 million , or",
+      "predicted": "B-LineOfCreditFacilityMaximumBorrowingCapacity",
+      "expected": "O",
+      "sample_id": "1031514"
+    },
+    {
+      "token": "44",
+      "context": "is the $ 44 million aggregate principal",
+      "predicted": "B-DebtInstrumentFaceAmount",
+      "expected": "O",
+      "sample_id": "1069792"
+    },
+    {
+      "token": "1.65",
+      "context": "4.34 % and 1.65 % , respectively",
+      "predicted": "B-OperatingLeaseWeightedAverageDiscountRatePercent",
+      "expected": "O",
+      "sample_id": "1073400"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+======================================================================
+NER PII Benchmark — Financial Hybrid (gpt-4o) × buster
+======================================================================
+
+Tier: 1
+Evaluated labels: 6
+  System labels: 6
+  Dataset labels: 6
+  Mapping applied: False
+
+Samples: 500
+Tokens: 448450
+
+--- Token-Level Metrics ---
+  Precision (macro/micro/weighted): 0.7723 / 0.7945 / 0.7987
+  Recall    (macro/micro/weighted): 0.5833 / 0.7038 / 0.7038
+  F1        (macro/micro/weighted): 0.6393 / 0.7464 / 0.7348
+
+--- Entity-Level Metrics (seqeval) ---
+  Precision: 0.7266
+  Recall:    0.6519
+  F1:        0.6872
+
+--- Latency ---
+  Mean:   24.05 ms
+  Median: 23.49 ms
+  P95:    25.93 ms
+  P99:    26.78 ms
+  Throughput: 41.6 samples/sec
+
+--- Per-Entity F1 Scores ---
+  I-Parties.BUYING_COMPANY       P=0.8276  R=0.8155  F1=0.8215  (n=2602.0)
+  B-Parties.BUYING_COMPANY       P=0.7892  R=0.7671  F1=0.7780  (n=1142.0)
+  I-Parties.SELLING_COMPANY      P=0.7186  R=0.8278  F1=0.7693  (n=691.0)
+  I-Parties.ACQUIRED_COMPANY     P=0.8120  R=0.7287  F1=0.7681  (n=2116.0)
+  B-Parties.SELLING_COMPANY      P=0.7080  R=0.7767  F1=0.7407  (n=309.0)
+  B-Parties.ACQUIRED_COMPANY     P=0.7679  R=0.6681  F1=0.7145  (n=931.0)
+  B-Generic_Info.ANNUAL_REVENUES P=0.7160  R=0.6237  F1=0.6667  (n=93.0)
+  I-Generic_Info.ANNUAL_REVENUES P=0.7500  R=0.5534  F1=0.6369  (n=103.0)
+  I-Advisors.LEGAL_CONSULTING_COMPANY P=0.9353  R=0.3171  F1=0.4736  (n=410.0)
+  I-Advisors.GENERIC_CONSULTING_COMPANY P=0.8073  R=0.3265  F1=0.4650  (n=539.0)
+  B-Advisors.LEGAL_CONSULTING_COMPANY P=0.8286  R=0.3021  F1=0.4427  (n=96.0)
+  B-Advisors.GENERIC_CONSULTING_COMPANY P=0.6076  R=0.2927  F1=0.3951  (n=164.0)
+
+--- Per-Length Bucket ---
+  short   : F1=0.0000 (n=0)
+  medium  : F1=0.0000 (n=0)
+  long    : F1=0.6393 (n=500)
+
+--- Error Summary ---
+  False positives: 500
+  False negatives: 500

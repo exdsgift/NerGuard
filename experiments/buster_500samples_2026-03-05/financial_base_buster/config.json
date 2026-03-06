@@ -1,0 +1,50 @@
+{
+  "system": "Financial Base",
+  "dataset": "buster",
+  "timestamp": "2026-03-05_22-50",
+  "system_name": "Financial Base",
+  "dataset_name": "buster",
+  "system_native_labels": [
+    "Advisors.GENERIC_CONSULTING_COMPANY",
+    "Advisors.LEGAL_CONSULTING_COMPANY",
+    "Generic_Info.ANNUAL_REVENUES",
+    "Parties.ACQUIRED_COMPANY",
+    "Parties.BUYING_COMPANY",
+    "Parties.SELLING_COMPANY"
+  ],
+  "dataset_native_labels": [
+    "Advisors.GENERIC_CONSULTING_COMPANY",
+    "Advisors.LEGAL_CONSULTING_COMPANY",
+    "Generic_Info.ANNUAL_REVENUES",
+    "Parties.ACQUIRED_COMPANY",
+    "Parties.BUYING_COMPANY",
+    "Parties.SELLING_COMPANY"
+  ],
+  "evaluated_labels": [
+    "Advisors.GENERIC_CONSULTING_COMPANY",
+    "Advisors.LEGAL_CONSULTING_COMPANY",
+    "Generic_Info.ANNUAL_REVENUES",
+    "Parties.ACQUIRED_COMPANY",
+    "Parties.BUYING_COMPANY",
+    "Parties.SELLING_COMPANY"
+  ],
+  "excluded_labels": {
+    "from_system": [],
+    "from_dataset": []
+  },
+  "mapping_applied": false,
+  "semantic_alignment": null,
+  "tier": 1,
+  "n_evaluated": 6,
+  "n_system_total": 6,
+  "n_dataset_total": 6,
+  "benchmark_config": {
+    "seed": 42,
+    "batch_size": 16,
+    "runs": 3,
+    "model_path": "./models/mdeberta-pii-safe/final",
+    "llm_source": "openai",
+    "llm_model": "gpt-4o",
+    "device": "auto"
+  }
+}

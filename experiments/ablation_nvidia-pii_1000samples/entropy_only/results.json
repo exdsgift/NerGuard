@@ -1,0 +1,60 @@
+{
+  "variant": "entropy_only",
+  "dataset": "nvidia-pii",
+  "n_samples": 1000,
+  "n_evaluated_labels": 16,
+  "token_level": {
+    "f1_macro": 0.5118901034499023,
+    "f1_micro": 0.7198186656154528,
+    "precision_macro": 0.5252480037826416,
+    "recall_macro": 0.5898106670865672
+  },
+  "entity_level": {
+    "precision": 0.6451135241855873,
+    "recall": 0.7377928309342365,
+    "f1": 0.6883475971033574
+  },
+  "latency": {
+    "mean_ms": 39.63349747657776,
+    "median_ms": 35.260796546936035
+  },
+  "routing": {
+    "llm_calls": 5482,
+    "regex_skips": 181,
+    "regex_promotions": 1360,
+    "regex_prescan_promotions": 1801,
+    "regex_demotions": 66,
+    "regex_hint_routes": 20,
+    "confidence_gates_applied": 0,
+    "o_spans_routed": 2079,
+    "o_spans_promoted": 0,
+    "entity_router_stats": {
+      "total_checked": 7038,
+      "routed": 5075,
+      "blocked_by_entity": 0,
+      "blocked_by_continuation": 0,
+      "blocked_by_threshold": 1963,
+      "routed_by_entity": {
+        "ZIPCODE": 1722,
+        "EMAIL": 119,
+        "IDCARDNUM": 393,
+        "PASSPORTNUM": 204,
+        "DRIVERLICENSENUM": 300,
+        "BUILDINGNUM": 183,
+        "SOCIALNUM": 324,
+        "TELEPHONENUM": 255,
+        "GIVENNAME": 388,
+        "SURNAME": 278,
+        "TAXNUM": 153,
+        "CREDITCARDNUMBER": 107,
+        "SEX": 39,
+        "CITY": 210,
+        "STREET": 72,
+        "DATE": 207,
+        "AGE": 80,
+        "TIME": 41
+      },
+      "routing_rate": "72.11%"
+    }
+  }
+}

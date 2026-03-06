@@ -52,20 +52,29 @@ class BenchmarkRunner:
         os.makedirs(self.session_dir, exist_ok=True)
 
         # Load all datasets first (they persist across systems)
+        cal_n = self.config.calibrate
         loaded_datasets: Dict[str, Tuple[DatasetAdapter, List[BenchmarkSample]]] = {}
+        calibration_datasets: Dict[str, List[BenchmarkSample]] = {}
         for ds_name in self.config.datasets:
             adapter = self._create_dataset_adapter(ds_name)
             if adapter is None:
                 continue
             max_samples = self.config.get_samples_for_dataset(ds_name)
-            logger.info(f"Loading dataset: {ds_name} (max_samples={max_samples or 'all'})")
+            # Load extra samples for calibration if requested
+            total_needed = (max_samples + cal_n) if (max_samples and cal_n > 0) else max_samples
+            logger.info(f"Loading dataset: {ds_name} (max_samples={max_samples or 'all'}, calibrate={cal_n})")
             samples = adapter.load(
-                max_samples=max_samples,
+                max_samples=total_needed,
                 seed=self.config.seed,
                 languages=self.config.languages,
             )
+            # Split off calibration samples (first cal_n) from eval samples
+            if cal_n > 0 and len(samples) > cal_n:
+                calibration_datasets[ds_name] = samples[:cal_n]
+                samples = samples[cal_n:]
+                logger.info(f"  Split: {cal_n} calibration + {len(samples)} eval samples")
             loaded_datasets[ds_name] = (adapter, samples)
-            logger.info(f"  Loaded {len(samples)} samples")
+            logger.info(f"  Loaded {len(samples)} eval samples")
 
         # Run each system sequentially (setup → evaluate on all datasets → teardown)
         for sys_name in self.config.systems:
@@ -83,6 +92,17 @@ class BenchmarkRunner:
             except Exception as e:
                 logger.error(f"Failed to setup {sys_name}: {e}")
                 continue
+
+            # Threshold calibration (if requested and system supports it)
+            if cal_n > 0 and calibration_datasets:
+                # Use calibration samples from the first dataset
+                cal_ds_name = next(iter(calibration_datasets))
+                cal_samples = calibration_datasets[cal_ds_name]
+                logger.info(f"  Calibrating thresholds on {len(cal_samples)} samples from {cal_ds_name}")
+                try:
+                    wrapper.calibrate_thresholds(cal_samples)
+                except Exception as e:
+                    logger.warning(f"  Calibration failed for {sys_name}: {e} — using default thresholds")
 
             for ds_name, (adapter, samples) in loaded_datasets.items():
                 self._run_combination(wrapper, adapter, samples, ds_name)
@@ -251,7 +271,7 @@ class BenchmarkRunner:
         )
 
         # Save output
-        generate_experiment_output(
+        exp_path = generate_experiment_output(
             system_name=sys_name,
             dataset_name=ds_name,
             metrics=metrics,
@@ -260,6 +280,15 @@ class BenchmarkRunner:
             output_dir=self.session_dir,
             timestamp=self.timestamp,
         )
+
+        # Save aligned per-sample predictions for significance tests
+        predictions_path = os.path.join(exp_path, "predictions.json")
+        with open(predictions_path, "w") as f:
+            json.dump({
+                "y_true": metrics.aligned_y_true,
+                "y_pred": metrics.aligned_y_pred,
+            }, f)
+        logger.info(f"    Saved aligned predictions ({len(metrics.aligned_y_true)} samples) to {predictions_path}")
 
         # Collect for summary
         self.all_results.append({
@@ -354,6 +383,15 @@ class BenchmarkRunner:
         elif name == "wikineural":
             from src.benchmark.datasets.wikineural import WikiNeuralAdapter
             return WikiNeuralAdapter(languages=self.config.languages)
+        elif name == "bc5cdr":
+            from src.benchmark.datasets.bc5cdr import BC5CDRAdapter
+            return BC5CDRAdapter()
+        elif name == "finer-139":
+            from src.benchmark.datasets.finer139 import FiNER139Adapter
+            return FiNER139Adapter()
+        elif name == "buster":
+            from src.benchmark.datasets.buster import BUSTERAdapter
+            return BUSTERAdapter()
         else:
             logger.warning(f"Unknown dataset: {name}")
             return None
@@ -402,6 +440,26 @@ class BenchmarkRunner:
         elif name == "bert-ner":
             from src.benchmark.systems.bert_ner import BertNERWrapper
             return BertNERWrapper(device=self.config.device)
+        elif name == "biomedical-base":
+            from src.benchmark.systems.biomedical_base import BiomedicalBase
+            return BiomedicalBase(device=self.config.device)
+        elif name == "biomedical-hybrid":
+            from src.benchmark.systems.biomedical_hybrid import BiomedicalHybrid
+            return BiomedicalHybrid(
+                device=self.config.device,
+                llm_source=self.config.llm_source,
+                llm_model=self.config.llm_model,
+            )
+        elif name == "financial-base":
+            from src.benchmark.systems.financial_base import FinancialBase
+            return FinancialBase(device=self.config.device)
+        elif name == "financial-hybrid":
+            from src.benchmark.systems.financial_hybrid import FinancialHybrid
+            return FinancialHybrid(
+                device=self.config.device,
+                llm_source=self.config.llm_source,
+                llm_model=self.config.llm_model,
+            )
         else:
             logger.warning(f"Unknown system: {name}")
             return None

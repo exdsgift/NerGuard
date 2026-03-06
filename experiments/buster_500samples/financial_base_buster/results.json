@@ -1,0 +1,73 @@
+{
+  "system": "Financial Base",
+  "dataset": "buster",
+  "n_samples": 500,
+  "n_tokens": 457856,
+  "n_evaluated_labels": 6,
+  "token_level": {
+    "precision_macro": 0.7506294397211395,
+    "precision_micro": 0.7606778884690255,
+    "precision_weighted": 0.7652963233440274,
+    "recall_macro": 0.6131938305611766,
+    "recall_micro": 0.7204989154013015,
+    "recall_weighted": 0.7204989154013015,
+    "f1_macro": 0.6475907541775506,
+    "f1_micro": 0.7400434467776973,
+    "f1_weighted": 0.7278742765244107
+  },
+  "entity_level": {
+    "precision": 0.6860507913139492,
+    "recall": 0.6614620298083748,
+    "f1": 0.6735320686540198
+  },
+  "latency": {
+    "mean_ms": 146.10509824752808,
+    "median_ms": 142.93670654296875,
+    "p95_ms": 235.31483411788938,
+    "p99_ms": 260.32408237457275,
+    "throughput_samples_per_sec": 6.844388128782623
+  },
+  "memory": {
+    "peak_mb": 3.8310298919677734,
+    "gpu_peak_mb": 27.48046875
+  },
+  "per_length_bucket": {
+    "short": {
+      "f1_macro": 0.0,
+      "n_samples": 0
+    },
+    "medium": {
+      "f1_macro": 0.0,
+      "n_samples": 0
+    },
+    "long": {
+      "f1_macro": 0.6475907541775506,
+      "n_samples": 500
+    }
+  },
+  "per_entity_frequency": {
+    "tail": {
+      "f1_macro": 0.0,
+      "n_entities": 0,
+      "entities": []
+    },
+    "mid": {
+      "f1_macro": 0.7019393014816355,
+      "n_entities": 1,
+      "entities": [
+        "Generic_Info.ANNUAL_REVENUES"
+      ]
+    },
+    "head": {
+      "f1_macro": 0.6367210447167335,
+      "n_entities": 5,
+      "entities": [
+        "Advisors.GENERIC_CONSULTING_COMPANY",
+        "Advisors.LEGAL_CONSULTING_COMPANY",
+        "Parties.ACQUIRED_COMPANY",
+        "Parties.BUYING_COMPANY",
+        "Parties.SELLING_COMPANY"
+      ]
+    }
+  }
+}

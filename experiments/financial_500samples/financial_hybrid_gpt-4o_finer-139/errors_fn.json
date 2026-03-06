@@ -1,0 +1,2952 @@
+{
+  "n_errors": 421,
+  "errors": [
+    {
+      "token": "2.9",
+      "context": "have been $ 2.9 million for the",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseExpense",
+      "sample_id": "1092572"
+    },
+    {
+      "token": "2.1",
+      "context": "and was $ 2.1 million for the",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseExpense",
+      "sample_id": "1092572"
+    },
+    {
+      "token": "124",
+      "context": ", Woodward purchased 124 shares of its",
+      "predicted": "O",
+      "expected": "B-TreasuryStockSharesAcquired",
+      "sample_id": "1050698"
+    },
+    {
+      "token": "479,000",
+      "context": "contribution of $ 479,000 to the Higman",
+      "predicted": "O",
+      "expected": "B-DefinedBenefitPlanContributionsByEmployer",
+      "sample_id": "1031995"
+    },
+    {
+      "token": "5,750,000",
+      "context": "issued and sold 5,750,000 common shares at",
+      "predicted": "O",
+      "expected": "B-SaleOfStockNumberOfSharesIssuedInTransaction",
+      "sample_id": "1097006"
+    },
+    {
+      "token": "14.50",
+      "context": "price of $ 14.50 per share .",
+      "predicted": "O",
+      "expected": "B-SaleOfStockPricePerShare",
+      "sample_id": "1097006"
+    },
+    {
+      "token": "63",
+      "context": "balance was $ 63 million .",
+      "predicted": "O",
+      "expected": "B-LineOfCredit",
+      "sample_id": "1093136"
+    },
+    {
+      "token": "8.92",
+      "context": "equal to $ 8.92 and may be",
+      "predicted": "O",
+      "expected": "B-ClassOfWarrantOrRightExercisePriceOfWarrantsOrRights1",
+      "sample_id": "1024049"
+    },
+    {
+      "token": "46",
+      "context": "of approximately $ 46 million , which",
+      "predicted": "O",
+      "expected": "B-PublicUtilitiesRequestedRateIncreaseDecreaseAmount",
+      "sample_id": "1091173"
+    },
+    {
+      "token": "5.2",
+      "context": "capitalized approximately $ 5.2 million of debt",
+      "predicted": "O",
+      "expected": "B-DeferredFinanceCostsNet",
+      "sample_id": "1033989"
+    },
+    {
+      "token": "12.8",
+      "context": "assets of $ 12.8 million , consisting",
+      "predicted": "O",
+      "expected": "B-BusinessCombinationRecognizedIdentifiableAssetsAcquiredAndLiabilitiesAssumedIntangibleAssetsOtherThanGoodwill",
+      "sample_id": "1060982"
+    },
+    {
+      "token": "11",
+      "context": "useful life of 11 years .",
+      "predicted": "O",
+      "expected": "B-PropertyPlantAndEquipmentUsefulLife",
+      "sample_id": "1060982"
+    },
+    {
+      "token": "6.46",
+      "context": "which was $ 6.46 for fiscal 2020",
+      "predicted": "O",
+      "expected": "B-SharePrice",
+      "sample_id": "1050973"
+    },
+    {
+      "token": "2.94",
+      "context": "effective rate of 2.94 % .",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentInterestRateEffectivePercentage",
+      "sample_id": "1050663"
+    },
+    {
+      "token": "7.0",
+      "context": "for approximately $ 7.0 million , excluding",
+      "predicted": "O",
+      "expected": "B-PaymentsToAcquireBusinessesGross",
+      "sample_id": "1115244"
+    },
+    {
+      "token": "42.2",
+      "context": "was approximately $ 42.2 million ( par",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentFairValue",
+      "sample_id": "1049543"
+    },
+    {
+      "token": "42.5",
+      "context": "par value $ 42.5 million ) and",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentFaceAmount",
+      "sample_id": "1049543"
+    },
+    {
+      "token": "108.1",
+      "context": ") and $ 108.1 million ( par",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentFairValue",
+      "sample_id": "1049543"
+    },
+    {
+      "token": "145.0",
+      "context": "par value $ 145.0 million ) as",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentFaceAmount",
+      "sample_id": "1049543"
+    },
+    {
+      "token": "90",
+      "context": "than ninety ( 90 ) days after",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentTerm",
+      "sample_id": "1061307"
+    },
+    {
+      "token": "2.7",
+      "context": "financing of $ 2.7 million with the",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentFaceAmount",
+      "sample_id": "1099324"
+    },
+    {
+      "token": "973,014",
+      "context": "( i ) 973,014 shares and (",
+      "predicted": "O",
+      "expected": "B-CommonStockCapitalSharesReservedForFutureIssuance",
+      "sample_id": "1117466"
+    },
+    {
+      "token": "49.99",
+      "context": "to sell its 49.99 % equity interest",
+      "predicted": "O",
+      "expected": "B-MinorityInterestOwnershipPercentageByNoncontrollingOwners",
+      "sample_id": "1032270"
+    },
+    {
+      "token": "10.5",
+      "context": ") for $ 10.5 million , which",
+      "predicted": "O",
+      "expected": "B-BusinessCombinationConsiderationTransferred1",
+      "sample_id": "1015483"
+    },
+    {
+      "token": "3.0",
+      "context": "the previous $ 3.0 million equity investment",
+      "predicted": "O",
+      "expected": "B-EquityMethodInvestments",
+      "sample_id": "1015483"
+    },
+    {
+      "token": "12",
+      "context": "a twelve ( 12 ) month revolving",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentTerm",
+      "sample_id": "1031527"
+    },
+    {
+      "token": "169.5",
+      "context": "Facility were $ 169.5 million and $",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentCarryingAmount",
+      "sample_id": "1106052"
+    },
+    {
+      "token": "10.0",
+      "context": "million and $ 10.0 million , respectively",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentCarryingAmount",
+      "sample_id": "1106052"
+    },
+    {
+      "token": "11.8",
+      "context": "contributions totaling $ 11.8 million in cash",
+      "predicted": "O",
+      "expected": "B-DefinedBenefitPlanContributionsByEmployer",
+      "sample_id": "1105445"
+    },
+    {
+      "token": "40",
+      "context": "Cronos Australia issued 40 million new shares",
+      "predicted": "O",
+      "expected": "B-SaleOfStockNumberOfSharesIssuedInTransaction",
+      "sample_id": "1046306"
+    },
+    {
+      "token": "0.50",
+      "context": "of A $ 0.50 per share .",
+      "predicted": "O",
+      "expected": "B-SaleOfStockPricePerShare",
+      "sample_id": "1046306"
+    },
+    {
+      "token": "168",
+      "context": "of approximately $ 168 million , which",
+      "predicted": "O",
+      "expected": "B-PublicUtilitiesRequestedRateIncreaseDecreaseAmount",
+      "sample_id": "1084313"
+    },
+    {
+      "token": "six",
+      "context": "bridge loans on six multifamily properties owned",
+      "predicted": "O",
+      "expected": "B-NumberOfRealEstateProperties",
+      "sample_id": "1013124"
+    },
+    {
+      "token": "5,619,492",
+      "context": ", 2020 , 5,619,492 shares were available",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAvailableForGrant",
+      "sample_id": "1100922"
+    },
+    {
+      "token": "one",
+      "context": ", requires approximately one year of service",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardAwardVestingPeriod1",
+      "sample_id": "1068445"
+    },
+    {
+      "token": "year",
+      "context": "requires approximately one year of service for",
+      "predicted": "O",
+      "expected": "I-ShareBasedCompensationArrangementByShareBasedPaymentAwardAwardVestingPeriod1",
+      "sample_id": "1068445"
+    },
+    {
+      "token": "three",
+      "context": "directors and approximately three years of service",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardAwardVestingPeriod1",
+      "sample_id": "1068445"
+    },
+    {
+      "token": "years",
+      "context": "and approximately three years of service for",
+      "predicted": "O",
+      "expected": "I-ShareBasedCompensationArrangementByShareBasedPaymentAwardAwardVestingPeriod1",
+      "sample_id": "1068445"
+    },
+    {
+      "token": "50",
+      "context": "common stock dependent 50 % on the",
+      "predicted": "O",
+      "expected": "B-SharebasedCompensationArrangementBySharebasedPaymentAwardAwardVestingRightsPercentage",
+      "sample_id": "1068445"
+    },
+    {
+      "token": "50",
+      "context": "performance target and 50 % on a",
+      "predicted": "O",
+      "expected": "B-SharebasedCompensationArrangementBySharebasedPaymentAwardAwardVestingRightsPercentage",
+      "sample_id": "1068445"
+    },
+    {
+      "token": "three",
+      "context": ", EQM operated three reportable operating segments",
+      "predicted": "O",
+      "expected": "B-NumberOfOperatingSegments",
+      "sample_id": "1095686"
+    },
+    {
+      "token": "50",
+      "context": "sale of its 50 percent ownership interest",
+      "predicted": "O",
+      "expected": "B-EquityMethodInvestmentOwnershipPercentage",
+      "sample_id": "1118345"
+    },
+    {
+      "token": "3.8",
+      "context": "price of $ 3.8 million .",
+      "predicted": "O",
+      "expected": "B-DisposalGroupIncludingDiscontinuedOperationConsideration",
+      "sample_id": "1118345"
+    },
+    {
+      "token": "no",
+      "context": "test resulted in no impairment .",
+      "predicted": "O",
+      "expected": "B-GoodwillImpairmentLoss",
+      "sample_id": "1050638"
+    },
+    {
+      "token": "475.0",
+      "context": "proceeds of $ 475.0 million Bridge Facility",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentFaceAmount",
+      "sample_id": "1055367"
+    },
+    {
+      "token": "10",
+      "context": "for up to 10 years following the",
+      "predicted": "O",
+      "expected": "B-SharebasedCompensationArrangementBySharebasedPaymentAwardExpirationPeriod",
+      "sample_id": "1023718"
+    },
+    {
+      "token": "1,564,791",
+      "context": "and 2019 , 1,564,791 shares and 5,586,421",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAvailableForGrant",
+      "sample_id": "1116391"
+    },
+    {
+      "token": "5,586,421",
+      "context": "1,564,791 shares and 5,586,421 shares of common",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAvailableForGrant",
+      "sample_id": "1116391"
+    },
+    {
+      "token": "235",
+      "context": "expense was $ 235 and $ 225",
+      "predicted": "O",
+      "expected": "B-InterestExpense",
+      "sample_id": "1072912"
+    },
+    {
+      "token": "225",
+      "context": "235 and $ 225 for the three",
+      "predicted": "O",
+      "expected": "B-InterestExpense",
+      "sample_id": "1072912"
+    },
+    {
+      "token": "82.7",
+      "context": "of approximately $ 82.7 million and ,",
+      "predicted": "O",
+      "expected": "B-BusinessCombinationConsiderationTransferred1",
+      "sample_id": "1022471"
+    },
+    {
+      "token": "1.4",
+      "context": "recover the $ 1.4 million and other",
+      "predicted": "O",
+      "expected": "B-LossContingencyDamagesSoughtValue",
+      "sample_id": "1104679"
+    },
+    {
+      "token": "25",
+      "context": "we hold a 25 % interest sold",
+      "predicted": "O",
+      "expected": "B-EquityMethodInvestmentOwnershipPercentage",
+      "sample_id": "1108647"
+    },
+    {
+      "token": "43.7",
+      "context": "vesting of $ 43.7 million and $",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodTotalFairValue",
+      "sample_id": "1028273"
+    },
+    {
+      "token": "41.5",
+      "context": "million and $ 41.5 million .",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodTotalFairValue",
+      "sample_id": "1028273"
+    },
+    {
+      "token": "245",
+      "context": "up to $ 245 million to support",
+      "predicted": "O",
+      "expected": "B-GuaranteeObligationsMaximumExposure",
+      "sample_id": "1026193"
+    },
+    {
+      "token": "165",
+      "context": "as a $ 165 million guarantee of",
+      "predicted": "O",
+      "expected": "B-GuaranteeObligationsMaximumExposure",
+      "sample_id": "1026193"
+    },
+    {
+      "token": "8,050,000",
+      "context": "issued and sold 8,050,000 shares ( inclusive",
+      "predicted": "O",
+      "expected": "B-SaleOfStockNumberOfSharesIssuedInTransaction",
+      "sample_id": "1091826"
+    },
+    {
+      "token": "1,050,000",
+      "context": "option to purchase 1,050,000 shares , which",
+      "predicted": "O",
+      "expected": "B-SaleOfStockNumberOfSharesIssuedInTransaction",
+      "sample_id": "1091826"
+    },
+    {
+      "token": "26.00",
+      "context": "stock at $ 26.00 per share .",
+      "predicted": "O",
+      "expected": "B-SaleOfStockPricePerShare",
+      "sample_id": "1091826"
+    },
+    {
+      "token": "35",
+      "context": "partner owns a 35 % minority interest",
+      "predicted": "O",
+      "expected": "B-MinorityInterestOwnershipPercentageByNoncontrollingOwners",
+      "sample_id": "1037222"
+    },
+    {
+      "token": "453,000",
+      "context": "paid approximately $ 453,000 towards these consulting",
+      "predicted": "O",
+      "expected": "B-RelatedPartyTransactionAmountsOfTransaction",
+      "sample_id": "1060537"
+    },
+    {
+      "token": "1.5",
+      "context": "Generation borrowed $ 1.5 billion on its",
+      "predicted": "O",
+      "expected": "B-LineOfCreditFacilityMaximumBorrowingCapacity",
+      "sample_id": "1020224"
+    },
+    {
+      "token": "108.6",
+      "context": "leases was $ 108.6 million and leased",
+      "predicted": "O",
+      "expected": "B-OperatingLeasePayments",
+      "sample_id": "1028721"
+    },
+    {
+      "token": "1,050",
+      "context": "consideration of $ 1,050 million less $",
+      "predicted": "O",
+      "expected": "B-DisposalGroupIncludingDiscontinuedOperationConsideration",
+      "sample_id": "1119736"
+    },
+    {
+      "token": "263.3",
+      "context": "and aggregated $ 263.3 million and $",
+      "predicted": "O",
+      "expected": "B-LongTermDebtFairValue",
+      "sample_id": "1053307"
+    },
+    {
+      "token": "159.1",
+      "context": "million and $ 159.1 million as of",
+      "predicted": "O",
+      "expected": "B-LongTermDebtFairValue",
+      "sample_id": "1053307"
+    },
+    {
+      "token": "4,597,862",
+      "context": "A total of 4,597,862 shares of common",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAuthorized",
+      "sample_id": "1089412"
+    },
+    {
+      "token": "43.52",
+      "context": "2020 was $ 43.52 billion and $",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentFairValue",
+      "sample_id": "1070730"
+    },
+    {
+      "token": "49.93",
+      "context": "billion and $ 49.93 billion , respectively",
+      "predicted": "O",
+      "expected": "B-LongTermDebt",
+      "sample_id": "1070730"
+    },
+    {
+      "token": "4,573",
+      "context": "Company recognized $ 4,573 of interest expense",
+      "predicted": "O",
+      "expected": "B-InterestExpenseDebt",
+      "sample_id": "1027070"
+    },
+    {
+      "token": "1.8",
+      "context": "loss of $ 1.8 million .",
+      "predicted": "O",
+      "expected": "B-AssetImpairmentCharges",
+      "sample_id": "1014550"
+    },
+    {
+      "token": "158,252",
+      "context": "has approximately $ 158,252 of foreign net",
+      "predicted": "O",
+      "expected": "B-OperatingLossCarryforwards",
+      "sample_id": "1119511"
+    },
+    {
+      "token": "3.8",
+      "context": "costs of $ 3.8 million and $",
+      "predicted": "O",
+      "expected": "B-DeferredFinanceCostsNet",
+      "sample_id": "1032526"
+    },
+    {
+      "token": "4.0",
+      "context": "million and $ 4.0 million and debt",
+      "predicted": "O",
+      "expected": "B-DeferredFinanceCostsNet",
+      "sample_id": "1032526"
+    },
+    {
+      "token": "1.2",
+      "context": "discount of $ 1.2 million and $",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentUnamortizedDiscount",
+      "sample_id": "1032526"
+    },
+    {
+      "token": "1.3",
+      "context": "million and $ 1.3 million at March",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentUnamortizedDiscount",
+      "sample_id": "1032526"
+    },
+    {
+      "token": "165,309",
+      "context": "amounts of $ 165,309 from the 2019",
+      "predicted": "O",
+      "expected": "B-StockRepurchaseProgramRemainingAuthorizedRepurchaseAmount1",
+      "sample_id": "1115395"
+    },
+    {
+      "token": "125,000",
+      "context": "the Company sold 125,000 of its common",
+      "predicted": "O",
+      "expected": "B-StockIssuedDuringPeriodSharesNewIssues",
+      "sample_id": "1079540"
+    },
+    {
+      "token": "4.2",
+      "context": "of approximately $ 4.2 million , after",
+      "predicted": "O",
+      "expected": "B-ProceedsFromIssuanceOfCommonStock",
+      "sample_id": "1079540"
+    },
+    {
+      "token": "47,000",
+      "context": "for approximately $ 47,000 , and reclassified",
+      "predicted": "O",
+      "expected": "B-DisposalGroupIncludingDiscontinuedOperationConsideration",
+      "sample_id": "1060389"
+    },
+    {
+      "token": "500,000",
+      "context": "restructured its $ 500,000 of notional variable",
+      "predicted": "O",
+      "expected": "B-DerivativeNotionalAmount",
+      "sample_id": "1068426"
+    },
+    {
+      "token": "0.2",
+      "context": ", or approximately 0.2 % , of",
+      "predicted": "O",
+      "expected": "B-MinorityInterestOwnershipPercentageByNoncontrollingOwners",
+      "sample_id": "1044843"
+    },
+    {
+      "token": "99.2",
+      "context": "2020 , owned 99.2 % of the",
+      "predicted": "O",
+      "expected": "B-EquityMethodInvestmentOwnershipPercentage",
+      "sample_id": "1098239"
+    },
+    {
+      "token": "14,569",
+      "context": "was approximately $ 14,569 and $ 12,011",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseExpense",
+      "sample_id": "1116508"
+    },
+    {
+      "token": "12,011",
+      "context": "14,569 and $ 12,011 .",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseExpense",
+      "sample_id": "1116508"
+    },
+    {
+      "token": "12.5",
+      "context": "to an additional 12.5 % equity interest",
+      "predicted": "O",
+      "expected": "B-EquityMethodInvestmentOwnershipPercentage",
+      "sample_id": "1071080"
+    },
+    {
+      "token": "30",
+      "context": "cash of $ 30 million and $",
+      "predicted": "O",
+      "expected": "B-CashAndCashEquivalentsFairValueDisclosure",
+      "sample_id": "1014166"
+    },
+    {
+      "token": "12",
+      "context": "million and $ 12 million at March",
+      "predicted": "O",
+      "expected": "B-CashAndCashEquivalentsFairValueDisclosure",
+      "sample_id": "1014166"
+    },
+    {
+      "token": "five",
+      "context": "renewal options at five year intervals and",
+      "predicted": "O",
+      "expected": "B-LesseeOperatingLeaseRenewalTerm",
+      "sample_id": "1118258"
+    },
+    {
+      "token": "year",
+      "context": "options at five year intervals and escalation",
+      "predicted": "O",
+      "expected": "I-LesseeOperatingLeaseRenewalTerm",
+      "sample_id": "1118258"
+    },
+    {
+      "token": "3.2",
+      "context": "Trustmark repurchased approximately 3.2 million shares valued",
+      "predicted": "O",
+      "expected": "B-StockRepurchasedDuringPeriodShares",
+      "sample_id": "1033121"
+    },
+    {
+      "token": "10.6",
+      "context": "VF were $ 10.6 million for the",
+      "predicted": "O",
+      "expected": "B-RevenueFromRelatedParties",
+      "sample_id": "1040306"
+    },
+    {
+      "token": "0.5",
+      "context": "in cash and 0.5 million additional shares",
+      "predicted": "O",
+      "expected": "B-BusinessAcquisitionEquityInterestsIssuedOrIssuableNumberOfSharesIssued",
+      "sample_id": "1067922"
+    },
+    {
+      "token": "825",
+      "context": "decrease to $ 825 million in July",
+      "predicted": "O",
+      "expected": "B-DerivativeNotionalAmount",
+      "sample_id": "1054291"
+    },
+    {
+      "token": "1.14",
+      "context": "USAC had $ 1.14 billion of borrowing",
+      "predicted": "O",
+      "expected": "B-LineOfCreditFacilityRemainingBorrowingCapacity",
+      "sample_id": "1078514"
+    },
+    {
+      "token": "186",
+      "context": "capacity of $ 186 million under the",
+      "predicted": "O",
+      "expected": "B-LineOfCreditFacilityRemainingBorrowingCapacity",
+      "sample_id": "1078514"
+    },
+    {
+      "token": "4.3",
+      "context": "incurring a $ 4.3 million loss on",
+      "predicted": "O",
+      "expected": "B-GainsLossesOnExtinguishmentOfDebt",
+      "sample_id": "1053063"
+    },
+    {
+      "token": "28",
+      "context": "in Athene to 28 % , or",
+      "predicted": "O",
+      "expected": "B-MinorityInterestOwnershipPercentageByNoncontrollingOwners",
+      "sample_id": "1064346"
+    },
+    {
+      "token": "2.1",
+      "context": "2020 was $ 2.1 million .",
+      "predicted": "O",
+      "expected": "B-DerivativeNotionalAmount",
+      "sample_id": "1109080"
+    },
+    {
+      "token": "23.2",
+      "context": "A total of 23.2 million shares of",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAuthorized",
+      "sample_id": "1106644"
+    },
+    {
+      "token": "12.5",
+      "context": "of which approximately 12.5 million shares were",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAvailableForGrant",
+      "sample_id": "1106644"
+    },
+    {
+      "token": "0.9",
+      "context": "2019 was $ 0.9 and $ 1.6",
+      "predicted": "O",
+      "expected": "B-LeaseAndRentalExpense",
+      "sample_id": "1013376"
+    },
+    {
+      "token": "1.6",
+      "context": "0.9 and $ 1.6 , respectively .",
+      "predicted": "O",
+      "expected": "B-LeaseAndRentalExpense",
+      "sample_id": "1013376"
+    },
+    {
+      "token": "1,345,631",
+      "context": ", there were 1,345,631 shares of our",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAuthorized",
+      "sample_id": "1076877"
+    },
+    {
+      "token": "100.0",
+      "context": "simultaneously repaid \u20ac 100.0 million ( or",
+      "predicted": "O",
+      "expected": "B-RepaymentsOfDebt",
+      "sample_id": "1039567"
+    },
+    {
+      "token": "108.7",
+      "context": "or approximately $ 108.7 million ) of",
+      "predicted": "O",
+      "expected": "B-RepaymentsOfDebt",
+      "sample_id": "1039567"
+    },
+    {
+      "token": "3.1",
+      "context": "and was $ 3.1 million and $",
+      "predicted": "O",
+      "expected": "B-CapitalizedContractCostAmortization",
+      "sample_id": "1064069"
+    },
+    {
+      "token": "2.4",
+      "context": "million and $ 2.4 million for the",
+      "predicted": "O",
+      "expected": "B-CapitalizedContractCostAmortization",
+      "sample_id": "1064069"
+    },
+    {
+      "token": "7,477,395",
+      "context": "2013 Plan is 7,477,395 shares .",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAuthorized",
+      "sample_id": "1045394"
+    },
+    {
+      "token": "500,000",
+      "context": "\" ) with 500,000 authorized shares and",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAuthorized",
+      "sample_id": "1117757"
+    },
+    {
+      "token": "1,750,000",
+      "context": "\" ) with 1,750,000 authorized shares .",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAuthorized",
+      "sample_id": "1117757"
+    },
+    {
+      "token": "39.8",
+      "context": ", to $ 39.8 million as of",
+      "predicted": "O",
+      "expected": "B-ContractWithCustomerLiability",
+      "sample_id": "1119238"
+    },
+    {
+      "token": "14,750",
+      "context": "the Company issued 14,750 shares of Series",
+      "predicted": "O",
+      "expected": "B-BusinessAcquisitionEquityInterestsIssuedOrIssuableNumberOfSharesIssued",
+      "sample_id": "1027483"
+    },
+    {
+      "token": "8.7",
+      "context": "for approximately $ 8.7 million , plus",
+      "predicted": "O",
+      "expected": "B-PaymentsToAcquireBusinessesGross",
+      "sample_id": "1082710"
+    },
+    {
+      "token": "5.4",
+      "context": "remaining life of 5.4 years .",
+      "predicted": "O",
+      "expected": "B-FiniteLivedIntangibleAssetUsefulLife",
+      "sample_id": "1118068"
+    },
+    {
+      "token": "year",
+      "context": "maturity of one year .",
+      "predicted": "O",
+      "expected": "I-DebtInstrumentTerm",
+      "sample_id": "1096822"
+    },
+    {
+      "token": "281.6",
+      "context": "of approximately $ 281.6 million from the",
+      "predicted": "O",
+      "expected": "B-ProceedsFromIssuanceOfCommonStock",
+      "sample_id": "1038988"
+    },
+    {
+      "token": "10,344,827",
+      "context": "the sale of 10,344,827 shares of its",
+      "predicted": "O",
+      "expected": "B-StockIssuedDuringPeriodSharesNewIssues",
+      "sample_id": "1038988"
+    },
+    {
+      "token": "November",
+      "context": "Facility matures on November 2 , 2023",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentMaturityDate",
+      "sample_id": "1071925"
+    },
+    {
+      "token": "2",
+      "context": "matures on November 2 , 2023 ,",
+      "predicted": "O",
+      "expected": "I-DebtInstrumentMaturityDate",
+      "sample_id": "1071925"
+    },
+    {
+      "token": ",",
+      "context": "on November 2 , 2023 , unless",
+      "predicted": "O",
+      "expected": "I-DebtInstrumentMaturityDate",
+      "sample_id": "1071925"
+    },
+    {
+      "token": "2023",
+      "context": "November 2 , 2023 , unless earlier",
+      "predicted": "O",
+      "expected": "I-DebtInstrumentMaturityDate",
+      "sample_id": "1071925"
+    },
+    {
+      "token": "16",
+      "context": "of approximately $ 16 million ( split",
+      "predicted": "O",
+      "expected": "B-AmortizationOfFinancingCosts",
+      "sample_id": "1081991"
+    },
+    {
+      "token": "5",
+      "context": "payment of $ 5 million ( to",
+      "predicted": "O",
+      "expected": "B-AmortizationOfFinancingCosts",
+      "sample_id": "1081991"
+    },
+    {
+      "token": "5.00",
+      "context": "Notes from $ 5.00 to $ 3.50",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentConvertibleConversionPrice1",
+      "sample_id": "1081991"
+    },
+    {
+      "token": "3.50",
+      "context": "5.00 to $ 3.50 ; ( vii",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentConvertibleConversionPrice1",
+      "sample_id": "1081991"
+    },
+    {
+      "token": "9.8",
+      "context": "The $ 9.8 million purchase price",
+      "predicted": "O",
+      "expected": "B-PaymentsToAcquireBusinessesGross",
+      "sample_id": "1032889"
+    },
+    {
+      "token": "5",
+      "context": "into a new 5 - year senior",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentTerm",
+      "sample_id": "1044327"
+    },
+    {
+      "token": "11.3",
+      "context": "New Residential issued 11.3 million shares of",
+      "predicted": "O",
+      "expected": "B-SaleOfStockNumberOfSharesIssuedInTransaction",
+      "sample_id": "1058897"
+    },
+    {
+      "token": "7.125",
+      "context": "shares of its 7.125 % Series B",
+      "predicted": "O",
+      "expected": "B-PreferredStockDividendRatePercentage",
+      "sample_id": "1058897"
+    },
+    {
+      "token": "400.0",
+      "context": "to the RMB 400.0 million of lease",
+      "predicted": "O",
+      "expected": "B-LineOfCreditFacilityMaximumBorrowingCapacity",
+      "sample_id": "1048452"
+    },
+    {
+      "token": "8.3",
+      "context": "The $ 8.3 million and $",
+      "predicted": "O",
+      "expected": "B-OperatingLossCarryforwards",
+      "sample_id": "1093296"
+    },
+    {
+      "token": "8.7",
+      "context": "million and $ 8.7 million in net",
+      "predicted": "O",
+      "expected": "B-OperatingLossCarryforwards",
+      "sample_id": "1093296"
+    },
+    {
+      "token": "1.82",
+      "context": "interest rate of 1.82 % at March",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentInterestRateStatedPercentage",
+      "sample_id": "1018019"
+    },
+    {
+      "token": "2.7",
+      "context": "initial delivery of 2.7 million shares of",
+      "predicted": "O",
+      "expected": "B-StockRepurchasedDuringPeriodShares",
+      "sample_id": "1048854"
+    },
+    {
+      "token": "4,581,001",
+      "context": "the Company issued 4,581,001 shares of common",
+      "predicted": "O",
+      "expected": "B-BusinessAcquisitionEquityInterestsIssuedOrIssuableNumberOfSharesIssued",
+      "sample_id": "1060932"
+    },
+    {
+      "token": "13",
+      "context": "Brightwater acquisition over 13 years , the",
+      "predicted": "O",
+      "expected": "B-AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife",
+      "sample_id": "1065038"
+    },
+    {
+      "token": "years",
+      "context": "acquisition over 13 years , the related",
+      "predicted": "O",
+      "expected": "I-AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife",
+      "sample_id": "1065038"
+    },
+    {
+      "token": "five",
+      "context": "related trademarks over five years and the",
+      "predicted": "O",
+      "expected": "B-AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife",
+      "sample_id": "1065038"
+    },
+    {
+      "token": "years",
+      "context": "trademarks over five years and the customer",
+      "predicted": "O",
+      "expected": "I-AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife",
+      "sample_id": "1065038"
+    },
+    {
+      "token": "one",
+      "context": "accelerated basis over one year .",
+      "predicted": "O",
+      "expected": "B-AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife",
+      "sample_id": "1065038"
+    },
+    {
+      "token": "year",
+      "context": "basis over one year .",
+      "predicted": "O",
+      "expected": "I-AcquiredFiniteLivedIntangibleAssetsWeightedAverageUsefulLife",
+      "sample_id": "1065038"
+    },
+    {
+      "token": "1.3",
+      "context": "of approximately $ 1.3 million related to",
+      "predicted": "O",
+      "expected": "B-AssetImpairmentCharges",
+      "sample_id": "1045019"
+    },
+    {
+      "token": "1.7",
+      "context": "expense of $ 1.7 million associated with",
+      "predicted": "O",
+      "expected": "B-InterestExpense",
+      "sample_id": "1033848"
+    },
+    {
+      "token": "44.0",
+      "context": "included a $ 44.0 million non -",
+      "predicted": "O",
+      "expected": "B-AssetImpairmentCharges",
+      "sample_id": "1085422"
+    },
+    {
+      "token": "44,334",
+      "context": "revenue of $ 44,334 representing license fees",
+      "predicted": "O",
+      "expected": "B-ContractWithCustomerLiability",
+      "sample_id": "1019987"
+    },
+    {
+      "token": "4",
+      "context": "plans totaled $ 4 million and $",
+      "predicted": "O",
+      "expected": "B-DefinedContributionPlanCostRecognized",
+      "sample_id": "1056214"
+    },
+    {
+      "token": "5",
+      "context": "million and $ 5 million for the",
+      "predicted": "O",
+      "expected": "B-DefinedContributionPlanCostRecognized",
+      "sample_id": "1056214"
+    },
+    {
+      "token": "three",
+      "context": "policies of the three segments are the",
+      "predicted": "O",
+      "expected": "B-NumberOfOperatingSegments",
+      "sample_id": "1052592"
+    },
+    {
+      "token": "10.0",
+      "context": ", of $ 10.0 million , which",
+      "predicted": "O",
+      "expected": "B-BusinessCombinationConsiderationTransferred1",
+      "sample_id": "1102006"
+    },
+    {
+      "token": "5.6",
+      "context": "payments of $ 5.6 million , a",
+      "predicted": "O",
+      "expected": "B-PaymentsToAcquireBusinessesGross",
+      "sample_id": "1102006"
+    },
+    {
+      "token": "57.06",
+      "context": "prices of $ 57.06 , $ 62.28",
+      "predicted": "O",
+      "expected": "B-ClassOfWarrantOrRightExercisePriceOfWarrantsOrRights1",
+      "sample_id": "1071467"
+    },
+    {
+      "token": "62.28",
+      "context": "57.06 , $ 62.28 , and $",
+      "predicted": "O",
+      "expected": "B-ClassOfWarrantOrRightExercisePriceOfWarrantsOrRights1",
+      "sample_id": "1071467"
+    },
+    {
+      "token": "100.00",
+      "context": ", and $ 100.00 , respectively .",
+      "predicted": "O",
+      "expected": "B-ClassOfWarrantOrRightExercisePriceOfWarrantsOrRights1",
+      "sample_id": "1071467"
+    },
+    {
+      "token": "100",
+      "context": "of which are 100 % owned by",
+      "predicted": "O",
+      "expected": "B-MinorityInterestOwnershipPercentageByParent",
+      "sample_id": "1056517"
+    },
+    {
+      "token": "29.9",
+      "context": "equivalent of approximately 29.9 million post -",
+      "predicted": "O",
+      "expected": "B-StockRepurchasedAndRetiredDuringPeriodShares",
+      "sample_id": "1017722"
+    },
+    {
+      "token": "three",
+      "context": "Term Loan is three years from the",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentTerm",
+      "sample_id": "1090165"
+    },
+    {
+      "token": "years",
+      "context": "Loan is three years from the Closing",
+      "predicted": "O",
+      "expected": "I-DebtInstrumentTerm",
+      "sample_id": "1090165"
+    },
+    {
+      "token": "0.5",
+      "context": "net of $ 0.5 million of income",
+      "predicted": "O",
+      "expected": "B-IncomeTaxExpenseBenefit",
+      "sample_id": "1076017"
+    },
+    {
+      "token": "102,211",
+      "context": "charge of $ 102,211 for the three",
+      "predicted": "O",
+      "expected": "B-AssetImpairmentCharges",
+      "sample_id": "1067472"
+    },
+    {
+      "token": "225,000",
+      "context": "Of the 225,000 performance - based",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsGrantsInPeriod",
+      "sample_id": "1026316"
+    },
+    {
+      "token": "17.4",
+      "context": "totaling approximately $ 17.4 million and $",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseLiability",
+      "sample_id": "1067551"
+    },
+    {
+      "token": "17.3",
+      "context": "million and $ 17.3 million , respectively",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseLiability",
+      "sample_id": "1067551"
+    },
+    {
+      "token": "37",
+      "context": "Clients of $ 37 and $ 36",
+      "predicted": "O",
+      "expected": "B-RevenueFromContractWithCustomerExcludingAssessedTax",
+      "sample_id": "1079879"
+    },
+    {
+      "token": "36",
+      "context": "37 and $ 36 for the three",
+      "predicted": "O",
+      "expected": "B-RevenueFromContractWithCustomerExcludingAssessedTax",
+      "sample_id": "1079879"
+    },
+    {
+      "token": "73",
+      "context": ", and $ 73 and $ 85",
+      "predicted": "O",
+      "expected": "B-RevenueFromContractWithCustomerExcludingAssessedTax",
+      "sample_id": "1079879"
+    },
+    {
+      "token": "85",
+      "context": "73 and $ 85 for the six",
+      "predicted": "O",
+      "expected": "B-RevenueFromContractWithCustomerExcludingAssessedTax",
+      "sample_id": "1079879"
+    },
+    {
+      "token": "3.98",
+      "context": "total debt was 3.98 % and 3.99",
+      "predicted": "O",
+      "expected": "B-DebtWeightedAverageInterestRate",
+      "sample_id": "1109878"
+    },
+    {
+      "token": "3.99",
+      "context": "3.98 % and 3.99 % , respectively",
+      "predicted": "O",
+      "expected": "B-DebtWeightedAverageInterestRate",
+      "sample_id": "1109878"
+    },
+    {
+      "token": "6.2",
+      "context": "2019 Notes is 6.2 % .",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentInterestRateEffectivePercentage",
+      "sample_id": "1076396"
+    },
+    {
+      "token": "439.97",
+      "context": "price of $ 439.97 .",
+      "predicted": "O",
+      "expected": "B-SharePrice",
+      "sample_id": "1018450"
+    },
+    {
+      "token": "673,000",
+      "context": "had repurchased approximately 673,000 shares of Class",
+      "predicted": "O",
+      "expected": "B-StockRepurchasedDuringPeriodShares",
+      "sample_id": "1048687"
+    },
+    {
+      "token": "33.5",
+      "context": "income were $ 33.5 million , $",
+      "predicted": "O",
+      "expected": "B-Revenues",
+      "sample_id": "1019879"
+    },
+    {
+      "token": "38,422,583",
+      "context": "the Company of 38,422,583 and 8,061,228 common",
+      "predicted": "O",
+      "expected": "B-SaleOfStockNumberOfSharesIssuedInTransaction",
+      "sample_id": "1033880"
+    },
+    {
+      "token": "8,061,228",
+      "context": "of 38,422,583 and 8,061,228 common shares ,",
+      "predicted": "O",
+      "expected": "B-SaleOfStockNumberOfSharesIssuedInTransaction",
+      "sample_id": "1033880"
+    },
+    {
+      "token": "27.75",
+      "context": ", at $ 27.75 per share ,",
+      "predicted": "O",
+      "expected": "B-SaleOfStockPricePerShare",
+      "sample_id": "1033880"
+    },
+    {
+      "token": "6,063,105",
+      "context": ", which included 6,063,105 shares purchased by",
+      "predicted": "O",
+      "expected": "B-SaleOfStockNumberOfSharesIssuedInTransaction",
+      "sample_id": "1033880"
+    },
+    {
+      "token": "157.5",
+      "context": "Company recorded $ 157.5 million long -",
+      "predicted": "O",
+      "expected": "B-AssetImpairmentCharges",
+      "sample_id": "1079020"
+    },
+    {
+      "token": "128.9",
+      "context": "costs ( $ 128.9 million within U.S.",
+      "predicted": "O",
+      "expected": "B-AssetImpairmentCharges",
+      "sample_id": "1079020"
+    },
+    {
+      "token": "28.6",
+      "context": "Canada ; $ 28.6 million within International",
+      "predicted": "O",
+      "expected": "B-AssetImpairmentCharges",
+      "sample_id": "1079020"
+    },
+    {
+      "token": "3,973",
+      "context": "balance of $ 3,973 as of March",
+      "predicted": "O",
+      "expected": "B-LongTermDebt",
+      "sample_id": "1072917"
+    },
+    {
+      "token": "183.5",
+      "context": "We had $ 183.5 million of available",
+      "predicted": "O",
+      "expected": "B-LineOfCreditFacilityRemainingBorrowingCapacity",
+      "sample_id": "1110141"
+    },
+    {
+      "token": "0.25",
+      "context": "amount of $ 0.25 million . 32",
+      "predicted": "O",
+      "expected": "B-LongTermDebt",
+      "sample_id": "1097927"
+    },
+    {
+      "token": "1.6",
+      "context": "expense of $ 1.6 million and $",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseExpense",
+      "sample_id": "1013050"
+    },
+    {
+      "token": "1.5",
+      "context": "million and $ 1.5 million , respectively",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseExpense",
+      "sample_id": "1013050"
+    },
+    {
+      "token": "five",
+      "context": "are depreciated over five years .",
+      "predicted": "O",
+      "expected": "B-PropertyPlantAndEquipmentUsefulLife",
+      "sample_id": "1111794"
+    },
+    {
+      "token": "17.3",
+      "context": "Company recorded $ 17.3 million and $",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseExpense",
+      "sample_id": "1115575"
+    },
+    {
+      "token": "16.0",
+      "context": "million and $ 16.0 million of total",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseExpense",
+      "sample_id": "1115575"
+    },
+    {
+      "token": "2.84",
+      "context": "of approximately $ 2.84 per share for",
+      "predicted": "O",
+      "expected": "B-ClassOfWarrantOrRightExercisePriceOfWarrantsOrRights1",
+      "sample_id": "1081933"
+    },
+    {
+      "token": "5,279,171",
+      "context": ", and purchased 5,279,171 shares of common",
+      "predicted": "O",
+      "expected": "B-SaleOfStockNumberOfSharesIssuedInTransaction",
+      "sample_id": "1081933"
+    },
+    {
+      "token": "2.87",
+      "context": ") at $ 2.87 per share for",
+      "predicted": "O",
+      "expected": "B-ClassOfWarrantOrRightExercisePriceOfWarrantsOrRights1",
+      "sample_id": "1081933"
+    },
+    {
+      "token": "19",
+      "context": "the Foris $ 19 million Note and",
+      "predicted": "O",
+      "expected": "B-LineOfCreditFacilityMaximumBorrowingCapacity",
+      "sample_id": "1081933"
+    },
+    {
+      "token": "2.87",
+      "context": "price of $ 2.87 per share ,",
+      "predicted": "O",
+      "expected": "B-ClassOfWarrantOrRightExercisePriceOfWarrantsOrRights1",
+      "sample_id": "1081933"
+    },
+    {
+      "token": "0.15",
+      "context": "fee ranging from 0.15 % to 0.25",
+      "predicted": "O",
+      "expected": "B-LineOfCreditFacilityUnusedCapacityCommitmentFeePercentage",
+      "sample_id": "1026455"
+    },
+    {
+      "token": "0.25",
+      "context": "0.15 % to 0.25 % , based",
+      "predicted": "O",
+      "expected": "B-LineOfCreditFacilityUnusedCapacityCommitmentFeePercentage",
+      "sample_id": "1026455"
+    },
+    {
+      "token": "0.1",
+      "context": "of approximately $ 0.1 million to reduce",
+      "predicted": "O",
+      "expected": "B-CumulativeEffectOfNewAccountingPrincipleInPeriodOfAdoption",
+      "sample_id": "1076335"
+    },
+    {
+      "token": "5,000,000",
+      "context": ", there were 5,000,000 shares authorized for",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAuthorized",
+      "sample_id": "1072932"
+    },
+    {
+      "token": "497,512",
+      "context": "stock options and 497,512 RSUs were outstanding",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedNumber",
+      "sample_id": "1072932"
+    },
+    {
+      "token": "2,582,279",
+      "context": "were outstanding and 2,582,279 shares were available",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAvailableForGrant",
+      "sample_id": "1072932"
+    },
+    {
+      "token": "1.5",
+      "context": "Generation borrowed $ 1.5 billion on its",
+      "predicted": "O",
+      "expected": "B-LineOfCreditFacilityMaximumBorrowingCapacity",
+      "sample_id": "1038513"
+    },
+    {
+      "token": "265",
+      "context": "Facility had $ 265 million of outstanding",
+      "predicted": "O",
+      "expected": "B-LineOfCredit",
+      "sample_id": "1070741"
+    },
+    {
+      "token": "141",
+      "context": "2018 of $ 141 million and $",
+      "predicted": "O",
+      "expected": "B-AssetImpairmentCharges",
+      "sample_id": "1109508"
+    },
+    {
+      "token": "154",
+      "context": "million and $ 154 million , respectively",
+      "predicted": "O",
+      "expected": "B-AssetImpairmentCharges",
+      "sample_id": "1109508"
+    },
+    {
+      "token": "August",
+      "context": "which matures on August 5 , 2026",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentMaturityDate",
+      "sample_id": "1072102"
+    },
+    {
+      "token": "5",
+      "context": "matures on August 5 , 2026 ,",
+      "predicted": "O",
+      "expected": "I-DebtInstrumentMaturityDate",
+      "sample_id": "1072102"
+    },
+    {
+      "token": ",",
+      "context": "on August 5 , 2026 , amortizes",
+      "predicted": "O",
+      "expected": "I-DebtInstrumentMaturityDate",
+      "sample_id": "1072102"
+    },
+    {
+      "token": "2026",
+      "context": "August 5 , 2026 , amortizes in",
+      "predicted": "O",
+      "expected": "I-DebtInstrumentMaturityDate",
+      "sample_id": "1072102"
+    },
+    {
+      "token": "1,500.0",
+      "context": "of which $ 1,500.0 million had a",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentFaceAmount",
+      "sample_id": "1092710"
+    },
+    {
+      "token": "1,600.0",
+      "context": "2025 and $ 1,600.0 million had a",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentFaceAmount",
+      "sample_id": "1092710"
+    },
+    {
+      "token": "10.1",
+      "context": ", we repurchased 10.1 million shares ,",
+      "predicted": "O",
+      "expected": "B-StockRepurchasedDuringPeriodShares",
+      "sample_id": "1075187"
+    },
+    {
+      "token": "291",
+      "context": "of approximately $ 291 million , which",
+      "predicted": "O",
+      "expected": "B-PublicUtilitiesRequestedRateIncreaseDecreaseAmount",
+      "sample_id": "1090960"
+    },
+    {
+      "token": "1",
+      "context": "Company recorded $ 1 million ( none",
+      "predicted": "O",
+      "expected": "B-RelatedPartyTransactionExpensesFromTransactionsWithRelatedParty",
+      "sample_id": "1070119"
+    },
+    {
+      "token": "none",
+      "context": "1 million ( none in 2019 )",
+      "predicted": "O",
+      "expected": "B-RelatedPartyTransactionExpensesFromTransactionsWithRelatedParty",
+      "sample_id": "1070119"
+    },
+    {
+      "token": "611.9",
+      "context": "debt of $ 611.9 million and $",
+      "predicted": "O",
+      "expected": "B-LongTermDebt",
+      "sample_id": "1038951"
+    },
+    {
+      "token": "611.7",
+      "context": "million and $ 611.7 million , respectively",
+      "predicted": "O",
+      "expected": "B-LongTermDebt",
+      "sample_id": "1038951"
+    },
+    {
+      "token": "1.9",
+      "context": "has contributed $ 1.9 million to revenue",
+      "predicted": "O",
+      "expected": "B-RevenueFromContractWithCustomerExcludingAssessedTax",
+      "sample_id": "1051025"
+    },
+    {
+      "token": "15",
+      "context": "of approximately $ 15 million and a",
+      "predicted": "O",
+      "expected": "B-PublicUtilitiesRequestedRateIncreaseDecreaseAmount",
+      "sample_id": "1084439"
+    },
+    {
+      "token": "21",
+      "context": "a term of 21 years .",
+      "predicted": "O",
+      "expected": "B-LesseeOperatingLeaseTermOfContract",
+      "sample_id": "1120458"
+    },
+    {
+      "token": "5.00",
+      "context": "equal to approximately 5.00 % per annum",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentInterestRateEffectivePercentage",
+      "sample_id": "1070877"
+    },
+    {
+      "token": "100.7",
+      "context": "to be $ 100.7 million , before",
+      "predicted": "O",
+      "expected": "B-LongTermDebt",
+      "sample_id": "1117076"
+    },
+    {
+      "token": "500.0",
+      "context": "amended our $ 500.0 million repurchase facility",
+      "predicted": "O",
+      "expected": "B-LineOfCreditFacilityMaximumBorrowingCapacity",
+      "sample_id": "1012964"
+    },
+    {
+      "token": "300.0",
+      "context": "amount to $ 300.0 million .",
+      "predicted": "O",
+      "expected": "B-LineOfCreditFacilityMaximumBorrowingCapacity",
+      "sample_id": "1012964"
+    },
+    {
+      "token": "2.7",
+      "context": "credit , was 2.7 % and 4.3",
+      "predicted": "O",
+      "expected": "B-LineOfCreditFacilityInterestRateAtPeriodEnd",
+      "sample_id": "1071284"
+    },
+    {
+      "token": "4.3",
+      "context": "2.7 % and 4.3 % , respectively",
+      "predicted": "O",
+      "expected": "B-LineOfCreditFacilityInterestRateAtPeriodEnd",
+      "sample_id": "1071284"
+    },
+    {
+      "token": "0.1",
+      "context": "reimbursed us $ 0.1 million during both",
+      "predicted": "O",
+      "expected": "B-RevenueFromRelatedParties",
+      "sample_id": "1068950"
+    },
+    {
+      "token": "560.1",
+      "context": "of approximately $ 560.1 million in aggregate",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentFaceAmount",
+      "sample_id": "1054261"
+    },
+    {
+      "token": "13",
+      "context": "Company recognized $ 13 thousand of interest",
+      "predicted": "O",
+      "expected": "B-InterestExpenseDebt",
+      "sample_id": "1096829"
+    },
+    {
+      "token": "12.00",
+      "context": "interest rate of 12.00 % .",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentInterestRateEffectivePercentage",
+      "sample_id": "1096829"
+    },
+    {
+      "token": "two",
+      "context": "agreement to transfer two senior living operations",
+      "predicted": "O",
+      "expected": "B-NumberOfRealEstateProperties",
+      "sample_id": "1074543"
+    },
+    {
+      "token": "25,082",
+      "context": "to be $ 25,082 compared to a",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentFairValue",
+      "sample_id": "1102879"
+    },
+    {
+      "token": "24.3",
+      "context": "Consideration was $ 24.3 million as of",
+      "predicted": "O",
+      "expected": "B-BusinessCombinationContingentConsiderationLiability",
+      "sample_id": "1099179"
+    },
+    {
+      "token": "3.6",
+      "context": "and 2018 was 3.6 % , 3.4",
+      "predicted": "O",
+      "expected": "B-DebtWeightedAverageInterestRate",
+      "sample_id": "1110130"
+    },
+    {
+      "token": "3.4",
+      "context": "3.6 % , 3.4 % , and",
+      "predicted": "O",
+      "expected": "B-DebtWeightedAverageInterestRate",
+      "sample_id": "1110130"
+    },
+    {
+      "token": "2.6",
+      "context": "% , and 2.6 % , respectively",
+      "predicted": "O",
+      "expected": "B-DebtWeightedAverageInterestRate",
+      "sample_id": "1110130"
+    },
+    {
+      "token": "80",
+      "context": "equity partner 's 80 percent interest and",
+      "predicted": "O",
+      "expected": "B-EquityMethodInvestmentOwnershipPercentage",
+      "sample_id": "1077080"
+    },
+    {
+      "token": "ten",
+      "context": "expire five or ten years from the",
+      "predicted": "O",
+      "expected": "B-SharebasedCompensationArrangementBySharebasedPaymentAwardExpirationPeriod",
+      "sample_id": "1056969"
+    },
+    {
+      "token": "years",
+      "context": "five or ten years from the date",
+      "predicted": "O",
+      "expected": "I-SharebasedCompensationArrangementBySharebasedPaymentAwardExpirationPeriod",
+      "sample_id": "1056969"
+    },
+    {
+      "token": "320,998",
+      "context": "was paid with 320,998 newly issued shares",
+      "predicted": "O",
+      "expected": "B-BusinessAcquisitionEquityInterestsIssuedOrIssuableNumberOfSharesIssued",
+      "sample_id": "1021727"
+    },
+    {
+      "token": "509.9",
+      "context": "adoption , $ 509.9 million and $",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseRightOfUseAsset",
+      "sample_id": "1104473"
+    },
+    {
+      "token": "541.0",
+      "context": "million and $ 541.0 million were recorded",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseLiability",
+      "sample_id": "1104473"
+    },
+    {
+      "token": "456",
+      "context": "earned of $ 456 million , which",
+      "predicted": "O",
+      "expected": "B-RevenueFromContractWithCustomerExcludingAssessedTax",
+      "sample_id": "1101003"
+    },
+    {
+      "token": "1,375,000",
+      "context": "Facility and $ 1,375,000 in outstanding letters",
+      "predicted": "O",
+      "expected": "B-LettersOfCreditOutstandingAmount",
+      "sample_id": "1051332"
+    },
+    {
+      "token": "204",
+      "context": "expenses was $ 204 million and $",
+      "predicted": "O",
+      "expected": "B-RelatedPartyTransactionExpensesFromTransactionsWithRelatedParty",
+      "sample_id": "1090493"
+    },
+    {
+      "token": "194",
+      "context": "million and $ 194 million for the",
+      "predicted": "O",
+      "expected": "B-RelatedPartyTransactionExpensesFromTransactionsWithRelatedParty",
+      "sample_id": "1090493"
+    },
+    {
+      "token": "24",
+      "context": "to pay $ 24 million in civil",
+      "predicted": "O",
+      "expected": "B-LossContingencyDamagesSoughtValue",
+      "sample_id": "1042814"
+    },
+    {
+      "token": "22.325",
+      "context": "and pay $ 22.325 million as compensation",
+      "predicted": "O",
+      "expected": "B-LossContingencyDamagesSoughtValue",
+      "sample_id": "1042814"
+    },
+    {
+      "token": "6.8",
+      "context": ") of approximately 6.8 years .",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseWeightedAverageRemainingLeaseTerm1",
+      "sample_id": "1013789"
+    },
+    {
+      "token": "10",
+      "context": "segment had $ 10 million of remaining",
+      "predicted": "O",
+      "expected": "B-RevenueRemainingPerformanceObligation",
+      "sample_id": "1033671"
+    },
+    {
+      "token": "100",
+      "context": "Company maintains a 100 % interest in",
+      "predicted": "O",
+      "expected": "B-MinorityInterestOwnershipPercentageByParent",
+      "sample_id": "1055555"
+    },
+    {
+      "token": "17",
+      "context": "contributions were $ 17 million , $",
+      "predicted": "O",
+      "expected": "B-DefinedBenefitPlanContributionsByEmployer",
+      "sample_id": "1111321"
+    },
+    {
+      "token": "27",
+      "context": "million , $ 27 million and $",
+      "predicted": "O",
+      "expected": "B-DefinedBenefitPlanContributionsByEmployer",
+      "sample_id": "1111321"
+    },
+    {
+      "token": "16",
+      "context": "million and $ 16 million in 2020",
+      "predicted": "O",
+      "expected": "B-DefinedBenefitPlanContributionsByEmployer",
+      "sample_id": "1111321"
+    },
+    {
+      "token": "10",
+      "context": "held approximately a 10 % minority stake",
+      "predicted": "O",
+      "expected": "B-EquityMethodInvestmentOwnershipPercentage",
+      "sample_id": "1061250"
+    },
+    {
+      "token": "1.45",
+      "context": "2020 was approximately 1.45 % .2 The",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentBasisSpreadOnVariableRate1",
+      "sample_id": "1040141"
+    },
+    {
+      "token": "1.18",
+      "context": "2020 was approximately 1.18 % .3 On",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentBasisSpreadOnVariableRate1",
+      "sample_id": "1040141"
+    },
+    {
+      "token": "1,604",
+      "context": "2017 was $ 1,604 and $ 703",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseExpense",
+      "sample_id": "1118820"
+    },
+    {
+      "token": "703",
+      "context": "1,604 and $ 703 , respectively .",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseExpense",
+      "sample_id": "1118820"
+    },
+    {
+      "token": "11.1",
+      "context": "interest rate of 11.1 % over the",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentInterestRateEffectivePercentage",
+      "sample_id": "1073622"
+    },
+    {
+      "token": "1,875,000",
+      "context": "of an additional 1,875,000 Units at a",
+      "predicted": "O",
+      "expected": "B-SaleOfStockNumberOfSharesIssuedInTransaction",
+      "sample_id": "1099246"
+    },
+    {
+      "token": "10.00",
+      "context": "price of $ 10.00 per Unit .",
+      "predicted": "O",
+      "expected": "B-SaleOfStockPricePerShare",
+      "sample_id": "1099246"
+    },
+    {
+      "token": "250",
+      "context": "have raised $ 250 million in gross",
+      "predicted": "O",
+      "expected": "B-ProceedsFromIssuanceOfCommonStock",
+      "sample_id": "1096202"
+    },
+    {
+      "token": "13.6",
+      "context": "price of $ 13.6 million .",
+      "predicted": "O",
+      "expected": "B-DisposalGroupIncludingDiscontinuedOperationConsideration",
+      "sample_id": "1045016"
+    },
+    {
+      "token": "35",
+      "context": "tax rate from 35 % to 21",
+      "predicted": "O",
+      "expected": "B-EffectiveIncomeTaxRateReconciliationAtFederalStatutoryIncomeTaxRate",
+      "sample_id": "1105913"
+    },
+    {
+      "token": "21",
+      "context": "35 % to 21 % effective January",
+      "predicted": "O",
+      "expected": "B-EffectiveIncomeTaxRateReconciliationAtFederalStatutoryIncomeTaxRate",
+      "sample_id": "1105913"
+    },
+    {
+      "token": "9.32",
+      "context": "price of $ 9.32 .",
+      "predicted": "O",
+      "expected": "B-TreasuryStockAcquiredAverageCostPerShare",
+      "sample_id": "1059596"
+    },
+    {
+      "token": "794",
+      "context": "rate was $ 794 thousand .",
+      "predicted": "O",
+      "expected": "B-UnrecognizedTaxBenefitsThatWouldImpactEffectiveTaxRate",
+      "sample_id": "1066708"
+    },
+    {
+      "token": "2,487",
+      "context": "contributions of $ 2,487 , $ 2,786",
+      "predicted": "O",
+      "expected": "B-DefinedBenefitPlanContributionsByEmployer",
+      "sample_id": "1098569"
+    },
+    {
+      "token": "2,786",
+      "context": "2,487 , $ 2,786 , and $",
+      "predicted": "O",
+      "expected": "B-DefinedBenefitPlanContributionsByEmployer",
+      "sample_id": "1098569"
+    },
+    {
+      "token": "2,959",
+      "context": ", and $ 2,959 , respectively .",
+      "predicted": "O",
+      "expected": "B-DefinedBenefitPlanContributionsByEmployer",
+      "sample_id": "1098569"
+    },
+    {
+      "token": "2,265,115",
+      "context": "the Company issued 2,265,115 shares of Class",
+      "predicted": "O",
+      "expected": "B-StockIssuedDuringPeriodSharesNewIssues",
+      "sample_id": "1066212"
+    },
+    {
+      "token": "2.49",
+      "context": ", 2020 was 2.49 % .",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentInterestRateEffectivePercentage",
+      "sample_id": "1074199"
+    },
+    {
+      "token": "1.3",
+      "context": "there were approximately 1.3 million Performance LTIP",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedNumber",
+      "sample_id": "1115909"
+    },
+    {
+      "token": "2.96",
+      "context": "TLB Facility were 2.96 % and 3.51",
+      "predicted": "O",
+      "expected": "B-DebtWeightedAverageInterestRate",
+      "sample_id": "1041043"
+    },
+    {
+      "token": "3.51",
+      "context": "2.96 % and 3.51 % , respectively",
+      "predicted": "O",
+      "expected": "B-DebtWeightedAverageInterestRate",
+      "sample_id": "1041043"
+    },
+    {
+      "token": "1.76",
+      "context": "Floorplan Line was 1.76 % as of",
+      "predicted": "O",
+      "expected": "B-DebtWeightedAverageInterestRate",
+      "sample_id": "1043479"
+    },
+    {
+      "token": "14",
+      "context": "from one to 14 years .",
+      "predicted": "O",
+      "expected": "B-FiniteLivedIntangibleAssetUsefulLife",
+      "sample_id": "1058096"
+    },
+    {
+      "token": "26",
+      "context": "of approximately $ 26 million .",
+      "predicted": "O",
+      "expected": "B-PublicUtilitiesRequestedRateIncreaseDecreaseAmount",
+      "sample_id": "1086010"
+    },
+    {
+      "token": "2.1",
+      "context": "interest rate of 2.1 % per annum",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentBasisSpreadOnVariableRate1",
+      "sample_id": "1025061"
+    },
+    {
+      "token": "13.0",
+      "context": "for up to 13.0 million shares of",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAuthorized",
+      "sample_id": "1093787"
+    },
+    {
+      "token": "52.2",
+      "context": "cards was $ 52.2 million as of",
+      "predicted": "O",
+      "expected": "B-ContractWithCustomerLiability",
+      "sample_id": "1092648"
+    },
+    {
+      "token": "55.9",
+      "context": "2020 and $ 55.9 million as of",
+      "predicted": "O",
+      "expected": "B-ContractWithCustomerLiability",
+      "sample_id": "1092648"
+    },
+    {
+      "token": "18",
+      "context": "BARGAINING AGREEMENTS Approximately 18 % of the",
+      "predicted": "O",
+      "expected": "B-ConcentrationRiskPercentage1",
+      "sample_id": "1116412"
+    },
+    {
+      "token": "3,000,000",
+      "context": "ORIX USA sold 3,000,000 shares of our",
+      "predicted": "O",
+      "expected": "B-StockIssuedDuringPeriodSharesNewIssues",
+      "sample_id": "1103005"
+    },
+    {
+      "token": "three",
+      "context": "is amortized over three years .",
+      "predicted": "O",
+      "expected": "B-FiniteLivedIntangibleAssetUsefulLife",
+      "sample_id": "1094159"
+    },
+    {
+      "token": "years",
+      "context": "amortized over three years .",
+      "predicted": "O",
+      "expected": "I-FiniteLivedIntangibleAssetUsefulLife",
+      "sample_id": "1094159"
+    },
+    {
+      "token": "no",
+      "context": "the Company sold no shares of common",
+      "predicted": "O",
+      "expected": "B-SaleOfStockNumberOfSharesIssuedInTransaction",
+      "sample_id": "1024688"
+    },
+    {
+      "token": "268,170",
+      "context": "consideration of $ 268,170 , net of",
+      "predicted": "O",
+      "expected": "B-PaymentsToAcquireBusinessesNetOfCashAcquired",
+      "sample_id": "1053786"
+    },
+    {
+      "token": "19.7",
+      "context": "Company raised $ 19.7 million from the",
+      "predicted": "O",
+      "expected": "B-ProceedsFromIssuanceOfCommonStock",
+      "sample_id": "1095108"
+    },
+    {
+      "token": "68,932",
+      "context": ", 2020 , 68,932 shares of restricted",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedNumber",
+      "sample_id": "1088215"
+    },
+    {
+      "token": "3.12",
+      "context": "2021 Notes is 3.12 % .",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentInterestRateEffectivePercentage",
+      "sample_id": "1016742"
+    },
+    {
+      "token": "0.2",
+      "context": "expensed approximately $ 0.2 million of interest",
+      "predicted": "O",
+      "expected": "B-InterestExpense",
+      "sample_id": "1013813"
+    },
+    {
+      "token": "15,000,000",
+      "context": "redemption of the 15,000,000 Class A Units",
+      "predicted": "O",
+      "expected": "B-AntidilutiveSecuritiesExcludedFromComputationOfEarningsPerShareAmount",
+      "sample_id": "1079931"
+    },
+    {
+      "token": "3,000,000",
+      "context": "an aggregate of 3,000,000 common units ,",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAuthorized",
+      "sample_id": "1070574"
+    },
+    {
+      "token": "99.2",
+      "context": "amounts of $ 99.2 million and $",
+      "predicted": "O",
+      "expected": "B-GoodwillImpairmentLoss",
+      "sample_id": "1088289"
+    },
+    {
+      "token": "17.3",
+      "context": "million and $ 17.3 million , respectively",
+      "predicted": "O",
+      "expected": "B-GoodwillImpairmentLoss",
+      "sample_id": "1088289"
+    },
+    {
+      "token": "5,824,074",
+      "context": "assets was $ 5,824,074 and $ 0",
+      "predicted": "O",
+      "expected": "B-AmortizationOfIntangibleAssets",
+      "sample_id": "1094854"
+    },
+    {
+      "token": "0",
+      "context": "5,824,074 and $ 0 for the three",
+      "predicted": "O",
+      "expected": "B-AmortizationOfIntangibleAssets",
+      "sample_id": "1094854"
+    },
+    {
+      "token": "5,822,805",
+      "context": "costs was $ 5,822,805 and $ 0",
+      "predicted": "O",
+      "expected": "B-AmortizationOfIntangibleAssets",
+      "sample_id": "1094854"
+    },
+    {
+      "token": "0",
+      "context": "5,822,805 and $ 0 for the three",
+      "predicted": "O",
+      "expected": "B-AmortizationOfIntangibleAssets",
+      "sample_id": "1094854"
+    },
+    {
+      "token": "18.6",
+      "context": "goodwill and $ 18.6 million intangibles .",
+      "predicted": "O",
+      "expected": "B-BusinessCombinationRecognizedIdentifiableAssetsAcquiredAndLiabilitiesAssumedIntangibles",
+      "sample_id": "1115561"
+    },
+    {
+      "token": "3.1",
+      "context": "were approximately $ 3.1 million and $",
+      "predicted": "O",
+      "expected": "B-RelatedPartyTransactionExpensesFromTransactionsWithRelatedParty",
+      "sample_id": "1055764"
+    },
+    {
+      "token": "3.9",
+      "context": "million and $ 3.9 million , respectively",
+      "predicted": "O",
+      "expected": "B-RelatedPartyTransactionExpensesFromTransactionsWithRelatedParty",
+      "sample_id": "1055764"
+    },
+    {
+      "token": "14",
+      "context": "stock bears a 14 % coupon and",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentInterestRateStatedPercentage",
+      "sample_id": "1055614"
+    },
+    {
+      "token": "100,000,000",
+      "context": "Company has authorized 100,000,000 shares of common",
+      "predicted": "O",
+      "expected": "B-CommonStockSharesAuthorized",
+      "sample_id": "1088128"
+    },
+    {
+      "token": "0.0001",
+      "context": "value of $ 0.0001 per shares and",
+      "predicted": "O",
+      "expected": "B-CommonStockParOrStatedValuePerShare",
+      "sample_id": "1088128"
+    },
+    {
+      "token": "20,000,000",
+      "context": "per shares and 20,000,000 shares of preferred",
+      "predicted": "O",
+      "expected": "B-PreferredStockSharesAuthorized",
+      "sample_id": "1088128"
+    },
+    {
+      "token": "500,000,000",
+      "context": "stock We had 500,000,000 shares of $",
+      "predicted": "O",
+      "expected": "B-CommonStockSharesAuthorized",
+      "sample_id": "1091899"
+    },
+    {
+      "token": "0.001",
+      "context": "shares of $ 0.001 par value common",
+      "predicted": "O",
+      "expected": "B-CommonStockParOrStatedValuePerShare",
+      "sample_id": "1091899"
+    },
+    {
+      "token": "654,994",
+      "context": "the Company repurchased 654,994 , 36,958 ,",
+      "predicted": "O",
+      "expected": "B-StockRepurchasedAndRetiredDuringPeriodShares",
+      "sample_id": "1103092"
+    },
+    {
+      "token": "36,958",
+      "context": "repurchased 654,994 , 36,958 , and 811,635",
+      "predicted": "O",
+      "expected": "B-StockRepurchasedAndRetiredDuringPeriodShares",
+      "sample_id": "1103092"
+    },
+    {
+      "token": "811,635",
+      "context": "36,958 , and 811,635 shares , respectively",
+      "predicted": "O",
+      "expected": "B-StockRepurchasedAndRetiredDuringPeriodShares",
+      "sample_id": "1103092"
+    },
+    {
+      "token": "19",
+      "context": "between 7 and 19 years and the",
+      "predicted": "O",
+      "expected": "B-FiniteLivedIntangibleAssetUsefulLife",
+      "sample_id": "1089029"
+    },
+    {
+      "token": "5.9",
+      "context": "debt of $ 5.9 million , comprising",
+      "predicted": "O",
+      "expected": "B-GainsLossesOnExtinguishmentOfDebt",
+      "sample_id": "1040444"
+    },
+    {
+      "token": "0.5",
+      "context": "Company contributed $ 0.5 million to fund",
+      "predicted": "O",
+      "expected": "B-DefinedBenefitPlanContributionsByEmployer",
+      "sample_id": "1102218"
+    },
+    {
+      "token": "0.50",
+      "context": "the fee was 0.50 % .",
+      "predicted": "O",
+      "expected": "B-LineOfCreditFacilityUnusedCapacityCommitmentFeePercentage",
+      "sample_id": "1049178"
+    },
+    {
+      "token": "11",
+      "context": "requirement of $ 11 million and a",
+      "predicted": "O",
+      "expected": "B-PublicUtilitiesRequestedRateIncreaseDecreaseAmount",
+      "sample_id": "1084407"
+    },
+    {
+      "token": "4.3",
+      "context": "revenue of $ 4.3 million and $",
+      "predicted": "O",
+      "expected": "B-RevenueFromContractWithCustomerExcludingAssessedTax",
+      "sample_id": "1075465"
+    },
+    {
+      "token": "2.8",
+      "context": "million and $ 2.8 million during the",
+      "predicted": "O",
+      "expected": "B-RevenueFromContractWithCustomerExcludingAssessedTax",
+      "sample_id": "1075465"
+    },
+    {
+      "token": "6.25",
+      "context": "a rate of 6.25 % per annum",
+      "predicted": "O",
+      "expected": "B-PreferredStockDividendRatePercentage",
+      "sample_id": "1100863"
+    },
+    {
+      "token": "81,907",
+      "context": "these amounts were 81,907 shares of common",
+      "predicted": "O",
+      "expected": "B-SaleOfStockNumberOfSharesIssuedInTransaction",
+      "sample_id": "1095265"
+    },
+    {
+      "token": "4.5",
+      "context": ", under which 4.5 million common shares",
+      "predicted": "O",
+      "expected": "B-CommonStockCapitalSharesReservedForFutureIssuance",
+      "sample_id": "1103687"
+    },
+    {
+      "token": "five",
+      "context": "1.25 billion unsecured five year revolving credit",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentTerm",
+      "sample_id": "1115762"
+    },
+    {
+      "token": "year",
+      "context": "billion unsecured five year revolving credit facility",
+      "predicted": "O",
+      "expected": "I-DebtInstrumentTerm",
+      "sample_id": "1115762"
+    },
+    {
+      "token": "two",
+      "context": "for up to two years , and",
+      "predicted": "O",
+      "expected": "B-LesseeOperatingLeaseRenewalTerm",
+      "sample_id": "1079637"
+    },
+    {
+      "token": "years",
+      "context": "up to two years , and some",
+      "predicted": "O",
+      "expected": "I-LesseeOperatingLeaseRenewalTerm",
+      "sample_id": "1079637"
+    },
+    {
+      "token": "6",
+      "context": "cash of $ 6 million and $",
+      "predicted": "O",
+      "expected": "B-CashAndCashEquivalentsFairValueDisclosure",
+      "sample_id": "1020260"
+    },
+    {
+      "token": "13",
+      "context": "million and $ 13 million at March",
+      "predicted": "O",
+      "expected": "B-CashAndCashEquivalentsFairValueDisclosure",
+      "sample_id": "1020260"
+    },
+    {
+      "token": "12.4",
+      "context": "The $ 12.4 million related party",
+      "predicted": "O",
+      "expected": "B-RepaymentsOfDebt",
+      "sample_id": "1018864"
+    },
+    {
+      "token": "2.9",
+      "context": ", was $ 2.9 million and $",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodTotalFairValue",
+      "sample_id": "1052504"
+    },
+    {
+      "token": "4.3",
+      "context": "million and $ 4.3 million , respectively",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsVestedInPeriodTotalFairValue",
+      "sample_id": "1052504"
+    },
+    {
+      "token": "9.7",
+      "context": "charge of $ 9.7 million related to",
+      "predicted": "O",
+      "expected": "B-AssetImpairmentCharges",
+      "sample_id": "1016920"
+    },
+    {
+      "token": "17",
+      "context": "cash of $ 17 million and $",
+      "predicted": "O",
+      "expected": "B-CashAndCashEquivalentsFairValueDisclosure",
+      "sample_id": "1043864"
+    },
+    {
+      "token": "29",
+      "context": "million and $ 29 million at March",
+      "predicted": "O",
+      "expected": "B-CashAndCashEquivalentsFairValueDisclosure",
+      "sample_id": "1043864"
+    },
+    {
+      "token": "5.49",
+      "context": "costs , was 5.49 % .",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentInterestRateEffectivePercentage",
+      "sample_id": "1038792"
+    },
+    {
+      "token": "no",
+      "context": "There was no impairment of goodwill",
+      "predicted": "O",
+      "expected": "B-GoodwillImpairmentLoss",
+      "sample_id": "1035400"
+    },
+    {
+      "token": "75",
+      "context": "charges of $ 75 .",
+      "predicted": "O",
+      "expected": "B-RestructuringCharges",
+      "sample_id": "1119593"
+    },
+    {
+      "token": "680,016",
+      "context": "the Company repurchased 680,016 shares under this",
+      "predicted": "O",
+      "expected": "B-StockRepurchasedAndRetiredDuringPeriodShares",
+      "sample_id": "1062838"
+    },
+    {
+      "token": "1,500,000",
+      "context": "2025 and authorizes 1,500,000 shares of common",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAuthorized",
+      "sample_id": "1082617"
+    },
+    {
+      "token": "17",
+      "context": "limit of $ 17 million and expire",
+      "predicted": "O",
+      "expected": "B-GuaranteeObligationsMaximumExposure",
+      "sample_id": "1046933"
+    },
+    {
+      "token": "9.6",
+      "context": "the total $ 9.6 million of debt",
+      "predicted": "O",
+      "expected": "B-DeferredFinanceCostsNet",
+      "sample_id": "1072540"
+    },
+    {
+      "token": "1.8",
+      "context": "was approximately $ 1.8 million , subject",
+      "predicted": "O",
+      "expected": "B-DefinedBenefitPlanContributionsByEmployer",
+      "sample_id": "1052350"
+    },
+    {
+      "token": "3.50",
+      "context": "of approximately $ 3.50 per share of",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentConvertibleConversionPrice1",
+      "sample_id": "1032786"
+    },
+    {
+      "token": "10",
+      "context": "a term of 10 years from the",
+      "predicted": "O",
+      "expected": "B-SharebasedCompensationArrangementBySharebasedPaymentAwardExpirationPeriod",
+      "sample_id": "1119868"
+    },
+    {
+      "token": "10",
+      "context": "We repurchased approximately 10 million shares for",
+      "predicted": "O",
+      "expected": "B-TreasuryStockSharesAcquired",
+      "sample_id": "1079254"
+    },
+    {
+      "token": "176",
+      "context": "shares for $ 176 million during the",
+      "predicted": "O",
+      "expected": "B-TreasuryStockValueAcquiredCostMethod",
+      "sample_id": "1079254"
+    },
+    {
+      "token": "28.1",
+      "context": "2020 were $ 28.1 million , compared",
+      "predicted": "O",
+      "expected": "B-UnrecognizedTaxBenefits",
+      "sample_id": "1114285"
+    },
+    {
+      "token": "32.5",
+      "context": "compared to $ 32.5 million at November",
+      "predicted": "O",
+      "expected": "B-UnrecognizedTaxBenefits",
+      "sample_id": "1114285"
+    },
+    {
+      "token": "12,733,204",
+      "context": "common stock totaling 12,733,204 shares at a",
+      "predicted": "O",
+      "expected": "B-TreasuryStockSharesAcquired",
+      "sample_id": "1082971"
+    },
+    {
+      "token": "24.6",
+      "context": "cost of $ 24.6 million and 652,311",
+      "predicted": "O",
+      "expected": "B-TreasuryStockValueAcquiredCostMethod",
+      "sample_id": "1082971"
+    },
+    {
+      "token": "652,311",
+      "context": "24.6 million and 652,311 shares at a",
+      "predicted": "O",
+      "expected": "B-TreasuryStockSharesAcquired",
+      "sample_id": "1082971"
+    },
+    {
+      "token": "3.2",
+      "context": "cost of $ 3.2 million , respectively",
+      "predicted": "O",
+      "expected": "B-TreasuryStockValueAcquiredCostMethod",
+      "sample_id": "1082971"
+    },
+    {
+      "token": "1.93",
+      "context": "price of $ 1.93 and $ 4.84",
+      "predicted": "O",
+      "expected": "B-TreasuryStockAcquiredAverageCostPerShare",
+      "sample_id": "1082971"
+    },
+    {
+      "token": "4.84",
+      "context": "1.93 and $ 4.84 per share ,",
+      "predicted": "O",
+      "expected": "B-TreasuryStockAcquiredAverageCostPerShare",
+      "sample_id": "1082971"
+    },
+    {
+      "token": "30.92",
+      "context": "of approximately $ 30.92 per share of",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentConvertibleConversionPrice1",
+      "sample_id": "1026290"
+    },
+    {
+      "token": "0.001",
+      "context": "stock , $ 0.001 par value per",
+      "predicted": "O",
+      "expected": "B-CommonStockParOrStatedValuePerShare",
+      "sample_id": "1109187"
+    },
+    {
+      "token": "657,000",
+      "context": ") Includes $ 657,000 and $ 817,000",
+      "predicted": "O",
+      "expected": "B-DeferredFinanceCostsNet",
+      "sample_id": "1078306"
+    },
+    {
+      "token": "817,000",
+      "context": "657,000 and $ 817,000 of deferred debt",
+      "predicted": "O",
+      "expected": "B-DeferredFinanceCostsNet",
+      "sample_id": "1078306"
+    },
+    {
+      "token": "4.00",
+      "context": "b ) $ 4.00 multiplied by the",
+      "predicted": "O",
+      "expected": "B-SaleOfStockPricePerShare",
+      "sample_id": "1095103"
+    },
+    {
+      "token": "35.6",
+      "context": "losses of $ 35.6 million of which",
+      "predicted": "O",
+      "expected": "B-OperatingLossCarryforwards",
+      "sample_id": "1106936"
+    },
+    {
+      "token": "2,733",
+      "context": ", there were 2,733 shares of the",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAvailableForGrant",
+      "sample_id": "1033422"
+    },
+    {
+      "token": "16,675,000",
+      "context": "\" ) of 16,675,000 shares of Class",
+      "predicted": "O",
+      "expected": "B-SaleOfStockNumberOfSharesIssuedInTransaction",
+      "sample_id": "1097544"
+    },
+    {
+      "token": "18.00",
+      "context": "public of $ 18.00 per share .",
+      "predicted": "O",
+      "expected": "B-SaleOfStockPricePerShare",
+      "sample_id": "1097544"
+    },
+    {
+      "token": "34",
+      "context": "Company or approximately 34 % , of",
+      "predicted": "O",
+      "expected": "B-MinorityInterestOwnershipPercentageByNoncontrollingOwners",
+      "sample_id": "1101954"
+    },
+    {
+      "token": "20,376,747",
+      "context": ", 2020 of 20,376,747 shares .",
+      "predicted": "O",
+      "expected": "B-CommonStockSharesOutstanding",
+      "sample_id": "1044075"
+    },
+    {
+      "token": "1.5",
+      "context": ", including a 1.5 % annual facilities",
+      "predicted": "O",
+      "expected": "B-LineOfCreditFacilityCommitmentFeePercentage",
+      "sample_id": "1097871"
+    },
+    {
+      "token": "9.7",
+      "context": "pandemic was $ 9.7 million .",
+      "predicted": "O",
+      "expected": "B-GoodwillImpairmentLoss",
+      "sample_id": "1048301"
+    },
+    {
+      "token": "no",
+      "context": "the Company had no material net operating",
+      "predicted": "O",
+      "expected": "B-OperatingLossCarryforwards",
+      "sample_id": "1115554"
+    },
+    {
+      "token": "2.3",
+      "context": ", approximately $ 2.3 million could have",
+      "predicted": "O",
+      "expected": "B-UnrecognizedTaxBenefitsThatWouldImpactEffectiveTaxRate",
+      "sample_id": "1115554"
+    },
+    {
+      "token": "500,000",
+      "context": "increases so that 500,000 shares remain available",
+      "predicted": "O",
+      "expected": "B-CommonStockCapitalSharesReservedForFutureIssuance",
+      "sample_id": "1105780"
+    },
+    {
+      "token": "96,462",
+      "context": "to be $ 96,462 , compared to",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentFairValue",
+      "sample_id": "1102873"
+    },
+    {
+      "token": "95,135",
+      "context": "value of $ 95,135 .",
+      "predicted": "O",
+      "expected": "B-LongTermDebt",
+      "sample_id": "1102873"
+    },
+    {
+      "token": "397",
+      "context": "was approximately $ 397 thousand and $",
+      "predicted": "O",
+      "expected": "B-EmployeeServiceShareBasedCompensationTaxBenefitFromCompensationExpense",
+      "sample_id": "1065292"
+    },
+    {
+      "token": "206",
+      "context": "thousand and $ 206 thousand for the",
+      "predicted": "O",
+      "expected": "B-EmployeeServiceShareBasedCompensationTaxBenefitFromCompensationExpense",
+      "sample_id": "1065292"
+    },
+    {
+      "token": "7,428",
+      "context": "combination was $ 7,428 .",
+      "predicted": "O",
+      "expected": "B-PaymentsToAcquireBusinessesGross",
+      "sample_id": "1074546"
+    },
+    {
+      "token": "10,000",
+      "context": "option grants of 10,000 options to Mr.",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardOptionsGrantsInPeriodGross",
+      "sample_id": "1060491"
+    },
+    {
+      "token": "49",
+      "context": "will be owned 49 % by the",
+      "predicted": "O",
+      "expected": "B-EquityMethodInvestmentOwnershipPercentage",
+      "sample_id": "1067538"
+    },
+    {
+      "token": "51",
+      "context": "the Company and 51 % by its",
+      "predicted": "O",
+      "expected": "B-EquityMethodInvestmentOwnershipPercentage",
+      "sample_id": "1067538"
+    },
+    {
+      "token": "190,624",
+      "context": ", there were 190,624 RSUs granted ,",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsGrantsInPeriod",
+      "sample_id": "1100361"
+    },
+    {
+      "token": "2,721,349",
+      "context": ", there were 2,721,349 and 2,630,805 DSUs",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedNumber",
+      "sample_id": "1100361"
+    },
+    {
+      "token": "2,630,805",
+      "context": "were 2,721,349 and 2,630,805 DSUs , respectively",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardEquityInstrumentsOtherThanOptionsNonvestedNumber",
+      "sample_id": "1100361"
+    },
+    {
+      "token": "0.9",
+      "context": "2020 , approximately 0.9 million shares of",
+      "predicted": "O",
+      "expected": "B-CommonStockCapitalSharesReservedForFutureIssuance",
+      "sample_id": "1060316"
+    },
+    {
+      "token": "285.4",
+      "context": "was approximately $ 285.4 million .",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentFaceAmount",
+      "sample_id": "1120542"
+    },
+    {
+      "token": "4,600,000",
+      "context": "a total of 4,600,000 shares have been",
+      "predicted": "O",
+      "expected": "B-CommonStockCapitalSharesReservedForFutureIssuance",
+      "sample_id": "1077238"
+    },
+    {
+      "token": "440,000",
+      "context": "component on $ 440,000 of its variable",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentFaceAmount",
+      "sample_id": "1049193"
+    },
+    {
+      "token": "33.2",
+      "context": "debt of $ 33.2 million and $",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentFairValue",
+      "sample_id": "1063232"
+    },
+    {
+      "token": "23.6",
+      "context": "million and $ 23.6 million , respectively",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentFairValue",
+      "sample_id": "1063232"
+    },
+    {
+      "token": "8.6",
+      "context": "price of $ 8.6 million .",
+      "predicted": "O",
+      "expected": "B-BusinessCombinationConsiderationTransferred1",
+      "sample_id": "1078144"
+    },
+    {
+      "token": "3.343",
+      "context": ") of approximately 3.343 % per annum",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentInterestRateEffectivePercentage",
+      "sample_id": "1067632"
+    },
+    {
+      "token": "1.05",
+      "context": "debt was $ 1.05 billion .",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentCarryingAmount",
+      "sample_id": "1066934"
+    },
+    {
+      "token": "0.5",
+      "context": "price of $ 0.5 million .",
+      "predicted": "O",
+      "expected": "B-DisposalGroupIncludingDiscontinuedOperationConsideration",
+      "sample_id": "1118347"
+    },
+    {
+      "token": "9.8",
+      "context": "of up to 9.8 years , some",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseWeightedAverageRemainingLeaseTerm1",
+      "sample_id": "1014674"
+    },
+    {
+      "token": "5",
+      "context": "of up to 5 years and some",
+      "predicted": "O",
+      "expected": "B-LesseeOperatingLeaseRenewalTerm",
+      "sample_id": "1014674"
+    },
+    {
+      "token": "720",
+      "context": "consideration of $ 720 million , which",
+      "predicted": "O",
+      "expected": "B-PaymentsToAcquireBusinessesNetOfCashAcquired",
+      "sample_id": "1111194"
+    },
+    {
+      "token": "1.9",
+      "context": "charges of $ 1.9 million , primarily",
+      "predicted": "O",
+      "expected": "B-AssetImpairmentCharges",
+      "sample_id": "1118300"
+    },
+    {
+      "token": "55,193",
+      "context": "Mr. Merkel of 55,193 shares of Newmark",
+      "predicted": "O",
+      "expected": "B-TreasuryStockSharesAcquired",
+      "sample_id": "1059708"
+    },
+    {
+      "token": "10.69",
+      "context": "stock at $ 10.69 per share ,",
+      "predicted": "O",
+      "expected": "B-TreasuryStockAcquiredAverageCostPerShare",
+      "sample_id": "1059708"
+    },
+    {
+      "token": "1.6",
+      "context": "to report $ 1.6 million and $",
+      "predicted": "O",
+      "expected": "B-RevenueFromContractWithCustomerExcludingAssessedTax",
+      "sample_id": "1104582"
+    },
+    {
+      "token": "23.2",
+      "context": "million and $ 23.2 million , respectively",
+      "predicted": "O",
+      "expected": "B-RevenueFromContractWithCustomerExcludingAssessedTax",
+      "sample_id": "1104582"
+    },
+    {
+      "token": "9",
+      "context": "less a $ 9 million discount .",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentUnamortizedDiscount",
+      "sample_id": "1069792"
+    },
+    {
+      "token": "13,109,459",
+      "context": ", there were 13,109,459 and 11,272,878 shares",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAuthorized",
+      "sample_id": "1091912"
+    },
+    {
+      "token": "11,272,878",
+      "context": "were 13,109,459 and 11,272,878 shares authorized for",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAuthorized",
+      "sample_id": "1091912"
+    },
+    {
+      "token": "2,662,138",
+      "context": "respectively , and 2,662,138 and 2,309,370 shares",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAvailableForGrant",
+      "sample_id": "1091912"
+    },
+    {
+      "token": "2,309,370",
+      "context": "and 2,662,138 and 2,309,370 shares available for",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAvailableForGrant",
+      "sample_id": "1091912"
+    },
+    {
+      "token": "3.4",
+      "context": "was approximately $ 3.4 million and $",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseExpense",
+      "sample_id": "1060277"
+    },
+    {
+      "token": "2.9",
+      "context": "million and $ 2.9 million , respectively",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseExpense",
+      "sample_id": "1060277"
+    },
+    {
+      "token": "20.9",
+      "context": "there was $ 20.9 million and $",
+      "predicted": "O",
+      "expected": "B-ContractWithCustomerLiability",
+      "sample_id": "1071694"
+    },
+    {
+      "token": "31.9",
+      "context": "million and $ 31.9 million , respectively",
+      "predicted": "O",
+      "expected": "B-ContractWithCustomerLiability",
+      "sample_id": "1071694"
+    },
+    {
+      "token": "6,636",
+      "context": "purchased and retired 6,636 shares of its",
+      "predicted": "O",
+      "expected": "B-StockRepurchasedAndRetiredDuringPeriodShares",
+      "sample_id": "1118144"
+    },
+    {
+      "token": "11",
+      "context": "discount of $ 11 million .",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentUnamortizedDiscount",
+      "sample_id": "1113815"
+    },
+    {
+      "token": "2,011,832",
+      "context": "( i ) 2,011,832 shares of common",
+      "predicted": "O",
+      "expected": "B-ShareBasedCompensationArrangementByShareBasedPaymentAwardNumberOfSharesAuthorized",
+      "sample_id": "1078747"
+    },
+    {
+      "token": "1,430",
+      "context": "of approximately $ 1,430 million and $",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentCarryingAmount",
+      "sample_id": "1095946"
+    },
+    {
+      "token": "293",
+      "context": "million and $ 293 million on the",
+      "predicted": "O",
+      "expected": "B-DebtInstrumentCarryingAmount",
+      "sample_id": "1095946"
+    },
+    {
+      "token": "9,977,024",
+      "context": "Secondary Offering of 9,977,024 shares of the",
+      "predicted": "O",
+      "expected": "B-StockIssuedDuringPeriodSharesNewIssues",
+      "sample_id": "1117469"
+    },
+    {
+      "token": "2,500,000",
+      "context": "the Company repurchased 2,500,000 shares of common",
+      "predicted": "O",
+      "expected": "B-TreasuryStockSharesAcquired",
+      "sample_id": "1117469"
+    },
+    {
+      "token": "25.41",
+      "context": "price of $ 25.41 per share .",
+      "predicted": "O",
+      "expected": "B-TreasuryStockAcquiredAverageCostPerShare",
+      "sample_id": "1117469"
+    },
+    {
+      "token": "2.2",
+      "context": "costs of $ 2.2 million were capitalized",
+      "predicted": "O",
+      "expected": "B-DeferredFinanceCostsGross",
+      "sample_id": "1076373"
+    },
+    {
+      "token": "1,623",
+      "context": "and was $ 1,623 and $ 3,226",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseCost",
+      "sample_id": "1079935"
+    },
+    {
+      "token": "3,226",
+      "context": "1,623 and $ 3,226 for the three",
+      "predicted": "O",
+      "expected": "B-OperatingLeaseCost",
+      "sample_id": "1079935"
+    },
+    {
+      "token": "10,000,000",
+      "context": "the Company had 10,000,000 shares of preferred",
+      "predicted": "O",
+      "expected": "B-PreferredStockSharesAuthorized",
+      "sample_id": "1071744"
+    },
+    {
+      "token": "2.9",
+      "context": ", representing a 2.9 % partnership interest",
+      "predicted": "O",
+      "expected": "B-MinorityInterestOwnershipPercentageByNoncontrollingOwners",
+      "sample_id": "1057903"
+    }
+  ]
+}

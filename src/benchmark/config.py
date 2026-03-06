@@ -54,6 +54,7 @@ class BenchmarkConfig:
     batch_llm_concurrency: int = 50  # Max concurrent async LLM requests
     session_dir: Optional[str] = None  # Override timestamped session dir (for multi-model runs)
     span_prompt_version: str = "V14_SPAN"  # Span routing prompt version (V14_SPAN, V15_SPAN, V16_SPAN)
+    calibrate: int = 0  # Number of held-out samples for threshold calibration (0 = disabled)
 
     def get_samples_for_dataset(self, dataset_name: str) -> int:
         """Return effective sample count: CLI override > per-dataset default."""
@@ -137,6 +138,14 @@ def parse_args(argv: Optional[List[str]] = None) -> BenchmarkConfig:
         help="Span routing prompt version (default: V14_SPAN). V16_SPAN enables extended NVIDIA label set.",
     )
 
+    parser.add_argument(
+        "--calibrate",
+        type=int,
+        default=0,
+        help="Number of held-out samples for threshold calibration before eval (0 = disabled). "
+             "Samples are split from the loaded dataset: first N for calibration, rest for eval.",
+    )
+
     args = parser.parse_args(argv)
 
     systems = ALL_SYSTEMS if args.systems == "all" else [s.strip() for s in args.systems.split(",")]
@@ -164,4 +173,5 @@ def parse_args(argv: Optional[List[str]] = None) -> BenchmarkConfig:
         batch_llm_concurrency=args.batch_llm_concurrency,
         session_dir=args.session_dir,
         span_prompt_version=args.span_prompt_version,
+        calibrate=args.calibrate,
     )

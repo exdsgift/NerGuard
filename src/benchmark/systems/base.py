@@ -73,6 +73,14 @@ class SystemWrapper(ABC):
         """Cleanup: unload model, free memory."""
         pass
 
+    def calibrate_thresholds(self, samples: list) -> None:
+        """Calibrate routing thresholds on held-out samples.
+
+        Must be called after setup(). Only meaningful for hybrid systems
+        that use uncertainty-based routing. Default is no-op.
+        """
+        pass
+
     def describe(self) -> Dict:
         """Return system metadata for documentation."""
         return {

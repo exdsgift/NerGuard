@@ -1,0 +1,13 @@
+[
+  {
+    "system": "Biomedical Hybrid (gpt-4o)",
+    "dataset": "bc5cdr",
+    "f1_macro": 0.8430894830937796,
+    "f1_micro": 0.8795235913879982,
+    "entity_f1": 0.8847980997624704,
+    "latency_mean_ms": 26.342174530029297,
+    "n_evaluated_labels": 2,
+    "tier": 1,
+    "n_samples": 500
+  }
+]

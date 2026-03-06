@@ -1,0 +1,283 @@
+[
+  {
+    "variant": "never_route",
+    "dataset": "nvidia-pii",
+    "n_samples": 1000,
+    "n_evaluated_labels": 16,
+    "token_level": {
+      "f1_macro": 0.48165811839344197,
+      "f1_micro": 0.6832562442183163,
+      "precision_macro": 0.46882274664128826,
+      "recall_macro": 0.5995303429129933
+    },
+    "entity_level": {
+      "precision": 0.5741345525800131,
+      "recall": 0.7442845046570703,
+      "f1": 0.6482300884955753
+    },
+    "latency": {
+      "mean_ms": 42.58747720718384,
+      "median_ms": 36.77093982696533
+    },
+    "routing": {
+      "llm_calls": 20,
+      "regex_skips": 0,
+      "regex_promotions": 473,
+      "regex_prescan_promotions": 1801,
+      "regex_demotions": 1721,
+      "regex_hint_routes": 20,
+      "confidence_gates_applied": 0,
+      "o_spans_routed": 0,
+      "o_spans_promoted": 0,
+      "entity_router_stats": {
+        "total_checked": 7038,
+        "routed": 0,
+        "blocked_by_entity": 0,
+        "blocked_by_continuation": 0,
+        "blocked_by_threshold": 7038,
+        "routed_by_entity": {},
+        "routing_rate": "0.00%"
+      }
+    }
+  },
+  {
+    "variant": "always_route",
+    "dataset": "nvidia-pii",
+    "n_samples": 1000,
+    "n_evaluated_labels": 16,
+    "token_level": {
+      "f1_macro": 0.48869563627518275,
+      "f1_micro": 0.7016340528545492,
+      "precision_macro": 0.5256472008705964,
+      "recall_macro": 0.5598399587426913
+    },
+    "entity_level": {
+      "precision": 0.6413404962906114,
+      "recall": 0.7075924357888794,
+      "f1": 0.6728395061728394
+    },
+    "latency": {
+      "mean_ms": 41.0125892162323,
+      "median_ms": 36.04161739349365
+    },
+    "routing": {
+      "llm_calls": 11024,
+      "regex_skips": 504,
+      "regex_promotions": 1620,
+      "regex_prescan_promotions": 1801,
+      "regex_demotions": 81,
+      "regex_hint_routes": 20,
+      "confidence_gates_applied": 0,
+      "o_spans_routed": 5981,
+      "o_spans_promoted": 0,
+      "entity_router_stats": {
+        "total_checked": 7038,
+        "routed": 7038,
+        "blocked_by_entity": 0,
+        "blocked_by_continuation": 0,
+        "blocked_by_threshold": 0,
+        "routed_by_entity": {
+          "ZIPCODE": 1781,
+          "EMAIL": 503,
+          "IDCARDNUM": 393,
+          "PASSPORTNUM": 212,
+          "DATE": 882,
+          "DRIVERLICENSENUM": 300,
+          "BUILDINGNUM": 276,
+          "SOCIALNUM": 324,
+          "TELEPHONENUM": 480,
+          "GIVENNAME": 526,
+          "SURNAME": 287,
+          "TAXNUM": 153,
+          "CREDITCARDNUMBER": 109,
+          "SEX": 39,
+          "STREET": 177,
+          "CITY": 331,
+          "AGE": 112,
+          "TIME": 153
+        },
+        "routing_rate": "100.00%"
+      }
+    }
+  },
+  {
+    "variant": "entropy_only",
+    "dataset": "nvidia-pii",
+    "n_samples": 1000,
+    "n_evaluated_labels": 16,
+    "token_level": {
+      "f1_macro": 0.5118901034499023,
+      "f1_micro": 0.7198186656154528,
+      "precision_macro": 0.5252480037826416,
+      "recall_macro": 0.5898106670865672
+    },
+    "entity_level": {
+      "precision": 0.6451135241855873,
+      "recall": 0.7377928309342365,
+      "f1": 0.6883475971033574
+    },
+    "latency": {
+      "mean_ms": 39.63349747657776,
+      "median_ms": 35.260796546936035
+    },
+    "routing": {
+      "llm_calls": 5482,
+      "regex_skips": 181,
+      "regex_promotions": 1360,
+      "regex_prescan_promotions": 1801,
+      "regex_demotions": 66,
+      "regex_hint_routes": 20,
+      "confidence_gates_applied": 0,
+      "o_spans_routed": 2079,
+      "o_spans_promoted": 0,
+      "entity_router_stats": {
+        "total_checked": 7038,
+        "routed": 5075,
+        "blocked_by_entity": 0,
+        "blocked_by_continuation": 0,
+        "blocked_by_threshold": 1963,
+        "routed_by_entity": {
+          "ZIPCODE": 1722,
+          "EMAIL": 119,
+          "IDCARDNUM": 393,
+          "PASSPORTNUM": 204,
+          "DRIVERLICENSENUM": 300,
+          "BUILDINGNUM": 183,
+          "SOCIALNUM": 324,
+          "TELEPHONENUM": 255,
+          "GIVENNAME": 388,
+          "SURNAME": 278,
+          "TAXNUM": 153,
+          "CREDITCARDNUMBER": 107,
+          "SEX": 39,
+          "CITY": 210,
+          "STREET": 72,
+          "DATE": 207,
+          "AGE": 80,
+          "TIME": 41
+        },
+        "routing_rate": "72.11%"
+      }
+    }
+  },
+  {
+    "variant": "confidence_only",
+    "dataset": "nvidia-pii",
+    "n_samples": 1000,
+    "n_evaluated_labels": 16,
+    "token_level": {
+      "f1_macro": 0.5176128691218989,
+      "f1_micro": 0.7208271787296898,
+      "precision_macro": 0.5295328136622185,
+      "recall_macro": 0.5938045435517645
+    },
+    "entity_level": {
+      "precision": 0.6451453918186298,
+      "recall": 0.7389218176686424,
+      "f1": 0.6888567293777134
+    },
+    "latency": {
+      "mean_ms": 39.40066599845886,
+      "median_ms": 34.69812870025635
+    },
+    "routing": {
+      "llm_calls": 5647,
+      "regex_skips": 183,
+      "regex_promotions": 1382,
+      "regex_prescan_promotions": 1801,
+      "regex_demotions": 66,
+      "regex_hint_routes": 20,
+      "confidence_gates_applied": 0,
+      "o_spans_routed": 2249,
+      "o_spans_promoted": 0,
+      "entity_router_stats": {
+        "total_checked": 7038,
+        "routed": 5072,
+        "blocked_by_entity": 0,
+        "blocked_by_continuation": 0,
+        "blocked_by_threshold": 1966,
+        "routed_by_entity": {
+          "ZIPCODE": 1722,
+          "EMAIL": 121,
+          "IDCARDNUM": 393,
+          "PASSPORTNUM": 199,
+          "DRIVERLICENSENUM": 300,
+          "BUILDINGNUM": 183,
+          "SOCIALNUM": 324,
+          "TELEPHONENUM": 255,
+          "GIVENNAME": 390,
+          "SURNAME": 278,
+          "TAXNUM": 153,
+          "CREDITCARDNUMBER": 107,
+          "SEX": 39,
+          "CITY": 210,
+          "STREET": 72,
+          "DATE": 206,
+          "AGE": 80,
+          "TIME": 40
+        },
+        "routing_rate": "72.07%"
+      }
+    }
+  },
+  {
+    "variant": "full_system",
+    "dataset": "nvidia-pii",
+    "n_samples": 1000,
+    "n_evaluated_labels": 16,
+    "token_level": {
+      "f1_macro": 0.5132910777647985,
+      "f1_micro": 0.7208362094468002,
+      "precision_macro": 0.5269681620833526,
+      "recall_macro": 0.5912292208161745
+    },
+    "entity_level": {
+      "precision": 0.6454163577958982,
+      "recall": 0.7372283375670335,
+      "f1": 0.688274044795784
+    },
+    "latency": {
+      "mean_ms": 39.48125433921814,
+      "median_ms": 34.75463390350342
+    },
+    "routing": {
+      "llm_calls": 5470,
+      "regex_skips": 180,
+      "regex_promotions": 1331,
+      "regex_prescan_promotions": 1801,
+      "regex_demotions": 66,
+      "regex_hint_routes": 20,
+      "confidence_gates_applied": 0,
+      "o_spans_routed": 2079,
+      "o_spans_promoted": 0,
+      "entity_router_stats": {
+        "total_checked": 7038,
+        "routed": 5062,
+        "blocked_by_entity": 0,
+        "blocked_by_continuation": 0,
+        "blocked_by_threshold": 1976,
+        "routed_by_entity": {
+          "ZIPCODE": 1721,
+          "EMAIL": 119,
+          "IDCARDNUM": 393,
+          "PASSPORTNUM": 199,
+          "DRIVERLICENSENUM": 300,
+          "BUILDINGNUM": 182,
+          "SOCIALNUM": 324,
+          "TELEPHONENUM": 255,
+          "GIVENNAME": 387,
+          "SURNAME": 278,
+          "TAXNUM": 153,
+          "CREDITCARDNUMBER": 107,
+          "SEX": 39,
+          "CITY": 208,
+          "STREET": 72,
+          "DATE": 205,
+          "AGE": 80,
+          "TIME": 40
+        },
+        "routing_rate": "71.92%"
+      }
+    }
+  }
+]

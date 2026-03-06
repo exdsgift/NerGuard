@@ -1,0 +1,3505 @@
+{
+  "n_errors": 500,
+  "errors": [
+    {
+      "token": "Lantis",
+      "context": "99 . 1 Lantis Laser 's Acquisition",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": "Laser",
+      "context": ". 1 Lantis Laser 's Acquisition of",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": "TAG",
+      "context": "'s Acquisition of TAG Minerals Inc .",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": "Minerals",
+      "context": "Acquisition of TAG Minerals Inc . Expected",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": "Inc",
+      "context": "of TAG Minerals Inc . Expected to",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "TAG Minerals Inc . Expected to Pay",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": "Minerals",
+      "context": "For Shareholders TAG Minerals ' Affiliate ,",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": "(",
+      "context": "of Ontage Resources ( Private ) Limited",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": "Private",
+      "context": "Ontage Resources ( Private ) Limited ,",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": ")",
+      "context": "Resources ( Private ) Limited , a",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": "Limited",
+      "context": "( Private ) Limited , a Seasoned",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": "Lantis",
+      "context": ", 2011 - Lantis Laser Inc .",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": "Laser",
+      "context": "2011 - Lantis Laser Inc . (",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": "Inc",
+      "context": "- Lantis Laser Inc . ( symbol",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "Lantis Laser Inc . ( symbol :",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": "(",
+      "context": "of Ontage Resources ( Private ) Limited",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": "Private",
+      "context": "Ontage Resources ( Private ) Limited .",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": ")",
+      "context": "Resources ( Private ) Limited . Ontage",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": "Limited",
+      "context": "( Private ) Limited . Ontage Resources",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1413299-000114420411041922-v229666_ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "II , Ltd . ; Begins Trading",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1838359-000119312522067932-d506107dex994"
+    },
+    {
+      "token": "China",
+      "context": "- 4350 brian.rafferty@taylor-rafferty.com China Biopharmaceuticals Announces Termination",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": "Biopharmaceuticals",
+      "context": "4350 brian.rafferty@taylor-rafferty.com China Biopharmaceuticals Announces Termination of",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": "Hengyi",
+      "context": "of Agreement with Hengyi Pharmaceuticals BEIJING ,",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": "Pharmaceuticals",
+      "context": "Agreement with Hengyi Pharmaceuticals BEIJING , China",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": "China",
+      "context": ", 2006 -- China Biopharmaceuticals Holdings ,",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": "Biopharmaceuticals",
+      "context": "2006 -- China Biopharmaceuticals Holdings , Inc",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": "Holdings",
+      "context": "-- China Biopharmaceuticals Holdings , Inc .",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": ",",
+      "context": "China Biopharmaceuticals Holdings , Inc . (",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": "Inc",
+      "context": "Biopharmaceuticals Holdings , Inc . ( OTC",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "Holdings , Inc . ( OTC BB",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": "CHBP",
+      "context": "today announced that CHBP and the shareholders",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": "Hengyi",
+      "context": "shareholders of Suzhou Hengyi Pharmaceuticals of Feedstock",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": "Pharmaceuticals",
+      "context": "of Suzhou Hengyi Pharmaceuticals of Feedstock Co",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": "of",
+      "context": "Suzhou Hengyi Pharmaceuticals of Feedstock Co .",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": "Feedstock",
+      "context": "Hengyi Pharmaceuticals of Feedstock Co . ,",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": "Co",
+      "context": "Pharmaceuticals of Feedstock Co . , Ltd",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "of Feedstock Co . , Ltd .",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": ",",
+      "context": "Feedstock Co . , Ltd . (",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": "Ltd",
+      "context": "Co . , Ltd . ( \"",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": ".",
+      "context": ". , Ltd . ( \" Hengyi",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "352868-000114420406036874-v052019_ex99-1"
+    },
+    {
+      "token": "Holdings",
+      "context": "2007 - Rockwood Holdings , Inc .",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1261302-000110465907002701-a07-1919_1ex99d1"
+    },
+    {
+      "token": ",",
+      "context": "- Rockwood Holdings , Inc . (",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1261302-000110465907002701-a07-1919_1ex99d1"
+    },
+    {
+      "token": "Inc",
+      "context": "Rockwood Holdings , Inc . ( NYSE",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1261302-000110465907002701-a07-1919_1ex99d1"
+    },
+    {
+      "token": ".",
+      "context": "Holdings , Inc . ( NYSE :",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1261302-000110465907002701-a07-1919_1ex99d1"
+    },
+    {
+      "token": "BV",
+      "context": "Gilde Buyout Partners BV , Banexi Capital",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1261302-000110465907002701-a07-1919_1ex99d1"
+    },
+    {
+      "token": ",",
+      "context": "- CDK Global , Inc . (",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1609702-000095014220001285-eh2000715_ex9901"
+    },
+    {
+      "token": "Inc",
+      "context": "CDK Global , Inc . ( Nasdaq",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1609702-000095014220001285-eh2000715_ex9901"
+    },
+    {
+      "token": ".",
+      "context": "Global , Inc . ( Nasdaq :",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1609702-000095014220001285-eh2000715_ex9901"
+    },
+    {
+      "token": "CDK",
+      "context": "path \" . CDK began the journey",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1609702-000095014220001285-eh2000715_ex9901"
+    },
+    {
+      "token": "II",
+      "context": "Acquisition Co . II . Nextdoor Class",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1846069-000162828021023197-exhibit991-super8xk"
+    },
+    {
+      "token": "II",
+      "context": "Acquisition Co . II ( Nasdaq :",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1846069-000162828021023197-exhibit991-super8xk"
+    },
+    {
+      "token": ",",
+      "context": "Newkirk Realty Trust , Inc . (",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1165460-000119380506000742-e600315_ex99-1"
+    },
+    {
+      "token": "Inc",
+      "context": "Realty Trust , Inc . ( NYSE",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1165460-000119380506000742-e600315_ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "Trust , Inc . ( NYSE :",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1165460-000119380506000742-e600315_ex99-1"
+    },
+    {
+      "token": "o",
+      "context": "forty months ; o acquired two warehouse",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1165460-000119380506000742-e600315_ex99-1"
+    },
+    {
+      "token": "o",
+      "context": "party warehousing company o acquired a $",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1165460-000119380506000742-e600315_ex99-1"
+    },
+    {
+      "token": "o",
+      "context": "of credit ; o acquired a $",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1165460-000119380506000742-e600315_ex99-1"
+    },
+    {
+      "token": "SUTTER",
+      "context": "99 . 1 SUTTER ANNOUNCES CLOSING OF",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1100202-000101172305000007-sutterex99pressrel"
+    },
+    {
+      "token": "DIVERSIFIED",
+      "context": "ANNOUNCES CLOSING OF DIVERSIFIED RISK ACQUISITION SAN",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1100202-000101172305000007-sutterex99pressrel"
+    },
+    {
+      "token": "RISK",
+      "context": "CLOSING OF DIVERSIFIED RISK ACQUISITION SAN FRANCISCO",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1100202-000101172305000007-sutterex99pressrel"
+    },
+    {
+      "token": "Amcor",
+      "context": "the combination of Amcor Limited and Bemis",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1748790-000110465919035373-a18-18334_98ex99d1"
+    },
+    {
+      "token": "Limited",
+      "context": "combination of Amcor Limited and Bemis Company",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1748790-000110465919035373-a18-18334_98ex99d1"
+    },
+    {
+      "token": "Bemis",
+      "context": "Amcor Limited and Bemis Company , Inc",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1748790-000110465919035373-a18-18334_98ex99d1"
+    },
+    {
+      "token": "Company",
+      "context": "Limited and Bemis Company , Inc (",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1748790-000110465919035373-a18-18334_98ex99d1"
+    },
+    {
+      "token": ",",
+      "context": "and Bemis Company , Inc ( \"",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1748790-000110465919035373-a18-18334_98ex99d1"
+    },
+    {
+      "token": "Inc",
+      "context": "Bemis Company , Inc ( \" Bemis",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1748790-000110465919035373-a18-18334_98ex99d1"
+    },
+    {
+      "token": "Abundance",
+      "context": "Completes Purchase Of Abundance Networks Santa Clara",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "769591-000114420406004443-v034754_ex99-1"
+    },
+    {
+      "token": "Networks",
+      "context": "Purchase Of Abundance Networks Santa Clara ,",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "769591-000114420406004443-v034754_ex99-1"
+    },
+    {
+      "token": "Sunrise",
+      "context": "The acquisition of Sunrise REIT , with",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "740260-000119312507097643-dex991"
+    },
+    {
+      "token": "REIT",
+      "context": "acquisition of Sunrise REIT , with its",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "740260-000119312507097643-dex991"
+    },
+    {
+      "token": "Ventas",
+      "context": "major milestone for Ventas and we are",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "740260-000119312507097643-dex991"
+    },
+    {
+      "token": ".",
+      "context": "Manufacturing , Inc . subsidiary to Brian",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "946454-000110465907089009-a07-31431_1ex99d2"
+    },
+    {
+      "token": "Cloud",
+      "context": "713 - 5000 Cloud Peak Energy Announces",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1441849-000110465909067108-a09-34217_1ex99d1"
+    },
+    {
+      "token": "Peak",
+      "context": "- 5000 Cloud Peak Energy Announces Pricing",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1441849-000110465909067108-a09-34217_1ex99d1"
+    },
+    {
+      "token": "Energy",
+      "context": "5000 Cloud Peak Energy Announces Pricing of",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1441849-000110465909067108-a09-34217_1ex99d1"
+    },
+    {
+      "token": "Skye",
+      "context": "99 . 1 Skye Life and SuperDate",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1731911-000155335020001121-sklv_ex99z1"
+    },
+    {
+      "token": "Life",
+      "context": ". 1 Skye Life and SuperDate Complete",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1731911-000155335020001121-sklv_ex99z1"
+    },
+    {
+      "token": "SuperDate",
+      "context": "Skye Life and SuperDate Complete Amalgamation December",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1731911-000155335020001121-sklv_ex99z1"
+    },
+    {
+      "token": "SuperDate",
+      "context": ". \" ) SuperDate has now amalgamated",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1731911-000155335020001121-sklv_ex99z1"
+    },
+    {
+      "token": "Muze",
+      "context": "acquisition also consolidates Muze 's U .",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1064648-000129993306002990-exhibit1"
+    },
+    {
+      "token": "Sanchez",
+      "context": "- 8000 www.sanchezenergycorp.com Sanchez Energy Closes Western",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1528837-000110465915071665-a15-20574_3ex99d1"
+    },
+    {
+      "token": "Energy",
+      "context": "8000 www.sanchezenergycorp.com Sanchez Energy Closes Western Catarina",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1528837-000110465915071665-a15-20574_3ex99d1"
+    },
+    {
+      "token": "WORLDWIDE",
+      "context": "Immediate Release TERREMARK WORLDWIDE COMPLETES ACQUISITION OF",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "912890-000095014407005260-g07684exv99w1"
+    },
+    {
+      "token": ",",
+      "context": "2014 -- Logility , Inc . ,",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "713425-000115752314002403-a50876946ex99_1"
+    },
+    {
+      "token": "Inc",
+      "context": "-- Logility , Inc . , a",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "713425-000115752314002403-a50876946ex99_1"
+    },
+    {
+      "token": ".",
+      "context": "Logility , Inc . , a leading",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "713425-000115752314002403-a50876946ex99_1"
+    },
+    {
+      "token": "Logility",
+      "context": "this acquisition , Logility Voyager Solutions delivers",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "713425-000115752314002403-a50876946ex99_1"
+    },
+    {
+      "token": "Voyager",
+      "context": "acquisition , Logility Voyager Solutions delivers the",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "713425-000115752314002403-a50876946ex99_1"
+    },
+    {
+      "token": "Solutions",
+      "context": ", Logility Voyager Solutions delivers the holistic",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "713425-000115752314002403-a50876946ex99_1"
+    },
+    {
+      "token": "Cornerstone",
+      "context": ", 2009 - Cornerstone Real Estate Funds",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1378774-000114420410000696-v170572_ex99-2"
+    },
+    {
+      "token": "Real",
+      "context": "2009 - Cornerstone Real Estate Funds ,",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1378774-000114420410000696-v170572_ex99-2"
+    },
+    {
+      "token": "Estate",
+      "context": "- Cornerstone Real Estate Funds , and",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1378774-000114420410000696-v170572_ex99-2"
+    },
+    {
+      "token": "Funds",
+      "context": "Cornerstone Real Estate Funds , and its",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1378774-000114420410000696-v170572_ex99-2"
+    },
+    {
+      "token": "Servant",
+      "context": "sub - advisor Servant Healthcare Investments ,",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1378774-000114420410000696-v170572_ex99-2"
+    },
+    {
+      "token": "Healthcare",
+      "context": "- advisor Servant Healthcare Investments , announced",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1378774-000114420410000696-v170572_ex99-2"
+    },
+    {
+      "token": "Investments",
+      "context": "advisor Servant Healthcare Investments , announced the",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1378774-000114420410000696-v170572_ex99-2"
+    },
+    {
+      "token": "Inc",
+      "context": ") - ZAGG Inc ( Nasdaq :",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1296205-000162828021002618-a20210222exhibit991"
+    },
+    {
+      "token": "buyer",
+      "context": "sale to a buyer group led by",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1296205-000162828021002618-a20210222exhibit991"
+    },
+    {
+      "token": "Group",
+      "context": "by CapGen Capital Group IV ( \"",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1071264-000114420410061620-v202958_ex99-1"
+    },
+    {
+      "token": "42",
+      "context": "Latin America were 42 % , 41",
+      "predicted": "B-Generic_Info.ANNUAL_REVENUES",
+      "expected": "O",
+      "sample_id": "8858-000129993310002583-exhibit1"
+    },
+    {
+      "token": "Caprius",
+      "context": ", 2011 -- Caprius , Inc .",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "722567-000119380511000768-e608357_ex99-1"
+    },
+    {
+      "token": ",",
+      "context": "2011 -- Caprius , Inc . (",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "722567-000119380511000768-e608357_ex99-1"
+    },
+    {
+      "token": "Inc",
+      "context": "-- Caprius , Inc . ( Pink",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "722567-000119380511000768-e608357_ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "Caprius , Inc . ( Pink Sheets",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "722567-000119380511000768-e608357_ex99-1"
+    },
+    {
+      "token": "Capac",
+      "context": ") , and Capac Co . ,",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "722567-000119380511000768-e608357_ex99-1"
+    },
+    {
+      "token": "Co",
+      "context": ", and Capac Co . , a",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "722567-000119380511000768-e608357_ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "and Capac Co . , a wholly",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "722567-000119380511000768-e608357_ex99-1"
+    },
+    {
+      "token": "CareCloud",
+      "context": "99 . 1 CareCloud Closes Strategic Acquisition",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1582982-000149315221013396-ex99-1"
+    },
+    {
+      "token": ",",
+      "context": "Santa Rosa Consulting , Inc . (",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1582982-000149315221013396-ex99-1"
+    },
+    {
+      "token": "Inc",
+      "context": "Rosa Consulting , Inc . ( together",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1582982-000149315221013396-ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "Consulting , Inc . ( together ,",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1582982-000149315221013396-ex99-1"
+    },
+    {
+      "token": "Shanghai",
+      "context": "Isaly , and Shanghai Runda Medical Technology",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "806888-000143774916042848-ex99-1"
+    },
+    {
+      "token": "Medical",
+      "context": "and Shanghai Runda Medical Technology Co .",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "806888-000143774916042848-ex99-1"
+    },
+    {
+      "token": "Technology",
+      "context": "Shanghai Runda Medical Technology Co . ,",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "806888-000143774916042848-ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "Medical Technology Co . , Ltd .",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "806888-000143774916042848-ex99-1"
+    },
+    {
+      "token": "GSK",
+      "context": "ANTIBODY , FROM GSK \u00b7 Transaction anticipated",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1367644-000136764417000039-exhibit99"
+    },
+    {
+      "token": "raxibacumab",
+      "context": "its acquisition of raxibacumab , a fully",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1367644-000136764417000039-exhibit99"
+    },
+    {
+      "token": "GSK",
+      "context": "anthrax , from GSK ( LSE /",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1367644-000136764417000039-exhibit99"
+    },
+    {
+      "token": "Emergent",
+      "context": "the acquisition , Emergent also plans to",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1367644-000136764417000039-exhibit99"
+    },
+    {
+      "token": "raxibacumab",
+      "context": "The acquisition of raxibacumab expands Emergent 's",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1367644-000136764417000039-exhibit99"
+    },
+    {
+      "token": "Emergent",
+      "context": "of raxibacumab expands Emergent 's portfolio of",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1367644-000136764417000039-exhibit99"
+    },
+    {
+      "token": "raxibacumab",
+      "context": "the acquisition of raxibacumab will be additive",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1367644-000136764417000039-exhibit99"
+    },
+    {
+      "token": "Health",
+      "context": "99 . 1 Health Systems Solutions ,",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1093913-000114420406021607-v043812_ex99-1"
+    },
+    {
+      "token": "West",
+      "context": "Center Holdings purchased West University Travel for",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1058786-000109991007000002-ex99-1"
+    },
+    {
+      "token": "University",
+      "context": "Holdings purchased West University Travel for a",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1058786-000109991007000002-ex99-1"
+    },
+    {
+      "token": "Travel",
+      "context": "purchased West University Travel for a combination",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1058786-000109991007000002-ex99-1"
+    },
+    {
+      "token": "CST",
+      "context": "Forward Air acquired CST for the aggregate",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "912728-000091272814000004-exhibit991cts"
+    },
+    {
+      "token": "Hayes",
+      "context": "Complete Sale of Hayes Lemmerz ' Automotive",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1237941-000095012407005884-k21643exv99w2"
+    },
+    {
+      "token": "Lemmerz",
+      "context": "Sale of Hayes Lemmerz ' Automotive Brake",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1237941-000095012407005884-k21643exv99w2"
+    },
+    {
+      "token": "'",
+      "context": "of Hayes Lemmerz ' Automotive Brake Components",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1237941-000095012407005884-k21643exv99w2"
+    },
+    {
+      "token": "Automotive",
+      "context": "Hayes Lemmerz ' Automotive Brake Components Division",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1237941-000095012407005884-k21643exv99w2"
+    },
+    {
+      "token": "Brake",
+      "context": "Lemmerz ' Automotive Brake Components Division to",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1237941-000095012407005884-k21643exv99w2"
+    },
+    {
+      "token": "Components",
+      "context": "' Automotive Brake Components Division to Brembo",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1237941-000095012407005884-k21643exv99w2"
+    },
+    {
+      "token": "Division",
+      "context": "Automotive Brake Components Division to Brembo North",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1237941-000095012407005884-k21643exv99w2"
+    },
+    {
+      "token": "Hayes",
+      "context": "the sale of Hayes Lemmerz ' Automotive",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1237941-000095012407005884-k21643exv99w2"
+    },
+    {
+      "token": "Lemmerz",
+      "context": "sale of Hayes Lemmerz ' Automotive Brake",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1237941-000095012407005884-k21643exv99w2"
+    },
+    {
+      "token": "'",
+      "context": "of Hayes Lemmerz ' Automotive Brake Components",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1237941-000095012407005884-k21643exv99w2"
+    },
+    {
+      "token": "Automotive",
+      "context": "Hayes Lemmerz ' Automotive Brake Components division",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1237941-000095012407005884-k21643exv99w2"
+    },
+    {
+      "token": "Brake",
+      "context": "Lemmerz ' Automotive Brake Components division to",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1237941-000095012407005884-k21643exv99w2"
+    },
+    {
+      "token": "Components",
+      "context": "' Automotive Brake Components division to Brembo",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1237941-000095012407005884-k21643exv99w2"
+    },
+    {
+      "token": "division",
+      "context": "Automotive Brake Components division to Brembo North",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1237941-000095012407005884-k21643exv99w2"
+    },
+    {
+      "token": "$",
+      "context": "Solutions were approximately $ 30 MM for",
+      "predicted": "B-Generic_Info.ANNUAL_REVENUES",
+      "expected": "O",
+      "sample_id": "1045560-000095013705004167-c93900exv99w1"
+    },
+    {
+      "token": "30",
+      "context": "were approximately $ 30 MM for the",
+      "predicted": "I-Generic_Info.ANNUAL_REVENUES",
+      "expected": "O",
+      "sample_id": "1045560-000095013705004167-c93900exv99w1"
+    },
+    {
+      "token": "MM",
+      "context": "approximately $ 30 MM for the year",
+      "predicted": "I-Generic_Info.ANNUAL_REVENUES",
+      "expected": "O",
+      "sample_id": "1045560-000095013705004167-c93900exv99w1"
+    },
+    {
+      "token": "Avalon",
+      "context": ", 2020 , Avalon and Montare Resources",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1521168-000110465920125100-tm2035422d1_ex99-2"
+    },
+    {
+      "token": "and",
+      "context": "2020 , Avalon and Montare Resources I",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1521168-000110465920125100-tm2035422d1_ex99-2"
+    },
+    {
+      "token": "Pandora",
+      "context": ", 2015 . Pandora 's acquisition of",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1230276-000110465915086419-a15-25418_1ex99d1"
+    },
+    {
+      "token": "Rdio",
+      "context": "and talent from Rdio was subject to",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1230276-000110465915086419-a15-25418_1ex99d1"
+    },
+    {
+      "token": "Pandora",
+      "context": "price adjustments . Pandora 's agreement to",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1230276-000110465915086419-a15-25418_1ex99d1"
+    },
+    {
+      "token": "Rdio",
+      "context": "and talent from Rdio was originally announced",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1230276-000110465915086419-a15-25418_1ex99d1"
+    },
+    {
+      "token": "TESORO",
+      "context": "99 . 1 TESORO CORPORATION CONTRIBUTES MARTINEZ",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "50104-000005010412000027-ex991pressrelease"
+    },
+    {
+      "token": "CORPORATION",
+      "context": ". 1 TESORO CORPORATION CONTRIBUTES MARTINEZ CRUDE",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "50104-000005010412000027-ex991pressrelease"
+    },
+    {
+      "token": "Tesoro",
+      "context": "TSO ) and Tesoro Logistics LP (",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "50104-000005010412000027-ex991pressrelease"
+    },
+    {
+      "token": "Logistics",
+      "context": ") and Tesoro Logistics LP ( NYSE",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "50104-000005010412000027-ex991pressrelease"
+    },
+    {
+      "token": "LP",
+      "context": "and Tesoro Logistics LP ( NYSE :",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "50104-000005010412000027-ex991pressrelease"
+    },
+    {
+      "token": "$",
+      "context": "2004 from just $ 18 million in",
+      "predicted": "B-Generic_Info.ANNUAL_REVENUES",
+      "expected": "O",
+      "sample_id": "87050-000114420405023183-v022655_ex99-1"
+    },
+    {
+      "token": "18",
+      "context": "from just $ 18 million in the",
+      "predicted": "I-Generic_Info.ANNUAL_REVENUES",
+      "expected": "O",
+      "sample_id": "87050-000114420405023183-v022655_ex99-1"
+    },
+    {
+      "token": "million",
+      "context": "just $ 18 million in the prior",
+      "predicted": "I-Generic_Info.ANNUAL_REVENUES",
+      "expected": "O",
+      "sample_id": "87050-000114420405023183-v022655_ex99-1"
+    },
+    {
+      "token": "SBE",
+      "context": "- more - SBE , Inc .",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "87050-000114420405023183-v022655_ex99-1"
+    },
+    {
+      "token": ",",
+      "context": "more - SBE , Inc . Completes",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "87050-000114420405023183-v022655_ex99-1"
+    },
+    {
+      "token": "Inc",
+      "context": "- SBE , Inc . Completes Acquisition",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "87050-000114420405023183-v022655_ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "SBE , Inc . Completes Acquisition of",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "87050-000114420405023183-v022655_ex99-1"
+    },
+    {
+      "token": "PyX",
+      "context": "Completes Acquisition of PyX Technologies -- Page",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "87050-000114420405023183-v022655_ex99-1"
+    },
+    {
+      "token": "Technologies",
+      "context": "Acquisition of PyX Technologies -- Page 2",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "87050-000114420405023183-v022655_ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "Trust , Inc . Announces Closings for",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1316710-000129993305003494-exhibit2"
+    },
+    {
+      "token": "Asset",
+      "context": "by JP Morgan Asset Management . The",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1316710-000129993305003494-exhibit2"
+    },
+    {
+      "token": "Management",
+      "context": "JP Morgan Asset Management . The Company",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1316710-000129993305003494-exhibit2"
+    },
+    {
+      "token": "Marlin",
+      "context": "all assets of Marlin Capital Partners ,",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1104161-000114036106001732-ex99_1"
+    },
+    {
+      "token": "Capital",
+      "context": "assets of Marlin Capital Partners , LLC",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1104161-000114036106001732-ex99_1"
+    },
+    {
+      "token": "Partners",
+      "context": "of Marlin Capital Partners , LLC d",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1104161-000114036106001732-ex99_1"
+    },
+    {
+      "token": ",",
+      "context": "Marlin Capital Partners , LLC d /",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1104161-000114036106001732-ex99_1"
+    },
+    {
+      "token": "LLC",
+      "context": "Capital Partners , LLC d / b",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1104161-000114036106001732-ex99_1"
+    },
+    {
+      "token": "Convergys",
+      "context": ", 2018 - Convergys Corporation ( NYSE",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1062047-000114036118040187-s002461x2_ex99-1"
+    },
+    {
+      "token": "Corporation",
+      "context": "2018 - Convergys Corporation ( NYSE :",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1062047-000114036118040187-s002461x2_ex99-1"
+    },
+    {
+      "token": "SYNNEX",
+      "context": "the acquisition by SYNNEX , and Wachtell",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1062047-000114036118040187-s002461x2_ex99-1"
+    },
+    {
+      "token": "Exult",
+      "context": "investor.relations@hewitt.com Hewitt and Exult Stockholders Approve Merger",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1168478-000119312504165715-dex991"
+    },
+    {
+      "token": ".",
+      "context": "Anthem , Inc . made a direct",
+      "predicted": "B-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1816233-000121390021036176-ea143821ex99-2_sharecareinc"
+    },
+    {
+      "token": "Click",
+      "context": "outstanding shares of Click . The acquisition",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1389067-000147793215003521-rdsh_ex991"
+    },
+    {
+      "token": "Gateway",
+      "context": "the closing , Gateway was merged into",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1169770-000141588912001272-ex99-08202012_060812"
+    },
+    {
+      "token": "PacTrust",
+      "context": "was merged into PacTrust Bank , a",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1169770-000141588912001272-ex99-08202012_060812"
+    },
+    {
+      "token": "Bank",
+      "context": "merged into PacTrust Bank , a subsidiary",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1169770-000141588912001272-ex99-08202012_060812"
+    },
+    {
+      "token": "Beach",
+      "context": "completed acquisition of Beach Business Bank and",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1169770-000141588912001272-ex99-08202012_060812"
+    },
+    {
+      "token": "Business",
+      "context": "acquisition of Beach Business Bank and the",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1169770-000141588912001272-ex99-08202012_060812"
+    },
+    {
+      "token": "Bank",
+      "context": "of Beach Business Bank and the completion",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1169770-000141588912001272-ex99-08202012_060812"
+    },
+    {
+      "token": ".",
+      "context": "International , Inc . Completed Acquisitions of",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": "Ewenkeqi",
+      "context": "the mergers of Ewenkeqi Beixue Diary Co",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": "Beixue",
+      "context": "mergers of Ewenkeqi Beixue Diary Co ,",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": "Diary",
+      "context": "of Ewenkeqi Beixue Diary Co , Ltd",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": "Co",
+      "context": "Ewenkeqi Beixue Diary Co , Ltd (",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": ",",
+      "context": "Beixue Diary Co , Ltd ( \"",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": "Ltd",
+      "context": "Diary Co , Ltd ( \" Ewenkeqi",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": "Hulunbeier",
+      "context": "\" ) , Hulunbeier Beixue Diary Co",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": "Beixue",
+      "context": ") , Hulunbeier Beixue Diary Co .",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": "Diary",
+      "context": ", Hulunbeier Beixue Diary Co . ,",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": "Co",
+      "context": "Hulunbeier Beixue Diary Co . , Ltd",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": ".",
+      "context": "Beixue Diary Co . , Ltd (",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": ",",
+      "context": "Diary Co . , Ltd ( \"",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": "Ltd",
+      "context": "Co . , Ltd ( \" Hulunbeier",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": "Hulunbeier",
+      "context": ") , and Hulunbeier Hailaer Beixue Diary",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": "Hailaer",
+      "context": ", and Hulunbeier Hailaer Beixue Diary Factory",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": "Beixue",
+      "context": "and Hulunbeier Hailaer Beixue Diary Factory (",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": "Diary",
+      "context": "Hulunbeier Hailaer Beixue Diary Factory ( \"",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": "Factory",
+      "context": "Hailaer Beixue Diary Factory ( \" Hulunbeier",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1177274-000107997310000115-rodo_ex99x1"
+    },
+    {
+      "token": "TRUNITY",
+      "context": "99 . 1 TRUNITY ANNOUNCES RESTRUCTURING PLAN",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "802257-000157570515000076-ex99_1"
+    },
+    {
+      "token": "Newco4Pharmacy",
+      "context": "- up , Newco4Pharmacy , LLC ,",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "802257-000157570515000076-ex99_1"
+    },
+    {
+      "token": ",",
+      "context": "up , Newco4Pharmacy , LLC , that",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "802257-000157570515000076-ex99_1"
+    },
+    {
+      "token": "LLC",
+      "context": ", Newco4Pharmacy , LLC , that intends",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "802257-000157570515000076-ex99_1"
+    },
+    {
+      "token": "CNS",
+      "context": "LLC - Completed CNS - Wellness is",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1516887-000107878212003261-f8ka2121912_ex99z1"
+    },
+    {
+      "token": "-",
+      "context": "- Completed CNS - Wellness is now",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1516887-000107878212003261-f8ka2121912_ex99z1"
+    },
+    {
+      "token": "Wellness",
+      "context": "Completed CNS - Wellness is now a",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1516887-000107878212003261-f8ka2121912_ex99z1"
+    },
+    {
+      "token": "Wellness",
+      "context": "Owned Subsidiary of Wellness Center USA ,",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1516887-000107878212003261-f8ka2121912_ex99z1"
+    },
+    {
+      "token": "Wellness",
+      "context": ". Similarly , Wellness Center 's pending",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1516887-000107878212003261-f8ka2121912_ex99z1"
+    },
+    {
+      "token": "Center",
+      "context": "Similarly , Wellness Center 's pending acquisition",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1516887-000107878212003261-f8ka2121912_ex99z1"
+    },
+    {
+      "token": "CAM",
+      "context": "common stock of CAM for $ 8.25",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1299033-000091384917000012-ex99-1"
+    },
+    {
+      "token": ",",
+      "context": "and TRx Pharmaceuticals , LLC ( TRx",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1534120-000110465917069443-a17-27312_1ex99d1"
+    },
+    {
+      "token": "LLC",
+      "context": "TRx Pharmaceuticals , LLC ( TRx )",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1534120-000110465917069443-a17-27312_1ex99d1"
+    },
+    {
+      "token": "Zylera",
+      "context": "Cerecor will acquire Zylera Pharma Corp .",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1534120-000110465917069443-a17-27312_1ex99d1"
+    },
+    {
+      "token": "Pharma",
+      "context": "will acquire Zylera Pharma Corp . The",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1534120-000110465917069443-a17-27312_1ex99d1"
+    },
+    {
+      "token": "Corp",
+      "context": "acquire Zylera Pharma Corp . The transactions",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1534120-000110465917069443-a17-27312_1ex99d1"
+    },
+    {
+      "token": ".",
+      "context": "Zylera Pharma Corp . The transactions have",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1534120-000110465917069443-a17-27312_1ex99d1"
+    },
+    {
+      "token": "Zylera",
+      "context": "the acquisition of Zylera Pharma Corp ,",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1534120-000110465917069443-a17-27312_1ex99d1"
+    },
+    {
+      "token": "Pharma",
+      "context": "acquisition of Zylera Pharma Corp , paid",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1534120-000110465917069443-a17-27312_1ex99d1"
+    },
+    {
+      "token": "Corp",
+      "context": "of Zylera Pharma Corp , paid in",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1534120-000110465917069443-a17-27312_1ex99d1"
+    },
+    {
+      "token": "SmartBank",
+      "context": "this acquisition , SmartBank expands its footprint",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1038773-000162828018006083-a050118-pressreleasexcompl"
+    },
+    {
+      "token": "AEW",
+      "context": "was purchased from AEW Value Investors II",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1397807-000089710113001359-amreit133994_ex99-1"
+    },
+    {
+      "token": "Value",
+      "context": "purchased from AEW Value Investors II ,",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1397807-000089710113001359-amreit133994_ex99-1"
+    },
+    {
+      "token": "Investors",
+      "context": "from AEW Value Investors II , L",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1397807-000089710113001359-amreit133994_ex99-1"
+    },
+    {
+      "token": "II",
+      "context": "AEW Value Investors II , L .",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1397807-000089710113001359-amreit133994_ex99-1"
+    },
+    {
+      "token": ",",
+      "context": "Value Investors II , L . P",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1397807-000089710113001359-amreit133994_ex99-1"
+    },
+    {
+      "token": "L",
+      "context": "Investors II , L . P .",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1397807-000089710113001359-amreit133994_ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "II , L . P . ,",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1397807-000089710113001359-amreit133994_ex99-1"
+    },
+    {
+      "token": "P",
+      "context": ", L . P . , a",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1397807-000089710113001359-amreit133994_ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "L . P . , a value",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1397807-000089710113001359-amreit133994_ex99-1"
+    },
+    {
+      "token": "Black",
+      "context": "Page 2 , Black Hills Corp .",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1130464-000113046408000222-ex99"
+    },
+    {
+      "token": "Hills",
+      "context": "2 , Black Hills Corp . Completes",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1130464-000113046408000222-ex99"
+    },
+    {
+      "token": "Corp",
+      "context": ", Black Hills Corp . Completes Purchase",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1130464-000113046408000222-ex99"
+    },
+    {
+      "token": ".",
+      "context": "Black Hills Corp . Completes Purchase The",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1130464-000113046408000222-ex99"
+    },
+    {
+      "token": ",",
+      "context": "GOLDLEAF FINANCIAL SOLUTIONS , INC . COMPLETE",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "779152-000092623609000044-exh99-1"
+    },
+    {
+      "token": "INC",
+      "context": "FINANCIAL SOLUTIONS , INC . COMPLETE ACQUISITION",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "779152-000092623609000044-exh99-1"
+    },
+    {
+      "token": ".",
+      "context": "SOLUTIONS , INC . COMPLETE ACQUISITION TRANSACTION",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "779152-000092623609000044-exh99-1"
+    },
+    {
+      "token": ",",
+      "context": "Henry & Associates , Inc . (",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "779152-000092623609000044-exh99-1"
+    },
+    {
+      "token": "Inc",
+      "context": "& Associates , Inc . ( Nasdaq",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "779152-000092623609000044-exh99-1"
+    },
+    {
+      "token": ".",
+      "context": "Associates , Inc . ( Nasdaq :",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "779152-000092623609000044-exh99-1"
+    },
+    {
+      "token": "Plymouth",
+      "context": ", 2018 ) Plymouth Industrial REIT ,",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1515816-000117152018000523-ex99-2"
+    },
+    {
+      "token": "Industrial",
+      "context": "2018 ) Plymouth Industrial REIT , Inc",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1515816-000117152018000523-ex99-2"
+    },
+    {
+      "token": "REIT",
+      "context": ") Plymouth Industrial REIT , Inc .",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1515816-000117152018000523-ex99-2"
+    },
+    {
+      "token": ",",
+      "context": "Plymouth Industrial REIT , Inc . (",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1515816-000117152018000523-ex99-2"
+    },
+    {
+      "token": "Inc",
+      "context": "Industrial REIT , Inc . ( the",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1515816-000117152018000523-ex99-2"
+    },
+    {
+      "token": ".",
+      "context": "REIT , Inc . ( the \"",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1515816-000117152018000523-ex99-2"
+    },
+    {
+      "token": "JupiterImages",
+      "context": "- owned subsidiary JupiterImages Corporation has acquired",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1083712-000107261304002191-exh99-1_13068"
+    },
+    {
+      "token": "Corporation",
+      "context": "owned subsidiary JupiterImages Corporation has acquired all",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1083712-000107261304002191-exh99-1_13068"
+    },
+    {
+      "token": "Armata",
+      "context": "of Bacteriophage Company Armata Pharmaceuticals , Inc",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "921114-000114420419025292-tv521048_ex99-1"
+    },
+    {
+      "token": ",",
+      "context": "Assisted Living Concepts , Inc . (",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "929994-000134100413000746-exh991"
+    },
+    {
+      "token": "Inc",
+      "context": "Living Concepts , Inc . ( NYSE",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "929994-000134100413000746-exh991"
+    },
+    {
+      "token": ".",
+      "context": "Concepts , Inc . ( NYSE :",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "929994-000134100413000746-exh991"
+    },
+    {
+      "token": "Industries",
+      "context": "of Keystone Automotive Industries , Inc .",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1065696-000110465907075631-a07-26908_1ex99d1"
+    },
+    {
+      "token": ",",
+      "context": "Keystone Automotive Industries , Inc . As",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1065696-000110465907075631-a07-26908_1ex99d1"
+    },
+    {
+      "token": "Inc",
+      "context": "Automotive Industries , Inc . As a",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1065696-000110465907075631-a07-26908_1ex99d1"
+    },
+    {
+      "token": ".",
+      "context": "Industries , Inc . As a result",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1065696-000110465907075631-a07-26908_1ex99d1"
+    },
+    {
+      "token": "BSC",
+      "context": "acquired , from BSC , all intellectual",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1334589-000109543512000032-pr_07182012"
+    },
+    {
+      "token": "YP",
+      "context": "acquisition also enables YP to enrich its",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1045742-000114036107011914-ex99_1"
+    },
+    {
+      "token": "Greif",
+      "context": "of Caraustar Industries Greif , Inc .",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "43920-000004392019000014-ex-991pressreleasecaraustar"
+    },
+    {
+      "token": ",",
+      "context": "Caraustar Industries Greif , Inc . (",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "43920-000004392019000014-ex-991pressreleasecaraustar"
+    },
+    {
+      "token": "Inc",
+      "context": "Industries Greif , Inc . ( NYSE",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "43920-000004392019000014-ex-991pressreleasecaraustar"
+    },
+    {
+      "token": ".",
+      "context": "Greif , Inc . ( NYSE :",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "43920-000004392019000014-ex-991pressreleasecaraustar"
+    },
+    {
+      "token": "Georgia",
+      "context": "Completes Acquisition of Georgia Biomass and its",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1592057-000110465920089315-tm2026255d1_ex99-1"
+    },
+    {
+      "token": "Enviva",
+      "context": "the acquisition , Enviva 's total annual",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1592057-000110465920089315-tm2026255d1_ex99-1"
+    },
+    {
+      "token": "Pretium",
+      "context": "99 . 1 Pretium , Ares Management",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1555039-000119312521006316-d77699dex991"
+    },
+    {
+      "token": "Ares",
+      "context": "1 Pretium , Ares Management and Front",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1555039-000119312521006316-d77699dex991"
+    },
+    {
+      "token": "Management",
+      "context": "Pretium , Ares Management and Front Yard",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1555039-000119312521006316-d77699dex991"
+    },
+    {
+      "token": "Front",
+      "context": "Ares Management and Front Yard Residential Complete",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1555039-000119312521006316-d77699dex991"
+    },
+    {
+      "token": "Yard",
+      "context": "Management and Front Yard Residential Complete First",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1555039-000119312521006316-d77699dex991"
+    },
+    {
+      "token": "Residential",
+      "context": "and Front Yard Residential Complete First -",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1555039-000119312521006316-d77699dex991"
+    },
+    {
+      "token": "Pretium",
+      "context": "the transaction makes Pretium the second -",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1555039-000119312521006316-d77699dex991"
+    },
+    {
+      "token": "ANADIGICS",
+      "context": ", 2016 - ANADIGICS , Inc .",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "940332-000143774916027765-ex99-1"
+    },
+    {
+      "token": ",",
+      "context": "2016 - ANADIGICS , Inc . (",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "940332-000143774916027765-ex99-1"
+    },
+    {
+      "token": "Inc",
+      "context": "- ANADIGICS , Inc . ( \"",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "940332-000143774916027765-ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "ANADIGICS , Inc . ( \" ANADIGICS",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "940332-000143774916027765-ex99-1"
+    },
+    {
+      "token": "E2open",
+      "context": "99 . 1 E2open and CC Neuberger",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1800347-000110465921019902-tm215568d1_ex99-1"
+    },
+    {
+      "token": "CC",
+      "context": "1 E2open and CC Neuberger Principal Holdings",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1800347-000110465921019902-tm215568d1_ex99-1"
+    },
+    {
+      "token": "Neuberger",
+      "context": "E2open and CC Neuberger Principal Holdings I",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1800347-000110465921019902-tm215568d1_ex99-1"
+    },
+    {
+      "token": "Principal",
+      "context": "and CC Neuberger Principal Holdings I Complete",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1800347-000110465921019902-tm215568d1_ex99-1"
+    },
+    {
+      "token": "Holdings",
+      "context": "CC Neuberger Principal Holdings I Complete Business",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1800347-000110465921019902-tm215568d1_ex99-1"
+    },
+    {
+      "token": "I",
+      "context": "Neuberger Principal Holdings I Complete Business Combination",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1800347-000110465921019902-tm215568d1_ex99-1"
+    },
+    {
+      "token": "CC",
+      "context": "business combination with CC Neuberger Principal Holdings",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1800347-000110465921019902-tm215568d1_ex99-1"
+    },
+    {
+      "token": "Neuberger",
+      "context": "combination with CC Neuberger Principal Holdings I",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1800347-000110465921019902-tm215568d1_ex99-1"
+    },
+    {
+      "token": "Principal",
+      "context": "with CC Neuberger Principal Holdings I and",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1800347-000110465921019902-tm215568d1_ex99-1"
+    },
+    {
+      "token": "Holdings",
+      "context": "CC Neuberger Principal Holdings I and begin",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1800347-000110465921019902-tm215568d1_ex99-1"
+    },
+    {
+      "token": "I",
+      "context": "Neuberger Principal Holdings I and begin our",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1800347-000110465921019902-tm215568d1_ex99-1"
+    },
+    {
+      "token": "CRI",
+      "context": "- Acquisition provides CRI with proprietary analytics",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1356093-000121390018016534-f8k112018ex99-1_creative"
+    },
+    {
+      "token": "Christie",
+      "context": "\" ) from Christie Digital Systems ,",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1356093-000121390018016534-f8k112018ex99-1_creative"
+    },
+    {
+      "token": "Digital",
+      "context": ") from Christie Digital Systems , Inc",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1356093-000121390018016534-f8k112018ex99-1_creative"
+    },
+    {
+      "token": "Systems",
+      "context": "from Christie Digital Systems , Inc .",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1356093-000121390018016534-f8k112018ex99-1_creative"
+    },
+    {
+      "token": ",",
+      "context": "Christie Digital Systems , Inc . Based",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1356093-000121390018016534-f8k112018ex99-1_creative"
+    },
+    {
+      "token": "Inc",
+      "context": "Digital Systems , Inc . Based in",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1356093-000121390018016534-f8k112018ex99-1_creative"
+    },
+    {
+      "token": ".",
+      "context": "Systems , Inc . Based in Atlanta",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1356093-000121390018016534-f8k112018ex99-1_creative"
+    },
+    {
+      "token": "SuiteSpeed",
+      "context": "intention to acquire SuiteSpeed in the spring",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1021096-000114420405025672-v023733_ex99-1"
+    },
+    {
+      "token": "Shenzhen",
+      "context": ", 2011 , Shenzhen New Media Consulting",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": "New",
+      "context": "2011 , Shenzhen New Media Consulting Co",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": "Media",
+      "context": ", Shenzhen New Media Consulting Co .",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": "Consulting",
+      "context": "Shenzhen New Media Consulting Co . Ltd",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": "Co",
+      "context": "New Media Consulting Co . Ltd (",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "Media Consulting Co . Ltd ( \"",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": "Ltd",
+      "context": "Consulting Co . Ltd ( \" SNMC",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": "Co",
+      "context": "Shenzhen Media Investment Co . Ltd .",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "Media Investment Co . Ltd . (",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": "Ltd",
+      "context": "Investment Co . Ltd . ( \"",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "Co . Ltd . ( \" SMI",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": "Bin Li",
+      "context": "the Agreement , Bin Li , a related",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": "Feng",
+      "context": "Company , and Feng Yu , an",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": "Yu",
+      "context": ", and Feng Yu , an individual",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": "Shenzhen",
+      "context": "equity interest in Shenzhen Directory Marketing Management",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": "Management",
+      "context": "Shenzhen Directory Marketing Management Co . Ltd",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": "Co",
+      "context": "Directory Marketing Management Co . Ltd .",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "Marketing Management Co . Ltd . ,",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": "Ltd",
+      "context": "Management Co . Ltd . , all",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "Co . Ltd . , all of",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": "SNMC",
+      "context": "respectively , to SNMC . In addition",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": "SNMC",
+      "context": "in BMMC to SNMC in consideration for",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1353307-000143774911009865-ex99-1"
+    },
+    {
+      "token": "BluePhoenix",
+      "context": "1 / 2014 BluePhoenix and ATERAS Complete",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1029581-000121390014008666-f8k120114ex99i_bluephoenix"
+    },
+    {
+      "token": "ATERAS",
+      "context": "2014 BluePhoenix and ATERAS Complete Merger ;",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1029581-000121390014008666-f8k120114ex99i_bluephoenix"
+    },
+    {
+      "token": "USALSC",
+      "context": "Western Life . USALSC announced today the",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1463913-000143774918022265-ex_131859"
+    },
+    {
+      "token": "Insurance",
+      "context": "Great Western Life Insurance Company and renamed",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1463913-000143774918022265-ex_131859"
+    },
+    {
+      "token": "Company",
+      "context": "Western Life Insurance Company and renamed the",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1463913-000143774918022265-ex_131859"
+    },
+    {
+      "token": "US",
+      "context": "company acquisition by US Alliance Corporation .",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1463913-000143774918022265-ex_131859"
+    },
+    {
+      "token": "Alliance",
+      "context": "acquisition by US Alliance Corporation . US",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1463913-000143774918022265-ex_131859"
+    },
+    {
+      "token": "Corporation",
+      "context": "by US Alliance Corporation . US Alliance",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1463913-000143774918022265-ex_131859"
+    },
+    {
+      "token": "IBIS",
+      "context": "COMPLETES ACQUISITION OF IBIS BIOSCIENCES , A",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "874015-000110465909001842-a09-2620_1ex99d1"
+    },
+    {
+      "token": "BIOSCIENCES",
+      "context": "ACQUISITION OF IBIS BIOSCIENCES , A SUBSIDIARY",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "874015-000110465909001842-a09-2620_1ex99d1"
+    },
+    {
+      "token": "Abbott",
+      "context": "ISIS ) and Abbott ( NYSE :",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "874015-000110465909001842-a09-2620_1ex99d1"
+    },
+    {
+      "token": "Abbott",
+      "context": "acquisition will enable Abbott to offer an",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "874015-000110465909001842-a09-2620_1ex99d1"
+    },
+    {
+      "token": "Brookline",
+      "context": "99 . 1 Brookline Bancorp , Inc",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": "Bancorp",
+      "context": ". 1 Brookline Bancorp , Inc .",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": ",",
+      "context": "1 Brookline Bancorp , Inc . and",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": "Inc",
+      "context": "Brookline Bancorp , Inc . and First",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": ".",
+      "context": "Bancorp , Inc . and First Commons",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": "First",
+      "context": "Inc . and First Commons Bank ,",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": "Commons",
+      "context": ". and First Commons Bank , N",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": "Bank",
+      "context": "and First Commons Bank , N .",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": ",",
+      "context": "First Commons Bank , N . A",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": "N",
+      "context": "Commons Bank , N . A .",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": ".",
+      "context": "Bank , N . A . Complete",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": "A",
+      "context": ", N . A . Complete Merger",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": ".",
+      "context": "N . A . Complete Merger BOSTON",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": "Brookline",
+      "context": "NEWSWIRE ) -- Brookline Bancorp , Inc",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": "Bancorp",
+      "context": ") -- Brookline Bancorp , Inc .",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": ",",
+      "context": "-- Brookline Bancorp , Inc . (",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": "Inc",
+      "context": "Brookline Bancorp , Inc . ( the",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": ".",
+      "context": "Bancorp , Inc . ( the \"",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1049782-000117184318001587-exh_991"
+    },
+    {
+      "token": "XCYTE",
+      "context": "GROUP PLC AND XCYTE THERAPIES TRANSACTIONS SHORT",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1130166-000095013606002509-file002"
+    },
+    {
+      "token": "THERAPIES",
+      "context": "PLC AND XCYTE THERAPIES TRANSACTIONS SHORT HILLS",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1130166-000095013606002509-file002"
+    },
+    {
+      "token": ".",
+      "context": "Therapies , Inc . In connection with",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1130166-000095013606002509-file002"
+    },
+    {
+      "token": "$",
+      "context": "have been between $ 5.5 million and $",
+      "predicted": "B-Generic_Info.ANNUAL_REVENUES",
+      "expected": "O",
+      "sample_id": "1145254-000114420411021525-v218243_ex99-1"
+    },
+    {
+      "token": "5.5 million",
+      "context": "been between $ 5.5 million and $ 9.9 million",
+      "predicted": "I-Generic_Info.ANNUAL_REVENUES",
+      "expected": "O",
+      "sample_id": "1145254-000114420411021525-v218243_ex99-1"
+    },
+    {
+      "token": "$",
+      "context": "$ 5.5 million and $ 9.9 million . We",
+      "predicted": "B-Generic_Info.ANNUAL_REVENUES",
+      "expected": "O",
+      "sample_id": "1145254-000114420411021525-v218243_ex99-1"
+    },
+    {
+      "token": "9.9 million",
+      "context": "5.5 million and $ 9.9 million . We believe",
+      "predicted": "I-Generic_Info.ANNUAL_REVENUES",
+      "expected": "O",
+      "sample_id": "1145254-000114420411021525-v218243_ex99-1"
+    },
+    {
+      "token": "GTT",
+      "context": "UNSi acquisition complements GTT 's strategy to",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1315255-000110465914070452-a14-22000_1ex99d1"
+    },
+    {
+      "token": "Aphton",
+      "context": "- 4371 spiess@biotechirpr.com Aphton Shareholders Approve Acquisition",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "840319-000119312505062059-dex992"
+    },
+    {
+      "token": "CID",
+      "context": "offering proceeds . CID Group Greater China",
+      "predicted": "B-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1440476-000101054910000531-smsapal8kex991082310"
+    },
+    {
+      "token": "Group",
+      "context": "proceeds . CID Group Greater China Venture",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1440476-000101054910000531-smsapal8kex991082310"
+    },
+    {
+      "token": "Greater",
+      "context": ". CID Group Greater China Venture Fund",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1440476-000101054910000531-smsapal8kex991082310"
+    },
+    {
+      "token": "China",
+      "context": "CID Group Greater China Venture Fund III",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1440476-000101054910000531-smsapal8kex991082310"
+    },
+    {
+      "token": "Venture",
+      "context": "Group Greater China Venture Fund III ,",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1440476-000101054910000531-smsapal8kex991082310"
+    },
+    {
+      "token": "Fund",
+      "context": "Greater China Venture Fund III , L",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1440476-000101054910000531-smsapal8kex991082310"
+    },
+    {
+      "token": "III",
+      "context": "China Venture Fund III , L .",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1440476-000101054910000531-smsapal8kex991082310"
+    },
+    {
+      "token": ",",
+      "context": "Venture Fund III , L . P",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1440476-000101054910000531-smsapal8kex991082310"
+    },
+    {
+      "token": "L",
+      "context": "Fund III , L . P .",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1440476-000101054910000531-smsapal8kex991082310"
+    },
+    {
+      "token": ".",
+      "context": "III , L . P . was",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1440476-000101054910000531-smsapal8kex991082310"
+    },
+    {
+      "token": "P",
+      "context": ", L . P . was the",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1440476-000101054910000531-smsapal8kex991082310"
+    },
+    {
+      "token": ".",
+      "context": "L . P . was the lead",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1440476-000101054910000531-smsapal8kex991082310"
+    },
+    {
+      "token": "Delta",
+      "context": "used by its Delta Design subsidiary 's",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "21535-000129993306003241-exhibit1"
+    },
+    {
+      "token": "Gold",
+      "context": ". SG Aurora Gold Corp Completes US$",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1037049-000114420412055632-v325455_ex99-1"
+    },
+    {
+      "token": "Corp",
+      "context": "SG Aurora Gold Corp Completes US$ 5 Million",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1037049-000114420412055632-v325455_ex99-1"
+    },
+    {
+      "token": "Aurora",
+      "context": ", 2012 - Aurora Gold Corporation (",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1037049-000114420412055632-v325455_ex99-1"
+    },
+    {
+      "token": "Gold",
+      "context": "2012 - Aurora Gold Corporation ( the",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1037049-000114420412055632-v325455_ex99-1"
+    },
+    {
+      "token": "Corporation",
+      "context": "- Aurora Gold Corporation ( the \"",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1037049-000114420412055632-v325455_ex99-1"
+    },
+    {
+      "token": "StatSure",
+      "context": "an agreement with StatSure Diagnostic Systems ,",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1092662-000109266215000008-ex99_1"
+    },
+    {
+      "token": "Diagnostic",
+      "context": "agreement with StatSure Diagnostic Systems , Inc",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1092662-000109266215000008-ex99_1"
+    },
+    {
+      "token": "Systems",
+      "context": "with StatSure Diagnostic Systems , Inc .",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1092662-000109266215000008-ex99_1"
+    },
+    {
+      "token": ",",
+      "context": "StatSure Diagnostic Systems , Inc . (",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1092662-000109266215000008-ex99_1"
+    },
+    {
+      "token": "Inc",
+      "context": "Diagnostic Systems , Inc . ( SDS",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1092662-000109266215000008-ex99_1"
+    },
+    {
+      "token": ".",
+      "context": "Systems , Inc . ( SDS )",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1092662-000109266215000008-ex99_1"
+    },
+    {
+      "token": "SDS",
+      "context": ") to acquire SDS ' interest in",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1092662-000109266215000008-ex99_1"
+    },
+    {
+      "token": "Publix",
+      "context": "Florida , to Publix . \" The",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1481832-000148183214000101-press_releasex-xsunbeltx6x"
+    },
+    {
+      "token": ".",
+      "context": ", to Publix . \" The addition",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1481832-000148183214000101-press_releasex-xsunbeltx6x"
+    },
+    {
+      "token": "Green",
+      "context": "FOR IMMEDIATE RELEASE Green Plains Completes Sale",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1635650-000163565021000014-gpp-20210322xex99_1"
+    },
+    {
+      "token": "Plains",
+      "context": "IMMEDIATE RELEASE Green Plains Completes Sale of",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1635650-000163565021000014-gpp-20210322xex99_1"
+    },
+    {
+      "token": "Green",
+      "context": "NEWSWIRE ) \uf02d Green Plains Inc .",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1635650-000163565021000014-gpp-20210322xex99_1"
+    },
+    {
+      "token": "Plains",
+      "context": ") \uf02d Green Plains Inc . (",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1635650-000163565021000014-gpp-20210322xex99_1"
+    },
+    {
+      "token": "Inc",
+      "context": "\uf02d Green Plains Inc . ( NASDAQ",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1635650-000163565021000014-gpp-20210322xex99_1"
+    },
+    {
+      "token": ".",
+      "context": "Green Plains Inc . ( NASDAQ :",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1635650-000163565021000014-gpp-20210322xex99_1"
+    },
+    {
+      "token": "/",
+      "context": "Acquisition of ElecJet / Real Graphene and",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1606698-000109690621002928-alpp_ex99"
+    },
+    {
+      "token": "/",
+      "context": "has acquired ElecJet / Real Graphene (",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1606698-000109690621002928-alpp_ex99"
+    },
+    {
+      "token": "Apparel",
+      "context": "acquisition of International Apparel Group provides us",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "904979-000110262406000144-totalentertainmenti"
+    },
+    {
+      "token": "Group",
+      "context": "of International Apparel Group provides us with",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "904979-000110262406000144-totalentertainmenti"
+    },
+    {
+      "token": ",",
+      "context": "Berkowitz , PC , acted as its",
+      "predicted": "I-Advisors.LEGAL_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1253317-000117184318002766-exh_991"
+    },
+    {
+      "token": "Laredo",
+      "context": ", 2017 - Laredo Petroleum , Inc",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1528129-000152812917000138-ex992lpi102517"
+    },
+    {
+      "token": "Petroleum",
+      "context": "2017 - Laredo Petroleum , Inc .",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1528129-000152812917000138-ex992lpi102517"
+    },
+    {
+      "token": ",",
+      "context": "- Laredo Petroleum , Inc . (",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1528129-000152812917000138-ex992lpi102517"
+    },
+    {
+      "token": "Inc",
+      "context": "Laredo Petroleum , Inc . ( NYSE",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1528129-000152812917000138-ex992lpi102517"
+    },
+    {
+      "token": ".",
+      "context": "Petroleum , Inc . ( NYSE :",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1528129-000152812917000138-ex992lpi102517"
+    },
+    {
+      "token": ",",
+      "context": "ImageWare \u00ae Systems , Inc . (",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "941685-000110465907090276-a07-31682_1ex99d2"
+    },
+    {
+      "token": "Inc",
+      "context": "\u00ae Systems , Inc . ( AMEX",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "941685-000110465907090276-a07-31682_1ex99d2"
+    },
+    {
+      "token": ".",
+      "context": "Systems , Inc . ( AMEX :",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "941685-000110465907090276-a07-31682_1ex99d2"
+    },
+    {
+      "token": "Maxspeed",
+      "context": ". Neoware acquired Maxspeed for a net",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "894743-000095011605003620-ex99-1"
+    },
+    {
+      "token": "AgStar",
+      "context": "expected capacity . AgStar Financial Services ,",
+      "predicted": "B-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1309402-000107878209000988-gpre8k070609ex991"
+    },
+    {
+      "token": "Financial",
+      "context": "capacity . AgStar Financial Services , PCA",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1309402-000107878209000988-gpre8k070609ex991"
+    },
+    {
+      "token": "Services",
+      "context": ". AgStar Financial Services , PCA and",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1309402-000107878209000988-gpre8k070609ex991"
+    },
+    {
+      "token": "Green",
+      "context": "per year . Green Plains owns 51",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1309402-000107878209000988-gpre8k070609ex991"
+    },
+    {
+      "token": "Plains",
+      "context": "year . Green Plains owns 51 %",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1309402-000107878209000988-gpre8k070609ex991"
+    },
+    {
+      "token": "DWS",
+      "context": "17 , 2019 DWS Group 's RREEF",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1542447-000154244719000079-rptprovidenceacquisitionpr"
+    },
+    {
+      "token": "Group",
+      "context": ", 2019 DWS Group 's RREEF Property",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1542447-000154244719000079-rptprovidenceacquisitionpr"
+    },
+    {
+      "token": "DWS",
+      "context": "Atlanta shopping center DWS Group announced today",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1542447-000154244719000079-rptprovidenceacquisitionpr"
+    },
+    {
+      "token": "Group",
+      "context": "shopping center DWS Group announced today that",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1542447-000154244719000079-rptprovidenceacquisitionpr"
+    },
+    {
+      "token": ",",
+      "context": "2019 - Apptio , Inc . ,",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1419625-000119312519005899-d670038dex991"
+    },
+    {
+      "token": "Inc",
+      "context": "- Apptio , Inc . , software",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1419625-000119312519005899-d670038dex991"
+    },
+    {
+      "token": ".",
+      "context": "Apptio , Inc . , software that",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1419625-000119312519005899-d670038dex991"
+    },
+    {
+      "token": ".",
+      "context": "GREENPOINT FINANCIAL CORP . Melville , N",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "352510-000095012304011665-y03120exv99w1"
+    },
+    {
+      "token": "NewBridge",
+      "context": "- 0916 jillian.gibson@newbridgebank.com NewBridge Bank and Premier",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "714530-000114420415013057-v403166_ex99-1"
+    },
+    {
+      "token": "Bank",
+      "context": "0916 jillian.gibson@newbridgebank.com NewBridge Bank and Premier Commercial",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "714530-000114420415013057-v403166_ex99-1"
+    },
+    {
+      "token": "Premier",
+      "context": "NewBridge Bank and Premier Commercial Bank Complete",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "714530-000114420415013057-v403166_ex99-1"
+    },
+    {
+      "token": "Commercial",
+      "context": "Bank and Premier Commercial Bank Complete Merger",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "714530-000114420415013057-v403166_ex99-1"
+    },
+    {
+      "token": "Bank",
+      "context": "and Premier Commercial Bank Complete Merger Greensboro",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "714530-000114420415013057-v403166_ex99-1"
+    },
+    {
+      "token": "NewBridge",
+      "context": ", 2015 - NewBridge Bancorp ( NASDAQ",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "714530-000114420415013057-v403166_ex99-1"
+    },
+    {
+      "token": "Bancorp",
+      "context": "2015 - NewBridge Bancorp ( NASDAQ :",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "714530-000114420415013057-v403166_ex99-1"
+    },
+    {
+      "token": "KU",
+      "context": "Lannett has acquired KU from UCB for",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "57725-000110465915082454-a15-24190_1ex99d1"
+    },
+    {
+      "token": "NNN",
+      "context": "INDIANAPOLIS , INDIANA NNN Healthcare / Office",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1360604-000129993307000480-exhibit8"
+    },
+    {
+      "token": "Healthcare",
+      "context": ", INDIANA NNN Healthcare / Office REIT",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1360604-000129993307000480-exhibit8"
+    },
+    {
+      "token": "/",
+      "context": "INDIANA NNN Healthcare / Office REIT announces",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1360604-000129993307000480-exhibit8"
+    },
+    {
+      "token": "Office",
+      "context": "NNN Healthcare / Office REIT announces 6",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1360604-000129993307000480-exhibit8"
+    },
+    {
+      "token": "REIT",
+      "context": "Healthcare / Office REIT announces 6 .",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1360604-000129993307000480-exhibit8"
+    },
+    {
+      "token": "Grow",
+      "context": "$ 9,030,000 . Grow Capital purchased the",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1448558-000144586619000881-grwc_ex99z1"
+    },
+    {
+      "token": "Capital",
+      "context": "9,030,000 . Grow Capital purchased the company",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1448558-000144586619000881-grwc_ex99z1"
+    },
+    {
+      "token": ".",
+      "context": "Hitech , Inc . Announces Acquisition of",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1328511-000114420408034569-v117061_ex99-1"
+    },
+    {
+      "token": "AMBI",
+      "context": "\" ) and AMBI Pharmaceuticals , Inc",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1328511-000114420408034569-v117061_ex99-1"
+    },
+    {
+      "token": "Pharmaceuticals",
+      "context": ") and AMBI Pharmaceuticals , Inc .",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1328511-000114420408034569-v117061_ex99-1"
+    },
+    {
+      "token": ",",
+      "context": "and AMBI Pharmaceuticals , Inc . (",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1328511-000114420408034569-v117061_ex99-1"
+    },
+    {
+      "token": "Inc",
+      "context": "AMBI Pharmaceuticals , Inc . ( \"",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1328511-000114420408034569-v117061_ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "Pharmaceuticals , Inc . ( \" AMBI",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1328511-000114420408034569-v117061_ex99-1"
+    },
+    {
+      "token": "$",
+      "context": "revenues of approximately $ 2.7 million and net",
+      "predicted": "B-Generic_Info.ANNUAL_REVENUES",
+      "expected": "O",
+      "sample_id": "1328511-000114420408034569-v117061_ex99-1"
+    },
+    {
+      "token": "2.7 million",
+      "context": "of approximately $ 2.7 million and net income",
+      "predicted": "I-Generic_Info.ANNUAL_REVENUES",
+      "expected": "O",
+      "sample_id": "1328511-000114420408034569-v117061_ex99-1"
+    },
+    {
+      "token": "PCTEL",
+      "context": "are acquiring from PCTEL has deep expertise",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1057083-000156459017015573-pcti-ex991_7"
+    },
+    {
+      "token": "SmartStop",
+      "context": "FOR IMMEDIATE RELEASE SmartStop Self Storage REIT",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Self",
+      "context": "IMMEDIATE RELEASE SmartStop Self Storage REIT ,",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Storage",
+      "context": "RELEASE SmartStop Self Storage REIT , Inc",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "REIT",
+      "context": "SmartStop Self Storage REIT , Inc .",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": ",",
+      "context": "Self Storage REIT , Inc . Closes",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Inc",
+      "context": "Storage REIT , Inc . Closes Acquisition",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": ".",
+      "context": "REIT , Inc . Closes Acquisition of",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Strategic",
+      "context": "Closes Acquisition of Strategic Storage Trust IV",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Storage",
+      "context": "Acquisition of Strategic Storage Trust IV ,",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Trust",
+      "context": "of Strategic Storage Trust IV , Inc",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "IV",
+      "context": "Strategic Storage Trust IV , Inc .",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": ",",
+      "context": "Storage Trust IV , Inc . in",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Inc",
+      "context": "Trust IV , Inc . in $",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": ".",
+      "context": "IV , Inc . in $ 380 Million",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "SmartStop",
+      "context": ", 2021 - SmartStop Self Storage REIT",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Self",
+      "context": "2021 - SmartStop Self Storage REIT ,",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Storage",
+      "context": "- SmartStop Self Storage REIT , Inc",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "REIT",
+      "context": "SmartStop Self Storage REIT , Inc .",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": ",",
+      "context": "Self Storage REIT , Inc . (",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Inc",
+      "context": "Storage REIT , Inc . ( \"",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": ".",
+      "context": "REIT , Inc . ( \" SmartStop",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "SST",
+      "context": ", in which SST IV merged into",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "IV",
+      "context": "in which SST IV merged into a",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "SmartStop",
+      "context": "a subsidiary of SmartStop ( the \"",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "SmartStop",
+      "context": "the Merger , SmartStop acquired all of",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "SST",
+      "context": "estate owned by SST IV , consisting",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "IV",
+      "context": "owned by SST IV , consisting of",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Robert",
+      "context": "shareholders \" . Robert A . Stanger",
+      "predicted": "B-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "A",
+      "context": "\" . Robert A . Stanger &",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": ".",
+      "context": ". Robert A . Stanger & Company",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Stanger",
+      "context": "Robert A . Stanger & Company ,",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "&",
+      "context": "A . Stanger & Company , Inc",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Company",
+      "context": ". Stanger & Company , Inc .",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": ",",
+      "context": "Stanger & Company , Inc . served",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Inc",
+      "context": "& Company , Inc . served as",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": ".",
+      "context": "Company , Inc . served as financial",
+      "predicted": "I-Advisors.GENERIC_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Venable",
+      "context": "financial advisor and Venable LLP served as",
+      "predicted": "B-Advisors.LEGAL_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "LLP",
+      "context": "advisor and Venable LLP served as legal",
+      "predicted": "I-Advisors.LEGAL_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Nelson",
+      "context": "committee , while Nelson Mullins Riley &",
+      "predicted": "B-Advisors.LEGAL_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Mullins",
+      "context": ", while Nelson Mullins Riley & Scarborough",
+      "predicted": "I-Advisors.LEGAL_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Riley",
+      "context": "while Nelson Mullins Riley & Scarborough LLP",
+      "predicted": "I-Advisors.LEGAL_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "&",
+      "context": "Nelson Mullins Riley & Scarborough LLP served",
+      "predicted": "I-Advisors.LEGAL_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Scarborough",
+      "context": "Mullins Riley & Scarborough LLP served as",
+      "predicted": "I-Advisors.LEGAL_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "LLP",
+      "context": "Riley & Scarborough LLP served as legal",
+      "predicted": "I-Advisors.LEGAL_CONSULTING_COMPANY",
+      "expected": "O",
+      "sample_id": "1680232-000119312521083932-d101040dex991"
+    },
+    {
+      "token": "Spidle",
+      "context": "the acquisition of Spidle and repay Flotek",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "928054-000128748105000007-ex99-1"
+    },
+    {
+      "token": "Safeguard",
+      "context": "99 . 1 Safeguard Scientifics Realizes $",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "86115-000115752310007314-a6549302ex99-1"
+    },
+    {
+      "token": "Scientifics",
+      "context": ". 1 Safeguard Scientifics Realizes $ 144 Million",
+      "predicted": "I-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "86115-000115752310007314-a6549302ex99-1"
+    },
+    {
+      "token": "Safeguard",
+      "context": ", 2010 -- Safeguard Scientifics , Inc",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "86115-000115752310007314-a6549302ex99-1"
+    },
+    {
+      "token": "Scientifics",
+      "context": "2010 -- Safeguard Scientifics , Inc .",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "86115-000115752310007314-a6549302ex99-1"
+    },
+    {
+      "token": ",",
+      "context": "-- Safeguard Scientifics , Inc . (",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "86115-000115752310007314-a6549302ex99-1"
+    },
+    {
+      "token": "Inc",
+      "context": "Safeguard Scientifics , Inc . ( NYSE",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "86115-000115752310007314-a6549302ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "Scientifics , Inc . ( NYSE :",
+      "predicted": "I-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "86115-000115752310007314-a6549302ex99-1"
+    },
+    {
+      "token": "Clarient",
+      "context": "of partner company Clarient , Inc .",
+      "predicted": "B-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "86115-000115752310007314-a6549302ex99-1"
+    },
+    {
+      "token": ",",
+      "context": "partner company Clarient , Inc . (",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "86115-000115752310007314-a6549302ex99-1"
+    },
+    {
+      "token": "Inc",
+      "context": "company Clarient , Inc . ( Nasdaq",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "86115-000115752310007314-a6549302ex99-1"
+    },
+    {
+      "token": ".",
+      "context": "Clarient , Inc . ( Nasdaq :",
+      "predicted": "I-Parties.ACQUIRED_COMPANY",
+      "expected": "O",
+      "sample_id": "86115-000115752310007314-a6549302ex99-1"
+    },
+    {
+      "token": "Datalink",
+      "context": "acquisition will be Datalink 's second in",
+      "predicted": "B-Parties.BUYING_COMPANY",
+      "expected": "O",
+      "sample_id": "1056923-000110465912067627-a12-22876_1ex99d1"
+    },
+    {
+      "token": "KeyBanc",
+      "context": "credit facility from KeyBanc Capital Markets (",
+      "predicted": "B-Parties.SELLING_COMPANY",
+      "expected": "O",
+      "sample_id": "1069258-000110465906065490-a06-20824_1ex99d1"
+    }
+  ]
+}

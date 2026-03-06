@@ -200,14 +200,13 @@ class NerGuardHybridV2(NerGuardHybrid):
             self._routing_meta["regex_hint_routes"] += 1
 
         # ── Change 5 + O-span routing ─────────────────────────────
-        from src.core.constants import DEFAULT_ENTROPY_THRESHOLD, DEFAULT_CONFIDENCE_THRESHOLD
         o_spans = assemble_uncertain_o_spans(
             pred_labels=subword_preds,
             entropy_flat=entropy_vals,
             conf_flat=conf_vals,
             offset_flat=offset_mapping,
-            entropy_threshold=DEFAULT_ENTROPY_THRESHOLD,
-            confidence_threshold=DEFAULT_CONFIDENCE_THRESHOLD,
+            entropy_threshold=self.entity_router.entropy_threshold,
+            confidence_threshold=self.entity_router.confidence_threshold,
         )
 
         # Skip O-spans that overlap with regex hints (already handled above)

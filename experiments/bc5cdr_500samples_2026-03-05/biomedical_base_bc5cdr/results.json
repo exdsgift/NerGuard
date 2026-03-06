@@ -1,0 +1,68 @@
+{
+  "system": "Biomedical Base",
+  "dataset": "bc5cdr",
+  "n_samples": 500,
+  "n_tokens": 9816,
+  "n_evaluated_labels": 2,
+  "token_level": {
+    "precision_macro": 0.8488602700111777,
+    "precision_micro": 0.8652482269503546,
+    "precision_weighted": 0.8651631158770128,
+    "recall_macro": 0.8352213743701948,
+    "recall_micro": 0.8880800727934486,
+    "recall_weighted": 0.8880800727934486,
+    "f1_macro": 0.8404315033461943,
+    "f1_micro": 0.8765154916928604,
+    "f1_weighted": 0.8761651419053227
+  },
+  "entity_level": {
+    "precision": 0.863481228668942,
+    "recall": 0.8961038961038961,
+    "f1": 0.8794901506373116
+  },
+  "latency": {
+    "mean_ms": 25.754831314086914,
+    "median_ms": 24.703145027160645,
+    "p95_ms": 28.333783149719228,
+    "p99_ms": 33.04196834564207,
+    "throughput_samples_per_sec": 38.8276664601192
+  },
+  "memory": {
+    "peak_mb": 0.3651742935180664,
+    "gpu_peak_mb": 14.482421875
+  },
+  "per_length_bucket": {
+    "short": {
+      "f1_macro": 0.8186011313202235,
+      "n_samples": 314
+    },
+    "medium": {
+      "f1_macro": 0.842118301266004,
+      "n_samples": 184
+    },
+    "long": {
+      "f1_macro": 0.99,
+      "n_samples": 2
+    }
+  },
+  "per_entity_frequency": {
+    "tail": {
+      "f1_macro": 0.0,
+      "n_entities": 0,
+      "entities": []
+    },
+    "mid": {
+      "f1_macro": 0.0,
+      "n_entities": 0,
+      "entities": []
+    },
+    "head": {
+      "f1_macro": 0.8404315033461943,
+      "n_entities": 2,
+      "entities": [
+        "Chemical",
+        "Disease"
+      ]
+    }
+  }
+}

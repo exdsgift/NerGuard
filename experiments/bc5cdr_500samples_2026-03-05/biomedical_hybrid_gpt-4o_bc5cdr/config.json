@@ -1,0 +1,38 @@
+{
+  "system": "Biomedical Hybrid (gpt-4o)",
+  "dataset": "bc5cdr",
+  "timestamp": "2026-03-05_22-50",
+  "system_name": "Biomedical Hybrid (gpt-4o)",
+  "dataset_name": "bc5cdr",
+  "system_native_labels": [
+    "Chemical",
+    "Disease"
+  ],
+  "dataset_native_labels": [
+    "Chemical",
+    "Disease"
+  ],
+  "evaluated_labels": [
+    "Chemical",
+    "Disease"
+  ],
+  "excluded_labels": {
+    "from_system": [],
+    "from_dataset": []
+  },
+  "mapping_applied": false,
+  "semantic_alignment": null,
+  "tier": 1,
+  "n_evaluated": 2,
+  "n_system_total": 2,
+  "n_dataset_total": 2,
+  "benchmark_config": {
+    "seed": 42,
+    "batch_size": 16,
+    "runs": 3,
+    "model_path": "./models/mdeberta-pii-safe/final",
+    "llm_source": "openai",
+    "llm_model": "gpt-4o",
+    "device": "auto"
+  }
+}

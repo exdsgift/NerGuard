@@ -1,0 +1,65 @@
+======================================================================
+NER PII Benchmark — Presidio × nvidia-pii
+======================================================================
+
+Tier: 2
+Evaluated labels: 15
+  System labels: 24
+  Dataset labels: 54
+  Mapping applied: True
+
+Samples: 1000
+Tokens: 135894
+
+--- Token-Level Metrics ---
+  Precision (macro/micro/weighted): 0.5627 / 0.4737 / 0.6906
+  Recall    (macro/micro/weighted): 0.6017 / 0.6535 / 0.6535
+  F1        (macro/micro/weighted): 0.4933 / 0.5493 / 0.5884
+
+--- Entity-Level Metrics (seqeval) ---
+  Precision: 0.5697
+  Recall:    0.8073
+  F1:        0.6680
+
+--- Latency ---
+  Mean:   86.09 ms
+  Median: 69.61 ms
+  P95:    181.52 ms
+  P99:    264.41 ms
+  Throughput: 11.6 samples/sec
+
+--- Per-Entity F1 Scores ---
+  B-date_of_birth                P=1.0000  R=1.0000  F1=1.0000  (n=131.0)
+  B-email                        P=1.0000  R=0.9939  F1=0.9970  (n=494.0)
+  B-ipv4                         P=0.9091  R=1.0000  F1=0.9524  (n=90.0)
+  B-first_name                   P=1.0000  R=0.8672  F1=0.9289  (n=595.0)
+  B-ipv6                         P=1.0000  R=0.8542  F1=0.9213  (n=48.0)
+  B-url                          P=0.9155  R=0.9028  F1=0.9091  (n=432.0)
+  I-time                         P=0.9277  R=0.8280  F1=0.8750  (n=93.0)
+  B-ssn                          P=0.7183  R=0.9808  F1=0.8293  (n=52.0)
+  B-time                         P=1.0000  R=0.6069  F1=0.7554  (n=173.0)
+  I-phone_number                 P=0.6054  R=0.7596  F1=0.6738  (n=208.0)
+  B-phone_number                 P=0.4926  R=0.8130  F1=0.6135  (n=246.0)
+  B-date                         P=0.4084  R=0.8764  F1=0.5571  (n=712.0)
+  B-city                         P=0.2081  R=0.7583  F1=0.3265  (n=211.0)
+  I-date                         P=0.1854  R=0.7075  F1=0.2938  (n=212.0)
+  I-street_address               P=1.0000  R=0.1545  F1=0.2676  (n=479.0)
+  B-street_address               P=0.5185  R=0.1530  F1=0.2363  (n=183.0)
+  I-first_name                   P=0.2500  R=0.2000  F1=0.2222  (n=5.0)
+  B-certificate_license_number   P=0.1284  R=0.5465  F1=0.2080  (n=86.0)
+  I-city                         P=0.1181  R=0.6818  F1=0.2013  (n=44.0)
+  I-credit_debit_card            P=0.9118  R=0.1131  F1=0.2013  (n=274.0)
+  B-credit_debit_card            P=0.5238  R=0.1158  F1=0.1897  (n=95.0)
+  B-last_name                    P=0.2444  R=0.1285  F1=0.1685  (n=428.0)
+  I-last_name                    P=0.0019  R=1.0000  F1=0.0037  (n=1.0)
+  I-certificate_license_number   P=0.0000  R=0.0000  F1=0.0000  (n=5.0)
+  I-email                        P=0.0000  R=0.0000  F1=0.0000  (n=1.0)
+
+--- Per-Length Bucket ---
+  short   : F1=0.4602 (n=9)
+  medium  : F1=0.5010 (n=238)
+  long    : F1=0.4999 (n=753)
+
+--- Error Summary ---
+  False positives: 500
+  False negatives: 500

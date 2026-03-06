@@ -1,0 +1,670 @@
+{
+  "n_errors": 95,
+  "errors": [
+    {
+      "token": "puerperium",
+      "context": "Myocardial infarction in puerperium is infrequently reported",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "202"
+    },
+    {
+      "token": "death",
+      "context": "against convulsions and death .",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "207"
+    },
+    {
+      "token": "NS",
+      "context": "Incubation with NS - 718 resulted",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "211"
+    },
+    {
+      "token": "718",
+      "context": "with NS - 718 resulted in significantly",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "211"
+    },
+    {
+      "token": "Structural",
+      "context": "Structural abnormalities in the",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "212"
+    },
+    {
+      "token": "abnormalities",
+      "context": "Structural abnormalities in the brains",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "212"
+    },
+    {
+      "token": "in",
+      "context": "Structural abnormalities in the brains of",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "212"
+    },
+    {
+      "token": "antirifampicin",
+      "context": "1 patient , antirifampicin antibodies were detected",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "218"
+    },
+    {
+      "token": "bipolarity",
+      "context": ", psychosis , bipolarity , and secondary",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "230"
+    },
+    {
+      "token": "reuptake",
+      "context": "associated with serotonin reuptake inhibitors .",
+      "predicted": "I-Chemical",
+      "expected": "O",
+      "sample_id": "230"
+    },
+    {
+      "token": "inhibitors",
+      "context": "with serotonin reuptake inhibitors .",
+      "predicted": "I-Chemical",
+      "expected": "O",
+      "sample_id": "230"
+    },
+    {
+      "token": "and",
+      "context": "- induced nausea and vomiting .",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "253"
+    },
+    {
+      "token": "affective",
+      "context": "to have persistent affective disorders once the",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "256"
+    },
+    {
+      "token": "disorders",
+      "context": "have persistent affective disorders once the initial",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "256"
+    },
+    {
+      "token": "GABAergic",
+      "context": ") on the GABAergic and dopaminergic systems",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "274"
+    },
+    {
+      "token": "renal",
+      "context": "old man with renal amyloidosis and SVC",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "278"
+    },
+    {
+      "token": "virgaurea",
+      "context": "virgaurea extract exerts its",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "282"
+    },
+    {
+      "token": "extract",
+      "context": "virgaurea extract exerts its protective",
+      "predicted": "I-Chemical",
+      "expected": "O",
+      "sample_id": "282"
+    },
+    {
+      "token": "cystic",
+      "context": "treatment of severe cystic acne .",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "296"
+    },
+    {
+      "token": "pressure",
+      "context": "had no blood pressure elevation at initial",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "298"
+    },
+    {
+      "token": "suicidal",
+      "context": "the drug with suicidal intent or with",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "300"
+    },
+    {
+      "token": "substance",
+      "context": "a background of substance dependence .",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "300"
+    },
+    {
+      "token": "dependence",
+      "context": "background of substance dependence .",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "300"
+    },
+    {
+      "token": "intestinal",
+      "context": "be complicated by intestinal bleeding",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "303"
+    },
+    {
+      "token": "HAG",
+      "context": "AKI compared with HAG ( 95 %",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "330"
+    },
+    {
+      "token": "alkylating",
+      "context": "Ifosfamide is an alkylating agent useful in",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "335"
+    },
+    {
+      "token": "acute",
+      "context": "patients with an acute infarction .",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "353"
+    },
+    {
+      "token": "dl",
+      "context": "APD more than dl - sotalol ,",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "354"
+    },
+    {
+      "token": "blood",
+      "context": "five patients experienced blood disorders , one",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "367"
+    },
+    {
+      "token": "disorders",
+      "context": "patients experienced blood disorders , one of",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "367"
+    },
+    {
+      "token": "wounds",
+      "context": "treatment of burn wounds .",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "369"
+    },
+    {
+      "token": "NS",
+      "context": "same dose of NS - 718 .",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "373"
+    },
+    {
+      "token": "abductor",
+      "context": "treatments prior to abductor paralysis and continued",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "375"
+    },
+    {
+      "token": "antidepressant",
+      "context": "The antidepressant trazodone is a",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "379"
+    },
+    {
+      "token": "major",
+      "context": "Co - morbid major depressive disorder (",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "405"
+    },
+    {
+      "token": "SSRIs",
+      "context": "blood levels of SSRIs .",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "421"
+    },
+    {
+      "token": "interstitial",
+      "context": ", but mild interstitial fibrosis and tubular",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "422"
+    },
+    {
+      "token": "tubular",
+      "context": "interstitial fibrosis and tubular atrophy was still",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "422"
+    },
+    {
+      "token": "organochlorine",
+      "context": ") is an organochlorine insecticide with known",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "434"
+    },
+    {
+      "token": "cardiocirculatory",
+      "context": "All patients developed cardiocirculatory arrest associated with",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "437"
+    },
+    {
+      "token": "arrest",
+      "context": "patients developed cardiocirculatory arrest associated with extreme",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "437"
+    },
+    {
+      "token": "AV",
+      "context": "junctional rhythms and AV dissociation were frequent",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "447"
+    },
+    {
+      "token": "neurological",
+      "context": "Metronidazole can produce neurological complications although it",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "453"
+    },
+    {
+      "token": "complications",
+      "context": "can produce neurological complications although it is",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "453"
+    },
+    {
+      "token": "TFL",
+      "context": "TFL is an active",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "467"
+    },
+    {
+      "token": "Yellow",
+      "context": "Yellow phosphorus , a",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "470"
+    },
+    {
+      "token": "depression",
+      "context": "hypertension with minimal depression of cardiac function",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "471"
+    },
+    {
+      "token": "water",
+      "context": "tubular sodium and water handling were assessed",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "472"
+    },
+    {
+      "token": "reductions",
+      "context": "produced similar marked reductions in diastolic blood",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "480"
+    },
+    {
+      "token": "in",
+      "context": "similar marked reductions in diastolic blood pressure",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "480"
+    },
+    {
+      "token": "diastolic",
+      "context": "marked reductions in diastolic blood pressure and",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "480"
+    },
+    {
+      "token": "blood",
+      "context": "reductions in diastolic blood pressure and contractile",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "480"
+    },
+    {
+      "token": "pressure",
+      "context": "in diastolic blood pressure and contractile force",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "480"
+    },
+    {
+      "token": "and",
+      "context": "diastolic blood pressure and contractile force (",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "480"
+    },
+    {
+      "token": "contractile",
+      "context": "blood pressure and contractile force ( LVdP",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "480"
+    },
+    {
+      "token": "force",
+      "context": "pressure and contractile force ( LVdP /",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "480"
+    },
+    {
+      "token": "deterioration",
+      "context": "patient had episodic deterioration of vision in",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "489"
+    },
+    {
+      "token": "of",
+      "context": "had episodic deterioration of vision in both",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "489"
+    },
+    {
+      "token": "vision",
+      "context": "episodic deterioration of vision in both eyes",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "489"
+    },
+    {
+      "token": "rhIGF",
+      "context": "6 ) received rhIGF - I ,",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "493"
+    },
+    {
+      "token": "antidepressants",
+      "context": "a range of antidepressants .",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "497"
+    },
+    {
+      "token": "cardiovascular",
+      "context": "30 - day cardiovascular death or myocardial",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "504"
+    },
+    {
+      "token": "death",
+      "context": "- day cardiovascular death or myocardial infarction",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "504"
+    },
+    {
+      "token": "fat",
+      "context": "and suggesting prior fat necrosis .",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "515"
+    },
+    {
+      "token": "psychiatric",
+      "context": "high prevalence of psychiatric disturbance , outcomes",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "520"
+    },
+    {
+      "token": "disturbance",
+      "context": "prevalence of psychiatric disturbance , outcomes for",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "520"
+    },
+    {
+      "token": "HT",
+      "context": ", combined continuous HT significantly increased the",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "522"
+    },
+    {
+      "token": "peripheral",
+      "context": "possibility of obtaining peripheral pain",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "533"
+    },
+    {
+      "token": "systolic",
+      "context": "prolonged but reversible systolic and diastolic dysfunction",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "539"
+    },
+    {
+      "token": "and",
+      "context": "but reversible systolic and diastolic dysfunction .",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "539"
+    },
+    {
+      "token": "diastolic",
+      "context": "reversible systolic and diastolic dysfunction .",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "539"
+    },
+    {
+      "token": "dysfunction",
+      "context": "systolic and diastolic dysfunction .",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "539"
+    },
+    {
+      "token": "of",
+      "context": "diet had thrombosis of the atria of",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "542"
+    },
+    {
+      "token": "the",
+      "context": "had thrombosis of the atria of the",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "542"
+    },
+    {
+      "token": "atria",
+      "context": "thrombosis of the atria of the heart",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "542"
+    },
+    {
+      "token": "confusion",
+      "context": "According to the confusion assessment method for",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "564"
+    },
+    {
+      "token": "muricholate",
+      "context": "of beta - muricholate contributed for 5",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "570"
+    },
+    {
+      "token": "death",
+      "context": "leading causes of death in the United",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "580"
+    },
+    {
+      "token": "HDL",
+      "context": "total cholesterol / HDL cholesterol less than",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "585"
+    },
+    {
+      "token": "hepatocellular",
+      "context": "drug - induced hepatocellular jaundice have 11",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "591"
+    },
+    {
+      "token": "acute",
+      "context": "canine model of acute heart failure .",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "603"
+    },
+    {
+      "token": "insulin",
+      "context": "acute effect of insulin treatment on the",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "618"
+    },
+    {
+      "token": "organochloride",
+      "context": "Lindane is an organochloride pesticide and scabicide",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "621"
+    },
+    {
+      "token": "muscle",
+      "context": "bed and focal muscle necroses .",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "624"
+    },
+    {
+      "token": "acute",
+      "context": "intestine results in acute liver dysfunction characterized",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "630"
+    },
+    {
+      "token": "PTRA",
+      "context": "nonsignificantly in the PTRA group ( 1",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "632"
+    },
+    {
+      "token": "NSAIDs",
+      "context": "inflammatory drugs ( NSAIDs ) are commonly",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "640"
+    },
+    {
+      "token": "Bolus",
+      "context": "Bolus MMC 10 mg",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "652"
+    },
+    {
+      "token": "dependence",
+      "context": "cases of methamphetamine dependence should be screened",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "653"
+    },
+    {
+      "token": "TRH",
+      "context": "effect occurred following TRH but was less",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "656"
+    },
+    {
+      "token": "LAST",
+      "context": "this model of LAST .",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "666"
+    },
+    {
+      "token": "cannabinoid",
+      "context": "the lack of cannabinoid CB1 receptors increased",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "679"
+    },
+    {
+      "token": "motor",
+      "context": "the severity of motor impairment and DA",
+      "predicted": "B-Disease",
+      "expected": "O",
+      "sample_id": "679"
+    },
+    {
+      "token": "impairment",
+      "context": "severity of motor impairment and DA lesion",
+      "predicted": "I-Disease",
+      "expected": "O",
+      "sample_id": "679"
+    },
+    {
+      "token": "ED50",
+      "context": "The ED50 doses were 16",
+      "predicted": "B-Chemical",
+      "expected": "O",
+      "sample_id": "687"
+    }
+  ]
+}

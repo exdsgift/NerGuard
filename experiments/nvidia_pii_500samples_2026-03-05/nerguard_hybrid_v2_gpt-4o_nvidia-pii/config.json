@@ -1,0 +1,214 @@
+{
+  "system": "NerGuard Hybrid V2 (gpt-4o)",
+  "dataset": "nvidia-pii",
+  "timestamp": "2026-03-05_23-09",
+  "system_name": "NerGuard Hybrid V2 (gpt-4o)",
+  "dataset_name": "nvidia-pii",
+  "system_native_labels": [
+    "AGE",
+    "BUILDINGNUM",
+    "CITY",
+    "CREDITCARDNUMBER",
+    "DATE",
+    "DRIVERLICENSENUM",
+    "EMAIL",
+    "GENDER",
+    "GIVENNAME",
+    "IDCARDNUM",
+    "PASSPORTNUM",
+    "SEX",
+    "SOCIALNUM",
+    "STREET",
+    "SURNAME",
+    "TAXNUM",
+    "TELEPHONENUM",
+    "TIME",
+    "TITLE",
+    "ZIPCODE"
+  ],
+  "dataset_native_labels": [
+    "account_number",
+    "age",
+    "api_key",
+    "bank_routing_number",
+    "biometric_identifier",
+    "blood_type",
+    "certificate_license_number",
+    "city",
+    "company_name",
+    "coordinate",
+    "country",
+    "county",
+    "credit_debit_card",
+    "customer_id",
+    "cvv",
+    "date",
+    "date_of_birth",
+    "date_time",
+    "device_identifier",
+    "education_level",
+    "email",
+    "employee_id",
+    "employment_status",
+    "fax_number",
+    "first_name",
+    "gender",
+    "health_plan_beneficiary_number",
+    "http_cookie",
+    "ipv4",
+    "ipv6",
+    "language",
+    "last_name",
+    "license_plate",
+    "mac_address",
+    "medical_record_number",
+    "occupation",
+    "password",
+    "phone_number",
+    "pin",
+    "political_view",
+    "postcode",
+    "race_ethnicity",
+    "religious_belief",
+    "sexuality",
+    "ssn",
+    "state",
+    "street_address",
+    "swift_bic",
+    "tax_id",
+    "time",
+    "unique_id",
+    "url",
+    "user_name",
+    "vehicle_identifier"
+  ],
+  "evaluated_labels": [
+    "age",
+    "certificate_license_number",
+    "city",
+    "credit_debit_card",
+    "date",
+    "date_of_birth",
+    "email",
+    "first_name",
+    "gender",
+    "last_name",
+    "phone_number",
+    "postcode",
+    "ssn",
+    "street_address",
+    "tax_id",
+    "time"
+  ],
+  "excluded_labels": {
+    "from_system": [
+      "BUILDINGNUM",
+      "IDCARDNUM",
+      "PASSPORTNUM",
+      "SEX",
+      "TITLE"
+    ],
+    "from_dataset": [
+      "account_number",
+      "api_key",
+      "bank_routing_number",
+      "biometric_identifier",
+      "blood_type",
+      "company_name",
+      "coordinate",
+      "country",
+      "county",
+      "customer_id",
+      "cvv",
+      "date_time",
+      "device_identifier",
+      "education_level",
+      "employee_id",
+      "employment_status",
+      "fax_number",
+      "health_plan_beneficiary_number",
+      "http_cookie",
+      "ipv4",
+      "ipv6",
+      "language",
+      "license_plate",
+      "mac_address",
+      "medical_record_number",
+      "occupation",
+      "password",
+      "pin",
+      "political_view",
+      "race_ethnicity",
+      "religious_belief",
+      "sexuality",
+      "state",
+      "swift_bic",
+      "unique_id",
+      "url",
+      "user_name",
+      "vehicle_identifier"
+    ]
+  },
+  "mapping_applied": true,
+  "semantic_alignment": {
+    "GIVENNAME": [
+      "first_name"
+    ],
+    "SURNAME": [
+      "last_name"
+    ],
+    "EMAIL": [
+      "email"
+    ],
+    "TELEPHONENUM": [
+      "phone_number"
+    ],
+    "CITY": [
+      "city"
+    ],
+    "STREET": [
+      "street_address"
+    ],
+    "ZIPCODE": [
+      "postcode"
+    ],
+    "SOCIALNUM": [
+      "ssn"
+    ],
+    "TAXNUM": [
+      "tax_id"
+    ],
+    "DRIVERLICENSENUM": [
+      "certificate_license_number"
+    ],
+    "CREDITCARDNUMBER": [
+      "credit_debit_card"
+    ],
+    "DATE": [
+      "date",
+      "date_of_birth"
+    ],
+    "TIME": [
+      "time"
+    ],
+    "AGE": [
+      "age"
+    ],
+    "GENDER": [
+      "gender"
+    ]
+  },
+  "tier": 2,
+  "n_evaluated": 16,
+  "n_system_total": 20,
+  "n_dataset_total": 54,
+  "benchmark_config": {
+    "seed": 42,
+    "batch_size": 16,
+    "runs": 3,
+    "model_path": "./models/mdeberta-pii-safe/final",
+    "llm_source": "openai",
+    "llm_model": "gpt-4o",
+    "device": "auto"
+  }
+}

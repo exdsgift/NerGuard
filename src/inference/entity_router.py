@@ -2,31 +2,19 @@
 Entity-Specific Router for NerGuard.
 
 Routes predictions to LLM only for entity types where LLM corrections
-have proven beneficial, based on empirical analysis from Chapter 7.
+have proven beneficial. The routing decision is based on:
+1. Uncertainty thresholds (Shannon entropy, softmax confidence)
+2. Entity type filtering (some types benefit from LLM, others don't)
+3. BIO position (B- vs I- tokens may route differently)
 
-This module implements selective routing that:
-- Routes numeric entities (CREDITCARD, TELEPHONE) where LLM excels
-- Blocks name entities (GIVENNAME, SURNAME) where LLM causes harm
-- Blocks I- (continuation) tokens since LLM harms them across all types
-- Supports per-entity-type threshold configuration
-
-Key Finding (2026-01-28):
-    B- tokens benefit from LLM (e.g., B-TELEPHONENUM: +12.9%)
-    I- tokens are harmed by LLM (e.g., I-TELEPHONENUM: -8.8%)
-    This is because LLMs struggle with BIO sequence constraints.
+This module is task-agnostic: routing configuration is supplied via
+RouteConfig or constructor parameters.
 """
 
 import logging
 from typing import Dict, Optional, Set, Tuple
 
-from src.core.constants import (
-    DEFAULT_ENTROPY_THRESHOLD,
-    DEFAULT_CONFIDENCE_THRESHOLD,
-    ROUTABLE_ENTITIES,
-    BLOCKED_ENTITIES,
-    ROUTABLE_I_ENTITIES,
-    ENTITY_THRESHOLDS,
-)
+from src.core.route_config import RouteConfig
 
 logger = logging.getLogger(__name__)
 
@@ -38,24 +26,20 @@ class EntitySpecificRouter:
     2. Entity type (some types benefit from LLM, others don't)
     3. Per-entity-type threshold configuration
 
-    This addresses the finding that hybrid routing shows:
-    - +23.6% improvement on CREDITCARDNUMBER
-    - -5.7% degradation on SURNAME
-
-    By selectively routing, we capture benefits while avoiding harm.
+    Can be initialized from a RouteConfig or with individual parameters.
 
     Example:
-        >>> router = EntitySpecificRouter()
-        >>> router.should_route("B-CREDITCARDNUMBER", entropy=0.8, confidence=0.6)
+        >>> from src.core.route_config import RouteConfig
+        >>> config = RouteConfig(entropy_threshold=0.5, confidence_threshold=0.8)
+        >>> router = EntitySpecificRouter.from_config(config)
+        >>> router.should_route("B-DISEASE", entropy=0.8, confidence=0.6)
         True
-        >>> router.should_route("B-SURNAME", entropy=0.8, confidence=0.6)
-        False
     """
 
     def __init__(
         self,
-        entropy_threshold: float = DEFAULT_ENTROPY_THRESHOLD,
-        confidence_threshold: float = DEFAULT_CONFIDENCE_THRESHOLD,
+        entropy_threshold: float = 0.583,
+        confidence_threshold: float = 0.787,
         routable_entities: Optional[Set[str]] = None,
         blocked_entities: Optional[Set[str]] = None,
         routable_i_entities: Optional[Set[str]] = None,
@@ -69,22 +53,22 @@ class EntitySpecificRouter:
         Args:
             entropy_threshold: Default entropy threshold for routing
             confidence_threshold: Default confidence threshold for routing
-            routable_entities: Entity types routed for B- tokens (all except GIVENNAME)
-            blocked_entities: Entity types never routed (GIVENNAME: net -7 empirically)
+            routable_entities: Entity types routed for B- tokens. None = route all types.
+            blocked_entities: Entity types never routed. None = block none.
             routable_i_entities: Entity types where I- routing is also allowed.
-                Empirically only CREDITCARDNUMBER (+120 net) and TELEPHONENUM (+76 net)
-                benefit from I- routing with V13. All other I- tokens are blocked
-                (I-SURNAME: -16, I-GIVENNAME: -15, I-DATE: -12, I-EMAIL: -6, etc.)
+                None = same as routable_entities.
             entity_thresholds: Per-entity-type threshold overrides
             enable_selective: Whether to apply entity-type filtering (False = route all)
             block_continuation_tokens: Whether to apply I- continuation token filtering
         """
         self.entropy_threshold = entropy_threshold
         self.confidence_threshold = confidence_threshold
-        self.routable_entities = routable_entities or ROUTABLE_ENTITIES
-        self.blocked_entities = blocked_entities or BLOCKED_ENTITIES
-        self.routable_i_entities = routable_i_entities or ROUTABLE_I_ENTITIES
-        self.entity_thresholds = entity_thresholds or ENTITY_THRESHOLDS
+        self.routable_entities = routable_entities
+        self.blocked_entities = blocked_entities or set()
+        self.routable_i_entities = routable_i_entities
+        self.entity_thresholds = entity_thresholds or {
+            "DEFAULT": {"entropy": entropy_threshold, "confidence": confidence_threshold}
+        }
         self.enable_selective = enable_selective
         self.block_continuation_tokens = block_continuation_tokens
 
@@ -97,6 +81,20 @@ class EntitySpecificRouter:
             "blocked_by_threshold": 0,
             "routed_by_entity": {},
         }
+
+    @classmethod
+    def from_config(cls, config: RouteConfig) -> "EntitySpecificRouter":
+        """Create a router from a RouteConfig dataclass."""
+        return cls(
+            entropy_threshold=config.entropy_threshold,
+            confidence_threshold=config.confidence_threshold,
+            routable_entities=config.routable_entities,
+            blocked_entities=config.blocked_entities,
+            routable_i_entities=config.routable_i_entities,
+            entity_thresholds=config.entity_thresholds,
+            enable_selective=config.enable_selective,
+            block_continuation_tokens=config.block_continuation_tokens,
+        )
 
     def should_route(
         self,
@@ -160,7 +158,7 @@ class EntitySpecificRouter:
         # All other I- tokens are blocked: I-SURNAME(-16), I-GIVENNAME(-15),
         # I-DATE(-12), I-EMAIL(-6), I-STREET(-6).
         if self.block_continuation_tokens and predicted_label.startswith("I-"):
-            if entity_type not in self.routable_i_entities:
+            if self.routable_i_entities is not None and entity_type not in self.routable_i_entities:
                 self.stats["blocked_by_continuation"] += 1
                 logger.debug(f"Routing blocked for I- continuation: {predicted_label}")
                 return False
@@ -173,7 +171,8 @@ class EntitySpecificRouter:
             return False
 
         # Check if entity is routable (provides benefit)
-        if entity_type in self.routable_entities:
+        # routable_entities=None means all types are routable
+        if self.routable_entities is None or entity_type in self.routable_entities:
             self.stats["routed"] += 1
             self.stats["routed_by_entity"][entity_type] = (
                 self.stats["routed_by_entity"].get(entity_type, 0) + 1
@@ -261,13 +260,15 @@ class EntitySpecificRouter:
         }
 
     def __repr__(self) -> str:
+        n_routable = "all" if self.routable_entities is None else f"{len(self.routable_entities)}"
+        n_routable_i = "all" if self.routable_i_entities is None else f"{len(self.routable_i_entities)}"
         return (
             f"EntitySpecificRouter("
             f"entropy={self.entropy_threshold}, "
             f"confidence={self.confidence_threshold}, "
             f"selective={self.enable_selective}, "
             f"block_I={self.block_continuation_tokens}, "
-            f"routable_B={len(self.routable_entities)} types, "
-            f"routable_I={len(self.routable_i_entities)} types, "
+            f"routable_B={n_routable} types, "
+            f"routable_I={n_routable_i} types, "
             f"blocked={len(self.blocked_entities)} types)"
         )

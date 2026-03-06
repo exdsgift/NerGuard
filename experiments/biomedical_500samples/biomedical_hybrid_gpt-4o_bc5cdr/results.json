@@ -1,0 +1,68 @@
+{
+  "system": "Biomedical Hybrid (gpt-4o)",
+  "dataset": "bc5cdr",
+  "n_samples": 500,
+  "n_tokens": 9498,
+  "n_evaluated_labels": 2,
+  "token_level": {
+    "precision_macro": 0.8627594411030204,
+    "precision_micro": 0.8807339449541285,
+    "precision_weighted": 0.8798512023480862,
+    "recall_macro": 0.8268710328121095,
+    "recall_micro": 0.8783165599268069,
+    "recall_weighted": 0.8783165599268069,
+    "f1_macro": 0.8430894830937796,
+    "f1_micro": 0.8795235913879982,
+    "f1_weighted": 0.8787365070480078
+  },
+  "entity_level": {
+    "precision": 0.8795749704840614,
+    "recall": 0.8900836320191159,
+    "f1": 0.8847980997624704
+  },
+  "latency": {
+    "mean_ms": 26.342174530029297,
+    "median_ms": 25.538206100463867,
+    "p95_ms": 26.021552085876465,
+    "p99_ms": 26.840493679046627,
+    "throughput_samples_per_sec": 37.9619381406812
+  },
+  "memory": {
+    "peak_mb": 10.127881050109863,
+    "gpu_peak_mb": 14.099609375
+  },
+  "per_length_bucket": {
+    "short": {
+      "f1_macro": 0.7887523961102721,
+      "n_samples": 328
+    },
+    "medium": {
+      "f1_macro": 0.8569270346525012,
+      "n_samples": 171
+    },
+    "long": {
+      "f1_macro": 1.0,
+      "n_samples": 1
+    }
+  },
+  "per_entity_frequency": {
+    "tail": {
+      "f1_macro": 0.0,
+      "n_entities": 0,
+      "entities": []
+    },
+    "mid": {
+      "f1_macro": 0.0,
+      "n_entities": 0,
+      "entities": []
+    },
+    "head": {
+      "f1_macro": 0.8430894830937796,
+      "n_entities": 2,
+      "entities": [
+        "Chemical",
+        "Disease"
+      ]
+    }
+  }
+}

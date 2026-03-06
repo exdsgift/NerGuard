@@ -1,0 +1,2021 @@
+{
+  "n_errors": 288,
+  "errors": [
+    {
+      "token": "**City,",
+      "context": "715 Canyon Dr **City, State, Postcode:** Canton,",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "4ce1b0f2b0de4e0da2e2cabbc1df3d33"
+    },
+    {
+      "token": "State,",
+      "context": "Canyon Dr **City, State, Postcode:** Canton, Massachusetts,",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "4ce1b0f2b0de4e0da2e2cabbc1df3d33"
+    },
+    {
+      "token": "**North",
+      "context": "1/4\" = 1'-0\" **North Arrow:** Indicates the",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "4ce1b0f2b0de4e0da2e2cabbc1df3d33"
+    },
+    {
+      "token": "Arrow:**",
+      "context": "= 1'-0\" **North Arrow:** Indicates the north",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4ce1b0f2b0de4e0da2e2cabbc1df3d33"
+    },
+    {
+      "token": "L.",
+      "context": "Larson b) Emma L. Larson c) Larson",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "e2fc70db969c4cec865d613662b9389f"
+    },
+    {
+      "token": "**Primary",
+      "context": "Moreno Valley - **Primary County:** Riverside County",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "e3b36678394d4c4ea75c9ebb0de0de17"
+    },
+    {
+      "token": "Field",
+      "context": "**Payment Information** | Field | Value |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "00bcf0b5a20246f6a966de937b730540"
+    },
+    {
+      "token": "Hotel**",
+      "context": "**Welcome to Our Hotel** We are delighted",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "1168396ccbfa4ba3b80ed64aa8c9b7e8"
+    },
+    {
+      "token": "Outro",
+      "context": "| 04 | Outro | 01:30 |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "bc492103ecdd4eb79ffbd1fc04e7271e"
+    },
+    {
+      "token": "Street",
+      "context": "Last Name: Woodall Street Address: 146 Gatcombe",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "425a19b1027142a7a01a77b8f1b20878"
+    },
+    {
+      "token": "|",
+      "context": "Identifier | VN1KL43M74R901234 | | Destination Coordinate|",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "2bab918aabb54f319edba88adbb72db2"
+    },
+    {
+      "token": "|",
+      "context": "| VN1KL43M74R901234 | | Destination Coordinate| 34.8871,",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "2bab918aabb54f319edba88adbb72db2"
+    },
+    {
+      "token": "Destination",
+      "context": "VN1KL43M74R901234 | | Destination Coordinate| 34.8871, 35.8785",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "2bab918aabb54f319edba88adbb72db2"
+    },
+    {
+      "token": "City:",
+      "context": "Park Ave B City: Buffalo State: New",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a18664a2de74e0c90ca81ca91d4865c"
+    },
+    {
+      "token": "State:",
+      "context": "B City: Buffalo State: New York Postcode:",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a18664a2de74e0c90ca81ca91d4865c"
+    },
+    {
+      "token": "Signature",
+      "context": "Cost | Technician's Signature | |------------|------------|--------------------|---------------|---------|-------------------|----------------|-------|-------------------------| |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "6c775d21d841442690ca6cd641bed7cd"
+    },
+    {
+      "token": "QoS",
+      "context": "VLAN ID | QoS Settings | |-------|-------------------|-----------------|-------------|---------------|-------------------------------------|---------|--------------|",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "c76e549733744bd9a99cd2b4047d9651"
+    },
+    {
+      "token": "Settings",
+      "context": "ID | QoS Settings | |-------|-------------------|-----------------|-------------|---------------|-------------------------------------|---------|--------------| |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "c76e549733744bd9a99cd2b4047d9651"
+    },
+    {
+      "token": "A",
+      "context": "500 | Warehouse A | | Hydrochloric",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "|",
+      "context": "| Warehouse A | | Hydrochloric Acid",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "|",
+      "context": "Warehouse A | | Hydrochloric Acid |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "Hydrochloric",
+      "context": "A | | Hydrochloric Acid | 300",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "Acid",
+      "context": "| | Hydrochloric Acid | 300 |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "|",
+      "context": "| Hydrochloric Acid | 300 | Warehouse",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "300",
+      "context": "Hydrochloric Acid | 300 | Warehouse B",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "|",
+      "context": "Acid | 300 | Warehouse B |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "Warehouse",
+      "context": "| 300 | Warehouse B | |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "B",
+      "context": "300 | Warehouse B | | Sulfuric",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "|",
+      "context": "| Warehouse B | | Sulfuric Acid",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "|",
+      "context": "Warehouse B | | Sulfuric Acid |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "Sulfuric",
+      "context": "B | | Sulfuric Acid | 400",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "Acid",
+      "context": "| | Sulfuric Acid | 400 |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "|",
+      "context": "| Sulfuric Acid | 400 | Warehouse",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "400",
+      "context": "Sulfuric Acid | 400 | Warehouse C",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "|",
+      "context": "Acid | 400 | Warehouse C |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "Warehouse",
+      "context": "| 400 | Warehouse C | ####",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "C",
+      "context": "400 | Warehouse C | #### 3.",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "Warehouse",
+      "context": "kits located in Warehouse A and Warehouse",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "A",
+      "context": "located in Warehouse A and Warehouse B.",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "Warehouse",
+      "context": "Warehouse A and Warehouse B. 4. Contact",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "B.",
+      "context": "A and Warehouse B. 4. Contact local",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a53def768a1430e8b355f85218f1c4a"
+    },
+    {
+      "token": "Field",
+      "context": "Inspection Report | Field | Details |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "cf5e214491104c6ca41090c234c7edac"
+    },
+    {
+      "token": "Counsel:",
+      "context": "witness Aiden Cunningham. Counsel: Good morning, Mr.",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Good",
+      "context": "Aiden Cunningham. Counsel: Good morning, Mr. Cunningham.",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "morning,",
+      "context": "Cunningham. Counsel: Good morning, Mr. Cunningham. Can",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "Mr.",
+      "context": "Counsel: Good morning, Mr. Cunningham. Can you",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "bca027738a6e4c57bfc78e57df9146f4"
+    },
+    {
+      "token": "2.",
+      "context": "by: Dr. Smith 2. MMR Vaccine: -",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "MMR",
+      "context": "Dr. Smith 2. MMR Vaccine: - Administration",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "Vaccine:",
+      "context": "Smith 2. MMR Vaccine: - Administration Date:",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "-",
+      "context": "2. MMR Vaccine: - Administration Date: 11/01/2023",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "Administration",
+      "context": "MMR Vaccine: - Administration Date: 11/01/2023 -",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "Date:",
+      "context": "Vaccine: - Administration Date: 11/01/2023 - Lot",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "-",
+      "context": "Administration Date: 11/01/2023 - Lot Number: 654321",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "Lot",
+      "context": "Date: 11/01/2023 - Lot Number: 654321 -",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "Number:",
+      "context": "11/01/2023 - Lot Number: 654321 - Administered",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "654321",
+      "context": "- Lot Number: 654321 - Administered by:",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "-",
+      "context": "Lot Number: 654321 - Administered by: Nurse",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "Administered",
+      "context": "Number: 654321 - Administered by: Nurse Johnson",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "by:",
+      "context": "654321 - Administered by: Nurse Johnson",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "ee9ffdcf5d3340a8a503e30d4e38994e"
+    },
+    {
+      "token": "God",
+      "context": "or acts of God - Normal wear",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "00c037cd9dfc4e528c315681edb8cccc"
+    },
+    {
+      "token": "MD",
+      "context": "Dr. Jane Doe, MD - Physical Therapist:",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "d949487f7830410492a46043c53a37ec"
+    },
+    {
+      "token": "State,",
+      "context": "Address Recipient City, State, Zip Code Recipient",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "809a2d58025746ec9369abf6f9d28a00"
+    },
+    {
+      "token": "Street",
+      "context": "Last Name: Ampuero Street Address: 26 Bowen",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Address:",
+      "context": "Name: Ampuero Street Address: 26 Bowen Ct",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Phone",
+      "context": "26 Bowen Ct Phone Number: 559-964-8375 Email:",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Number:",
+      "context": "Bowen Ct Phone Number: 559-964-8375 Email: adolfojohnampuero@icloud.com",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Email:",
+      "context": "Phone Number: 559-964-8375 Email: adolfojohnampuero@icloud.com Fax Number:",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Fax",
+      "context": "559-964-8375 Email: adolfojohnampuero@icloud.com Fax Number: 559-994-1898 **Service",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Number:",
+      "context": "Email: adolfojohnampuero@icloud.com Fax Number: 559-994-1898 **Service Selection**",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "**Service",
+      "context": "Fax Number: 559-994-1898 **Service Selection** Type of",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Selection**",
+      "context": "Number: 559-994-1898 **Service Selection** Type of Identity",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Type",
+      "context": "559-994-1898 **Service Selection** Type of Identity Verification:",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "of",
+      "context": "**Service Selection** Type of Identity Verification: Biometric",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Identity",
+      "context": "Selection** Type of Identity Verification: Biometric Verification",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Verification:",
+      "context": "Type of Identity Verification: Biometric Verification Biometric",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Biometric",
+      "context": "of Identity Verification: Biometric Verification Biometric Identifier:",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Verification",
+      "context": "Identity Verification: Biometric Verification Biometric Identifier: BIO-5728913645",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Biometric",
+      "context": "Verification: Biometric Verification Biometric Identifier: BIO-5728913645 Order",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Identifier:",
+      "context": "Biometric Verification Biometric Identifier: BIO-5728913645 Order Quantity:",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Order",
+      "context": "Biometric Identifier: BIO-5728913645 Order Quantity: 10 **Pricing",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Quantity:",
+      "context": "Identifier: BIO-5728913645 Order Quantity: 10 **Pricing Details**",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "10",
+      "context": "BIO-5728913645 Order Quantity: 10 **Pricing Details** Total",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "**Pricing",
+      "context": "Order Quantity: 10 **Pricing Details** Total Cost:",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Details**",
+      "context": "Quantity: 10 **Pricing Details** Total Cost: $1,500.00",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Total",
+      "context": "10 **Pricing Details** Total Cost: $1,500.00 **Payment",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Cost:",
+      "context": "**Pricing Details** Total Cost: $1,500.00 **Payment Information**",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "$1,500.00",
+      "context": "Details** Total Cost: $1,500.00 **Payment Information** Credit",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "**Payment",
+      "context": "Total Cost: $1,500.00 **Payment Information** Credit Card",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Information**",
+      "context": "Cost: $1,500.00 **Payment Information** Credit Card Number:",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Credit",
+      "context": "$1,500.00 **Payment Information** Credit Card Number: ********1234",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Card",
+      "context": "**Payment Information** Credit Card Number: ********1234 CVV:",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Number:",
+      "context": "Information** Credit Card Number: ********1234 CVV: 242",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "********1234",
+      "context": "Credit Card Number: ********1234 CVV: 242 Billing",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "CVV:",
+      "context": "Card Number: ********1234 CVV: 242 Billing Address:",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Billing",
+      "context": "********1234 CVV: 242 Billing Address: 26 Bowen",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Address:",
+      "context": "CVV: 242 Billing Address: 26 Bowen Ct",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ded85294e04847709fcb5f6bbea38d56"
+    },
+    {
+      "token": "Field",
+      "context": "**Claimant Information** | Field | Value |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "d061a5ce6ce0432baac0da6a606076be"
+    },
+    {
+      "token": "Field",
+      "context": "**Incident Description** | Field | Value |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "d061a5ce6ce0432baac0da6a606076be"
+    },
+    {
+      "token": "Field",
+      "context": "Treatment Details** | Field | Value |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "d061a5ce6ce0432baac0da6a606076be"
+    },
+    {
+      "token": "at",
+      "context": "please contact Aigerim.Mukhamedzhanov at aigerim.mukhamedzhanov@mediapulse.kz. The login",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "c8e1e522236845ac8255544b72ef2695"
+    },
+    {
+      "token": "All",
+      "context": "licensed under IL-897245-36. All work will be",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "work",
+      "context": "under IL-897245-36. All work will be carried",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "will",
+      "context": "IL-897245-36. All work will be carried out",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "be",
+      "context": "All work will be carried out in",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "carried",
+      "context": "work will be carried out in accordance",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "out",
+      "context": "will be carried out in accordance with",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "in",
+      "context": "be carried out in accordance with the",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "accordance",
+      "context": "carried out in accordance with the plumbing",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "with",
+      "context": "out in accordance with the plumbing codes",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "the",
+      "context": "in accordance with the plumbing codes and",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "plumbing",
+      "context": "accordance with the plumbing codes and regulations",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "codes",
+      "context": "with the plumbing codes and regulations of",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "and",
+      "context": "the plumbing codes and regulations of Cottage",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "regulations",
+      "context": "plumbing codes and regulations of Cottage Hills,",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "of",
+      "context": "codes and regulations of Cottage Hills, IL.",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "e97347b7dafd4662babdd4ebf6a1e610"
+    },
+    {
+      "token": "-",
+      "context": "N Euclid St - Bank Routing Number:",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "41899084eef04e3bb119b298162ea2ff"
+    },
+    {
+      "token": "Bank",
+      "context": "Euclid St - Bank Routing Number: 653124789",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "41899084eef04e3bb119b298162ea2ff"
+    },
+    {
+      "token": "Field",
+      "context": "Deposit Receipt** | Field | Details |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "02f755bfee414055b9f730c633784570"
+    },
+    {
+      "token": "Origin",
+      "context": "Route Information | Origin Point | Destination",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "afd5145d595b4c83a1095e2febfe3348"
+    },
+    {
+      "token": "Point",
+      "context": "Information | Origin Point | Destination Point",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "afd5145d595b4c83a1095e2febfe3348"
+    },
+    {
+      "token": "Destination",
+      "context": "Origin Point | Destination Point | Distance",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "afd5145d595b4c83a1095e2febfe3348"
+    },
+    {
+      "token": "Point",
+      "context": "Point | Destination Point | Distance (km)",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "afd5145d595b4c83a1095e2febfe3348"
+    },
+    {
+      "token": "Origin",
+      "context": "**Rate Sheet** | Origin | Destination |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "6d7cc7b807cc447d8cd0fdac65c77a0b"
+    },
+    {
+      "token": "Field",
+      "context": "Outage Notification | Field | Details |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "9d50ab01a7e04ac1998ba9609c1ec619"
+    },
+    {
+      "token": "|",
+      "context": "Name | Hawkins | | Date of",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "854e6bffe7bf4ff8a535a9221d94a32b"
+    },
+    {
+      "token": "|",
+      "context": "| Hawkins | | Date of Birth",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "854e6bffe7bf4ff8a535a9221d94a32b"
+    },
+    {
+      "token": "Date",
+      "context": "Hawkins | | Date of Birth |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "854e6bffe7bf4ff8a535a9221d94a32b"
+    },
+    {
+      "token": "of",
+      "context": "| | Date of Birth | 1942-12-14",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "854e6bffe7bf4ff8a535a9221d94a32b"
+    },
+    {
+      "token": "Birth",
+      "context": "| Date of Birth | 1942-12-14 |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "854e6bffe7bf4ff8a535a9221d94a32b"
+    },
+    {
+      "token": "|",
+      "context": "Date of Birth | 1942-12-14 | |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "854e6bffe7bf4ff8a535a9221d94a32b"
+    },
+    {
+      "token": "|",
+      "context": "Birth | 1942-12-14 | | Email |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "854e6bffe7bf4ff8a535a9221d94a32b"
+    },
+    {
+      "token": "|",
+      "context": "| 1942-12-14 | | Email | isabella.h@aegisinsuranceservices.co.uk",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "854e6bffe7bf4ff8a535a9221d94a32b"
+    },
+    {
+      "token": "Email",
+      "context": "1942-12-14 | | Email | isabella.h@aegisinsuranceservices.co.uk |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "854e6bffe7bf4ff8a535a9221d94a32b"
+    },
+    {
+      "token": "|",
+      "context": "| | Email | isabella.h@aegisinsuranceservices.co.uk | |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "854e6bffe7bf4ff8a535a9221d94a32b"
+    },
+    {
+      "token": "|",
+      "context": "Email | isabella.h@aegisinsuranceservices.co.uk | | Street Address",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "854e6bffe7bf4ff8a535a9221d94a32b"
+    },
+    {
+      "token": "|",
+      "context": "| isabella.h@aegisinsuranceservices.co.uk | | Street Address |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "854e6bffe7bf4ff8a535a9221d94a32b"
+    },
+    {
+      "token": "Street",
+      "context": "isabella.h@aegisinsuranceservices.co.uk | | Street Address | 221B",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "854e6bffe7bf4ff8a535a9221d94a32b"
+    },
+    {
+      "token": "Field",
+      "context": "**Policy Details** | Field | Value |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "854e6bffe7bf4ff8a535a9221d94a32b"
+    },
+    {
+      "token": "Field",
+      "context": "**Financial Information** | Field | Value |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "854e6bffe7bf4ff8a535a9221d94a32b"
+    },
+    {
+      "token": "**Bill",
+      "context": "**Bill of Lading** |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "8a910507b35a4dbaa60cb753a32daea6"
+    },
+    {
+      "token": "**Field**",
+      "context": "of Lading** | **Field** | **Details** |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "8a910507b35a4dbaa60cb753a32daea6"
+    },
+    {
+      "token": "City:",
+      "context": "789 Maple Avenue City: Syracuse State: New",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "2c5414ffdf334343accecbd1bcdcae28"
+    },
+    {
+      "token": "State:",
+      "context": "Avenue City: Syracuse State: New York Postcode:",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "2c5414ffdf334343accecbd1bcdcae28"
+    },
+    {
+      "token": "Field",
+      "context": "**Vehicle Information** | Field | Details |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "60aa3ebf629b46b8ae3147d956d30659"
+    },
+    {
+      "token": "Field",
+      "context": "**Customer Information** | Field | Details |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "60aa3ebf629b46b8ae3147d956d30659"
+    },
+    {
+      "token": "|",
+      "context": "Country | Philippines | | Date of",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "60aa3ebf629b46b8ae3147d956d30659"
+    },
+    {
+      "token": "|",
+      "context": "| Philippines | | Date of Birth",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "60aa3ebf629b46b8ae3147d956d30659"
+    },
+    {
+      "token": "Date",
+      "context": "Philippines | | Date of Birth |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "60aa3ebf629b46b8ae3147d956d30659"
+    },
+    {
+      "token": "of",
+      "context": "| | Date of Birth | 1961-02-11",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "60aa3ebf629b46b8ae3147d956d30659"
+    },
+    {
+      "token": "Birth",
+      "context": "| Date of Birth | 1961-02-11 |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "60aa3ebf629b46b8ae3147d956d30659"
+    },
+    {
+      "token": "|",
+      "context": "Date of Birth | 1961-02-11 | |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "60aa3ebf629b46b8ae3147d956d30659"
+    },
+    {
+      "token": "|",
+      "context": "Birth | 1961-02-11 | | Email |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "60aa3ebf629b46b8ae3147d956d30659"
+    },
+    {
+      "token": "|",
+      "context": "| 1961-02-11 | | Email | julianTayag@autopinnacle.com.ph",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "60aa3ebf629b46b8ae3147d956d30659"
+    },
+    {
+      "token": "Email",
+      "context": "1961-02-11 | | Email | julianTayag@autopinnacle.com.ph |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "60aa3ebf629b46b8ae3147d956d30659"
+    },
+    {
+      "token": "|",
+      "context": "| | Email | julianTayag@autopinnacle.com.ph | **Warranty",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "60aa3ebf629b46b8ae3147d956d30659"
+    },
+    {
+      "token": "Field",
+      "context": "Coverage Details** | Field | Details |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "60aa3ebf629b46b8ae3147d956d30659"
+    },
+    {
+      "token": "Field",
+      "context": "**Covered Components** | Field | Details |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "60aa3ebf629b46b8ae3147d956d30659"
+    },
+    {
+      "token": "Bill**",
+      "context": "**Freight Bill** | **Field** |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "ae6a588511814724a2de63a7a5c12f98"
+    },
+    {
+      "token": "**Field**",
+      "context": "**Freight Bill** | **Field** | **Details** |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "ae6a588511814724a2de63a7a5c12f98"
+    },
+    {
+      "token": "**Origin",
+      "context": "Logistics | | **Origin Address** | 431",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "ae6a588511814724a2de63a7a5c12f98"
+    },
+    {
+      "token": "Address**",
+      "context": "| | **Origin Address** | 431 N",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ae6a588511814724a2de63a7a5c12f98"
+    },
+    {
+      "token": "|",
+      "context": "| **Origin Address** | 431 N 4th",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ae6a588511814724a2de63a7a5c12f98"
+    },
+    {
+      "token": "City:",
+      "context": "330-575-9141 Country: USA City: Saint Clairsville **Product",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "26d79197556c40dba834dea718ba6e4a"
+    },
+    {
+      "token": "Origin",
+      "context": "07/15/2024 | | Origin Country | Bahrain",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "f195655feae5446c892ca9ed38e4ab2a"
+    },
+    {
+      "token": "Country",
+      "context": "| | Origin Country | Bahrain |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "f195655feae5446c892ca9ed38e4ab2a"
+    },
+    {
+      "token": "Destination",
+      "context": "Bahrain | | Destination Country | Not",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "f195655feae5446c892ca9ed38e4ab2a"
+    },
+    {
+      "token": "Country",
+      "context": "| | Destination Country | Not Listed",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "f195655feae5446c892ca9ed38e4ab2a"
+    },
+    {
+      "token": "Consignee",
+      "context": "Bahrain | | Consignee City | Manama",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "f195655feae5446c892ca9ed38e4ab2a"
+    },
+    {
+      "token": "City",
+      "context": "| | Consignee City | Manama |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "f195655feae5446c892ca9ed38e4ab2a"
+    },
+    {
+      "token": "Consignee",
+      "context": "Bahrain | | Consignee City | Manama",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "f195655feae5446c892ca9ed38e4ab2a"
+    },
+    {
+      "token": "City",
+      "context": "| | Consignee City | Manama |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "f195655feae5446c892ca9ed38e4ab2a"
+    },
+    {
+      "token": "North",
+      "context": "the territory of North America, with the",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "c12a9851c6b84311a265b6b405b043c4"
+    },
+    {
+      "token": "America,",
+      "context": "territory of North America, with the license",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "c12a9851c6b84311a265b6b405b043c4"
+    },
+    {
+      "token": "State",
+      "context": "laws of the State of California.",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "c12a9851c6b84311a265b6b405b043c4"
+    },
+    {
+      "token": "J.",
+      "context": "L1234567 | Dr. J. Smith, RN |",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "c1b551716bd2444496885e9c883c6aa8"
+    },
+    {
+      "token": "Origin",
+      "context": "Logistics | | Origin | USA |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "31e85d02260c4825854cb2857882cafa"
+    },
+    {
+      "token": "Swift",
+      "context": "Carrier Information | Swift BIC: ZYXKUS4G56 |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "31e85d02260c4825854cb2857882cafa"
+    },
+    {
+      "token": "Field",
+      "context": "Support Ticket** | Field | Details |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "7489a1ce5a104a0a9e0563df704be68e"
+    },
+    {
+      "token": "Field",
+      "context": "**Cargo Manifest** | Field | Value |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "9c9fddee52034382a7d49fc4f3707fb8"
+    },
+    {
+      "token": "Malibu",
+      "context": "Vehicle:** - Make: Malibu - Model: LT",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "b394cfd258e649629b67aaec172ef912"
+    },
+    {
+      "token": "\"Skyrise",
+      "context": "new project, titled \"Skyrise Apartments,\" was meticulously",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "db7aec0031204bc6843018a64d998b8b"
+    },
+    {
+      "token": "Apartments,\"",
+      "context": "project, titled \"Skyrise Apartments,\" was meticulously prepared",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "db7aec0031204bc6843018a64d998b8b"
+    },
+    {
+      "token": "-",
+      "context": "W 13 St - City: New Providence",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "fcea2c925d914180b88bab4f9ce9d772"
+    },
+    {
+      "token": "City:",
+      "context": "13 St - City: New Providence -",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "fcea2c925d914180b88bab4f9ce9d772"
+    },
+    {
+      "token": "Field",
+      "context": "Information Sheet** | Field | Information |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "d86bbef1d9e042c7ad8686f09273f49a"
+    },
+    {
+      "token": "Terrace",
+      "context": "**Product Name:** Evergreen Terrace Sofa Set -",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "efb208d2e55d470faf6e813b647de2ab"
+    },
+    {
+      "token": "Green",
+      "context": "| |------------|------|---------------------|---------------------|---------------------|-------------------------------| | Green Park | 08/15/2024",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "510bee63f0c64a4ab404de95f00d3292"
+    },
+    {
+      "token": "Park",
+      "context": "|------------|------|---------------------|---------------------|---------------------|-------------------------------| | Green Park | 08/15/2024 |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "510bee63f0c64a4ab404de95f00d3292"
+    },
+    {
+      "token": "Email:",
+      "context": "Last Name: Abdelmalek, Email: a.abdelmalek@greensparklibya.org | Venue:",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "510bee63f0c64a4ab404de95f00d3292"
+    },
+    {
+      "token": "Asphalt",
+      "context": "| Roofing | Asphalt Shingles | 1,500",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "6a9377f0cb9f4bc09ea0869ffa5bdc82"
+    },
+    {
+      "token": "Shingles",
+      "context": "Roofing | Asphalt Shingles | 1,500 sq",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "6a9377f0cb9f4bc09ea0869ffa5bdc82"
+    },
+    {
+      "token": "Street",
+      "context": "Last Name: Doe Street Address: 123 Main",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "1440f193b174462195d8dcf17065c3e8"
+    },
+    {
+      "token": "Destination",
+      "context": "Origin Coordinate | Destination City, Country |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "f83ea0330ea84e539300c31064d1c633"
+    },
+    {
+      "token": "City,",
+      "context": "Coordinate | Destination City, Country | Weight",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "f83ea0330ea84e539300c31064d1c633"
+    },
+    {
+      "token": "Country",
+      "context": "| Destination City, Country | Weight (kg)",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "f83ea0330ea84e539300c31064d1c633"
+    },
+    {
+      "token": "Air",
+      "context": "| 0-500 | Air | 2.50 |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "f83ea0330ea84e539300c31064d1c633"
+    },
+    {
+      "token": "Air",
+      "context": "| 501-1000 | Air | 2.30 |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "f83ea0330ea84e539300c31064d1c633"
+    },
+    {
+      "token": "Air",
+      "context": "| 1001-2000 | Air | 2.10 |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "f83ea0330ea84e539300c31064d1c633"
+    },
+    {
+      "token": "Sea",
+      "context": "| 0-500 | Sea | 0.80 |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "f83ea0330ea84e539300c31064d1c633"
+    },
+    {
+      "token": "Country:",
+      "context": "City: East Hartford Country: USA **Buyer Information:**",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "da7fae9b3705441f92513eed114194f7"
+    },
+    {
+      "token": "Field",
+      "context": "**Shipping Information** | Field | Details |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "ae724cf9c23243f2b6c62de8c088e375"
+    },
+    {
+      "token": "City:",
+      "context": "156 Wesley St City: Galveston State: TX",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "f2d3560868e94703996fa4dc519b2bbc"
+    },
+    {
+      "token": "Hammer",
+      "context": "- Screwdriver - Hammer - Allen key",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "6dfb888cbed64c7cba60a79403fd38e7"
+    },
+    {
+      "token": "Green",
+      "context": "- Facility Name: Green River Hydroelectric Plant",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "7d3fa6eef61a4695b7b2f315a5a1af28"
+    },
+    {
+      "token": "River",
+      "context": "Facility Name: Green River Hydroelectric Plant -",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "7d3fa6eef61a4695b7b2f315a5a1af28"
+    },
+    {
+      "token": "Hydroelectric",
+      "context": "Name: Green River Hydroelectric Plant - Company",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "7d3fa6eef61a4695b7b2f315a5a1af28"
+    },
+    {
+      "token": "Plant",
+      "context": "Green River Hydroelectric Plant - Company Name:",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "7d3fa6eef61a4695b7b2f315a5a1af28"
+    },
+    {
+      "token": "Green",
+      "context": "**Project Description:** The Green River Hydroelectric Plant,",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "7d3fa6eef61a4695b7b2f315a5a1af28"
+    },
+    {
+      "token": "River",
+      "context": "Description:** The Green River Hydroelectric Plant, operated",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "7d3fa6eef61a4695b7b2f315a5a1af28"
+    },
+    {
+      "token": "Plant,",
+      "context": "Green River Hydroelectric Plant, operated by LumenFusion",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "7d3fa6eef61a4695b7b2f315a5a1af28"
+    },
+    {
+      "token": "Field",
+      "context": "Release Feedback | Field | Details |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "2818cae7e74d41cbaf1be031f1139fbc"
+    },
+    {
+      "token": "Field",
+      "context": "Recall Documentation** | Field | Details |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "7dd5a06bb3554159b17bc4b42d1d9ef5"
+    },
+    {
+      "token": "Field",
+      "context": "Assessment Form** | Field | Details |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "573177303a894de38afedebc839c2f25"
+    },
+    {
+      "token": "Interior",
+      "context": "-82.7657 **Scene 2: Interior Lounge** **Scene Number:**",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "15c5862a6e1a46b1a498e68a22bc752c"
+    },
+    {
+      "token": "Lounge**",
+      "context": "**Scene 2: Interior Lounge** **Scene Number:** 2",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "15c5862a6e1a46b1a498e68a22bc752c"
+    },
+    {
+      "token": "Lounge",
+      "context": "River2025! **Scene 4: Lounge Atmosphere** **Scene Number:**",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "15c5862a6e1a46b1a498e68a22bc752c"
+    },
+    {
+      "token": "Atmosphere**",
+      "context": "**Scene 4: Lounge Atmosphere** **Scene Number:** 4",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "15c5862a6e1a46b1a498e68a22bc752c"
+    },
+    {
+      "token": "Roof",
+      "context": "Street 45 | Roof Leak | Replaced",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "f519c672bbec4032b2c25b144d143393"
+    },
+    {
+      "token": "Leak",
+      "context": "45 | Roof Leak | Replaced damaged",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "f519c672bbec4032b2c25b144d143393"
+    },
+    {
+      "token": "|",
+      "context": "Name** | Edward | | **Street Address**",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4e52d02ebb7241f8b34e6fc53efda466"
+    },
+    {
+      "token": "|",
+      "context": "| Edward | | **Street Address** |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4e52d02ebb7241f8b34e6fc53efda466"
+    },
+    {
+      "token": "**Street",
+      "context": "Edward | | **Street Address** | 35",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4e52d02ebb7241f8b34e6fc53efda466"
+    },
+    {
+      "token": "I,",
+      "context": "I, Chukwuemeka, born on",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "0737638a81fb4dffbb3666a8dd78360d"
+    },
+    {
+      "token": "Room",
+      "context": "00:1C:B3:4F:8A:2D | Server Room | Router |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "|",
+      "context": "| Server Room | Router | SN001",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "Router",
+      "context": "Server Room | Router | SN001 |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "|",
+      "context": "Room | Router | SN001 | Active",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "SN001",
+      "context": "| Router | SN001 | Active |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "|",
+      "context": "Router | SN001 | Active | |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "Active",
+      "context": "| SN001 | Active | | 002",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "|",
+      "context": "SN001 | Active | | 002 |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "|",
+      "context": "| Active | | 002 | Switch",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "002",
+      "context": "Active | | 002 | Switch |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "|",
+      "context": "| | 002 | Switch | 192.168.1.2",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "Switch",
+      "context": "| 002 | Switch | 192.168.1.2 |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "|",
+      "context": "002 | Switch | 192.168.1.2 | 00:1A:2B:3C:4D:5E",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "192.168.1.2",
+      "context": "| Switch | 192.168.1.2 | 00:1A:2B:3C:4D:5E |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "|",
+      "context": "Switch | 192.168.1.2 | 00:1A:2B:3C:4D:5E | Server",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "00:1A:2B:3C:4D:5E",
+      "context": "| 192.168.1.2 | 00:1A:2B:3C:4D:5E | Server Room",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "|",
+      "context": "192.168.1.2 | 00:1A:2B:3C:4D:5E | Server Room |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "Server",
+      "context": "| 00:1A:2B:3C:4D:5E | Server Room | Switch",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "Room",
+      "context": "00:1A:2B:3C:4D:5E | Server Room | Switch |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "4a16b33a949547d6b0ce81465be894b4"
+    },
+    {
+      "token": "SSN:",
+      "context": "Ethnicity: Turkmen - SSN: 259-55-5019",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "7b6584826a0f4fc7896935a7734a9131"
+    },
+    {
+      "token": "Oral",
+      "context": "| Daily | Oral | Dr. Smith",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "c12a9c3db5a94f52a664294181bad746"
+    },
+    {
+      "token": "Dr.",
+      "context": "| Oral | Dr. Smith | 2023-01-15",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "c12a9c3db5a94f52a664294181bad746"
+    },
+    {
+      "token": "Lisinopril",
+      "context": "| 2001-03-07 | Lisinopril | 10mg |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "c12a9c3db5a94f52a664294181bad746"
+    },
+    {
+      "token": "Oral",
+      "context": "| Daily | Oral | Dr. Smith",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "c12a9c3db5a94f52a664294181bad746"
+    },
+    {
+      "token": "North",
+      "context": "03/20/2023, Scale: 1:100, North Arrow: Top of",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "2742ec1c6bb740c8bbc6e3bcd85bf605"
+    },
+    {
+      "token": "Arrow:",
+      "context": "Scale: 1:100, North Arrow: Top of Page.",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "2742ec1c6bb740c8bbc6e3bcd85bf605"
+    },
+    {
+      "token": "Field",
+      "context": "Order Form** | Field | Details |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "15a0e669fda8435cb3b90046493f97da"
+    },
+    {
+      "token": "Field",
+      "context": "Recovery Options** | Field | Value |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "d44651d85fdd4af59b24f0340f22f67f"
+    },
+    {
+      "token": "Black",
+      "context": "sets over the Black Sea, Nikolay Kuznetsov,",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "da1999cf8b6d45eea9d4d2ade9347da9"
+    },
+    {
+      "token": "Sea,",
+      "context": "over the Black Sea, Nikolay Kuznetsov, a",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "da1999cf8b6d45eea9d4d2ade9347da9"
+    },
+    {
+      "token": "Dom",
+      "context": "The film follows Dom Cobb, played by",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "da1999cf8b6d45eea9d4d2ade9347da9"
+    },
+    {
+      "token": "Cobb,",
+      "context": "film follows Dom Cobb, played by Leonardo",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "da1999cf8b6d45eea9d4d2ade9347da9"
+    },
+    {
+      "token": "Cobb's",
+      "context": "the dream world. Cobb's team, including Arthur,",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "da1999cf8b6d45eea9d4d2ade9347da9"
+    },
+    {
+      "token": "Arthur,",
+      "context": "Cobb's team, including Arthur, played by Joseph",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "da1999cf8b6d45eea9d4d2ade9347da9"
+    },
+    {
+      "token": "Ariadne,",
+      "context": "Joseph Gordon-Levitt, and Ariadne, played by Ellen",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "da1999cf8b6d45eea9d4d2ade9347da9"
+    },
+    {
+      "token": "Dom",
+      "context": "powerful performance as Dom Cobb, bringing depth",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "da1999cf8b6d45eea9d4d2ade9347da9"
+    },
+    {
+      "token": "Cobb,",
+      "context": "performance as Dom Cobb, bringing depth and",
+      "predicted": "I-last_name",
+      "expected": "O",
+      "sample_id": "da1999cf8b6d45eea9d4d2ade9347da9"
+    },
+    {
+      "token": "Arthur",
+      "context": "Gordon-Levitt's portrayal of Arthur is both charming",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "da1999cf8b6d45eea9d4d2ade9347da9"
+    },
+    {
+      "token": "Saito,",
+      "context": "Ken Watanabe as Saito, also deliver standout",
+      "predicted": "B-last_name",
+      "expected": "O",
+      "sample_id": "da1999cf8b6d45eea9d4d2ade9347da9"
+    },
+    {
+      "token": "Origin",
+      "context": "Rate Sheet | Origin | Destination |",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "|",
+      "context": "Sheet | Origin | Destination | Carrier",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "Destination",
+      "context": "| Origin | Destination | Carrier Name",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "|",
+      "context": "Origin | Destination | Carrier Name |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "Carrier",
+      "context": "| Destination | Carrier Name | Service",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "Name",
+      "context": "Destination | Carrier Name | Service Type",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "|",
+      "context": "| Carrier Name | Service Type |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "Service",
+      "context": "Carrier Name | Service Type | Transit",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "Type",
+      "context": "Name | Service Type | Transit Time",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "|",
+      "context": "| Service Type | Transit Time |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "Transit",
+      "context": "Service Type | Transit Time | Price",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "Time",
+      "context": "Type | Transit Time | Price per",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "|",
+      "context": "| Transit Time | Price per lb.",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "Price",
+      "context": "Transit Time | Price per lb. |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "per",
+      "context": "Time | Price per lb. | Price",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "lb.",
+      "context": "| Price per lb. | Price per",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "|",
+      "context": "Price per lb. | Price per dimensional",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "Price",
+      "context": "per lb. | Price per dimensional break",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "per",
+      "context": "lb. | Price per dimensional break |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "dimensional",
+      "context": "| Price per dimensional break | |-------------|-------------|--------------|--------------|--------------|---------------|-----------------------------|",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "break",
+      "context": "Price per dimensional break | |-------------|-------------|--------------|--------------|--------------|---------------|-----------------------------| |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "|",
+      "context": "per dimensional break | |-------------|-------------|--------------|--------------|--------------|---------------|-----------------------------| | City",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "|-------------|-------------|--------------|--------------|--------------|---------------|-----------------------------|",
+      "context": "dimensional break | |-------------|-------------|--------------|--------------|--------------|---------------|-----------------------------| | City A",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "|",
+      "context": "break | |-------------|-------------|--------------|--------------|--------------|---------------|-----------------------------| | City A |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "|",
+      "context": "| City A | City B |",
+      "predicted": "I-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    },
+    {
+      "token": "Sea",
+      "context": "| SwiftTransit | Sea | 7 days",
+      "predicted": "B-city",
+      "expected": "O",
+      "sample_id": "ecd8585eb2a44295ad4f071858a4d4d7"
+    }
+  ]
+}

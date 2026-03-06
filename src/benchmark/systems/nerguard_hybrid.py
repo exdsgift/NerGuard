@@ -54,13 +54,10 @@ class NerGuardHybrid(SystemWrapper):
         }
 
     def setup(self) -> None:
-        from src.core.constants import (
-            DEFAULT_CONFIDENCE_THRESHOLD,
-            DEFAULT_ENTROPY_THRESHOLD,
-        )
         from src.inference.entity_router import EntitySpecificRouter
         from src.inference.llm_router import LLMRouter
         from src.inference.regex_validator import RegexValidator
+        from src.tasks.pii.config import get_pii_route_config
 
         logger.info(f"Loading NerGuard Hybrid (LLM: {self.llm_source}/{self.llm_model})")
 
@@ -88,15 +85,30 @@ class NerGuardHybrid(SystemWrapper):
             ollama_model=self.llm_model,
             span_prompt_version=self.span_prompt_version,
         )
-        self.entity_router = EntitySpecificRouter(
-            entropy_threshold=DEFAULT_ENTROPY_THRESHOLD,
-            confidence_threshold=DEFAULT_CONFIDENCE_THRESHOLD,
-            enable_selective=True,
-        )
+        route_config = get_pii_route_config()
+        self.entity_router = EntitySpecificRouter.from_config(route_config)
         self.regex_validator = RegexValidator()
 
         self._routing_meta = self._empty_routing_meta()
         logger.info(f"NerGuard Hybrid ready on {self.device}")
+
+    def calibrate_thresholds(self, samples: list) -> None:
+        """Calibrate routing thresholds on held-out samples."""
+        from src.inference.entity_router import EntitySpecificRouter
+        from src.optimization.calibrator import ThresholdCalibrator
+        from src.tasks.pii.config import get_pii_route_config
+
+        calibrator = ThresholdCalibrator()
+        result, calibrated_config = calibrator.calibrate(
+            model=self.model,
+            tokenizer=self.tokenizer,
+            id2label=self.id2label,
+            device=self.device,
+            samples=samples,
+            base_config=get_pii_route_config(),
+        )
+        self.entity_router = EntitySpecificRouter.from_config(calibrated_config)
+        logger.info(f"Calibrated router: {self.entity_router}")
 
     @staticmethod
     def _empty_routing_meta() -> Dict:
