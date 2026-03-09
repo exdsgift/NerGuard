@@ -1,0 +1,154 @@
+{
+  "base": {
+    "system": "base",
+    "total_gold_spans": 1712,
+    "total_fn": 541,
+    "fn_rate": 0.31600467289719625,
+    "error_counts": {
+      "missed_detection": 295,
+      "type_confusion": 104,
+      "boundary_error": 142
+    },
+    "error_fractions": {
+      "missed_detection": 0.5452865064695009,
+      "type_confusion": 0.1922365988909427,
+      "boundary_error": 0.26247689463955637
+    },
+    "per_entity_errors": {
+      "date": {
+        "missed_detection": 80,
+        "boundary_error": 10,
+        "type_confusion": 4
+      },
+      "certificate_license_number": {
+        "missed_detection": 19,
+        "type_confusion": 1
+      },
+      "credit_debit_card": {
+        "type_confusion": 47,
+        "boundary_error": 2,
+        "missed_detection": 2
+      },
+      "street_address": {
+        "boundary_error": 99,
+        "missed_detection": 2
+      },
+      "time": {
+        "missed_detection": 16,
+        "boundary_error": 3,
+        "type_confusion": 2
+      },
+      "phone_number": {
+        "type_confusion": 18,
+        "missed_detection": 13,
+        "boundary_error": 5
+      },
+      "gender": {
+        "missed_detection": 19
+      },
+      "first_name": {
+        "missed_detection": 52,
+        "boundary_error": 10,
+        "type_confusion": 3
+      },
+      "last_name": {
+        "type_confusion": 24,
+        "missed_detection": 30
+      },
+      "city": {
+        "type_confusion": 1,
+        "missed_detection": 26,
+        "boundary_error": 12
+      },
+      "email": {
+        "boundary_error": 1,
+        "missed_detection": 25
+      },
+      "postcode": {
+        "missed_detection": 8
+      },
+      "age": {
+        "missed_detection": 1,
+        "type_confusion": 1
+      },
+      "tax_id": {
+        "type_confusion": 3,
+        "missed_detection": 1
+      },
+      "ssn": {
+        "missed_detection": 1
+      }
+    }
+  },
+  "hybrid": {
+    "system": "hybrid",
+    "total_gold_spans": 1712,
+    "total_fn": 411,
+    "fn_rate": 0.24007009345794392,
+    "error_counts": {
+      "missed_detection": 242,
+      "boundary_error": 136,
+      "type_confusion": 33
+    },
+    "error_fractions": {
+      "missed_detection": 0.5888077858880778,
+      "boundary_error": 0.3309002433090024,
+      "type_confusion": 0.08029197080291971
+    },
+    "per_entity_errors": {
+      "certificate_license_number": {
+        "missed_detection": 19,
+        "type_confusion": 8
+      },
+      "street_address": {
+        "boundary_error": 99,
+        "missed_detection": 2
+      },
+      "city": {
+        "missed_detection": 36,
+        "type_confusion": 1,
+        "boundary_error": 9
+      },
+      "date": {
+        "missed_detection": 52,
+        "boundary_error": 11,
+        "type_confusion": 3
+      },
+      "time": {
+        "missed_detection": 20,
+        "boundary_error": 3
+      },
+      "gender": {
+        "missed_detection": 17
+      },
+      "first_name": {
+        "missed_detection": 49,
+        "boundary_error": 11,
+        "type_confusion": 1
+      },
+      "last_name": {
+        "type_confusion": 19,
+        "missed_detection": 33
+      },
+      "credit_debit_card": {
+        "missed_detection": 2,
+        "boundary_error": 1
+      },
+      "email": {
+        "missed_detection": 9
+      },
+      "postcode": {
+        "missed_detection": 2
+      },
+      "phone_number": {
+        "boundary_error": 2
+      },
+      "tax_id": {
+        "type_confusion": 1
+      },
+      "ssn": {
+        "missed_detection": 1
+      }
+    }
+  }
+}

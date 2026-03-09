@@ -1,0 +1,125 @@
+{
+  "dataset": "nvidia-pii",
+  "model_path": "./models/mdeberta-pii-safe/final",
+  "n_samples": 500,
+  "n_tokens": 59230,
+  "ece_pre": 0.0008962005718966231,
+  "T_opt": 0.10000416659063023,
+  "ece_post": 0.0013759581388180133,
+  "ece_delta": 0.0004797575669213902,
+  "routing_changes": {
+    "n_route_pre": 60,
+    "n_route_post": 6,
+    "routing_rate_pre": 0.0010130001688333614,
+    "routing_rate_post": 0.00010130001688333614,
+    "n_routing_changed": 54,
+    "n_new_routes": 0,
+    "n_dropped_routes": 54,
+    "fraction_changed": 0.0009117001519500254
+  },
+  "reliability_diagram_pre": [
+    {
+      "bin_lo": 0.30000000000000004,
+      "bin_hi": 0.4,
+      "n_samples": 2,
+      "accuracy": 0.5,
+      "mean_confidence": 0.39085695147514343,
+      "gap": 0.10914304852485657
+    },
+    {
+      "bin_lo": 0.4,
+      "bin_hi": 0.5,
+      "n_samples": 9,
+      "accuracy": 0.4444444444444444,
+      "mean_confidence": 0.45818639132711625,
+      "gap": 0.01374194688267183
+    },
+    {
+      "bin_lo": 0.5,
+      "bin_hi": 0.6000000000000001,
+      "n_samples": 16,
+      "accuracy": 0.1875,
+      "mean_confidence": 0.5374651029706001,
+      "gap": 0.34996510297060013
+    },
+    {
+      "bin_lo": 0.6000000000000001,
+      "bin_hi": 0.7000000000000001,
+      "n_samples": 19,
+      "accuracy": 0.3684210526315789,
+      "mean_confidence": 0.6621168600885492,
+      "gap": 0.29369580745697027
+    },
+    {
+      "bin_lo": 0.7000000000000001,
+      "bin_hi": 0.8,
+      "n_samples": 15,
+      "accuracy": 0.5333333333333333,
+      "mean_confidence": 0.7531537214914957,
+      "gap": 0.2198203881581624
+    },
+    {
+      "bin_lo": 0.8,
+      "bin_hi": 0.9,
+      "n_samples": 27,
+      "accuracy": 0.6296296296296297,
+      "mean_confidence": 0.8509661180001719,
+      "gap": 0.2213364883705422
+    },
+    {
+      "bin_lo": 0.9,
+      "bin_hi": 1.0,
+      "n_samples": 59142,
+      "accuracy": 0.9993743870684116,
+      "mean_confidence": 0.9999203094798427,
+      "gap": 0.0005459224114310324
+    }
+  ],
+  "reliability_diagram_post": [
+    {
+      "bin_lo": 0.5,
+      "bin_hi": 0.6000000000000001,
+      "n_samples": 1,
+      "accuracy": 0.0,
+      "mean_confidence": 0.5333356261253357,
+      "gap": 0.5333356261253357
+    },
+    {
+      "bin_lo": 0.6000000000000001,
+      "bin_hi": 0.7000000000000001,
+      "n_samples": 3,
+      "accuracy": 0.0,
+      "mean_confidence": 0.6554172039031982,
+      "gap": 0.6554172039031982
+    },
+    {
+      "bin_lo": 0.7000000000000001,
+      "bin_hi": 0.8,
+      "n_samples": 4,
+      "accuracy": 0.5,
+      "mean_confidence": 0.7361526489257812,
+      "gap": 0.23615264892578125
+    },
+    {
+      "bin_lo": 0.8,
+      "bin_hi": 0.9,
+      "n_samples": 4,
+      "accuracy": 0.25,
+      "mean_confidence": 0.8569868803024292,
+      "gap": 0.6069868803024292
+    },
+    {
+      "bin_lo": 0.9,
+      "bin_hi": 1.0,
+      "n_samples": 59218,
+      "accuracy": 0.9987166064372319,
+      "mean_confidence": 0.9999936819076538,
+      "gap": 0.0012770754704218845
+    }
+  ],
+  "summary": {
+    "overconfident": false,
+    "temperature_improves_calibration": false,
+    "routing_materially_affected": false
+  }
+}

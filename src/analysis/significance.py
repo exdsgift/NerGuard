@@ -1,10 +1,16 @@
 """Statistical significance tests for NER system comparison.
 
-Provides paired bootstrap and McNemar's test for comparing base vs hybrid systems.
+Provides paired bootstrap, McNemar's test, hierarchical bootstrap, and permutation
+test for comparing base vs hybrid systems.
+
+Note on terminology:
+  - "sample" always refers to a document (one sequence of tokens), not a single token.
+  - The hierarchical bootstrap resamples documents with replacement, which respects
+    within-document token correlations (Definition [Hierarchical bootstrap] in thesis).
 """
 
 import numpy as np
-from typing import Dict, List, Tuple
+from typing import Dict, List
 
 from seqeval.metrics import f1_score as seqeval_f1
 from seqeval.scheme import IOB2
@@ -68,6 +74,96 @@ def paired_bootstrap_test(
         "n_bootstrap": n_bootstrap,
         "scores_a_mean": float(scores_a.mean()),
         "scores_b_mean": float(scores_b.mean()),
+    }
+
+
+def hierarchical_bootstrap_test(
+    y_true: List[List[str]],
+    y_pred_a: List[List[str]],
+    y_pred_b: List[List[str]],
+    n_bootstrap: int = 10000,
+    seed: int = 42,
+) -> Dict:
+    """Hierarchical bootstrap significance test — resampling at document level.
+
+    Each element of y_true/y_pred is one document. Bootstrap samples are obtained
+    by sampling documents with replacement, then computing Entity-F1 on the
+    concatenation of all sampled document spans. This respects within-document
+    token correlations (see Definition [Hierarchical bootstrap] in thesis).
+
+    Returns:
+        dict with keys: p_value, mean_delta, ci_lower, ci_upper, n_docs,
+                        n_bootstrap, scores_a_mean, scores_b_mean, per_doc_deltas
+    """
+    rng = np.random.RandomState(seed)
+    n_docs = len(y_true)
+
+    scores_a = _per_sample_entity_f1(y_true, y_pred_a)
+    scores_b = _per_sample_entity_f1(y_true, y_pred_b)
+    observed_delta = scores_b.mean() - scores_a.mean()
+
+    boot_deltas = np.empty(n_bootstrap)
+    for i in range(n_bootstrap):
+        idx = rng.randint(0, n_docs, size=n_docs)
+        boot_deltas[i] = scores_b[idx].mean() - scores_a[idx].mean()
+
+    ci_lower = np.percentile(boot_deltas, 2.5)
+    ci_upper = np.percentile(boot_deltas, 97.5)
+
+    shifted = boot_deltas - boot_deltas.mean()
+    p_value = float(np.mean(np.abs(shifted) >= np.abs(observed_delta)))
+
+    return {
+        "p_value": p_value,
+        "mean_delta": float(observed_delta),
+        "ci_lower": float(ci_lower),
+        "ci_upper": float(ci_upper),
+        "n_docs": n_docs,
+        "n_bootstrap": n_bootstrap,
+        "scores_a_mean": float(scores_a.mean()),
+        "scores_b_mean": float(scores_b.mean()),
+        "per_doc_deltas": (scores_b - scores_a).tolist(),
+    }
+
+
+def permutation_test_document_deltas(
+    y_true: List[List[str]],
+    y_pred_a: List[List[str]],
+    y_pred_b: List[List[str]],
+    n_permutations: int = 10000,
+    seed: int = 42,
+) -> Dict:
+    """Permutation test on per-document Entity-F1 deltas.
+
+    Under H0, the sign of Δ_d = F1_b(d) - F1_a(d) is exchangeable across documents.
+    The p-value is the fraction of random sign-flip permutations whose mean delta
+    exceeds the observed mean delta in absolute value.
+
+    See Definition [Permutation test on paired document deltas] in thesis.
+
+    Returns:
+        dict with keys: p_value, observed_mean_delta, n_docs, n_permutations,
+                        per_doc_deltas
+    """
+    rng = np.random.RandomState(seed)
+    scores_a = _per_sample_entity_f1(y_true, y_pred_a)
+    scores_b = _per_sample_entity_f1(y_true, y_pred_b)
+    doc_deltas = scores_b - scores_a
+    observed_mean = float(doc_deltas.mean())
+
+    null_means = np.empty(n_permutations)
+    for i in range(n_permutations):
+        signs = rng.choice([-1.0, 1.0], size=len(doc_deltas))
+        null_means[i] = (doc_deltas * signs).mean()
+
+    p_value = float(np.mean(np.abs(null_means) >= np.abs(observed_mean)))
+
+    return {
+        "p_value": p_value,
+        "observed_mean_delta": observed_mean,
+        "n_docs": len(doc_deltas),
+        "n_permutations": n_permutations,
+        "per_doc_deltas": doc_deltas.tolist(),
     }
 
 

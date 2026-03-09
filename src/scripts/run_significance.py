@@ -63,11 +63,24 @@ def load_predictions(path: str):
 
 
 def main():
-    from src.analysis.significance import mcnemar_test, paired_bootstrap_test
+    from src.analysis.significance import (
+        hierarchical_bootstrap_test,
+        mcnemar_test,
+        paired_bootstrap_test,
+        permutation_test_document_deltas,
+    )
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--experiment-dirs", nargs="+", help="Experiment directories to search")
     parser.add_argument("--n-bootstrap", type=int, default=10000)
+    parser.add_argument(
+        "--hierarchical",
+        action="store_true",
+        help=(
+            "Run hierarchical bootstrap (document-level resampling) and permutation test "
+            "in addition to standard tests. Results saved to a separate output file."
+        ),
+    )
     args = parser.parse_args()
 
     # Search in default locations if not specified
@@ -130,8 +143,11 @@ def main():
             y_pred_b=y_pred_hybrid,
         )
 
-        sig_bootstrap = "***" if bootstrap["p_value"] < 0.001 else "**" if bootstrap["p_value"] < 0.01 else "*" if bootstrap["p_value"] < 0.05 else "n.s."
-        sig_mcnemar = "***" if mcnemar["p_value"] < 0.001 else "**" if mcnemar["p_value"] < 0.01 else "*" if mcnemar["p_value"] < 0.05 else "n.s."
+        def sig_stars(p):
+            return "***" if p < 0.001 else "**" if p < 0.01 else "*" if p < 0.05 else "n.s."
+
+        sig_bootstrap = sig_stars(bootstrap["p_value"])
+        sig_mcnemar = sig_stars(mcnemar["p_value"])
 
         print(f"\n  Paired Bootstrap (Entity-F1, n={bootstrap['n_samples']}, B={args.n_bootstrap}):")
         print(f"    Base mean:   {bootstrap['scores_a_mean']:.4f}")
@@ -146,31 +162,81 @@ def main():
         print(f"    Chi2:    {mcnemar['chi2']:.2f}")
         print(f"    p-value: {mcnemar['p_value']:.4f} {sig_mcnemar}")
 
-        results.append({
+        entry = {
             "domain": domain["name"],
             "n_samples": bootstrap["n_samples"],
             "bootstrap": bootstrap,
             "mcnemar": mcnemar,
-        })
+        }
+
+        if args.hierarchical:
+            hier = hierarchical_bootstrap_test(
+                y_true=y_true_base,
+                y_pred_a=y_pred_base,
+                y_pred_b=y_pred_hybrid,
+                n_bootstrap=args.n_bootstrap,
+            )
+            perm = permutation_test_document_deltas(
+                y_true=y_true_base,
+                y_pred_a=y_pred_base,
+                y_pred_b=y_pred_hybrid,
+                n_permutations=args.n_bootstrap,
+            )
+            sig_hier = sig_stars(hier["p_value"])
+            sig_perm = sig_stars(perm["p_value"])
+
+            print(f"\n  Hierarchical Bootstrap (doc-level, n_docs={hier['n_docs']}, B={args.n_bootstrap}):")
+            print(f"    Delta:   {hier['mean_delta']:+.4f}")
+            print(f"    95% CI:  [{hier['ci_lower']:+.4f}, {hier['ci_upper']:+.4f}]")
+            print(f"    p-value: {hier['p_value']:.4f} {sig_hier}")
+
+            print(f"\n  Permutation Test (doc-level sign flip, n={perm['n_docs']}, R={args.n_bootstrap}):")
+            print(f"    Mean delta: {perm['observed_mean_delta']:+.4f}")
+            print(f"    p-value:    {perm['p_value']:.4f} {sig_perm}")
+
+            entry["hierarchical_bootstrap"] = hier
+            entry["permutation_test"] = perm
+
+        results.append(entry)
 
     # Summary table
     if results:
-        print(f"\n{'='*90}")
+        print(f"\n{'='*100}")
         print("SIGNIFICANCE TEST SUMMARY")
-        print(f"{'='*90}")
-        print(f"{'Domain':<25} {'Delta':>8} {'Bootstrap p':>13} {'McNemar p':>12} {'n_samples':>10}")
-        print(f"{'-'*90}")
-        for r in results:
-            b = r["bootstrap"]
-            m = r["mcnemar"]
-            print(
-                f"{r['domain']:<25} {b['mean_delta']:>+8.4f} "
-                f"{b['p_value']:>13.4f} {m['p_value']:>12.4f} {r['n_samples']:>10}"
-            )
+        print(f"{'='*100}")
+        if args.hierarchical:
+            print(f"{'Domain':<25} {'Delta':>8} {'Boot p':>10} {'Hier p':>10} {'Perm p':>10} {'McNemar p':>12} {'n_docs':>8}")
+            print(f"{'-'*100}")
+            for r in results:
+                b = r["bootstrap"]
+                m = r["mcnemar"]
+                h = r.get("hierarchical_bootstrap", {})
+                p = r.get("permutation_test", {})
+                print(
+                    f"{r['domain']:<25} {b['mean_delta']:>+8.4f} "
+                    f"{b['p_value']:>10.4f} {h.get('p_value', float('nan')):>10.4f} "
+                    f"{p.get('p_value', float('nan')):>10.4f} {m['p_value']:>12.4f} {r['n_samples']:>8}"
+                )
+        else:
+            print(f"{'Domain':<25} {'Delta':>8} {'Bootstrap p':>13} {'McNemar p':>12} {'n_samples':>10}")
+            print(f"{'-'*90}")
+            for r in results:
+                b = r["bootstrap"]
+                m = r["mcnemar"]
+                print(
+                    f"{r['domain']:<25} {b['mean_delta']:>+8.4f} "
+                    f"{b['p_value']:>13.4f} {m['p_value']:>12.4f} {r['n_samples']:>10}"
+                )
 
-        # Save results
-        out_path = "experiments/significance_results.json"
-        os.makedirs("experiments", exist_ok=True)
+        from datetime import datetime
+        timestamp = datetime.now().strftime("%Y-%m-%d")
+        if args.hierarchical:
+            out_dir = f"experiments/significance_hierarchical_{timestamp}"
+            os.makedirs(out_dir, exist_ok=True)
+            out_path = os.path.join(out_dir, "results.json")
+        else:
+            out_path = "experiments/significance_results.json"
+            os.makedirs("experiments", exist_ok=True)
         with open(out_path, "w") as f:
             json.dump(results, f, indent=2)
         logger.info(f"\nResults saved to {out_path}")

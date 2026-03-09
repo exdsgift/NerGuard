@@ -1,0 +1,9 @@
+{
+  "n_samples": 1000,
+  "n_gold_spans": 2384,
+  "n_consistent": 2384,
+  "consistency_rate": 1.0,
+  "n_failures": 0,
+  "failure_types": {},
+  "failure_examples": {}
+}

@@ -460,6 +460,16 @@ class BenchmarkRunner:
                 llm_source=self.config.llm_source,
                 llm_model=self.config.llm_model,
             )
+        elif name == "wikiner-base":
+            from src.benchmark.systems.wikiner_base import WikiNERBase
+            return WikiNERBase(device=self.config.device)
+        elif name == "wikiner-hybrid":
+            from src.benchmark.systems.wikiner_hybrid import WikiNERHybrid
+            return WikiNERHybrid(
+                device=self.config.device,
+                llm_source=self.config.llm_source,
+                llm_model=self.config.llm_model,
+            )
         else:
             logger.warning(f"Unknown system: {name}")
             return None
