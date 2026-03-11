@@ -17,16 +17,16 @@ LOG_FILE="${OUTPUT_DIR}/run_${TIMESTAMP}.log"
 
 mkdir -p "${OUTPUT_DIR}"
 
-echo "=================================================="
+echo "__________________________________________________"
 echo "NER PII Benchmark — ${TIMESTAMP}"
-echo "=================================================="
+echo "__________________________________________________"
 echo "Log: ${LOG_FILE}"
 echo ""
 
 uv run python -m src.benchmark.runner "$@" 2>&1 | tee "${LOG_FILE}"
 
 echo ""
-echo "=================================================="
+echo "__________________________________________________"
 echo "Benchmark complete. Results in: ${OUTPUT_DIR}"
 echo "Log saved to: ${LOG_FILE}"
-echo "=================================================="
+echo __________________________________________________"

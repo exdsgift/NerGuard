@@ -35,7 +35,7 @@ echo " Samples: $SAMPLES"
 echo " Session dir: $SESSION_DIR"
 echo "=================================================="
 
-# ── Smoke test ──────────────────────────────────────────────────────────────
+# * Smoke test
 
 run_smoke_test() {
   local MODEL="$1"
@@ -46,9 +46,9 @@ run_smoke_test() {
   local log="$LOG_DIR/smoke_${safe_name}.log"
 
   if uv run python -m src.scripts.nvidia_minibatch_ollama \
-       --samples 5 \
-       --ollama-model "$MODEL" \
-       > "$log" 2>&1; then
+      --samples 5 \
+      --ollama-model "$MODEL" \
+      > "$log" 2>&1; then
     # Check that at least 1 LLM call was accepted
     if grep -q "llm_accept" "$log" 2>/dev/null; then
       echo "  OK — $(tail -5 "$log" | grep -E 'f1|accept|reject' | head -3)"
@@ -62,7 +62,7 @@ run_smoke_test() {
   fi
 }
 
-# ── Benchmark run ───────────────────────────────────────────────────────────
+# * Benchmark run
 
 run_benchmark() {
   local MODEL="$1"
@@ -88,7 +88,7 @@ run_benchmark() {
   echo "  Done: $MODEL — $(date)"
 }
 
-# ── Main ────────────────────────────────────────────────────────────────────
+# * Main
 
 if [ "$SKIP_SMOKE" = false ]; then
   echo ""
@@ -116,7 +116,7 @@ echo " Results in ./experiments/"
 echo " Logs in $LOG_DIR"
 echo "=================================================="
 
-# Print summary of experiment directories created
+# Print summary
 echo ""
 echo "New experiment directories:"
 ls -d ./experiments/20*/ 2>/dev/null | grep -v "2026-03-03_13-23" | sort
