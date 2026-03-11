@@ -78,11 +78,18 @@ class nerguard:
         self.llm_model = llm_model
         self.typed = typed
         self._pipeline = None  # lazy-loaded on first call
+        self._model = None     # cached NER model
+        self._tokenizer = None # cached tokenizer
 
     def _load_pipeline(self) -> None:
-        """Lazy-load the redact pipeline (heavy imports deferred until needed)."""
+        """Lazy-load model, tokenizer, and pipeline — runs only once per instance."""
         if self._pipeline is None:
             from src.scripts.redact import redact_pipeline
+            from src.core.model_loader import load_model_and_tokenizer, get_device
+            device = get_device()
+            self._model, self._tokenizer = load_model_and_tokenizer(
+                self.model_path, device=str(device), eval_mode=True
+            )
             self._pipeline = redact_pipeline
 
     def redact(self, text: str) -> RedactResult:
@@ -112,6 +119,8 @@ class nerguard:
             llm_routing=self.llm_routing,
             llm_source=self.llm_source,
             llm_model=self.llm_model,
+            model=self._model,
+            tokenizer=self._tokenizer,
         )
         return self._build_result(text, entities)
 

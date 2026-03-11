@@ -25,7 +25,11 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 from src.core.constants import DEFAULT_MODEL_PATH
 from src.utils.colors import Colors
 
-_VERSION = "1.0.0"
+try:
+    from importlib.metadata import version as _pkg_version
+    _VERSION = _pkg_version("nerguard")
+except Exception:
+    _VERSION = "unknown"
 
 _EPILOG = """
 examples:

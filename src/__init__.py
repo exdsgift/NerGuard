@@ -5,5 +5,11 @@ A production-ready toolkit for detecting and protecting Personally Identifiable 
 using a hybrid approach combining transformer models (mDeBERTa v3) with LLM-based disambiguation.
 """
 
-__version__ = "0.1.0"
+from importlib.metadata import version, PackageNotFoundError
+
+try:
+    __version__ = version("nerguard")
+except PackageNotFoundError:
+    __version__ = "unknown"
+
 __author__ = "NerGuard Team"

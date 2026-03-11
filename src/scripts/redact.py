@@ -209,16 +209,23 @@ def redact_pipeline(
     llm_routing: bool = False,
     llm_source: str = "openai",
     llm_model: str = "gpt-4o",
+    model=None,
+    tokenizer=None,
 ) -> Tuple[List[Dict], str]:
     """
     Run the full hybrid pipeline on text and return entities + redacted text.
+
+    Args:
+        model: Pre-loaded model instance (optional). If None, loads from model_path.
+        tokenizer: Pre-loaded tokenizer instance (optional). If None, loads from model_path.
 
     Returns:
         Tuple of (entities, redacted_text) where entities have keys:
         text, label, start, end, confidence, source
     """
     device = get_device()
-    model, tokenizer = load_model_and_tokenizer(model_path, device=str(device), eval_mode=True)
+    if model is None or tokenizer is None:
+        model, tokenizer = load_model_and_tokenizer(model_path, device=str(device), eval_mode=True)
     id2label = model.config.id2label
     label2id = {v: int(k) for k, v in id2label.items()}
 

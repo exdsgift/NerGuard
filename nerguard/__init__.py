@@ -35,8 +35,14 @@ Batch redaction::
     results = ng.redact_batch(["text one", "text two"])
 """
 
+from importlib.metadata import version, PackageNotFoundError
+
 from src.rag.redactor import nerguard as Redactor
 from src.rag.models import RedactResult
 
-__version__ = "1.0.0"
+try:
+    __version__ = version("nerguard")
+except PackageNotFoundError:
+    __version__ = "unknown"
+
 __all__ = ["Redactor", "RedactResult"]
