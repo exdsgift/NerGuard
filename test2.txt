@@ -1,0 +1,9 @@
+[EN] English
+
+Patient John Brown, born on March 12, 1968, in Manchester, residing at 14 Elm
+Street, London SW1A 1AA, NHS number 943 476 2819, National Insurance Number
+JT 49 28 37 C, phone +44 7923 184 293, email john.davies68@gmail.com, was seen
+on February 18, 2025, by Dr. Emily Carter, GP, Riverside Medical Practice,
+22 High Street, London SW1A 2BJ, tel. 020 7946 0321, who diagnosed him with
+type 2 diabetes mellitus (ICD-10: E11) and essential hypertension (ICD-10: I10),
+prescribing metformin 500 mg twice daily and ramipril 5 mg every morning.

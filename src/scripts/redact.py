@@ -294,7 +294,7 @@ def redact_pipeline(
         )
 
         from src.inference.llm_router import LLMRouter
-        router = LLMRouter(source=llm_source, model=llm_model)
+        router = LLMRouter(source=llm_source, model=llm_model, ollama_model=llm_model)
 
         for span in entity_spans:
             if not span.is_uncertain:
