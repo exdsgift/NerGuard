@@ -12,7 +12,7 @@
   &nbsp;·&nbsp;
   <a href="https://pypi.org/project/nerguard/">📦 PyPI: nerguard</a>
   &nbsp;·&nbsp;
-  <a href="https://colab.research.google.com/github/exdsgift/NerGuard/blob/main/notebooks/NerGuard_Demo.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"></a>
+  <a href="https://colab.research.google.com/github/exdsgift/NerGuard/blob/main/scripts/NerGuard_Demo.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"></a>
   <br><br>
 </div>
 
