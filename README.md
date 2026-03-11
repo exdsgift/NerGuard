@@ -9,6 +9,8 @@
   <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat" alt="MIT License">
   <br><br>
   <a href="https://huggingface.co/exdsgift/NerGuard-0.3B">🤗 Model on HuggingFace</a>
+  &nbsp;·&nbsp;
+  <a href="https://pypi.org/project/nerguard/">📦 PyPI: nerguard</a>
   <br><br>
 </div>
 
@@ -29,17 +31,20 @@ Detected PII:
   EMAIL              → "john@acme.com"           [base model,        conf: 0.995]
   PHONENUMBER        → "+1 555-123-4567"         [llm routed,        conf: 0.878]
 
-Redacted output:
-  "Hi, I'm ██████ ██████. My SSN is ██████ and my credit card
-   is ██████. Reach me at ██████ or ██████."
+Standard output (--format human):
+  "Hi, I'm █████ █████. My SSN is █████ and my credit card
+   is █████. Reach me at █████ or █████."
+
+RAG output (--format rag):
+  "Hi, I'm [NAME] [NAME]. My SSN is [SSN] and my credit card
+   is [CC]. Reach me at [EMAIL] or [PHONE]."
 ```
 
 Each prediction carries full provenance: base confidence, entropy score, routing decision, and regex validation outcome; enabling auditability for GDPR Data Protection Impact Assessments (DPIA).
 
 ### 🏠 Local LLM Backends
 
-NerGuard is backend-agnostic. `qwen2.5:7b` is the recommended local backend: near-identical quality, zero API cost, ~5 GB VRAM. Start Ollama and pass `--llm-source ollama --llm-model qwen2.5:7b` to the benchmark runner.
-
+NerGuard is backend-agnostic. `qwen2.5:7b` is the recommended local backend: near-identical quality, zero API cost, ~5 GB VRAM. Start Ollama and pass `--backend ollama --model qwen2.5:7b`.
 
 ### ⚙️ How It Works
 
@@ -51,16 +56,73 @@ NerGuard is backend-agnostic. `qwen2.5:7b` is the recommended local backend: nea
 
 Each prediction is tagged with its source (`base`, `llm_routed`, `base+regex`, `regex_override`) for full auditability.
 
-
 ## 🚀 Getting Started
 
 ```bash
 git clone https://github.com/exdsgift/NerGuard.git
 cd NerGuard
-uv sync
+./setup.sh
 ```
 
-### Inference
+`setup.sh` installs all dependencies, optionally configures your OpenAI API key, and reminds you about Ollama for local inference. The NER model (~300 MB) downloads automatically from HuggingFace on first run.
+
+### Install
+
+```bash
+pip install nerguard
+```
+
+### CLI
+
+```bash
+nerguard "Hi, I'm John Smith. Email: john@acme.com"   # default: █████ blocks
+nerguard "..." --rag                                   # typed placeholders [NAME] [EMAIL]
+nerguard "..." --rag --mapping                         # also show entity→value map
+nerguard "..." --json                                  # machine-readable JSON
+nerguard "..." --generic                               # compact [PII], max token savings
+echo "John Smith, john@acme.com" | nerguard --rag      # stdin support
+nerguard -f report.txt --rag
+
+# LLM routing (optional, improves recall on ambiguous spans)
+nerguard "..." --llm --backend ollama --model qwen2.5:7b
+nerguard "..." --llm --backend openai --model gpt-4o-mini
+
+nerguard --help
+```
+
+| Flag | Output | Use case |
+| --- | --- | --- |
+| *(none)* | `█████` blocks, colored | Human review, auditing |
+| `--rag` | `[NAME]` `[EMAIL]` `[SSN]`… | RAG / LLM pipeline input |
+| `--json` | Machine-readable JSON | API integration, logging |
+| `--generic` | `[PII]` only | Maximum token compression |
+
+Shell shortcuts (for repo users):
+
+```bash
+./redact.sh "..."      # → nerguard "..."
+./rag_redact.sh "..."  # → nerguard "..." --rag
+```
+
+### Python API (RAG)
+
+```python
+from src.rag import nerguard
+
+ng = nerguard()
+result = ng.redact("Hi, I'm John Smith. Email: john@acme.com")
+
+print(result.text)
+# "Hi, I'm [NAME] [NAME]. Email: [EMAIL]"
+
+print(result.mapping)
+# {"NAME_0": "John", "NAME_1": "Smith", "EMAIL_0": "john@acme.com"}
+
+# Batch processing
+results = ng.redact_batch(["doc 1...", "doc 2...", "doc 3..."])
+```
+
+### Python API (base)
 
 ```python
 from src.inference.tester import PIITester
@@ -92,7 +154,8 @@ uv run python -m src.benchmark.runner \
 
 ## 📁 Repository Structure
 
-```
+```text
+nerguard_rag/      nerguard-rag package — RAG Python API (pip install nerguard-rag)
 src/
   core/            Route config, base abstractions (ValidationStrategy, PromptProvider)
   inference/       LLM router, entity router, regex validator, span assembler
@@ -100,7 +163,7 @@ src/
   training/        Model training and validation
   benchmark/       Cross-system benchmark framework (runner, metrics, datasets, systems)
   optimization/    Threshold calibrator, ONNX quantization
-  scripts/         CLI entry points and analysis runners
+  scripts/         CLI entry points (nerguard) and analysis runners
 docs/              Technical notes, architecture diagrams, bibliography
 experiments/       Benchmark results (JSON + summaries)
 alignments/        Semantic label alignment for cross-system evaluation

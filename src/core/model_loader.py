@@ -22,6 +22,27 @@ from src.core.constants import DEFAULT_MODEL_PATH, DEFAULT_LABEL_PATH
 
 logger = logging.getLogger(__name__)
 
+HF_MODEL_ID = "exdsgift/NerGuard-0.3B"
+
+
+def _resolve_model_path(model_path: str) -> str:
+    """Use local path if it exists on disk, otherwise fall back to HuggingFace Hub.
+
+    Args:
+        model_path: Local filesystem path to check
+
+    Returns:
+        The original path if it exists as a directory, else the HF Hub model ID
+    """
+    if os.path.isdir(model_path):
+        return model_path
+    logger.info(
+        f"Local model not found at '{model_path}'. "
+        f"Downloading from HuggingFace Hub: {HF_MODEL_ID}"
+    )
+    print(f"[NerGuard] Model not found locally — downloading from HuggingFace ({HF_MODEL_ID})...")
+    return HF_MODEL_ID
+
 
 def load_tokenizer(
     model_path: str = DEFAULT_MODEL_PATH,
@@ -42,6 +63,7 @@ def load_tokenizer(
     Raises:
         OSError: If the tokenizer cannot be loaded
     """
+    model_path = _resolve_model_path(model_path)
     try:
         tokenizer = AutoTokenizer.from_pretrained(
             model_path,
@@ -77,6 +99,7 @@ def load_model(
     if device is None:
         device = "cuda" if torch.cuda.is_available() else "cpu"
 
+    model_path = _resolve_model_path(model_path)
     try:
         model = AutoModelForTokenClassification.from_pretrained(model_path)
         model = model.to(device)

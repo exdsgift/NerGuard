@@ -1,54 +1,91 @@
 [project]
 name = "nerguard"
 version = "1.0.0"
-description = "Hybrid PII detection with entropy-based selective LLM routing"
+description = "Entropy-gated hybrid NER for privacy-compliant PII detection"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.11"
 authors = [
     {name = "Gabriele Durante"}
 ]
+keywords = [
+    "pii", "ner", "nlp", "privacy", "gdpr", "redaction",
+    "named-entity-recognition", "llm", "rag", "transformers"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+    "Topic :: Security",
+]
 
+# ── Core dependencies (inference + CLI only) ──────────────────────────────────
+# Kept minimal: torch + transformers + numpy cover all inference needs.
+# LLM routing backends (openai, ollama) included since --llm is a core feature.
 dependencies = [
-    # Deep learning
     "torch>=2.0",
     "transformers>=4.40",
-    "accelerate>=0.27",
+    "numpy>=1.26",
+    "openai>=1.12",
+    "ollama>=0.1",
+    "python-dotenv>=1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/exdsgift/NerGuard"
+"HuggingFace Model" = "https://huggingface.co/exdsgift/NerGuard-0.3B"
+"Bug Tracker" = "https://github.com/exdsgift/NerGuard/issues"
+
+[project.scripts]
+nerguard = "src.scripts.cli:main"
+
+# ── Optional dependency groups ────────────────────────────────────────────────
+[project.optional-dependencies]
+
+# pip install nerguard[benchmark]
+# Everything needed to reproduce the cross-system benchmarks and ablation studies.
+benchmark = [
     "datasets>=2.18",
     "evaluate>=0.4",
     "seqeval>=1.2",
-    # Scientific computing
-    "numpy>=1.26",
     "pandas>=2.2",
     "scikit-learn>=1.4",
     "scipy>=1.12",
-    # LLM routing
-    "openai>=1.12",
-    "ollama>=0.1",
-    # Quantization
-    "onnxruntime>=1.17",
-    "optimum[onnxruntime]>=1.17",
-    # Visualization
     "matplotlib>=3.8",
     "seaborn>=0.13",
-    # Utilities
     "tqdm>=4.66",
-    "python-dotenv>=1.0",
-    # Experiment tracking
     "wandb>=0.16",
-    # Benchmark competitors
     "gliner>=0.2",
     "presidio-analyzer>=2.2",
     "spacy>=3.7",
     "psutil>=7.2.1",
 ]
 
-[project.optional-dependencies]
+# pip install nerguard[quantization]
+# ONNX export, quantization, and accelerated loading.
+quantization = [
+    "onnxruntime>=1.17",
+    "optimum[onnxruntime]>=1.17",
+    "accelerate>=0.27",
+]
+
+# pip install nerguard[dev]
 dev = [
     "pytest>=8.0",
     "jupyter>=1.0",
     "ipython>=8.0",
     "debugpy>=1.8",
+]
+
+# pip install nerguard[all]  — full research environment
+all = [
+    "nerguard[benchmark,quantization,dev]",
 ]
 
 [tool.hatch.build.targets.wheel]
