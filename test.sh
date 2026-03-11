@@ -21,4 +21,4 @@ cd "$(dirname "$0")"
 export TF_CPP_MIN_LOG_LEVEL=3
 export TOKENIZERS_PARALLELISM=false
 unset VIRTUAL_ENV 2>/dev/null || true
-exec uv run python -m src.scripts.repl 2>/dev/null
+exec uv run python -m src.scripts.repl

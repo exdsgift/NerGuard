@@ -72,37 +72,89 @@ cd NerGuard
 pip install nerguard
 ```
 
-### CLI
+### Interactive REPL
+
+The easiest way to test NerGuard is the interactive REPL — the model loads once and stays hot in memory, so every query is instant.
 
 ```bash
-nerguard "Hi, I'm John Smith. Email: john@acme.com"   # default: █████ blocks
-nerguard "..." --rag                                   # typed placeholders [NAME] [EMAIL]
-nerguard "..." --rag --mapping                         # also show entity→value map
-nerguard "..." --json                                  # machine-readable JSON
-nerguard "..." --generic                               # compact [PII], max token savings
-echo "John Smith, john@acme.com" | nerguard --rag      # stdin support
-nerguard -f report.txt --rag
-
-# LLM routing (optional, improves recall on ambiguous spans)
-nerguard "..." --llm --backend ollama --model qwen2.5:7b
-nerguard "..." --llm --backend openai --model gpt-4o-mini
-
-nerguard --help
+./test.sh
 ```
 
-| Flag | Output | Use case |
-| --- | --- | --- |
-| *(none)* | `█████` blocks, colored | Human review, auditing |
-| `--rag` | `[NAME]` `[EMAIL]` `[SSN]`… | RAG / LLM pipeline input |
-| `--json` | Machine-readable JSON | API integration, logging |
-| `--generic` | `[PII]` only | Maximum token compression |
+You will see the banner, a one-time model warmup (~1–2 s), and then a prompt:
 
-Shell shortcuts (for repo users):
-
-```bash
-./redact.sh "..."      # → nerguard "..."
-./rag_redact.sh "..."  # → nerguard "..." --rag
 ```
+human ❯
+```
+
+**Basic redaction** — type any text and press Enter:
+
+```
+human ❯ Hi, I'm John Smith. My SSN is 078-05-1120 and email is john@acme.com.
+
+  input    Hi, I'm John Smith. My SSN is 078-05-1120 and email is john@acme.com.
+  redacted Hi, I'm █████ █████. My SSN is █████ and email is █████.
+
+  GIVENNAME   John            base model        conf 0.998
+  SURNAME     Smith           base model        conf 0.997
+  SOCIALNUM   078-05-1120     base + regex      conf 0.921
+  EMAIL       john@acme.com   base model        conf 0.995
+```
+
+**Switch output mode** — cycle through `human → rag → json → generic` with `/mode`, or jump directly:
+
+```
+human ❯ /mode rag
+
+rag ❯ Hi, I'm John Smith. My SSN is 078-05-1120.
+
+  input    Hi, I'm John Smith. My SSN is 078-05-1120.
+  redacted Hi, I'm [GIVENNAME] [SURNAME]. My SSN is [SOCIALNUM].
+```
+
+**Redact a file**:
+
+```
+human ❯ /file report.txt
+```
+
+**Enable LLM routing** — improves recall on ambiguous spans (phone numbers, IDs, dates):
+
+```
+human ❯ /llm
+  LLM routing → on   privacy → cloud  ·  data sent to OpenAI   (backend: openai)
+```
+
+Switch to a local model with Ollama (no data leaves the machine):
+
+```
+human ❯ /backend ollama
+  backend → ollama   model → qwen2.5:3b  (smallest)  when LLM on: privacy → local LLM
+
+human ❯ /model qwen2.5:7b
+  model → qwen2.5:7b
+```
+
+After each query with LLM on, a routing summary is printed:
+
+```
+  LLM (ollama/qwen2.5:7b): 2 entities routed
+  LLM (ollama/qwen2.5:7b): no uncertain spans to route   ← model was already confident
+```
+
+**All REPL commands**:
+
+| Command | Description |
+| --- | --- |
+| `/mode [human\|rag\|json\|generic]` | Switch output format (no arg: cycle) |
+| `/llm` | Toggle LLM routing on / off |
+| `/backend [openai\|ollama]` | Switch LLM backend |
+| `/model NAME` | Set LLM model (e.g. `qwen2.5:7b`, `gpt-4o-mini`) |
+| `/labels` | Toggle per-entity label rows |
+| `/mapping` | Toggle entity → value map (rag / generic modes) |
+| `/file PATH` | Redact an entire file |
+| `/clear` | Clear the screen |
+| `/help` | Show command reference |
+| `/quit` or Ctrl+D | Exit |
 
 ### Python API (RAG)
 

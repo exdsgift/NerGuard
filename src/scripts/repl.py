@@ -203,6 +203,17 @@ def _print_result(text: str, entities, redacted: str, show_labels: bool, mapping
 
 
 # ── Inference runners ─────────────────────────────────────────────────────────
+def _llm_summary(entities: list, s: "Session") -> None:
+    """Print a one-line LLM routing summary when LLM is active."""
+    if not s.llm:
+        return
+    n_routed = sum(1 for e in entities if "llm" in e.get("source", ""))
+    if n_routed:
+        print(f"  {DW}LLM ({s.backend}/{s.model_name}): {B}{n_routed}{RS}{DW} entit{'y' if n_routed == 1 else 'ies'} routed{RS}\n")
+    else:
+        print(f"  {DW}LLM ({s.backend}/{s.model_name}): no uncertain spans to route{RS}\n")
+
+
 def _run(text: str, s: Session):
     if s.mode == "human":
         from src.scripts.redact import redact_pipeline
@@ -211,6 +222,7 @@ def _run(text: str, s: Session):
             llm_routing=s.llm, llm_source=s.backend, llm_model=s.model_name,
         )
         _print_result(text, entities, redacted, show_labels=s.labels)
+        _llm_summary(entities, s)
 
     elif s.mode in ("rag", "generic"):
         from src.rag.redactor import nerguard as NerGuardRAG
@@ -225,6 +237,7 @@ def _run(text: str, s: Session):
         result = s._rag_cache[rag_key].redact(text)
         mapping = result.mapping if s.mapping else None
         _print_result(text, result.entities, result.text, show_labels=s.labels, mapping=mapping)
+        _llm_summary(result.entities, s)
 
     elif s.mode == "json":
         from src.scripts.redact import redact_pipeline
@@ -440,6 +453,12 @@ def _warmup(s: Session):
 
 # ── Main REPL loop ────────────────────────────────────────────────────────────
 def main():
+    import logging
+    # Suppress noisy library loggers; keep WARNING+ for application code
+    for _lib in ("transformers", "huggingface_hub", "tokenizers", "torch",
+                 "urllib3", "httpx", "httpcore", "filelock"):
+        logging.getLogger(_lib).setLevel(logging.ERROR)
+
     from dotenv import load_dotenv
     load_dotenv()
 
@@ -479,12 +498,19 @@ def main():
             continue
         except EOFError:
             _exit_clean()
+        except OSError:
+            # SIGWINCH (terminal resize) can interrupt input() with EINTR
+            continue
 
         if not text:
             continue
 
         if text.startswith("/"):
-            keep = _handle_command(text, s)
+            try:
+                keep = _handle_command(text, s)
+            except Exception as exc:
+                print(f"\n  {R}error: {exc}{RS}\n")
+                keep = True
             if not keep:
                 _exit_clean()
         else:
