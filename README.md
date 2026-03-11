@@ -14,154 +14,26 @@
   <br><br>
 </div>
 
-NerGuard acts as a pre-ingestion privacy layer for RAG pipelines, automatically detecting and redacting PII from documents before they are chunked, embedded, and stored in vector databases. This ensures that sensitive personal data never reaches the retrieval index, keeping downstream LLM queries compliant with GDPR and similar regulations, without sacrificing retrieval quality or requiring manual review.
+NerGuard is a pre-ingestion privacy layer for RAG pipelines: it detects and redacts PII from text before documents are indexed, keeping sensitive data out of vector databases and LLM context windows. It runs a multilingual mDeBERTa-v3 base model for fast, high-confidence predictions, then selectively routes only uncertain spans to an LLM (OpenAI or local Ollama) for correction, typically less than 3% of tokens. A three-stage regex layer handles structured PII (credit cards, SSNs, IBANs) with deterministic validation. The result is a hybrid pipeline that matches or exceeds larger models on PII recall while remaining GDPR-auditable: every prediction carries its source, confidence score, and routing decision.
 
-### 🔍 Quick Example
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/2a250234-d7c8-4378-bc06-fd66705ea400" width="800" alt="NerGuard demo">
+</div>
 
-```text
-Input:
-  "Hi, I'm John Smith. My SSN is 078-05-1120 and my credit card
-   is 4532-0151-1283-0366. Reach me at john@acme.com or +1 555-123-4567."
-
-Detected PII:
-  FIRSTNAME          → "John"                    [base model,        conf: 0.998]
-  LASTNAME           → "Smith"                   [base model,        conf: 0.997]
-  SSN                → "078-05-1120"             [base + regex,      conf: 0.921]
-  CREDITCARDNUMBER   → "4532-0151-1283-0366"     [regex override,    conf: 0.999]
-  EMAIL              → "john@acme.com"           [base model,        conf: 0.995]
-  PHONENUMBER        → "+1 555-123-4567"         [llm routed,        conf: 0.878]
-
-Standard output (--format human):
-  "Hi, I'm █████ █████. My SSN is █████ and my credit card
-   is █████. Reach me at █████ or █████."
-
-RAG output (--format rag):
-  "Hi, I'm [NAME] [NAME]. My SSN is [SSN] and my credit card
-   is [CC]. Reach me at [EMAIL] or [PHONE]."
-```
-
-Each prediction carries full provenance: base confidence, entropy score, routing decision, and regex validation outcome; enabling auditability for GDPR Data Protection Impact Assessments (DPIA).
-
-### 🏠 Local LLM Backends
-
-NerGuard is backend-agnostic. `qwen2.5:7b` is the recommended local backend: near-identical quality, zero API cost, ~5 GB VRAM. Start Ollama and pass `--backend ollama --model qwen2.5:7b`.
-
-### ⚙️ How It Works
-
-**1. 🧠 Entropy-gated routing**: The base model's per-token softmax distribution is evaluated at inference time. Spans where Shannon entropy exceeds a calibrated threshold (or confidence falls below it) are flagged as uncertain. Only those spans (~3% of tokens in practice) are forwarded to the LLM, preserving the base model's confident predictions and minimizing cost.
-
-**2. 📐 Span-level anchor propagation**: The routing decision is made on the B-token (entity head) and propagated to all I-tokens in the span. This eliminates the per-token oscillation problem: without anchoring, ~75% of LLM-induced errors come from I-tokens being classified differently than their B-token. One LLM call per entity span, not per token.
-
-**3. ✅ Three-mode regex validation**: A structured post-processing layer operates at three pipeline stages: *pre-scan* (Luhn check force-overrides credit card predictions before neural inference), *demotion* (invalidates predictions that fail format validation, e.g. malformed SSNs), and *post-processing* (promotes regex-confirmed patterns the model missed entirely).
-
-Each prediction is tagged with its source (`base`, `llm_routed`, `base+regex`, `regex_override`) for full auditability.
-
-## 🚀 Getting Started
-
-```bash
-git clone https://github.com/exdsgift/NerGuard.git
-cd NerGuard
-./setup.sh
-```
-
-`setup.sh` installs all dependencies, optionally configures your OpenAI API key, and reminds you about Ollama for local inference. The NER model (~300 MB) downloads automatically from HuggingFace on first run.
-
-### Install
+## Install
 
 ```bash
 pip install nerguard
 ```
 
-### Interactive REPL
+The NER model (~300 MB) downloads automatically from HuggingFace on first use.
 
-The easiest way to test NerGuard is the interactive REPL — the model loads once and stays hot in memory, so every query is instant.
-
-```bash
-./test.sh
-```
-
-You will see the banner, a one-time model warmup (~1–2 s), and then a prompt:
-
-```
-human ❯
-```
-
-**Basic redaction** — type any text and press Enter:
-
-```
-human ❯ Hi, I'm John Smith. My SSN is 078-05-1120 and email is john@acme.com.
-
-  input    Hi, I'm John Smith. My SSN is 078-05-1120 and email is john@acme.com.
-  redacted Hi, I'm █████ █████. My SSN is █████ and email is █████.
-
-  GIVENNAME   John            base model        conf 0.998
-  SURNAME     Smith           base model        conf 0.997
-  SOCIALNUM   078-05-1120     base + regex      conf 0.921
-  EMAIL       john@acme.com   base model        conf 0.995
-```
-
-**Switch output mode** — cycle through `human → rag → json → generic` with `/mode`, or jump directly:
-
-```
-human ❯ /mode rag
-
-rag ❯ Hi, I'm John Smith. My SSN is 078-05-1120.
-
-  input    Hi, I'm John Smith. My SSN is 078-05-1120.
-  redacted Hi, I'm [GIVENNAME] [SURNAME]. My SSN is [SOCIALNUM].
-```
-
-**Redact a file**:
-
-```
-human ❯ /file report.txt
-```
-
-**Enable LLM routing** — improves recall on ambiguous spans (phone numbers, IDs, dates):
-
-```
-human ❯ /llm
-  LLM routing → on   privacy → cloud  ·  data sent to OpenAI   (backend: openai)
-```
-
-Switch to a local model with Ollama (no data leaves the machine):
-
-```
-human ❯ /backend ollama
-  backend → ollama   model → qwen2.5:3b  (smallest)  when LLM on: privacy → local LLM
-
-human ❯ /model qwen2.5:7b
-  model → qwen2.5:7b
-```
-
-After each query with LLM on, a routing summary is printed:
-
-```
-  LLM (ollama/qwen2.5:7b): 2 entities routed
-  LLM (ollama/qwen2.5:7b): no uncertain spans to route   ← model was already confident
-```
-
-**All REPL commands**:
-
-| Command | Description |
-| --- | --- |
-| `/mode [human\|rag\|json\|generic]` | Switch output format (no arg: cycle) |
-| `/llm` | Toggle LLM routing on / off |
-| `/backend [openai\|ollama]` | Switch LLM backend |
-| `/model NAME` | Set LLM model (e.g. `qwen2.5:7b`, `gpt-4o-mini`) |
-| `/labels` | Toggle per-entity label rows |
-| `/mapping` | Toggle entity → value map (rag / generic modes) |
-| `/file PATH` | Redact an entire file |
-| `/clear` | Clear the screen |
-| `/help` | Show command reference |
-| `/quit` or Ctrl+D | Exit |
-
-### Python API (RAG)
+## Quick start
 
 ```python
-from src.rag import nerguard
+from nerguard import Redactor
 
-ng = nerguard()
+ng = Redactor()
 result = ng.redact("Hi, I'm John Smith. Email: john@acme.com")
 
 print(result.text)
@@ -170,71 +42,64 @@ print(result.text)
 print(result.mapping)
 # {"NAME_0": "John", "NAME_1": "Smith", "EMAIL_0": "john@acme.com"}
 
-# Batch processing
-results = ng.redact_batch(["doc 1...", "doc 2...", "doc 3..."])
+print(result.entities)
+# [{"label": "GIVENNAME", "text": "John", "confidence": 0.998, "source": "base"}, ...]
 ```
 
-### Python API (base)
+**Batch:**
 
 ```python
-from src.inference.tester import PIITester
-
-tester = PIITester(model_path="exdsgift/NerGuard-0.3B")
-entities = tester.get_entities("John Smith lives at 123 Main St. Email: john@email.com")
-
-for e in entities:
-    print(f"{e['label']}: {e['text']} (conf: {e['confidence']:.2%}, source: {e['source']})")
+results = [ng.redact(t) for t in texts]  # model stays cached across calls
 ```
 
-### Reproducing the Benchmark
+## LLM routing
+
+Improves recall on ambiguous spans (phone numbers, IDs, dates) by routing uncertain predictions to an LLM.
+
+```python
+# Cloud (requires OPENAI_API_KEY)
+ng = Redactor(llm_routing=True, llm_source="openai", llm_model="gpt-4o")
+
+# Local — no data leaves the machine (requires Ollama)
+ng = Redactor(llm_routing=True, llm_source="ollama", llm_model="qwen2.5:7b")
+```
+
+## CLI / interactive REPL
 
 ```bash
-# Full cross-system benchmark (cloud)
-uv run python -m src.benchmark.runner \
-  --systems nerguard-hybrid-v2,nerguard-hybrid,nerguard-base,presidio,spacy,piiranha,bert-ner \
-  --datasets nvidia-pii --samples 1000 --llm-model gpt-4o --batch-llm \
-  --semantic-alignment alignments/default.json
-
-# Local inference — no data leaves the machine
-uv run python -m src.benchmark.runner \
-  --systems nerguard-hybrid-v2 --datasets nvidia-pii --samples 1000 \
-  --llm-source ollama --llm-model qwen2.5:7b --batch-llm \
-  --semantic-alignment alignments/default.json
+nerguard                                         # interactive REPL
+nerguard --file report.txt                       # redact a file
+nerguard --llm --backend ollama --model qwen2.5:7b  # with local LLM
+nerguard --format rag                            # RAG-optimised output
 ```
 
----
+| REPL command | Description |
+|---|---|
+| `/mode [human\|rag\|json\|generic]` | Switch output format |
+| `/llm` | Toggle LLM routing |
+| `/backend [openai\|ollama]` | Switch LLM backend |
+| `/model NAME` | Set LLM model |
+| `/file PATH` | Redact a file |
+| `/help` | Show all commands |
 
-## 📁 Repository Structure
+## Constructor parameters
 
-```text
-nerguard_rag/      nerguard-rag package — RAG Python API (pip install nerguard-rag)
-src/
-  core/            Route config, base abstractions (ValidationStrategy, PromptProvider)
-  inference/       LLM router, entity router, regex validator, span assembler
-  tasks/           Task plugins: pii/, biomedical/, financial/
-  training/        Model training and validation
-  benchmark/       Cross-system benchmark framework (runner, metrics, datasets, systems)
-  optimization/    Threshold calibrator, ONNX quantization
-  scripts/         CLI entry points (nerguard) and analysis runners
-docs/              Technical notes, architecture diagrams, bibliography
-experiments/       Benchmark results (JSON + summaries)
-alignments/        Semantic label alignment for cross-system evaluation
-```
+| Parameter | Default | Description |
+|---|---|---|
+| `model_path` | HuggingFace auto-download | Local path or Hub ID for the NER model |
+| `llm_routing` | `False` | Enable entropy-gated LLM routing |
+| `llm_source` | `"openai"` | `"openai"` or `"ollama"` |
+| `llm_model` | `"gpt-4o"` | LLM model name |
+| `typed` | `True` | `True` → `[NAME]`, `False` → `[PII]` |
 
----
+## Detected entity types
 
-## 📖 Citation
+`GIVENNAME` · `SURNAME` · `EMAIL` · `TELEPHONENUM` · `SOCIALNUM` · `CREDITCARDNUMBER` · `IBAN` · `PASSPORTNUM` · `IDCARDNUM` · `DRIVERLICENSENUM` · `TAXNUM` · `STREET` · `BUILDINGNUM` · `CITY` · `ZIPCODE` · `DATE` · `TIME` · `AGE` · `SEX` · `TITLE`
 
-```bibtex
-@mastersthesis{durante2026nerguard,
-  title     = {Engineering a Scalable Multilingual PII Detection System
-               with mDeBERTa-v3 and LLM-Based Validation},
-  author    = {Durante, Gabriele},
-  year      = {2026},
-  school    = {University of Verona},
-  department = {Department of Computer Science}
-}
-```
+## Links
+
+- [Model on HuggingFace](https://huggingface.co/exdsgift/NerGuard-0.3B)
+- [GitHub](https://github.com/exdsgift/NerGuard)
 
 ## License
 
