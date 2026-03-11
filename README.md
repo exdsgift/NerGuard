@@ -33,7 +33,13 @@ The NER model (~300 MB) downloads automatically from HuggingFace on first use.
 ```python
 from nerguard import Redactor
 
-ng = Redactor()
+ng = Redactor(
+    model_path=None,        # str  — local path or HuggingFace Hub ID for the NER model
+    llm_routing=False,      # bool — enable entropy-gated LLM routing
+    llm_source="openai",    # str  — "openai" or "ollama"
+    llm_model="gpt-4o",     # str  — LLM model name
+    typed=True,             # bool — typed placeholders ([NAME]) vs generic ([PII])
+)
 result = ng.redact("Hi, I'm John Smith. Email: john@acme.com")
 
 print(result.text)
@@ -49,7 +55,21 @@ print(result.entities)
 **Batch:**
 
 ```python
+texts = [
+    "Hi, I'm John Smith. Email: john@acme.com",
+    "Call me at +1-800-555-0199 or find me on LinkedIn.",
+]
+
 results = [ng.redact(t) for t in texts]  # model stays cached across calls
+
+for r in results:
+    print(r.text)
+# "Hi, I'm [NAME] [NAME]. Email: [EMAIL]"
+# "Call me at [PHONE] or find me on LinkedIn."
+
+# Collect all mappings
+all_mappings = {k: v for r in results for k, v in r.mapping.items()}
+# {"NAME_0": "John", "NAME_1": "Smith", "EMAIL_0": "john@acme.com", "PHONE_0": "+1-800-555-0199"}
 ```
 
 ## LLM routing
@@ -84,13 +104,50 @@ nerguard --format rag                            # RAG-optimised output
 
 ## Constructor parameters
 
-| Parameter | Default | Description |
+```python
+Redactor(
+    model_path=None,        # str  — local path or HuggingFace Hub ID for the NER model
+    llm_routing=False,      # bool — enable entropy-gated LLM routing
+    llm_source="openai",    # str  — "openai" or "ollama"
+    llm_model="gpt-4o",     # str  — LLM model name
+    typed=True,             # bool — typed placeholders ([NAME]) vs generic ([PII])
+)
+```
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `model_path` | `str` | HuggingFace auto-download | Local filesystem path or HuggingFace Hub ID for the NER model. Omit to download `exdsgift/NerGuard-0.3B` automatically on first use. |
+| `llm_routing` | `bool` | `False` | Enable entropy-gated LLM routing. When `True`, spans where the base model is uncertain are re-evaluated by the LLM. Improves recall on ambiguous tokens (phone numbers, dates, IDs) at the cost of extra latency. |
+| `llm_source` | `str` | `"openai"` | LLM backend to use when `llm_routing=True`. `"openai"` calls the OpenAI API (requires `OPENAI_API_KEY`); `"ollama"` runs inference locally via Ollama (no data leaves the machine). |
+| `llm_model` | `str` | `"gpt-4o"` | Model name passed to the selected LLM backend. Examples: `"gpt-4o"`, `"gpt-4o-mini"` for OpenAI; `"qwen2.5:7b"`, `"llama3.1:8b"` for Ollama. Only used when `llm_routing=True`. |
+| `typed` | `bool` | `True` | Controls placeholder style. `True` → typed placeholders such as `[NAME]`, `[EMAIL]`, `[PHONE]` (preserves semantic context for downstream LLMs). `False` → every entity becomes `[PII]` regardless of type (maximum compression, no semantic signal). |
+
+## RedactResult fields
+
+`ng.redact(text)` returns a `RedactResult` dataclass with three fields:
+
+| Field | Type | Description |
 |---|---|---|
-| `model_path` | HuggingFace auto-download | Local path or Hub ID for the NER model |
-| `llm_routing` | `False` | Enable entropy-gated LLM routing |
-| `llm_source` | `"openai"` | `"openai"` or `"ollama"` |
-| `llm_model` | `"gpt-4o"` | LLM model name |
-| `typed` | `True` | `True` → `[NAME]`, `False` → `[PII]` |
+| `text` | `str` | Redacted text with placeholders replacing PII spans. |
+| `entities` | `list[dict]` | One dict per detected entity, with keys: `label` (entity type), `text` (original value), `start`/`end` (char offsets), `confidence` (0–1), `source` (`"base"` or `"llm"`). |
+| `mapping` | `dict[str, str]` | Maps each placeholder instance to its original value, keyed as `"<LABEL>_<index>"` (e.g. `"NAME_0"`, `"EMAIL_0"`). Useful for auditing or selective de-redaction. |
+
+```python
+result = ng.redact("Hi, I'm John Smith. Email: john@acme.com")
+
+result.text
+# "Hi, I'm [NAME] [NAME]. Email: [EMAIL]"
+
+result.mapping
+# {"NAME_0": "John", "NAME_1": "Smith", "EMAIL_0": "john@acme.com"}
+
+result.entities
+# [
+#   {"label": "GIVENNAME", "text": "John",          "start": 8,  "end": 12, "confidence": 0.998, "source": "base"},
+#   {"label": "SURNAME",   "text": "Smith",         "start": 13, "end": 18, "confidence": 0.995, "source": "base"},
+#   {"label": "EMAIL",     "text": "john@acme.com", "start": 27, "end": 40, "confidence": 0.991, "source": "base"},
+# ]
+```
 
 ## Detected entity types
 
