@@ -40,6 +40,7 @@ ng = Redactor(
     llm_routing=False,      # bool — enable entropy-gated LLM routing
     llm_source="openai",    # str  — "openai" or "ollama"
     llm_model="gpt-4o",     # str  — LLM model name
+    api_key=None,           # str  — API key for OpenAI (or None to use OPENAI_API_KEY env var)
     typed=True,             # bool — typed placeholders ([NAME]) vs generic ([PII])
 )
 result = ng.redact("Hi, I'm John Smith. Email: john@acme.com")
@@ -79,8 +80,8 @@ all_mappings = {k: v for r in results for k, v in r.mapping.items()}
 Improves recall on ambiguous spans (phone numbers, IDs, dates) by routing uncertain predictions to an LLM.
 
 ```python
-# Cloud (requires OPENAI_API_KEY)
-ng = Redactor(llm_routing=True, llm_source="openai", llm_model="gpt-4o")
+# Cloud — pass key explicitly or set OPENAI_API_KEY env var
+ng = Redactor(llm_routing=True, llm_source="openai", llm_model="gpt-4o", api_key="sk-...")
 
 # Local — no data leaves the machine (requires Ollama)
 ng = Redactor(llm_routing=True, llm_source="ollama", llm_model="qwen2.5:7b")
@@ -112,6 +113,7 @@ Redactor(
     llm_routing=False,      # bool — enable entropy-gated LLM routing
     llm_source="openai",    # str  — "openai" or "ollama"
     llm_model="gpt-4o",     # str  — LLM model name
+    api_key=None,           # str  — API key for OpenAI (or None to use OPENAI_API_KEY env var)
     typed=True,             # bool — typed placeholders ([NAME]) vs generic ([PII])
 )
 ```
@@ -120,8 +122,9 @@ Redactor(
 |---|---|---|---|
 | `model_path` | `str` | HuggingFace auto-download | Local filesystem path or HuggingFace Hub ID for the NER model. Omit to download `exdsgift/NerGuard-0.3B` automatically on first use. |
 | `llm_routing` | `bool` | `False` | Enable entropy-gated LLM routing. When `True`, spans where the base model is uncertain are re-evaluated by the LLM. Improves recall on ambiguous tokens (phone numbers, dates, IDs) at the cost of extra latency. |
-| `llm_source` | `str` | `"openai"` | LLM backend to use when `llm_routing=True`. `"openai"` calls the OpenAI API (requires `OPENAI_API_KEY`); `"ollama"` runs inference locally via Ollama (no data leaves the machine). |
+| `llm_source` | `str` | `"openai"` | LLM backend to use when `llm_routing=True`. `"openai"` calls the OpenAI API; `"ollama"` runs inference locally via Ollama (no data leaves the machine). |
 | `llm_model` | `str` | `"gpt-4o"` | Model name passed to the selected LLM backend. Examples: `"gpt-4o"`, `"gpt-4o-mini"` for OpenAI; `"qwen2.5:7b"`, `"llama3.1:8b"` for Ollama. Only used when `llm_routing=True`. |
+| `api_key` | `str` | `None` | API key for the OpenAI backend. If `None`, falls back to the `OPENAI_API_KEY` environment variable. Ignored when `llm_source="ollama"`. |
 | `typed` | `bool` | `True` | Controls placeholder style. `True` → typed placeholders such as `[NAME]`, `[EMAIL]`, `[PHONE]` (preserves semantic context for downstream LLMs). `False` → every entity becomes `[PII]` regardless of type (maximum compression, no semantic signal). |
 
 ## RedactResult fields
