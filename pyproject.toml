@@ -89,7 +89,7 @@ all = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src"]
+packages = ["nerguard", "src"]
 
 [build-system]
 requires = ["hatchling"]

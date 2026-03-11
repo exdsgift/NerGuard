@@ -93,7 +93,18 @@ class nerguard:
 
         Returns:
             RedactResult with redacted text, entity list, and value mapping.
+
+        Raises:
+            TypeError: If text is not a string.
+            ValueError: If text exceeds 100,000 characters.
         """
+        if not isinstance(text, str):
+            raise TypeError(f"text must be str, got {type(text).__name__}")
+        if not text.strip():
+            return RedactResult(text=text, entities=[], mapping={})
+        if len(text) > 100_000:
+            raise ValueError(f"text exceeds 100,000 characters ({len(text)})")
+
         self._load_pipeline()
         entities, _ = self._pipeline(
             text=text,

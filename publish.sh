@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Publish NerGuard packages to PyPI.
+# Publish NerGuard to PyPI.
 #
 # Prerequisites:
 #   1. Create a PyPI account at https://pypi.org/account/register/
@@ -9,7 +9,7 @@
 #
 # Usage:
 #   export UV_PUBLISH_TOKEN="pypi-..."
-#   ./publish.sh              # publish both packages
+#   ./publish.sh              # build + publish
 #   ./publish.sh --dry-run    # build only, no upload
 set -euo pipefail
 
@@ -29,6 +29,7 @@ success() { echo -e "${GREEN}[OK]${NC}    $*"; }
 error()   { echo -e "${RED}[ERROR]${NC} $*" >&2; exit 1; }
 
 ROOT="$(cd "$(dirname "$0")" && pwd)"
+cd "$ROOT"
 
 # ── Check token ───────────────────────────────────────────────────────────────
 if [[ "$DRY_RUN" == false ]]; then
@@ -37,43 +38,30 @@ if [[ "$DRY_RUN" == false ]]; then
     fi
 fi
 
-# ── Publish nerguard (main package) ──────────────────────────────────────────
+# ── Build ─────────────────────────────────────────────────────────────────────
 echo ""
-echo -e "${BOLD}── nerguard (main package) ──────────────────────${NC}"
-cd "$ROOT"
+echo -e "${BOLD}── nerguard ─────────────────────────────────────${NC}"
 
-info "Building nerguard..."
+info "Building..."
+rm -rf dist/
 uv build --out-dir dist/
 success "Built: $(ls dist/nerguard-*.whl dist/nerguard-*.tar.gz 2>/dev/null | tail -2 | tr '\n' ' ')"
 
+# ── Publish ───────────────────────────────────────────────────────────────────
 if [[ "$DRY_RUN" == false ]]; then
-    info "Publishing nerguard to PyPI..."
+    info "Publishing to PyPI..."
     uv publish dist/nerguard-*.whl dist/nerguard-*.tar.gz
-    success "nerguard published."
+    success "Published."
 else
-    info "Dry run — skipping upload for nerguard."
-fi
-
-# ── Publish nerguard-rag ──────────────────────────────────────────────────────
-echo ""
-echo -e "${BOLD}── nerguard-rag ─────────────────────────────────${NC}"
-cd "$ROOT/nerguard_rag"
-
-info "Building nerguard-rag..."
-uv build --out-dir dist/
-success "Built: $(ls dist/nerguard_rag-*.whl dist/nerguard_rag-*.tar.gz 2>/dev/null | tail -2 | tr '\n' ' ')"
-
-if [[ "$DRY_RUN" == false ]]; then
-    info "Publishing nerguard-rag to PyPI..."
-    uv publish dist/nerguard_rag-*.whl dist/nerguard_rag-*.tar.gz
-    success "nerguard-rag published."
-else
-    info "Dry run — skipping upload for nerguard-rag."
+    info "Dry run — skipping upload."
 fi
 
 # ── Done ──────────────────────────────────────────────────────────────────────
 echo ""
-echo -e "${GREEN}${BOLD}Done! Users can now install with:${NC}"
+echo -e "${GREEN}${BOLD}Done! Install with:${NC}"
 echo -e "  pip install nerguard"
-echo -e "  pip install nerguard-rag"
+echo -e ""
+echo -e "${BOLD}CLI commands:${NC}"
+echo -e "  nerguard     \"John Smith, email john@acme.com\""
+echo -e "  nerguard-rag \"John Smith, email john@acme.com\"   # defaults to --rag output"
 echo ""

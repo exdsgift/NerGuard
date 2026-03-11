@@ -14,10 +14,13 @@ Usage:
 
 import argparse
 import json
+import logging
 import os
 import sys
 import warnings
 from typing import Dict, List, Optional, Tuple
+
+logger = logging.getLogger(__name__)
 
 # Suppress noisy warnings before importing heavy libs
 os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "3")
@@ -353,8 +356,8 @@ def redact_pipeline(
                     for idx in span.indices:
                         subword_preds[idx] = "O"
                         sources[idx] = "llm routed"
-            except Exception:
-                pass  # keep model predictions on LLM failure
+            except Exception as _llm_exc:
+                logger.warning("LLM routing failed for span, keeping model prediction: %s", _llm_exc)
 
     # Phase 4: Regex demotion
     pred_ids_array = np.array([label2id.get(p, label2id.get("O", 0)) for p in subword_preds])
@@ -540,6 +543,9 @@ def main():
     if args.text:
         text = args.text
     elif args.file:
+        max_bytes = 10 * 1024 * 1024  # 10 MB
+        if os.path.getsize(args.file) > max_bytes:
+            sys.exit(f"error: file too large (max 10 MB): {args.file}")
         with open(args.file, "r") as f:
             text = f.read().strip()
     else:

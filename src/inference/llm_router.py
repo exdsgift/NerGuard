@@ -36,6 +36,14 @@ if TYPE_CHECKING:
 logger = logging.getLogger(__name__)
 
 
+def _safe_str(s: object) -> str:
+    """Escape curly braces in user-supplied strings before .format() interpolation.
+
+    Prevents both KeyError crashes and prompt injection via malformed braces.
+    """
+    return str(s).replace("{", "{{").replace("}", "}}")
+
+
 class LLMCache:
     """
     In-memory cache for LLM responses.
@@ -298,10 +306,10 @@ class LLMRouter:
         # V13 (Ollama): class-only, uses entity_classes_str; BIO assigned deterministically after
         try:
             prompt = self.prompt_template.format(
-                context=context,
-                target_token=clean_token,
-                prev_label=prev_label,
-                current_pred=current_pred,
+                context=_safe_str(context),
+                target_token=_safe_str(clean_token),
+                prev_label=_safe_str(prev_label),
+                current_pred=_safe_str(current_pred),
                 valid_labels_str=VALID_LABELS_STR,
                 entity_classes_str=ENTITY_CLASSES_STR,
             )
@@ -367,10 +375,10 @@ class LLMRouter:
 
         try:
             prompt = self.span_prompt_template.format(
-                context=context,
-                span_text=clean_span,
+                context=_safe_str(context),
+                span_text=_safe_str(clean_span),
                 token_count=token_count,
-                entity_class=current_pred,
+                entity_class=_safe_str(current_pred),
                 entity_classes_str=ENTITY_CLASSES_STR,
             )
         except KeyError as e:
@@ -460,7 +468,10 @@ class LLMRouter:
             response_format=response_format,
             max_tokens=150,
         )
-        return json.loads(response.choices[0].message.content)
+        try:
+            return json.loads(response.choices[0].message.content)
+        except json.JSONDecodeError as e:
+            raise ValueError(f"OpenAI returned non-JSON response: {e}") from e
 
     def _call_ollama(self, prompt: str) -> Dict[str, Any]:
         """Call Ollama API."""
@@ -649,7 +660,10 @@ class LLMRouter:
             response_format=response_format,
             max_tokens=150,
         )
-        return json.loads(response.choices[0].message.content)
+        try:
+            return json.loads(response.choices[0].message.content)
+        except json.JSONDecodeError as e:
+            raise ValueError(f"OpenAI returned non-JSON response: {e}") from e
 
     async def disambiguate_span_async(
         self,
@@ -675,10 +689,10 @@ class LLMRouter:
 
         try:
             prompt = self.span_prompt_template.format(
-                context=context,
-                span_text=clean_span,
+                context=_safe_str(context),
+                span_text=_safe_str(clean_span),
                 token_count=token_count,
-                entity_class=current_pred,
+                entity_class=_safe_str(current_pred),
                 entity_classes_str=ENTITY_CLASSES_STR,
             )
         except KeyError as e:

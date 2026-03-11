@@ -5,10 +5,28 @@ Shared between the hybrid evaluator (training-time evaluation) and the benchmark
 system wrapper (cross-system comparison). Extracted to avoid code duplication.
 """
 
+import math
 from dataclasses import dataclass
 from typing import List, Optional
 
 from src.inference.entity_router import EntitySpecificRouter
+
+
+def _safe_int(val: object, default: int = 0) -> int:
+    """Convert offset value to int, returning default on failure."""
+    try:
+        return int(val)
+    except (TypeError, ValueError):
+        return default
+
+
+def _safe_float(val: object, default: float = 0.0) -> float:
+    """Convert to float and sanitize NaN/Inf, returning default on failure."""
+    try:
+        f = float(val)
+    except (TypeError, ValueError):
+        return default
+    return default if (math.isnan(f) or math.isinf(f)) else f
 
 
 @dataclass
@@ -68,11 +86,11 @@ def assemble_entity_spans(
             entity_class = label[2:]
             is_uncertain = entity_router.should_route(
                 predicted_label=label,
-                entropy=float(entropy_flat[i]),
-                confidence=float(conf_flat[i]),
+                entropy=_safe_float(entropy_flat[i]),
+                confidence=_safe_float(conf_flat[i], default=1.0),
             )
             indices = [i]
-            char_end = int(offset_flat[i][1])
+            char_end = _safe_int(offset_flat[i][1])
 
             j = i + 1
             while j < n:
@@ -81,7 +99,7 @@ def assemble_entity_spans(
                 if pred_labels[j] != f"I-{entity_class}":
                     break
                 indices.append(j)
-                char_end = int(offset_flat[j][1])
+                char_end = _safe_int(offset_flat[j][1])
                 j += 1
 
             spans.append(
@@ -89,7 +107,7 @@ def assemble_entity_spans(
                     indices=indices,
                     entity_class=entity_class,
                     is_uncertain=is_uncertain,
-                    char_start=int(offset_flat[i][0]),
+                    char_start=_safe_int(offset_flat[i][0]),
                     char_end=char_end,
                 )
             )
@@ -141,35 +159,35 @@ def assemble_uncertain_o_spans(
         start_off = offset_flat[i]
 
         # Skip non-O tokens and special tokens (offset 0,0)
-        if label != "O" or (int(start_off[0]) == 0 and int(start_off[1]) == 0):
+        if label != "O" or (_safe_int(start_off[0]) == 0 and _safe_int(start_off[1]) == 0):
             i += 1
             continue
 
-        ent = float(entropy_flat[i])
-        conf = float(conf_flat[i])
+        ent = _safe_float(entropy_flat[i])
+        conf = _safe_float(conf_flat[i], default=1.0)
 
         if ent > o_thresh_entropy and conf < o_thresh_confidence:
             # Start a candidate span — group consecutive uncertain O tokens
             indices = [i]
-            char_end = int(offset_flat[i][1])
+            char_end = _safe_int(offset_flat[i][1])
 
             j = i + 1
             while j < n:
                 if pred_labels[j] != "O":
                     break
                 sj = offset_flat[j]
-                if int(sj[0]) == 0 and int(sj[1]) == 0:
+                if _safe_int(sj[0]) == 0 and _safe_int(sj[1]) == 0:
                     break
-                ej = float(entropy_flat[j])
-                cj = float(conf_flat[j])
+                ej = _safe_float(entropy_flat[j])
+                cj = _safe_float(conf_flat[j], default=1.0)
                 if ej > o_thresh_entropy and cj < o_thresh_confidence:
                     indices.append(j)
-                    char_end = int(sj[1])
+                    char_end = _safe_int(sj[1])
                     j += 1
                 else:
                     break
 
-            char_start = int(offset_flat[indices[0]][0])
+            char_start = _safe_int(offset_flat[indices[0]][0])
             if char_end - char_start >= min_span_chars:
                 spans.append(
                     EntitySpan(

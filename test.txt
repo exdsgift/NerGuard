@@ -1,1 +1,104 @@
-Patient John Davies, born on March 12, 1968, in Manchester, residing at 14 Elm Street, London SW1A 1AA, NHS number 943 476 2819, National Insurance Number JT 49 28 37 C, phone +44 7923 184 293, email john.davies68@gmail.com, was seen on February 18, 2025, by Dr. Emily Carter, GP, Riverside Medical Practice, 22 High Street, London SW1A 2BJ, tel. 020 7946 0321, who diagnosed him with type 2 diabetes mellitus (ICD-10: E11) and essential hypertension (ICD-10: I10), prescribing metformin 500 mg twice daily and ramipril 5 mg every morning.
+================================================================================
+PII MEDICAL SAMPLES — MULTILINGUAL TEST SET
+================================================================================
+
+--------------------------------------------------------------------------------
+[EN] English
+--------------------------------------------------------------------------------
+Patient John Davies, born on March 12, 1968, in Manchester, residing at 14 Elm
+Street, London SW1A 1AA, NHS number 943 476 2819, National Insurance Number
+JT 49 28 37 C, phone +44 7923 184 293, email john.davies68@gmail.com, was seen
+on February 18, 2025, by Dr. Emily Carter, GP, Riverside Medical Practice,
+22 High Street, London SW1A 2BJ, tel. 020 7946 0321, who diagnosed him with
+type 2 diabetes mellitus (ICD-10: E11) and essential hypertension (ICD-10: I10),
+prescribing metformin 500 mg twice daily and ramipril 5 mg every morning.
+
+--------------------------------------------------------------------------------
+[FR] French
+--------------------------------------------------------------------------------
+Le patient Claire Fontaine-Dubois, née le 17 avril 1979 à Strasbourg, domiciliée
+au 12 rue des Lilas, 67000 Strasbourg, numéro de sécurité sociale
+2 79 04 67 482 031 47, numéro fiscal 07 23 498 127 834, téléphone
++33 6 73 29 84 51, courriel claire.fontaine@gmail.com, a été reçue le
+18 février 2025 par le Dr. Thomas Renard, médecin généraliste, Cabinet Médical
+du Parc, 34 avenue de la Paix, 67000 Strasbourg, tél. 03 88 21 49 30, qui a
+posé le diagnostic de diabète de type 2 (CIM-10 : E11) et d'hypertension
+artérielle essentielle (CIM-10 : I10), en prescrivant metformine 500 mg deux
+fois par jour et ramipril 5 mg chaque matin.
+
+--------------------------------------------------------------------------------
+[DE] German
+--------------------------------------------------------------------------------
+Der Patient Hans Müller, geboren am 22. Juli 1981 in München, wohnhaft in der
+Schillerstraße 47, 80336 München, Krankenversichertennummer A123456789,
+Steueridentifikationsnummer 45 678 912 345, Telefon +49 89 4521 7893,
+E-Mail hans.mueller81@web.de, wurde am 18. Februar 2025 von Dr. Wolfgang Becker,
+Hausarzt, Gemeinschaftspraxis Becker & Partner, Leopoldstraße 12, 80802 München,
+Tel. 089 3312 4490, untersucht, der die Diagnose Diabetes mellitus Typ 2
+(ICD-10: E11) und essentielle Hypertonie (ICD-10: I10) stellte und Metformin
+500 mg zweimal täglich sowie Ramipril 5 mg jeden Morgen verschrieb.
+
+--------------------------------------------------------------------------------
+[ES] Spanish
+--------------------------------------------------------------------------------
+El paciente Carlos García Martínez, nacido el 9 de agosto de 1975 en Sevilla,
+con domicilio en Calle Mayor 34, 3º B, 41001 Sevilla, DNI 28374910K, número de
+seguridad social 28 07 75 12345678, teléfono +34 654 293 817,
+correo electrónico carlos.garcia75@gmail.com, fue atendido el 18 de febrero de
+2025 por el Dr. Alejandro Romero, médico de cabecera, Centro de Salud Triana,
+Calle Castilla 14, 41010 Sevilla, tel. 954 38 29 10, quien le diagnosticó
+diabetes mellitus tipo 2 (CIE-10: E11) e hipertensión arterial esencial
+(CIE-10: I10), prescribiéndole metformina 500 mg dos veces al día y ramipril
+5 mg cada mañana.
+
+--------------------------------------------------------------------------------
+[IT] Italian
+--------------------------------------------------------------------------------
+Il paziente Marco Bianchi, nato il 5 giugno 1971 a Torino, residente in
+Via Roma 12, 10121 Torino, codice fiscale BNCMRC71H05L219K, tessera sanitaria
+80038310720, telefono +39 011 482 3910, email marco.bianchi71@gmail.com, è stato
+visitato in data 18 febbraio 2025 dal Dott. Andrea Ferretti, medico di base,
+Studio Medico Via Po 34, Torino, tel. 011 392 4821, che ha formulato diagnosi di
+diabete mellito tipo 2 (ICD-10: E11) con ipertensione arteriosa essenziale
+(ICD-10: I10), prescrivendo metformina 500 mg due volte al giorno e ramipril
+5 mg ogni mattina.
+
+--------------------------------------------------------------------------------
+[NL] Dutch
+--------------------------------------------------------------------------------
+De patiënt Jan de Vries, geboren op 14 maart 1969 in Amsterdam, woonachtig aan
+de Keizersgracht 112, 1015 CW Amsterdam, BSN 123456782, telefoon
++31 6 48 29 37 51, e-mail jan.devries69@gmail.com, werd op 18 februari 2025
+gezien door Dr. Sophie van den Berg, huisarts, Huisartsenpraktijk Centrum,
+Herengracht 45, 1015 BN Amsterdam, tel. 020 624 3910, die de diagnose diabetes
+mellitus type 2 (ICD-10: E11) en essentiële hypertensie (ICD-10: I10) stelde en
+metformine 500 mg tweemaal daags en ramipril 5 mg elke ochtend voorschreef.
+
+--------------------------------------------------------------------------------
+[HI] Hindi
+--------------------------------------------------------------------------------
+मरीज राजेश कुमार शर्मा, जन्म तिथि 22 अप्रैल 1973, जन्म स्थान जयपुर, राजस्थान,
+निवास: फ्लैट नं. 3B, शांति निवास अपार्टमेंट, सांगानेर, जयपुर - 302029,
+आधार संख्या 4821 7634 9012, पैन कार्ड BSZPS4921K, मोबाइल +91 98221 73849,
+ईमेल rajesh.sharma73@gmail.com, को 18 फरवरी 2025 को डॉ. अनुराधा देशपांडे,
+सामान्य चिकित्सक, देशपांडे क्लिनिक, एमआई रोड 56, जयपुर, दूरभाष 0141 392 4821
+द्वारा जांचा गया, जिन्होंने टाइप 2 मधुमेह (ICD-10: E11) और आवश्यक उच्च रक्तचाप
+(ICD-10: I10) का निदान किया और मेटफॉर्मिन 500 mg दिन में दो बार तथा
+रामिप्रिल 5 mg प्रत्येक सुबह लेने की सलाह दी।
+
+--------------------------------------------------------------------------------
+[TE] Telugu
+--------------------------------------------------------------------------------
+రోగి వెంకట రమణ రెడ్డి, జన్మ తేదీ 30 జనవరి 1970, జన్మ స్థలం హైదరాబాద్,
+నివాసం: ఫ్లాట్ నం. 5A, శ్రీనివాస్ అపార్ట్‌మెంట్స్, బంజారా హిల్స్,
+హైదరాబాద్ - 500034, ఆధార్ నంబర్ 3821 7492 0183, పాన్ కార్డ్ CVXPR3847K,
+మొబైల్ +91 94401 28374, ఇమెయిల్ venkat.reddy70@gmail.com, ను 18 ఫిబ్రవరి 2025న
+డాక్టర్ లక్ష్మి ప్రసాద్, జనరల్ ఫిజిషియన్, ప్రసాద్ క్లినిక్, రోడ్ నం. 12,
+బంజారా హిల్స్, హైదరాబాద్, ఫోన్ 040 2334 9821 పరీక్షించారు, టైప్ 2 డయాబెటిస్
+మెల్లిటస్ (ICD-10: E11) మరియు అవసరమైన అధిక రక్తపోటు (ICD-10: I10) నిర్ధారణ
+చేశారు, మెట్‌ఫార్మిన్ 500 mg రోజుకు రెండుసార్లు మరియు రామిప్రిల్ 5 mg ప్రతి
+ఉదయం సూచించారు.
+
+================================================================================
+END OF FILE
+================================================================================

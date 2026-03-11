@@ -857,6 +857,8 @@ class RegexValidator:
                     if int(offset_mapping[i][0]) != int(offset_mapping[i][1])]
 
             if not starts or not ends:
+                # All tokens in span are special tokens (offset 0,0) — skip.
+                # Without this guard, min()/max() on empty lists would raise ValueError.
                 continue
 
             span_start = min(starts)

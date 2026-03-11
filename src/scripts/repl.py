@@ -169,7 +169,7 @@ def _prompt_str(s: Session) -> str:
 
 def _print_hint():
     """Hint line printed above the prompt — stays clean, no cursor tricks."""
-    print(f"\n\n\n{DW}  enter text to redact, or /command{RS}\n")
+    print(f"\n\n\n{DW}  enter text to redact, or /help{RS}\n")
 
 
 def _print_result(text: str, entities, redacted: str, show_labels: bool, mapping: dict = None):
