@@ -34,7 +34,7 @@ def _resolve_model_path(model_path: str) -> str:
     Returns:
         The original path if it exists as a directory, else the HF Hub model ID
     """
-    if os.path.isdir(model_path):
+    if os.path.isdir(model_path) or model_path == HF_MODEL_ID:
         return model_path
     logger.info(
         f"Local model not found at '{model_path}'. "
@@ -134,8 +134,9 @@ def load_model_and_tokenizer(
     Returns:
         Tuple of (model, tokenizer)
     """
-    tokenizer = load_tokenizer(model_path, use_fast=use_fast)
-    model = load_model(model_path, device=device, eval_mode=eval_mode)
+    resolved = _resolve_model_path(model_path)
+    tokenizer = load_tokenizer(resolved, use_fast=use_fast)
+    model = load_model(resolved, device=device, eval_mode=eval_mode)
     return model, tokenizer
 
 

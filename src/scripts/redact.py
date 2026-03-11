@@ -211,6 +211,7 @@ def redact_pipeline(
     llm_model: str = "gpt-4o",
     model=None,
     tokenizer=None,
+    api_key: str = None,
 ) -> Tuple[List[Dict], str]:
     """
     Run the full hybrid pipeline on text and return entities + redacted text.
@@ -294,7 +295,7 @@ def redact_pipeline(
         )
 
         from src.inference.llm_router import LLMRouter
-        router = LLMRouter(source=llm_source, model=llm_model, ollama_model=llm_model)
+        router = LLMRouter(source=llm_source, model=llm_model, ollama_model=llm_model, api_key=api_key)
 
         for span in entity_spans:
             if not span.is_uncertain:

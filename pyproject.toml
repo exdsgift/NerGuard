@@ -1,6 +1,6 @@
 [project]
 name = "nerguard"
-version = "1.0.1"
+version = "1.0.2"
 description = "Entropy-gated hybrid NER for privacy-compliant PII detection"
 readme = "README.md"
 license = {text = "MIT"}

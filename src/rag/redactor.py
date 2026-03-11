@@ -71,12 +71,14 @@ class nerguard:
         llm_source: str = "openai",
         llm_model: str = "gpt-4o",
         typed: bool = True,
+        api_key: str = None,
     ) -> None:
         self.model_path = model_path
         self.llm_routing = llm_routing
         self.llm_source = llm_source
         self.llm_model = llm_model
         self.typed = typed
+        self.api_key = api_key
         self._pipeline = None  # lazy-loaded on first call
         self._model = None     # cached NER model
         self._tokenizer = None # cached tokenizer
@@ -121,6 +123,7 @@ class nerguard:
             llm_model=self.llm_model,
             model=self._model,
             tokenizer=self._tokenizer,
+            api_key=self.api_key,
         )
         return self._build_result(text, entities)
 
