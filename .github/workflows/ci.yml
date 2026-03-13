@@ -1,0 +1,127 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        run: uv python install ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: uv sync --extra dev --extra langchain
+
+      - name: Check package imports
+        run: |
+          uv run python -c "from nerguard import Redactor, RedactResult; print('core imports OK')"
+          uv run python -c "from nerguard.langchain import NerGuardAnonymizer, NerGuardTool; print('langchain imports OK')"
+
+      - name: Check LLM provider abstraction
+        run: |
+          uv run python -c "
+          from src.core.base_llm import LLMProvider
+          from src.inference.llm_providers import OpenAIProvider, OllamaProvider
+          print('provider imports OK')
+          "
+
+      - name: Test model cache
+        run: |
+          uv run python -c "
+          from src.core.model_loader import load_model_and_tokenizer, clear_model_cache, _model_cache
+          m1, t1 = load_model_and_tokenizer()
+          m2, t2 = load_model_and_tokenizer()
+          assert m1 is m2, 'Model cache not working'
+          assert t1 is t2, 'Tokenizer cache not working'
+          assert len(_model_cache) == 1, 'Cache should have 1 entry'
+          clear_model_cache()
+          assert len(_model_cache) == 0, 'Cache should be empty after clear'
+          print('model cache OK')
+          "
+
+      - name: Test basic redaction
+        run: |
+          uv run python -c "
+          from nerguard import Redactor
+          ng = Redactor()
+          result = ng.redact('John Smith email john@acme.com')
+          assert '[EMAIL]' in result.text, f'Expected [EMAIL] in: {result.text}'
+          assert len(result.entities) > 0, 'No entities detected'
+          assert len(result.mapping) > 0, 'No mapping entries'
+          print('basic redaction OK')
+          "
+
+      - name: Test batch redaction
+        run: |
+          uv run python -c "
+          from nerguard import Redactor
+          ng = Redactor()
+          results = ng.redact_batch(['John Smith', 'alice@example.com'])
+          assert len(results) == 2, 'Expected 2 results'
+          print('batch redaction OK')
+          "
+
+      - name: Test LangChain DocumentTransformer
+        run: |
+          uv run python -c "
+          from langchain_core.documents import Document
+          from nerguard.langchain import NerGuardAnonymizer
+
+          anonymizer = NerGuardAnonymizer()
+          docs = [Document(page_content='John Smith email john@acme.com')]
+          result = anonymizer.transform_documents(docs)
+          assert 'nerguard_mapping' in result[0].metadata, 'Missing mapping in metadata'
+          assert len(result[0].metadata['nerguard_mapping']) > 0, 'Empty mapping'
+          print('LangChain transformer OK')
+          "
+
+      - name: Test LangChain Tool
+        run: |
+          uv run python -c "
+          from nerguard.langchain import NerGuardTool
+
+          tool = NerGuardTool()
+          result = tool.invoke({'text': 'Call Alice at alice@test.com'})
+          assert isinstance(result, str), 'Tool should return string'
+          assert len(tool.last_mapping) > 0, 'Tool mapping should not be empty'
+          print('LangChain tool OK')
+          "
+
+      - name: Test typed vs generic placeholders
+        run: |
+          uv run python -c "
+          from nerguard import Redactor
+
+          ng_typed = Redactor(typed=True)
+          ng_generic = Redactor(typed=False)
+
+          text = 'John Smith john@acme.com'
+          r_typed = ng_typed.redact(text)
+          r_generic = ng_generic.redact(text)
+
+          assert '[NAME]' in r_typed.text or '[EMAIL]' in r_typed.text, 'Typed placeholders missing'
+          assert '[PII]' in r_generic.text, 'Generic placeholder missing'
+          print('placeholder modes OK')
+          "
+
+      - name: Run pytest (if tests exist)
+        run: |
+          if [ -d "tests" ] && [ "$(ls tests/*.py 2>/dev/null)" ]; then
+            uv run pytest tests/ -v
+          else
+            echo "No test directory found, skipping pytest"
+          fi
