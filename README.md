@@ -158,6 +158,41 @@ result.entities
 
 `GIVENNAME` · `SURNAME` · `EMAIL` · `TELEPHONENUM` · `SOCIALNUM` · `CREDITCARDNUMBER` · `IBAN` · `PASSPORTNUM` · `IDCARDNUM` · `DRIVERLICENSENUM` · `TAXNUM` · `STREET` · `BUILDINGNUM` · `CITY` · `ZIPCODE` · `DATE` · `TIME` · `AGE` · `SEX` · `TITLE`
 
+## LangChain integration
+
+NerGuard works as a LangChain **DocumentTransformer** and **Tool** out of the box.
+
+```bash
+pip install nerguard[langchain]
+```
+
+**Anonymize documents in a RAG pipeline:**
+
+```python
+from langchain_core.documents import Document
+from nerguard.langchain import NerGuardAnonymizer
+
+anonymizer = NerGuardAnonymizer()
+docs = [Document(page_content="John Smith's email is john@acme.com")]
+anon_docs = anonymizer.transform_documents(docs)
+
+print(anon_docs[0].page_content)
+# "John Smith's email is [EMAIL]"
+
+print(anon_docs[0].metadata["nerguard_mapping"])
+# {"EMAIL_0": "john@acme.com"}
+```
+
+**As a Tool for LangChain agents:**
+
+```python
+from nerguard.langchain import NerGuardTool
+
+tool = NerGuardTool()
+result = tool.invoke({"text": "Call Alice at +33 6 12 34 56 78"})
+# "Call [NAME] at [PHONE]"
+```
+
 ## Links
 
 - [Model on HuggingFace](https://huggingface.co/exdsgift/NerGuard-0.3B)
