@@ -1,28 +1,27 @@
 <div align="center">
   <h1>NerGuard</h1>
   <p><strong>Entropy-Gated Hybrid NER for Privacy-Compliant PII Detection</strong></p>
+
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11+-3776AB?style=flat&logo=python&logoColor=white" alt="Python"></a>
   <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-2.0+-EE4C2C?style=flat&logo=pytorch&logoColor=white" alt="PyTorch"></a>
   <a href="https://huggingface.co/"><img src="https://img.shields.io/badge/HuggingFace-Transformers-FFD21E?style=flat&logo=huggingface&logoColor=black" alt="HuggingFace"></a>
   <a href="https://ollama.com/"><img src="https://img.shields.io/badge/Ollama-local%20inference-black?style=flat&logo=ollama&logoColor=white" alt="Ollama"></a>
   <a href="https://github.com/astral-sh/uv"><img src="https://img.shields.io/badge/uv-package%20manager-DE5FE9?style=flat&logo=astral&logoColor=white" alt="uv"></a>
+  <a href="https://platform.openai.com/"><img src="https://img.shields.io/badge/OpenAI-GPT--4o-412991?style=flat&logo=openai&logoColor=white" alt="OpenAI"></a>
+  <a href="https://www.langchain.com/"><img src="https://img.shields.io/badge/LangChain-integration-1C3C3C?style=flat&logo=langchain&logoColor=white" alt="LangChain"></a>
+  <a href="https://pypi.org/project/nerguard/"><img src="https://img.shields.io/badge/PyPI-nerguard-3775A9?style=flat&logo=pypi&logoColor=white" alt="PyPI"></a>
   <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat" alt="MIT License">
   <br><br>
   <a href="https://huggingface.co/exdsgift/NerGuard-0.3B">🤗 Model on HuggingFace</a>
-  &nbsp;·&nbsp;
-  <a href="https://pypi.org/project/nerguard/">📦 PyPI: nerguard</a>
-  &nbsp;·&nbsp;
-  <a href="https://colab.research.google.com/github/exdsgift/NerGuard/blob/main/scripts/NerGuard_Demo.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"></a>
   <br><br>
 </div>
-
 NerGuard is a pre-ingestion privacy layer for RAG pipelines: it detects and redacts PII from text before documents are indexed, keeping sensitive data out of vector databases and LLM context windows. It runs a multilingual mDeBERTa-v3 base model for fast, high-confidence predictions, then selectively routes only uncertain spans to an LLM (OpenAI or local Ollama) for correction, typically less than 3% of tokens. A three-stage regex layer handles structured PII (credit cards, SSNs, IBANs) with deterministic validation. The result is a hybrid pipeline that matches or exceeds larger models on PII recall while remaining GDPR-auditable: every prediction carries its source, confidence score, and routing decision.
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/2a250234-d7c8-4378-bc06-fd66705ea400" width="800" alt="NerGuard demo">
 </div>
 
-## Install
+### Install
 
 ```bash
 pip install nerguard
@@ -30,7 +29,8 @@ pip install nerguard
 
 The NER model (~300 MB) downloads automatically from HuggingFace on first use.
 
-## Quick start
+### Quick start
+<a href="https://colab.research.google.com/github/exdsgift/NerGuard/blob/main/scripts/NerGuard_Demo.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"></a>
 
 ```python
 from nerguard import Redactor
