@@ -1,6 +1,6 @@
 [project]
 name = "nerguard"
-version = "1.0.2"
+version = "1.1.0"
 description = "Entropy-gated hybrid NER for privacy-compliant PII detection"
 readme = "README.md"
 license = {text = "MIT"}
@@ -75,6 +75,13 @@ quantization = [
     "accelerate>=0.27",
 ]
 
+# pip install nerguard[langchain]
+# LangChain integration: DocumentTransformer + Tool for agent workflows.
+langchain = [
+    "langchain-core>=0.2",
+    "pydantic>=2.0",
+]
+
 # pip install nerguard[dev]
 dev = [
     "pytest>=8.0",
@@ -85,7 +92,7 @@ dev = [
 
 # pip install nerguard[all]  — full research environment
 all = [
-    "nerguard[benchmark,quantization,dev]",
+    "nerguard[benchmark,quantization,langchain,dev]",
 ]
 
 [tool.hatch.build.targets.wheel]

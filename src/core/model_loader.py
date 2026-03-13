@@ -24,6 +24,14 @@ logger = logging.getLogger(__name__)
 
 HF_MODEL_ID = "exdsgift/NerGuard-0.3B"
 
+# Global cache: avoids reloading the same model across multiple Redactor instances.
+# Keyed by (resolved_path, device) to handle multi-device scenarios.
+# Not thread-safe; add threading.Lock if concurrent access is needed.
+_model_cache: Dict[Tuple[str, str], Tuple[PreTrainedModel, PreTrainedTokenizer]] = {}
+
+
+_hf_download_announced = False
+
 
 def _resolve_model_path(model_path: str) -> str:
     """Use local path if it exists on disk, otherwise fall back to HuggingFace Hub.
@@ -34,13 +42,16 @@ def _resolve_model_path(model_path: str) -> str:
     Returns:
         The original path if it exists as a directory, else the HF Hub model ID
     """
+    global _hf_download_announced
     if os.path.isdir(model_path) or model_path == HF_MODEL_ID:
         return model_path
     logger.info(
         f"Local model not found at '{model_path}'. "
-        f"Downloading from HuggingFace Hub: {HF_MODEL_ID}"
+        f"Using HuggingFace Hub: {HF_MODEL_ID}"
     )
-    print(f"[NerGuard] Model not found locally — downloading from HuggingFace ({HF_MODEL_ID})...")
+    if not _hf_download_announced:
+        print(f"[NerGuard] Using model from HuggingFace ({HF_MODEL_ID})")
+        _hf_download_announced = True
     return HF_MODEL_ID
 
 
@@ -123,7 +134,8 @@ def load_model_and_tokenizer(
     """
     Load both model and tokenizer from a pretrained path.
 
-    This is a convenience function that combines load_model and load_tokenizer.
+    Uses a global cache keyed by (resolved_path, device) so that multiple
+    Redactor instances share the same model in memory.
 
     Args:
         model_path: Path to the pretrained model or HuggingFace model name
@@ -135,9 +147,24 @@ def load_model_and_tokenizer(
         Tuple of (model, tokenizer)
     """
     resolved = _resolve_model_path(model_path)
+    if device is None:
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    cache_key = (resolved, device)
+    if cache_key in _model_cache:
+        logger.debug(f"Using cached model for {resolved} on {device}")
+        return _model_cache[cache_key]
+
     tokenizer = load_tokenizer(resolved, use_fast=use_fast)
     model = load_model(resolved, device=device, eval_mode=eval_mode)
+    _model_cache[cache_key] = (model, tokenizer)
     return model, tokenizer
+
+
+def clear_model_cache() -> None:
+    """Clear the global model cache, releasing references to loaded models."""
+    _model_cache.clear()
+    logger.debug("Model cache cleared")
 
 
 def load_labels(

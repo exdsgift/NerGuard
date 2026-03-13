@@ -16,6 +16,8 @@ import logging
 import os
 from typing import TYPE_CHECKING, Dict, Any, Optional, Set
 
+from src.core.base_llm import LLMProvider
+
 from src.core.constants import (
     DEFAULT_LLM_SOURCE,
     DEFAULT_OPENAI_MODEL,
@@ -185,6 +187,7 @@ class LLMRouter:
         use_structured_outputs: bool = True,
         use_extended_labels: bool = False,
         prompt_provider: Optional["PromptProvider"] = None,
+        provider: Optional[LLMProvider] = None,
     ):
         """
         Initialize the LLM Router.
@@ -206,13 +209,14 @@ class LLMRouter:
             prompt_provider: Task-specific prompt provider. When set, overrides
                 system_message, valid_entity_classes, and entity aliases.
                 When None, defaults to PII behavior.
+            provider: Pre-built LLMProvider instance. When given, source/api_key/model
+                are ignored for client creation (backward-compatible).
         """
         self.source = source.lower()
         self.model = model if self.source == "openai" else ollama_model
         self.cache = LLMCache(max_size=cache_size) if enable_cache else None
         self.valid_labels = valid_labels or VALID_LABELS_SET
         self.prompt_provider = prompt_provider
-        self.client = None
         self.context_window = context_window
         self.use_structured_outputs = use_structured_outputs and self.source == "openai"
 
@@ -235,28 +239,20 @@ class LLMRouter:
         from src.inference.prompts import PROMPTS
         self.span_prompt_template = PROMPTS.get(span_prompt_version, PROMPT_V14_SPAN)
 
-        # Initialize client
-        self.async_client = None
-        if self.source == "openai":
+        # Initialize LLM provider
+        if provider is not None:
+            self.provider = provider
+        elif self.source == "openai":
             api_key = api_key or os.getenv("OPENAI_API_KEY")
             if not api_key:
                 raise ValueError("OpenAI API key required. Set OPENAI_API_KEY env var or pass api_key.")
-            try:
-                from openai import OpenAI, AsyncOpenAI
-                self.client = OpenAI(api_key=api_key)
-                self.async_client = AsyncOpenAI(api_key=api_key)
-                logger.info(f"[LLM] Backend: OpenAI ({self.model})")
-            except ImportError:
-                raise ImportError("openai package required. Install with: pip install openai")
-
+            from src.inference.llm_providers import OpenAIProvider
+            self.provider = OpenAIProvider(api_key=api_key, model=self.model)
+            logger.info(f"[LLM] Backend: OpenAI ({self.model})")
         elif self.source == "ollama":
-            try:
-                import ollama
-                self._ollama = ollama
-                logger.info(f"[LLM] Backend: Ollama ({self.model})")
-            except ImportError:
-                raise ImportError("ollama package required. Install with: pip install ollama")
-
+            from src.inference.llm_providers import OllamaProvider
+            self.provider = OllamaProvider(model=self.model)
+            logger.info(f"[LLM] Backend: Ollama ({self.model})")
         else:
             raise ValueError(f"Invalid LLM source: {source}. Use 'openai' or 'ollama'")
 
@@ -426,17 +422,10 @@ class LLMRouter:
 
         return f"...{prefix}>>> {target} <<<{suffix}..."
 
-    def _call_llm(self, prompt: str) -> Dict[str, Any]:
-        """Route to appropriate LLM backend."""
-        if self.source == "openai":
-            return self._call_openai(prompt)
-        else:
-            return self._call_ollama(prompt)
-
-    def _call_openai(self, prompt: str) -> Dict[str, Any]:
-        """Call OpenAI API with optional structured outputs."""
+    def _build_response_format(self) -> Optional[Dict[str, Any]]:
+        """Build the response_format dict for the current configuration."""
         if self.use_structured_outputs:
-            response_format = {
+            return {
                 "type": "json_schema",
                 "json_schema": {
                     "name": "ner_classification",
@@ -452,64 +441,20 @@ class LLMRouter:
                     },
                 },
             }
-        else:
-            response_format = {"type": "json_object"}
+        return None
 
-        response = self.client.chat.completions.create(
-            model=self.model,
-            messages=[
-                {
-                    "role": "system",
-                    "content": self._system_message,
-                },
-                {"role": "user", "content": prompt},
-            ],
+    def _call_llm(self, prompt: str) -> Dict[str, Any]:
+        """Call LLM via the provider interface."""
+        messages = [
+            {"role": "system", "content": self._system_message},
+            {"role": "user", "content": prompt},
+        ]
+        return self.provider.call(
+            messages=messages,
             temperature=0.0,
-            response_format=response_format,
             max_tokens=150,
+            response_format=self._build_response_format(),
         )
-        try:
-            return json.loads(response.choices[0].message.content)
-        except json.JSONDecodeError as e:
-            raise ValueError(f"OpenAI returned non-JSON response: {e}") from e
-
-    def _call_ollama(self, prompt: str) -> Dict[str, Any]:
-        """Call Ollama API."""
-        response = self._ollama.chat(
-            model=self.model,
-            messages=[{"role": "user", "content": prompt}],
-            options={"temperature": 0.0, "num_predict": -1},
-        )
-        msg = response["message"]
-        raw_content = msg.content
-        thinking = getattr(msg, "thinking", None) or ""
-
-        # Ollama thinking models may return content as a list of blocks
-        if isinstance(raw_content, list):
-            raw_content = " ".join(
-                block.get("text", "") if isinstance(block, dict) else str(block)
-                for block in raw_content
-            )
-
-        # If content is empty, the model may have put everything in the thinking field
-        # Extract the first valid JSON object from whichever field contains it
-        decoder = json.JSONDecoder()
-        for source in (str(raw_content), str(thinking)):
-            content = source.strip()
-            idx = 0
-            while idx < len(content):
-                try:
-                    obj, _ = decoder.raw_decode(content, idx)
-                    if isinstance(obj, dict):
-                        return obj
-                except json.JSONDecodeError:
-                    pass
-                next_brace = content.find("{", idx + 1)
-                if next_brace == -1:
-                    break
-                idx = next_brace
-
-        raise ValueError("No JSON found in model response")
 
     @staticmethod
     def _class_to_bio(entity_class: str, prev_label: str) -> str:
@@ -625,45 +570,18 @@ class LLMRouter:
             "cached": False,
         }
 
-    async def _call_openai_async(self, prompt: str) -> Dict[str, Any]:
-        """Call OpenAI API asynchronously."""
-        if self.use_structured_outputs:
-            response_format = {
-                "type": "json_schema",
-                "json_schema": {
-                    "name": "ner_classification",
-                    "strict": True,
-                    "schema": {
-                        "type": "object",
-                        "properties": {
-                            "reasoning": {"type": "string"},
-                            "entity_class": {"type": "string"},
-                        },
-                        "required": ["reasoning", "entity_class"],
-                        "additionalProperties": False,
-                    },
-                },
-            }
-        else:
-            response_format = {"type": "json_object"}
-
-        response = await self.async_client.chat.completions.create(
-            model=self.model,
-            messages=[
-                {
-                    "role": "system",
-                    "content": self._system_message,
-                },
-                {"role": "user", "content": prompt},
-            ],
+    async def _call_llm_async(self, prompt: str) -> Dict[str, Any]:
+        """Call LLM asynchronously via the provider interface."""
+        messages = [
+            {"role": "system", "content": self._system_message},
+            {"role": "user", "content": prompt},
+        ]
+        return await self.provider.call_async(
+            messages=messages,
             temperature=0.0,
-            response_format=response_format,
             max_tokens=150,
+            response_format=self._build_response_format(),
         )
-        try:
-            return json.loads(response.choices[0].message.content)
-        except json.JSONDecodeError as e:
-            raise ValueError(f"OpenAI returned non-JSON response: {e}") from e
 
     async def disambiguate_span_async(
         self,
@@ -699,7 +617,7 @@ class LLMRouter:
             return self._error_response(fallback_label, f"Prompt formatting error: {e}")
 
         try:
-            raw_result = await self._call_openai_async(prompt)
+            raw_result = await self._call_llm_async(prompt)
             validated = self._validate_response(raw_result, fallback_label, prev_label)
 
             if self.cache:
