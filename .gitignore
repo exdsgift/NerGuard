@@ -221,4 +221,7 @@ models/
 notebooks/
 plots/
 docs/
-Gabriele_Durante_TdL/
+thesis_latex/
+experiments/
+graphify-out/
+.gemini/
