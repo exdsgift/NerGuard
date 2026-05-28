@@ -11,7 +11,7 @@ except ImportError as e:
         "Install with: pip install nerguard[langchain]"
     ) from e
 
-from src.rag.redactor import nerguard as Redactor
+from src.rag.redactor import NerGuard as Redactor
 
 
 class NerGuardAnonymizer(BaseDocumentTransformer):
