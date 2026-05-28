@@ -37,7 +37,7 @@ Batch redaction::
 
 from importlib.metadata import version, PackageNotFoundError
 
-from src.rag.redactor import nerguard as Redactor
+from src.rag.redactor import NerGuard as Redactor
 from src.rag.models import RedactResult
 
 try:

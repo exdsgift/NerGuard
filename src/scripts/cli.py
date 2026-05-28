@@ -94,7 +94,7 @@ def _print_rag(text: str, result, show_mapping: bool) -> None:
 
 
 def _run_human(text, model_path, llm, backend, model):
-    from src.scripts.redact import redact_pipeline
+    from src.core.pipeline import redact_pipeline
     entities, redacted = redact_pipeline(
         text=text, model_path=model_path,
         llm_routing=llm, llm_source=backend, llm_model=model,
@@ -112,7 +112,7 @@ def _run_rag(text, model_path, llm, backend, model, typed, show_mapping):
 
 
 def _run_json(text, model_path, llm, backend, model):
-    from src.scripts.redact import redact_pipeline
+    from src.core.pipeline import redact_pipeline
     entities, redacted = redact_pipeline(
         text=text, model_path=model_path,
         llm_routing=llm, llm_source=backend, llm_model=model,

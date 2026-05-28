@@ -36,7 +36,7 @@ def _normalize_label(label: str) -> str:
     return _LABEL_MAP.get(label, label)
 
 
-class nerguard:
+class NerGuard:
     """RAG-optimized PII redactor.
 
     Uses NerGuard's full hybrid pipeline, then replaces block characters (█████)
@@ -54,9 +54,9 @@ class nerguard:
 
     Example::
 
-        from nerguard.rag import nerguard
+        from nerguard import Redactor
 
-        ng = nerguard()
+        ng = Redactor()
         result = ng.redact("Hi, I'm John Smith. Email: john@acme.com")
         print(result.text)
         # "Hi, I'm [NAME] [NAME]. Email: [EMAIL]"
@@ -86,7 +86,7 @@ class nerguard:
     def _load_pipeline(self) -> None:
         """Lazy-load model, tokenizer, and pipeline — runs only once per instance."""
         if self._pipeline is None:
-            from src.scripts.redact import redact_pipeline
+            from src.core.pipeline import redact_pipeline
             from src.core.model_loader import load_model_and_tokenizer, get_device
             device = get_device()
             self._model, self._tokenizer = load_model_and_tokenizer(

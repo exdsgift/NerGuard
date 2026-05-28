@@ -1,3 +1,7 @@
+## General
+- always use uv as a virtual environment manager!
+- always use the virtual environment .env , never install libs locally!
+
 ## graphify
 
 This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.

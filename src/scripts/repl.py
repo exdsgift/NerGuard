@@ -76,28 +76,6 @@ class Session:
         self._rag_cache = {}
 
 
-# ── Model caching — loaded once, reused across all queries ────────────────────
-_model_cache: dict = {}
-
-
-def _make_cached_loader(original_fn):
-    def cached(model_path=DEFAULT_MODEL_PATH, device=None, eval_mode=True, use_fast=True):
-        key = model_path
-        if key not in _model_cache:
-            _model_cache[key] = original_fn(
-                model_path, device=device, eval_mode=eval_mode, use_fast=use_fast
-            )
-        return _model_cache[key]
-    return cached
-
-
-def _install_model_cache():
-    from src.core.model_loader import load_model_and_tokenizer as original
-    cached = _make_cached_loader(original)
-    import src.scripts.redact as _redact_mod
-    _redact_mod.load_model_and_tokenizer = cached
-
-
 # ── Ollama helpers ────────────────────────────────────────────────────────────
 def _ollama_list() -> tuple[bool, str, list[tuple[float, str]]]:
     """Single subprocess call: return (ok, error_msg, [(size_mb, name), ...])."""
@@ -216,7 +194,7 @@ def _llm_summary(entities: list, s: "Session") -> None:
 
 def _run(text: str, s: Session):
     if s.mode == "human":
-        from src.scripts.redact import redact_pipeline
+        from src.core.pipeline import redact_pipeline
         entities, redacted = redact_pipeline(
             text=text, model_path=s.model_path,
             llm_routing=s.llm, llm_source=s.backend, llm_model=s.model_name,
@@ -240,7 +218,7 @@ def _run(text: str, s: Session):
         _llm_summary(result.entities, s)
 
     elif s.mode == "json":
-        from src.scripts.redact import redact_pipeline
+        from src.core.pipeline import redact_pipeline
         entities, redacted = redact_pipeline(
             text=text, model_path=s.model_path,
             llm_routing=s.llm, llm_source=s.backend, llm_model=s.model_name,
@@ -427,16 +405,15 @@ def _warmup(s: Session):
     sys.stdout.flush()
     t0 = time.time()
     import torch
-    import src.scripts.redact as _redact_mod  # already patched with cached loader
-    from src.core.model_loader import get_device
+    from src.core.model_loader import get_device, load_model_and_tokenizer
     device = get_device()
     try:
-        model, _ = _redact_mod.load_model_and_tokenizer(s.model_path, device=str(device), eval_mode=True)
+        model, _ = load_model_and_tokenizer(s.model_path, device=str(device), eval_mode=True)
     except torch.cuda.OutOfMemoryError:
         sys.stdout.write(f"\r{DW}  loading model ···  {Y}CUDA OOM — falling back to CPU{RS}  \n")
         sys.stdout.flush()
         device = torch.device("cpu")
-        model, _ = _redact_mod.load_model_and_tokenizer(s.model_path, device="cpu", eval_mode=True)
+        model, _ = load_model_and_tokenizer(s.model_path, device="cpu", eval_mode=True)
     elapsed = time.time() - t0
     sys.stdout.write(f"\r{DW}  loading model ···  {B}✓{RS}  {DW}{elapsed:.1f}s{RS}          \n")
     sys.stdout.flush()
@@ -463,7 +440,6 @@ def main():
     load_dotenv()
 
     _install_signal_handlers()
-    _install_model_cache()
     _setup_readline()
 
     s = Session()

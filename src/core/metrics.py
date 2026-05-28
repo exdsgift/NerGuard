@@ -78,31 +78,6 @@ def compute_confidence(logits: torch.Tensor, dim: int = -1) -> torch.Tensor:
     return torch.max(probs, dim=dim)[0]
 
 
-def should_trigger_llm(
-    entropy: float,
-    confidence: float,
-    entropy_threshold: float,
-    confidence_threshold: float,
-) -> bool:
-    """
-    Determine if LLM disambiguation should be triggered based on uncertainty.
-
-    The LLM is called when the model is uncertain, which is indicated by:
-    - High entropy (> threshold): Multiple classes have similar probabilities
-    - Low confidence (< threshold): The top prediction is not confident
-
-    Args:
-        entropy: Entropy value for the token
-        confidence: Confidence value for the token
-        entropy_threshold: Minimum entropy to trigger LLM
-        confidence_threshold: Maximum confidence to trigger LLM
-
-    Returns:
-        True if LLM should be called, False otherwise
-    """
-    return entropy > entropy_threshold and confidence < confidence_threshold
-
-
 def normalize_entropy(
     entropy: torch.Tensor,
     num_classes: int,
