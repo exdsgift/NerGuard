@@ -225,3 +225,4 @@ thesis_latex/
 experiments/
 graphify-out/
 .gemini/
+test_env/

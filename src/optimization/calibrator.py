@@ -60,7 +60,7 @@ class ThresholdCalibrator:
         # config has optimised thresholds, ready for EntitySpecificRouter
     """
 
-    def __init__(self, grid_resolution: int = 25, beta: float = 0.5):
+    def __init__(self, grid_resolution: int = 25, beta: float = 0.5, min_recall: float = 0.90):
         """
         Args:
             grid_resolution: Number of points per axis in the grid search.
@@ -68,9 +68,13 @@ class ThresholdCalibrator:
                 precision (fewer false routing calls), beta > 1 favours
                 recall (catch more errors). Default 0.5 balances toward
                 precision to minimise unnecessary LLM calls.
+            min_recall: Critical recall threshold. The calibrator will only
+                consider thresholds that catch at least this fraction of errors,
+                optimising F-beta and intervention cost within that feasible set.
         """
         self.grid_resolution = grid_resolution
         self.beta = beta
+        self.min_recall = min_recall
 
     def calibrate(
         self,
@@ -218,8 +222,7 @@ class ThresholdCalibrator:
         ent_grid = np.linspace(ent_lo, ent_hi, self.grid_resolution)
         conf_grid = np.linspace(conf_lo, conf_hi, self.grid_resolution)
 
-        best_score = -1.0
-        best_result = None
+        candidates = []
         beta_sq = self.beta ** 2
 
         for ent_th in ent_grid:
@@ -239,18 +242,29 @@ class ThresholdCalibrator:
 
                 f_score = (1 + beta_sq) * precision * recall / (beta_sq * precision + recall)
 
-                if f_score > best_score:
-                    best_score = f_score
-                    best_result = CalibrationResult(
-                        entropy_threshold=round(float(ent_th), 4),
-                        confidence_threshold=round(float(conf_th), 4),
-                        routing_precision=round(precision, 4),
-                        routing_recall=round(recall, 4),
-                        routing_f_score=round(float(f_score), 4),
-                        intervention_rate=round(float(n_triggers / n_total), 4),
-                        n_tokens=n_total,
-                        n_errors=n_errors,
-                    )
+                candidates.append(CalibrationResult(
+                    entropy_threshold=round(float(ent_th), 4),
+                    confidence_threshold=round(float(conf_th), 4),
+                    routing_precision=round(precision, 4),
+                    routing_recall=round(recall, 4),
+                    routing_f_score=round(float(f_score), 4),
+                    intervention_rate=round(float(n_triggers / n_total), 4),
+                    n_tokens=n_total,
+                    n_errors=n_errors,
+                ))
+
+        feasible = [c for c in candidates if c.routing_recall >= self.min_recall]
+        
+        if feasible:
+            # Rank by F-score (desc) then intervention rate (asc)
+            feasible.sort(key=lambda c: (c.routing_f_score, -c.intervention_rate), reverse=True)
+            best_result = feasible[0]
+        elif candidates:
+            logger.warning(f"No threshold met critical recall >= {self.min_recall}; falling back to unconstrained F{self.beta}")
+            candidates.sort(key=lambda c: (c.routing_f_score, -c.intervention_rate), reverse=True)
+            best_result = candidates[0]
+        else:
+            best_result = None
 
         if best_result is None:
             logger.warning("Grid search found no valid threshold; using defaults")
